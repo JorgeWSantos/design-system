@@ -1,11 +1,12 @@
 import type { Preview } from '@storybook/react'
 import { themes } from '@storybook/theming'
 // import '../src/styles/global.css'
+import theme from './theme';
 
 const preview: Preview = {
   parameters: {
     backgrounds: {
-      default: 'dark',
+      default: theme,
       values: [
         {
           name: 'dark',
@@ -24,7 +25,7 @@ const preview: Preview = {
       },
     },
     docs: {
-      theme: themes.dark,
+      theme: themes[theme],
     }
   },
 };
