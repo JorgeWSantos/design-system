@@ -1,95 +1,102 @@
+import styled, { css } from 'styled-components'
+import { theme } from '../styles/global.css'
 import { ComponentProps, ElementType, ReactNode } from 'react'
-import { styled } from '../styles'
 
-export const Button = styled('button', {
-  all: 'unset',
-  borderRadius: '$sm',
-  fontSize: '$sm',
-  fontWeight: '$medium',
-  fontFamily: '$default',
-  textAlign: 'center',
-  minWidth: 120,
-  boxSizing: 'border-box',
-  padding: '0 $4',
+type Variant = 'primary' | 'secondary' | 'tertiary'
+type Size = 'sm' | 'md'
 
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  gap: '$2',
-  cursor: 'pointer',
+interface ButtonStyleProps {
+  variant?: Variant
+  size?: Size
+}
 
-  svg: {
-    width: '$4',
-    height: '$4',
-  },
+export const Button = styled.button<ButtonStyleProps>`
+  all: unset;
+  border-radius: ${theme.radii.sm};
+  font-size: ${theme.fontSizes.sm};
+  font-weight: ${theme.fontWeights.medium};
+  font-family: ${theme.fonts.default};
+  text-align: center;
+  min-width: 120px;
+  box-sizing: border-box;
+  padding: 0 ${theme.space[4]};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: ${theme.space[2]};
+  cursor: pointer;
 
-  '&:disabled': {
-    cursor: 'not-allowed',
-  },
+  svg {
+    width: ${theme.space[4]};
+    height: ${theme.space[4]};
+  }
 
-  variants: {
-    variant: {
-      primary: {
-        color: '$white',
-        background: '$ignite500',
+  &:disabled {
+    cursor: not-allowed;
+  }
 
-        '&:not(:disabled):hover': {
-          background: '$ignite300',
-        },
+  ${({ variant }) =>
+    (variant === 'primary' || !variant) &&
+    css`
+      color: ${theme.colors.white};
+      background: ${theme.colors.ignite500};
 
-        '&:disabled': {
-          backgroundColor: '$gray200',
-        },
-      },
+      &:not(:disabled):hover {
+        background: ${theme.colors.ignite300};
+      }
 
-      secondary: {
-        color: '$ignite300',
-        border: '2px solid $ignite500',
+      &:disabled {
+        background-color: ${theme.colors.gray200};
+      }
+    `}
 
-        '&:not(:disabled):hover': {
-          background: '$ignite500',
-          color: '#fff',
-        },
+  ${({ variant }) =>
+    variant === 'secondary' &&
+    css`
+      color: ${theme.colors.ignite300};
+      border: 2px solid ${theme.colors.ignite500};
 
-        '&:disabled': {
-          color: '$gray200',
-          borderColor: '$gray200',
-        },
-      },
+      &:not(:disabled):hover {
+        background: ${theme.colors.ignite500};
+        color: ${theme.colors.white};
+      }
 
-      tertiary: {
-        color: '$gray100',
-        // border: '2px solid $gray100',
+      &:disabled {
+        color: ${theme.colors.gray200};
+        border-color: ${theme.colors.gray200};
+      }
+    `}
 
-        '&:not(:disabled):hover': {
-          color: '$white',
-        },
+  ${({ variant }) =>
+    variant === 'tertiary' &&
+    css`
+      color: ${theme.colors.gray100};
 
-        '&:disabled': {
-          color: '$gray600',
-        },
-      },
-    },
+      &:not(:disabled):hover {
+        color: ${theme.colors.white};
+      }
 
-    size: {
-      sm: {
-        height: 38,
-      },
-      md: {
-        height: 46,
-      },
-    },
-  },
+      &:disabled {
+        color: ${theme.colors.gray600};
+      }
+    `}
 
-  defaultVariants: {
-    variant: 'primary',
-    size: 'md',
-  },
-})
+  ${({ size }) =>
+    size === 'sm' &&
+    css`
+      height: 38px;
+    `}
 
-export interface ButtonProps extends ComponentProps<typeof Button> {
+  ${({ size }) =>
+    size === 'md' &&
+    css`
+      height: 46px;
+    `}
+`
+
+export interface ButtonProps extends ComponentProps<'button'> {
   as?: ElementType
-  variant: 'primary' | 'secondary' | 'tertiary'
-  size: 'sm' | 'md'
+  variant?: Variant
+  size?: Size
   children: ReactNode
 }

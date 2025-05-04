@@ -1,13 +1,14 @@
 import { ComponentProps, ElementType } from 'react'
+import { styled } from 'styled-components'
 
-import { styled } from '../styles'
+import { theme } from '../styles/global.css'
 
-export const Box = styled('div', {
-  padding: '$4',
-  borderRadius: '$md',
-  backgroundColor: '$gray600',
-  border: '1px solid $gray600',
-})
+export const Box = styled.div`
+  padding: ${theme.space[4]};
+  border-radius: ${theme.radii.md};
+  background-color: ${theme.colors.gray600};
+  border: 1px solid ${theme.colors.gray700};
+`
 
 export interface BoxProps extends ComponentProps<typeof Box> {
   as?: ElementType
