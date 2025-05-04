@@ -3,7 +3,13 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build"
+  },
   "devDependencies": {
-    "@storybook/builder-vite": "^8.6.12"
-  }
+    "@storybook/builder-vite": "^8.6.12",
+    "turbo": "^2.5.2"
+  },
+  "packageManager": "npm@10.9.0"
 }
