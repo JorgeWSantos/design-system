@@ -39,10 +39,10 @@ export const Button = styled.button<ButtonStyleProps>`
     (variant === 'primary' || !variant) &&
     css`
       color: ${theme.colors.white};
-      background: ${theme.colors.ignite300};
+      background: ${theme.colors.ignite500};
 
       &:not(:disabled):hover {
-        background: ${theme.colors.ignite300};
+        background: ${theme.colors.ignite700};
       }
 
       &:disabled {
@@ -53,7 +53,7 @@ export const Button = styled.button<ButtonStyleProps>`
   ${({ variant }) =>
     variant === 'secondary' &&
     css`
-      color: ${theme.colors.ignite300};
+      color: ${theme.colors.ignite500};
       border: 2px solid ${theme.colors.ignite500};
 
       &:not(:disabled):hover {
