@@ -39,7 +39,7 @@ export const Button = styled.button<ButtonStyleProps>`
     (variant === 'primary' || !variant) &&
     css`
       color: ${theme.colors.white};
-      background: ${theme.colors.ignite500};
+      background: ${theme.colors.ignite300};
 
       &:not(:disabled):hover {
         background: ${theme.colors.ignite300};
