@@ -100,3 +100,5 @@ export interface ButtonProps extends ComponentProps<'button'> {
   size?: Size
   children: ReactNode
 }
+
+Button.displayName = 'Button'

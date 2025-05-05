@@ -1,8 +1,6 @@
 import { styled } from 'styled-components'
 import { Text } from '../Text'
 import { theme } from '../../styles/global.css'
-import { MultiStepProps } from '.'
-
 const { colors, fontSizes, space, radii } = theme
 
 export const MultiStepContainer = styled.div``
