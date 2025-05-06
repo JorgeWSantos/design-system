@@ -1,6 +1,7 @@
 {
   "name": "@abqm-ui/eslint-config",
   "main": "index.js",
+  "version": "1.0.0",
   "private": true,
   "license": "MIT",
   "devDependencies": {
