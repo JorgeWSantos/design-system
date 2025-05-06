@@ -38,5 +38,11 @@ const config: StorybookConfig = {
   docs: {
     autodocs: true, // Or true, enables autodocs for non-MDX stories
   },
+  viteFinal: (config, { configType }) => {
+    if (configType === 'PRODUCTION') {
+      config.base = '/design-system/'
+    }
+    return config
+  }
 };
 export default config;
