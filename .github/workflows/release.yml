@@ -29,6 +29,12 @@ jobs:
       - name: NPM Install
         run: npm i
 
+      - name: Set up Git credentials
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN_CUSTOM }}@github.com/${{ github.repository }}
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
