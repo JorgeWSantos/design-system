@@ -6,7 +6,7 @@ import {
   lineHeights,
   radii,
   space,
-} from '@abqm-ui/tokens'
+} from '@abqm-ui2/tokens'
 import { createStitches, defaultThemeMap } from '@stitches/react'
 
 export const {

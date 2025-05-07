@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Box, Text, TextInput, TextInputProps, theme } from '@abqm-ui/react'
+import { Box, Text, TextInput, TextInputProps, theme } from '@abqm-ui2/react'
 
 export default {
   title: 'Form/TextInput',

@@ -1,3 +1,3 @@
 {
-  "extends": ["@abqm-ui/eslint-config"]
+  "extends": ["@abqm-ui2/eslint-config"]
 }

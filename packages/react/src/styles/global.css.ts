@@ -6,7 +6,7 @@ import {
   lineHeights,
   radii,
   space,
-} from '@abqm-ui/tokens'
+} from '@abqm-ui2/tokens'
 
 export const theme = {
   colors,

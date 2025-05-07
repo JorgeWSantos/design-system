@@ -1,5 +1,5 @@
 {
-  "name": "@abqm-ui/eslint-config",
+  "name": "@abqm-ui2/eslint-config",
   "main": "index.js",
   "version": "1.0.0",
   "private": true,

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Box, BoxProps, Text } from '@abqm-ui/react'
+import { Box, BoxProps, Text } from '@abqm-ui2/react'
 
 export default {
   title: 'Surfaces/Box',

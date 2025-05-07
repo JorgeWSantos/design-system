@@ -1,4 +1,4 @@
 {
-  "extends": "@abqm-ui/ts-config/base.json",
+  "extends": "@abqm-ui2/ts-config/base.json",
   "include": ["src"],
 }

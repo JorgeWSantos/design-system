@@ -1,4 +1,4 @@
 {
-  "extends": "@abqm-ui/ts-config/react.json",
+  "extends": "@abqm-ui2/ts-config/react.json",
   "include": ["src"],
 }

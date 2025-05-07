@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Text, TextProps } from '@abqm-ui/react'
+import { Text, TextProps } from '@abqm-ui2/react'
 
 export default {
   title: 'Typography/Text',

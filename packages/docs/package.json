@@ -1,5 +1,5 @@
 {
-  "name": "@abqm-ui/docs",
+  "name": "@abqm-ui2/docs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,10 +12,10 @@
     "build": "storybook build"
   },
   "dependencies": {
-    "@abqm-ui/eslint-config": "*",
-    "@abqm-ui/react": "*",
-    "@abqm-ui/tokens": "*",
-    "@abqm-ui/ts-config": "*",
+    "@abqm-ui2/eslint-config": "*",
+    "@abqm-ui2/react": "*",
+    "@abqm-ui2/tokens": "*",
+    "@abqm-ui2/ts-config": "*",
     "@storybook/addon-a11y": "^8.6.12",
     "phosphor-react": "^1.4.1",
     "polished": "^4.3.1",

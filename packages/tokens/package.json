@@ -1,5 +1,5 @@
 {
-  "name": "@abqm-ui/tokens",
+  "name": "@abqm-ui2/tokens",
   "version": "1.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -14,9 +14,9 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
-    "@abqm-ui/ts-config": "*",
+    "@abqm-ui2/ts-config": "*",
     "tsup": "^8.4.0",
     "typescript": "^5.8.3",
-    "@abqm-ui/eslint-config": "*"
+    "@abqm-ui2/eslint-config": "*"
   }
 }

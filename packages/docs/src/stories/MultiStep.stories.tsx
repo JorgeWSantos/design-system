@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Box, MultiStep, MultiStepProps, theme } from '@abqm-ui/react'
+import { Box, MultiStep, MultiStepProps, theme } from '@abqm-ui2/react'
 
 export default {
   title: 'Form/Multi Step',

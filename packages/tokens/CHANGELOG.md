@@ -1,4 +1,4 @@
-# @abqm-ui/tokens
+# @abqm-ui2/tokens
 
 ## 1.0.1
 
