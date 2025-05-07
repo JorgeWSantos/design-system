@@ -26,8 +26,8 @@ jobs:
           cache: "npm"
           cache-dependency-path: "**/package-lock.json"
 
-      - name: Install TurboRepo CLI
-        run: npm install --global turbo
+      - name: NPM Install
+        run: npm i
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
