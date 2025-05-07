@@ -1,6 +1,6 @@
 import { ComponentProps, ElementType, ReactNode } from 'react'
 import { css, styled } from 'styled-components'
-import { theme } from '../styles/global.css'
+import { theme } from '../styles'
 
 const sizeVariants = {
   xxs: theme.fontSizes.xxs,
@@ -21,7 +21,7 @@ const sizeVariants = {
 type SizeVariants = keyof typeof sizeVariants
 
 interface StyledHeadingProps {
-  $size?: SizeVariants
+  size?: SizeVariants
 }
 
 const StyledText = styled.p<StyledHeadingProps>`
@@ -30,10 +30,10 @@ const StyledText = styled.p<StyledHeadingProps>`
   margin: 0;
   color: ${theme.colors.gray100};
 
-  ${({ $size }) =>
-    $size &&
+  ${({ size }) =>
+    size &&
     css`
-      font-size: ${sizeVariants[$size]};
+      font-size: ${sizeVariants[size]};
     `}
 `
 
@@ -45,7 +45,7 @@ export interface TextProps extends ComponentProps<typeof StyledText> {
 
 export function Text({ children, size = 'md', as = 'p', ...rest }: TextProps) {
   return (
-    <StyledText as={as} $size={size} {...rest}>
+    <StyledText as={as} size={size} {...rest}>
       {children}
     </StyledText>
   )

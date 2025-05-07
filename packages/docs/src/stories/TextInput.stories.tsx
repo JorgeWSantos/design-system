@@ -5,6 +5,12 @@ export default {
   title: 'Form/TextInput',
   component: TextInput,
   args: {},
+  argTypes: {
+    size: {
+      options: ['sm', 'md', 'lg'],
+      control: { type: 'inline-radio' },
+    }
+  }
 } as Meta<TextInputProps>
 
 const render = (args: TextInputProps) => (
@@ -31,6 +37,8 @@ export const Primary: StoryObj<TextInputProps> = {
 export const WithPrefix: StoryObj<TextInputProps> = {
   args: {
     prefix: 'cal.com/',
+    placeholder: 'your-username',
+    size: 'md'
   },
   render,
 }

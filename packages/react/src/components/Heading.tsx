@@ -1,7 +1,7 @@
 // Heading.tsx
 import styled, { css } from 'styled-components'
 import { ComponentProps, ElementType, ReactNode } from 'react'
-import { theme } from '../styles/global.css'
+import { theme } from '../styles'
 
 const sizeVariants = {
   sm: theme.fontSizes.xl,
@@ -17,7 +17,7 @@ const sizeVariants = {
 type SizeVariants = keyof typeof sizeVariants
 
 interface StyledHeadingProps {
-  $size?: SizeVariants
+  size?: SizeVariants
 }
 
 const StyledHeading = styled.h2<StyledHeadingProps>`
@@ -27,10 +27,10 @@ const StyledHeading = styled.h2<StyledHeadingProps>`
   margin: 0;
   color: ${theme.colors.gray100};
 
-  ${({ $size }) =>
-    $size &&
+  ${({ size }) =>
+    size &&
     css`
-      font-size: ${sizeVariants[$size]};
+      font-size: ${sizeVariants[size]};
     `}
 `
 
@@ -42,7 +42,7 @@ export interface HeadingProps extends ComponentProps<typeof StyledHeading> {
 
 export function Heading({ children, size = 'md', as = 'h2', ...rest }: HeadingProps) {
   return (
-    <StyledHeading as={as} $size={size} {...rest}>
+    <StyledHeading as={as} size={size} {...rest}>
       {children}
     </StyledHeading>
   )

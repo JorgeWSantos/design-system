@@ -1,12 +1,12 @@
 import { styled } from 'styled-components'
 import * as Avatar from '@radix-ui/react-avatar'
-import { theme } from '../../styles/global.css'
+import { theme } from '../../styles'
 
 export const AvatarContainer = styled(Avatar.Root)` 
   border-radius: ${theme.radii.full};
   display: inline-block;
-  width: ${theme.space[12]};
-  height: ${theme.space[12]};
+  width: ${theme.space[16]};
+  height: ${theme.space[16]};
   overflow: hidden;
 `
 

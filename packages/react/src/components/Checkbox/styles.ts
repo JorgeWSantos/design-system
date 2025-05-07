@@ -1,6 +1,6 @@
 import * as Checkbox from '@radix-ui/react-checkbox'
 import styled, { keyframes } from 'styled-components'
-import { theme } from '../../styles/global.css'
+import { theme } from '../../styles'
 import { radii } from '@abqm-ui2/tokens'
 
 const { colors, space } = theme

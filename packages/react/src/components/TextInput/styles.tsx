@@ -1,14 +1,25 @@
-import styled from 'styled-components'
-import { theme } from '../../styles/global.css'
+import styled, { css } from 'styled-components'
+import { theme } from '../../styles'
 
-export const TextInputContainer = styled.div`
+const sizeVariants = {
+  sm: `${theme.space[2]} ${theme.space[3]}`,
+  md: `${theme.space[3]} ${theme.space[4]}`,
+  lg: `${theme.space[4]} ${theme.space[5]}`,
+}
+
+export type SizeVariants = keyof typeof sizeVariants
+interface StyledTextInputContainerProps {
+  size: SizeVariants
+}
+
+export const TextInputContainer = styled.div<StyledTextInputContainerProps>`
   background-color: ${theme.colors.gray900};
   padding: ${theme.space[3]} ${theme.space[4]};
   border-radius: ${theme.radii.sm};
   box-sizing: border-box;
   border: 2px solid ${theme.colors.gray900};
   display: flex;
-  align-items: baseline;
+  align-items: center;
 
   &:has(input:focus) {
     border-color: ${theme.colors.ignite300};
@@ -18,6 +29,10 @@ export const TextInputContainer = styled.div`
     opacity: 0.5;
     cursor: not-allowed;
   }
+
+  ${({ size }) => size && css`
+    padding: ${sizeVariants[size]};
+  `}
 `
 
 export const Prefix = styled.span`

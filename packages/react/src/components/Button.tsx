@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { theme } from '../styles/global.css'
+import { theme } from '../styles'
 import { ComponentProps, ElementType, ReactNode } from 'react'
 
 type Variant = 'primary' | 'secondary' | 'tertiary'
@@ -33,6 +33,10 @@ export const Button = styled.button<ButtonStyleProps>`
 
   &:disabled {
     cursor: not-allowed;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px ${theme.colors.gray100};
   }
 
   ${({ variant }) =>

@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 import { Text } from '../Text'
-import { theme } from '../../styles/global.css'
+import { theme } from '../../styles'
 const { colors, fontSizes, space, radii } = theme
 
 export const MultiStepContainer = styled.div``

@@ -1,7 +1,7 @@
 import { ComponentProps, ElementType } from 'react'
 import { styled } from 'styled-components'
 
-import { theme } from '../styles/global.css'
+import { theme } from '../styles'
 
 const { colors, fonts, fontSizes, radii, space, fontWeights } = theme
 
