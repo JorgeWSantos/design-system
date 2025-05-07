@@ -1,45 +1,82 @@
-### Geral
+# Projeto Monorepo com TurboRepo, Storybook e Changesets
 
-Node Version 22.14.0
-NPM Version 10.9.2
+## 🛠️ Configurações Gerais
 
-Para Instalar os pacotes rodar 'npm i' na pasta raiz
+- **Node.js**: `v22.14.0`
+- **NPM**: `v10.9.2`
 
-Para testar, rodar 'npm run dev' na pasta raiz
+### ▶️ Instalação
 
-## StoryBook
+Na raiz do projeto, execute:
 
-```
-npx storybook init --builder @storybook/builder-vite --type react --use-npm
-OR
-npm create storybook@latest
+```bash
+npm install
 ```
 
-### TurboRepo ChangeSet
+### 🚀 Execução Local
 
+Para iniciar o ambiente de desenvolvimento:
+
+```bash
+npm run dev
 ```
-npm i @changesets/cli
+
+---
+
+## 📚 Storybook
+
+É a ferramenta de documentação do código.
+
+O projeto está localizado em packages/docs:
+
+````
+
+---
+
+## ⚡ Changesets (Gerenciador de Versões NPM)
+
+### Instalação
+
+```bash
+npm install @changesets/cli
 npx changeset init
+````
+
+## 🚀 Publicação no NPM
+
+Sempre que adicionar ou modificar algo em uma lib, execute:
+
+```bash
+npm run changeset
 ```
 
-Quando for adicionado ou alterado algo no changeset rodar o comando
+Um prompt será exibido com a lista de pacotes disponíveis para versionamento.
 
-```
-npm run changeset // criará um versionamento
-```
+_Os pacotes modificados serão destacados automaticamente._
 
-Para fazer real alteração rodar dos packages.json
+Isso criará um arquivo de versionamento na pasta `.changesets` que será usado nos próximos passos.
 
-```
-npm run version-packages // alterará os packages.json e os changelog.md das libs selecionadas
-```
+### 🎸 Versionamento
 
-Para publicar no NPM
+Para aplicar as versões nos `package.json` e gerar os arquivos `CHANGELOG.md`:
 
-```
-npm run release // alterará os packages.json e os changelog.md das libs selecionadas
+```bash
+npm run version-packages
 ```
 
-referências:
-https://turborepo.com/docs/guides/publishing-libraries#publishing
-https://github.com/changesets/changesets/blob/main/packages/cli/README.md
+### 🎡 Publicação
+
+Para publicar manualmente:
+
+```bash
+npm run release
+```
+
+> ⚙️ Um **workflow automatizado** também foi configurado para publicar no NPM automaticamente ao fazer push para o GitHub.
+
+---
+
+## 📎 Referências
+
+- [TurboRepo: Publicando bibliotecas](https://turborepo.com/docs/guides/publishing-libraries#publishing)
+- [Changesets: Documentação oficial](https://github.com/changesets/changesets/blob/main/packages/cli/README.md)
