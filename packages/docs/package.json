@@ -12,7 +12,6 @@
     "build": "storybook build"
   },
   "dependencies": {
-    "@abqm-ui2/eslint-config": "*",
     "@abqm-ui2/react": "*",
     "@abqm-ui2/tokens": "*",
     "@abqm-ui2/ts-config": "*",

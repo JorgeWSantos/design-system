@@ -16,7 +16,6 @@
   "devDependencies": {
     "@abqm-ui2/ts-config": "*",
     "tsup": "^8.4.0",
-    "typescript": "^5.8.3",
-    "@abqm-ui2/eslint-config": "*"
+    "typescript": "^5.8.3"
   }
 }

@@ -14,7 +14,6 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
-    "@abqm-ui2/eslint-config": "*",
     "@abqm-ui2/tokens": "*",
     "@abqm-ui2/ts-config": "*",
     "@types/react": "^19.1.2",
