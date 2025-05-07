@@ -36,7 +36,7 @@ jobs:
       - name: "Storybook Deploy to GitHub Pages"
         uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         env:
-          TURBO_TOKEN: VFu4dcZ5FhMP2Dg2b8R14LNt
+          TURBO_TOKEN: ${{ secrets.VERCEL_CACHE_TOKEN }}
           TURBO_TEAM: jorgewsantos-projects
         with:
           install_command: npm install # default: npm ci

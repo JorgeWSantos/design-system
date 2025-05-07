@@ -1,4 +1,4 @@
-name: Release
+name: Release | Publicação no NPM
 
 on:
   push:
@@ -38,5 +38,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_CUSTOM }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          TURBO_TOKEN: VFu4dcZ5FhMP2Dg2b8R14LNt
+          TURBO_TOKEN: ${{ secrets.VERCEL_CACHE_TOKEN }}
           TURBO_TEAM: jorgewsantos-projects
