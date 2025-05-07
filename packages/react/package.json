@@ -26,7 +26,6 @@
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.7",
     "@radix-ui/react-checkbox": "^1.2.3",
-    "@stitches/react": "^1.2.8",
     "phosphor-react": "^1.4.1",
     "styled-components": "^6.1.17"
   }

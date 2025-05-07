@@ -1,38 +1,55 @@
 import { ComponentProps, ElementType, ReactNode } from 'react'
-import { styled } from '../styles'
+import { css, styled } from 'styled-components'
+import { theme } from '../styles/global.css'
 
-export const Text = styled('p', {
-  fontFamily: '$default',
-  lineHeight: '$base',
-  margin: 0,
-  color: '$gray100',
+const sizeVariants = {
+  xxs: theme.fontSizes.xxs,
+  xs: theme.fontSizes.xs,
+  sm: theme.fontSizes.sm,
+  md: theme.fontSizes.md,
+  lg: theme.fontSizes.lg,
+  xl: theme.fontSizes.xl,
+  '2xl': theme.fontSizes['2xl'],
+  '4xl': theme.fontSizes['4xl'],
+  '5xl': theme.fontSizes['5xl'],
+  '6xl': theme.fontSizes['6xl'],
+  '7xl': theme.fontSizes['7xl'],
+  '8xl': theme.fontSizes['8xl'],
+  '9xl': theme.fontSizes['9xl'],
+}
 
-  variants: {
-    size: {
-      xxs: { fontSize: '$xxs' },
-      xs: { fontSize: '$xs' },
-      sm: { fontSize: '$sm' },
-      md: { fontSize: '$md' },
-      lg: { fontSize: '$lg' },
-      xl: { fontSize: '$xl' },
-      '2xl': { fontSize: '$2xl' },
-      '4xl': { fontSize: '$4xl' },
-      '5xl': { fontSize: '$5xl' },
-      '6xl': { fontSize: '$6xl' },
-      '7xl': { fontSize: '$7xl' },
-      '8xl': { fontSize: '$8xl' },
-      '9xl': { fontSize: '$9xl' },
-    },
-  },
+type SizeVariants = keyof typeof sizeVariants
 
-  defaultVariants: {
-    size: 'md',
-  },
-})
+interface StyledHeadingProps {
+  $size?: SizeVariants
+}
 
-export interface TextProps extends ComponentProps<typeof Text> {
+const StyledText = styled.p<StyledHeadingProps>`
+  font-family: ${theme.fonts.default};
+  line-height: ${theme.lineHeights.base};
+  margin: 0;
+  color: ${theme.colors.gray100};
+
+  ${({ $size }) =>
+    $size &&
+    css`
+      font-size: ${sizeVariants[$size]};
+    `}
+`
+
+export interface TextProps extends ComponentProps<typeof StyledText> {
   as?: ElementType
   children: ReactNode
+  size?: SizeVariants
 }
+
+export function Text({ children, size = 'md', as = 'p', ...rest }: TextProps) {
+  return (
+    <StyledText as={as} $size={size} {...rest}>
+      {children}
+    </StyledText>
+  )
+}
+
 
 Text.displayName = 'Text'
