@@ -14,4 +14,11 @@ export default {
   },
 } as Meta<BoxProps>
 
-export const Primary: StoryObj<BoxProps> = {}
+export const Primary: StoryObj<BoxProps> = {
+}
+
+export const Secondary: StoryObj<BoxProps> = {
+  args: {
+    style: {backgroundColor: 'green', border: '1px solid red'} //example
+  }
+}
