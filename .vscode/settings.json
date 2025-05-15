@@ -1,3 +1,9 @@
 {
-  "eslint.experimental.useFlatConfig": true
+  // "eslint.experimental.useFlatConfig": true
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }
