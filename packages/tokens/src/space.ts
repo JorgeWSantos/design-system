@@ -1,5 +1,6 @@
 export const space = {
   1: '0.25rem', // 1 x 4 é igual a 4, e 4px são 0.25rem
+  1.5: '0.375rem',
   2: '0.5rem', // 2 x 4 é igual a 8, e 8px são 0.5rem
   3: '0.75rem',
   4: '1rem', // 4 x 4 é igual a 16, e 16px equivale a 1rem
@@ -13,5 +14,5 @@ export const space = {
   20: '5rem',
   40: '10rem',
   64: '16rem',
-  80: '20rem',
+  80: '20rem'
 }
