@@ -1,4 +1,13 @@
 {
   "extends": "@abqm-ui2/ts-config/react.json",
-  "include": ["src"]
+  "include": ["src"],
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"],
+      "@assets/*": ["assets/*"]
+    },
+    "typeRoots": ["./node_modules/@types", "./src/@types"]
+  }
 }
