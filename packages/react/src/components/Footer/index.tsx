@@ -11,9 +11,7 @@ export interface FooterProps extends ComponentProps<typeof FooterWrapper> {
 export const Footer = ({ style, ...rest }: FooterProps) => {
   return (
     <FooterWrapper style={style} {...rest}>
-      <FooterContent
-
-      />
+      <FooterContent />
     </FooterWrapper>
   )
 }

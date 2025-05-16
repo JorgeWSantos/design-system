@@ -15,6 +15,7 @@
   "description": "",
   "devDependencies": {
     "@abqm-ui2/tokens": "*",
+    "@abqm-ui2/icons": "*",
     "@abqm-ui2/ts-config": "*",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.3",

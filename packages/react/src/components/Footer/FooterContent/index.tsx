@@ -3,11 +3,12 @@ import {
   ContainerContent,
   Social,
   SocialIcons,
-  SocialIcon,
   SocialText,
   Circle,
   SiteText
 } from './styles'
+
+import { FacebookIcon, InstagramIcon, YoutubeIcon } from '@abqm-ui2/icons'
 
 export interface FooterContentProps extends ComponentProps<typeof ContainerContent> {
   as?: ElementType,
@@ -18,15 +19,9 @@ export const FooterContent = () => {
     <ContainerContent>
       <Social>
         <SocialIcons>
-          {/* <SocialIcon>
-            <img src={youtubeIcon} alt="Ícone do Youtube" />
-          </SocialIcon>
-          <SocialIcon>
-            <img src={instagramIcon} alt="Ícone do Instagram" />
-          </SocialIcon> */}
-          <SocialIcon>
-            <img src={''} />
-          </SocialIcon>
+          <YoutubeIcon width={30} height={30} />
+          <InstagramIcon width={30} height={30} />
+          <FacebookIcon width={30} height={30} fill='white' />
         </SocialIcons>
         <SocialText>@ABQMOFICIAL</SocialText>
         <Circle />
