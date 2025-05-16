@@ -1,4 +1,4 @@
-export { default as FacebookIcon } from './components/Facebook';
-export { default as InstagramIcon } from './components/Instagram';
-export { default as YoutubeIcon } from './components/Youtube';
-export { default as HorseIcon } from './components/Horse';
+export { default as Facebook } from './components/Facebook';
+export { default as Instagram } from './components/Instagram';
+export { default as Youtube } from './components/Youtube';
+export { default as Horse } from './components/Horse';

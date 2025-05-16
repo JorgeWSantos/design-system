@@ -4,11 +4,18 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
   "scripts": {
-    "build": "tsup src/index.ts --format esm, cjs --dts",
-    "dev": "tsup src/index.ts --format esm, cjs --dts --watch",
+    "build": "tsup --dts",
+    "dev": "tsup --dts --watch",
     "lint": "eslint src/**/*.ts* --fix",
-    "generate": "npx @svgr/cli src/icons/*.svg --out-dir src/components --icon --typescript"
+    "generate": "npx @svgr/cli src/icons/*.svg --out-dir src/_temp --icon --typescript && npm run move-icons",
+    "move-icons": "node scripts/move-icons.js",
+    "clean": "rimraf dist"
   },
   "keywords": [],
   "author": "",
