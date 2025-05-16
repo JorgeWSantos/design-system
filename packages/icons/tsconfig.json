@@ -1,0 +1,20 @@
+{
+  // "extends": "@abqm-ui2/ts-config/base.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "jsx": "react-jsx", // ✅ necessário para arquivos TSX
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ESNext",
+    "strict": true,
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  }
+}
