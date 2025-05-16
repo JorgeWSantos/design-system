@@ -18,6 +18,7 @@
     "@typescript-eslint/eslint-plugin": "^8.32.0",
     "@typescript-eslint/parser": "^8.32.0",
     "eslint": "^9.26.0",
+    "rimraf": "^6.0.1",
     "turbo": "^2.5.2"
   },
   "packageManager": "npm@10.9.0",
