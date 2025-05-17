@@ -11,6 +11,15 @@ export const Primary: StoryObj<FooterProps> = {
 
 export const Secondary: StoryObj<FooterProps> = {
   args: {
-    style: { backgroundColor: 'green', border: '1px solid red' } //example
+    // style: { backgroundColor: 'green', border: '1px solid red' } //example
+    size: 'md'
+  }
+}
+
+export const Tertiary: StoryObj<FooterProps> = {
+  args: {
+    // style: { backgroundColor: 'green', border: '1px solid red' } //example
+    showIcons: false,
+    size: 'sm'
   }
 }

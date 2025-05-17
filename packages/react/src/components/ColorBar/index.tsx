@@ -4,7 +4,7 @@ import { theme } from '../../styles';
 
 export interface ColorBarProps extends ComponentProps<typeof BarWrapper> {
   as?: ElementType,
-  style: CSSProperties
+  style?: CSSProperties
 }
 
 export const ColorBar = ({ style, ...rest }: ColorBarProps) => {

@@ -1,16 +1,38 @@
+import { SizeType } from 'types/common'
 import { theme } from '../../../styles'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const ContainerContent = styled.div`
+interface StyledContainerProps {
+  size: SizeType
+}
+
+interface StyledSocialIconProps {
+  size: SizeType
+}
+
+
+export const ContainerContent = styled.div<StyledContainerProps>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: ${theme.space[4]} ${theme.space[10]};
-  gap: ${theme.space[4]};
 
   max-width: 81.75rem;
 
   border-radius: ${theme.space[2]} ${theme.space[2]} 0px 0px;
+
+    ${({ size }) => (size === 'lg' || !size) && css`
+    padding: ${theme.space[4]} ${theme.space[10]};
+  `}
+
+  ${({ size }) => size === 'md' && css`
+    padding: .125rem ${theme.space[10]};
+    height: 100%;
+  `}
+
+  ${({ size }) => size === 'sm' && css`
+    height: 100%;
+    padding: ${theme.space[1]} ${theme.space[2]};
+  `}
 `
 
 export const Social = styled.div`
@@ -31,22 +53,32 @@ export const SocialIcons = styled.div`
   gap: ${theme.space[1]};
 `
 
-export const SocialIcon = styled.div`
+export const SocialIcon = styled.div<StyledSocialIconProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: ${theme.space[1]};
-  width: 1.25rem;
-  height: 1.25rem;
   background: ${theme.colors.white50};
-  border-radius: 1.279rem;
+  border-radius: 50%;
+
+  ${({ size }) => (size === 'lg' || !size) && css`
+    width: 1.25rem;
+    height: 1.25rem;
+  `}
+
+  ${({ size }) => size === 'md' && css`
+    width: 1rem;
+    height: 1rem;
+    max-width: 1rem;
+    max-height: 1rem;
+  `}
 `
 
 export const SocialText = styled.span`
+  font-family: ${theme.fontWeights.regular};
+  font-size: 0.6875rem;
   font-style: normal;
-  font-weight: ${theme.fontWeights.regular};
-  font-size: 0.688rem;
-  line-height: 0.875rem;
+  font-weight: 400;
+  line-height: 0.875rem; /* 127.273% */
   color: ${theme.colors.white50};
 `
 
@@ -61,7 +93,7 @@ export const SiteText = styled.span`
   font-family: ${theme.fonts.default};
   font-style: normal;
   font-weight: ${theme.fontWeights.semiBold};
-  font-size: 0.688rem;
+  font-size: 0.6875rem;
   line-height: 0.875rem;
   color: ${theme.colors.white50};
 `
