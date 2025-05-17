@@ -18,20 +18,37 @@ npm install @abqm-ui2/icons
 
 ---
 
+### ⚙️ Como Funciona
+
+1. Adicione os arquivos **SVG** que deseja converter na pasta src/icons:
+2. Em seguida, execute o comando abaixo no terminal:
+
+```bash
+npm run generate
+```
+
+3. O processo de geração segue estas etapas:
+   - Os ícones são convertidos e salvos temporariamente na pasta `_temp`.
+   - Em seguida, são organizados e movidos para a pasta `componentes`.
+
+> 💡 Esse processo evita que todos os ícones existentes sejam modificados a cada nova adição. O script verifica se um ícone já existe e somente cria ou atualiza os que são realmente novos ou alterados.
+
+---
+
 ## 💡 Como Usar
 
 Importe o componente do ícone desejado diretamente:
 
 ```tsx
-import { FacebookIcon, InstagramIcon, YoutubeIcon, HorseIcon } from '@abqm-ui2/icons';
+import { Facebook, Instagram, Youtube, Horse } from '@abqm-ui2/icons';
 
 export function Example() {
   return (
     <div style={ display: 'flex', gap: 16 }>
-      <FacebookIcon width={24} height={24} fill="#1877F2" />
-      <InstagramIcon width={24} height={24} fill="#E1306C" />
-      <YoutubeIcon width={24} height={24} fill="#FF0000" />
-      <HorseIcon width={32} height={32} />
+      <Facebook width={24} height={24} fill="#1877F2" />
+      <Instagram width={24} height={24} fill="#E1306C" />
+      <Youtube width={24} height={24} fill="#FF0000" />
+      <Horse width={32} height={32} />
     </div>
   );
 }
@@ -80,9 +97,11 @@ Esse comando usa o `tsup` para gerar a pasta `dist/` com módulos `esm`, `cjs` e
 
 ```bash
 packages/icons/
+├── scripts/             # Scripts de desenvolvimento
 ├── src/
 │   ├── icons/           # SVGs originais
 │   ├── components/      # Componentes React (.tsx)
+│   ├── _temp/           # Svgs Temporários
 │   └── index.ts         # Exportações centralizadas
 ├── tsconfig.json
 ├── package.json
