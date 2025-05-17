@@ -33,7 +33,7 @@ export const colors = {
   yellow400: '#FFCD00',
 
   green100: '#95C23D',
-  green300: '#009843',
+  green300: '#009640',
   green500: '#006B2D',
   green700: '#476153',
   green900: '#002F14',
