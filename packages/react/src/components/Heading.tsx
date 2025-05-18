@@ -31,10 +31,17 @@ interface StyledHeadingProps {
 
 const StyledHeading = styled.h2<StyledHeadingProps>`
   font-family: ${theme.fonts.default};
-  font-weight: ${theme.fontWeights.bold};
   line-height: ${theme.lineHeights.shorter};
   margin: 0;
   color: ${theme.colors.gray100};
+  letter-spacing: -0.075rem;
+
+  // semi default
+  ${({ weight }) =>
+    weight &&
+    css`
+      font-weight: ${weightVariants[weight]};
+    `}
 
   ${({ size }) =>
     size &&
@@ -42,10 +49,10 @@ const StyledHeading = styled.h2<StyledHeadingProps>`
       font-size: ${sizeVariants[size]};
     `}
 
-  ${({ weight }) =>
-    weight &&
+  ${({ size }) =>
+    size === 'sm' &&
     css`
-      font-weight: ${weightVariants[weight]};
+      letter-spacing: -0.105rem;
     `}
 `;
 
@@ -60,7 +67,7 @@ export function Heading({
   children,
   size = 'md',
   as = 'h2',
-  weight,
+  weight = 'semi',
   ...rest
 }: HeadingProps) {
   return (
