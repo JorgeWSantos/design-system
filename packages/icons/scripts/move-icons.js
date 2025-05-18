@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Caminhos corrigidos
-const tempDir = path.resolve(__dirname, '../src/_temp'); // <-- AQUI!
+const tempDir = path.resolve(__dirname, '../src/_temp');
 const finalDir = path.resolve(__dirname, '../src/components');
 const indexFile = path.resolve(__dirname, '../src/index.ts');
 
@@ -26,9 +26,10 @@ const tempFiles = fs.readdirSync(tempDir).filter((f) => f.endsWith('.tsx'));
 const exports = [];
 
 for (const file of tempFiles) {
+  const baseName = path.basename(file, '.tsx');
+  const componentName = `${baseName}Icon`;
   const fromPath = path.join(tempDir, file);
-  const toPath = path.join(finalDir, file);
-  const componentName = path.basename(file, '.tsx');
+  const toPath = path.join(finalDir, `${componentName}.tsx`);
 
   if (fs.existsSync(toPath)) {
     console.log(`⏩ Ignorado (já existe): ${componentName}`);
