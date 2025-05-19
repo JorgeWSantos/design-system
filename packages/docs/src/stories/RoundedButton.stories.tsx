@@ -1,15 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { RoundedButton, RoundedButtonProps } from '@abqm-ui2/react';
-import { ArrowRight } from 'phosphor-react';
-import { PlusIcon } from '@abqm-ui2/icons';
+import { FilterIcon, PlusIcon, PrinterIcon } from '@abqm-ui2/icons';
 
 export default {
   title: 'Components/RoundedButton',
   component: RoundedButton,
   args: {
     children: <PlusIcon width={14} height={14} />,
-    size: 'md',
-    label: 'Enviar',
     disabled: false,
   },
   argTypes: {
@@ -18,7 +15,7 @@ export default {
         type: 'boolean',
       },
     },
-    onClick: { action: 'click' },
+    onClick: { action: 'test' },
   },
 } as Meta<RoundedButtonProps>;
 
@@ -26,40 +23,13 @@ export const Primary: StoryObj<RoundedButtonProps> = {};
 
 export const Secondary: StoryObj<RoundedButtonProps> = {
   args: {
-    variant: 'secondary',
-    children: 'Criar',
-  },
-};
-
-export const Tertiary: StoryObj<RoundedButtonProps> = {
-  args: {
-    variant: 'tertiary',
-    children: 'Cancelar',
-  },
-};
-
-export const Small: StoryObj<RoundedButtonProps> = {
-  args: {
-    size: 'sm',
-    children: 'Enviar',
-  },
-};
-
-export const WithIcon: StoryObj<RoundedButtonProps> = {
-  args: {
-    size: 'sm',
-    children: (
-      <>
-        Próximo Passo
-        <ArrowRight weight="bold" />
-      </>
-    ),
+    children: <FilterIcon width={14} height={14} />,
   },
 };
 
 export const Disabled: StoryObj<RoundedButtonProps> = {
   args: {
-    children: 'Desabilitado',
+    children: <PrinterIcon width={14} height={14} />,
     disabled: true,
   },
 };

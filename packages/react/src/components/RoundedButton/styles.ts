@@ -1,23 +1,9 @@
 import { theme } from '@styles/index';
-import styled from 'styled-components';
-
-export type Variant = 'primary' | 'secondary' | 'tertiary';
-export type Size = 'sm' | 'md';
+import styled, { css } from 'styled-components';
 
 export interface RoundedButtonStyleProps {
-  variant?: Variant;
-  size?: Size;
+  disabled?: boolean;
 }
-
-export const ContainerRoundedButton = styled.div`
-  display: flex;
-  width: 4.25rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  background-color: #737373;
-`;
 
 export const StyledRoundedButton = styled.button<RoundedButtonStyleProps>`
   display: flex;
@@ -25,14 +11,17 @@ export const StyledRoundedButton = styled.button<RoundedButtonStyleProps>`
   justify-content: center;
   align-items: center;
 
-  border: none;
-
   width: 22px;
   height: 22px;
 
+  border: none;
   border-radius: ${theme.radii.half};
 
-  p {
-    line-height: 0.875rem;
-  }
+  background-color: ${theme.colors.white};
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      background-color: ${theme.colors.white50};
+    `}
 `;
