@@ -14,6 +14,7 @@
   "dependencies": {
     "@abqm-ui2/react": "*",
     "@abqm-ui2/tokens": "*",
+    "@abqm-ui2/icons": "*",
     "@abqm-ui2/ts-config": "*",
     "@storybook/addon-a11y": "^8.6.12",
     "phosphor-react": "^1.4.1",
