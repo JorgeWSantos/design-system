@@ -1,4 +1,4 @@
-import { ComponentProps } from 'react'
+import { ComponentProps } from 'react';
 import {
   ContainerContent,
   Social,
@@ -6,58 +6,52 @@ import {
   SocialText,
   Circle,
   SiteText,
-  SocialIcon
-} from './styles'
+  SocialIcon,
+} from './styles';
 
-import { Facebook, Instagram, Youtube } from '@abqm-ui2/icons'
-import { Size } from '../styles'
-
+import { FacebookIcon, InstagramIcon, YoutubeIcon } from '@abqm-ui2/icons';
+import { Size } from '../styles';
 
 export interface FooterContentProps extends ComponentProps<typeof ContainerContent> {
-  showIcons?: boolean
-  size: Size
+  showIcons?: boolean;
+  size: Size;
 }
 
 const socialIcons = (size: Size) => {
-
   if (size === 'md') {
     return (
       <SocialIcons>
         <SocialIcon size={size}>
-          <Youtube width={12} height={12} />
+          <YoutubeIcon width={12} height={12} />
         </SocialIcon>
         <SocialIcon size={size}>
-          <Instagram width={12} height={12} />
+          <InstagramIcon width={12} height={12} />
         </SocialIcon>
         <SocialIcon size={size}>
-          <Facebook width={14} height={13} />
+          <FacebookIcon width={14} height={13} />
         </SocialIcon>
       </SocialIcons>
-    )
+    );
   }
 
   return (
     <SocialIcons>
       <SocialIcon size={size}>
-        <Youtube width={14} height={14} style={{}} />
+        <YoutubeIcon width={14} height={14} style={{}} />
       </SocialIcon>
       <SocialIcon size={size}>
-        <Instagram
+        <InstagramIcon
           width={14}
           height={14}
           style={{ marginLeft: '0px', marginTop: '2px' }}
         />
       </SocialIcon>
       <SocialIcon size={size}>
-        <Facebook
-          width={14}
-          height={14}
-          style={{ marginTop: '1px' }}
-        />
+        <FacebookIcon width={14} height={14} style={{ marginTop: '1px' }} />
       </SocialIcon>
     </SocialIcons>
-  )
-}
+  );
+};
 
 export const FooterContent = ({ showIcons, size }: FooterContentProps) => {
   return (
@@ -69,7 +63,7 @@ export const FooterContent = ({ showIcons, size }: FooterContentProps) => {
         <SiteText>WWW.ABQM.COM.BR</SiteText>
       </Social>
     </ContainerContent>
-  )
-}
+  );
+};
 
-FooterContent.displayName = 'FooterContent'
+FooterContent.displayName = 'FooterContent';
