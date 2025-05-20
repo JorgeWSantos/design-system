@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "dev": "storybook dev -p 6006",
-    "build": "storybook build"
+    "build": "storybook build",
+    "clean": "rimraf dist && rimraf storybook-static"
   },
   "dependencies": {
     "@abqm-ui2/react": "*",

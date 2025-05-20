@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
-    "clean": "turbo run clean",
+    "clean": "turbo run clean && rimraf node_modules/@abqm-ui2 && npm i",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo run build --filter=!@abqm-ui2/docs && changeset publish"
