@@ -5,8 +5,8 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.tsx --format esm, cjs --dts --external react",
-    "dev": "tsup src/index.tsx --format esm, cjs --dts --external react --watch",
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react --external @abqm-ui2/icons",
+    "dev": "tsup src/index.tsx --format esm,cjs --dts --external react --external @abqm-ui2/icons --watch",
     "lint": "eslint src/**/*.ts* --fix",
     "clean": "rimraf dist"
   },
