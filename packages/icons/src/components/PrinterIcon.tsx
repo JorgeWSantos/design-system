@@ -1,6 +1,5 @@
-import * as React from 'react';
 import type { SVGProps } from 'react';
-const SvgPrinter = (props: SVGProps<SVGSVGElement>) => (
+const PrinterIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -16,4 +15,4 @@ const SvgPrinter = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default SvgPrinter;
+export default PrinterIcon;

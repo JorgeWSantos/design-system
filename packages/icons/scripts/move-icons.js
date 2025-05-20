@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Caminhos corrigidos
+// Caminhos
 const tempDir = path.resolve(__dirname, '../src/_temp');
 const finalDir = path.resolve(__dirname, '../src/components');
 const indexFile = path.resolve(__dirname, '../src/index.ts');
@@ -17,7 +17,7 @@ if (!fs.existsSync(tempDir)) {
   process.exit(0);
 }
 
-// Cria pasta de destino se necessário
+// Cria a pasta final se necessário
 if (!fs.existsSync(finalDir)) {
   fs.mkdirSync(finalDir, { recursive: true });
 }
@@ -27,7 +27,9 @@ const exports = [];
 
 for (const file of tempFiles) {
   const baseName = path.basename(file, '.tsx');
-  const componentName = `${baseName}Icon`;
+  const cleanedName = baseName.replace(/^svg/i, ''); // Remove prefixo svg
+  const componentName = `${cleanedName}Icon`;
+
   const fromPath = path.join(tempDir, file);
   const toPath = path.join(finalDir, `${componentName}.tsx`);
 
@@ -36,8 +38,30 @@ for (const file of tempFiles) {
     continue;
   }
 
-  fs.renameSync(fromPath, toPath);
-  console.log(`✅ Movido: ${componentName}`);
+  // Lê e modifica o conteúdo
+  let fileContent = fs.readFileSync(fromPath, 'utf-8');
+
+  // Remove a linha de importação do React
+  fileContent = fileContent.replace(
+    /import\s+\*\s+as\s+React\s+from\s+['"]react['"];?\n?/g,
+    ''
+  );
+
+  // Renomeia o nome do componente
+  const regex = new RegExp(`const\\s+Svg${cleanedName}\\b`, 'g');
+  fileContent = fileContent.replace(regex, `const ${componentName}`);
+
+  // Atualiza o export default
+  fileContent = fileContent.replace(
+    new RegExp(`export\\s+default\\s+Svg${cleanedName}\\b`, 'g'),
+    `export default ${componentName}`
+  );
+
+  // Escreve novo arquivo e remove o antigo
+  fs.writeFileSync(toPath, fileContent);
+  fs.unlinkSync(fromPath);
+
+  console.log(`✅ Movido e renomeado: ${componentName}`);
   exports.push(
     `export { default as ${componentName} } from './components/${componentName}';`
   );

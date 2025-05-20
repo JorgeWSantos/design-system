@@ -1,6 +1,5 @@
-import * as React from 'react';
 import type { SVGProps } from 'react';
-const SvgPlus = (props: SVGProps<SVGSVGElement>) => (
+const PlusIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -16,4 +15,4 @@ const SvgPlus = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default SvgPlus;
+export default PlusIcon;

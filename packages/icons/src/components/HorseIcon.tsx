@@ -1,6 +1,5 @@
-import * as React from 'react';
 import type { SVGProps } from 'react';
-const SvgHorse = (props: SVGProps<SVGSVGElement>) => (
+const HorseIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -14,4 +13,4 @@ const SvgHorse = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default SvgHorse;
+export default HorseIcon;
