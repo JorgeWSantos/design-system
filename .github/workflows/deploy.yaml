@@ -5,7 +5,7 @@ on:
   # Event for the workflow to run on
   push:
     branches:
-      - "main" # Replace with the branch you want to deploy from
+      - 'main' # Replace with the branch you want to deploy from
 
 permissions:
   contents: read
@@ -19,21 +19,26 @@ jobs:
     # Job steps
     steps:
       # Manual Checkout
-      - name: "Manual Checkout"
+      - name: 'Manual Checkout'
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       # Set up Node
-      - name: "Setup Node"
+      - name: 'Setup Node'
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
-          cache: "npm"
-          cache-dependency-path: "**/package-lock.json"
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: Clean install to fix native Rollup bug
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
 
       #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
-      - name: "Storybook Deploy to GitHub Pages"
+      - name: 'Storybook Deploy to GitHub Pages'
         uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         env:
           TURBO_TOKEN: ${{ secrets.VERCEL_CACHE_TOKEN }}
