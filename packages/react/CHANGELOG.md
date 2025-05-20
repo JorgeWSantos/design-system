@@ -1,5 +1,11 @@
 # @abqm-ui2/react
 
+## 1.0.4
+
+### Patch Changes
+
+- feat: 🎸 Adicionará novos ícones e componentes
+
 ## 1.0.3
 
 ### Patch Changes
