@@ -10,6 +10,9 @@
     "lint": "eslint src/**/*.ts* --fix",
     "clean": "rimraf dist"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "keywords": [],
   "author": "",
   "license": "MIT",
