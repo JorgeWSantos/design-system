@@ -27,6 +27,7 @@ type SizeVariants = keyof typeof sizeVariants;
 
 interface StyledHeadingProps {
   size?: SizeVariants;
+  disabled?: boolean;
 }
 
 const StyledText = styled.p<StyledHeadingProps>`
@@ -39,6 +40,12 @@ const StyledText = styled.p<StyledHeadingProps>`
     size &&
     css`
       font-size: ${sizeVariants[size]};
+    `}
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      color: ${theme.colors.white50};
     `}
 `;
 
