@@ -76,6 +76,8 @@ npm run release
 
 ---
 
+-
+
 ## 📎 Referências
 
 - [TurboRepo: Publicando bibliotecas](https://turborepo.com/docs/guides/publishing-libraries#publishing)
