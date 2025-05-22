@@ -1,16 +1,17 @@
-import { ComponentProps, CSSProperties, ElementType, ReactElement } from 'react'
-import { BoxContainer } from './styles'
+import { ComponentProps, ElementType, ReactElement } from 'react';
+import { BoxContainer } from './styles';
 
 export interface BoxProps extends ComponentProps<typeof BoxContainer> {
-  as?: ElementType,
-  children: ReactElement
-  style: CSSProperties
+  as?: ElementType;
+  children?: ReactElement;
 }
 
 export const Box = ({ children, style, ...rest }: BoxProps) => {
   return (
-    <BoxContainer style={style} {...rest}>{children}</BoxContainer>
-  )
-}
+    <BoxContainer style={style} {...rest}>
+      {children}
+    </BoxContainer>
+  );
+};
 
-Box.displayName = 'Box'
+Box.displayName = 'Box';
