@@ -1,23 +1,19 @@
-import { ComponentProps, CSSProperties, ElementType } from 'react'
-import { FooterWrapper, Size } from './styles'
-import { FooterContent } from './FooterContent'
-import { ColorBar } from '@components/ColorBar'
+import { ComponentProps, ElementType } from 'react';
+import { FooterWrapper } from './styles';
+import { FooterContent } from './FooterContent';
+import { ColorBar } from '@components/ColorBar';
 
 export interface FooterProps extends ComponentProps<typeof FooterWrapper> {
-  as?: ElementType,
-  style: CSSProperties,
-  showIcons?: boolean
-  size: Size
+  as?: ElementType;
 }
 
-
-export const Footer = ({ style, showIcons = true, size, ...rest }: FooterProps) => {
+export const Footer = ({ ...rest }: FooterProps) => {
   return (
-    <FooterWrapper size={size} style={style} {...rest}>
-      <FooterContent showIcons={showIcons} size={size} />
+    <FooterWrapper {...rest}>
+      <FooterContent />
       <ColorBar />
     </FooterWrapper>
-  )
-}
+  );
+};
 
-Footer.displayName = 'Footer'
+Footer.displayName = 'Footer';

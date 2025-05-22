@@ -1,39 +1,25 @@
-import { SizeType } from 'types/common'
-import { theme } from '../../../styles'
-import styled, { css } from 'styled-components'
+import { theme } from '../../../styles';
+import styled from 'styled-components';
+import { breakpointsPx } from '@abqm-ui2/tokens';
 
-interface StyledContainerProps {
-  size: SizeType
-}
-
-interface StyledSocialIconProps {
-  size: SizeType
-}
-
-
-export const ContainerContent = styled.div<StyledContainerProps>`
+export const ContainerContent = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  max-width: 81.75rem;
-
   border-radius: ${theme.space[2]} ${theme.space[2]} 0px 0px;
 
-    ${({ size }) => (size === 'lg' || !size) && css`
-    padding: ${theme.space[4]} ${theme.space[10]};
-  `}
+  padding: ${theme.space[4]} ${theme.space[10]};
 
-  ${({ size }) => size === 'md' && css`
-    padding: .125rem ${theme.space[10]};
+  @media (max-width: ${breakpointsPx.lg}) {
     height: 100%;
-  `}
+    padding: 0.125rem ${theme.space[10]};
+  }
 
-  ${({ size }) => size === 'sm' && css`
+  @media (max-width: ${breakpointsPx.sm}) {
     height: 100%;
     padding: ${theme.space[1]} ${theme.space[2]};
-  `}
-`
+  }
+`;
 
 export const Social = styled.div`
   display: flex;
@@ -43,7 +29,7 @@ export const Social = styled.div`
   gap: ${theme.space[1.5]};
 
   margin: 0 auto;
-`
+`;
 
 export const SocialIcons = styled.div`
   display: flex;
@@ -51,27 +37,25 @@ export const SocialIcons = styled.div`
   align-items: center;
   padding: 0px;
   gap: ${theme.space[1]};
-`
+`;
 
-export const SocialIcon = styled.div<StyledSocialIconProps>`
+export const SocialIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   background: ${theme.colors.white50};
   border-radius: 50%;
 
-  ${({ size }) => (size === 'lg' || !size) && css`
-    width: 1.25rem;
-    height: 1.25rem;
-  `}
+  width: 1.25rem;
+  height: 1.25rem;
 
-  ${({ size }) => size === 'md' && css`
+  @media (max-width: ${breakpointsPx.lg}) {
     width: 1rem;
     height: 1rem;
     max-width: 1rem;
     max-height: 1rem;
-  `}
-`
+  }
+`;
 
 export const SocialText = styled.span`
   font-family: ${theme.fontWeights.regular};
@@ -80,14 +64,14 @@ export const SocialText = styled.span`
   font-weight: 400;
   line-height: 0.875rem; /* 127.273% */
   color: ${theme.colors.white50};
-`
+`;
 
 export const Circle = styled.div`
   width: 0.125rem;
   height: 0.125rem;
   background: ${theme.colors.white50};
   border-radius: 50%;
-`
+`;
 
 export const SiteText = styled.span`
   font-family: ${theme.fonts.default};
@@ -96,4 +80,4 @@ export const SiteText = styled.span`
   font-size: 0.6875rem;
   line-height: 0.875rem;
   color: ${theme.colors.white50};
-`
+`;

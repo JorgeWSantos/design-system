@@ -1,10 +1,11 @@
-import { theme } from '../../styles'
-import styled, { css } from 'styled-components'
+import { breakpointsPx } from '@abqm-ui2/tokens';
+import { theme } from '../../styles';
+import styled from 'styled-components';
 
-export type Size = 'sm' | 'md' | 'lg'
+export type Size = 'sm' | 'md' | 'lg' | undefined;
 
 export interface StyledFooterWrapperProps {
-  size: Size
+  size?: Size;
 }
 
 export const FooterWrapper = styled.footer<StyledFooterWrapperProps>`
@@ -16,21 +17,19 @@ export const FooterWrapper = styled.footer<StyledFooterWrapperProps>`
   /* margin-top: ${theme.space[2]} !important; */
   margin: ${theme.space[2]} auto 0 auto;
 
-  max-width: 81.75rem;
+  width: 100%;
+  height: 3.598rem;
+
+  align-self: end;
 
   background: ${theme.colors.emeraldGreen50};
   border-radius: ${theme.space[2]} ${theme.space[2]} 0px 0px;
 
-  ${({ size }) => (size === 'lg' || !size) && css`
-    /* height: 3.473rem; */
-    height: 57.56px;
-  `}
-
-  ${({ size }) => size === 'md' && css`
+  @media (max-width: ${breakpointsPx.lg}) {
     height: 2.5rem;
-  `}
+  }
 
-  ${({ size }) => size === 'sm' && css`
+  @media (max-width: ${breakpointsPx.sm}) {
     height: 2.188rem;
-  `}
-`
+  }
+`;

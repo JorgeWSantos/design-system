@@ -10,54 +10,63 @@ import {
 } from './styles';
 
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from '@abqm-ui2/icons';
-import { Size } from '../styles';
+import { breakpoints } from '@abqm-ui2/tokens';
+import { useWindowSize } from 'utils/useWindowSize';
 
-export interface FooterContentProps extends ComponentProps<typeof ContainerContent> {
-  showIcons?: boolean;
-  size: Size;
-}
+export interface FooterContentProps extends ComponentProps<typeof ContainerContent> {}
 
-const socialIcons = (size: Size) => {
-  if (size === 'md') {
+const socialIcons = (width: number) => {
+  if (width > breakpoints.lg) {
     return (
       <SocialIcons>
-        <SocialIcon size={size}>
+        <SocialIcon>
           <YoutubeIcon width={12} height={12} />
         </SocialIcon>
-        <SocialIcon size={size}>
-          <InstagramIcon width={12} height={12} />
+        <SocialIcon>
+          <InstagramIcon width={12} height={12} style={{ marginTop: '1px' }} />
         </SocialIcon>
-        <SocialIcon size={size}>
-          <FacebookIcon width={14} height={13} />
+        <SocialIcon>
+          <FacebookIcon width={14} height={13} style={{ marginTop: '1px' }} />
         </SocialIcon>
       </SocialIcons>
     );
   }
 
-  return (
-    <SocialIcons>
-      <SocialIcon size={size}>
-        <YoutubeIcon width={14} height={14} style={{}} />
-      </SocialIcon>
-      <SocialIcon size={size}>
-        <InstagramIcon
-          width={14}
-          height={14}
-          style={{ marginLeft: '0px', marginTop: '2px' }}
-        />
-      </SocialIcon>
-      <SocialIcon size={size}>
-        <FacebookIcon width={14} height={14} style={{ marginTop: '1px' }} />
-      </SocialIcon>
-    </SocialIcons>
-  );
+  if (width > breakpoints.md) {
+    return (
+      <SocialIcons>
+        <SocialIcon>
+          <YoutubeIcon width={12} height={11} style={{}} />
+        </SocialIcon>
+        <SocialIcon>
+          <InstagramIcon
+            width={12}
+            height={13}
+            style={{ marginLeft: '0px', marginTop: '1px' }}
+          />
+        </SocialIcon>
+        <SocialIcon>
+          <FacebookIcon
+            width={14}
+            height={13}
+            style={{ marginLeft: '-1px', marginTop: '1px' }}
+          />
+        </SocialIcon>
+      </SocialIcons>
+    );
+  }
+
+  return <></>;
 };
 
-export const FooterContent = ({ showIcons, size }: FooterContentProps) => {
+export const FooterContent = () => {
+  const { width } = useWindowSize();
+
   return (
-    <ContainerContent size={size}>
+    <ContainerContent>
       <Social>
-        {showIcons && socialIcons(size)}
+        {socialIcons(width)}
+
         <SocialText>@ABQMOFICIAL</SocialText>
         <Circle />
         <SiteText>WWW.ABQM.COM.BR</SiteText>
