@@ -6,7 +6,9 @@ import {
   lineHeights,
   radii,
   space,
-} from '@abqm-ui2/tokens'
+  breakpoints,
+  breakpointsPx,
+} from '@abqm-ui2/tokens';
 
 export const theme = {
   colors,
@@ -16,4 +18,6 @@ export const theme = {
   lineHeights,
   radii,
   space,
-}
+  breakpoints,
+  breakpointsPx,
+};
