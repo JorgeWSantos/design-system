@@ -10,7 +10,8 @@
     "clean": "turbo run clean && rimraf node_modules/@abqm-ui2",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build --filter=!@abqm-ui2/docs && changeset publish"
+    "release": "turbo run build --filter=!@abqm-ui2/docs && changeset publish",
+    "link:monorepo": "cd packages/react && npm link && cd .. && cd .. && cd packages/icons && npm link && cd .. && cd .. && cd packages/tokens && npm link && cd .. && cd .."
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",

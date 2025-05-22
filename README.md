@@ -26,16 +26,15 @@ npm run dev
 Para testar o pacote localmente em um projeto externo ao monorepo, siga os passos abaixo:
 
 ```bash
-cd packages/react && npm link
-cd packages/icons && npm link
-cd packages/token && npm link
+npm run link:monorepo
 npm run dev
 ```
 
 #### 🧪 No projeto externo (fora do monorepo):
 
 ```bash
-npm link @abqm-ui2/tokens @abqm-ui2/react @abqm-ui2/icons
+npm run link:monorepo
+npm run dev
 ```
 
 > ⚠️ Atenção: Executar npm install no projeto externo irá sobrescrever o link local e reinstalar a versão publicada no NPM.
