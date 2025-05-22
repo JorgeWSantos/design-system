@@ -1,6 +1,6 @@
 import { ComponentProps, ElementType, ReactNode } from 'react';
 
-import { ButtonsWrapper, HeadingWrapper, Size, StyledHeader, Variant } from './styles';
+import { ButtonsWrapper, HeadingWrapper, StyledHeader } from './styles';
 import { Heading } from '@components/Heading';
 import { ColorBar } from '@components/ColorBar';
 import { WeightTypes } from 'types/tipography';
@@ -15,24 +15,15 @@ interface ButtonProps {
 
 export interface HeaderProps extends ComponentProps<typeof StyledHeader> {
   as?: ElementType;
-  variant?: Variant;
-  size?: Size;
   text: string;
-  fontWeight: WeightTypes;
-  buttons: ButtonProps[];
+  fontWeight?: WeightTypes;
+  buttons?: ButtonProps[];
 }
 
-export const Header = ({
-  variant,
-  size,
-  text,
-  fontWeight,
-  buttons,
-  ...rest
-}: HeaderProps) => {
+export const Header = ({ text, fontWeight, buttons, ...rest }: HeaderProps) => {
   return (
-    <StyledHeader variant={variant} size={size} {...rest}>
-      <HeadingWrapper size={size}>
+    <StyledHeader {...rest}>
+      <HeadingWrapper>
         <Heading size="md" weight={fontWeight}>
           {text}
         </Heading>

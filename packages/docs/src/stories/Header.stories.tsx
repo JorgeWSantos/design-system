@@ -11,7 +11,6 @@ export default {
 export const Primary: StoryObj<HeaderProps> = {
   args: {
     text: 'Calendários',
-    size: 'md',
     fontWeight: 'semi',
   },
 };
@@ -19,23 +18,13 @@ export const Primary: StoryObj<HeaderProps> = {
 export const Secondary: StoryObj<HeaderProps> = {
   args: {
     text: 'Calendários',
-    size: 'md',
-    // fontWeight: 'regular',
-  },
-};
-
-export const Tertiary: StoryObj<HeaderProps> = {
-  args: {
-    text: 'Calendários',
-    size: 'sm',
-    // fontWeight: 'regular',
+    fontWeight: 'bold',
   },
 };
 
 export const WithButtons: StoryObj<HeaderProps> = {
   args: {
     text: 'Calendários',
-    size: 'md',
     buttons: [
       {
         icon: <HorseIcon />,
@@ -60,7 +49,6 @@ export const WithButtons: StoryObj<HeaderProps> = {
 export const WithButtonsDisabled: StoryObj<HeaderProps> = {
   args: {
     text: 'Calendários',
-    size: 'md',
     buttons: [
       {
         icon: <PrinterIcon />,

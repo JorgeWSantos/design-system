@@ -1,47 +1,35 @@
-import { theme } from '@styles/index';
-import styled, { css } from 'styled-components';
+import { breakpointsPx, colors, space } from '@abqm-ui2/tokens';
+import styled from 'styled-components';
 
-export type Variant = 'primary' | 'secondary' | 'tertiary';
-export type Size = 'sm' | 'md';
-
-export interface StyledHeaderProps {
-  variant?: Variant;
-}
-
-export interface HeaderWrapperStyleProps {
-  size?: Size;
-}
-
-export const StyledHeader = styled.header<StyledHeaderProps>`
+export const StyledHeader = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   background-color: red;
   height: 2.875rem;
-  gap: ${theme.space[1]};
+  width: 100%;
+  gap: ${space[1]};
 
-  background: ${theme.colors.white25};
-  border-radius: ${theme.space[2]} ${theme.space[2]} 0px 0px;
+  background: ${colors.white25};
+  border-radius: ${space[2]} ${space[2]} 0px 0px;
 
-  padding-top: ${theme.space[1]};
+  padding-top: ${space[1]};
 `;
 
-export const HeadingWrapper = styled.div<HeaderWrapperStyleProps>`
+export const HeadingWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 
   height: 100%;
-  padding: 0rem ${theme.space[6]};
+  padding: 0rem ${space[6]};
 
-  ${({ size }) =>
-    size === 'sm' &&
-    css`
-      padding: 0rem ${theme.space[3]};
-    `}
+  @media (max-width: ${breakpointsPx.sm}) {
+    padding: 0rem ${space[3]};
+  }
 `;
 
 export const ButtonsWrapper = styled.div`
   display: flex;
-  gap: ${theme.space[2]};
+  gap: ${space[2]};
 `;
