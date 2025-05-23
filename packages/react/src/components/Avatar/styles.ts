@@ -14,21 +14,16 @@ export const StyledImageContainer = styled.div`
   overflow: hidden;
   border: 1px solid ${colors.white25};
 
+  div {
+    background-color: white;
+  }
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
     display: block;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0px;
-    border-radius: 50%;
-    border: 1px solid ${colors.white25};
-    pointer-events: none;
   }
 `;
 
@@ -37,6 +32,6 @@ export const FallbackIcon = styled(PersonCircleIcon)`
   height: 100%;
 
   path {
-    fill: ${colors.white50};
+    fill: ${colors.gray500};
   }
 `;
