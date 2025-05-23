@@ -29,13 +29,20 @@ export default [
         project: ['./packages/react/tsconfig.json'],
         tsconfigRootDir: __dirname,
       },
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        window: 'readonly',
+        document: 'readonly',
+        setTimeout: 'readonly',
+        requestAnimationFrame: 'readonly',
+      },
     },
     plugins: {
       '@typescript-eslint': tsPlugin,
     },
-    env: {
-      browser: true,
-      es2021: true,
+    rules: {
+      // regras específicas do pacote react (opcional)
     },
   },
 
