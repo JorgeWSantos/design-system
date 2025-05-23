@@ -31,7 +31,7 @@ npm install @abqm-ui2/icons
 2. Em seguida, execute o comando abaixo no terminal:
 
 ```bash
-npm run generate
+npm run generate:icons
 ```
 
 3. O processo de geração segue estas etapas:
