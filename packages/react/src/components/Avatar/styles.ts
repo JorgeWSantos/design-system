@@ -31,7 +31,7 @@ export const FallbackIcon = styled(PersonCircleIcon)`
   width: 100%;
   height: 100%;
 
-  path {
+  /* path {
     fill: ${colors.gray500};
-  }
+  } */
 `;
