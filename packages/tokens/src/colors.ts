@@ -16,6 +16,7 @@ export const colors = {
   // opacitys
   white25: '#ffffff40',
   white50: '#ffffff80',
+  white75: '#FFFFFFBF',
   white85: '#ffffffd9',
 
   black25: '#00000040',
