@@ -1,33 +1,42 @@
-import { styled } from 'styled-components'
-import * as Avatar from '@radix-ui/react-avatar'
-import { theme } from '../../styles'
+import { PersonCircleIcon } from '@abqm-ui2/icons';
+import { colors } from '@abqm-ui2/tokens';
+import styled from 'styled-components';
 
-export const AvatarContainer = styled(Avatar.Root)` 
-  border-radius: ${theme.radii.full};
-  display: inline-block;
-  width: ${theme.space[16]};
-  height: ${theme.space[16]};
+export const StyledImageContainer = styled.div`
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  border-radius: 50%;
   overflow: hidden;
-`
+  border: 1px solid ${colors.white25};
 
-export const AvatarImage = styled(Avatar.Image)`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
-`
-
-export const AvatarFallback = styled(Avatar.Fallback)`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: ${theme.colors.gray600};
-  color: ${theme.colors.gray800};
-
-  svg {
-    width: ${theme.space[6]};
-    height: ${theme.space[6]};
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
   }
-`
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 1px solid ${colors.white25};
+    pointer-events: none;
+  }
+`;
+
+export const FallbackIcon = styled(PersonCircleIcon)`
+  width: 100%;
+  height: 100%;
+
+  path {
+    fill: ${colors.white50};
+  }
+`;
