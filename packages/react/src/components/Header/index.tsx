@@ -3,7 +3,7 @@ import { ComponentProps, ElementType, ReactNode } from 'react';
 import { ButtonsWrapper, HeadingWrapper, StyledHeader } from './styles';
 import { Heading } from '@components/Heading';
 import { ColorBar } from '@components/ColorBar';
-import { WeightTypes } from 'types/tipography';
+import { FontWeightTypes } from 'types/tipography';
 import { HeaderButton } from './HeaderButton';
 
 interface ButtonProps {
@@ -16,7 +16,7 @@ interface ButtonProps {
 export interface HeaderProps extends ComponentProps<typeof StyledHeader> {
   as?: ElementType;
   text: string;
-  fontWeight?: WeightTypes;
+  fontWeight?: FontWeightTypes;
   buttons?: ButtonProps[];
 }
 

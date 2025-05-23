@@ -2,6 +2,7 @@
 import styled, { css } from 'styled-components';
 import { ComponentProps, ElementType, ReactNode } from 'react';
 import { theme } from '../styles';
+import { fontWeightTypes, FontWeightTypes } from 'types/tipography';
 
 const sizeVariants = {
   sm: theme.fontSizes.xl,
@@ -14,19 +15,11 @@ const sizeVariants = {
   '6xl': theme.fontSizes['9xl'],
 };
 
-const weightVariants = {
-  regular: theme.fontWeights.regular,
-  medium: theme.fontWeights.medium,
-  semi: theme.fontWeights.semiBold,
-  bold: theme.fontWeights.bold,
-};
-
 type SizeVariants = keyof typeof sizeVariants;
-type WeightVariants = keyof typeof weightVariants;
 
 interface StyledHeadingProps {
   size?: SizeVariants;
-  weight?: WeightVariants;
+  weight?: FontWeightTypes;
 }
 
 const StyledHeading = styled.h2<StyledHeadingProps>`
@@ -40,7 +33,7 @@ const StyledHeading = styled.h2<StyledHeadingProps>`
   ${({ weight }) =>
     weight &&
     css`
-      font-weight: ${weightVariants[weight]};
+      font-weight: ${fontWeightTypes[weight]};
     `}
 
   ${({ size }) =>
@@ -60,14 +53,14 @@ export interface HeadingProps extends ComponentProps<typeof StyledHeading> {
   as?: ElementType;
   children: ReactNode;
   size?: SizeVariants;
-  weight?: WeightVariants;
+  weight?: FontWeightTypes;
 }
 
 export function Heading({
   children,
   size = 'md',
   as = 'h2',
-  weight = 'semi',
+  weight = 'semiBold',
   ...rest
 }: HeadingProps) {
   return (

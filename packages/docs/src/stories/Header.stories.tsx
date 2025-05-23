@@ -11,7 +11,7 @@ export default {
 export const Primary: StoryObj<HeaderProps> = {
   args: {
     text: 'Calendários',
-    fontWeight: 'semi',
+    fontWeight: 'semiBold',
   },
 };
 
