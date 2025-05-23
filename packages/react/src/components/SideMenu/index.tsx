@@ -7,7 +7,7 @@ import {
   SubmenuItem,
   SubmenuLink,
 } from './styles';
-import { Text } from '@abqm-ui2/react';
+import { Text } from '../Text';
 
 type MenuItemType = {
   name: string;
