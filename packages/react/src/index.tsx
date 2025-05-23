@@ -12,3 +12,4 @@ export * from './components/ColorBar';
 export * from './components/Footer';
 export * from './components/Header';
 export * from './components/RoundedButton';
+export * from './components/SideMenu';
