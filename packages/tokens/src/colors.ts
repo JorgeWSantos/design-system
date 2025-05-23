@@ -23,8 +23,10 @@ export const colors = {
   black75: '#000000BF',
   black85: '#000000d9',
 
+  emeraldGreen25: '#00271040',
   emeraldGreen50: '#00100780',
   emeraldGreen75: '#001007BF',
+  emeraldGreen92: '#001007EB',
 
   brown500: '#A65E2E',
   brown700: '#5A2412',
@@ -44,4 +46,4 @@ export const colors = {
   ignite500: '#00875F',
   ignite700: '#015F43',
   ignite900: '#00291D',
-}
+};
