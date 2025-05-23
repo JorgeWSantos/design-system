@@ -1,4 +1,4 @@
-import { colors, space } from '@abqm-ui2/tokens';
+import { colors, radii, space } from '@abqm-ui2/tokens';
 import styled, { css } from 'styled-components';
 
 export const MenuList = styled.ul`
@@ -13,8 +13,8 @@ export const MenuItem = styled.li<{
   lastIndex: number;
   isSelected?: boolean;
 }>`
-  min-width: 200px;
-  max-height: 34px;
+  min-width: 12.5rem;
+  max-height: 2.125rem;
   margin-bottom: 1px;
 
   display: flex;
@@ -37,14 +37,14 @@ export const MenuItem = styled.li<{
   ${({ index }) =>
     index === 0 &&
     css`
-      border-radius: 0.25rem 0.25rem 0rem 0rem;
+      border-radius: ${space[1]} ${space[1]} 0rem 0rem;
     `}
 
   // round last item menu
   ${({ index, lastIndex }) =>
     index === lastIndex &&
     css`
-      border-radius: 0rem 0rem 0.25rem 0.25rem;
+      border-radius: 0rem 0rem ${space[1]} ${space[1]};
       border-bottom: none;
     `}
 `;
@@ -54,7 +54,7 @@ export const MenuLink = styled.a`
   color: white;
   width: 100%;
   text-decoration: none;
-  padding: 0.5rem 0.75rem;
+  padding: ${space[2]} ${space[3]};
 `;
 
 export const SubmenuList = styled.ul<{ visible: boolean }>`
@@ -62,8 +62,8 @@ export const SubmenuList = styled.ul<{ visible: boolean }>`
   left: 100%;
   top: 0;
   z-index: 1;
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  border-radius: 0.25rem;
+  border: ${radii.pxx} solid ${colors.white25};
+  border-radius: ${space[1]};
   padding: ${space[4]};
   background-color: ${colors.emeraldGreen92};
   overflow: hidden;
@@ -76,12 +76,11 @@ export const SubmenuList = styled.ul<{ visible: boolean }>`
 export const SubmenuItem = styled.li`
   width: 200px;
   height: 34px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: ${radii.px} solid ${colors.white25};
 `;
 
 export const SubmenuLink = styled.a`
   display: block;
-  padding: 8px 12px;
-  color: white;
-  text-decoration: none;
+  padding: ${space[2]} ${space[3]};
+  color: ${colors.white75};
 `;
