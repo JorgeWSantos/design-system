@@ -7,3 +7,6 @@ export { default as PlusIcon } from './components/PlusIcon';
 export { default as PrinterIcon } from './components/PrinterIcon';
 
 export { default as YoutubeIcon } from './components/YoutubeIcon';
+
+export { default as CaretDownIcon } from './components/CaretDownIcon';
+export { default as CaretRightIcon } from './components/CaretRightIcon';

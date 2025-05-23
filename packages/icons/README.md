@@ -21,6 +21,13 @@ npm install @abqm-ui2/icons
 ### ⚙️ Como Funciona
 
 1. Adicione os arquivos **SVG** que deseja converter na pasta src/icons:
+
+   > OBS: a nomenclaruta dos icones deve ser capitalized, ex:
+   >
+   > ❌ caretright.svg
+   >
+   > ✅ CaretRight.svg
+
 2. Em seguida, execute o comando abaixo no terminal:
 
 ```bash
