@@ -1,6 +1,5 @@
 // eslint.config.js (modo ESM)
 import js from '@eslint/js';
-import { FlatCompat } from '@eslint/eslintrc';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
@@ -33,6 +32,10 @@ export default [
     },
     plugins: {
       '@typescript-eslint': tsPlugin,
+    },
+    env: {
+      browser: true,
+      es2021: true,
     },
   },
 
