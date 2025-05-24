@@ -10,7 +10,7 @@ import {
 } from 'types/tipography';
 
 interface StyledHeadingProps {
-  size?: FontSizeTypes;
+  fontSize?: FontSizeTypes;
   disabled?: boolean;
   fontWeight?: FontWeightTypes;
   lineHeight?: LineHeightTypes;
@@ -23,10 +23,10 @@ export const StyledText = styled.p<StyledHeadingProps>`
   margin: 0;
   color: ${colors.gray100};
 
-  ${({ size }) =>
-    size &&
+  ${({ fontSize }) =>
+    fontSize &&
     css`
-      font-size: ${fontSizeTypes[size]};
+      font-size: ${fontSizeTypes[fontSize]};
     `}
 
   ${({ disabled }) =>

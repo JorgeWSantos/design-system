@@ -5,14 +5,14 @@ import { FontSizeTypes, FontWeightTypes, LineHeightTypes } from 'types/tipograph
 export interface TextProps extends ComponentProps<typeof StyledText> {
   as?: ElementType;
   children: ReactNode;
-  size?: FontSizeTypes;
+  fontSize?: FontSizeTypes;
   fontWeight?: FontWeightTypes;
   lineHeight?: LineHeightTypes;
 }
 
 export function Text({
   children,
-  size = 'md',
+  fontSize = 'md',
   fontWeight,
   lineHeight,
   as = 'p',
@@ -21,7 +21,7 @@ export function Text({
   return (
     <StyledText
       as={as}
-      size={size}
+      fontSize={fontSize}
       fontWeight={fontWeight}
       lineHeight={lineHeight}
       {...rest}
