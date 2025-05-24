@@ -13,6 +13,8 @@ export const StyledImageContainer = styled.div`
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid ${colors.white25};
+  background-color: ${colors.white25};
+  z-index: 1;
 
   div {
     background-color: white;
