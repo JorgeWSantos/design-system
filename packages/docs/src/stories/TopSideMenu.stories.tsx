@@ -11,3 +11,10 @@ export const Primary: StoryObj<TopSideMenuProps> = {
     userName: 'Jhon Who',
   },
 };
+
+export const Secondary: StoryObj<TopSideMenuProps> = {
+  args: {
+    userName: 'Jorge Santos',
+    srcImage: 'https://avatars.githubusercontent.com/u/36779335?v=4',
+  },
+};

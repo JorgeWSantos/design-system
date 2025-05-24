@@ -7,18 +7,20 @@ export interface TopSideMenuProps extends ComponentProps<typeof TopSideWrapper> 
   as?: ElementType;
   text?: string;
   userName?: string;
+  srcImage: string;
 }
 
 export const TopSideMenu = ({
   text = 'SISTEMA DE ESPORTES',
   userName = 'Jhon Doe',
+  srcImage = '',
   ...rest
 }: TopSideMenuProps) => {
   return (
     <TopSideWrapper {...rest}>
       <LogoSeqmIcon width={'108px'} height={'48px'} />
       <TextSideMenu>{text}</TextSideMenu>
-      <UserDropDown userName={userName} />
+      <UserDropDown userName={userName} srcImage={srcImage} />
     </TopSideWrapper>
   );
 };
