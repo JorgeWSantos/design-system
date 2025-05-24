@@ -2,13 +2,7 @@ import { breakpointsPx } from '@abqm-ui2/tokens';
 import { theme } from '../../styles';
 import styled from 'styled-components';
 
-export type Size = 'sm' | 'md' | 'lg' | undefined;
-
-export interface StyledFooterWrapperProps {
-  size?: Size;
-}
-
-export const FooterWrapper = styled.footer<StyledFooterWrapperProps>`
+export const FooterWrapper = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
