@@ -5,9 +5,7 @@ import styled from 'styled-components';
 export const TopSideWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
-  padding: 0px;
   gap: 0.25rem;
   width: 12.5rem;
   height: 7.5rem;
