@@ -12,3 +12,5 @@ export { default as CaretDownIcon } from './components/CaretDownIcon';
 export { default as CaretRightIcon } from './components/CaretRightIcon';
 
 export { default as PersonCircleIcon } from './components/PersonCircleIcon';
+
+export { default as LogoSeqmIcon } from './components/LogoSeqmIcon';
