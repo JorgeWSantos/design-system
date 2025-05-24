@@ -88,7 +88,7 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
                 setMenuItemSelectedIndex(i);
               }}
             >
-              <Text size="smm" fontWeight="regular" lineHeight="tight">
+              <Text fontSize="smm" fontWeight="regular" lineHeight="tight">
                 {item.name}
               </Text>
             </MenuLink>
