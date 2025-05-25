@@ -6,8 +6,11 @@ import {
   SubmenuList,
   SubmenuItem,
   SubmenuLink,
+  CaretIcon,
 } from './styles';
 import { Text } from '../Text';
+import { CaretRightIcon } from '@abqm-ui2/icons';
+import { colors } from '@abqm-ui2/tokens';
 
 type MenuItemType = {
   name: string;
@@ -37,12 +40,16 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
   const [fadeInSubmenu, setFadeInSubmenu] = useState<number | null>(null);
 
   const handleOpenSubMenu = (index: number, item: MenuItems) => {
+    console.log(index, item);
+
     if ('submenu' in item) {
       const isVisible = item.open_submenu;
 
       setMenu((prev) =>
-        prev.map((m, i) =>
-          i === index && 'submenu' in m ? { ...m, open_submenu: !m.open_submenu } : m
+        prev.map((item, i) =>
+          i === index && 'submenu' in item
+            ? { ...item, open_submenu: !item.open_submenu }
+            : { ...item, open_submenu: false }
         )
       );
 
@@ -72,13 +79,14 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
     <MenuList {...rest}>
       {menu.map((item, i) => {
         const hasSubmenu = 'submenu' in item;
+        const isSelected = menuItemSelectedIndex === i;
 
         return (
           <MenuItem
             key={item.name}
             index={i}
             lastIndex={menu.length - 1}
-            isSelected={menuItemSelectedIndex === i}
+            isSelected={isSelected}
           >
             <MenuLink
               href={item.link}
@@ -88,9 +96,15 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
                 setMenuItemSelectedIndex(i);
               }}
             >
-              <Text fontSize="smm" fontWeight="regular" lineHeight="tight">
+              <Text
+                fontSize="smm"
+                fontWeight="regular"
+                lineHeight="tight"
+                color={colors.white85}
+              >
                 {item.name}
               </Text>
+              <CaretIcon isSelected={isSelected} />
             </MenuLink>
 
             {hasSubmenu && (visibleSubmenu === i || fadingOutIndex === i) && (
