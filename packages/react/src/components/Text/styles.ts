@@ -21,7 +21,7 @@ export const StyledText = styled.p<StyledHeadingProps>`
   line-height: ${({ lineHeight }) => lineHeightTypes[lineHeight || 'initial']};
   font-weight: ${({ fontWeight }) => fontWeightTypes[fontWeight || 'regular']};
   margin: 0;
-  color: ${colors.gray100};
+  color: ${({ color }) => color || colors.gray100};
 
   ${({ fontSize }) =>
     fontSize &&

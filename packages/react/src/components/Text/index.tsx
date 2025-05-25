@@ -15,6 +15,7 @@ export function Text({
   fontSize = 'md',
   fontWeight,
   lineHeight,
+  color,
   as = 'p',
   ...rest
 }: TextProps) {
@@ -24,6 +25,7 @@ export function Text({
       fontSize={fontSize}
       fontWeight={fontWeight}
       lineHeight={lineHeight}
+      color={color}
       {...rest}
     >
       {children}
