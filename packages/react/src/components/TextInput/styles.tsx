@@ -1,28 +1,38 @@
-import styled, { css } from 'styled-components'
-import { theme } from '../../styles'
+import styled, { css } from 'styled-components';
+import { variantsTextInputTypes } from '.';
+import {
+  colors,
+  fonts,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+  radii,
+  space,
+} from '@abqm-ui2/tokens';
 
 const sizeVariants = {
-  sm: `${theme.space[2]} ${theme.space[3]}`,
-  md: `${theme.space[3]} ${theme.space[4]}`,
-  lg: `${theme.space[4]} ${theme.space[5]}`,
-}
+  sm: `${space[2]} ${space[2]}`,
+  md: `${space[3]} ${space[3]}`,
+  lg: `${space[4]} ${space[4]}`,
+};
 
-export type SizeVariants = keyof typeof sizeVariants
+export type SizeVariants = keyof typeof sizeVariants;
 interface StyledTextInputContainerProps {
-  size: SizeVariants
+  size: SizeVariants;
+  variant: variantsTextInputTypes;
 }
 
 export const TextInputContainer = styled.div<StyledTextInputContainerProps>`
-  background-color: ${theme.colors.gray900};
-  padding: ${theme.space[3]} ${theme.space[4]};
-  border-radius: ${theme.radii.sm};
-  box-sizing: border-box;
-  border: 2px solid ${theme.colors.gray900};
   display: flex;
   align-items: center;
 
+  box-sizing: border-box;
+  border-radius: ${radii.sm};
+  border: 1px solid ${colors.white50};
+  background-color: ${colors.emeraldGreen25};
+
   &:has(input:focus) {
-    border-color: ${theme.colors.ignite300};
+    border-color: ${colors.white75};
   }
 
   &:has(input:disabled) {
@@ -30,23 +40,53 @@ export const TextInputContainer = styled.div<StyledTextInputContainerProps>`
     cursor: not-allowed;
   }
 
-  ${({ size }) => size && css`
-    padding: ${sizeVariants[size]};
-  `}
-`
+  ${({ size }) =>
+    size &&
+    css`
+      padding: ${sizeVariants[size]};
+    `}
 
-export const Prefix = styled.span`
-  font-family: ${theme.fonts.default};
-  font-size: ${theme.fontSizes.sm};
-  color: ${theme.colors.gray400};
-  font-weight: ${theme.fontWeights.regular};
-`
+  ${({ variant }) =>
+    variant === 'secondary' &&
+    css`
+      border: 1px solid ${colors.emeraldGreen25};
+      background-color: ${colors.white25};
 
-export const Input = styled.input`
-  font-family: ${theme.fonts.default};
-  font-size: ${theme.fontSizes.sm};
-  color: ${theme.colors.white};
-  font-weight: ${theme.fontWeights.regular};
+      &:has(input:focus) {
+        border-color: ${colors.emeraldGreen50};
+      }
+    `}
+`;
+
+interface PreffixProps {
+  variant: variantsTextInputTypes;
+}
+
+export const Prefix = styled.span<PreffixProps>`
+  font-family: ${fonts.default};
+  font-size: ${fontSizes.sm};
+  color: ${colors.emeraldGreen50};
+  font-weight: ${fontWeights.regular};
+
+  ${({ variant }) =>
+    variant === 'secondary' &&
+    css`
+      color: ${colors.white75};
+    `}
+`;
+
+interface StyledInputProps {
+  variant: variantsTextInputTypes;
+}
+
+export const Input = styled.input<StyledInputProps>`
+  font-family: ${fonts.default};
+  font-size: ${fontSizes.sm};
+  color: ${colors.white};
+
+  line-height: ${lineHeights.tight};
+
+  font-weight: ${fontWeights.regular};
   background: transparent;
   border: 0;
   width: 100%;
@@ -61,6 +101,16 @@ export const Input = styled.input`
   }
 
   &::placeholder {
-    color: ${theme.colors.gray400};
+    color: ${colors.white75};
   }
-`
+
+  ${({ variant }) =>
+    variant === 'secondary' &&
+    css`
+      color: ${colors.white50};
+
+      &::placeholder {
+        color: ${colors.white50};
+      }
+    `}
+`;

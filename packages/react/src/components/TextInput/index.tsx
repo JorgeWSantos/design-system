@@ -1,21 +1,26 @@
-import React, { ComponentProps, forwardRef } from 'react'
-import { Input, Prefix, SizeVariants, TextInputContainer } from './styles'
+import React, { ComponentProps, forwardRef, ReactNode } from 'react';
+import { Input, Prefix, SizeVariants, TextInputContainer } from './styles';
+
+export type variantsTextInputTypes = 'primary' | 'secondary';
 
 export interface TextInputProps extends Omit<ComponentProps<typeof Input>, 'size'> {
-  prefix?: string
-  size?: SizeVariants
+  prefix?: string;
+  size?: SizeVariants;
+  variant: variantsTextInputTypes;
+  icon: ReactNode;
 }
 
 export const TextInput = forwardRef<React.ComponentRef<typeof Input>, TextInputProps>(
-  ({ prefix, size = 'md', ...props }: TextInputProps, ref) => {
+  ({ prefix, size = 'sm', variant, icon, ...props }: TextInputProps, ref) => {
     return (
-      <TextInputContainer size={size} {...props}>
-        {!!prefix &&
-          <Prefix>{prefix}</Prefix>
-        }
-        <Input ref={ref} {...props} />
-      </TextInputContainer>
-    )
-  })
+      <TextInputContainer size={size} variant={variant} {...props}>
+        {!!prefix && <Prefix variant={variant}>{prefix}</Prefix>}
+        <Input ref={ref} variant={variant} {...props} />
 
-TextInput.displayName = 'TextInput'
+        {icon && icon}
+      </TextInputContainer>
+    );
+  }
+);
+
+TextInput.displayName = 'TextInput';
