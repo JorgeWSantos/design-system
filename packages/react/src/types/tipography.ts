@@ -30,6 +30,7 @@ export const fontWeightTypes = {
   medium: fontWeights.medium,
   semiBold: fontWeights.semiBold,
   bold: fontWeights.bold,
+  bolder: fontWeights.bolder,
 };
 
 export type FontWeightTypes = keyof typeof fontWeightTypes;
