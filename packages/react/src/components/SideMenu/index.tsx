@@ -1,4 +1,4 @@
-import { ComponentProps, ElementType, useState } from 'react';
+import { ComponentProps, ElementType, useRef, useState } from 'react';
 import {
   MenuList,
   MenuItem,
@@ -9,8 +9,8 @@ import {
   CaretIcon,
 } from './styles';
 import { Text } from '../Text';
-import { CaretRightIcon } from '@abqm-ui2/icons';
 import { colors } from '@abqm-ui2/tokens';
+import { useClickOutside } from 'hooks/useClickOutside';
 
 type MenuItemType = {
   name: string;
@@ -34,16 +34,40 @@ export interface SideMenuProps extends ComponentProps<typeof MenuList> {
 export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
   const [menu, setMenu] = useState<MenuItems[]>(data);
 
+  const subMenuRef = useRef<HTMLUListElement | null>(null);
+
   const [menuItemSelectedIndex, setMenuItemSelectedIndex] = useState<number>(0);
   const [visibleSubmenu, setVisibleSubmenu] = useState<number | null>(null);
   const [fadingOutIndex, setFadingOutIndex] = useState<number | null>(null);
   const [fadeInSubmenu, setFadeInSubmenu] = useState<number | null>(null);
+  const [currentIndexSelected, setCurrentIndexSelected] = useState<number>(0);
+
+  useClickOutside(subMenuRef, (event: MouseEvent | TouchEvent) => {
+    const target = event.target as HTMLElement;
+
+    const clickedInsideTrigger = target?.closest('[data-submenu-trigger]');
+    if (clickedInsideTrigger) return;
+
+    setFadingOutIndex(currentIndexSelected);
+    setFadeInSubmenu(null);
+    setTimeout(() => {
+      setVisibleSubmenu(null);
+      setFadingOutIndex(null);
+    }, 200);
+
+    setMenu((prev) =>
+      prev.map((item) => ('submenu' in item ? { ...item, open_submenu: false } : item))
+    );
+  });
 
   const handleOpenSubMenu = (index: number, item: MenuItems) => {
     console.log(index, item);
 
+    setCurrentIndexSelected(index);
     if ('submenu' in item) {
       const isVisible = item.open_submenu;
+
+      console.log('isVisible', isVisible);
 
       setMenu((prev) =>
         prev.map((item, i) =>
@@ -85,6 +109,7 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
           <MenuItem
             key={item.name}
             index={i}
+            data-submenu-trigger
             lastIndex={menu.length - 1}
             isSelected={isSelected}
           >
@@ -108,7 +133,7 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
             </MenuLink>
 
             {hasSubmenu && (visibleSubmenu === i || fadingOutIndex === i) && (
-              <SubmenuList visible={fadeInSubmenu === i}>
+              <SubmenuList visible={fadeInSubmenu === i} ref={subMenuRef}>
                 {item.submenu.map((subitem) => (
                   <SubmenuItem key={subitem.name}>
                     <SubmenuLink href={subitem.link}>{subitem.name}</SubmenuLink>

@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 
 export function useClickOutside(
-  ref: React.RefObject<HTMLDivElement | null>,
-  onClickOutside: () => void
+  ref: React.RefObject<HTMLDivElement | HTMLUListElement | null>,
+  onClickOutside: (event: MouseEvent | TouchEvent) => void
 ) {
   useEffect(() => {
     function handleClickOutside(event: MouseEvent | TouchEvent) {
       if (ref.current && !ref.current.contains(event.target as Node)) {
-        onClickOutside();
+        onClickOutside(event);
       }
     }
 

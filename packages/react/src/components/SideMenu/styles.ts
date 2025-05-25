@@ -24,12 +24,12 @@ export const MenuItem = styled.li<{
   align-self: stretch;
 
   background-color: ${colors.emeraldGreen50};
-  transition: 0.2ms ease-in-out;
+  transition: 0.3ms ease-in-out;
 
   ${({ isSelected }) =>
     isSelected &&
     css`
-      transition: 0.2ms ease-in-out;
+      transition: 0.3ms ease-in-out;
 
       background-color: ${colors.emeraldGreen25} !important;
     `}
@@ -73,7 +73,7 @@ export const CaretIcon = styled(CaretRightIcon)<CaretIconProps>`
     css`
       path {
         fill: ${colors.white25};
-        transition: 0.2ms ease-in-out;
+        transition: 0.3ms ease-in-out;
       }
     `}
 `;
@@ -96,7 +96,7 @@ export const SubmenuList = styled.ul<{ visible: boolean }>`
   opacity: ${({ visible }) => (visible ? 1 : 0)};
   visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
   pointer-events: ${({ visible }) => (visible ? 'auto' : 'none')};
-  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 `;
 
 export const SubmenuItem = styled.li`
