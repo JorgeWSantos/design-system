@@ -19,3 +19,6 @@ export { default as AwardFillIcon } from './components/AwardFillIcon';
 export { default as BroadcastIcon } from './components/BroadcastIcon';
 export { default as ListOlIcon } from './components/ListOlIcon';
 export { default as StarIcon } from './components/StarIcon';
+
+export { default as PencilSquareIcon } from './components/PencilSquareIcon';
+export { default as SearchIcon } from './components/SearchIcon';
