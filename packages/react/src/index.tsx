@@ -15,3 +15,4 @@ export * from './components/RoundedButton';
 export * from './components/SideMenu';
 export * from './components/TopSideMenu';
 export * from './components/UserDropdown';
+export * from './components/Dropdown';
