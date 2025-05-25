@@ -1,8 +1,9 @@
 import type { Preview } from '@storybook/react';
 import { themes } from '@storybook/theming';
 import { GlobalStyle } from '@abqm-ui2/react';
-// import '../src/styles/global.css'
 import theme from './theme';
+
+// decorators: [withResponsiveBackground],
 
 const preview: Preview = {
   decorators: [
