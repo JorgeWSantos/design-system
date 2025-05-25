@@ -14,3 +14,8 @@ export { default as CaretRightIcon } from './components/CaretRightIcon';
 export { default as PersonCircleIcon } from './components/PersonCircleIcon';
 
 export { default as LogoSeqmIcon } from './components/LogoSeqmIcon';
+
+export { default as AwardFillIcon } from './components/AwardFillIcon';
+export { default as BroadcastIcon } from './components/BroadcastIcon';
+export { default as ListOlIcon } from './components/ListOlIcon';
+export { default as StarIcon } from './components/StarIcon';
