@@ -1,5 +1,11 @@
 # @abqm-ui2/tokens
 
+## 1.0.4
+
+### Patch Changes
+
+- feat: 🎸 Melhorias em todas as libs icons/react/tokens
+
 ## 1.0.3
 
 ### Patch Changes
