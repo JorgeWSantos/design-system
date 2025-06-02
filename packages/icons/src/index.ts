@@ -22,3 +22,9 @@ export { default as StarIcon } from './components/StarIcon';
 
 export { default as PencilSquareIcon } from './components/PencilSquareIcon';
 export { default as SearchIcon } from './components/SearchIcon';
+
+export { default as LogoSeqmMobileIcon } from './components/LogoSeqmMobileIcon';
+
+export { default as MenuIcon } from './components/MenuIcon';
+
+export { default as XIcon } from './components/XIcon';
