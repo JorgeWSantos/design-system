@@ -60,11 +60,9 @@ export const MenuLink = styled.a`
   padding: ${space[2]} ${space[3]};
 `;
 
-interface CaretIconProps {
+export const CaretIcon = styled(CaretRightIcon)<{
   isSelected: boolean;
-}
-
-export const CaretIcon = styled(CaretRightIcon)<CaretIconProps>`
+}>`
   width: 0.5rem;
   height: 0.5rem;
 

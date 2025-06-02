@@ -24,7 +24,7 @@ type MenuWithSubmenuType = {
   open_submenu: boolean;
 };
 
-type MenuItems = MenuItemType | MenuWithSubmenuType;
+export type MenuItems = MenuItemType | MenuWithSubmenuType;
 
 export interface SideMenuProps extends ComponentProps<typeof MenuList> {
   as?: ElementType;
@@ -61,13 +61,9 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
   });
 
   const handleOpenSubMenu = (index: number, item: MenuItems) => {
-    console.log(index, item);
-
     setCurrentIndexSelected(index);
     if ('submenu' in item) {
       const isVisible = item.open_submenu;
-
-      console.log('isVisible', isVisible);
 
       setMenu((prev) =>
         prev.map((item, i) =>
