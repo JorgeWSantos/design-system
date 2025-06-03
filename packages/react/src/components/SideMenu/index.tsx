@@ -113,8 +113,14 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
               href={item.link}
               onClick={(e) => {
                 e.preventDefault();
-                handleOpenSubMenu(i, item);
-                setMenuItemSelectedIndex(i);
+
+                if (hasSubmenu) {
+                  handleOpenSubMenu(i, item);
+                  setMenuItemSelectedIndex(i);
+                  return;
+                }
+
+                window.open(item.link, '_blank');
               }}
             >
               <Text
