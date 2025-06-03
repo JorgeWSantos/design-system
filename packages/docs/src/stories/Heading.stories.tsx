@@ -6,7 +6,7 @@ export default {
   component: Heading,
   args: {
     size: 'md',
-    weight: 'semi',
+    weight: 'semiBold',
     children:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit vero esse placeat quae et blanditiis, aspernatur ut itaque possimus ea autem alias ex minima tenetur reiciendis natus ipsa eligendi! Soluta.',
   },
