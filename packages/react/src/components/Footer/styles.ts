@@ -8,6 +8,10 @@ export const FooterWrapper = styled.footer`
   justify-content: flex-end;
   align-items: flex-start;
   padding: 0px;
+  flex-shrink: 0;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+
   /* margin-top: ${theme.space[2]} !important; */
   margin: ${theme.space[2]} auto 0 auto;
 

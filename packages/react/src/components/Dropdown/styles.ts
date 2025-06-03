@@ -52,12 +52,17 @@ export const ContainerOptions = styled.div`
   left: 0;
   z-index: 1;
 
+  overflow-y: scroll;
+
   min-height: 100%;
-  width: 90%;
+  max-height: 300px;
+  width: 92%;
 
   padding: 0.5rem 0.5rem;
 
   gap: 0.25rem;
+
+  backdrop-filter: blur(50px);
 
   background-color: ${colors.emeraldGreen75};
   color: ${colors.white75};
