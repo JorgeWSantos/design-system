@@ -1,12 +1,12 @@
-import { theme } from '@styles/index'
-import styled, { css } from 'styled-components'
+import { theme } from '@styles/index';
+import styled, { css } from 'styled-components';
 
-export type Variant = 'primary' | 'secondary' | 'tertiary'
-export type Size = 'sm' | 'md'
+export type Variant = 'primary' | 'secondary' | 'tertiary';
+export type Size = 'sm' | 'md';
 
 export interface ButtonStyleProps {
-  variant?: Variant
-  size?: Size
+  variant?: Variant;
+  size?: Size;
 }
 
 export const StyledButton = styled.button<ButtonStyleProps>`
@@ -16,14 +16,15 @@ export const StyledButton = styled.button<ButtonStyleProps>`
   font-weight: ${theme.fontWeights.medium};
   font-family: ${theme.fonts.default};
   text-align: center;
-  min-width: 8.438rem;
+  /* min-width: 8.438rem; */
   height: 2.75rem;
   box-sizing: border-box;
-  padding: 0 ${theme.space[4]};
+  padding: ${theme.space[2]} ${theme.space[8]};
   display: flex;
   justify-content: center;
   align-items: center;
   gap: ${theme.space[2]};
+
   cursor: pointer;
 
   svg {
@@ -36,18 +37,19 @@ export const StyledButton = styled.button<ButtonStyleProps>`
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px ${theme.colors.gray100};
+    /* box-shadow: 0 0 0 2px ${theme.colors.gray100}; */
   }
 
   ${({ variant }) =>
     (variant === 'primary' || !variant) &&
     css`
       color: ${theme.colors.white};
-      background: ${theme.colors.green300};
+      background: ${theme.colors.green500};
       transition: 0.3s;
 
       &:not(:disabled):hover {
-        background: ${theme.colors.green500};
+        /* background: ${theme.colors.green300}; */
+        filter: brightness(120%);
         transition: 0.3s;
       }
 
@@ -59,12 +61,12 @@ export const StyledButton = styled.button<ButtonStyleProps>`
   ${({ variant }) =>
     variant === 'secondary' &&
     css`
-      color: ${theme.colors.green300};
-      border: 2px solid ${theme.colors.green300};
+      color: ${theme.colors.green500};
+      border: 2px solid ${theme.colors.green500};
       transition: 0.3s;
 
       &:not(:disabled):hover {
-        background: ${theme.colors.green300};
+        background: ${theme.colors.green500};
         color: ${theme.colors.white};
         transition: 0.3s;
       }
@@ -92,12 +94,12 @@ export const StyledButton = styled.button<ButtonStyleProps>`
   ${({ size }) =>
     size === 'sm' &&
     css`
-      height: 2.375rem;
+      height: 2.125rem;
     `}
 
   ${({ size }) =>
     size === 'md' &&
     css`
-      height: 2.75rem;
+      height: 2.35rem;
     `}
-`
+`;

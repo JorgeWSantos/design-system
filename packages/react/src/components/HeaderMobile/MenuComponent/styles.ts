@@ -1,6 +1,7 @@
-import { Text } from '@abqm-ui2/react';
+import { Text } from '@components/Text';
 import { breakpointsPx, colors, space } from '@abqm-ui2/tokens';
 import styled, { css } from 'styled-components';
+import React from 'react';
 
 export const MenuList = styled.ul<{ menuIsOpen: boolean; subMenuIsOpen: boolean }>`
   display: flex;

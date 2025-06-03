@@ -41,6 +41,12 @@ export const StyledDropdown = styled.div`
   color: ${colors.white75};
 
   cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    filter: brightness(1.2);
+    transition: 0.3s;
+  }
 `;
 
 export const ContainerOptions = styled.div`
