@@ -7,5 +7,8 @@ declare module '@abqm-ui2/icons' {
   export const CaretRightIcon: FC<SVGProps<SVGSVGElement>>;
   export const LogoSeqmIcon: FC<SVGProps<SVGSVGElement>>;
   export const PersonCircleIcon: FC<SVGProps<SVGSVGElement>>;
+  export const LogoSeqmMobileIcon: FC<SVGProps<SVGSVGElement>>;
+  export const MenuIcon: FC<SVGProps<SVGSVGElement>>;
+  export const XIcon: FC<SVGProps<SVGSVGElement>>;
   // Adicione outros ícones exportados aqui
 }
