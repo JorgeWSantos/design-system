@@ -22,7 +22,7 @@ export const TopSideMenu = ({
 }: TopSideMenuProps) => {
   return (
     <TopSideWrapper {...rest}>
-      <LogoSeqmIcon width={'108px'} height={'48px'} />
+      <LogoSeqmIcon width={'6.75rem'} height={'3rem'} />
       <TextSideMenu>{text}</TextSideMenu>
       <UserDropDown
         userName={userName}

@@ -99,7 +99,7 @@ export const SubmenuList = styled.ul<{ visible: boolean }>`
 
 export const SubmenuItem = styled.li`
   width: 100%;
-  height: 34px;
+  height: 2.125rem;
   border-bottom: ${radii.px} solid ${colors.white25};
 `;
 

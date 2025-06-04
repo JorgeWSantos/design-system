@@ -35,7 +35,7 @@ export const UserDropDown = ({
         <AvatarDiv src={srcImage} />
         <Dropdown>
           <Text fontSize="ssm">{signed ? userName : 'Entrar / Cadastre-se'}</Text>
-          <CaretDownIcon width={'8.7px'} height={'5.6px'} />
+          <CaretDownIcon width={'0.544rem'} height={'0.35rem'} />
         </Dropdown>
       </UserDropdownContent>
     ),

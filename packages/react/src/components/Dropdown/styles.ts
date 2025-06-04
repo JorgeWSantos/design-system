@@ -18,7 +18,7 @@ export const Container = styled.div<ContainerProps>`
   ${({ hasLabel }) =>
     hasLabel &&
     css`
-      height: 52px;
+      height: 3.25.rem;
     `}
 `;
 
@@ -28,15 +28,10 @@ export const StyledDropdown = styled.div`
   justify-content: space-between;
 
   border-radius: ${radii.sm};
-  border: 1px solid ${colors.white50};
+  border: ${radii.px} solid ${colors.white50};
   background-color: ${colors.emeraldGreen25};
 
-  max-height: 7.75rem;
-
-  /* width: 100%; */
-
   padding: 0.5rem;
-  /* padding: 0.532rem; */
 
   color: ${colors.white75};
 
@@ -80,7 +75,7 @@ export const ContainerOptions = styled.div`
 `;
 
 export const Option = styled.div`
-  border-bottom: 1px solid ${colors.emeraldGreen50};
+  border-bottom: ${radii.px} solid ${colors.emeraldGreen50};
   padding-bottom: 0.3rem;
   font-size: ${fontSizes.ssm};
 `;
