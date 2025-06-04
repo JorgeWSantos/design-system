@@ -12,8 +12,8 @@ export const TooltipContainer = styled.div`
 
 // Tooltip text that will show on hover
 export const TooltipDiv = styled.div<{ $visible: boolean; $arrowType: ArrowType }>`
-  opacity: ${(props) => (props.$visible ? '1' : '0')};
-  visibility: ${(props) => (props.$visible ? 'visible' : 'hidden')};
+  opacity: ${({ $visible }) => ($visible ? '1' : '0')};
+  visibility: ${({ $visible }) => ($visible ? 'visible' : 'hidden')};
   background-color: ${colors.white};
   color: ${colors.black};
   text-align: center;

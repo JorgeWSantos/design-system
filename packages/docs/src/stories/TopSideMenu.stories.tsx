@@ -8,13 +8,16 @@ export default {
 
 export const Primary: StoryObj<TopSideMenuProps> = {
   args: {
-    userName: 'Jhon Who',
+    userName: 'Jorge Santos',
+    srcImage: 'https://avatars.githubusercontent.com/u/36779335?v=4',
+    onLogout: () => console.log('clicou em logout'),
   },
 };
 
 export const Secondary: StoryObj<TopSideMenuProps> = {
   args: {
-    userName: 'Jorge Santos',
-    srcImage: 'https://avatars.githubusercontent.com/u/36779335?v=4',
+    userName: '',
+    srcImage: '',
+    onLogin: () => console.log('clicou em login'),
   },
 };
