@@ -10,27 +10,27 @@ import {
 } from 'types/tipography';
 
 interface StyledHeadingProps {
-  fontSize?: FontSizeTypes;
-  disabled?: boolean;
-  fontWeight?: FontWeightTypes;
-  lineHeight?: LineHeightTypes;
+  $fontSize?: FontSizeTypes;
+  $disabled?: boolean;
+  $fontWeight?: FontWeightTypes;
+  $lineHeight?: LineHeightTypes;
 }
 
 export const StyledText = styled.p<StyledHeadingProps>`
   font-family: ${fonts.default};
-  line-height: ${({ lineHeight }) => lineHeightTypes[lineHeight || 'initial']};
-  font-weight: ${({ fontWeight }) => fontWeightTypes[fontWeight || 'regular']};
+  line-height: ${(props) => lineHeightTypes[props.$lineHeight || 'initial']};
+  font-weight: ${(props) => fontWeightTypes[props.$fontWeight || 'regular']};
   margin: 0;
-  color: ${({ color }) => color || colors.gray100};
+  color: ${(props) => props.color || colors.gray100};
 
-  ${({ fontSize }) =>
-    fontSize &&
+  ${(props) =>
+    props.$fontSize &&
     css`
-      font-size: ${fontSizeTypes[fontSize]};
+      font-size: ${fontSizeTypes[props.$fontSize]};
     `}
 
-  ${({ disabled }) =>
-    disabled &&
+  ${(props) =>
+    props.$disabled &&
     css`
       color: ${colors.white50};
     `}

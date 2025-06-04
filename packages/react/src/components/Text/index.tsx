@@ -22,9 +22,9 @@ export function Text({
   return (
     <StyledText
       as={as}
-      fontSize={fontSize}
-      fontWeight={fontWeight}
-      lineHeight={lineHeight}
+      $fontSize={fontSize}
+      $fontWeight={fontWeight}
+      $lineHeight={lineHeight}
       color={color}
       {...rest}
     >
