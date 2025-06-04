@@ -17,3 +17,4 @@ export * from './components/TopSideMenu';
 export * from './components/UserDropdown';
 export * from './components/Dropdown';
 export * from './components/HeaderMobile';
+export * from './components/Tooltip';
