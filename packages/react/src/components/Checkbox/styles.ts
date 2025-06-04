@@ -1,9 +1,9 @@
-import * as Checkbox from '@radix-ui/react-checkbox'
-import styled, { keyframes } from 'styled-components'
-import { theme } from '../../styles'
-import { radii } from '@abqm-ui2/tokens'
+import * as Checkbox from '@radix-ui/react-checkbox';
+import styled, { keyframes } from 'styled-components';
+import { theme } from '../../styles';
+import { radii } from '@abqm-ui2/tokens';
 
-const { colors, space } = theme
+const { colors, space } = theme;
 
 export const CheckboxContainer = styled(Checkbox.Root)`
   all: unset;
@@ -17,18 +17,18 @@ export const CheckboxContainer = styled(Checkbox.Root)`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid ${colors.gray900};
+  border: ${radii.pxx} solid ${colors.gray900};
   border-radius: ${radii.xs};
 
   &[data-state='checked'] {
     background-color: ${colors.ignite300};
-    border: 2px solid ${colors.ignite300};
+    border: ${radii.pxx} solid ${colors.ignite300};
   }
 
   &[data-state='unchecked'] {
-    border: 2px solid ${colors.gray900};
+    border: ${radii.pxx} solid ${colors.gray900};
   }
-`
+`;
 
 const slideIn = keyframes`
   from {
@@ -37,7 +37,7 @@ const slideIn = keyframes`
   to {
     transform: translateY(0);
   }
-`
+`;
 const slideOut = keyframes`
   from {
     transform: translateY(0);
@@ -45,7 +45,7 @@ const slideOut = keyframes`
   to {
     transform: translateY(-100%);
   }
-`
+`;
 
 export const CheckboxIndicator = styled(Checkbox.Indicator)`
   color: ${colors.white};
@@ -59,4 +59,4 @@ export const CheckboxIndicator = styled(Checkbox.Indicator)`
   &[data-state='unchecked'] {
     animation: ${slideOut} 200ms ease-out;
   }
-`
+`;

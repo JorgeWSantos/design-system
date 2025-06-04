@@ -1,5 +1,5 @@
 import { Text } from '@components/Text';
-import { breakpointsPx, colors, space } from '@abqm-ui2/tokens';
+import { breakpointsPx, colors, radii, space } from '@abqm-ui2/tokens';
 import styled, { css } from 'styled-components';
 import React from 'react';
 
@@ -13,7 +13,7 @@ export const MenuList = styled.ul<{ menuIsOpen: boolean; subMenuIsOpen: boolean 
 
   position: absolute;
   z-index: 1;
-  top: 56px;
+  top: 3.5rem;
   box-sizing: border-box;
   height: 93vh;
 
@@ -24,7 +24,7 @@ export const MenuList = styled.ul<{ menuIsOpen: boolean; subMenuIsOpen: boolean 
 
   background-color: ${colors.emeraldGreen75};
 
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(3.125rem);
   padding: ${space[6]};
 
   display: ${({ menuIsOpen }) =>
@@ -53,8 +53,8 @@ export const MenuList = styled.ul<{ menuIsOpen: boolean; subMenuIsOpen: boolean 
 `;
 
 export const MenuItem = styled.li<{ index: number; subMenuIsOpen: boolean }>`
-  max-height: 45px;
-  height: 45px;
+  max-height: 2.813rem;
+  height: 2.813rem;
 
   display: flex;
   justify-content: space-between;
@@ -63,7 +63,7 @@ export const MenuItem = styled.li<{ index: number; subMenuIsOpen: boolean }>`
 
   transition: 0.3ms ease-in-out;
 
-  border-bottom: 1px solid ${colors.white25};
+  border-bottom: ${radii.px} solid ${colors.white25};
   transition: left 200ms ease-in-out, opacity 200ms ease-in-out;
 
   ${({ subMenuIsOpen }) =>
@@ -118,7 +118,7 @@ export const SubMenuList = styled.ul<{
   align-self: stretch;
 
   background-color: ${colors.emeraldGreen75};
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(3.125rem);
   padding: ${space[6]};
 
   display: ${({ visible }) => (visible ? 'flex' : 'none')}; /* Hide menu off-screen */
@@ -136,8 +136,8 @@ export const SubMenuList = styled.ul<{
 `;
 
 export const SubMenuItem = styled.li`
-  max-height: 45px;
-  height: 45px;
+  max-height: 2.813rem;
+  height: 2.813rem;
 
   display: flex;
   justify-content: space-between;
@@ -146,7 +146,7 @@ export const SubMenuItem = styled.li`
 
   transition: 0.3ms ease-in-out;
 
-  border-bottom: 1px solid ${colors.white25};
+  border-bottom: ${radii.px} solid ${colors.white25};
 `;
 
 export const SubMenuLink = styled.a`

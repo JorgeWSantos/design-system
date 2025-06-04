@@ -1,14 +1,14 @@
 import { CaretDownIcon, MenuIcon, XIcon } from '@abqm-ui2/icons';
 import { Text } from '@components/Text';
-import { colors, space } from '@abqm-ui2/tokens';
+import { colors, radii, space } from '@abqm-ui2/tokens';
 import styled from 'styled-components';
 
 // Container principal
 export const Container = styled.div`
   display: flex;
-  height: 40px;
+  height: 2.5rem;
   align-self: stretch;
-  max-height: 40px;
+  max-height: 2.5rem;
   gap: 0.25rem;
   background-color: ${colors.emeraldGreen25};
   padding: ${space[2]} ${space[4]};
@@ -21,7 +21,7 @@ export const DivLabels = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  max-height: 40px;
+  max-height: 2.5rem;
 `;
 
 export const Title = styled(Text).attrs({
@@ -50,7 +50,7 @@ export const DivButtons = styled.div`
   justify-content: center;
   align-items: center;
   align-self: center;
-  width: 32px;
+  width: 2rem;
   height: 100%;
 `;
 
@@ -70,9 +70,9 @@ export const MenuHamburgueIcon = styled(MenuIcon)<{ menuIsOpen: boolean }>`
   position: absolute;
   top: 10;
   left: 0;
-  width: 28px;
-  height: 18px;
-  border-radius: 2px;
+  width: 1.75rem;
+  height: 1.125rem;
+  border-radius: ${radii.pxx};
   transform: ${({ menuIsOpen }) => (menuIsOpen ? 'rotate(45deg)' : 'rotate(0)')};
   opacity: ${({ menuIsOpen }) => (menuIsOpen ? 0 : 1)};
   transition: all 0.2s ease-in-out;
@@ -84,8 +84,8 @@ export const CloseMenuIcon = styled(XIcon)<{ menuIsOpen: boolean }>`
   top: 10;
   left: 0;
 
-  width: 22px;
-  height: 14px;
+  width: 1.375rem;
+  height: 0.875rem;
 
   transform: ${({ menuIsOpen }) => (menuIsOpen ? 'rotate(90deg)' : 'rotate(0)')};
   opacity: ${({ menuIsOpen }) => (menuIsOpen ? 1 : 0)};
@@ -97,8 +97,8 @@ export const BackMenuIcon = styled(CaretDownIcon)<{ subMenuIsOpen: boolean }>`
   top: 10;
   left: 0;
 
-  width: 20px;
-  height: 14px;
+  width: 1.25rem;
+  height: 0.875rem;
 
   transform: ${({ subMenuIsOpen }) => (subMenuIsOpen ? 'rotate(90deg)' : 'rotate(0)')};
   opacity: ${({ subMenuIsOpen }) => (subMenuIsOpen ? 1 : 0)};

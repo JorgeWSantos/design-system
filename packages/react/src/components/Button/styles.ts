@@ -1,3 +1,4 @@
+import { radii } from '@abqm-ui2/tokens';
 import { theme } from '@styles/index';
 import styled, { css } from 'styled-components';
 
@@ -37,7 +38,6 @@ export const StyledButton = styled.button<ButtonStyleProps>`
   }
 
   &:focus {
-    /* box-shadow: 0 0 0 2px ${theme.colors.gray100}; */
   }
 
   ${({ variant }) =>
@@ -62,7 +62,7 @@ export const StyledButton = styled.button<ButtonStyleProps>`
     variant === 'secondary' &&
     css`
       color: ${theme.colors.green500};
-      border: 2px solid ${theme.colors.green500};
+      border: ${radii.pxx} solid ${theme.colors.green500};
       transition: 0.3s;
 
       &:not(:disabled):hover {

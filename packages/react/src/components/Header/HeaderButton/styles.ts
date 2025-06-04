@@ -24,8 +24,8 @@ export const StyledHeaderButton = styled.button<StyledHeaderButtonProps>`
 
   border: none;
 
-  width: 22px;
-  height: 22px;
+  width: 1.375rem;
+  height: 1.375rem;
 
   border-radius: ${theme.radii.half};
 

@@ -11,8 +11,8 @@ export const StyledRoundedButton = styled.button<RoundedButtonStyleProps>`
   justify-content: center;
   align-items: center;
 
-  width: 22px;
-  height: 22px;
+  width: 1.375rem;
+  height: 1.375rem;
 
   border: none;
   border-radius: ${theme.radii.half};

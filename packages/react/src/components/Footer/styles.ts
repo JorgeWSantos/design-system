@@ -7,10 +7,10 @@ export const FooterWrapper = styled.footer`
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   flex-shrink: 0;
   z-index: 2;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0.625rem);
 
   /* margin-top: ${theme.space[2]} !important; */
   margin: ${theme.space[2]} auto 0 auto;
@@ -21,7 +21,7 @@ export const FooterWrapper = styled.footer`
   align-self: end;
 
   background: ${theme.colors.emeraldGreen50};
-  border-radius: ${theme.space[2]} ${theme.space[2]} 0px 0px;
+  border-radius: ${theme.space[2]} ${theme.space[2]} 0 0;
 
   @media (max-width: ${breakpointsPx.lg}) {
     height: 2.5rem;

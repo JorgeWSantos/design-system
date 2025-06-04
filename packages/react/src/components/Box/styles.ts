@@ -1,4 +1,4 @@
-import { colors, radii, space } from '@abqm-ui2/tokens';
+import { breakpointsPx, colors, radii, space } from '@abqm-ui2/tokens';
 import { styled } from 'styled-components';
 
 export const BoxContainer = styled.div`
@@ -18,7 +18,7 @@ export const BoxContainer = styled.div`
 
   border-radius: 0 0 ${radii.md} ${radii.md};
 
-  @media (max-width: 768px) {
+  @media (max-width: ${breakpointsPx.md}) {
     padding: ${space[10]} ${space[4]} ${space[4]};
     gap: ${space[26]};
   }

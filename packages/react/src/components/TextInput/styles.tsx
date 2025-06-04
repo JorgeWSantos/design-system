@@ -28,7 +28,7 @@ export const TextInputContainer = styled.div<StyledTextInputContainerProps>`
 
   box-sizing: border-box;
   border-radius: ${radii.sm};
-  border: 1px solid ${colors.white50};
+  border: ${radii.px} solid ${colors.white50};
   background-color: ${colors.emeraldGreen25};
 
   &:has(input:focus) {
@@ -49,7 +49,7 @@ export const TextInputContainer = styled.div<StyledTextInputContainerProps>`
   ${({ variant }) =>
     variant === 'secondary' &&
     css`
-      border: 1px solid ${colors.emeraldGreen25};
+      border: ${radii.px} solid ${colors.emeraldGreen25};
       background-color: ${colors.white25};
 
       &:has(input:focus) {

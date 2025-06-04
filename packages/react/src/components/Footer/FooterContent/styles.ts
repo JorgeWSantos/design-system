@@ -6,7 +6,7 @@ export const ContainerContent = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-radius: ${theme.space[2]} ${theme.space[2]} 0px 0px;
+  border-radius: ${theme.space[2]} ${theme.space[2]} 0 0;
 
   padding: ${theme.space[4]} ${theme.space[10]};
 
@@ -25,7 +25,7 @@ export const Social = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: ${theme.space[1.5]};
 
   margin: 0 auto;
@@ -35,7 +35,7 @@ export const SocialIcons = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: ${theme.space[1]};
 `;
 

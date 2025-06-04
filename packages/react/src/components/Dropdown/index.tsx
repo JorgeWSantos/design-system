@@ -47,7 +47,7 @@ export function Dropdown({ data, setValue, label = null, ...rest }: DropdownProp
           fontWeight="regular"
           fontSize="ssm"
           color={colors.emeraldGreen75}
-          style={{ marginLeft: '8px' }}
+          style={{ marginLeft: '0.5rem' }}
         >
           {label}
         </Text>

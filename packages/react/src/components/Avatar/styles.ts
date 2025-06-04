@@ -1,5 +1,5 @@
 import { PersonCircleIcon } from '@abqm-ui2/icons';
-import { colors } from '@abqm-ui2/tokens';
+import { colors, radii } from '@abqm-ui2/tokens';
 import styled from 'styled-components';
 
 export const StyledImageContainer = styled.div`
@@ -12,7 +12,7 @@ export const StyledImageContainer = styled.div`
   max-height: 2.5rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid ${colors.white25};
+  border: ${radii.px} solid ${colors.white25};
   background-color: ${colors.white25};
   z-index: 1;
 

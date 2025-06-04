@@ -11,7 +11,7 @@ export const StyledHeader = styled.header`
   gap: ${space[1]};
 
   background: ${colors.white25};
-  border-radius: ${space[2]} ${space[2]} 0px 0px;
+  border-radius: ${space[2]} ${space[2]} 0 0;
 
   padding-top: ${space[1]};
 `;

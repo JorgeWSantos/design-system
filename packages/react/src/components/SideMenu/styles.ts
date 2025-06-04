@@ -16,7 +16,7 @@ export const MenuItem = styled.li<{
 }>`
   min-width: 12.5rem;
   max-height: 2.125rem;
-  margin-bottom: 1px;
+  margin-bottom: 0.063rem;
 
   display: flex;
   justify-content: space-between;

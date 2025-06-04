@@ -56,19 +56,19 @@ export const ContainerOptions = styled.div`
   overflow-y: scroll;
 
   min-height: 100%;
-  max-height: 300px;
+  max-height: 18.75rem;
   width: 92%;
 
   padding: 0.5rem 0.5rem;
 
   gap: 0.25rem;
 
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(3.125rem);
 
   background-color: ${colors.emeraldGreen75};
   color: ${colors.white75};
 
-  border: 1px solid ${colors.emeraldGreen92};
+  border: ${radii.px} solid ${colors.emeraldGreen92};
   border-radius: ${radii.sm};
 
   cursor: pointer;

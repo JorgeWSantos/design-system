@@ -1,16 +1,16 @@
-import { ComponentProps, ElementType } from 'react'
-import { styled } from 'styled-components'
+import { ComponentProps, ElementType } from 'react';
+import { styled } from 'styled-components';
 
-import { theme } from '../styles'
+import { theme } from '../styles';
 
-const { colors, fonts, fontSizes, radii, space, fontWeights } = theme
+const { colors, fonts, fontSizes, radii, space, fontWeights } = theme;
 
 export const TextArea = styled.textarea`
   background-color: ${colors.gray900};
   padding: ${space[3]} ${space[4]};
   border-radius: ${radii.sm};
   box-sizing: border-box;
-  border: 2px solid ${colors.gray900};
+  border: ${radii.xs} solid ${colors.gray900};
   display: flex;
   align-items: baseline;
 
@@ -34,10 +34,10 @@ export const TextArea = styled.textarea`
   &::placeholder {
     color: ${colors.gray400};
   }
-`
+`;
 
 export interface TextAreaProps extends ComponentProps<typeof TextArea> {
-  as?: ElementType
+  as?: ElementType;
 }
 
-TextArea.displayName = 'TextArea'
+TextArea.displayName = 'TextArea';

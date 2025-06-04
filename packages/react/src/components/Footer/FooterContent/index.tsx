@@ -23,10 +23,10 @@ const socialIcons = (width: number) => {
           <YoutubeIcon width={12} height={12} />
         </SocialIcon>
         <SocialIcon>
-          <InstagramIcon width={12} height={12} style={{ marginTop: '1px' }} />
+          <InstagramIcon width={12} height={12} style={{ marginTop: '0.063rem' }} />
         </SocialIcon>
         <SocialIcon>
-          <FacebookIcon width={14} height={13} style={{ marginTop: '1px' }} />
+          <FacebookIcon width={14} height={13} style={{ marginTop: '0.063rem' }} />
         </SocialIcon>
       </SocialIcons>
     );
@@ -42,14 +42,14 @@ const socialIcons = (width: number) => {
           <InstagramIcon
             width={12}
             height={13}
-            style={{ marginLeft: '0px', marginTop: '1px' }}
+            style={{ marginLeft: '0', marginTop: '0.063rem' }}
           />
         </SocialIcon>
         <SocialIcon>
           <FacebookIcon
             width={14}
             height={13}
-            style={{ marginLeft: '-1px', marginTop: '1px' }}
+            style={{ marginLeft: '-0.063rem', marginTop: '0.063rem' }}
           />
         </SocialIcon>
       </SocialIcons>
