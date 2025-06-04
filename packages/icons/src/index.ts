@@ -28,3 +28,5 @@ export { default as LogoSeqmMobileIcon } from './components/LogoSeqmMobileIcon';
 export { default as MenuIcon } from './components/MenuIcon';
 
 export { default as XIcon } from './components/XIcon';
+
+export { default as BoxArrowInLeftIcon } from './components/BoxArrowInLeftIcon';

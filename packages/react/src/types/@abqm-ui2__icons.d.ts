@@ -10,5 +10,6 @@ declare module '@abqm-ui2/icons' {
   export const LogoSeqmMobileIcon: FC<SVGProps<SVGSVGElement>>;
   export const MenuIcon: FC<SVGProps<SVGSVGElement>>;
   export const XIcon: FC<SVGProps<SVGSVGElement>>;
+  export const BoxArrowInLeftIcon: FC<SVGProps<SVGSVGElement>>;
   // Adicione outros ícones exportados aqui
 }
