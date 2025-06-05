@@ -24,7 +24,7 @@ export const Header = ({ text, fontWeight, buttons, ...rest }: HeaderProps) => {
   return (
     <StyledHeader {...rest}>
       <HeadingWrapper>
-        <Heading size="md" weight={fontWeight}>
+        <Heading fontSize="md" fontWeight={fontWeight}>
           {text}
         </Heading>
 
