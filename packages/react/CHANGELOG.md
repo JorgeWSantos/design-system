@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.6
+
+### Patch Changes
+
+- feat: 🎸 Adicionará componetes ícones e tokens novos
+
 ## 1.0.5
 
 ### Patch Changes
