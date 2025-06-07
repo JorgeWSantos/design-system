@@ -13,6 +13,26 @@ export default {
       control: 'text',
     },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: `
+O componente **Avatar** exibe a foto do usuário ou um fallback.
+
+### Como implementar
+
+\`\`\`tsx
+import { Avatar } from '@abqm-ds/react';
+
+<Avatar src="https://github.com/jorgewsantos.png" alt="Jorge W Santos" />
+\`\`\`
+
+- Exibe imagem se \`src\` for fornecido.
+- Exibe fallback (letra) se não houver imagem.
+        `,
+      },
+    },
+  },
 } as Meta<AvatarProps>;
 
 export const Primary: StoryObj<AvatarProps> = {};

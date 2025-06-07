@@ -13,8 +13,6 @@ O componente **Toast** exibe mensagens temporárias de feedback para o usuário,
 
 ### Como implementar
 
-1. **Envolva sua aplicação com o \`ToastProvider\`:**
-
 \`\`\`tsx
 import { ToastProvider } from '@abqm-ds/react';
 

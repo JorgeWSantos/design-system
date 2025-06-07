@@ -20,6 +20,29 @@ export default {
       control: { type: 'inline-radio' },
     },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: `
+O componente **Heading** exibe títulos e subtítulos com diferentes níveis e tamanhos.
+
+### Como implementar
+
+\`\`\`tsx
+import { Heading } from '@abqm-ds/react';
+
+<Heading fontSize="lg" fontWeight="bold">
+  Título da Seção
+</Heading>
+\`\`\`
+
+- Por padrão, renderiza um \`h2\`.
+- Altere o elemento com a prop \`as\`.
+- Controle o tamanho com \`fontSize\` e o peso com \`fontWeight\`.
+        `,
+      },
+    },
+  },
 } as Meta<HeadingProps>;
 
 export const Primary: StoryObj<HeadingProps> = {};

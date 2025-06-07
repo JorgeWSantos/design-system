@@ -5,6 +5,30 @@ import { radii, space } from '@abqm-ds/tokens';
 export default {
   title: 'Form/Dropdown',
   component: Dropdown,
+  parameters: {
+    docs: {
+      description: {
+        component: `
+O componente **Dropdown** exibe uma lista suspensa de opções.
+
+### Como implementar
+
+\`\`\`tsx
+import { Dropdown } from '@abqm-ds/react';
+
+const data = [
+  { value: '1', label: 'Opção 1', id: '1' },
+  { value: '2', label: 'Opção 2', id: '2' },
+];
+
+<Dropdown data={data} label="Selecione uma opção" />
+\`\`\`
+
+- Recebe um array de objetos com \`value\`, \`label\` e \`id\`.
+        `,
+      },
+    },
+  },
 } as Meta<DropdownProps>;
 
 const defaultData: DataDropdown[] = [

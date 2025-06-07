@@ -19,6 +19,27 @@ export default {
       control: { type: 'select' },
     },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: `
+O componente **TextInput** é utilizado para entrada de dados em formulários.
+
+### Como implementar
+
+\`\`\`tsx
+import { TextInput } from '@abqm-ds/react';
+
+<TextInput placeholder="Digite seu texto" />
+\`\`\`
+
+- Aceita todas as props nativas de \`input\`.
+- Suporta variantes e tamanhos.
+- Pode exibir ícone à esquerda.
+        `,
+      },
+    },
+  },
 } as Meta<TextInputProps>;
 
 const renderPrimary = (args: TextInputProps) => (

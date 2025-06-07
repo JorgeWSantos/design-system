@@ -1,38 +1,33 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Box, Text, TextArea, TextAreaProps, theme } from '@abqm-ds/react';
+import { TextArea, TextAreaProps } from '@abqm-ds/react';
 
 export default {
   title: 'Form/TextArea',
   component: TextArea,
-  args: {},
-} as Meta<TextAreaProps>;
+  parameters: {
+    docs: {
+      description: {
+        component: `
+O componente **TextArea** é utilizado para entrada de textos longos.
 
-const render = (args: TextAreaProps) => (
-  <Box
-    as="label"
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      gap: theme.space[2],
-    }}
-  >
-    <>
-      <Text fontSize="sm">Observações</Text>
-      <TextArea {...args} />
-    </>
-  </Box>
-);
+### Como implementar
+
+\`\`\`tsx
+import { TextArea } from '@abqm-ds/react';
+
+<TextArea placeholder="Digite sua mensagem..." />
+\`\`\`
+
+- Aceita todas as props nativas de \`textarea\`.
+- Pode ser estilizado via prop \`style\`.
+        `,
+      },
+    },
+  },
+} as Meta<TextAreaProps>;
 
 export const Primary: StoryObj<TextAreaProps> = {
   args: {
-    placeholder: 'Adicione algumas observações',
+    placeholder: 'Digite sua mensagem...',
   },
-  render,
-};
-
-export const Disabled: StoryObj<TextAreaProps> = {
-  args: {
-    disabled: true,
-  },
-  render,
 };

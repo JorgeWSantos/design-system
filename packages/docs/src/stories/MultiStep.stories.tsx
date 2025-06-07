@@ -8,6 +8,26 @@ export default {
     currentStep: 1,
     size: 4,
   },
+  parameters: {
+    docs: {
+      description: {
+        component: `
+O componente **MultiStep** exibe um indicador de progresso para formulários multi-etapas.
+
+### Como implementar
+
+\`\`\`tsx
+import { MultiStep } from '@abqm-ds/react';
+
+<MultiStep size={4} currentStep={2} />
+\`\`\`
+
+- \`size\`: total de etapas.
+- \`currentStep\`: etapa atual (opcional, padrão 1).
+        `,
+      },
+    },
+  },
   // not show the complete element
   // decorators: [
   //   (Story) => {

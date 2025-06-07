@@ -1,35 +1,31 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { RoundedButton, RoundedButtonProps } from '@abqm-ds/react';
-import { FilterIcon, PlusIcon, PrinterIcon } from '@abqm-ds/icons';
 
 export default {
-  title: 'Components/RoundedButton',
+  title: 'Form/RoundedButton',
   component: RoundedButton,
-  args: {
-    children: <PlusIcon width={14} height={14} />,
-    disabled: false,
-  },
-  argTypes: {
-    disabled: {
-      control: {
-        type: 'boolean',
+  parameters: {
+    docs: {
+      description: {
+        component: `
+O componente **RoundedButton** é um botão circular para ações rápidas.
+
+### Como implementar
+
+\`\`\`tsx
+import { RoundedButton } from '@abqm-ds/react';
+
+<RoundedButton onClick={() => alert('Clicou!')}>
+  +
+</RoundedButton>
+\`\`\`
+
+- Aceita qualquer conteúdo como filho.
+- Pode ser estilizado via prop \`style\`.
+        `,
       },
     },
-    onClick: { action: 'test' },
   },
 } as Meta<RoundedButtonProps>;
 
 export const Primary: StoryObj<RoundedButtonProps> = {};
-
-export const Secondary: StoryObj<RoundedButtonProps> = {
-  args: {
-    children: <FilterIcon width={14} height={14} />,
-  },
-};
-
-export const Disabled: StoryObj<RoundedButtonProps> = {
-  args: {
-    children: <PrinterIcon width={14} height={14} />,
-    disabled: true,
-  },
-};

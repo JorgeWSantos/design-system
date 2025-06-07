@@ -26,6 +26,29 @@ export default {
     },
     onClick: { action: 'click' },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: `
+O componente **Button** é utilizado para ações e interações do usuário.
+
+### Como implementar
+
+\`\`\`tsx
+import { Button } from '@abqm-ds/react';
+
+<Button variant="primary" size="md" onClick={() => alert('Clicou!')}>
+  Enviar
+</Button>
+\`\`\`
+
+- Suporta variantes: \`primary\`, \`secondary\`, \`tertiary\`
+- Suporta tamanhos: \`sm\`, \`md\`
+- Aceita qualquer conteúdo como filho.
+        `,
+      },
+    },
+  },
 } as Meta<ButtonProps>;
 
 export const Primary: StoryObj<ButtonProps> = {};

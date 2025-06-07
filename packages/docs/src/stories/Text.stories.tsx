@@ -29,6 +29,29 @@ export default {
       control: { type: 'inline-radio' },
     },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: `
+O componente **Text** exibe textos com diferentes tamanhos e pesos.
+
+### Como implementar
+
+\`\`\`tsx
+import { Text } from '@abqm-ds/react';
+
+<Text fontSize="lg" fontWeight="bold">
+  Texto de exemplo
+</Text>
+\`\`\`
+
+- Controle o tamanho com \`fontSize\`.
+- Controle o peso com \`fontWeight\`.
+- Altere o elemento com a prop \`as\`.
+        `,
+      },
+    },
+  },
 } as Meta<TextProps>;
 
 export const Primary: StoryObj<TextProps> = {};
