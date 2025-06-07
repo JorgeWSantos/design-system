@@ -7,7 +7,7 @@ export const BoxContainer = styled.div`
 
   flex: 1;
   flex-direction: column;
-  padding: ${space[16]} ${space[10]} ${space[6]};
+  padding: ${space[10]} ${space[4]} ${space[4]};
 
   box-sizing: border-box;
 
@@ -15,6 +15,8 @@ export const BoxContainer = styled.div`
   gap: ${space[16]};
 
   background: ${colors.white50};
+
+  overflow-y: auto;
 
   border-radius: 0 0 ${radii.md} ${radii.md};
 
