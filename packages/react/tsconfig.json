@@ -1,6 +1,14 @@
 {
   "extends": "@abqm-ui2/ts-config/react.json",
   "include": ["src"],
+  "exclude": [
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "src/@types/**",
+    "src/setupTests.*"
+  ],
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
@@ -8,6 +16,7 @@
       "@styles/*": ["styles/*"],
       "@assets/*": ["assets/*"]
     },
-    "typeRoots": ["./node_modules/@types", "./src/@types"]
+    "typeRoots": ["./node_modules/@types", "./src/@types"],
+    "skipLibCheck": true
   }
 }
