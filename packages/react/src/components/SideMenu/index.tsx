@@ -1,4 +1,4 @@
-import { ComponentProps, ElementType, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import {
   MenuList,
   MenuItem,
@@ -131,3 +131,7 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
     </MenuList>
   );
 };
+
+SideMenu.displayName = 'SideMenu';
+
+export * from './types';

@@ -1,24 +1,8 @@
-import { ComponentProps, ElementType, ReactNode } from 'react';
-
 import { ButtonsWrapper, HeadingWrapper, StyledHeader } from './styles';
 import { Heading } from '@components/Heading';
 import { ColorBar } from '@components/ColorBar';
-import { FontWeightTypes } from 'types/tipography';
 import { HeaderButton } from './HeaderButton';
-
-interface ButtonProps {
-  icon: ReactNode;
-  label: string;
-  disabled?: boolean;
-  onClick?: () => void;
-}
-
-export interface HeaderProps extends ComponentProps<typeof StyledHeader> {
-  as?: ElementType;
-  text: string;
-  fontWeight?: FontWeightTypes;
-  buttons?: ButtonProps[];
-}
+import { HeaderProps } from './types';
 
 export const Header = ({ text, fontWeight, buttons, ...rest }: HeaderProps) => {
   return (
@@ -49,3 +33,5 @@ export const Header = ({ text, fontWeight, buttons, ...rest }: HeaderProps) => {
 };
 
 Header.displayName = 'Header';
+
+export * from './types';

@@ -10,3 +10,5 @@ export const Box = ({ children, style, ...rest }: BoxProps) => {
 };
 
 Box.displayName = 'Box';
+
+export * from './types';
