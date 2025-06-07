@@ -8,6 +8,7 @@ export function Text({
   lineHeight,
   color,
   as = 'p',
+  disabled,
   ...rest
 }: TextProps) {
   return (
@@ -16,6 +17,7 @@ export function Text({
       $fontSize={fontSize}
       $fontWeight={fontWeight}
       $lineHeight={lineHeight}
+      $disabled={disabled}
       color={color}
       {...rest}
     >
@@ -25,3 +27,5 @@ export function Text({
 }
 
 Text.displayName = 'Text';
+
+export * from './types';

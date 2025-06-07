@@ -2,7 +2,7 @@ import { ComponentProps, ElementType, ReactNode } from 'react';
 import { StyledHeader } from './styles';
 import { FontWeightTypes } from 'types/tipography';
 
-export interface ButtonProps {
+export interface HeaderButtonProps {
   icon: ReactNode;
   label: string;
   disabled?: boolean;
@@ -13,5 +13,5 @@ export interface HeaderProps extends ComponentProps<typeof StyledHeader> {
   as?: ElementType;
   text: string;
   fontWeight?: FontWeightTypes;
-  buttons?: ButtonProps[];
+  buttons?: HeaderButtonProps[];
 }

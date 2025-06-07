@@ -74,3 +74,5 @@ export function Dropdown({ data, setValue, label = null, ...rest }: DropdownProp
 }
 
 Dropdown.displayName = 'Dropdown';
+
+export * from './types';

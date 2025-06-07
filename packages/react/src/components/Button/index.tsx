@@ -10,3 +10,5 @@ export const Button = ({ variant, children, size, ...rest }: ButtonProps) => {
 };
 
 Button.displayName = 'Button';
+
+export * from './types';

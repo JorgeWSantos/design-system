@@ -15,9 +15,7 @@ O componente **Footer** exibe um rodapé para páginas ou aplicações.
 \`\`\`tsx
 import { Footer } from '@abqm-ds/react';
 
-<Footer>
-  © 2024 ABQM. Todos os direitos reservados.
-</Footer>
+<Footer />
 \`\`\`
 
 - Aceita qualquer conteúdo como filho.

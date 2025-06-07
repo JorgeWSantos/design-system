@@ -8,4 +8,5 @@ export interface TextProps extends ComponentProps<typeof StyledText> {
   fontSize?: FontSizeTypes;
   fontWeight?: FontWeightTypes;
   lineHeight?: LineHeightTypes;
+  disabled?: boolean;
 }

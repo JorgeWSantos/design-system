@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { UserDropdown, UserDropdownProps } from '@abqm-ds/react';
+import { UserDropDown, UserDropDownProps } from '@abqm-ds/react';
 
 export default {
   title: 'Navigation/UserDropdown',
-  component: UserDropdown,
+  component: UserDropDown,
   parameters: {
     docs: {
       description: {
@@ -24,6 +24,6 @@ import { UserDropdown } from '@abqm-ds/react';
       },
     },
   },
-} as Meta<UserDropdownProps>;
+} as Meta<UserDropDownProps>;
 
-export const Primary: StoryObj<UserDropdownProps> = {};
+export const Primary: StoryObj<UserDropDownProps> = {};

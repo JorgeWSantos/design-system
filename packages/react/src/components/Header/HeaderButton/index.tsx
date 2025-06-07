@@ -22,7 +22,7 @@ export const HeaderButton = ({
       <RoundedButton disabled={disabled} onClick={onClick}>
         {children}
       </RoundedButton>
-      <Text size="xxs" disabled={disabled}>
+      <Text fontSize="xxs" disabled={disabled}>
         {label}
       </Text>
     </ContainerHeaderButton>
