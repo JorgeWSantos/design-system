@@ -11,5 +11,8 @@ declare module '@abqm-ds/icons' {
   export const MenuIcon: FC<SVGProps<SVGSVGElement>>;
   export const XIcon: FC<SVGProps<SVGSVGElement>>;
   export const BoxArrowInLeftIcon: FC<SVGProps<SVGSVGElement>>;
+  export const FacebookIcon: FC<SVGProps<SVGSVGElement>>;
+  export const InstagramIcon: FC<SVGProps<SVGSVGElement>>;
+  export const YoutubeIcon: FC<SVGProps<SVGSVGElement>>;
   // Adicione outros ícones exportados aqui
 }

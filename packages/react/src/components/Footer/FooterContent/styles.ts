@@ -39,7 +39,7 @@ export const SocialIcons = styled.div`
   gap: ${theme.space[1]};
 `;
 
-export const SocialIcon = styled.div`
+export const SocialIcon = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +57,7 @@ export const SocialIcon = styled.div`
   }
 `;
 
-export const SocialText = styled.span`
+export const SocialText = styled.a`
   font-family: ${theme.fontWeights.regular};
   font-size: 0.6875rem;
   font-style: normal;
@@ -73,7 +73,7 @@ export const Circle = styled.div`
   border-radius: 50%;
 `;
 
-export const SiteText = styled.span`
+export const SiteText = styled.a`
   font-family: ${theme.fonts.default};
   font-style: normal;
   font-weight: ${theme.fontWeights.semiBold};
