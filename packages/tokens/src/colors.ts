@@ -1,8 +1,19 @@
 export const colors = {
+  // Base
   white: '#FFF',
   black: '#000',
 
-  // grays
+  // Opacity
+  white25: '#ffffff40',
+  white50: '#ffffff80',
+  white75: '#FFFFFFBF',
+  white85: '#ffffffd9',
+  black25: '#00000040',
+  black50: '#00000080',
+  black75: '#000000BF',
+  black85: '#000000d9',
+
+  // Grays
   gray100: '#E1E1E6',
   gray200: '#A9A9B2',
   gray400: '#7C7C8A',
@@ -13,38 +24,34 @@ export const colors = {
   gray850: '#1B1B1B',
   gray900: '#121214',
 
-  // opacitys
-  white25: '#ffffff40',
-  white50: '#ffffff80',
-  white75: '#FFFFFFBF',
-  white85: '#ffffffd9',
+  // Yellow
+  yellow200: '#FFE596',
+  yellow400: '#FFCD00',
 
-  black25: '#00000040',
-  black50: '#00000080',
-  black75: '#000000BF',
-  black85: '#000000d9',
+  // Brown
+  brown500: '#A65E2E',
+  brown700: '#5A2412',
 
+  // Rose
+  rose700: '#B81956',
+  rose400: '#FA6BA2',
+
+  // Emerald Green (custom ABQM palette)
   emeraldGreen25: '#00271040',
   emeraldGreen50: '#00100780',
   emeraldGreen75: '#001007BF',
   emeraldGreen92: '#001007EB',
 
-  brown500: '#A65E2E',
-  brown700: '#5A2412',
-
-  yellow200: '#FFE596',
-  yellow400: '#FFCD00',
-
+  // Green
   green100: '#95C23D',
   green300: '#009640',
+  green400: '#51D98B',
   green500: '#006B2D',
   green700: '#476153',
   green900: '#002F14',
 
+  // Blue
+  blue300: '#58B4FF',
+  blue700: '#0066B9',
   blue900: '#003770',
-
-  ignite300: '#00B37E',
-  ignite500: '#00875F',
-  ignite700: '#015F43',
-  ignite900: '#00291D',
 };

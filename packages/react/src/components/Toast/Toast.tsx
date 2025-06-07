@@ -1,5 +1,7 @@
 import { createContext, useCallback, useContext, useState, ReactNode } from 'react';
-import { ToastContainer, ToastMessage } from './styles';
+import { ToastContainer, ToastMessage, ToastCloseButton, ToastContent } from './styles';
+import { Text } from '@components/Text';
+import { XIcon } from '@abqm-ui2/icons';
 
 type ToastType = 'success' | 'error' | 'info' | 'warning';
 
@@ -20,15 +22,19 @@ let toastId = 0;
 export const ToastProvider = ({ children }: { children: ReactNode }) => {
   const [toasts, setToasts] = useState<Toast[]>([]);
 
+  const removeToast = useCallback((id: number) => {
+    setToasts((prev) => prev.filter((t) => t.id !== id));
+  }, []);
+
   const showToast = useCallback(
     (message: string, type: ToastType = 'info', timems: number = 3000) => {
       const id = ++toastId;
       setToasts((prev) => [...prev, { id, message, type }]);
       setTimeout(() => {
-        setToasts((prev) => prev.filter((t) => t.id !== id));
+        removeToast(id);
       }, timems);
     },
-    []
+    [removeToast]
   );
 
   return (
@@ -37,7 +43,16 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
       <ToastContainer>
         {toasts.map((toast) => (
           <ToastMessage key={toast.id} $type={toast.type}>
-            {toast.message}
+            <Text fontSize="ssm" lineHeight="tight">
+              {toast.message}
+            </Text>
+            <ToastCloseButton
+              aria-label="Fechar"
+              onClick={() => removeToast(toast.id)}
+              type="button"
+            >
+              <XIcon width={16} height={16} />
+            </ToastCloseButton>
           </ToastMessage>
         ))}
       </ToastContainer>

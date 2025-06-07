@@ -63,7 +63,6 @@ function ToastButton({
   label,
   message,
   type,
-  variant,
 }: {
   label: string;
   message: string;
@@ -78,27 +77,33 @@ export const Exemplos: StoryObj = {
   render: () => (
     <ToastProvider>
       <Box style={{ gap: 16 }}>
-        <Text fontSize="sm" style={{ marginBottom: 8 }}>
-          Clique nos botões para exibir diferentes tipos de Toast:
-        </Text>
-        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-          <ToastButton
-            label="Sucesso"
-            message="Operação realizada com sucesso!"
-            type="success"
-          />
-          <ToastButton label="Erro" message="Ocorreu um erro inesperado." type="error" />
-          <ToastButton
-            label="Info"
-            message="Esta é uma informação importante."
-            type="info"
-          />
-          <ToastButton
-            label="Aviso"
-            message="Atenção: verifique os dados."
-            type="warning"
-          />
-        </div>
+        <>
+          <Text fontSize="sm" style={{ marginBottom: 8 }}>
+            Clique nos botões para exibir diferentes tipos de Toast:
+          </Text>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            <ToastButton
+              label="Sucesso"
+              message="Operação realizada com sucesso!"
+              type="success"
+            />
+            <ToastButton
+              label="Erro"
+              message="Ocorreu um erro inesperado."
+              type="error"
+            />
+            <ToastButton
+              label="Info"
+              message="Esta é uma informação importante."
+              type="info"
+            />
+            <ToastButton
+              label="Aviso"
+              message="Atenção: verifique os dados."
+              type="warning"
+            />
+          </div>
+        </>
       </Box>
     </ToastProvider>
   ),
@@ -119,7 +124,7 @@ export const Exemplos: StoryObj = {
 const SuccessExample = () => {
   const { showToast } = useToast();
   return (
-    <Button onClick={() => showToast('Operação realizada com sucesso!', 'success')}>
+    <Button onClick={() => showToast('Operação realizada com sucesso!', 'success', 3000)}>
       Mostrar Toast de Sucesso
     </Button>
   );
@@ -141,10 +146,7 @@ export const Success: StoryObj = {
 const ErrorExample = () => {
   const { showToast } = useToast();
   return (
-    <Button
-      onClick={() => showToast('Ocorreu um erro inesperado.', 'error')}
-      variant="secondary"
-    >
+    <Button onClick={() => showToast('Ocorreu um erro inesperado.', 'error')}>
       Mostrar Toast de Erro
     </Button>
   );
@@ -166,7 +168,9 @@ export const Error: StoryObj = {
 const InfoExample = () => {
   const { showToast } = useToast();
   return (
-    <Button onClick={() => showToast('Esta é uma informação importante.', 'info')}>
+    <Button
+      onClick={() => showToast('Esta é uma informação importante.', 'info', 100000)}
+    >
       Mostrar Toast de Informação
     </Button>
   );
