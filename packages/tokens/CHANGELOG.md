@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 1.0.6
+
+### Patch Changes
+
+- feat: 🎸 Fará melhorias de código em todos os repositórios
+
 ## 1.0.5
 
 ### Patch Changes

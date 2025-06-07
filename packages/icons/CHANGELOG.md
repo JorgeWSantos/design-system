@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 1.0.4
+
+### Patch Changes
+
+- feat: 🎸 Fará melhorias de código em todos os repositórios
+
 ## 1.0.3
 
 ### Patch Changes
