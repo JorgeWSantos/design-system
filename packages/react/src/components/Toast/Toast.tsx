@@ -1,19 +1,8 @@
 import { createContext, useCallback, useContext, useState, ReactNode } from 'react';
-import { ToastContainer, ToastMessage, ToastCloseButton, ToastContent } from './styles';
+import { ToastContainer, ToastMessage, ToastCloseButton } from './styles';
 import { Text } from '@components/Text';
 import { XIcon } from '@abqm-ui2/icons';
-
-type ToastType = 'success' | 'error' | 'info' | 'warning';
-
-interface Toast {
-  id: number;
-  message: string;
-  type?: ToastType;
-}
-
-interface ToastContextProps {
-  showToast: (message: string, type?: ToastType, timems?: number) => void;
-}
+import { ShowToastFn, Toast, ToastContextProps } from './types';
 
 const ToastContext = createContext<ToastContextProps | undefined>(undefined);
 
@@ -26,12 +15,13 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
     setToasts((prev) => prev.filter((t) => t.id !== id));
   }, []);
 
-  const showToast = useCallback(
-    (message: string, type: ToastType = 'info', timems: number = 3000) => {
+  const showToast: ShowToastFn = useCallback(
+    (message, type = 'info', timems = 3000, callbackFunction) => {
       const id = ++toastId;
       setToasts((prev) => [...prev, { id, message, type }]);
       setTimeout(() => {
         removeToast(id);
+        if (typeof callbackFunction === 'function') callbackFunction();
       }, timems);
     },
     [removeToast]
