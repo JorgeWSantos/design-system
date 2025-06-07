@@ -1,4 +1,4 @@
-import type { MenuItems } from '../SideMenu';
+import type { MenuItems } from '../SideMenu/types';
 import HeaderMobileComponent from './HeaderMobileComponent';
 import { Container } from './styles';
 import { useRef, useState } from 'react';

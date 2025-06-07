@@ -1,8 +1,7 @@
 // Heading.tsx
-import { ComponentProps, ElementType, ReactNode } from 'react';
 import { theme } from '../../styles';
-import { FontWeightTypes } from 'types/tipography';
 import { StyledHeading } from './styles';
+import { HeadingProps } from './types';
 
 export const sizeVariants = {
   sm: theme.fontSizes.xl,
@@ -16,14 +15,6 @@ export const sizeVariants = {
 };
 
 export type SizeVariants = keyof typeof sizeVariants;
-
-export interface HeadingProps extends ComponentProps<typeof StyledHeading> {
-  as?: ElementType;
-  children: ReactNode;
-  fontSize?: SizeVariants;
-  fontWeight?: FontWeightTypes;
-  color?: string;
-}
 
 export function Heading({
   children,

@@ -1,6 +1,6 @@
 import { colors } from '@abqm-ui2/tokens';
 import styled, { css } from 'styled-components';
-import type { ArrowType } from '.';
+import type { ArrowType } from './types';
 
 // Container that holds the Tooltip and content
 export const TooltipContainer = styled.div`

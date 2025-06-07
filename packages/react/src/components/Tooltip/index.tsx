@@ -1,16 +1,8 @@
-import React, { ComponentProps, ReactNode, useState } from 'react';
+import React, { useState } from 'react';
 import { TooltipContainer, TooltipDiv } from './styles';
-
-export type ArrowType = 'topRight' | 'bottomRight' | 'bottomCentralized';
+import { TooltipProps } from './types';
 
 // Tooltip Component
-export interface TooltipProps extends ComponentProps<typeof TooltipContainer> {
-  children: ReactNode;
-  contentInside: ReactNode; // Ajustando o tipo de content
-  arrowType: ArrowType;
-  styleToolTip?: React.CSSProperties;
-}
-
 export const Tooltip = ({
   children,
   contentInside,

@@ -11,25 +11,7 @@ import {
 import { Text } from '../Text';
 import { colors } from '@abqm-ui2/tokens';
 import { useClickOutside } from 'hooks/useClickOutside';
-
-type MenuItemType = {
-  name: string;
-  link: string;
-};
-
-type MenuWithSubmenuType = {
-  name: string;
-  link: string;
-  submenu: MenuItemType[];
-  open_submenu: boolean;
-};
-
-export type MenuItems = MenuItemType | MenuWithSubmenuType;
-
-export interface SideMenuProps extends ComponentProps<typeof MenuList> {
-  as?: ElementType;
-  data: MenuItems[];
-}
+import { SideMenuProps, MenuItems } from './types';
 
 export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
   const [menu, setMenu] = useState<MenuItems[]>(data);

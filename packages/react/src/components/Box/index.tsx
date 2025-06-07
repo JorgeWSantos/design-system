@@ -1,10 +1,5 @@
-import { ComponentProps, ElementType, ReactElement } from 'react';
 import { BoxContainer } from './styles';
-
-export interface BoxProps extends ComponentProps<typeof BoxContainer> {
-  as?: ElementType;
-  children?: ReactElement;
-}
+import { BoxProps } from './types';
 
 export const Box = ({ children, style, ...rest }: BoxProps) => {
   return (

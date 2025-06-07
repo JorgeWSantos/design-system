@@ -21,8 +21,8 @@ export const CheckboxContainer = styled(Checkbox.Root)`
   border-radius: ${radii.xs};
 
   &[data-state='checked'] {
-    background-color: ${colors.ignite300};
-    border: ${radii.pxx} solid ${colors.ignite300};
+    background-color: ${colors.green500};
+    border: ${radii.pxx} solid ${colors.green500};
   }
 
   &[data-state='unchecked'] {

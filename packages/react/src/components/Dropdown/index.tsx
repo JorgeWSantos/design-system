@@ -4,20 +4,7 @@ import { Text } from '@components/Text';
 import { CaretDownIcon } from '@abqm-ui2/icons';
 import { colors } from '@abqm-ui2/tokens';
 import { useClickOutside } from 'hooks/useClickOutside';
-
-export interface DataDropdown {
-  value: string;
-  label: string;
-  id: string;
-}
-
-export interface DropdownProps extends ComponentProps<typeof StyledDropdown> {
-  as?: ElementType;
-  // eslint-disable-next-line no-unused-vars
-  setValue?: (item: DataDropdown) => void;
-  data: DataDropdown[];
-  label: string | null;
-}
+import { DropdownProps, DataDropdown } from './types';
 
 export function Dropdown({ data, setValue, label = null, ...rest }: DropdownProps) {
   const [selectedOption, setSelectedOption] = useState(data.length > 0 ? data[0] : null);

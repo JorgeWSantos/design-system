@@ -23,7 +23,7 @@ export const TextArea = styled.textarea`
 
   &:focus {
     outline: 0;
-    border-color: ${colors.ignite300};
+    border-color: ${colors.green500};
   }
 
   &:disabled {
