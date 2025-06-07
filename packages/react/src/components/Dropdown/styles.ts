@@ -1,4 +1,4 @@
-import { colors, fontSizes, radii } from '@abqm-ui2/tokens';
+import { colors, fontSizes, radii } from '@abqm-ds/tokens';
 import { css, styled } from 'styled-components';
 
 interface ContainerProps {

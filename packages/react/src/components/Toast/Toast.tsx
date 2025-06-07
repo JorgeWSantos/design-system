@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useState, ReactNode } from 'react';
 import { ToastContainer, ToastMessage, ToastCloseButton } from './styles';
 import { Text } from '@components/Text';
-import { XIcon } from '@abqm-ui2/icons';
+import { XIcon } from '@abqm-ds/icons';
 import { ShowToastFn, Toast, ToastContextProps } from './types';
 
 const ToastContext = createContext<ToastContextProps | undefined>(undefined);

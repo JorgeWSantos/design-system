@@ -1,4 +1,4 @@
-import { radii } from '@abqm-ui2/tokens';
+import { radii } from '@abqm-ds/tokens';
 import { theme } from '@styles/index';
 import styled, { css } from 'styled-components';
 

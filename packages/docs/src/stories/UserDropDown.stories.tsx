@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { UserDropDown, UserDropDownProps } from '@abqm-ui2/react';
+import { UserDropDown, UserDropDownProps } from '@abqm-ds/react';
 
 export default {
   title: 'Components/UserDropDown',

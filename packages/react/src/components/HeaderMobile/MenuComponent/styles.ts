@@ -1,5 +1,5 @@
 import { Text } from '@components/Text';
-import { breakpointsPx, colors, radii, space } from '@abqm-ui2/tokens';
+import { breakpointsPx, colors, radii, space } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 import React from 'react';
 

@@ -1,6 +1,6 @@
 import { theme } from '../../../styles';
 import styled from 'styled-components';
-import { breakpointsPx } from '@abqm-ui2/tokens';
+import { breakpointsPx } from '@abqm-ds/tokens';
 
 export const ContainerContent = styled.div`
   display: flex;

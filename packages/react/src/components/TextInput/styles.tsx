@@ -8,7 +8,7 @@ import {
   lineHeights,
   radii,
   space,
-} from '@abqm-ui2/tokens';
+} from '@abqm-ds/tokens';
 
 const sizeVariants = {
   sm: `${space[2]} ${space[2]}`,

@@ -1,5 +1,5 @@
-import { colors } from '@abqm-ui2/tokens'
-import { getContrast } from 'polished'
+import { colors } from '@abqm-ds/tokens';
+import { getContrast } from 'polished';
 
 export function ColorsGrid() {
   return Object.entries(colors).map(([key, color]) => {
@@ -18,6 +18,6 @@ export function ColorsGrid() {
           <span>{color}</span>
         </div>
       </div>
-    )
-  })
+    );
+  });
 }

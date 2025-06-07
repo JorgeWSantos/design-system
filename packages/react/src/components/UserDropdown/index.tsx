@@ -8,9 +8,9 @@ import {
   UserDropdownWrapper,
 } from './styles';
 import { Text } from '@components/Text';
-import { BoxArrowInLeftIcon, CaretDownIcon } from '@abqm-ui2/icons';
+import { BoxArrowInLeftIcon, CaretDownIcon } from '@abqm-ds/icons';
 import { Tooltip } from '@components/Tooltip';
-import { colors } from '@abqm-ui2/tokens';
+import { colors } from '@abqm-ds/tokens';
 
 export interface UserDropDownProps extends ComponentProps<typeof UserDropdownWrapper> {
   as?: ElementType;

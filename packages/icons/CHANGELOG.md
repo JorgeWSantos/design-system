@@ -1,4 +1,4 @@
-# @abqm-ui2/icons
+# @abqm-ds/icons
 
 ## 1.0.2
 

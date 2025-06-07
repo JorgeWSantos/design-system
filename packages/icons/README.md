@@ -1,4 +1,4 @@
-# @abqm-ui2/icons
+# @abqm-ds/icons
 
 > Biblioteca de ícones em React baseada em SVGs personalizados da ABQM.
 
@@ -11,9 +11,9 @@ Esta biblioteca fornece ícones SVG como componentes React, permitindo o uso sim
 No seu projeto React (com suporte a pacotes do monorepo):
 
 ```bash
-yarn add @abqm-ui2/icons
+yarn add @abqm-ds/icons
 # ou
-npm install @abqm-ui2/icons
+npm install @abqm-ds/icons
 ```
 
 ---
@@ -47,7 +47,7 @@ npm run generate:icons
 Importe o componente do ícone desejado diretamente:
 
 ```tsx
-import { Facebook, Instagram, Youtube, Horse } from '@abqm-ui2/icons';
+import { Facebook, Instagram, Youtube, Horse } from '@abqm-ds/icons';
 
 export function Example() {
   return (

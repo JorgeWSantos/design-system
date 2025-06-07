@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { RoundedButton, RoundedButtonProps } from '@abqm-ui2/react';
-import { FilterIcon, PlusIcon, PrinterIcon } from '@abqm-ui2/icons';
+import { RoundedButton, RoundedButtonProps } from '@abqm-ds/react';
+import { FilterIcon, PlusIcon, PrinterIcon } from '@abqm-ds/icons';
 
 export default {
   title: 'Components/RoundedButton',

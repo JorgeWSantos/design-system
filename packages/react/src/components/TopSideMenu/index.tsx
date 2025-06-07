@@ -1,6 +1,6 @@
 import { ComponentProps, ElementType } from 'react';
 import { TextSideMenu, TopSideWrapper } from './styles';
-import { LogoSeqmIcon } from '@abqm-ui2/icons';
+import { LogoSeqmIcon } from '@abqm-ds/icons';
 import { UserDropDown } from '@components/UserDropdown';
 
 export interface TopSideMenuProps extends ComponentProps<typeof TopSideWrapper> {

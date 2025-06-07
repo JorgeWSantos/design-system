@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react'
-import { Avatar, AvatarProps } from '@abqm-ui2/react'
+import { Meta, StoryObj } from '@storybook/react';
+import { Avatar, AvatarProps } from '@abqm-ds/react';
 
 export default {
   title: 'Data Display/Avatar',
@@ -13,12 +13,12 @@ export default {
       control: 'text',
     },
   },
-} as Meta<AvatarProps>
+} as Meta<AvatarProps>;
 
-export const Primary: StoryObj<AvatarProps> = {}
+export const Primary: StoryObj<AvatarProps> = {};
 
 export const WithFallback: StoryObj<AvatarProps> = {
   args: {
     src: '',
   },
-}
+};

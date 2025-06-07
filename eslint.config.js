@@ -12,7 +12,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // });
 
 export default [
-  // ...compat.extends('@abqm-ui2/eslint-config'),
+  // ...compat.extends('@abqm-ds/eslint-config'),
   js.configs.recommended,
   {
     rules: {

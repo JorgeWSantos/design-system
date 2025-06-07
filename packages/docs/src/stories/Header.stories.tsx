@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Header, HeaderProps } from '@abqm-ui2/react';
-import { HorseIcon, PlusIcon, PrinterIcon } from '@abqm-ui2/icons';
+import { Header, HeaderProps } from '@abqm-ds/react';
+import { HorseIcon, PlusIcon, PrinterIcon } from '@abqm-ds/icons';
 import { action } from '@storybook/addon-actions';
 
 export default {

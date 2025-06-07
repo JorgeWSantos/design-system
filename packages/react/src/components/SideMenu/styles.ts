@@ -1,5 +1,5 @@
-import { CaretRightIcon } from '@abqm-ui2/icons';
-import { colors, radii, space } from '@abqm-ui2/tokens';
+import { CaretRightIcon } from '@abqm-ds/icons';
+import { colors, radii, space } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 
 export const MenuList = styled.ul`

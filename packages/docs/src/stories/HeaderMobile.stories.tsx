@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { HeaderMobile, HeaderMobileProps } from '@abqm-ui2/react';
+import { HeaderMobile, HeaderMobileProps } from '@abqm-ds/react';
 
 export default {
   title: 'Surfaces/HeaderMobile',

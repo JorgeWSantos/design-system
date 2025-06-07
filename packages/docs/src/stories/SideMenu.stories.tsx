@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { SideMenu, SideMenuProps } from '@abqm-ui2/react';
+import { SideMenu, SideMenuProps } from '@abqm-ds/react';
 
 export default {
   title: 'Surfaces/SideMenu',

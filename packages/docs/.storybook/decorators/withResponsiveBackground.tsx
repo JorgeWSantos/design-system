@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { GlobalStyle } from '@abqm-ui2/react';
+import { GlobalStyle } from '@abqm-ds/react';
 
 export const withResponsiveBackground = (Story: any) => {
   const [bg, setBg] = useState('/background.jpg');

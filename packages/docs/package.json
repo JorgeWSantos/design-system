@@ -1,5 +1,5 @@
 {
-  "name": "@abqm-ui2/docs",
+  "name": "@abqm-ds/docs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,10 +13,10 @@
     "clean": "rimraf dist && rimraf storybook-static"
   },
   "dependencies": {
-    "@abqm-ui2/react": "*",
-    "@abqm-ui2/tokens": "*",
-    "@abqm-ui2/icons": "*",
-    "@abqm-ui2/ts-config": "*",
+    "@abqm-ds/react": "*",
+    "@abqm-ds/tokens": "*",
+    "@abqm-ds/icons": "*",
+    "@abqm-ds/ts-config": "*",
     "@storybook/addon-a11y": "^8.6.12",
     "phosphor-react": "^1.4.1",
     "polished": "^4.3.1",

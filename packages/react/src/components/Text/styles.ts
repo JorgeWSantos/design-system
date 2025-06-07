@@ -1,4 +1,4 @@
-import { colors, fonts } from '@abqm-ui2/tokens';
+import { colors, fonts } from '@abqm-ds/tokens';
 import { css, styled } from 'styled-components';
 import {
   fontSizeTypes,

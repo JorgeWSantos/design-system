@@ -1,4 +1,4 @@
-import { colors, radii, space } from '@abqm-ui2/tokens';
+import { colors, radii, space } from '@abqm-ds/tokens';
 import { Avatar } from '@components/Avatar';
 import styled from 'styled-components';
 

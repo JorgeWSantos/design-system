@@ -1,6 +1,6 @@
-import { CaretDownIcon, MenuIcon, XIcon } from '@abqm-ui2/icons';
+import { CaretDownIcon, MenuIcon, XIcon } from '@abqm-ds/icons';
 import { Text } from '@components/Text';
-import { colors, radii, space } from '@abqm-ui2/tokens';
+import { colors, radii, space } from '@abqm-ds/tokens';
 import styled from 'styled-components';
 
 // Container principal

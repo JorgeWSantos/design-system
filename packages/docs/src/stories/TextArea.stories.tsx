@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Box, Text, TextArea, TextAreaProps, theme } from '@abqm-ui2/react';
+import { Box, Text, TextArea, TextAreaProps, theme } from '@abqm-ds/react';
 
 export default {
   title: 'Form/TextArea',

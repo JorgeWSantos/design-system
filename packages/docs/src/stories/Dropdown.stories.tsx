@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Box, Dropdown, DropdownProps, DataDropdown } from '@abqm-ui2/react';
-import { radii, space } from '@abqm-ui2/tokens';
+import { Box, Dropdown, DropdownProps, DataDropdown } from '@abqm-ds/react';
+import { radii, space } from '@abqm-ds/tokens';
 
 export default {
   title: 'Form/Dropdown',

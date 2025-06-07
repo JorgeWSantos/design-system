@@ -1,4 +1,4 @@
-# @abqm-ui2/react
+# @abqm-ds/react
 
 ## 1.0.5
 

@@ -1,4 +1,4 @@
-import { breakpointsPx, colors, space } from '@abqm-ui2/tokens';
+import { breakpointsPx, colors, space } from '@abqm-ds/tokens';
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`

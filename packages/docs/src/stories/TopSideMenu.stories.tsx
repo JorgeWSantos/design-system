@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { TopSideMenu, TopSideMenuProps } from '@abqm-ui2/react';
+import { TopSideMenu, TopSideMenuProps } from '@abqm-ds/react';
 
 export default {
   title: 'Surfaces/TopSideMenu',

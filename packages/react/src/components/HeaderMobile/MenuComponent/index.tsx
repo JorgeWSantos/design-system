@@ -8,7 +8,7 @@ import {
   SubMenuLink,
   SubMenuList,
 } from './styles';
-import { colors } from '@abqm-ui2/tokens';
+import { colors } from '@abqm-ds/tokens';
 import React from 'react';
 
 interface MenuProps {

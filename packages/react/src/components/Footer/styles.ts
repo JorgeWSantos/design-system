@@ -1,4 +1,4 @@
-import { breakpointsPx } from '@abqm-ui2/tokens';
+import { breakpointsPx } from '@abqm-ds/tokens';
 import { theme } from '../../styles';
 import styled from 'styled-components';
 

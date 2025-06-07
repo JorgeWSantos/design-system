@@ -1,4 +1,4 @@
-# @abqm-ui2/ts-config
+# @abqm-ds/ts-config
 
 ## 1.0.1
 

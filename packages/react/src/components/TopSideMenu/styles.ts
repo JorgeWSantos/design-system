@@ -1,4 +1,4 @@
-import { colors } from '@abqm-ui2/tokens';
+import { colors } from '@abqm-ds/tokens';
 import { Text } from '@components/Text';
 import styled from 'styled-components';
 

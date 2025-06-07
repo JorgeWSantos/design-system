@@ -1,5 +1,5 @@
-import { PersonCircleIcon } from '@abqm-ui2/icons';
-import { colors, radii } from '@abqm-ui2/tokens';
+import { PersonCircleIcon } from '@abqm-ds/icons';
+import { colors, radii } from '@abqm-ds/tokens';
 import styled from 'styled-components';
 
 export const StyledImageContainer = styled.div`

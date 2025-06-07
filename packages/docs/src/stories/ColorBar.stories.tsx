@@ -1,13 +1,12 @@
-import { Meta, StoryObj } from '@storybook/react'
-import { ColorBar, ColorBarProps } from '@abqm-ui2/react'
+import { Meta, StoryObj } from '@storybook/react';
+import { ColorBar, ColorBarProps } from '@abqm-ds/react';
 
 export default {
   title: 'Components/ColorBar',
   component: ColorBar,
-} as Meta<ColorBarProps>
+} as Meta<ColorBarProps>;
 
-export const Primary: StoryObj<ColorBarProps> = {
-}
+export const Primary: StoryObj<ColorBarProps> = {};
 
 // export const Secondary: StoryObj<ColorBarProps> = {
 //   args: {

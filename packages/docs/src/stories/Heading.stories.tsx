@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Heading, HeadingProps } from '@abqm-ui2/react';
+import { Heading, HeadingProps } from '@abqm-ds/react';
 
 export default {
   title: 'Typography/Heading',

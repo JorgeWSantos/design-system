@@ -1,4 +1,4 @@
-import { fontSizes, fontWeights, lineHeights } from '@abqm-ui2/tokens';
+import { fontSizes, fontWeights, lineHeights } from '@abqm-ds/tokens';
 
 export type WeightTypes = 'regular' | 'medium' | 'semi' | 'bold';
 

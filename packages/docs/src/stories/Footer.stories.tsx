@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Footer, FooterProps } from '@abqm-ui2/react';
+import { Footer, FooterProps } from '@abqm-ds/react';
 
 export default {
   title: 'Surfaces/Footer',

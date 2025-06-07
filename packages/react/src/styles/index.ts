@@ -8,7 +8,7 @@ import {
   space,
   breakpoints,
   breakpointsPx,
-} from '@abqm-ui2/tokens';
+} from '@abqm-ds/tokens';
 
 export const theme = {
   colors,

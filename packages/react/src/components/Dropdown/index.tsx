@@ -1,8 +1,8 @@
 import { ComponentProps, ElementType, useCallback, useRef, useState } from 'react';
 import { Container, StyledDropdown, ContainerOptions, Option } from './styles';
 import { Text } from '@components/Text';
-import { CaretDownIcon } from '@abqm-ui2/icons';
-import { colors } from '@abqm-ui2/tokens';
+import { CaretDownIcon } from '@abqm-ds/icons';
+import { colors } from '@abqm-ds/tokens';
 import { useClickOutside } from 'hooks/useClickOutside';
 import { DropdownProps, DataDropdown } from './types';
 

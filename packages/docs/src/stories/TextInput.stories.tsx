@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Box, Text, TextInput, TextInputProps, theme } from '@abqm-ui2/react';
-import { SearchIcon } from '@abqm-ui2/icons';
+import { Box, Text, TextInput, TextInputProps, theme } from '@abqm-ds/react';
+import { SearchIcon } from '@abqm-ds/icons';
 
 export default {
   title: 'Form/TextInput',

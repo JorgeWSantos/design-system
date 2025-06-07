@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ToastProvider, useToast, Button, Box, Text } from '@abqm-ui2/react';
+import { ToastProvider, useToast, Button, Box, Text } from '@abqm-ds/react';
 
 // Documentação principal do componente Toast
 export default {
@@ -16,7 +16,7 @@ O componente **Toast** exibe mensagens temporárias de feedback para o usuário,
 1. **Envolva sua aplicação com o \`ToastProvider\`:**
 
 \`\`\`tsx
-import { ToastProvider } from '@abqm-ui2/react';
+import { ToastProvider } from '@abqm-ds/react';
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
 2. **Use o hook \`useToast\` para disparar toasts em qualquer componente filho:**
 
 \`\`\`tsx
-import { useToast } from '@abqm-ui2/react';
+import { useToast } from '@abqm-ds/react';
 
 function MeuComponente() {
   const { showToast } = useToast();

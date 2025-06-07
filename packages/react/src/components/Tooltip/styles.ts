@@ -1,4 +1,4 @@
-import { colors } from '@abqm-ui2/tokens';
+import { colors } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 import type { ArrowType } from './types';
 

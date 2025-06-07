@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react'
-import { Text, TextProps } from '@abqm-ui2/react'
+import { Meta, StoryObj } from '@storybook/react';
+import { Text, TextProps } from '@abqm-ds/react';
 
 export default {
   title: 'Typography/Text',
@@ -29,13 +29,13 @@ export default {
       control: { type: 'inline-radio' },
     },
   },
-} as Meta<TextProps>
+} as Meta<TextProps>;
 
-export const Primary: StoryObj<TextProps> = {}
+export const Primary: StoryObj<TextProps> = {};
 
 export const CustomTag: StoryObj<TextProps> = {
   args: {
     children: 'Strong Text',
     as: 'strong',
   },
-}
+};

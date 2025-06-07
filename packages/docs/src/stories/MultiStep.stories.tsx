@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react'
-import { Box, MultiStep, MultiStepProps, theme } from '@abqm-ui2/react'
+import { Meta, StoryObj } from '@storybook/react';
+import { Box, MultiStep, MultiStepProps, theme } from '@abqm-ds/react';
 
 export default {
   title: 'Form/Multi Step',
@@ -25,7 +25,7 @@ export default {
   //     )
   //   },
   // ],
-} as Meta<MultiStepProps>
+} as Meta<MultiStepProps>;
 
 const render = (args: MultiStepProps) => (
   <Box
@@ -38,12 +38,12 @@ const render = (args: MultiStepProps) => (
   >
     <MultiStep {...args} />
   </Box>
-)
+);
 
 export const Primary: StoryObj<MultiStepProps> = {
   args: {},
   render,
-}
+};
 
 export const Full: StoryObj<MultiStepProps> = {
   args: {
@@ -51,4 +51,4 @@ export const Full: StoryObj<MultiStepProps> = {
     size: 4,
   },
   render,
-}
+};

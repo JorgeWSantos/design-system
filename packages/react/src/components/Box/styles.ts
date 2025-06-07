@@ -1,4 +1,4 @@
-import { breakpointsPx, colors, radii, space } from '@abqm-ui2/tokens';
+import { breakpointsPx, colors, radii, space } from '@abqm-ds/tokens';
 import { styled } from 'styled-components';
 
 export const BoxContainer = styled.div`

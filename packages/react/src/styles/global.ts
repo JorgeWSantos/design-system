@@ -1,6 +1,6 @@
 // src/styles/global.ts
 import { createGlobalStyle } from 'styled-components';
-import { colors, fonts } from '@abqm-ui2/tokens';
+import { colors, fonts } from '@abqm-ds/tokens';
 
 export const GlobalStyle = createGlobalStyle`
   /* 1. Box sizing */

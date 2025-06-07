@@ -9,8 +9,8 @@ import {
   SocialIcon,
 } from './styles';
 
-import { FacebookIcon, InstagramIcon, YoutubeIcon } from '@abqm-ui2/icons';
-import { breakpoints } from '@abqm-ui2/tokens';
+import { FacebookIcon, InstagramIcon, YoutubeIcon } from '@abqm-ds/icons';
+import { breakpoints } from '@abqm-ds/tokens';
 import { useWindowSize } from 'utils/useWindowSize';
 
 export interface FooterContentProps extends ComponentProps<typeof ContainerContent> {}

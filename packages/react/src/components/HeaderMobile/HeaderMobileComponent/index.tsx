@@ -1,4 +1,4 @@
-import { LogoSeqmMobileIcon } from '@abqm-ui2/icons';
+import { LogoSeqmMobileIcon } from '@abqm-ds/icons';
 import * as S from './styles';
 
 interface Props {

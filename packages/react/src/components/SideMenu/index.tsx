@@ -9,7 +9,7 @@ import {
   CaretIcon,
 } from './styles';
 import { Text } from '../Text';
-import { colors } from '@abqm-ui2/tokens';
+import { colors } from '@abqm-ds/tokens';
 import { useClickOutside } from 'hooks/useClickOutside';
 import { SideMenuProps, MenuItems } from './types';
 

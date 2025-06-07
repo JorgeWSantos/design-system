@@ -1,5 +1,5 @@
 {
-  "name": "@abqm-ui2/tokens",
+  "name": "@abqm-ds/tokens",
   "version": "1.0.4",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
-    "@abqm-ui2/ts-config": "*",
+    "@abqm-ds/ts-config": "*",
     "tsup": "^8.4.0",
     "typescript": "^5.8.3"
   }

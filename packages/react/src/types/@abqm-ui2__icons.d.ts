@@ -1,4 +1,4 @@
-declare module '@abqm-ui2/icons' {
+declare module '@abqm-ds/icons' {
   import { FC, SVGProps } from 'react';
   export const FilterIcon: FC<SVGProps<SVGSVGElement>>;
   export const PlusIcon: FC<SVGProps<SVGSVGElement>>;

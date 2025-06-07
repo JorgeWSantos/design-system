@@ -1,5 +1,5 @@
-import { XIcon } from '@abqm-ui2/icons';
-import { colors } from '@abqm-ui2/tokens';
+import { XIcon } from '@abqm-ds/icons';
+import { colors } from '@abqm-ds/tokens';
 import styled from 'styled-components';
 
 export const ModalOverlay = styled.div`
