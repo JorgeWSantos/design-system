@@ -43,6 +43,7 @@ export default [
     },
     rules: {
       // regras específicas do pacote react (opcional)
+      'no-unused-vars': 'off', // Desativar regra para evitar conflitos com o TypeScript
     },
   },
 
