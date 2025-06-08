@@ -1,5 +1,16 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { colors } from '@abqm-ds/tokens';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const ToastContainer = styled.div`
   position: fixed;
@@ -26,6 +37,13 @@ export const ToastMessage = styled.div<{ $type?: string }>`
   background: ${colors.emeraldGreen75};
   font-size: 1rem;
   box-shadow: -4px 4px 12px 0px rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+  transform: translateY(-16px);
+  animation: ${fadeIn} 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
   ${({ $type }) =>
     $type === 'success' &&
