@@ -55,9 +55,9 @@ export const ToastMessage = styled.div<{ $type?: string }>`
       background: ${colors.blue700};
       color: ${colors.white85};
 
-      border-top: 1px solid ${colors.blue900};
-      border-bottom: 1px solid ${colors.blue900};
-      border-left: 1px solid ${colors.blue900};
+      border-top: 1px solid ${colors.blue300};
+      border-bottom: 1px solid ${colors.blue300};
+      border-left: 1px solid ${colors.blue300};
     `}
 
   ${({ $type }) =>
