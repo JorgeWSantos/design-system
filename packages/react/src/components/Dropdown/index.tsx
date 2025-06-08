@@ -1,4 +1,11 @@
-import { ComponentProps, ElementType, useCallback, useRef, useState } from 'react';
+import {
+  ComponentProps,
+  ElementType,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { Container, StyledDropdown, ContainerOptions, Option } from './styles';
 import { Text } from '@components/Text';
 import { CaretDownIcon } from '@abqm-ds/icons';
@@ -9,6 +16,10 @@ import { DropdownProps, DataDropdown } from './types';
 export function Dropdown({ data, setValue, label = null, ...rest }: DropdownProps) {
   const [selectedOption, setSelectedOption] = useState(data.length > 0 ? data[0] : null);
   const [showOptions, setShowOptions] = useState(false);
+
+  useEffect(() => {
+    setSelectedOption(data.length > 0 ? data[0] : null);
+  }, [data]);
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
