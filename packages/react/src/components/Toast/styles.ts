@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { colors } from '@abqm-ds/tokens';
+import { breakpointsPx, colors } from '@abqm-ds/tokens';
 
 const fadeIn = keyframes`
   from {
@@ -20,6 +20,11 @@ export const ToastContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  @media (max-width: ${breakpointsPx.md}) {
+    top: 1.5rem;
+    right: 0.5rem;
+  }
 `;
 
 export const ToastMessage = styled.div<{ $type?: string }>`
@@ -84,6 +89,10 @@ export const ToastMessage = styled.div<{ $type?: string }>`
       background: ${colors.yellow200};
       color: ${colors.black};
     `}
+
+  @media (max-width: ${breakpointsPx.md}) {
+    width: 17.5rem;
+  }
 `;
 
 export const ToastCloseButton = styled.button`
