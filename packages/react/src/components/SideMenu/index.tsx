@@ -88,8 +88,8 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
             key={item.name}
             index={i}
             data-submenu-trigger
-            lastIndex={menu.length - 1}
-            isSelected={isSelected}
+            $lastIndex={menu.length - 1}
+            $isSelected={isSelected}
           >
             <MenuLink
               href={item.link}
@@ -113,7 +113,7 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
               >
                 {item.name}
               </Text>
-              <CaretIcon isSelected={isSelected} />
+              <CaretIcon $isSelected={isSelected} />
             </MenuLink>
 
             {hasSubmenu && (visibleSubmenu === i || fadingOutIndex === i) && (

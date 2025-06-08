@@ -38,7 +38,7 @@ export function Dropdown({ data, setValue, label = null, ...rest }: DropdownProp
   );
 
   return (
-    <Container hasLabel={!!label} ref={dropdownRef}>
+    <Container $hasLabel={!!label} ref={dropdownRef}>
       {label && (
         <Text
           lineHeight="tight"

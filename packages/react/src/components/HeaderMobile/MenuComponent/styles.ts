@@ -3,7 +3,7 @@ import { breakpointsPx, colors, radii, space } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 import React from 'react';
 
-export const MenuList = styled.ul<{ menuIsOpen: boolean; subMenuIsOpen: boolean }>`
+export const MenuList = styled.ul<{ $menuIsOpen: boolean; $subMenuIsOpen: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -27,22 +27,22 @@ export const MenuList = styled.ul<{ menuIsOpen: boolean; subMenuIsOpen: boolean 
   backdrop-filter: blur(3.125rem);
   padding: ${space[6]};
 
-  display: ${({ menuIsOpen }) =>
-    menuIsOpen ? 'flex' : 'none'}; /* Hide menu off-screen */
-  visibility: ${({ menuIsOpen }) =>
-    menuIsOpen ? 'visible' : 'hidden'}; /* Hide menu off-screen */
+  display: ${({ $menuIsOpen }) =>
+    $menuIsOpen ? 'flex' : 'none'}; /* Hide menu off-screen */
+  visibility: ${({ $menuIsOpen }) =>
+    $menuIsOpen ? 'visible' : 'hidden'}; /* Hide menu off-screen */
 
-  pointer-events: ${({ menuIsOpen }) =>
-    menuIsOpen ? 'auto' : 'none'}; /* Disable interactions when not visible */
+  pointer-events: ${({ $menuIsOpen }) =>
+    $menuIsOpen ? 'auto' : 'none'}; /* Disable interactions when not visible */
 
   /* Opacity now controlled only for fading effect */
-  opacity: ${({ menuIsOpen }) => (menuIsOpen ? '1' : '0')};
+  opacity: ${({ $menuIsOpen }) => ($menuIsOpen ? '1' : '0')};
 
-  left: ${({ menuIsOpen }) => (menuIsOpen ? '0' : '100%')};
+  left: ${({ $menuIsOpen }) => ($menuIsOpen ? '0' : '100%')};
   transition: left 200ms ease-in-out, opacity 200ms ease-in-out;
 
-  ${({ subMenuIsOpen }) =>
-    subMenuIsOpen &&
+  ${({ $subMenuIsOpen }) =>
+    $subMenuIsOpen &&
     css`
       background-color: transparent;
     `}
@@ -52,7 +52,7 @@ export const MenuList = styled.ul<{ menuIsOpen: boolean; subMenuIsOpen: boolean 
   }
 `;
 
-export const MenuItem = styled.li<{ index: number; subMenuIsOpen: boolean }>`
+export const MenuItem = styled.li<{ index: number; $subMenuIsOpen: boolean }>`
   max-height: 2.813rem;
   height: 2.813rem;
 
@@ -66,14 +66,14 @@ export const MenuItem = styled.li<{ index: number; subMenuIsOpen: boolean }>`
   border-bottom: ${radii.px} solid ${colors.white25};
   transition: left 200ms ease-in-out, opacity 200ms ease-in-out;
 
-  ${({ subMenuIsOpen }) =>
-    subMenuIsOpen &&
+  ${({ $subMenuIsOpen }) =>
+    $subMenuIsOpen &&
     css`
       border: none;
     `}
 `;
 
-export const MenuLink = styled.a<{ subMenuIsOpen: boolean }>`
+export const MenuLink = styled.a<{ $subMenuIsOpen: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,7 +84,7 @@ export const MenuLink = styled.a<{ subMenuIsOpen: boolean }>`
   text-decoration: none;
   padding: ${space[3]};
 
-  opacity: ${({ subMenuIsOpen }) => (subMenuIsOpen ? '0' : '1')};
+  opacity: ${({ $subMenuIsOpen }) => ($subMenuIsOpen ? '0' : '1')};
 
   transition: left 200ms ease-in-out, opacity 200ms ease-in-out;
 `;
@@ -98,7 +98,7 @@ export const MenuItemText = styled(Text).attrs({
 `;
 
 export const SubMenuList = styled.ul<{
-  visible: boolean;
+  $visible: boolean;
   ref: React.RefObject<HTMLUListElement | null>;
 }>`
   display: flex;
@@ -121,17 +121,17 @@ export const SubMenuList = styled.ul<{
   backdrop-filter: blur(3.125rem);
   padding: ${space[6]};
 
-  display: ${({ visible }) => (visible ? 'flex' : 'none')}; /* Hide menu off-screen */
-  visibility: ${({ visible }) =>
-    visible ? 'visible' : 'hidden'}; /* Hide menu off-screen */
+  display: ${({ $visible }) => ($visible ? 'flex' : 'none')}; /* Hide menu off-screen */
+  visibility: ${({ $visible }) =>
+    $visible ? 'visible' : 'hidden'}; /* Hide menu off-screen */
 
-  pointer-events: ${({ visible }) =>
-    visible ? 'auto' : 'none'}; /* Disable interactions when not visible */
+  pointer-events: ${({ $visible }) =>
+    $visible ? 'auto' : 'none'}; /* Disable interactions when not visible */
 
   /* Opacity now controlled only for fading effect */
-  opacity: ${({ visible }) => (visible ? '1' : '0')};
+  opacity: ${({ $visible }) => ($visible ? '1' : '0')};
 
-  left: ${({ visible }) => (visible ? '0' : '100%')};
+  left: ${({ $visible }) => ($visible ? '0' : '100%')};
   transition: left 200ms ease-in-out, opacity 200ms ease-in-out;
 `;
 

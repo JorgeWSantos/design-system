@@ -66,20 +66,20 @@ export const MenuHamburgueIconWrapper = styled.div`
 `;
 
 // Ícone de menu hamburguer
-export const MenuHamburgueIcon = styled(MenuIcon)<{ menuIsOpen: boolean }>`
+export const MenuHamburgueIcon = styled(MenuIcon)<{ $menuIsOpen: boolean }>`
   position: absolute;
   top: 10;
   left: 0;
   width: 1.75rem;
   height: 1.125rem;
   border-radius: ${radii.pxx};
-  transform: ${({ menuIsOpen }) => (menuIsOpen ? 'rotate(45deg)' : 'rotate(0)')};
-  opacity: ${({ menuIsOpen }) => (menuIsOpen ? 0 : 1)};
+  transform: ${({ $menuIsOpen }) => ($menuIsOpen ? 'rotate(45deg)' : 'rotate(0)')};
+  opacity: ${({ $menuIsOpen }) => ($menuIsOpen ? 0 : 1)};
   transition: all 0.2s ease-in-out;
 `;
 
 // Ícone de fechar (X)
-export const CloseMenuIcon = styled(XIcon)<{ menuIsOpen: boolean }>`
+export const CloseMenuIcon = styled(XIcon)<{ $menuIsOpen: boolean }>`
   position: absolute;
   top: 10;
   left: 0;
@@ -87,12 +87,12 @@ export const CloseMenuIcon = styled(XIcon)<{ menuIsOpen: boolean }>`
   width: 1.375rem;
   height: 0.875rem;
 
-  transform: ${({ menuIsOpen }) => (menuIsOpen ? 'rotate(90deg)' : 'rotate(0)')};
-  opacity: ${({ menuIsOpen }) => (menuIsOpen ? 1 : 0)};
+  transform: ${({ $menuIsOpen }) => ($menuIsOpen ? 'rotate(90deg)' : 'rotate(0)')};
+  opacity: ${({ $menuIsOpen }) => ($menuIsOpen ? 1 : 0)};
 
   transition: all 0.3s ease-in-out;
 `;
-export const BackMenuIcon = styled(CaretDownIcon)<{ subMenuIsOpen: boolean }>`
+export const BackMenuIcon = styled(CaretDownIcon)<{ $subMenuIsOpen: boolean }>`
   position: absolute;
   top: 10;
   left: 0;
@@ -100,8 +100,8 @@ export const BackMenuIcon = styled(CaretDownIcon)<{ subMenuIsOpen: boolean }>`
   width: 1.25rem;
   height: 0.875rem;
 
-  transform: ${({ subMenuIsOpen }) => (subMenuIsOpen ? 'rotate(90deg)' : 'rotate(0)')};
-  opacity: ${({ subMenuIsOpen }) => (subMenuIsOpen ? 1 : 0)};
+  transform: ${({ $subMenuIsOpen }) => ($subMenuIsOpen ? 'rotate(90deg)' : 'rotate(0)')};
+  opacity: ${({ $subMenuIsOpen }) => ($subMenuIsOpen ? 1 : 0)};
 
   transition: all 0.3s ease-in-out;
 `;

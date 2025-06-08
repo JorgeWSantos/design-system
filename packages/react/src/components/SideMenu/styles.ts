@@ -11,8 +11,8 @@ export const MenuList = styled.ul`
 
 export const MenuItem = styled.li<{
   index: number;
-  lastIndex: number;
-  isSelected?: boolean;
+  $lastIndex: number;
+  $isSelected?: boolean;
 }>`
   min-width: 12.5rem;
   max-height: 2.125rem;
@@ -26,8 +26,8 @@ export const MenuItem = styled.li<{
   background-color: ${colors.emeraldGreen50};
   transition: 0.3ms ease-in-out;
 
-  ${({ isSelected }) =>
-    isSelected &&
+  ${({ $isSelected }) =>
+    $isSelected &&
     css`
       transition: 0.3ms ease-in-out;
 
@@ -42,8 +42,8 @@ export const MenuItem = styled.li<{
     `}
 
   // round last item menu
-  ${({ index, lastIndex }) =>
-    index === lastIndex &&
+  ${({ index, $lastIndex }) =>
+    index === $lastIndex &&
     css`
       border-radius: 0rem 0rem ${space[1]} ${space[1]};
       border-bottom: none;
@@ -61,13 +61,13 @@ export const MenuLink = styled.a`
 `;
 
 export const CaretIcon = styled(CaretRightIcon)<{
-  isSelected: boolean;
+  $isSelected: boolean;
 }>`
   width: 0.5rem;
   height: 0.5rem;
 
-  ${({ isSelected }) =>
-    !isSelected &&
+  ${({ $isSelected }) =>
+    !$isSelected &&
     css`
       path {
         fill: ${colors.white25};

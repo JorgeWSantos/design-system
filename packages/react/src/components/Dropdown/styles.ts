@@ -2,7 +2,7 @@ import { colors, fontSizes, radii } from '@abqm-ds/tokens';
 import { css, styled } from 'styled-components';
 
 interface ContainerProps {
-  hasLabel: boolean;
+  $hasLabel: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -15,8 +15,8 @@ export const Container = styled.div<ContainerProps>`
   justify-content: space-between;
   gap: 0.25rem;
 
-  ${({ hasLabel }) =>
-    hasLabel &&
+  ${({ $hasLabel }) =>
+    $hasLabel &&
     css`
       height: 3.25.rem;
     `}

@@ -29,9 +29,9 @@ const HeaderMobileComponent = ({
 
       <S.DivButtons>
         <S.MenuHamburgueIconWrapper onClick={!visibleSubmenu ? toggleMenu : hideSubMenu}>
-          <S.MenuHamburgueIcon menuIsOpen={menuIsOpen} />
-          <S.CloseMenuIcon menuIsOpen={visibleSubmenu ? false : menuIsOpen} />
-          <S.BackMenuIcon subMenuIsOpen={visibleSubmenu} />
+          <S.MenuHamburgueIcon $menuIsOpen={menuIsOpen} />
+          <S.CloseMenuIcon $menuIsOpen={visibleSubmenu ? false : menuIsOpen} />
+          <S.BackMenuIcon $subMenuIsOpen={visibleSubmenu} />
         </S.MenuHamburgueIconWrapper>
       </S.DivButtons>
     </S.Container>
