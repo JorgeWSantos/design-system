@@ -15,7 +15,7 @@ O componente **UserDropdown** exibe um menu suspenso para ações do usuário.
 \`\`\`tsx
 import { UserDropdown } from '@abqm-ds/react';
 
-<UserDropdown user={{ name: 'Jorge', avatar: 'https://github.com/jorgewsantos.png' }} />
+<UserDropDown srcImage="https://github.com/jorgewsantos.png" userName="Jorge Santos" />
 \`\`\`
 
 - Exibe nome e avatar do usuário.

@@ -3,6 +3,13 @@ import { breakpointsPx, colors, radii, space } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 import React from 'react';
 
+export const ContainerUserDropDown = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+`;
+
 export const MenuList = styled.ul<{ $menuIsOpen: boolean; $subMenuIsOpen: boolean }>`
   display: flex;
   flex-direction: column;
@@ -16,8 +23,8 @@ export const MenuList = styled.ul<{ $menuIsOpen: boolean; $subMenuIsOpen: boolea
   top: 3.5rem;
   box-sizing: border-box;
   height: 93vh;
-
   width: 100%;
+
   box-sizing: border-box;
 
   align-self: stretch;
@@ -38,7 +45,7 @@ export const MenuList = styled.ul<{ $menuIsOpen: boolean; $subMenuIsOpen: boolea
   /* Opacity now controlled only for fading effect */
   opacity: ${({ $menuIsOpen }) => ($menuIsOpen ? '1' : '0')};
 
-  left: ${({ $menuIsOpen }) => ($menuIsOpen ? '0' : '100%')};
+  left: ${({ $menuIsOpen }) => ($menuIsOpen ? '10' : '100%')};
   transition: left 200ms ease-in-out, opacity 200ms ease-in-out;
 
   ${({ $subMenuIsOpen }) =>

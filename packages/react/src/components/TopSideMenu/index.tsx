@@ -1,23 +1,17 @@
 import { ComponentProps, ElementType } from 'react';
 import { TextSideMenu, TopSideWrapper } from './styles';
 import { LogoSeqmIcon } from '@abqm-ds/icons';
-import { UserDropDown } from '@components/UserDropdown';
+import { UserDropDown, UserDropDownProps } from '@components/UserDropdown';
 
 export interface TopSideMenuProps extends ComponentProps<typeof TopSideWrapper> {
   as?: ElementType;
+  userDropdown?: UserDropDownProps;
   text?: string;
-  userName?: string;
-  srcImage: string;
-  onLogin?: () => void;
-  onLogout?: () => void;
 }
 
 export const TopSideMenu = ({
   text = 'SISTEMA DE ESPORTES',
-  userName = 'Jhon Doe',
-  srcImage = '',
-  onLogin,
-  onLogout,
+  userDropdown,
   ...rest
 }: TopSideMenuProps) => {
   return (
@@ -25,10 +19,10 @@ export const TopSideMenu = ({
       <LogoSeqmIcon width={'6.75rem'} height={'3rem'} />
       <TextSideMenu>{text}</TextSideMenu>
       <UserDropDown
-        userName={userName}
-        srcImage={srcImage}
-        onLogin={onLogin}
-        onLogout={onLogout}
+        userName={userDropdown?.userName || ''}
+        srcImage={userDropdown?.srcImage || ''}
+        onLogin={userDropdown?.onLogin}
+        onLogout={userDropdown?.onLogout}
       />
     </TopSideWrapper>
   );

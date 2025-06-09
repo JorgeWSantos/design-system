@@ -3,17 +3,20 @@ import HeaderMobileComponent from './HeaderMobileComponent';
 import { Container } from './styles';
 import { useRef, useState } from 'react';
 import { Menu } from './MenuComponent';
+import { UserDropDownProps } from '@components/UserDropdown';
 
 export interface HeaderMobileProps {
   title?: string;
   page?: string;
   data: MenuItems[];
+  userDropdown?: UserDropDownProps;
 }
 
 export const HeaderMobile = ({
   title = 'SEQM',
   page = 'Calendários',
   data,
+  userDropdown,
   ...rest
 }: HeaderMobileProps) => {
   const [menu, setMenu] = useState<MenuItems[]>(data);
@@ -74,6 +77,7 @@ export const HeaderMobile = ({
       />
 
       <Menu
+        userDropdown={userDropdown}
         handleOpenSubMenu={handleOpenSubMenu}
         menu={menu}
         subMenuRef={subMenuRef}

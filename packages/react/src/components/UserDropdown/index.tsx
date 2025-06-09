@@ -1,4 +1,4 @@
-import { ComponentProps, ElementType, useCallback } from 'react';
+import { ComponentProps, useCallback } from 'react';
 import {
   AvatarDiv,
   ButtonTooltip,
@@ -13,7 +13,6 @@ import { Tooltip } from '@components/Tooltip';
 import { colors } from '@abqm-ds/tokens';
 
 export interface UserDropDownProps extends ComponentProps<typeof UserDropdownWrapper> {
-  as?: ElementType;
   userName: string;
   srcImage: string;
   onLogout?: () => void;
