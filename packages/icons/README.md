@@ -6,7 +6,7 @@ Esta biblioteca fornece ícones SVG como componentes React, permitindo uso simpl
 
 ---
 
-## 📦 Instalação
+## 📦 Instalação.
 
 No seu projeto React (com suporte a pacotes do monorepo):
 

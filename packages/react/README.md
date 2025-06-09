@@ -6,7 +6,7 @@ Este pacote fornece componentes reutilizáveis, acessíveis e estilizados para u
 
 ---
 
-## 📦 Instalação
+## 📦 Instalação.
 
 ```bash
 yarn add @abqm-ds/react

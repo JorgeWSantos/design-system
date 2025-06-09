@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 1.0.8
+
+### Patch Changes
+
+- feat: 🎸 Atualizará libs no NPM
+
 ## 1.0.7
 
 ### Patch Changes

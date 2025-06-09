@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.9
+
+### Patch Changes
+
+- feat: 🎸 Atualizará libs no NPM
+
 ## 1.0.8
 
 ### Patch Changes

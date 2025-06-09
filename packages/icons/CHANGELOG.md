@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 1.0.6
+
+### Patch Changes
+
+- feat: 🎸 Atualizará libs no NPM
+
 ## 1.0.5
 
 ### Patch Changes

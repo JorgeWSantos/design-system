@@ -6,7 +6,7 @@ Este pacote fornece variáveis de design (cores, espaçamentos, tipografia, radi
 
 ---
 
-## 📦 Instalação
+## 📦 Instalação.
 
 ```bash
 yarn add @abqm-ds/tokens
