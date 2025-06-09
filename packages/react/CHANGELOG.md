@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.8
+
+### Patch Changes
+
+- feat: 🎸 Adicionará melhorias nos componentes
+
 ## 1.0.7
 
 ### Patch Changes
