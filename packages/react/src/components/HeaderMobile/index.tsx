@@ -1,4 +1,4 @@
-import type { MenuItems } from '../SideMenu/types';
+import type { MenuItem, MenuType } from '../SideMenu/types';
 import HeaderMobileComponent from './HeaderMobileComponent';
 import { Container } from './styles';
 import { useRef, useState } from 'react';
@@ -8,7 +8,7 @@ import { UserDropDownProps } from '@components/UserDropdown';
 export interface HeaderMobileProps {
   title?: string;
   page?: string;
-  data: MenuItems[];
+  data: MenuType;
   userDropdown?: UserDropDownProps;
 }
 
@@ -19,7 +19,7 @@ export const HeaderMobile = ({
   userDropdown,
   ...rest
 }: HeaderMobileProps) => {
-  const [menu, setMenu] = useState<MenuItems[]>(data);
+  const [menu, setMenu] = useState<MenuType>(data);
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
   const initialNameMenu = 'Menu';
   const [userNavigation, setUserNavigation] = useState(initialNameMenu);
@@ -28,15 +28,15 @@ export const HeaderMobile = ({
 
   const [visibleSubmenu, setVisibleSubmenu] = useState<number | null>(null);
 
-  const handleOpenSubMenu = (index: number, item: MenuItems) => {
+  const handleOpenSubMenu = (index: number, item: MenuItem) => {
     if ('submenu' in item) {
       const isVisible = item.open_submenu;
 
-      setMenu((prev) =>
-        prev.map((item, i) =>
-          i === index && 'submenu' in item
-            ? { ...item, open_submenu: !item.open_submenu }
-            : { ...item, open_submenu: false }
+      setMenu((prev: MenuType) =>
+        prev.map((it, i) =>
+          i === index && 'submenu' in it
+            ? { ...it, open_submenu: !it.open_submenu }
+            : { ...it, open_submenu: false }
         )
       );
 

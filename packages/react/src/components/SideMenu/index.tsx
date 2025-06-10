@@ -1,7 +1,7 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   MenuList,
-  MenuItem,
+  MenuItem as StyledMenuItem,
   MenuLink,
   SubmenuList,
   SubmenuItem,
@@ -11,10 +11,10 @@ import {
 import { Text } from '../Text';
 import { colors } from '@abqm-ds/tokens';
 import { useClickOutside } from 'hooks/useClickOutside';
-import { SideMenuProps, MenuItems } from './types';
+import { SideMenuProps, MenuType, MenuItem, SubMenuItem } from './types';
 
 export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
-  const [menu, setMenu] = useState<MenuItems[]>(data);
+  const [menu, setMenu] = useState<MenuType>(data);
 
   const subMenuRef = useRef<HTMLUListElement | null>(null);
 
@@ -26,9 +26,7 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
 
   useClickOutside(subMenuRef, (event: MouseEvent | TouchEvent) => {
     const target = event.target as HTMLElement;
-
-    const clickedInsideTrigger = target?.closest('[data-submenu-trigger]');
-    if (clickedInsideTrigger) return;
+    if (target?.closest('[data-submenu-trigger]')) return;
 
     setFadingOutIndex(currentIndexSelected);
     setFadeInSubmenu(null);
@@ -37,21 +35,29 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
       setFadingOutIndex(null);
     }, 200);
 
-    setMenu((prev) =>
-      prev.map((item) => ('submenu' in item ? { ...item, open_submenu: false } : item))
+    setMenu((prev: MenuType) =>
+      prev.map((item: MenuItem) =>
+        item.sub_menu && item.sub_menu.length > 0
+          ? { ...item, open_submenu: false }
+          : item
+      )
     );
   });
 
-  const handleOpenSubMenu = (index: number, item: MenuItems) => {
+  const handleOpenSubMenu = (index: number, item: MenuItem) => {
     setCurrentIndexSelected(index);
-    if ('submenu' in item) {
+
+    const hasSubmenu = item.sub_menu && item.sub_menu.length > 0;
+    if (hasSubmenu) {
       const isVisible = item.open_submenu;
 
-      setMenu((prev) =>
-        prev.map((item, i) =>
-          i === index && 'submenu' in item
-            ? { ...item, open_submenu: !item.open_submenu }
-            : { ...item, open_submenu: false }
+      setMenu((prev: MenuType) =>
+        prev.map((it: MenuItem, i: number) =>
+          i === index && it.sub_menu && it.sub_menu.length > 0
+            ? { ...it, open_submenu: !it.open_submenu }
+            : it.sub_menu && it.sub_menu.length > 0
+            ? { ...it, open_submenu: false }
+            : it
         )
       );
 
@@ -77,14 +83,18 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
     }
   };
 
+  useEffect(() => {
+    setMenu(data);
+  }, [data]);
+
   return (
     <MenuList {...rest}>
-      {menu.map((item, i) => {
-        const hasSubmenu = 'submenu' in item;
+      {menu.map((item: MenuItem, i: number) => {
+        const hasSubmenu = item.sub_menu && item.sub_menu.length > 0;
         const isSelected = menuItemSelectedIndex === i;
 
         return (
-          <MenuItem
+          <StyledMenuItem
             key={item.name}
             index={i}
             data-submenu-trigger
@@ -118,14 +128,14 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
 
             {hasSubmenu && (visibleSubmenu === i || fadingOutIndex === i) && (
               <SubmenuList visible={fadeInSubmenu === i} ref={subMenuRef}>
-                {item.submenu.map((subitem) => (
+                {item.sub_menu.map((subitem: SubMenuItem) => (
                   <SubmenuItem key={subitem.name}>
                     <SubmenuLink href={subitem.link}>{subitem.name}</SubmenuLink>
                   </SubmenuItem>
                 ))}
               </SubmenuList>
             )}
-          </MenuItem>
+          </StyledMenuItem>
         );
       })}
     </MenuList>
