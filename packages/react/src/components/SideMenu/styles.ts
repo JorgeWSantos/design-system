@@ -24,15 +24,7 @@ export const MenuItem = styled.li<{
   align-self: stretch;
 
   background-color: ${colors.emeraldGreen50};
-  transition: 0.3ms ease-in-out;
-
-  ${({ $isSelected }) =>
-    $isSelected &&
-    css`
-      transition: 0.3ms ease-in-out;
-
-      background-color: ${colors.emeraldGreen25} !important;
-    `}
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   // round first item menu
   ${({ index }) =>
@@ -48,6 +40,21 @@ export const MenuItem = styled.li<{
       border-radius: 0rem 0rem ${space[1]} ${space[1]};
       border-bottom: none;
     `}
+
+  position: relative;
+
+  &:hover {
+    background-color: ${colors.emeraldGreen25} !important;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover > ul,
+  &:focus-within > ul {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
 `;
 
 export const MenuLink = styled.a`
@@ -60,23 +67,12 @@ export const MenuLink = styled.a`
   padding: ${space[2]} ${space[3]};
 `;
 
-export const CaretIcon = styled(CaretRightIcon)<{
-  $isSelected: boolean;
-}>`
+export const CaretIcon = styled(CaretRightIcon)`
   width: 0.5rem;
   height: 0.5rem;
-
-  ${({ $isSelected }) =>
-    !$isSelected &&
-    css`
-      path {
-        fill: ${colors.white25};
-        transition: 0.3ms ease-in-out;
-      }
-    `}
 `;
 
-export const SubmenuList = styled.ul<{ visible: boolean }>`
+export const SubmenuList = styled.ul`
   width: 16.5rem;
   position: absolute;
 
@@ -91,9 +87,9 @@ export const SubmenuList = styled.ul<{ visible: boolean }>`
   background-color: ${colors.emeraldGreen92};
 
   overflow: hidden;
-  opacity: ${({ visible }) => (visible ? 1 : 0)};
-  visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
-  pointer-events: ${({ visible }) => (visible ? 'auto' : 'none')};
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 `;
 
