@@ -30,3 +30,5 @@ export { default as MenuIcon } from './components/MenuIcon';
 export { default as XIcon } from './components/XIcon';
 
 export { default as BoxArrowInLeftIcon } from './components/BoxArrowInLeftIcon';
+
+export { default as LogoPadraoIcon } from './components/LogoPadraoIcon';

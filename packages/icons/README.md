@@ -20,7 +20,7 @@ npm install @abqm-ds/icons
 
 ## ⚙️ Como Funciona
 
-1. Adicione os arquivos **SVG** que deseja converter na pasta `src/icons/`:
+1. Adicione os arquivos **SVG** que deseja converter nas pastas `src/icons/` **ou** `src/logos/`:
 
    > **Atenção:** A nomenclatura dos ícones deve ser capitalizada, ex:
    >
@@ -35,7 +35,7 @@ npm run generate:icons
 ```
 
 3. O processo de geração segue estas etapas:
-   - Os ícones são convertidos e salvos temporariamente na pasta `_temp`.
+   - Os SVGs das pastas `icons` e `logos` são convertidos e salvos temporariamente em `_temp` e `_logos`.
    - Em seguida, são organizados e movidos para a pasta `components`.
 
 > 💡 Esse processo evita que todos os ícones existentes sejam modificados a cada nova adição. O script verifica se um ícone já existe e somente cria ou atualiza os que são realmente novos ou alterados.
@@ -81,7 +81,7 @@ Todos os ícones exportados são componentes React SVG e aceitam todas as propri
 
 ### Gerar componentes a partir de SVGs
 
-1. Coloque seus arquivos SVG em `src/icons/`.
+1. Coloque seus arquivos SVG em `src/icons/` ou `src/logos/`.
 2. Rode o comando:
 
 ```bash
@@ -106,9 +106,11 @@ Esse comando usa o `tsup` para gerar a pasta `dist/` com módulos `esm`, `cjs` e
 packages/icons/
 ├── scripts/             # Scripts de desenvolvimento
 ├── src/
-│   ├── icons/           # SVGs originais
+│   ├── icons/           # SVGs originais (ícones)
+│   ├── logos/           # SVGs originais (logos)
 │   ├── components/      # Componentes React (.tsx)
-│   ├── _temp/           # SVGs temporários
+│   ├── _temp/           # SVGs temporários (ícones)
+│   ├── _logos/          # SVGs temporários (logos)
 │   └── index.ts         # Exportações centralizadas
 ├── tsconfig.json
 ├── package.json
@@ -121,7 +123,7 @@ packages/icons/
 
 Para adicionar novos ícones:
 
-1. Adicione o SVG em `src/icons/`
+1. Adicione o SVG em `src/icons/` ou `src/logos/`
 2. Rode `npm run generate`
 3. Adicione à exportação em `src/index.ts`
 4. Teste no seu projeto local
