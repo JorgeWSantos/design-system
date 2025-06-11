@@ -65,7 +65,7 @@ export const Primary: StoryObj<HeaderMobileProps> = {
         name: 'Ranking',
         link: '#',
         parent_id: null,
-        open_submenu: true,
+        open_submenu: false,
         sub_menu: [
           {
             id: 0,
@@ -154,7 +154,7 @@ export const Primary: StoryObj<HeaderMobileProps> = {
         name: 'Eventos',
         link: '#',
         parent_id: null,
-        open_submenu: true,
+        open_submenu: false,
         sub_menu: [
           {
             id: 0,

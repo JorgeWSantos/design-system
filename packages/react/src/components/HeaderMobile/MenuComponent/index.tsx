@@ -42,7 +42,7 @@ export const Menu = ({
       </ContainerUserDropDown>
 
       {menu.map((item, i) => {
-        const hasSubmenu = 'submenu' in item;
+        const hasSubmenu = item.sub_menu && item.sub_menu.length > 0;
 
         return (
           <StyledMenuItem
@@ -53,8 +53,10 @@ export const Menu = ({
             <MenuLink
               href={item.link}
               onClick={(e) => {
-                e.preventDefault();
-                handleOpenSubMenu(i, item);
+                if (hasSubmenu) {
+                  e.preventDefault();
+                  handleOpenSubMenu(i, item);
+                }
               }}
               $subMenuIsOpen={visibleSubmenu !== null}
             >

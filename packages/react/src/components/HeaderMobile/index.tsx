@@ -29,14 +29,16 @@ export const HeaderMobile = ({
   const [visibleSubmenu, setVisibleSubmenu] = useState<number | null>(null);
 
   const handleOpenSubMenu = (index: number, item: MenuItem) => {
-    if ('submenu' in item) {
+    if (item.sub_menu && item.sub_menu.length > 0) {
       const isVisible = item.open_submenu;
 
       setMenu((prev: MenuType) =>
         prev.map((it, i) =>
-          i === index && 'submenu' in it
+          i === index && it.sub_menu && it.sub_menu.length > 0
             ? { ...it, open_submenu: !it.open_submenu }
-            : { ...it, open_submenu: false }
+            : it.sub_menu && it.sub_menu.length > 0
+            ? { ...it, open_submenu: false }
+            : it
         )
       );
 
