@@ -12,7 +12,7 @@ export const ModalOverlay = styled.div<{ $position?: PropModalPositions }>`
   height: 100%;
 
   ${({ $position }) =>
-    $position === 'center' &&
+    ($position === 'center' || !$position) &&
     css`
       top: 0;
       right: 0;
@@ -21,13 +21,18 @@ export const ModalOverlay = styled.div<{ $position?: PropModalPositions }>`
 
       justify-content: center;
       align-items: center;
+      max-height: 97vh;
     `}
 
   ${({ $position }) =>
     $position === 'left' &&
     css`
+      top: 0;
+      right: 0;
       justify-content: flex-start;
       padding: 12px;
+      padding-left: 0;
+      max-height: 97vh;
     `}
 
   ${({ $position }) =>
