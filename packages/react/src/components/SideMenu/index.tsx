@@ -19,7 +19,7 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
     <MenuList {...rest}>
       {data.map((item: MenuItem, i: number) => {
         const hasSubmenu = item.sub_menu && item.sub_menu.length > 0;
-        // const isSelected = menuItemSelectedIndex === i;
+        const isSelected = menuItemSelectedIndex === i;
 
         return (
           <StyledMenuItem
@@ -27,7 +27,6 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
             index={i}
             data-submenu-trigger
             $lastIndex={data.length - 1}
-            // $isSelected={isSelected}
             onMouseEnter={() => setMenuItemSelectedIndex(i)}
             onMouseLeave={() => setMenuItemSelectedIndex(-1)}
           >
@@ -51,7 +50,7 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
               {hasSubmenu && <CaretIcon />}
             </MenuLink>
 
-            {hasSubmenu && (
+            {hasSubmenu && isSelected && (
               <SubmenuList>
                 {item.sub_menu.map((subitem: SubMenuItem) => (
                   <SubmenuItem key={subitem.name}>

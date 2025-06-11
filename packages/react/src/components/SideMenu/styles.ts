@@ -76,7 +76,7 @@ export const SubmenuList = styled.ul`
   width: 16.5rem;
   position: absolute;
 
-  left: 101%;
+  left: 100%;
   top: 0;
   padding: ${space[4]};
 
