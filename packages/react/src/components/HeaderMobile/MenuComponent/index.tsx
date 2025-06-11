@@ -1,10 +1,10 @@
 import { Text } from '@components/Text';
-import { type MenuItems } from '@components/SideMenu';
+import { MenuItem, type MenuType } from '@components/SideMenu';
 import {
   ContainerUserDropDown,
-  MenuItem,
   MenuLink,
   MenuList,
+  StyledMenuItem,
   SubMenuItem,
   SubMenuLink,
   SubMenuList,
@@ -15,8 +15,8 @@ import { UserDropDown, UserDropDownProps } from '@components/UserDropdown';
 
 interface MenuProps {
   menuIsOpen: boolean;
-  menu: MenuItems[];
-  handleOpenSubMenu: (index: number, item: MenuItems) => void;
+  menu: MenuType;
+  handleOpenSubMenu: (index: number, item: MenuItem) => void;
   subMenuRef: React.RefObject<HTMLUListElement | null>;
   visibleSubmenu: number | null;
   userDropdown?: UserDropDownProps;
@@ -45,7 +45,11 @@ export const Menu = ({
         const hasSubmenu = 'submenu' in item;
 
         return (
-          <MenuItem key={item.name} index={i} $subMenuIsOpen={visibleSubmenu !== null}>
+          <StyledMenuItem
+            key={item.name}
+            index={i}
+            $subMenuIsOpen={visibleSubmenu !== null}
+          >
             <MenuLink
               href={item.link}
               onClick={(e) => {
@@ -66,14 +70,14 @@ export const Menu = ({
 
             {hasSubmenu && (
               <SubMenuList ref={subMenuRef} $visible={item.open_submenu}>
-                {item.submenu.map((subitem) => (
+                {item.sub_menu.map((subitem) => (
                   <SubMenuItem key={subitem.name}>
                     <SubMenuLink href={subitem.link}>{subitem.name}</SubMenuLink>
                   </SubMenuItem>
                 ))}
               </SubMenuList>
             )}
-          </MenuItem>
+          </StyledMenuItem>
         );
       })}
     </MenuList>

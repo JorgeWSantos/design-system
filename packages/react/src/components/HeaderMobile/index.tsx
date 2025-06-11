@@ -1,7 +1,7 @@
 import type { MenuItem, MenuType } from '../SideMenu/types';
 import HeaderMobileComponent from './HeaderMobileComponent';
 import { Container } from './styles';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Menu } from './MenuComponent';
 import { UserDropDownProps } from '@components/UserDropdown';
 
@@ -60,6 +60,10 @@ export const HeaderMobile = ({
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
   };
+
+  useEffect(() => {
+    setMenu(data);
+  }, [data]);
 
   return (
     <Container {...rest}>
