@@ -3,11 +3,41 @@ import { breakpointsPx, colors, radii, space } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 import React from 'react';
 
+export const ContainerMenuComponent = styled.div<{
+  $menuIsOpen: boolean;
+}>`
+  display: ${({ $menuIsOpen }) =>
+    $menuIsOpen ? 'flex' : 'none'}; /* Hide menu off-screen */
+
+  flex-direction: column;
+  justify-content: flex-start;
+
+  visibility: ${({ $menuIsOpen }) =>
+    $menuIsOpen ? 'visible' : 'hidden'}; /* Hide menu off-screen */
+
+  pointer-events: ${({ $menuIsOpen }) =>
+    $menuIsOpen ? 'auto' : 'none'}; /* Disable interactions when not visible */
+
+  /* Opacity now controlled only for fading effect */
+  opacity: ${({ $menuIsOpen }) => ($menuIsOpen ? '1' : '0')};
+
+  left: ${({ $menuIsOpen }) => ($menuIsOpen ? '10' : '100%')};
+  transition: left 200ms ease-in-out, opacity 200ms ease-in-out;
+
+  background-color: ${colors.emeraldGreen75};
+
+  backdrop-filter: blur(3.125rem);
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+`;
+
 export const ContainerUserDropDown = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
+  margin: 1.5rem 1.5rem 0rem 2rem;
 `;
 
 export const MenuList = styled.ul<{ $menuIsOpen: boolean; $subMenuIsOpen: boolean }>`
@@ -20,7 +50,7 @@ export const MenuList = styled.ul<{ $menuIsOpen: boolean; $subMenuIsOpen: boolea
 
   position: absolute;
   z-index: 1;
-  top: 3.5rem;
+  top: 4rem;
   box-sizing: border-box;
   height: 93vh;
   width: 100%;
@@ -29,24 +59,7 @@ export const MenuList = styled.ul<{ $menuIsOpen: boolean; $subMenuIsOpen: boolea
 
   align-self: stretch;
 
-  background-color: ${colors.emeraldGreen75};
-
-  backdrop-filter: blur(3.125rem);
   padding: ${space[6]};
-
-  display: ${({ $menuIsOpen }) =>
-    $menuIsOpen ? 'flex' : 'none'}; /* Hide menu off-screen */
-  visibility: ${({ $menuIsOpen }) =>
-    $menuIsOpen ? 'visible' : 'hidden'}; /* Hide menu off-screen */
-
-  pointer-events: ${({ $menuIsOpen }) =>
-    $menuIsOpen ? 'auto' : 'none'}; /* Disable interactions when not visible */
-
-  /* Opacity now controlled only for fading effect */
-  opacity: ${({ $menuIsOpen }) => ($menuIsOpen ? '1' : '0')};
-
-  left: ${({ $menuIsOpen }) => ($menuIsOpen ? '10' : '100%')};
-  transition: left 200ms ease-in-out, opacity 200ms ease-in-out;
 
   ${({ $subMenuIsOpen }) =>
     $subMenuIsOpen &&
@@ -116,16 +129,14 @@ export const SubMenuList = styled.ul<{
   margin: 0;
 
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 0;
-  height: calc(100%);
+  height: 100%;
   width: 100%;
   box-sizing: border-box;
 
   align-self: stretch;
 
-  background-color: ${colors.emeraldGreen75};
-  backdrop-filter: blur(3.125rem);
   padding: ${space[6]};
 
   display: ${({ $visible }) => ($visible ? 'flex' : 'none')}; /* Hide menu off-screen */

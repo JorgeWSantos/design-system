@@ -1,6 +1,7 @@
 import { Text } from '@components/Text';
 import { MenuItem, type MenuType } from '@components/SideMenu';
 import {
+  ContainerMenuComponent,
   ContainerUserDropDown,
   MenuLink,
   MenuList,
@@ -31,7 +32,7 @@ export const Menu = ({
   userDropdown,
 }: MenuProps) => {
   return (
-    <MenuList $menuIsOpen={menuIsOpen} $subMenuIsOpen={visibleSubmenu !== null}>
+    <ContainerMenuComponent $menuIsOpen={menuIsOpen}>
       <ContainerUserDropDown>
         <UserDropDown
           srcImage={userDropdown?.srcImage || ''}
@@ -41,47 +42,49 @@ export const Menu = ({
         />
       </ContainerUserDropDown>
 
-      {menu.map((item, i) => {
-        const hasSubmenu = item.sub_menu && item.sub_menu.length > 0;
+      <MenuList $menuIsOpen={menuIsOpen} $subMenuIsOpen={visibleSubmenu !== null}>
+        {menu.map((item, i) => {
+          const hasSubmenu = item.sub_menu && item.sub_menu.length > 0;
 
-        return (
-          <StyledMenuItem
-            key={item.name}
-            index={i}
-            $subMenuIsOpen={visibleSubmenu !== null}
-          >
-            <MenuLink
-              href={item.link}
-              onClick={(e) => {
-                if (hasSubmenu) {
-                  e.preventDefault();
-                  handleOpenSubMenu(i, item);
-                }
-              }}
+          return (
+            <StyledMenuItem
+              key={item.name}
+              index={i}
               $subMenuIsOpen={visibleSubmenu !== null}
             >
-              <Text
-                fontSize="mdd"
-                fontWeight="regular"
-                lineHeight="shorter"
-                color={colors.white75}
+              <MenuLink
+                href={item.link}
+                onClick={(e) => {
+                  if (hasSubmenu) {
+                    e.preventDefault();
+                    handleOpenSubMenu(i, item);
+                  }
+                }}
+                $subMenuIsOpen={visibleSubmenu !== null}
               >
-                {item.name}
-              </Text>
-            </MenuLink>
+                <Text
+                  fontSize="mdd"
+                  fontWeight="regular"
+                  lineHeight="shorter"
+                  color={colors.white75}
+                >
+                  {item.name}
+                </Text>
+              </MenuLink>
 
-            {hasSubmenu && (
-              <SubMenuList ref={subMenuRef} $visible={item.open_submenu}>
-                {item.sub_menu.map((subitem) => (
-                  <SubMenuItem key={subitem.name}>
-                    <SubMenuLink href={subitem.link}>{subitem.name}</SubMenuLink>
-                  </SubMenuItem>
-                ))}
-              </SubMenuList>
-            )}
-          </StyledMenuItem>
-        );
-      })}
-    </MenuList>
+              {hasSubmenu && (
+                <SubMenuList ref={subMenuRef} $visible={item.open_submenu}>
+                  {item.sub_menu.map((subitem) => (
+                    <SubMenuItem key={subitem.name}>
+                      <SubMenuLink href={subitem.link}>{subitem.name}</SubMenuLink>
+                    </SubMenuItem>
+                  ))}
+                </SubMenuList>
+              )}
+            </StyledMenuItem>
+          );
+        })}
+      </MenuList>
+    </ContainerMenuComponent>
   );
 };
