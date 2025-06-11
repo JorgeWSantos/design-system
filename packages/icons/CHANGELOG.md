@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 1.0.7
+
+### Patch Changes
+
+- feat: 🎸 Adicionará pasta logos para separar o icons de logos
+
 ## 1.0.6
 
 ### Patch Changes
