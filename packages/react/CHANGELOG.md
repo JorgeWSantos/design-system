@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.10
+
+### Patch Changes
+
+- feat: 🎸 Fará melhorias nos menus
+
 ## 1.0.9
 
 ### Patch Changes
