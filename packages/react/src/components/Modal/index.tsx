@@ -1,15 +1,33 @@
-import { MouseEvent, ReactNode } from 'react';
-import { CloseButton, ModalContent, ModalOverlay, StyledXIcon } from './styles';
+import React, { ComponentProps, MouseEvent, ReactNode } from 'react';
+import {
+  CloseButton,
+  DivCloseButton,
+  ModalContent,
+  ModalOverlay,
+  StyledXIcon,
+} from './styles';
 
 import ReactDOM from 'react-dom';
+import { PropModalPositions, PropModalSizes } from './types';
 
-export interface ModalProps {
+export interface ModalProps extends ComponentProps<'div'> {
   isOpen: boolean;
   onClose: () => void;
   children: ReactNode;
+  position?: PropModalPositions;
+  styleContent?: React.CSSProperties;
+  size?: PropModalSizes;
 }
 
-export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
+export const Modal = ({
+  isOpen,
+  onClose,
+  children,
+  position,
+  styleContent,
+  size = 'normal',
+  ...rest
+}: ModalProps) => {
   if (!isOpen) return null;
 
   const handleOverlayClick = (e: MouseEvent<HTMLDivElement>) => {
@@ -19,11 +37,13 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
   };
 
   return ReactDOM.createPortal(
-    <ModalOverlay onClick={handleOverlayClick}>
-      <ModalContent>
-        <CloseButton onClick={onClose}>
-          <StyledXIcon fill="#000" width={14} height={14} />
-        </CloseButton>
+    <ModalOverlay onClick={handleOverlayClick} $position={position} {...rest}>
+      <ModalContent $position={position} style={styleContent} $size={size}>
+        <DivCloseButton $size={size}>
+          <CloseButton onClick={onClose}>
+            <StyledXIcon width={14} height={14} $size={size} />
+          </CloseButton>
+        </DivCloseButton>
         {children}
       </ModalContent>
     </ModalOverlay>,
