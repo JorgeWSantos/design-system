@@ -1,10 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ToastProvider, useToast, Button, Box, Text } from '@abqm-ds/react';
+import { Button, Box, Text, Toast, ToastRoot } from '@abqm-ds/react';
 
 // Documentação principal do componente Toast
 export default {
   title: 'Feedback/Toast',
-  component: ToastProvider,
   parameters: {
     docs: {
       description: {
@@ -13,30 +12,18 @@ O componente **Toast** exibe mensagens temporárias de feedback para o usuário,
 
 ### Como implementar
 
+1. **Adicione o ToastRoot no topo da sua aplicação**  
+No seu \`App.tsx\` ou equivalente:
+
 \`\`\`tsx
-import { ToastProvider } from '@abqm-ds/react';
+import { ToastRoot } from '@abqm-ds/react';
 
 function App() {
   return (
-    <ToastProvider>
+    <>
+      <ToastRoot />
       {/* ...restante da aplicação... */}
-    </ToastProvider>
-  );
-}
-\`\`\`
-
-2. **Use o hook \`useToast\` para disparar toasts em qualquer componente filho:**
-
-\`\`\`tsx
-import { useToast } from '@abqm-ds/react';
-
-function MeuComponente() {
-  const { showToast } = useToast();
-
-  return (
-    <button onClick={() => showToast('Mensagem de sucesso!', 'success')}>
-      Mostrar Toast
-    </button>
+    </>
   );
 }
 \`\`\`
@@ -66,14 +53,24 @@ function ToastButton({
   message: string;
   type: 'success' | 'error' | 'info' | 'warning';
 }) {
-  const { showToast } = useToast();
-  return <Button onClick={() => showToast(message, type)}>{label}</Button>;
+  return (
+    <Button
+      text={label}
+      onClick={() =>
+        Toast.show({
+          message,
+          type,
+        })
+      }
+    />
+  );
 }
 
 // --- Story: Exemplo geral com todos os tipos ---
 export const Exemplos: StoryObj = {
   render: () => (
-    <ToastProvider>
+    <>
+      <ToastRoot />
       <Box style={{ gap: 16 }}>
         <>
           <Text fontSize="sm" style={{ marginBottom: 8 }}>
@@ -103,7 +100,7 @@ export const Exemplos: StoryObj = {
           </div>
         </>
       </Box>
-    </ToastProvider>
+    </>
   ),
   parameters: {
     docs: {
@@ -119,21 +116,24 @@ export const Exemplos: StoryObj = {
 
 // --- Stories individuais para cada tipo ---
 
-const SuccessExample = () => {
-  const { showToast } = useToast();
-  return (
-    <Button onClick={() => showToast('Operação realizada com sucesso!', 'success', 3000)}>
-      Mostrar Toast de Sucesso
-    </Button>
-  );
-};
+const SuccessExample = () => (
+  <>
+    <ToastRoot />
+    <Button
+      text="Mostrar Toast de Sucesso"
+      onClick={() =>
+        Toast.show({
+          message: 'Operação realizada com sucesso!',
+          type: 'success',
+          timeout: 3000,
+        })
+      }
+    />
+  </>
+);
 
 export const Success: StoryObj = {
-  render: () => (
-    <ToastProvider>
-      <SuccessExample />
-    </ToastProvider>
-  ),
+  render: () => <SuccessExample />,
   parameters: {
     docs: {
       description: { story: 'Exemplo de Toast do tipo **success**.' },
@@ -141,21 +141,23 @@ export const Success: StoryObj = {
   },
 };
 
-const ErrorExample = () => {
-  const { showToast } = useToast();
-  return (
-    <Button onClick={() => showToast('Ocorreu um erro inesperado.', 'error')}>
-      Mostrar Toast de Erro
-    </Button>
-  );
-};
+const ErrorExample = () => (
+  <>
+    <ToastRoot />
+    <Button
+      text={'Mostrar Toast de Erro'}
+      onClick={() =>
+        Toast.show({
+          message: 'Ocorreu um erro inesperado.',
+          type: 'error',
+        })
+      }
+    />
+  </>
+);
 
 export const Error: StoryObj = {
-  render: () => (
-    <ToastProvider>
-      <ErrorExample />
-    </ToastProvider>
-  ),
+  render: () => <ErrorExample />,
   parameters: {
     docs: {
       description: { story: 'Exemplo de Toast do tipo **error**.' },
@@ -163,23 +165,24 @@ export const Error: StoryObj = {
   },
 };
 
-const InfoExample = () => {
-  const { showToast } = useToast();
-  return (
+const InfoExample = () => (
+  <>
+    <ToastRoot />
     <Button
-      onClick={() => showToast('Esta é uma informação importante.', 'info', 100000)}
-    >
-      Mostrar Toast de Informação
-    </Button>
-  );
-};
+      text="Mostrar Toast de Informação"
+      onClick={() =>
+        Toast.show({
+          message: 'Esta é uma informação importante.',
+          type: 'info',
+          timeout: 100000,
+        })
+      }
+    />
+  </>
+);
 
 export const Info: StoryObj = {
-  render: () => (
-    <ToastProvider>
-      <InfoExample />
-    </ToastProvider>
-  ),
+  render: () => <InfoExample />,
   parameters: {
     docs: {
       description: { story: 'Exemplo de Toast do tipo **info**.' },
@@ -187,21 +190,23 @@ export const Info: StoryObj = {
   },
 };
 
-const WarningExample = () => {
-  const { showToast } = useToast();
-  return (
-    <Button onClick={() => showToast('Atenção: verifique os dados.', 'warning')}>
-      Mostrar Toast de Aviso
-    </Button>
-  );
-};
+const WarningExample = () => (
+  <>
+    <ToastRoot />
+    <Button
+      text="Mostrar Toast de Aviso"
+      onClick={() =>
+        Toast.show({
+          message: 'Atenção: verifique os dados.',
+          type: 'warning',
+        })
+      }
+    />
+  </>
+);
 
 export const Warning: StoryObj = {
-  render: () => (
-    <ToastProvider>
-      <WarningExample />
-    </ToastProvider>
-  ),
+  render: () => <WarningExample />,
   parameters: {
     docs: {
       description: { story: 'Exemplo de Toast do tipo **warning**.' },
