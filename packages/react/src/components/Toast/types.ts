@@ -16,3 +16,10 @@ export type ShowToastFn = (
 export interface ToastContextProps {
   showToast: ShowToastFn;
 }
+
+export interface ToastOptions {
+  message: string;
+  type?: ToastType;
+  timeout?: number;
+  callbackFunction?: () => void;
+}
