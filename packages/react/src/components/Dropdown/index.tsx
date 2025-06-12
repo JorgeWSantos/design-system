@@ -1,12 +1,24 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Container, StyledDropdown, ContainerOptions, Option } from './styles';
+import {
+  Container,
+  StyledDropdown,
+  ContainerOptions,
+  Option,
+  StyledTextSelect,
+} from './styles';
 import { Text } from '@components/Text';
 import { CaretDownIcon } from '@abqm-ds/icons';
 import { colors } from '@abqm-ds/tokens';
 import { useClickOutside } from 'hooks/useClickOutside';
 import { DropdownProps, DataDropdown } from './types';
 
-export function Dropdown({ data, setValue, label = null, ...rest }: DropdownProps) {
+export function Dropdown({
+  data,
+  setValue,
+  label = null,
+  variant = 'primary',
+  ...rest
+}: DropdownProps) {
   const [selectedOption, setSelectedOption] = useState(data.length > 0 ? data[0] : null);
   const [showOptions, setShowOptions] = useState(false);
 
@@ -51,23 +63,17 @@ export function Dropdown({ data, setValue, label = null, ...rest }: DropdownProp
             setShowOptions((prev) => !prev);
           }
         }}
+        $variant={variant}
       >
-        <Text
-          lineHeight="initial"
-          fontWeight="regular"
-          fontSize="ssm"
-          color={colors.white75}
-        >
-          {selectedOption?.label || null}
-        </Text>
+        <StyledTextSelect>{selectedOption?.label || null}</StyledTextSelect>
 
         <CaretDownIcon width={12} height={12} />
       </StyledDropdown>
 
       {showOptions && (
-        <ContainerOptions>
+        <ContainerOptions $variant={variant}>
           {data.map((item) => (
-            <Option key={item.id} onClick={() => selectAnOption(item)}>
+            <Option $variant={variant} key={item.id} onClick={() => selectAnOption(item)}>
               {item.label}
             </Option>
           ))}

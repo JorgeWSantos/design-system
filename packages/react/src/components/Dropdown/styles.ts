@@ -1,5 +1,7 @@
-import { colors, fontSizes, radii } from '@abqm-ds/tokens';
+import { breakpointsPx, colors, fontSizes, fontWeights, radii } from '@abqm-ds/tokens';
 import { css, styled } from 'styled-components';
+import { VariantsTypesDropdown } from './types';
+import { Text } from '@components/Text';
 
 interface ContainerProps {
   $hasLabel: boolean;
@@ -22,7 +24,7 @@ export const Container = styled.div<ContainerProps>`
     `}
 `;
 
-export const StyledDropdown = styled.div`
+export const StyledDropdown = styled.div<{ $variant?: VariantsTypesDropdown }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,9 +44,31 @@ export const StyledDropdown = styled.div`
     filter: brightness(1.2);
     transition: 0.3s;
   }
+
+  ${({ $variant }) =>
+    $variant === 'secondary' &&
+    css`
+      background-color: ${colors.white25};
+      color: ${colors.white75};
+    `}
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    border-radius: ${radii.xs};
+    border: ${radii.px} solid transparent;
+  }
 `;
 
-export const ContainerOptions = styled.div`
+export const StyledTextSelect = styled(Text).attrs({
+  lineHeight: 'initial',
+  fontWeight: 'regular',
+  fontSize: 'ssm',
+})<{ $variant?: VariantsTypesDropdown }>`
+  @media (max-width: ${breakpointsPx.lg}) {
+    font-weight: ${fontWeights.semiBold};
+  }
+`;
+
+export const ContainerOptions = styled.div<{ $variant?: VariantsTypesDropdown }>`
   display: flex;
   flex-direction: column;
 
@@ -53,14 +77,21 @@ export const ContainerOptions = styled.div`
   left: 0;
   z-index: 1;
 
-  overflow-y: scroll;
+  overflow-y: auto; // scroll no componente pai
+  overflow-x: hidden; // previne scroll lateral
+  border-radius: 0.25rem;
+  /* Garante que o conteúdo do scroll respeite o border-radius */
+  -webkit-mask-image: radial-gradient(white 0 0);
+  mask-image: radial-gradient(white 0 0);
 
   min-height: 100%;
   max-height: 18.75rem;
-  width: 92%;
+
+  min-width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 
   padding: 0.5rem 0.5rem;
-
   gap: 0.25rem;
 
   backdrop-filter: blur(3.125rem);
@@ -72,10 +103,26 @@ export const ContainerOptions = styled.div`
   border-radius: ${radii.sm};
 
   cursor: pointer;
+
+  ${({ $variant }) =>
+    $variant === 'secondary' &&
+    css`
+      background-color: ${colors.white10};
+      color: ${colors.white85};
+
+      border: ${radii.px} solid ${colors.white50};
+    `}
 `;
 
-export const Option = styled.div`
+export const Option = styled.div<{ $variant?: VariantsTypesDropdown }>`
   border-bottom: ${radii.px} solid ${colors.emeraldGreen50};
   padding-bottom: 0.3rem;
   font-size: ${fontSizes.ssm};
+
+  ${({ $variant }) =>
+    $variant === 'secondary' &&
+    css`
+      border-bottom: ${radii.px} solid ${colors.white50};
+      font-weight: ${fontWeights.medium};
+    `}
 `;
