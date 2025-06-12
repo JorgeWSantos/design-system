@@ -63,6 +63,16 @@ function processSourceDir(sourceDir, prefixToRemove = /^svg/i) {
       `export default ${componentName}`
     );
 
+    // Substitui fill="..." por fill={props?.fill ? props.fill : '...'}
+    fileContent = fileContent.replace(
+      /(<path[^>]*?)\sfill="([^"]+)"([^>]*?>)/g,
+      (match, before, color, after) => {
+        // Evita sobrescrever fill={...} já existente
+        if (before.includes('fill={')) return match;
+        return `${before} fill={props?.fill ? props.fill : '${color}'}${after}`;
+      }
+    );
+
     // Escreve novo arquivo e remove o antigo
     fs.writeFileSync(toPath, fileContent);
     fs.unlinkSync(fromPath);

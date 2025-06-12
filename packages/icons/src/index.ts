@@ -32,3 +32,6 @@ export { default as XIcon } from './components/XIcon';
 export { default as BoxArrowInLeftIcon } from './components/BoxArrowInLeftIcon';
 
 export { default as LogoPadraoIcon } from './components/LogoPadraoIcon';
+
+export { default as CaretLeftFillIcon } from './components/CaretLeftFillIcon';
+export { default as CircleIcon } from './components/CircleIcon';
