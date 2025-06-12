@@ -1,11 +1,4 @@
-import {
-  ComponentProps,
-  ElementType,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Container, StyledDropdown, ContainerOptions, Option } from './styles';
 import { Text } from '@components/Text';
 import { CaretDownIcon } from '@abqm-ds/icons';
