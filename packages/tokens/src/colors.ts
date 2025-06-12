@@ -4,6 +4,7 @@ export const colors = {
   black: '#000',
 
   // Opacity
+  white10: '#ffffff1a',
   white25: '#ffffff40',
   white50: '#ffffff80',
   white75: '#FFFFFFBF',
