@@ -1,17 +1,34 @@
 import React, { ComponentProps, ElementType, ReactNode } from 'react';
-import { Size, StyledButton, Variant } from './styles';
+import { StyledButton, StyledButtonText } from './styles';
+import { Size, Variant } from './types';
 
 export interface ButtonProps extends ComponentProps<'button'> {
   as?: ElementType;
   variant?: Variant;
   size?: Size;
-  children: ReactNode;
+  text: string;
+  iconLeft?: ReactNode;
+  iconRight?: ReactNode;
 }
 
-export const Button = ({ variant, children, size, ...rest }: ButtonProps) => {
+export const Button = ({
+  variant,
+  children,
+  size = 'md',
+  text,
+  iconLeft,
+  iconRight,
+  ...rest
+}: ButtonProps) => {
   return (
     <StyledButton variant={variant} size={size} {...rest}>
-      {children}
+      {iconLeft && <>{iconLeft}</>}
+
+      <StyledButtonText variant={variant} size={size}>
+        {text}
+      </StyledButtonText>
+
+      {iconRight && <>{iconRight}</>}
     </StyledButton>
   );
 };

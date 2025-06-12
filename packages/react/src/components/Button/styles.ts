@@ -1,9 +1,8 @@
-import { radii } from '@abqm-ds/tokens';
-import { theme } from '@styles/index';
+import { colors, fonts, fontSizes, fontWeights, radii, space } from '@abqm-ds/tokens';
+import {} from '@styles/index';
 import styled, { css } from 'styled-components';
-
-export type Variant = 'primary' | 'secondary' | 'tertiary';
-export type Size = 'sm' | 'md';
+import { Size, Variant } from './types';
+import { Text } from '@components/Text';
 
 export interface ButtonStyleProps {
   variant?: Variant;
@@ -12,25 +11,25 @@ export interface ButtonStyleProps {
 
 export const StyledButton = styled.button<ButtonStyleProps>`
   all: unset;
-  border-radius: ${theme.radii.sm};
-  font-size: ${theme.fontSizes.sm};
-  font-weight: ${theme.fontWeights.medium};
-  font-family: ${theme.fonts.default};
+  border-radius: ${radii.sm};
+  font-size: ${fontSizes.sm};
+  font-weight: ${fontWeights.medium};
+  font-family: ${fonts.default};
   text-align: center;
   /* min-width: 8.438rem; */
   height: 2.75rem;
   box-sizing: border-box;
-  padding: ${theme.space[2]} ${theme.space[8]};
+  padding: ${space[2]} ${space[8]};
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: ${theme.space[2]};
+  gap: ${space[2]};
 
   cursor: pointer;
 
   svg {
-    width: ${theme.space[4]};
-    height: ${theme.space[4]};
+    width: ${space[4]};
+    height: ${space[4]};
   }
 
   &:disabled {
@@ -43,63 +42,100 @@ export const StyledButton = styled.button<ButtonStyleProps>`
   ${({ variant }) =>
     (variant === 'primary' || !variant) &&
     css`
-      color: ${theme.colors.white};
-      background: ${theme.colors.green500};
+      color: ${colors.white};
+      background: ${colors.green500};
       transition: 0.3s;
 
       &:not(:disabled):hover {
-        /* background: ${theme.colors.green300}; */
+        /* background: ${colors.green300}; */
         filter: brightness(120%);
         transition: 0.3s;
       }
 
       &:disabled {
-        background-color: ${theme.colors.gray200};
+        background-color: ${colors.gray200};
       }
     `}
 
   ${({ variant }) =>
     variant === 'secondary' &&
     css`
-      color: ${theme.colors.green500};
-      border: ${radii.pxx} solid ${theme.colors.green500};
+      border: ${radii.pxx} solid ${colors.green500};
       transition: 0.3s;
 
       &:not(:disabled):hover {
-        background: ${theme.colors.green500};
-        color: ${theme.colors.white};
+        background: ${colors.green500};
         transition: 0.3s;
       }
 
+      &:not(:disabled):hover p {
+        color: ${colors.white};
+      }
+
       &:disabled {
-        color: ${theme.colors.gray200};
-        border-color: ${theme.colors.gray200};
+        border-color: ${colors.gray200};
+      }
+
+      p {
+        color: ${colors.green500};
+        transition: color 0.3s;
+      }
+
+      p:disabled {
+        color: ${colors.gray200};
       }
     `}
 
   ${({ variant }) =>
     variant === 'tertiary' &&
     css`
-      color: ${theme.colors.gray100};
+      p {
+        color: ${colors.gray100};
 
-      &:not(:disabled):hover {
-        color: ${theme.colors.white};
-      }
+        &:not(:disabled):hover {
+          color: ${colors.white};
+        }
 
-      &:disabled {
-        color: ${theme.colors.gray600};
+        &:disabled {
+          color: ${colors.gray600};
+        }
       }
     `}
 
   ${({ size }) =>
     size === 'sm' &&
     css`
-      height: 2.125rem;
+      padding: ${space[2]} ${space[6]};
+
+      height: 2rem;
     `}
 
   ${({ size }) =>
     size === 'md' &&
     css`
-      height: 2.35rem;
+      padding: ${space[2]} ${space[8]};
+      height: 2.125rem;
+    `}
+
+  ${({ size }) =>
+    size === 'lg' &&
+    css`
+      padding: ${space[3]} ${space[6]};
+      height: 2.625rem;
+    `}
+`;
+
+export const StyledButtonText = styled(Text).attrs({
+  fontSize: 'smm',
+  fontWeight: 'semiBold',
+  lineHeight: 'tight',
+})<ButtonStyleProps>`
+  color: ${colors.white85};
+
+  ${({ size }) =>
+    size === 'sm' &&
+    css`
+      font-size: ${fontSizes.ssm};
+      line-height: 1rem;
     `}
 `;

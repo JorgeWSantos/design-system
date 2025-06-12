@@ -6,7 +6,7 @@ export default {
   title: 'Form/Button',
   component: Button,
   args: {
-    children: 'Enviar',
+    text: 'Enviar',
     size: 'md',
     disabled: false,
   },
@@ -56,39 +56,57 @@ export const Primary: StoryObj<ButtonProps> = {};
 export const Secondary: StoryObj<ButtonProps> = {
   args: {
     variant: 'secondary',
-    children: 'Criar',
+    text: 'Criar',
   },
 };
 
 export const Tertiary: StoryObj<ButtonProps> = {
   args: {
     variant: 'tertiary',
-    children: 'Cancelar',
+    text: 'Cancelar',
   },
 };
 
 export const Small: StoryObj<ButtonProps> = {
   args: {
     size: 'sm',
-    children: 'Enviar',
+    text: 'Small',
   },
 };
 
-export const WithIcon: StoryObj<ButtonProps> = {
+export const Medium: StoryObj<ButtonProps> = {
+  args: {
+    size: 'md',
+    text: 'Medium',
+  },
+};
+
+export const Large: StoryObj<ButtonProps> = {
+  args: {
+    size: 'lg',
+    text: 'Large',
+  },
+};
+
+export const WithIconLeft: StoryObj<ButtonProps> = {
   args: {
     size: 'sm',
-    children: (
-      <>
-        Próximo Passo
-        <ArrowRight weight="bold" />
-      </>
-    ),
+    text: 'With Icon',
+    iconLeft: <ArrowRight size={16} />,
+  },
+};
+
+export const WithIconRight: StoryObj<ButtonProps> = {
+  args: {
+    size: 'sm',
+    text: 'With Icon',
+    iconRight: <ArrowRight size={16} />,
   },
 };
 
 export const Disabled: StoryObj<ButtonProps> = {
   args: {
-    children: 'Desabilitado',
+    text: 'Disabled',
     disabled: true,
   },
 };
