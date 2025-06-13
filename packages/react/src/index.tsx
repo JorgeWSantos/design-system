@@ -19,4 +19,5 @@ export * from './components/Dropdown';
 export * from './components/HeaderMobile';
 export * from './components/Tooltip';
 export * from './components/Modal';
-export * from './components/Toast/Toast';
+export * from './components/Toast';
+export * from './components/HeaderMobileNavigator';
