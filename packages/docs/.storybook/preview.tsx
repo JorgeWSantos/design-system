@@ -5,15 +5,15 @@ import { GlobalStyle } from '@abqm-ds/react';
 import { withResponsiveBackground } from './decorators/withResponsiveBackground';
 
 const preview: Preview = {
-  decorators: [
-    (Story) => (
-      <>
-        <GlobalStyle />
-        <Story />
-      </>
-    ),
-  ],
-  // decorators: [withResponsiveBackground],
+  // decorators: [
+  //   (Story) => (
+  //     <>
+  //       <GlobalStyle />
+  //       <Story />
+  //     </>
+  //   ),
+  // ],
+  decorators: [withResponsiveBackground],
   parameters: {
     backgrounds: {
       default: theme,
