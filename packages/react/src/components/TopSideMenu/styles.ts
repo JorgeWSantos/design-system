@@ -7,7 +7,7 @@ export const TopSideWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
-  width: 12.5rem;
+  width: 100%;
   height: 7.5rem;
 `;
 

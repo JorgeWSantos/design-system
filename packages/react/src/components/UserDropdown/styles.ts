@@ -1,4 +1,4 @@
-import { colors, radii, space } from '@abqm-ds/tokens';
+import { breakpointsPx, colors, radii, space } from '@abqm-ds/tokens';
 import { Avatar } from '@components/Avatar';
 import styled from 'styled-components';
 
@@ -8,7 +8,11 @@ export const UserDropdownWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  width: 12.375rem;
+  width: 100%;
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    width: 17.5rem;
+  }
 `;
 
 export const UserDropdownContent = styled.div`
@@ -36,7 +40,8 @@ export const Dropdown = styled.div`
   justify-content: space-between;
 
   height: 2.25rem;
-  width: 8.75rem;
+  width: 100%;
+  box-sizing: border-box;
 
   position: absolute;
 

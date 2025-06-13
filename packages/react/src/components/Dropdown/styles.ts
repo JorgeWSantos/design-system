@@ -63,6 +63,8 @@ export const StyledTextSelect = styled(Text).attrs({
   fontWeight: 'regular',
   fontSize: 'ssm',
 })`
+  color: ${colors.white75};
+
   @media (max-width: ${breakpointsPx.lg}) {
     font-weight: ${fontWeights.semiBold};
   }
