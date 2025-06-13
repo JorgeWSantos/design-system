@@ -9,7 +9,7 @@ export default {
     docs: {
       description: {
         component: `
-O componente **Modal** exibe uma janela sobreposta à interface, centralizada ou alinhada à esquerda/direita.
+O componente **Modal** exibe uma janela sobreposta à interface, centralizada ou alinhada à esquerda/direita/topo/baixo.
 
 ### Como implementar
 
@@ -22,7 +22,12 @@ function App() {
   return (
     <>
       <Button onClick={() => setOpen(true)}>Abrir Modal</Button>
-      <Modal isOpen={open} onClose={() => setOpen(false)} position="center">
+      <Modal
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        positionHorizontal="center"
+        positionVertical="center"
+      >
         <div>Conteúdo do modal</div>
       </Modal>
     </>
@@ -35,7 +40,8 @@ function App() {
 - \`isOpen\`: boolean - Controla a visibilidade do modal.
 - \`onClose\`: () => void - Função chamada ao fechar o modal.
 - \`children\`: ReactNode - Conteúdo do modal.
-- \`position\`: 'left' | 'right' | 'center' - Posição do modal.
+- \`positionHorizontal\`: 'left' | 'right' | 'center' - Posição horizontal do modal.
+- \`positionVertical\`: 'top' | 'bottom' | 'center' - Posição vertical do modal.
 - \`styleContent\`: React.CSSProperties - Estilos adicionais para o conteúdo.
 - \`size\`: 'normal' | 'full' - Tamanho do modal.
   - 'full' preenche toda a tela, deve ser usado para imagens ou documentos.
@@ -58,7 +64,7 @@ const ExampleModal = (props: any) => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Button onClick={() => setOpen(true)}>Abrir Modal</Button>
+      <Button onClick={() => setOpen(true)} text="Abrir Modal" />
       <Modal isOpen={open} onClose={() => setOpen(false)} {...props}>
         <Box style={{ minWidth: 300 }}>
           <Text fontSize="lg" fontWeight="bold">
@@ -67,7 +73,7 @@ const ExampleModal = (props: any) => {
           <Text fontSize="sm" style={{ margin: '16px 0' }}>
             Este é um exemplo de conteúdo do modal.
           </Text>
-          <Button onClick={() => setOpen(false)}>Fechar</Button>
+          <Button onClick={() => setOpen(false)} text="Fechar" />
         </Box>
       </Modal>
     </>
@@ -78,7 +84,7 @@ const ExampleModalFull = (props: any) => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Button onClick={() => setOpen(true)}>Abrir Modal</Button>
+      <Button onClick={() => setOpen(true)} text="Abrir Modal" />
       <Modal isOpen={open} onClose={() => setOpen(false)} {...props}>
         <img
           src={
@@ -102,7 +108,7 @@ export const Primary: StoryObj = {
 };
 
 export const Left: StoryObj = {
-  render: () => <ExampleModal position="left" />,
+  render: () => <ExampleModal positionHorizontal="left" />,
   parameters: {
     docs: {
       description: {
@@ -113,7 +119,7 @@ export const Left: StoryObj = {
 };
 
 export const Right: StoryObj = {
-  render: () => <ExampleModal position="right" />,
+  render: () => <ExampleModal positionHorizontal="right" />,
   parameters: {
     docs: {
       description: {

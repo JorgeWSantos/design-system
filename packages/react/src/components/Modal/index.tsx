@@ -37,18 +37,25 @@ export interface ModalProps extends ComponentProps<'div'> {
 /**
  * Modal
  *
- * Exibe uma janela modal sobreposta à interface, centralizada ou alinhada à esquerda/direita.
+ * Exibe uma janela modal sobreposta à interface, centralizada ou alinhada à esquerda/direita/topo/baixo.
  *
  * @param isOpen Controla a visibilidade do modal.
  * @param onClose Função chamada ao fechar o modal (ex: clique fora ou no botão de fechar).
  * @param children Conteúdo a ser exibido dentro do modal.
- * @param positionHorizontal Posição do modal na tela: 'left', 'right' ou 'center'. Padrão: 'center'.
+ * @param positionHorizontal Posição horizontal do modal na tela: 'left', 'right' ou 'center'. Padrão: 'center'.
+ * @param positionVertical Posição vertical do modal na tela: 'top', 'bottom' ou 'center'. Padrão: 'center'.
  * @param styleContent Estilos adicionais para o conteúdo do modal.
  * @param size 'full' preenche toda a tela, deve ser usado para imagens ou documentos. 'normal' é o modal padrão das aplicações.
  * @param maxHeight Define o tamanho máximo do conteúdo do modal (ex: '90vh'). Por padrão, o modal se ajusta ao conteúdo até esse limite.
  *
  * @example
- * <Modal isOpen={open} onClose={handleClose} positionHorizontal="center" maxHeight="90vh">
+ * <Modal
+ *   isOpen={open}
+ *   onClose={handleClose}
+ *   positionHorizontal="center"
+ *   positionVertical="center"
+ *   maxHeight="90vh"
+ * >
  *   <div>Conteúdo do modal</div>
  * </Modal>
  *
