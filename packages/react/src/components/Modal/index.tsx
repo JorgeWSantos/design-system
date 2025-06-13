@@ -1,6 +1,7 @@
 import React, { ComponentProps, MouseEvent, ReactNode } from 'react';
 import {
   CloseButton,
+  DivChildren,
   DivCloseButton,
   ModalContent,
   ModalOverlay,
@@ -54,14 +55,19 @@ export const Modal = ({
   };
 
   return ReactDOM.createPortal(
-    <ModalOverlay onClick={handleOverlayClick} $position={position} {...rest}>
+    <ModalOverlay
+      onClick={handleOverlayClick}
+      $position={position}
+      $size={size}
+      {...rest}
+    >
       <ModalContent $position={position} style={styleContent} $size={size}>
         <DivCloseButton $size={size}>
           <CloseButton onClick={onClose}>
             <StyledXIcon width={14} height={14} $size={size} />
           </CloseButton>
         </DivCloseButton>
-        {children}
+        <DivChildren>{children}</DivChildren>
       </ModalContent>
     </ModalOverlay>,
     document.body

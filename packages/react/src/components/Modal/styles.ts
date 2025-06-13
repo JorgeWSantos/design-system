@@ -3,7 +3,10 @@ import { colors, radii, space } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 import { PropModalPositions, PropModalSizes } from './types';
 
-export const ModalOverlay = styled.div<{ $position?: PropModalPositions }>`
+export const ModalOverlay = styled.div<{
+  $position?: PropModalPositions;
+  $size?: PropModalSizes;
+}>`
   display: flex;
   position: fixed;
   background: rgba(0, 0, 0, 0.5);
@@ -21,7 +24,6 @@ export const ModalOverlay = styled.div<{ $position?: PropModalPositions }>`
 
       justify-content: center;
       align-items: center;
-      max-height: 97vh;
     `}
 
   ${({ $position }) =>
@@ -32,7 +34,6 @@ export const ModalOverlay = styled.div<{ $position?: PropModalPositions }>`
       justify-content: flex-start;
       padding: 12px;
       padding-left: 0;
-      max-height: 97vh;
     `}
 
   ${({ $position }) =>
@@ -43,7 +44,6 @@ export const ModalOverlay = styled.div<{ $position?: PropModalPositions }>`
       justify-content: flex-end;
       padding: 12px;
       padding-right: 0;
-      max-height: 97vh;
     `}
 `;
 
@@ -59,6 +59,8 @@ export const ModalContent = styled.div<{
   position: relative;
   max-width: 100%;
   z-index: 1060;
+
+  max-height: 90%;
 
   gap: 1rem;
 
@@ -86,6 +88,12 @@ export const ModalContent = styled.div<{
     `}
 `;
 
+export const DivChildren = styled.div`
+  display: flex;
+  overflow-y: auto;
+  height: 100%;
+`;
+
 export const DivCloseButton = styled.div<{
   $size?: PropModalSizes;
 }>`
@@ -93,7 +101,7 @@ export const DivCloseButton = styled.div<{
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  height: 3rem;
+  min-height: 3rem;
 
   border-bottom: 1px solid ${colors.black25};
 
