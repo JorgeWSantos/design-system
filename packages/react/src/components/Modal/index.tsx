@@ -1,4 +1,4 @@
-import React, { ComponentProps, MouseEvent, ReactNode } from 'react';
+import React, { ComponentProps, MouseEvent, ReactNode, useEffect, useState } from 'react';
 import {
   CloseButton,
   DivChildren,
@@ -6,6 +6,7 @@ import {
   ModalContent,
   ModalOverlay,
   StyledXIcon,
+  AnimatedArrowRight, // add import
 } from './styles';
 
 import ReactDOM from 'react-dom';
@@ -18,6 +19,7 @@ export interface ModalProps extends ComponentProps<'div'> {
   position?: PropModalPositions;
   styleContent?: React.CSSProperties;
   size?: PropModalSizes;
+  maxHeight?: string;
 }
 
 /**
@@ -53,6 +55,19 @@ export const Modal = ({
   maxHeight = '90vh',
   ...rest
 }: ModalProps) => {
+  // Mostrar seta animada por 6 segundos (3x 2s)
+  const [showArrow, setShowArrow] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setShowArrow(true);
+      const timeout = setTimeout(() => setShowArrow(false), 4500);
+      return () => window.clearTimeout(timeout);
+    } else {
+      setShowArrow(false);
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const handleOverlayClick = (e: MouseEvent<HTMLDivElement>) => {
@@ -79,7 +94,10 @@ export const Modal = ({
             <StyledXIcon width={14} height={14} $size={size} />
           </CloseButton>
         </DivCloseButton>
-        <DivChildren>{children}</DivChildren>
+        <DivChildren>
+          {children}
+          {showArrow && <AnimatedArrowRight />}
+        </DivChildren>
       </ModalContent>
     </ModalOverlay>,
     document.body

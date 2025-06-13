@@ -1,6 +1,6 @@
-import { XIcon } from '@abqm-ds/icons';
+import { XIcon, ArrowDownShortIcon } from '@abqm-ds/icons';
 import { colors, radii, space } from '@abqm-ds/tokens';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { PropModalPositions, PropModalSizes } from './types';
 
 export const ModalOverlay = styled.div<{
@@ -140,5 +140,31 @@ export const StyledXIcon = styled(XIcon)<{
       css`
         fill: ${colors.white50};
       `}
+  }
+`;
+
+// Animação para seta direita
+const arrowDownAnim = keyframes`
+  0% { transform: translateY(0); opacity: 0.9; }
+  50% { transform: translateY(8px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.9; }
+`;
+
+export const AnimatedArrowRight = styled(ArrowDownShortIcon)`
+  position: absolute;
+  top: 90%;
+  right: 0;
+  left: 45%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  color: ${colors.emeraldGreen75};
+  opacity: 0.7;
+  animation: ${arrowDownAnim} 1.5s 3;
+  pointer-events: none;
+  z-index: 1070;
+
+  path {
+    fill: ${colors.emeraldGreen92};
   }
 `;
