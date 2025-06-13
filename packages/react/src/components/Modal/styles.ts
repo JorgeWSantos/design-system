@@ -54,7 +54,6 @@ export const ModalOverlay = styled.div<{
       top: 0;
       right: 0;
       justify-content: flex-start;
-      padding: 12px;
       padding-left: 0;
     `}
 
@@ -64,7 +63,6 @@ export const ModalOverlay = styled.div<{
       top: 0;
       right: 0;
       justify-content: flex-end;
-      padding: 12px;
       padding-right: 0;
     `}
 `;

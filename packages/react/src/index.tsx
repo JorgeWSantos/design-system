@@ -20,6 +20,11 @@ export * from './components/HeaderMobile';
 export * from './components/Tooltip';
 export * from './components/Modal';
 export * from './components/Toast';
+
 export * from './components/HeaderMobileNavigator';
 export { ErrorBoundary } from './components/ErrorBoundary';
 export { useDeviceType } from './hooks/useDeviceType';
+
+//Layout Components
+export * from './components/Layout/ContentMobile';
+export * from './components/Layout/ContentDesktop';
