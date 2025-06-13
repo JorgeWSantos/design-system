@@ -9,11 +9,7 @@ export const MenuList = styled.ul`
   position: relative;
 `;
 
-export const MenuItem = styled.li<{
-  index: number;
-  $lastIndex: number;
-  $isSelected?: boolean;
-}>`
+export const MenuItem = styled.li<{ $index: number; $lastIndex: number }>`
   min-width: 12.5rem;
   max-height: 2.125rem;
   margin-bottom: 0.063rem;
@@ -27,15 +23,15 @@ export const MenuItem = styled.li<{
   transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   // round first item menu
-  ${({ index }) =>
-    index === 0 &&
+  ${({ $index }) =>
+    $index === 0 &&
     css`
       border-radius: ${space[1]} ${space[1]} 0rem 0rem;
     `}
 
   // round last item menu
-  ${({ index, $lastIndex }) =>
-    index === $lastIndex &&
+  ${({ $index, $lastIndex }) =>
+    $index === $lastIndex &&
     css`
       border-radius: 0rem 0rem ${space[1]} ${space[1]};
       border-bottom: none;

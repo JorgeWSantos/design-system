@@ -24,7 +24,7 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
         return (
           <StyledMenuItem
             key={item.name}
-            index={i}
+            $index={i}
             data-submenu-trigger
             $lastIndex={data.length - 1}
             onMouseEnter={() => setMenuItemSelectedIndex(i)}

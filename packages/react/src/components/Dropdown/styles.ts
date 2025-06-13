@@ -62,7 +62,7 @@ export const StyledTextSelect = styled(Text).attrs({
   lineHeight: 'initial',
   fontWeight: 'regular',
   fontSize: 'ssm',
-})<{ $variant?: VariantsTypesDropdown }>`
+})`
   @media (max-width: ${breakpointsPx.lg}) {
     font-weight: ${fontWeights.semiBold};
   }
