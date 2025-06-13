@@ -18,8 +18,8 @@ const sizeVariants = {
 
 export type SizeVariants = keyof typeof sizeVariants;
 interface StyledTextInputContainerProps {
-  size: SizeVariants;
-  variant: variantsTextInputTypes;
+  $size: SizeVariants;
+  $variant: variantsTextInputTypes;
 }
 
 export const TextInputContainer = styled.div<StyledTextInputContainerProps>`
@@ -40,14 +40,14 @@ export const TextInputContainer = styled.div<StyledTextInputContainerProps>`
     cursor: not-allowed;
   }
 
-  ${({ size }) =>
-    size &&
+  ${({ $size }) =>
+    $size &&
     css`
-      padding: ${sizeVariants[size]};
+      padding: ${sizeVariants[$size]};
     `}
 
-  ${({ variant }) =>
-    variant === 'secondary' &&
+  ${({ $variant }) =>
+    $variant === 'secondary' &&
     css`
       border: ${radii.px} solid ${colors.emeraldGreen25};
       background-color: ${colors.white25};
@@ -59,7 +59,7 @@ export const TextInputContainer = styled.div<StyledTextInputContainerProps>`
 `;
 
 interface PreffixProps {
-  variant: variantsTextInputTypes;
+  $variant: variantsTextInputTypes;
 }
 
 export const Prefix = styled.span<PreffixProps>`
@@ -68,15 +68,15 @@ export const Prefix = styled.span<PreffixProps>`
   color: ${colors.emeraldGreen50};
   font-weight: ${fontWeights.regular};
 
-  ${({ variant }) =>
-    variant === 'secondary' &&
+  ${({ $variant }) =>
+    $variant === 'secondary' &&
     css`
       color: ${colors.white75};
     `}
 `;
 
 interface StyledInputProps {
-  variant: variantsTextInputTypes;
+  $variant: variantsTextInputTypes;
 }
 
 export const Input = styled.input<StyledInputProps>`
@@ -104,8 +104,8 @@ export const Input = styled.input<StyledInputProps>`
     color: ${colors.white75};
   }
 
-  ${({ variant }) =>
-    variant === 'secondary' &&
+  ${({ $variant }) =>
+    $variant === 'secondary' &&
     css`
       color: ${colors.white50};
 
