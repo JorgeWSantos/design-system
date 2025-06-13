@@ -1,4 +1,11 @@
-import React, { ComponentProps, MouseEvent, ReactNode, useEffect, useState } from 'react';
+import React, {
+  ComponentProps,
+  MouseEvent,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import {
   CloseButton,
   DivChildren,
@@ -10,13 +17,18 @@ import {
 } from './styles';
 
 import ReactDOM from 'react-dom';
-import { PropModalPositions, PropModalSizes } from './types';
+import {
+  PropModalHorizontalPositions,
+  PropModalSizes,
+  PropModalVerticalPositions,
+} from './types';
 
 export interface ModalProps extends ComponentProps<'div'> {
   isOpen: boolean;
   onClose: () => void;
   children: ReactNode;
-  position?: PropModalPositions;
+  positionHorizontal?: PropModalHorizontalPositions;
+  positionVertical?: PropModalVerticalPositions;
   styleContent?: React.CSSProperties;
   size?: PropModalSizes;
   maxHeight?: string;
@@ -30,13 +42,13 @@ export interface ModalProps extends ComponentProps<'div'> {
  * @param isOpen Controla a visibilidade do modal.
  * @param onClose Função chamada ao fechar o modal (ex: clique fora ou no botão de fechar).
  * @param children Conteúdo a ser exibido dentro do modal.
- * @param position Posição do modal na tela: 'left', 'right' ou 'center'. Padrão: 'center'.
+ * @param positionHorizontal Posição do modal na tela: 'left', 'right' ou 'center'. Padrão: 'center'.
  * @param styleContent Estilos adicionais para o conteúdo do modal.
  * @param size 'full' preenche toda a tela, deve ser usado para imagens ou documentos. 'normal' é o modal padrão das aplicações.
  * @param maxHeight Define o tamanho máximo do conteúdo do modal (ex: '90vh'). Por padrão, o modal se ajusta ao conteúdo até esse limite.
  *
  * @example
- * <Modal isOpen={open} onClose={handleClose} position="center" maxHeight="90vh">
+ * <Modal isOpen={open} onClose={handleClose} positionHorizontal="center" maxHeight="90vh">
  *   <div>Conteúdo do modal</div>
  * </Modal>
  *
@@ -49,7 +61,8 @@ export const Modal = ({
   isOpen,
   onClose,
   children,
-  position,
+  positionHorizontal = 'center',
+  positionVertical = 'center',
   styleContent,
   size = 'normal',
   maxHeight = '90vh',
@@ -57,16 +70,29 @@ export const Modal = ({
 }: ModalProps) => {
   // Mostrar seta animada por 6 segundos (3x 2s)
   const [showArrow, setShowArrow] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  // Detecta se o conteúdo tem scroll
+  const checkScroll = () => {
+    const el = contentRef.current;
+    if (!el) return false;
+    return el.scrollHeight > el.clientHeight;
+  };
 
   useEffect(() => {
     if (isOpen) {
-      setShowArrow(true);
-      const timeout = setTimeout(() => setShowArrow(false), 4500);
-      return () => window.clearTimeout(timeout);
+      // Só mostra a seta se houver scroll
+      if (checkScroll()) {
+        setShowArrow(true);
+        const timeout = setTimeout(() => setShowArrow(false), 4500);
+        return () => window.clearTimeout(timeout);
+      } else {
+        setShowArrow(false);
+      }
     } else {
       setShowArrow(false);
     }
-  }, [isOpen]);
+  }, [isOpen, children, maxHeight, size, positionHorizontal, styleContent]);
 
   if (!isOpen) return null;
 
@@ -79,13 +105,15 @@ export const Modal = ({
   return ReactDOM.createPortal(
     <ModalOverlay
       onClick={handleOverlayClick}
-      $position={position}
+      $positionHorizontal={positionHorizontal}
+      $positionVertical={positionVertical}
       $size={size}
       {...rest}
     >
       <ModalContent
         $maxHeight={maxHeight}
-        $position={position}
+        $positionHorizontal={positionHorizontal}
+        $positionVertical={positionVertical}
         style={styleContent}
         $size={size}
       >
@@ -94,7 +122,7 @@ export const Modal = ({
             <StyledXIcon width={14} height={14} $size={size} />
           </CloseButton>
         </DivCloseButton>
-        <DivChildren>
+        <DivChildren ref={contentRef}>
           {children}
           {showArrow && <AnimatedArrowRight />}
         </DivChildren>

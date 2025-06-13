@@ -1,10 +1,15 @@
 import { XIcon, ArrowDownShortIcon } from '@abqm-ds/icons';
 import { colors, radii, space } from '@abqm-ds/tokens';
 import styled, { css, keyframes } from 'styled-components';
-import { PropModalPositions, PropModalSizes } from './types';
+import {
+  PropModalHorizontalPositions,
+  PropModalSizes,
+  PropModalVerticalPositions,
+} from './types';
 
 export const ModalOverlay = styled.div<{
-  $position?: PropModalPositions;
+  $positionHorizontal?: PropModalHorizontalPositions;
+  $positionVertical?: PropModalVerticalPositions;
   $size?: PropModalSizes;
 }>`
   display: flex;
@@ -14,8 +19,26 @@ export const ModalOverlay = styled.div<{
   width: 100%;
   height: 100%;
 
-  ${({ $position }) =>
-    ($position === 'center' || !$position) &&
+  ${({ $positionVertical }) =>
+    $positionVertical === 'top' &&
+    css`
+      align-items: flex-start;
+    `}
+
+  ${({ $positionVertical }) =>
+    $positionVertical === 'center' &&
+    css`
+      align-items: center;
+    `}
+
+  ${({ $positionVertical }) =>
+    $positionVertical === 'bottom' &&
+    css`
+      align-items: flex-end;
+    `}
+
+  ${({ $positionHorizontal }) =>
+    ($positionHorizontal === 'center' || !$positionHorizontal) &&
     css`
       top: 0;
       right: 0;
@@ -23,11 +46,10 @@ export const ModalOverlay = styled.div<{
       bottom: 0;
 
       justify-content: center;
-      align-items: center;
     `}
 
-  ${({ $position }) =>
-    $position === 'left' &&
+  ${({ $positionHorizontal }) =>
+    $positionHorizontal === 'left' &&
     css`
       top: 0;
       right: 0;
@@ -36,8 +58,8 @@ export const ModalOverlay = styled.div<{
       padding-left: 0;
     `}
 
-  ${({ $position }) =>
-    $position === 'right' &&
+  ${({ $positionHorizontal }) =>
+    $positionHorizontal === 'right' &&
     css`
       top: 0;
       right: 0;
@@ -48,24 +70,26 @@ export const ModalOverlay = styled.div<{
 `;
 
 export const ModalContent = styled.div<{
-  $position?: PropModalPositions;
+  $positionHorizontal?: PropModalHorizontalPositions;
   $size?: PropModalSizes;
   $maxHeight?: string;
+  $positionVertical?: PropModalVerticalPositions; // add prop
 }>`
   display: flex;
   flex-direction: column;
   background: ${colors.white};
-  padding: ${space[6]} ${space[4]} ${space[4]} ${space[8]};
+  padding: ${space[6]} ${space[4]} ${space[6]} ${space[4]};
   border-radius: ${radii.md};
   position: relative;
   max-width: 100%;
   z-index: 1060;
 
-  height: auto;
+  min-height: 80vh;
 
   ${({ $maxHeight }) =>
     $maxHeight &&
     css`
+      height: ${$maxHeight};
       max-height: ${$maxHeight};
     `}
 
@@ -82,18 +106,28 @@ export const ModalContent = styled.div<{
       max-height: 100vh;
     `}
 
-  ${({ $position }) =>
-    $position === 'left' &&
+  ${({ $positionHorizontal }) =>
+    $positionHorizontal === 'left' &&
     css`
+      padding: ${space[6]} ${space[8]} ${space[4]} ${space[4]};
+
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     `}
 
-  ${({ $position }) =>
-    $position === 'right' &&
+  ${({ $positionHorizontal }) =>
+    $positionHorizontal === 'right' &&
     css`
+      padding: ${space[6]} ${space[4]} ${space[4]} ${space[8]};
+
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
+    `}
+
+  ${({ $positionVertical }) =>
+    $positionVertical === 'bottom' &&
+    css`
+      margin-bottom: 24px;
     `}
 `;
 
