@@ -1,12 +1,15 @@
-import { space } from '@abqm-ds/tokens';
+import { breakpointsPx, space } from '@abqm-ds/tokens';
 import { Box } from '@components/Box';
 import styled from 'styled-components';
 
 export const ContainerMobile = styled.div`
   display: flex;
   flex-direction: column;
-  /* width: 100%; */
   max-height: 87vh;
+  height: 87vh;
+
+  max-width: ${breakpointsPx.lg};
+
   gap: ${space[2]};
   padding: ${space[2]} ${space[1]} 0 ${space[1]} !important;
 
@@ -27,6 +30,7 @@ export const MobileScroll = styled(Box)`
   padding: ${space[6]} ${space[2]};
 
   height: 100%;
+
   width: 100%;
 
   overflow-y: auto; // scroll no componente pai
