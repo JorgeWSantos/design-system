@@ -40,6 +40,14 @@ function App() {
 - \`size\`: 'normal' | 'full' - Tamanho do modal.
   - 'full' preenche toda a tela, deve ser usado para imagens ou documentos.
   - 'normal' é o modal padrão das aplicações.
+- \`maxHeight\`: string - Define o tamanho máximo do conteúdo do modal (ex: \`'90vh'\`). Por padrão, o modal se ajusta ao conteúdo até esse limite.
+
+#### Comportamento
+
+- O modal ajusta sua altura automaticamente ao conteúdo, até o limite de \`maxHeight\`.
+- Se o conteúdo for maior que \`maxHeight\`, será exibido um scroll interno.
+- O modal pode ser fechado clicando fora dele ou no botão de fechar.
+
         `,
       },
     },

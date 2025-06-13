@@ -50,6 +50,7 @@ export const ModalOverlay = styled.div<{
 export const ModalContent = styled.div<{
   $position?: PropModalPositions;
   $size?: PropModalSizes;
+  $maxHeight?: string;
 }>`
   display: flex;
   flex-direction: column;
@@ -60,7 +61,13 @@ export const ModalContent = styled.div<{
   max-width: 100%;
   z-index: 1060;
 
-  max-height: 90%;
+  height: auto;
+
+  ${({ $maxHeight }) =>
+    $maxHeight &&
+    css`
+      max-height: ${$maxHeight};
+    `}
 
   gap: 1rem;
 
@@ -71,6 +78,8 @@ export const ModalContent = styled.div<{
       gap: 0;
 
       padding: 0;
+      height: 100vh;
+      max-height: 100vh;
     `}
 
   ${({ $position }) =>
