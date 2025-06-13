@@ -44,7 +44,7 @@ import { TextInput } from '@abqm-ds/react';
 
 const renderPrimary = (args: TextInputProps) => (
   <Box
-    as="label"
+    as="div"
     style={{
       display: 'flex',
       flexDirection: 'column',
@@ -70,7 +70,7 @@ export const Primary: StoryObj<TextInputProps> = {
 
 const renderSecondary = (args: TextInputProps) => (
   <Box
-    as="label"
+    as="div"
     style={{
       display: 'flex',
       flexDirection: 'column',
