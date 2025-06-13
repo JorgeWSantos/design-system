@@ -21,10 +21,10 @@ export const Button = ({
   ...rest
 }: ButtonProps) => {
   return (
-    <StyledButton variant={variant} size={size} {...rest}>
+    <StyledButton $variant={variant} $size={size} {...rest}>
       {iconLeft && <>{iconLeft}</>}
 
-      <StyledButtonText variant={variant} size={size}>
+      <StyledButtonText $variant={variant} $size={size}>
         {text}
       </StyledButtonText>
 
