@@ -6,7 +6,7 @@ Este pacote fornece componentes reutilizáveis, acessíveis e estilizados para u
 
 ---
 
-## 📦 Instalação.
+## 📦 Instalação
 
 ```bash
 yarn add @abqm-ds/react
@@ -55,11 +55,36 @@ function App() {
   return (
     <ErrorBoundary>
       <ToastRoot />
-      <Button onClick={() => showToast('Olá!', 'success')}>Clique aqui</Button>
+      <Button text="Salvar" variant="primary" size="md" onClick={() => alert('ola')} />
     </ErrorBoundary>
   );
 }
 ```
+
+### ErrorBoundary
+
+O `ErrorBoundary` captura erros de renderização em componentes filhos e exibe uma mensagem de fallback amigável.
+
+#### Exemplo de uso:
+
+```tsx
+import { ErrorBoundary } from '@abqm-ds/react';
+
+function BuggyComponent() {
+  throw new Error('Erro de teste!');
+}
+
+function App() {
+  return (
+    <ErrorBoundary>
+      <BuggyComponent />
+    </ErrorBoundary>
+  );
+}
+```
+
+- Use para evitar que erros de componentes quebrem toda a aplicação.
+- O fallback padrão exibe a mensagem de erro e o stack trace.
 
 ---
 
