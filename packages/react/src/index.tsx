@@ -21,3 +21,4 @@ export * from './components/Tooltip';
 export * from './components/Modal';
 export * from './components/Toast';
 export * from './components/HeaderMobileNavigator';
+export { ErrorBoundary } from './components/ErrorBoundary';

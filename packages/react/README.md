@@ -39,6 +39,7 @@ npm install @abqm-ds/react
 - Tooltip
 - Modal
 - Toast
+- ErrorBoundary
   ...
 
 ---
@@ -48,15 +49,14 @@ npm install @abqm-ds/react
 Importe e utilize os componentes normalmente:
 
 ```tsx
-import { Button, ToastProvider, useToast } from '@abqm-ds/react';
+import { Button, ToastRoot, ErrorBoundary } from '@abqm-ds/react';
 
 function App() {
-  const { showToast } = useToast();
-
   return (
-    <ToastProvider>
+    <ErrorBoundary>
+      <ToastRoot />
       <Button onClick={() => showToast('Olá!', 'success')}>Clique aqui</Button>
-    </ToastProvider>
+    </ErrorBoundary>
   );
 }
 ```
