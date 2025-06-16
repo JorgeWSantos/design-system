@@ -3,7 +3,7 @@ import { HeaderMobile, HeaderMobileProps } from '@abqm-ds/react';
 
 // Documentação principal do componente HeaderMobile
 export default {
-  title: 'Surfaces/HeaderMobile',
+  title: 'Layout/HeaderMobile',
   component: HeaderMobile,
   args: {},
   argTypes: {

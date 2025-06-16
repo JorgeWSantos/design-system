@@ -32,7 +32,7 @@ export const withResponsiveBackground = (Story: any) => {
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
         minHeight: height,
-        padding: '2rem',
+        // padding: '2rem',
       }}
     >
       <GlobalStyle />
