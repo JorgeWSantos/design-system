@@ -27,5 +27,16 @@ export { ErrorBoundary } from './components/ErrorBoundary';
 export { useDeviceType } from './hooks/useDeviceType';
 
 //Layout Components
+export * from './components/Layout/GlobalContainer';
+
+// Mobile Layout Components
 export * from './components/Layout/Mobile/ContentMobile';
+export * from './components/Layout/Mobile/ContainerMobile';
+
+// Desktop Layout Components
 export * from './components/Layout/Desktop/ContentDesktop';
+export * from './components/Layout/Desktop/SideBarDesktop';
+export * from './components/Layout/Desktop/ContainerDesktop';
+
+// Types
+export * from './types/user';
