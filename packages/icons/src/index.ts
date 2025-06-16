@@ -37,3 +37,5 @@ export { default as CaretLeftFillIcon } from './components/CaretLeftFillIcon';
 export { default as CircleIcon } from './components/CircleIcon';
 
 export { default as ArrowDownShortIcon } from './components/ArrowDownShortIcon';
+
+export { default as SpinnerRingResizeIcon } from './components/SpinnerRingResizeIcon';
