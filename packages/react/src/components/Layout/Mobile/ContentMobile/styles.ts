@@ -2,7 +2,7 @@ import { breakpointsPx, space } from '@abqm-ds/tokens';
 import { Box } from '@components/Box';
 import styled from 'styled-components';
 
-export const ContainerMobile = styled.div`
+export const ContainerMobile = styled.main`
   display: flex;
   flex-direction: column;
   max-height: 87vh;

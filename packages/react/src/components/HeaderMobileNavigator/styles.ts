@@ -1,7 +1,7 @@
 import { colors, radii, space } from '@abqm-ds/tokens';
 import styled from 'styled-components';
 
-export const StyledNavigatorMobile = styled.header`
+export const StyledNavigatorMobile = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;

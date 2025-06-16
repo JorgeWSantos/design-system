@@ -9,7 +9,7 @@ export const FooterWrapper = styled.footer`
   align-items: flex-start;
   padding: 0;
   flex-shrink: 0;
-  z-index: 2;
+  z-index: 1001;
   backdrop-filter: blur(0.625rem);
 
   /* margin-top: ${theme.space[2]} !important; */

@@ -28,15 +28,19 @@ export const ContainerMenuComponent = styled.div<{
 
   backdrop-filter: blur(3.125rem);
   width: 100%;
-  height: 100vh;
+  height: 91.5vh;
+  top: 3.5rem;
   box-sizing: border-box;
+
+  position: absolute;
+  z-index: 1000;
 `;
 
 export const ContainerUserDropDown = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
   margin: 1.5rem 1.5rem 0rem 2rem;
 `;
 
@@ -52,7 +56,6 @@ export const MenuList = styled.ul<{ $menuIsOpen: boolean; $subMenuIsOpen: boolea
   z-index: 1;
   top: 4rem;
   box-sizing: border-box;
-  height: 93vh;
   width: 100%;
 
   box-sizing: border-box;
@@ -65,11 +68,9 @@ export const MenuList = styled.ul<{ $menuIsOpen: boolean; $subMenuIsOpen: boolea
     $subMenuIsOpen &&
     css`
       background-color: transparent;
-    `}
-
-  @media (min-width: ${breakpointsPx.md}) {
+    `}/* @media (min-width: ${breakpointsPx.md}) {
     height: 94vh;
-  }
+  } */
 `;
 
 export const StyledMenuItem = styled.li<{ index: number; $subMenuIsOpen: boolean }>`
