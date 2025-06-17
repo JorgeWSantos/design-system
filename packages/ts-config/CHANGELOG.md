@@ -1,5 +1,11 @@
 # @abqm-ds/ts-config
 
+## 1.0.6
+
+### Patch Changes
+
+- feat: 🎸 Fará atualizações para finalizar o calendários
+
 ## 1.0.5
 
 ### Patch Changes

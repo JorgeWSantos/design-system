@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.12
+
+### Patch Changes
+
+- feat: 🎸 Fará atualizações para finalizar o calendários
+
 ## 1.0.11
 
 ### Patch Changes

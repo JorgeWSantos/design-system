@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 1.0.10
+
+### Patch Changes
+
+- feat: 🎸 Fará atualizações para finalizar o calendários
+
 ## 1.0.9
 
 ### Patch Changes

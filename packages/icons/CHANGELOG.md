@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 1.0.9
+
+### Patch Changes
+
+- feat: 🎸 Fará atualizações para finalizar o calendários
+
 ## 1.0.8
 
 ### Patch Changes
