@@ -7,16 +7,17 @@ interface ContentDektopProps extends ComponentProps<typeof ContainerDesktop> {
 }
 
 export const ContentDektop = ({ header, children }: ContentDektopProps) => {
+  // This is a workaround to set the height of the content based on the screen height.
+  //[heightScreen, percentageHeight] = [1300, 0.93];
   const heightFactor =
-    window.innerHeight < 800
-      ? 0.86
-      : window.innerHeight >= 1300
-      ? 0.9
-      : window.innerHeight >= 900
-      ? 0.9
-      : window.innerHeight >= 800
-      ? 0.88
-      : 0.84;
+    [
+      [1300, 0.93],
+      [1000, 0.92],
+      [850, 0.9],
+      [800, 0.89],
+      [700, 0.88],
+      [600, 0.87],
+    ].find(([limit]) => window.innerHeight >= limit)?.[1] ?? 0.84;
 
   return (
     <ContainerDesktop $maxHeight={`calc(100dvh * ${heightFactor})`}>
