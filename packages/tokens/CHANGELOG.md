@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 1.0.9
+
+### Patch Changes
+
+- feat: 🎸 Criará primeira versão oficial dos pacotes
+
 ## 1.0.8
 
 ### Patch Changes

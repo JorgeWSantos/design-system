@@ -1,5 +1,11 @@
 # @abqm-ds/ts-config
 
+## 1.0.5
+
+### Patch Changes
+
+- feat: 🎸 Criará primeira versão oficial dos pacotes
+
 ## 1.0.4
 
 ### Patch Changes
