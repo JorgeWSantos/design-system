@@ -10,7 +10,7 @@ import {
 } from './styles';
 
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from '@abqm-ds/icons';
-import { breakpoints } from '@abqm-ds/tokens';
+import { breakpoints, colors } from '@abqm-ds/tokens';
 import { useWindowSize } from 'utils/useWindowSize';
 
 export interface FooterContentProps extends ComponentProps<typeof ContainerContent> {}
@@ -20,13 +20,23 @@ const socialIcons = (width: number) => {
     return (
       <SocialIcons>
         <SocialIcon href="https://www.youtube.com/@abqmoficial" target="_blank">
-          <YoutubeIcon width={12} height={12} />
+          <YoutubeIcon width={12} height={12} fill={colors.emeraldGreen75} />
         </SocialIcon>
         <SocialIcon href="https://www.instagram.com/abqmoficial/" target="_blank">
-          <InstagramIcon width={12} height={12} style={{ marginTop: '0.063rem' }} />
+          <InstagramIcon
+            width={12}
+            height={12}
+            style={{ marginTop: '0.063rem' }}
+            fill={colors.emeraldGreen75}
+          />
         </SocialIcon>
         <SocialIcon href="https://www.facebook.com/abqmoficial" target="_blank">
-          <FacebookIcon width={14} height={13} style={{ marginTop: '0.063rem' }} />
+          <FacebookIcon
+            width={14}
+            height={13}
+            style={{ marginTop: '0.03rem' }}
+            fill={colors.emeraldGreen75}
+          />
         </SocialIcon>
       </SocialIcons>
     );

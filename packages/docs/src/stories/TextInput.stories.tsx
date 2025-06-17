@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Box, Text, TextInput, TextInputProps, theme } from '@abqm-ds/react';
 import { SearchIcon } from '@abqm-ds/icons';
+import { colors } from '@abqm-ds/tokens';
 
 export default {
   title: 'Form/TextInput',
@@ -91,7 +92,7 @@ export const Secondary: StoryObj<TextInputProps> = {
   args: {
     placeholder: 'Buscar',
     variant: 'secondary',
-    icon: <SearchIcon />,
+    icon: <SearchIcon fill={colors.white50} />,
   },
   render: renderSecondary,
 };
@@ -100,7 +101,7 @@ export const Tertiary: StoryObj<TextInputProps> = {
   args: {
     placeholder: 'With Icon',
     size: 'sm',
-    icon: <SearchIcon />,
+    icon: <SearchIcon fill={colors.white50} />,
   },
   render: renderPrimary,
 };

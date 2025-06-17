@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { RoundedButton, RoundedButtonProps } from '@abqm-ds/react';
+import { PlusIcon } from '@abqm-ds/icons';
 
 export default {
   title: 'Form/RoundedButton',
@@ -28,4 +29,10 @@ import { RoundedButton } from '@abqm-ds/react';
   },
 } as Meta<RoundedButtonProps>;
 
-export const Primary: StoryObj<RoundedButtonProps> = {};
+export const Primary: StoryObj<RoundedButtonProps> = {
+  args: {
+    children: <PlusIcon width={40} height={40} color="white" />,
+    onClick: () => alert('Clicou!'),
+  },
+  render: (args) => <RoundedButton {...args} />,
+};

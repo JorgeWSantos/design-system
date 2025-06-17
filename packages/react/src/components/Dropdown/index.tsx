@@ -7,10 +7,10 @@ import {
   StyledTextSelect,
 } from './styles';
 import { Text } from '@components/Text';
-import { CaretDownIcon } from '@abqm-ds/icons';
 import { colors } from '@abqm-ds/tokens';
 import { useClickOutside } from 'hooks/useClickOutside';
 import { DropdownProps, DataDropdown } from './types';
+import { CaretDownFillIcon } from '@abqm-ds/icons';
 
 export function Dropdown({
   data,
@@ -66,7 +66,7 @@ export function Dropdown({
         $variant={variant}
       >
         <StyledTextSelect>{selectedOption?.label || null}</StyledTextSelect>
-        <CaretDownIcon width={12} height={12} />
+        <CaretDownFillIcon width={12} height={12} fill={colors.white50} />
       </StyledDropdown>
 
       {showOptions && (

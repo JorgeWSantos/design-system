@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-const PlusIcon = (props: SVGProps<SVGSVGElement>) => (
+const CaretDownFillIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -10,8 +10,8 @@ const PlusIcon = (props: SVGProps<SVGSVGElement>) => (
   >
     <path
       fill={props?.fill ? props.fill : '#1E1E1E'}
-      d="M12 6a.75.75 0 0 1 .75.75v4.5h4.5a.75.75 0 1 1 0 1.5h-4.5v4.5a.75.75 0 1 1-1.5 0v-4.5h-4.5a.75.75 0 1 1 0-1.5h4.5v-4.5A.75.75 0 0 1 12 6"
+      d="M10.87 16.71 3.678 8.487C2.827 7.519 3.517 6 4.806 6h14.388a1.5 1.5 0 0 1 1.13 2.489l-7.195 8.22a1.5 1.5 0 0 1-2.258 0z"
     />
   </svg>
 );
-export default PlusIcon;
+export default CaretDownFillIcon;

@@ -5,20 +5,20 @@ const PersonCircleIcon = (props: SVGProps<SVGSVGElement>) => (
     width="1em"
     height="1em"
     fill="none"
-    viewBox="0 0 38 38"
+    viewBox="0 0 24 24"
     {...props}
   >
-    <g fill="#002710" fillOpacity={0.25} clipPath="url(#PersonCircle_svg__a)">
-      <path d="M26.031 14.313a7.03 7.03 0 1 1-14.061 0 7.03 7.03 0 0 1 14.061 0" />
+    <g fill="#1E1E1E" clipPath="url(#person-circle_svg__a)">
+      <path d="M16.5 9a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0" />
       <path
         fillRule="evenodd"
-        d="M.25 19a18.75 18.75 0 1 1 37.5 0 18.75 18.75 0 0 1-37.5 0M19 2.594A16.406 16.406 0 0 0 6.184 29.242c1.664-2.681 5.328-5.555 12.816-5.555s11.15 2.872 12.816 5.555A16.406 16.406 0 0 0 19 2.594"
+        d="M0 12a12 12 0 1 1 24 0 12 12 0 0 1-24 0M12 1.5a10.5 10.5 0 0 0-8.202 17.055C4.863 16.839 7.208 15 12 15c4.793 0 7.136 1.837 8.202 3.555A10.5 10.5 0 0 0 12 1.5"
         clipRule="evenodd"
       />
     </g>
     <defs>
-      <clipPath id="PersonCircle_svg__a">
-        <path fill="#fff" d="M.25.25h37.5v37.5H.25z" />
+      <clipPath id="person-circle_svg__a">
+        <path fill={props?.fill ? props.fill : '#fff'} d="M0 0h24v24H0z" />
       </clipPath>
     </defs>
   </svg>

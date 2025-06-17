@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Header, HeaderProps } from '@abqm-ds/react';
 import { HorseIcon, PlusIcon, PrinterIcon } from '@abqm-ds/icons';
 import { action } from '@storybook/addon-actions';
+import { colors } from '@abqm-ds/tokens';
 
 // Documentação principal do componente Header
 export default {
@@ -59,17 +60,17 @@ export const WithButtons: StoryObj<HeaderProps> = {
     text: 'Calendários',
     buttons: [
       {
-        icon: <HorseIcon />,
+        icon: <HorseIcon fill={colors.emeraldGreen50} />,
         label: 'animais',
         onClick: action('animais'),
       },
       {
-        icon: <PrinterIcon />,
+        icon: <PrinterIcon fill={colors.emeraldGreen50} />,
         label: 'imprimir',
         onClick: action('imprimir'),
       },
       {
-        icon: <PlusIcon />,
+        icon: <PlusIcon fill={colors.emeraldGreen50} />,
         label: 'filtro',
         onClick: action('filtro'),
         // onClick: () => console.log('clicou em animais'), //exibe o console no devtools do chrome
@@ -83,12 +84,12 @@ export const WithButtonsDisabled: StoryObj<HeaderProps> = {
     text: 'Calendários',
     buttons: [
       {
-        icon: <PrinterIcon />,
+        icon: <PrinterIcon fill={colors.emeraldGreen50} />,
         label: 'imprimir',
         disabled: true,
       },
       {
-        icon: <PlusIcon />,
+        icon: <PlusIcon fill={colors.emeraldGreen50} />,
         label: 'filtro',
       },
     ],

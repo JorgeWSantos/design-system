@@ -8,7 +8,7 @@ import {
   UserDropdownWrapper,
 } from './styles';
 import { Text } from '@components/Text';
-import { BoxArrowInLeftIcon, CaretDownIcon } from '@abqm-ds/icons';
+import { BoxArrowInLeftIcon, CaretDownFillIcon } from '@abqm-ds/icons';
 import { Tooltip } from '@components/Tooltip';
 import { colors } from '@abqm-ds/tokens';
 
@@ -34,7 +34,7 @@ export const UserDropDown = ({
         <AvatarDiv src={srcImage} />
         <Dropdown>
           <Text fontSize="ssm">{signed ? userName : 'Entrar / Cadastre-se'}</Text>
-          <CaretDownIcon width={'0.544rem'} height={'0.35rem'} />
+          <CaretDownFillIcon width={'0.544rem'} height={'0.35rem'} />
         </Dropdown>
       </UserDropdownContent>
     ),

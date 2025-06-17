@@ -1,4 +1,4 @@
-import { CaretDownIcon, MenuIcon, XIcon } from '@abqm-ds/icons';
+import { CaretDownFillIcon, ListIcon, XIcon } from '@abqm-ds/icons';
 import { Text } from '@components/Text';
 import { colors, radii, space } from '@abqm-ds/tokens';
 import styled from 'styled-components';
@@ -50,6 +50,7 @@ export const DivButtons = styled.div`
   justify-content: center;
   align-items: center;
   align-self: center;
+  min-width: 2rem;
   width: 2rem;
   height: 100%;
 `;
@@ -66,12 +67,10 @@ export const MenuHamburgueIconWrapper = styled.div`
 `;
 
 // Ícone de menu hamburguer
-export const MenuHamburgueIcon = styled(MenuIcon)<{ $menuIsOpen: boolean }>`
+export const MenuHamburgueIcon = styled(ListIcon)<{ $menuIsOpen: boolean }>`
   position: absolute;
   top: 10;
   left: 0;
-  width: 1.75rem;
-  height: 1.125rem;
   border-radius: ${radii.pxx};
   transform: ${({ $menuIsOpen }) => ($menuIsOpen ? 'rotate(45deg)' : 'rotate(0)')};
   opacity: ${({ $menuIsOpen }) => ($menuIsOpen ? 0 : 1)};
@@ -84,21 +83,15 @@ export const CloseMenuIcon = styled(XIcon)<{ $menuIsOpen: boolean }>`
   top: 10;
   left: 0;
 
-  width: 1.375rem;
-  height: 0.875rem;
-
   transform: ${({ $menuIsOpen }) => ($menuIsOpen ? 'rotate(90deg)' : 'rotate(0)')};
   opacity: ${({ $menuIsOpen }) => ($menuIsOpen ? 1 : 0)};
 
   transition: all 0.3s ease-in-out;
 `;
-export const BackMenuIcon = styled(CaretDownIcon)<{ $subMenuIsOpen: boolean }>`
+export const BackMenuIcon = styled(CaretDownFillIcon)<{ $subMenuIsOpen: boolean }>`
   position: absolute;
   top: 10;
   left: 0;
-
-  width: 1.25rem;
-  height: 0.875rem;
 
   transform: ${({ $subMenuIsOpen }) => ($subMenuIsOpen ? 'rotate(90deg)' : 'rotate(0)')};
   opacity: ${({ $subMenuIsOpen }) => ($subMenuIsOpen ? 1 : 0)};

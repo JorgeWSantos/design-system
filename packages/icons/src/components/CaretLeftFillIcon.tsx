@@ -5,12 +5,12 @@ const CaretLeftFillIcon = (props: SVGProps<SVGSVGElement>) => (
     width="1em"
     height="1em"
     fill="none"
-    viewBox="0 0 12 18"
+    viewBox="0 0 24 24"
     {...props}
   >
     <path
       fill={props?.fill ? props.fill : '#1E1E1E'}
-      d="m.79 10.13 8.223 7.193c.969.85 2.487.16 2.487-1.129V1.806A1.5 1.5 0 0 0 9.012.676L.792 7.87a1.5 1.5 0 0 0 0 2.26z"
+      d="m5.79 13.13 8.223 7.193c.969.85 2.487.16 2.487-1.129V4.806a1.5 1.5 0 0 0-2.488-1.13l-8.22 7.195a1.5 1.5 0 0 0 0 2.258z"
     />
   </svg>
 );

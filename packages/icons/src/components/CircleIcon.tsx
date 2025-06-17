@@ -8,10 +8,17 @@ const CircleIcon = (props: SVGProps<SVGSVGElement>) => (
     viewBox="0 0 24 24"
     {...props}
   >
-    <path
-      fill={props?.fill ? props.fill : '#1E1E1E'}
-      d="M12 22.5a10.5 10.5 0 1 1 0-21 10.5 10.5 0 0 1 0 21m0 1.5a12 12 0 1 0 0-24 12 12 0 0 0 0 24"
-    />
+    <g clipPath="url(#circle_svg__a)">
+      <path
+        fill={props?.fill ? props.fill : '#1E1E1E'}
+        d="M12 22.5a10.5 10.5 0 1 1 0-21 10.5 10.5 0 0 1 0 21m0 1.5a12 12 0 1 0 0-24 12 12 0 0 0 0 24"
+      />
+    </g>
+    <defs>
+      <clipPath id="circle_svg__a">
+        <path fill={props?.fill ? props.fill : '#fff'} d="M0 0h24v24H0z" />
+      </clipPath>
+    </defs>
   </svg>
 );
 export default CircleIcon;

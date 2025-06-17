@@ -5,14 +5,20 @@ const FacebookIcon = (props: SVGProps<SVGSVGElement>) => (
     width="1em"
     height="1em"
     fill="none"
-    viewBox="0 0 12 13"
+    viewBox="0 0 24 24"
     {...props}
   >
-    <path
-      fill="#001007"
-      fillOpacity={0.75}
-      d="M12 6.095C12 2.761 9.314.058 6 .058S-.001 2.76-.001 6.096c0 3.013 2.194 5.51 5.062 5.963V7.841H3.539V6.096h1.524V4.765c0-1.513.896-2.348 2.266-2.348.657 0 1.343.117 1.343.117V4.02h-.756c-.745 0-.978.466-.978.944v1.132h1.664L8.336 7.84H6.938v4.219C9.806 11.606 12 9.109 12 6.095"
-    />
+    <g clipPath="url(#facebook_svg__a)">
+      <path
+        fill={props?.fill ? props.fill : '#1E1E1E'}
+        d="M24 12.074C24 5.403 18.627-.002 12-.002 5.37 0-.003 5.405-.003 12.075c0 6.026 4.39 11.02 10.125 11.927v-8.438H7.077v-3.489h3.048V9.413c0-3.026 1.793-4.697 4.533-4.697 1.314 0 2.687.236 2.687.236v2.97H15.83c-1.49 0-1.954.931-1.954 1.887v2.265h3.327l-.531 3.489h-2.798V24C19.611 23.094 24 18.099 24 12.074"
+      />
+    </g>
+    <defs>
+      <clipPath id="facebook_svg__a">
+        <path fill={props?.fill ? props.fill : '#fff'} d="M0 0h24v24H0z" />
+      </clipPath>
+    </defs>
   </svg>
 );
 export default FacebookIcon;

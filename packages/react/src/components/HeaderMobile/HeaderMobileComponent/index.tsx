@@ -1,5 +1,6 @@
 import { LogoSeqmMobileIcon } from '@abqm-ds/icons';
 import * as S from './styles';
+import { colors } from '@abqm-ds/tokens';
 
 interface Props {
   title: string;
@@ -29,9 +30,24 @@ const HeaderMobileComponent = ({
 
       <S.DivButtons>
         <S.MenuHamburgueIconWrapper onClick={!visibleSubmenu ? toggleMenu : hideSubMenu}>
-          <S.MenuHamburgueIcon $menuIsOpen={menuIsOpen} />
-          <S.CloseMenuIcon $menuIsOpen={visibleSubmenu ? false : menuIsOpen} />
-          <S.BackMenuIcon $subMenuIsOpen={visibleSubmenu} />
+          <S.MenuHamburgueIcon
+            $menuIsOpen={menuIsOpen}
+            fill={colors.white85}
+            width={32}
+            height={32}
+          />
+          <S.CloseMenuIcon
+            $menuIsOpen={visibleSubmenu ? false : menuIsOpen}
+            fill={colors.white85}
+            width={32}
+            height={32}
+          />
+          <S.BackMenuIcon
+            $subMenuIsOpen={visibleSubmenu}
+            fill={colors.white85}
+            width={22}
+            height={22}
+          />
         </S.MenuHamburgueIconWrapper>
       </S.DivButtons>
     </S.Container>

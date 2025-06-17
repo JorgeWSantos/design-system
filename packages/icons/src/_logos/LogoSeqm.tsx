@@ -9,7 +9,7 @@ const SvgLogoSeqm = (props: SVGProps<SVGSVGElement>) => (
     viewBox="0 0 110 48"
     {...props}
   >
-    <g clipPath="url(#LogoSeqm_svg__a)">
+    <g clipPath="url(#logo-seqm_svg__a)">
       <path
         stroke="#fff"
         strokeMiterlimit={10}
@@ -71,7 +71,7 @@ const SvgLogoSeqm = (props: SVGProps<SVGSVGElement>) => (
       />
     </g>
     <defs>
-      <clipPath id="LogoSeqm_svg__a">
+      <clipPath id="logo-seqm_svg__a">
         <path fill="#fff" d="M.916 0h108.169v48H.915z" />
       </clipPath>
     </defs>

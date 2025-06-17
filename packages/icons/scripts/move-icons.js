@@ -1,6 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { toPascalCase } from './utils.js';
+import { processSourceDir } from './process.js';
+import { updateIndexFile } from './updateIndex.js';
 
 // Corrigir __dirname em ESM
 const __filename = fileURLToPath(import.meta.url);
@@ -25,83 +28,9 @@ if (!fs.existsSync(finalDir)) {
   fs.mkdirSync(finalDir, { recursive: true });
 }
 
-// Função para processar arquivos de uma pasta
-function processSourceDir(sourceDir, prefixToRemove = /^svg/i) {
-  if (!fs.existsSync(sourceDir)) return [];
-  const files = fs.readdirSync(sourceDir).filter((f) => f.endsWith('.tsx'));
-  const exports = [];
+// Processa os diretórios de origem normalmente
+processSourceDir(tempDir, finalDir);
+processSourceDir(logosDir, finalDir, /^svg/i);
 
-  for (const file of files) {
-    const baseName = path.basename(file, '.tsx');
-    const cleanedName = baseName.replace(prefixToRemove, ''); // Remove prefixo se necessário
-    const componentName = `${cleanedName}Icon`;
-
-    const fromPath = path.join(sourceDir, file);
-    const toPath = path.join(finalDir, `${componentName}.tsx`);
-
-    if (fs.existsSync(toPath)) {
-      console.log(`⏩ Ignorado (já existe): ${componentName}`);
-      continue;
-    }
-
-    // Lê e modifica o conteúdo
-    let fileContent = fs.readFileSync(fromPath, 'utf-8');
-
-    // Remove a linha de importação do React
-    fileContent = fileContent.replace(
-      /import\s+\*\s+as\s+React\s+from\s+['"]react['"];?\n?/g,
-      ''
-    );
-
-    // Renomeia o nome do componente
-    const regex = new RegExp(`const\\s+Svg${cleanedName}\\b`, 'g');
-    fileContent = fileContent.replace(regex, `const ${componentName}`);
-
-    // Atualiza o export default
-    fileContent = fileContent.replace(
-      new RegExp(`export\\s+default\\s+Svg${cleanedName}\\b`, 'g'),
-      `export default ${componentName}`
-    );
-
-    // Substitui fill="..." por fill={props?.fill ? props.fill : '...'}
-    fileContent = fileContent.replace(
-      /(<path[^>]*?)\sfill="([^"]+)"([^>]*?>)/g,
-      (match, before, color, after) => {
-        // Evita sobrescrever fill={...} já existente
-        if (before.includes('fill={')) return match;
-        return `${before} fill={props?.fill ? props.fill : '${color}'}${after}`;
-      }
-    );
-
-    // Escreve novo arquivo e remove o antigo
-    fs.writeFileSync(toPath, fileContent);
-    fs.unlinkSync(fromPath);
-
-    console.log(`✅ Movido e renomeado: ${componentName}`);
-    exports.push(
-      `export { default as ${componentName} } from './components/${componentName}';`
-    );
-  }
-  return exports;
-}
-
-let allExports = [];
-allExports = allExports.concat(processSourceDir(tempDir));
-// Remover apenas "svg" do início, não "logo"
-allExports = allExports.concat(processSourceDir(logosDir, /^svg/i));
-
-// Atualiza index.ts
-if (allExports.length > 0) {
-  let indexContent = '';
-  if (fs.existsSync(indexFile)) {
-    indexContent = fs.readFileSync(indexFile, 'utf-8');
-  }
-
-  const newExports = allExports.filter((e) => !indexContent.includes(e));
-  if (newExports.length > 0) {
-    fs.appendFileSync(indexFile, '\n' + newExports.join('\n') + '\n');
-    console.log('📦 index.ts atualizado');
-  }
-} else {
-  console.log('✅ Nenhum novo componente a mover');
-}
+// Atualiza index.ts para garantir que todos os componentes estejam exportados
+updateIndexFile(finalDir, indexFile);
