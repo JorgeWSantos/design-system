@@ -1,4 +1,4 @@
-import { CaretRightIcon } from '@abqm-ds/icons';
+import { CaretRightFillIcon } from '@abqm-ds/icons';
 import { colors, radii, space } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 
@@ -9,7 +9,11 @@ export const MenuList = styled.ul`
   position: relative;
 `;
 
-export const MenuItem = styled.li<{ $index: number; $lastIndex: number }>`
+export const MenuItem = styled.li<{
+  $index: number;
+  $lastIndex: number;
+  $isSelected?: boolean;
+}>`
   min-width: 12.5rem;
   max-height: 2.125rem;
   margin-bottom: 0.063rem;
@@ -44,6 +48,13 @@ export const MenuItem = styled.li<{ $index: number; $lastIndex: number }>`
     transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  ${({ $isSelected }) =>
+    $isSelected &&
+    css`
+      background-color: ${colors.emeraldGreen25} !important;
+      transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    `}
+
   &:hover > ul,
   &:focus-within > ul {
     opacity: 1 !important;
@@ -63,9 +74,19 @@ export const MenuLink = styled.a`
   padding: ${space[2]} ${space[3]};
 `;
 
-export const CaretIcon = styled(CaretRightIcon)`
-  width: 0.5rem;
-  height: 0.5rem;
+export const CaretIcon = styled(CaretRightFillIcon)<{ $isSelected?: boolean }>`
+  width: 0.75rem;
+  height: 0.75rem;
+
+  path {
+    fill: ${colors.white25};
+
+    ${({ $isSelected }) =>
+      $isSelected &&
+      css`
+        fill: ${colors.white75};
+      `}
+  }
 `;
 
 export const SubmenuList = styled.ul`

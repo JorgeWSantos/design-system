@@ -5,7 +5,6 @@ export { default as BroadcastIcon } from './components/BroadcastIcon';
 export { default as CaretDownFillIcon } from './components/CaretDownFillIcon';
 export { default as CaretLeftFillIcon } from './components/CaretLeftFillIcon';
 export { default as CaretRightFillIcon } from './components/CaretRightFillIcon';
-export { default as CaretRightIcon } from './components/CaretRightIcon';
 export { default as CircleIcon } from './components/CircleIcon';
 export { default as FacebookIcon } from './components/FacebookIcon';
 export { default as FileTextIcon } from './components/FileTextIcon';

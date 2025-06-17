@@ -29,6 +29,7 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
             $lastIndex={data.length - 1}
             onMouseEnter={() => setMenuItemSelectedIndex(i)}
             onMouseLeave={() => setMenuItemSelectedIndex(-1)}
+            $isSelected={isSelected}
           >
             <MenuLink
               href={item.link}
@@ -47,7 +48,7 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
               >
                 {item.name}
               </Text>
-              {hasSubmenu && <CaretIcon />}
+              {hasSubmenu && <CaretIcon $isSelected={isSelected} />}
             </MenuLink>
 
             {hasSubmenu && isSelected && (
