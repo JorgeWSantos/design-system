@@ -34,10 +34,34 @@ import { TextInput } from '@abqm-ds/react';
 <TextInput placeholder="Digite seu texto" />
 \`\`\`
 
-- Aceita todas as props nativas de \`input\`.
-- Suporta variantes e tamanhos.
-- Pode exibir ícone à esquerda.
-        `,
+#### Props principais
+
+- \`size\`: 'sm' | 'md' — Tamanho do campo (padrão: 'md').
+- \`variant\`: 'primary' | 'secondary' — Variação de cor/estilo.
+- \`icon\`: ReactNode — Ícone exibido à esquerda do campo.
+- \`prefix\`: string — Texto exibido antes do valor digitado.
+- \`disabled\`: boolean — Desabilita o campo.
+- \`...props\`: Aceita todas as props nativas de \`<input>\`.
+
+#### Exemplo com ícone e prefixo
+
+\`\`\`tsx
+import { TextInput } from '@abqm-ds/react';
+import { SearchIcon } from '@abqm-ds/icons';
+
+<TextInput
+  placeholder="Buscar"
+  icon={<SearchIcon />}
+  prefix="cal.com/"
+/>
+\`\`\`
+
+#### Acessibilidade
+
+- O componente propaga todas as props nativas de \`input\`, incluindo \`aria-*\` e \`role\`.
+- Use \`aria-label\` ou associe um \`<label>\` para melhor acessibilidade.
+
+---        `,
       },
     },
   },

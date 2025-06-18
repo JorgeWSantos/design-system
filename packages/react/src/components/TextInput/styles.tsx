@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { variantsTextInputTypes } from '.';
 import {
   colors,
   fonts,
@@ -10,10 +9,11 @@ import {
   space,
 } from '@abqm-ds/tokens';
 
+export type variantsTextInputTypes = 'primary' | 'secondary';
+
 const sizeVariants = {
   sm: `${space[2]} ${space[2]}`,
   md: `${space[3]} ${space[3]}`,
-  lg: `${space[4]} ${space[4]}`,
 };
 
 export type SizeVariants = keyof typeof sizeVariants;
@@ -76,7 +76,7 @@ export const Prefix = styled.span<PreffixProps>`
 `;
 
 interface StyledInputProps {
-  $variant: variantsTextInputTypes;
+  $variant?: variantsTextInputTypes;
 }
 
 export const Input = styled.input<StyledInputProps>`
