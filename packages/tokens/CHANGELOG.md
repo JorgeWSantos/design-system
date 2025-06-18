@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 1.0.11
+
+### Patch Changes
+
+- feat: 🎸 Adicionará novas cores
+
 ## 1.0.10
 
 ### Patch Changes
