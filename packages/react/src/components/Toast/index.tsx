@@ -3,6 +3,7 @@ import { ToastContainer, ToastMessage, ToastCloseButton } from './styles';
 import { Text } from '@components/Text';
 import { XIcon } from '@abqm-ds/icons';
 import { ToastOptions } from './types';
+import { colors } from '@abqm-ds/tokens';
 
 type ToastType = 'info' | 'success' | 'error' | 'warning';
 
@@ -49,7 +50,7 @@ export const ToastRoot = () => {
             onClick={() => removeToast(toast.id)}
             type="button"
           >
-            <XIcon width={16} height={16} />
+            <XIcon width={16} height={16} fill={colors.white} />
           </ToastCloseButton>
         </ToastMessage>
       ))}

@@ -86,8 +86,11 @@ export const ToastMessage = styled.div<{ $type?: string }>`
   ${({ $type }) =>
     $type === 'warning' &&
     css`
-      background: ${colors.yellow200};
-      color: ${colors.black};
+      color: ${colors.white85};
+      background: ${colors.orange500};
+      border-top: 1px solid ${colors.orange300};
+      border-bottom: 1px solid ${colors.orange300};
+      border-left: 1px solid ${colors.orange300};
     `}
 
   @media (max-width: ${breakpointsPx.md}) {
@@ -114,8 +117,8 @@ export const ToastCloseButton = styled.button`
 
   svg {
     display: block;
-    width: 0.656rem;
-    height: 0.656rem;
+    /* width: 0.656rem;
+    height: 0.656rem; */
     aspect-ratio: 1/1;
   }
 `;
