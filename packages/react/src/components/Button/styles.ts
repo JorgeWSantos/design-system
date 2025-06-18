@@ -123,6 +123,13 @@ export const StyledButton = styled.button<ButtonStyleProps>`
       padding: ${space[3]} ${space[6]};
       height: 2.625rem;
     `}
+
+  ${({ $size }) =>
+    $size === 'xlg' &&
+    css`
+      padding: ${space[3]} ${space[10]};
+      height: 2.625rem;
+    `}
 `;
 
 export const StyledButtonText = styled(Text).attrs({
