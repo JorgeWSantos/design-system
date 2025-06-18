@@ -5,6 +5,7 @@ export * from './components/Text';
 export * from './components/Heading';
 export * from './components/Avatar';
 export * from './components/TextInput';
+export * from './components/TextInputBordered';
 export * from './components/TextArea';
 export * from './components/Checkbox';
 export * from './components/MultiStep';
