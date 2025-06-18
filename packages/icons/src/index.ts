@@ -1,5 +1,6 @@
 export { default as ArrowDownShortIcon } from './components/ArrowDownShortIcon';
 export { default as AwardFillIcon } from './components/AwardFillIcon';
+export { default as BarChartIcon } from './components/BarChartIcon';
 export { default as BoxArrowInLeftIcon } from './components/BoxArrowInLeftIcon';
 export { default as BroadcastIcon } from './components/BroadcastIcon';
 export { default as CaretDownFillIcon } from './components/CaretDownFillIcon';
@@ -7,6 +8,7 @@ export { default as CaretLeftFillIcon } from './components/CaretLeftFillIcon';
 export { default as CaretRightFillIcon } from './components/CaretRightFillIcon';
 export { default as CircleIcon } from './components/CircleIcon';
 export { default as FacebookIcon } from './components/FacebookIcon';
+export { default as FileEarmarkTextIcon } from './components/FileEarmarkTextIcon';
 export { default as FileTextIcon } from './components/FileTextIcon';
 export { default as FilterIcon } from './components/FilterIcon';
 export { default as HorseIcon } from './components/HorseIcon';

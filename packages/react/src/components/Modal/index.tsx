@@ -126,7 +126,7 @@ export const Modal = ({
       >
         <DivCloseButton $size={size}>
           <CloseButton onClick={onClose}>
-            <StyledXIcon width={14} height={14} $size={size} />
+            <StyledXIcon width={18} height={18} $size={size} />
           </CloseButton>
         </DivCloseButton>
         <DivChildren ref={contentRef}>

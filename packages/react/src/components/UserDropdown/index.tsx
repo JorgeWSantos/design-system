@@ -33,7 +33,9 @@ export const UserDropDown = ({
       <UserDropdownContent onClick={onLogin}>
         <AvatarDiv src={srcImage} />
         <Dropdown>
-          <Text fontSize="ssm">{signed ? userName : 'Entrar / Cadastre-se'}</Text>
+          <Text fontSize="ssm" color={colors.white75}>
+            {signed ? userName : 'Entrar / Cadastre-se'}
+          </Text>
           <CaretDownFillIcon width={12} height={12} fill={colors.white85} />
         </Dropdown>
       </UserDropdownContent>
