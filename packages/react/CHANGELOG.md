@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.14
+
+### Patch Changes
+
+- feat: 🎸 Adicionará atualizações para funcionamento no calendarios e login
+
 ## 1.0.13
 
 ### Patch Changes

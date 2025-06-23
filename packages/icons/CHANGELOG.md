@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 1.0.11
+
+### Patch Changes
+
+- feat: 🎸 Adicionará atualizações para funcionamento no calendarios e login
+
 ## 1.0.10
 
 ### Patch Changes
