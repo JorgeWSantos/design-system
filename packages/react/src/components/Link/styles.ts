@@ -17,12 +17,12 @@ interface StyledHeadingProps {
   $color?: string;
 }
 
-export const StyledText = styled.p<StyledHeadingProps>`
+export const StyledLink = styled.a<StyledHeadingProps>`
   font-family: ${fonts.default};
   line-height: ${(props) => lineHeightTypes[props.$lineHeight || 'initial']};
   font-weight: ${(props) => fontWeightTypes[props.$fontWeight || 'regular']};
   margin: 0;
-  color: ${(props) => (props.$color ? props.$color : 'inherit')};
+  color: ${(props) => props.$color};
 
   ${(props) =>
     props.$fontSize &&

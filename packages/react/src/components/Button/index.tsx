@@ -1,7 +1,6 @@
-import React, { ComponentProps, ElementType, ReactNode } from 'react';
+import { ComponentProps, ElementType, ReactNode } from 'react';
 import { StyledButton, StyledButtonText, StyledSpinner } from './styles';
 import { Size, Variant } from './types';
-import { SpinnerRingResizeIcon } from '@abqm-ds/icons';
 
 export interface ButtonProps extends ComponentProps<'button'> {
   as?: ElementType;
