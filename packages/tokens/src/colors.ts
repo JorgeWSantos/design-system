@@ -2,6 +2,7 @@ export const colors = {
   // Base
   white: '#FFF',
   black: '#000',
+  black100: '#1A1A1A', // adicionado black100
 
   // Opacity
   white10: '#ffffff1a',

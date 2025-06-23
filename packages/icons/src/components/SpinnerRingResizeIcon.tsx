@@ -4,7 +4,6 @@ const SpinnerRingResizeIcon = (props: SVGProps<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
     height="1em"
-    stroke="#000"
     viewBox="0 0 24 24"
     {...props}
   >
@@ -24,6 +23,7 @@ const SpinnerRingResizeIcon = (props: SVGProps<SVGSVGElement>) => (
         cy={12}
         r={9.5}
         fill="none"
+        stroke={props?.fill ? props.fill : '#1E1E1E'}
         strokeWidth={3}
         className="spinner-ring-resize_svg__spinner_V8m1"
         style={{

@@ -3,6 +3,7 @@ import {} from '@styles/index';
 import styled, { css } from 'styled-components';
 import { Size, Variant } from './types';
 import { Text } from '@components/Text';
+import { SpinnerRingResizeIcon } from '@abqm-ds/icons';
 
 export interface ButtonStyleProps {
   $variant?: Variant;
@@ -34,6 +35,7 @@ export const StyledButton = styled.button<ButtonStyleProps>`
 
   &:disabled {
     cursor: not-allowed;
+    filter: brightness(90%);
   }
 
   &:focus {
@@ -51,10 +53,6 @@ export const StyledButton = styled.button<ButtonStyleProps>`
         filter: brightness(120%);
         transition: 0.3s;
       }
-
-      &:disabled {
-        background-color: ${colors.gray200};
-      }
     `}
 
   ${({ $variant }) =>
@@ -70,10 +68,6 @@ export const StyledButton = styled.button<ButtonStyleProps>`
 
       &:not(:disabled):hover p {
         color: ${colors.white};
-      }
-
-      &:disabled {
-        border-color: ${colors.gray200};
       }
 
       p {
@@ -146,3 +140,14 @@ export const StyledButtonText = styled(Text).attrs({
       line-height: 1rem;
     `}
 `;
+
+export const StyledSpinner = styled(SpinnerRingResizeIcon).attrs<ButtonStyleProps>(
+  (props) => ({
+    fill:
+      props.$variant === 'secondary'
+        ? colors.green500
+        : props.$variant === 'tertiary'
+        ? colors.gray600
+        : colors.white,
+  })
+)<{ $variant?: Variant }>``;

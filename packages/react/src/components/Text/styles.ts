@@ -14,6 +14,7 @@ interface StyledHeadingProps {
   $disabled?: boolean;
   $fontWeight?: FontWeightTypes;
   $lineHeight?: LineHeightTypes;
+  $color?: string;
 }
 
 export const StyledText = styled.p<StyledHeadingProps>`
@@ -21,7 +22,7 @@ export const StyledText = styled.p<StyledHeadingProps>`
   line-height: ${(props) => lineHeightTypes[props.$lineHeight || 'initial']};
   font-weight: ${(props) => fontWeightTypes[props.$fontWeight || 'regular']};
   margin: 0;
-  color: ${(props) => props.color || 'inherit'};
+  color: ${(props) => props.$color && props.$color};
 
   ${(props) =>
     props.$fontSize &&

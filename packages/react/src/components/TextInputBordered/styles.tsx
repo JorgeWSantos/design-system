@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import {
   colors,
   fonts,
@@ -105,4 +105,19 @@ export const Input = styled.input<StyledInputProps>`
         color: ${colors.white50};
       }
     `}
+`;
+
+// Animação para brilho do erro
+const errorGlow = keyframes`
+  0% {
+    filter: brightness(1.1);
+  }
+  100% {
+    filter: brightness(1);
+  }
+`;
+
+export const ErrorMessage = styled.span`
+  animation: ${errorGlow} 0.8s ease;
+  display: inline-block;
 `;

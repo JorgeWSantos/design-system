@@ -18,7 +18,7 @@ export function Text({
       $fontWeight={fontWeight}
       $lineHeight={lineHeight}
       $disabled={disabled}
-      color={color}
+      $color={color}
       {...rest}
     >
       {children}

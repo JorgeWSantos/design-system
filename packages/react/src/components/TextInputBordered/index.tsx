@@ -1,5 +1,10 @@
 import { ComponentProps, ReactNode, useState } from 'react';
-import { Input, TextInputBorderedContainer, TextInputBorderedContent } from './styles';
+import {
+  Input,
+  TextInputBorderedContainer,
+  TextInputBorderedContent,
+  ErrorMessage,
+} from './styles';
 import { TextInputBorderedSizes, TextInputBorderedVariants } from './types';
 import { colors } from '@abqm-ds/tokens';
 import { Text } from '@components/Text';
@@ -28,15 +33,18 @@ export const TextInputBordered = ({
         <Input ref={ref} $variant={variant} {...rest} />
         {icon && icon}
       </TextInputBorderedContent>
+
       {error && (
-        <Text
-          color={colors.red600}
-          fontSize="xxs"
-          lineHeight="shorter"
-          style={{ alignSelf: 'flex-start' }}
-        >
-          {error}
-        </Text>
+        <ErrorMessage>
+          <Text
+            color={colors.red600}
+            fontSize="xxs"
+            lineHeight="shorter"
+            style={{ alignSelf: 'flex-start' }}
+          >
+            {error}
+          </Text>
+        </ErrorMessage>
       )}
     </TextInputBorderedContainer>
   );

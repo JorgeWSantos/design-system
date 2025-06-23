@@ -1,3 +1,4 @@
+export { default as AppleIcon } from './components/AppleIcon';
 export { default as ArrowDownShortIcon } from './components/ArrowDownShortIcon';
 export { default as AwardFillIcon } from './components/AwardFillIcon';
 export { default as BarChartIcon } from './components/BarChartIcon';

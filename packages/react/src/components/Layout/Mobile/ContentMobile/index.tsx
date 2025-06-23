@@ -4,16 +4,18 @@ import { ContainerMobile, MobileScroll } from './styles';
 interface ContentMobileProps extends ComponentProps<typeof ContainerMobile> {
   headerMobileNavigator?: React.ReactNode;
   children: React.ReactNode;
+  headerNoGap?: boolean;
 }
 
 export const ContentMobile = ({
   headerMobileNavigator,
   children,
+  headerNoGap,
 }: ContentMobileProps) => {
   return (
-    <ContainerMobile>
+    <ContainerMobile $headerNoGap={!!headerNoGap}>
       {headerMobileNavigator}
-      <MobileScroll>{children}</MobileScroll>
+      <MobileScroll $headerNoGap={!!headerNoGap}>{children}</MobileScroll>
     </ContainerMobile>
   );
 };
