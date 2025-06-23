@@ -34,9 +34,16 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
             <MenuLink
               href={item.link}
               onClick={(e) => {
+                console.log('Menu item clicked:', item.name);
                 if (hasSubmenu) {
                   e.preventDefault();
                   return;
+                }
+
+                if (item.need_login) {
+                  // Implement login logic here if needed
+                  window.location.href = item.link_login || '';
+                  e.preventDefault();
                 }
               }}
             >

@@ -19,6 +19,8 @@ export type MenuItem = {
   parent_id: number | null;
   open_submenu: boolean;
   sub_menu: SubMenuItem[];
+  need_login?: boolean;
+  link_login?: string;
 };
 
 export type MenuType = MenuItem[];

@@ -30,7 +30,7 @@ export const UserDropDown = ({
 
   const contentUserDropdown = useCallback(
     () => (
-      <UserDropdownContent onClick={onLogin}>
+      <UserDropdownContent onClick={userName !== '' ? () => {} : onLogin}>
         <AvatarDiv src={srcImage} />
         <Dropdown>
           <Text fontSize="ssm" color={colors.white75}>
