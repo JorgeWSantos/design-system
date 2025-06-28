@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
   MenuList,
   MenuItem as StyledMenuItem,
@@ -12,8 +12,13 @@ import { Text } from '../Text';
 import { colors } from '@abqm-ds/tokens';
 import { SideMenuProps, MenuItem, SubMenuItem } from './types';
 
-export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
+export const SideMenu = ({ data, userIsAuthenticated, ...rest }: SideMenuProps) => {
   const [menuItemSelectedIndex, setMenuItemSelectedIndex] = useState<number>(0);
+
+  const redirectToLogin = (link: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+    window.location.href = link;
+    e.preventDefault();
+  };
 
   return (
     <MenuList {...rest}>
@@ -34,16 +39,13 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
             <MenuLink
               href={item.link}
               onClick={(e) => {
-                console.log('Menu item clicked:', item.name);
                 if (hasSubmenu) {
                   e.preventDefault();
                   return;
                 }
 
-                if (item.need_login) {
-                  // Implement login logic here if needed
-                  window.location.href = item.link_login || '';
-                  e.preventDefault();
+                if (!userIsAuthenticated && item.need_login) {
+                  redirectToLogin(item.link_login || '', e);
                 }
               }}
             >
@@ -62,7 +64,16 @@ export const SideMenu = ({ data, ...rest }: SideMenuProps) => {
               <SubmenuList>
                 {item.sub_menu.map((subitem: SubMenuItem) => (
                   <SubmenuItem key={subitem.name}>
-                    <SubmenuLink href={subitem.link}>{subitem.name}</SubmenuLink>
+                    <SubmenuLink
+                      href={subitem.link}
+                      onClick={(e) => {
+                        if (!userIsAuthenticated && subitem.need_login) {
+                          redirectToLogin(subitem.link_login || '', e);
+                        }
+                      }}
+                    >
+                      {subitem.name}
+                    </SubmenuLink>
                   </SubmenuItem>
                 ))}
               </SubmenuList>

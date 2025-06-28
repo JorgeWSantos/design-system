@@ -23,7 +23,7 @@ interface MenuProps {
   userDropdown?: UserDropDownProps;
 }
 
-export const Menu = ({
+export const MenuMobile = ({
   menuIsOpen,
   menu,
   handleOpenSubMenu,
@@ -31,6 +31,13 @@ export const Menu = ({
   visibleSubmenu,
   userDropdown,
 }: MenuProps) => {
+  const userIsAuthenticated = !!userDropdown?.userName;
+
+  const redirectToLogin = (link: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.location.href = link;
+  };
+
   return (
     <ContainerMenuComponent $menuIsOpen={menuIsOpen}>
       <ContainerUserDropDown>
@@ -58,6 +65,11 @@ export const Menu = ({
                   if (hasSubmenu) {
                     e.preventDefault();
                     handleOpenSubMenu(i, item);
+                    return;
+                  }
+
+                  if (!userIsAuthenticated && item.need_login) {
+                    redirectToLogin(item.link_login || '', e);
                   }
                 }}
                 $subMenuIsOpen={visibleSubmenu !== null}
@@ -76,7 +88,16 @@ export const Menu = ({
                 <SubMenuList ref={subMenuRef} $visible={item.open_submenu}>
                   {item.sub_menu.map((subitem) => (
                     <SubMenuItem key={subitem.name}>
-                      <SubMenuLink href={subitem.link}>{subitem.name}</SubMenuLink>
+                      <SubMenuLink
+                        href={subitem.link}
+                        onClick={(e) => {
+                          if (!userIsAuthenticated && subitem.need_login) {
+                            redirectToLogin(subitem.link_login || '', e);
+                          }
+                        }}
+                      >
+                        {subitem.name}
+                      </SubMenuLink>
                     </SubMenuItem>
                   ))}
                 </SubMenuList>

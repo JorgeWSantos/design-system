@@ -18,7 +18,6 @@ export * from './components/SideMenu';
 export * from './components/TopSideMenu';
 export * from './components/UserDropdown';
 export * from './components/Dropdown';
-export * from './components/HeaderMobile';
 export * from './components/Tooltip';
 export * from './components/Modal';
 export * from './components/Toast';
@@ -34,6 +33,7 @@ export * from './components/Layout/GlobalContainer';
 // Mobile Layout Components
 export * from './components/Layout/Mobile/ContentMobile';
 export * from './components/Layout/Mobile/ContainerMobile';
+export * from './components/Layout/Mobile/HeaderMobile';
 
 // Desktop Layout Components
 export * from './components/Layout/Desktop/ContentDesktop';

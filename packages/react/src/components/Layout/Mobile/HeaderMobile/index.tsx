@@ -1,8 +1,8 @@
-import type { MenuItem, MenuType } from '../SideMenu/types';
+import type { MenuItem, MenuType } from '@components/SideMenu/types';
 import HeaderMobileComponent from './HeaderMobileComponent';
 import { Container } from './styles';
 import { useEffect, useRef, useState } from 'react';
-import { Menu } from './MenuComponent';
+import { MenuMobile } from './MenuMobile';
 import { UserDropDownProps } from '@components/UserDropdown';
 
 export interface HeaderMobileProps {
@@ -82,7 +82,7 @@ export const HeaderMobile = ({
         toggleMenu={toggleMenu}
       />
 
-      <Menu
+      <MenuMobile
         userDropdown={userDropdown}
         handleOpenSubMenu={handleOpenSubMenu}
         menu={menu}

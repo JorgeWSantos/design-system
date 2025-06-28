@@ -26,7 +26,7 @@ export const SideBarDesktop = ({
           onLogout: onLogout,
         }}
       />
-      <SideMenu data={menu} />
+      <SideMenu data={menu} userIsAuthenticated={!!(user?.id_pessoa || false)} />
     </StyledSideBarDesktop>
   );
 };

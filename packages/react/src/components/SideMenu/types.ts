@@ -9,6 +9,8 @@ export type SubMenuItem = {
   parent_id: number | null;
   open_submenu: boolean;
   sub_menu: SubMenuItem[] | null;
+  need_login?: boolean;
+  link_login?: string;
 };
 
 // Tipagem para um item do menu principal
@@ -28,4 +30,5 @@ export type MenuType = MenuItem[];
 export interface SideMenuProps extends ComponentProps<typeof MenuList> {
   as?: ElementType;
   data: MenuType;
+  userIsAuthenticated: boolean;
 }
