@@ -22,6 +22,6 @@ export const BoxContainer = styled.div`
 
   @media (max-width: ${breakpointsPx.md}) {
     padding: ${space[10]} ${space[4]} ${space[4]};
-    gap: ${space[26]};
+    gap: ${space[6]};
   }
 `;
