@@ -1,5 +1,4 @@
-import { breakpointsPx } from '@abqm-ds/tokens';
-import { theme } from '../../styles';
+import { breakpointsPx, colors, space } from '@abqm-ds/tokens';
 import styled from 'styled-components';
 
 export const FooterWrapper = styled.footer`
@@ -12,16 +11,15 @@ export const FooterWrapper = styled.footer`
   z-index: 1001;
   backdrop-filter: blur(0.625rem);
 
-  /* margin-top: ${theme.space[2]} !important; */
-  margin: ${theme.space[2]} auto 0 auto;
+  margin: ${space[2]} ${space[2]} 0 ${space[2]};
 
-  width: 100%;
+  max-width: 100%;
   height: 3.598rem;
 
   align-self: end;
 
-  background: ${theme.colors.emeraldGreen50};
-  border-radius: ${theme.space[2]} ${theme.space[2]} 0 0;
+  background: ${colors.emeraldGreen50};
+  border-radius: ${space[2]} ${space[2]} 0 0;
 
   @media (max-width: ${breakpointsPx.lg}) {
     height: 2.5rem;
