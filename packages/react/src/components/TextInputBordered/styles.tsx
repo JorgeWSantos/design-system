@@ -58,11 +58,11 @@ export const TextInputBorderedContent = styled.div<StyledTextInputContainerProps
   ${({ $variant }) =>
     $variant === 'secondary' &&
     css`
-      border: ${radii.px} solid ${colors.emeraldGreen25};
-      background-color: ${colors.white25};
+      border: ${radii.xs} solid ${colors.emeraldGreen25};
+      background-color: ${colors.white75};
 
       &:has(input:focus) {
-        border-color: ${colors.emeraldGreen50};
+        border: ${radii.xs} solid ${colors.emeraldGreen10};
       }
     `}
 `;
@@ -99,10 +99,10 @@ export const Input = styled.input<StyledInputProps>`
   ${({ $variant }) =>
     $variant === 'secondary' &&
     css`
-      color: ${colors.white50};
+      color: ${colors.emeraldGreen50};
 
       &::placeholder {
-        color: ${colors.white50};
+        color: ${colors.emeraldGreen50};
       }
     `}
 `;

@@ -126,20 +126,20 @@ export const StyledButton = styled.button<ButtonStyleProps>`
     `}
 `;
 
-export const StyledButtonText = styled(Text).attrs({
-  fontSize: 'smm',
-  fontWeight: 'semiBold',
-  lineHeight: 'tight',
-})<ButtonStyleProps>`
-  color: ${colors.white85};
+// export const StyledButtonText = styled(Text).attrs({
+//   fontSize: 'smm',
+//   fontWeight: 'semiBold',
+//   lineHeight: 'tight',
+// })<ButtonStyleProps>`
+//   color: ${colors.white85};
 
-  ${({ $size }) =>
-    $size === 'sm' &&
-    css`
-      font-size: ${fontSizes.ssm};
-      line-height: 1rem;
-    `}
-`;
+//   ${({ $size }) =>
+//     $size === 'sm' &&
+//     css`
+//       font-size: ${fontSizes.ssm};
+//       line-height: 1rem;
+//     `}
+// `;
 
 export const StyledSpinner = styled(SpinnerRingResizeIcon).attrs<ButtonStyleProps>(
   (props) => ({

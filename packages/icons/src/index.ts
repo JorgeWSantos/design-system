@@ -1,3 +1,4 @@
+export { default as AppleIcon } from './components/AppleIcon';
 export { default as ArrowDownShortIcon } from './components/ArrowDownShortIcon';
 export { default as AwardFillIcon } from './components/AwardFillIcon';
 export { default as BarChartIcon } from './components/BarChartIcon';
@@ -16,6 +17,7 @@ export { default as InstagramIcon } from './components/InstagramIcon';
 export { default as ListIcon } from './components/ListIcon';
 export { default as ListOlIcon } from './components/ListOlIcon';
 export { default as LogoPadraoIcon } from './components/LogoPadraoIcon';
+export { default as LogoSeqmBlackGreenIcon } from './components/LogoSeqmBlackGreenIcon';
 export { default as LogoSeqmIcon } from './components/LogoSeqmIcon';
 export { default as LogoSeqmMobileIcon } from './components/LogoSeqmMobileIcon';
 export { default as PencilSquareIcon } from './components/PencilSquareIcon';
@@ -27,4 +29,3 @@ export { default as SpinnerRingResizeIcon } from './components/SpinnerRingResize
 export { default as StarIcon } from './components/StarIcon';
 export { default as XIcon } from './components/XIcon';
 export { default as YoutubeIcon } from './components/YoutubeIcon';
-export { default as AppleIcon } from './components/AppleIcon';

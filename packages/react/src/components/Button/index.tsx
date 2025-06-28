@@ -1,12 +1,11 @@
 import { ComponentProps, ElementType, ReactNode } from 'react';
-import { StyledButton, StyledButtonText, StyledSpinner } from './styles';
+import { StyledButton, StyledSpinner } from './styles';
 import { Size, Variant } from './types';
 
 export interface ButtonProps extends ComponentProps<'button'> {
   as?: ElementType;
   variant?: Variant;
   size?: Size;
-  text: string;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
   isLoading?: boolean;
@@ -16,7 +15,6 @@ export const Button = ({
   variant,
   children,
   size = 'md',
-  text,
   iconLeft,
   iconRight,
   isLoading,
@@ -36,9 +34,7 @@ export const Button = ({
         <>
           {iconLeft && <>{iconLeft}</>}
 
-          <StyledButtonText $variant={variant} $size={size}>
-            {text}
-          </StyledButtonText>
+          {children}
 
           {iconRight && <>{iconRight}</>}
         </>

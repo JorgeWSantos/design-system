@@ -11,6 +11,9 @@
     },
     "clean": {
       "outputs": []
+    },
+    "generate:icons": {
+      "dependsOn": []
     }
   }
 }

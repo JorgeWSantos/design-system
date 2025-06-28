@@ -10,6 +10,7 @@ export const colors = {
   white50: '#ffffff80',
   white75: '#FFFFFFBF',
   white85: '#ffffffd9',
+  black0: '#FFFFFF00',
   black25: '#00000040',
   black50: '#00000080',
   black75: '#000000BF',
@@ -39,7 +40,16 @@ export const colors = {
   rose400: '#FA6BA2',
 
   //Red
+  red50: '#fef2f2',
+  red100: '#fee2e2',
+  red200: '#fecaca',
+  red300: '#fca5a5',
+  red400: '#f87171',
+  red500: '#ef4444',
   red600: '#CB4436',
+  red700: '#b91c1c',
+  red800: '#991b1b',
+  red900: '#7f1d1d',
 
   // Emerald Green (custom ABQM palette)
   emeraldGreen5: '#0027100d',

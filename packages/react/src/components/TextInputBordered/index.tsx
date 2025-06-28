@@ -39,7 +39,8 @@ export const TextInputBordered = ({
           <Text
             color={colors.red600}
             fontSize="xxs"
-            lineHeight="shorter"
+            fontWeight="bold"
+            lineHeight="short"
             style={{ alignSelf: 'flex-start' }}
           >
             {error}
