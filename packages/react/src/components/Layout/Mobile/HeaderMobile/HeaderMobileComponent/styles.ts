@@ -40,7 +40,8 @@ export const Label = styled(Text).attrs({
   color: colors.white75,
 })`
   letter-spacing: 0.08125rem;
-  margin-top: -0.375rem;
+  margin-top: -0.3rem;
+  letter-spacing: 0.08125rem;
 `;
 
 // Container do botão

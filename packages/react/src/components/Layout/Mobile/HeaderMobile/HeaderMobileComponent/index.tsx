@@ -27,7 +27,7 @@ const HeaderMobileComponent = ({
 
       <S.DivLabels>
         <S.Title>{title}</S.Title>
-        <S.Label>{page}</S.Label>
+        <S.Label>{page.toUpperCase()}</S.Label>
       </S.DivLabels>
 
       {hasMenu && (
