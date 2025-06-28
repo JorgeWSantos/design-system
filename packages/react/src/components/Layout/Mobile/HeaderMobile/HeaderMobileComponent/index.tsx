@@ -9,6 +9,7 @@ interface Props {
   hideSubMenu: () => void;
   toggleMenu: () => void;
   visibleSubmenu: boolean;
+  hasMenu: boolean;
 }
 
 const HeaderMobileComponent = ({
@@ -18,6 +19,7 @@ const HeaderMobileComponent = ({
   visibleSubmenu,
   hideSubMenu,
   toggleMenu,
+  hasMenu,
 }: Props) => {
   return (
     <S.Container>
@@ -28,28 +30,32 @@ const HeaderMobileComponent = ({
         <S.Label>{page}</S.Label>
       </S.DivLabels>
 
-      <S.DivButtons>
-        <S.MenuHamburgueIconWrapper onClick={!visibleSubmenu ? toggleMenu : hideSubMenu}>
-          <S.MenuHamburgueIcon
-            $menuIsOpen={menuIsOpen}
-            fill={colors.white85}
-            width={32}
-            height={32}
-          />
-          <S.CloseMenuIcon
-            $menuIsOpen={visibleSubmenu ? false : menuIsOpen}
-            fill={colors.white85}
-            width={32}
-            height={32}
-          />
-          <S.BackMenuIcon
-            $subMenuIsOpen={visibleSubmenu}
-            fill={colors.white85}
-            width={22}
-            height={22}
-          />
-        </S.MenuHamburgueIconWrapper>
-      </S.DivButtons>
+      {hasMenu && (
+        <S.DivButtons>
+          <S.MenuHamburgueIconWrapper
+            onClick={!visibleSubmenu ? toggleMenu : hideSubMenu}
+          >
+            <S.MenuHamburgueIcon
+              $menuIsOpen={menuIsOpen}
+              fill={colors.white85}
+              width={32}
+              height={32}
+            />
+            <S.CloseMenuIcon
+              $menuIsOpen={visibleSubmenu ? false : menuIsOpen}
+              fill={colors.white85}
+              width={32}
+              height={32}
+            />
+            <S.BackMenuIcon
+              $subMenuIsOpen={visibleSubmenu}
+              fill={colors.white85}
+              width={22}
+              height={22}
+            />
+          </S.MenuHamburgueIconWrapper>
+        </S.DivButtons>
+      )}
     </S.Container>
   );
 };

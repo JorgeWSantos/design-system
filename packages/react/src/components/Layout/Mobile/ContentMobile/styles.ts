@@ -5,14 +5,40 @@ import styled, { css } from 'styled-components';
 export const ContainerMobile = styled.main<{ $headerNoGap?: boolean }>`
   display: flex;
   flex-direction: column;
-  max-height: 87vh;
+  max-height: 89vh;
   height: 100%;
 
   max-width: ${breakpointsPx.lg};
 
   gap: ${space[2]};
-  padding: ${space[2]} ${space[1]} 0 ${space[1]} !important;
+  padding: ${space[2]} ${space[2]} 0 ${space[2]} !important;
 
+  @media (max-height: 1400px) {
+    max-height: 91vh;
+  }
+
+  @media (max-height: 1200px) {
+    max-height: 90vh;
+  }
+
+  @media (max-height: 1024px) {
+    max-height: 89vh;
+  }
+
+  @media (max-height: 950px) {
+    max-height: 88.5vh;
+  }
+
+  @media (max-height: 920px) {
+    max-height: 88vh;
+  }
+
+  @media (max-height: 850px) {
+    max-height: 87vh;
+  }
+  @media (max-height: 810px) {
+    max-height: 86vh;
+  }
   @media (max-height: 810px) {
     max-height: 86vh;
   }

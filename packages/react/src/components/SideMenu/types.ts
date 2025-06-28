@@ -1,4 +1,4 @@
-import { ComponentProps, ElementType } from 'react';
+import React, { ComponentProps, ElementType } from 'react';
 import { MenuList } from './styles';
 
 // Tipagem para um item do submenu
@@ -11,6 +11,7 @@ export type SubMenuItem = {
   sub_menu: SubMenuItem[] | null;
   need_login?: boolean;
   link_login?: string;
+  path?: string;
 };
 
 // Tipagem para um item do menu principal
@@ -23,6 +24,7 @@ export type MenuItem = {
   sub_menu: SubMenuItem[];
   need_login?: boolean;
   link_login?: string;
+  path?: string;
 };
 
 export type MenuType = MenuItem[];
@@ -31,4 +33,10 @@ export interface SideMenuProps extends ComponentProps<typeof MenuList> {
   as?: ElementType;
   data: MenuType;
   userIsAuthenticated: boolean;
+}
+
+export interface RedirectToLoginProps {
+  link: string;
+  e: React.MouseEvent<HTMLAnchorElement>;
+  path: string;
 }

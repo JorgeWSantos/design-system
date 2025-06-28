@@ -10,14 +10,15 @@ import {
 } from './styles';
 import { Text } from '../Text';
 import { colors } from '@abqm-ds/tokens';
-import { SideMenuProps, MenuItem, SubMenuItem } from './types';
+import { SideMenuProps, MenuItem, SubMenuItem, RedirectToLoginProps } from './types';
 
 export const SideMenu = ({ data, userIsAuthenticated, ...rest }: SideMenuProps) => {
   const [menuItemSelectedIndex, setMenuItemSelectedIndex] = useState<number>(0);
 
-  const redirectToLogin = (link: string, e: React.MouseEvent<HTMLAnchorElement>) => {
-    window.location.href = link;
+  const redirectToLogin = ({ link, e, path }: RedirectToLoginProps) => {
     e.preventDefault();
+    const linkToRedirect = path ? `${link}?path=${path}` : link;
+    window.location.href = linkToRedirect;
   };
 
   return (
@@ -45,7 +46,11 @@ export const SideMenu = ({ data, userIsAuthenticated, ...rest }: SideMenuProps) 
                 }
 
                 if (!userIsAuthenticated && item.need_login) {
-                  redirectToLogin(item.link_login || '', e);
+                  redirectToLogin({
+                    link: item.link_login || '',
+                    e,
+                    path: item.path || '',
+                  });
                 }
               }}
             >
@@ -68,7 +73,11 @@ export const SideMenu = ({ data, userIsAuthenticated, ...rest }: SideMenuProps) 
                       href={subitem.link}
                       onClick={(e) => {
                         if (!userIsAuthenticated && subitem.need_login) {
-                          redirectToLogin(subitem.link_login || '', e);
+                          redirectToLogin({
+                            link: subitem.link_login || '',
+                            e,
+                            path: subitem.path || '',
+                          });
                         }
                       }}
                     >

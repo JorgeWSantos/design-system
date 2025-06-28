@@ -1,5 +1,5 @@
 import { Text } from '@components/Text';
-import { MenuItem, type MenuType } from '@components/SideMenu';
+import { MenuItem, RedirectToLoginProps, type MenuType } from '@components/SideMenu';
 import {
   ContainerMenuComponent,
   ContainerUserDropDown,
@@ -33,9 +33,10 @@ export const MenuMobile = ({
 }: MenuProps) => {
   const userIsAuthenticated = !!userDropdown?.userName;
 
-  const redirectToLogin = (link: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+  const redirectToLogin = ({ link, e, path }: RedirectToLoginProps) => {
     e.preventDefault();
-    window.location.href = link;
+    const linkToRedirect = path ? `${link}?path=${path}` : link;
+    window.location.href = linkToRedirect;
   };
 
   return (
@@ -69,7 +70,11 @@ export const MenuMobile = ({
                   }
 
                   if (!userIsAuthenticated && item.need_login) {
-                    redirectToLogin(item.link_login || '', e);
+                    redirectToLogin({
+                      link: item.link_login || '',
+                      e,
+                      path: item.path || '',
+                    });
                   }
                 }}
                 $subMenuIsOpen={visibleSubmenu !== null}
@@ -92,7 +97,11 @@ export const MenuMobile = ({
                         href={subitem.link}
                         onClick={(e) => {
                           if (!userIsAuthenticated && subitem.need_login) {
-                            redirectToLogin(subitem.link_login || '', e);
+                            redirectToLogin({
+                              link: subitem.link_login || '',
+                              e,
+                              path: subitem.path || '',
+                            });
                           }
                         }}
                       >

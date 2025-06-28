@@ -11,9 +11,10 @@ export const ContentMobile = ({
   headerMobileNavigator,
   children,
   headerNoGap,
+  ...rest
 }: ContentMobileProps) => {
   return (
-    <ContainerMobile $headerNoGap={!!headerNoGap}>
+    <ContainerMobile $headerNoGap={!!headerNoGap} {...rest}>
       {headerMobileNavigator}
       <MobileScroll $headerNoGap={!!headerNoGap}>{children}</MobileScroll>
     </ContainerMobile>

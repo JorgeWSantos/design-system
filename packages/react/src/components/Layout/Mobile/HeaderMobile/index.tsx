@@ -8,14 +8,14 @@ import { UserDropDownProps } from '@components/UserDropdown';
 export interface HeaderMobileProps {
   title?: string;
   page?: string;
-  data: MenuType;
+  data?: MenuType;
   userDropdown?: UserDropDownProps;
 }
 
 export const HeaderMobile = ({
   title = 'SEQM',
   page = 'Calendários',
-  data,
+  data = [],
   userDropdown,
   ...rest
 }: HeaderMobileProps) => {
@@ -72,6 +72,7 @@ export const HeaderMobile = ({
       <HeaderMobileComponent
         title={title}
         page={menuIsOpen ? userNavigation : page}
+        hasMenu={data.length > 0}
         menuIsOpen={menuIsOpen}
         visibleSubmenu={visibleSubmenu !== null}
         hideSubMenu={() => {
