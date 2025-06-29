@@ -1,6 +1,6 @@
 import { StyledSideBarDesktop } from './styles.js';
-import { TopSideMenu } from '@components/TopSideMenu/index.js';
-import { MenuType, SideMenu } from '@components/SideMenu/index.js';
+import { TopSideMenu } from '@components/Layout/Desktop/TopSideMenu/index.js';
+import { MenuType, SideMenu } from '@components/Layout/Desktop/SideMenu/index.js';
 import { LoggedUser } from 'types/user.js';
 
 interface SideBarDesktopProps {

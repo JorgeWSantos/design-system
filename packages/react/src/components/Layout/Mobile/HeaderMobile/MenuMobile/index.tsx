@@ -1,5 +1,9 @@
 import { Text } from '@components/Text';
-import { MenuItem, RedirectToLoginProps, type MenuType } from '@components/SideMenu';
+import {
+  MenuItem,
+  RedirectToLoginProps,
+  type MenuType,
+} from '@components/Layout/Desktop/SideMenu';
 import {
   ContainerMenuComponent,
   ContainerUserDropDown,

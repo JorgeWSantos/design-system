@@ -11,11 +11,9 @@ export * from './components/TextArea';
 export * from './components/Checkbox';
 export * from './components/MultiStep';
 export * from './components/ColorBar';
-export * from './components/Footer';
-export * from './components/Header';
+
 export * from './components/RoundedButton';
-export * from './components/SideMenu';
-export * from './components/TopSideMenu';
+export * from './components/Layout/Desktop/TopSideMenu';
 export * from './components/UserDropdown';
 export * from './components/Dropdown';
 export * from './components/Tooltip';
@@ -23,22 +21,25 @@ export * from './components/Modal';
 export * from './components/Toast';
 export * from './components/ActivityIndicator';
 
-export * from './components/HeaderMobileNavigator';
 export { ErrorBoundary } from './components/ErrorBoundary';
 export { useDeviceType } from './hooks/useDeviceType';
 
 //Layout Components
 export * from './components/Layout/GlobalContainer';
+export * from './components/Layout/GlobalContainer/Footer';
 
 // Mobile Layout Components
 export * from './components/Layout/Mobile/ContentMobile';
 export * from './components/Layout/Mobile/ContainerMobile';
 export * from './components/Layout/Mobile/HeaderMobile';
+export * from './components/Layout/Mobile/HeaderMobileNavigator';
 
 // Desktop Layout Components
 export * from './components/Layout/Desktop/ContentDesktop';
 export * from './components/Layout/Desktop/SideBarDesktop';
 export * from './components/Layout/Desktop/ContainerDesktop';
+export * from './components/Layout/Desktop/Header';
+export * from './components/Layout/Desktop/SideMenu';
 
 // Types
 export * from './types/user';

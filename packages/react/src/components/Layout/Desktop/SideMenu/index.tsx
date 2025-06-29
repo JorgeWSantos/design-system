@@ -8,7 +8,7 @@ import {
   SubmenuLink,
   CaretIcon,
 } from './styles';
-import { Text } from '../Text';
+import { Text } from '../../../Text';
 import { colors } from '@abqm-ds/tokens';
 import { SideMenuProps, MenuItem, SubMenuItem, RedirectToLoginProps } from './types';
 
