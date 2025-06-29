@@ -1,0 +1,3 @@
+export { default as BackgroundDesktop } from './images/background.jpg';
+export { default as BackgroundMobile } from './images/background-mobile.png';
+// ...exporte outros assets aqui...

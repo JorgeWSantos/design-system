@@ -21,9 +21,6 @@ export * from './components/Modal';
 export * from './components/Toast';
 export * from './components/ActivityIndicator';
 
-export { ErrorBoundary } from './components/ErrorBoundary';
-export { useDeviceType } from './hooks/useDeviceType';
-
 //Layout Components
 export * from './components/Layout/GlobalContainer';
 export * from './components/Layout/GlobalContainer/Footer';
@@ -43,3 +40,10 @@ export * from './components/Layout/Desktop/SideMenu';
 
 // Types
 export * from './types/user';
+
+//Utils
+export { ErrorBoundary } from './components/ErrorBoundary';
+export { useDeviceType } from './hooks/useDeviceType';
+
+//Styles
+export { GlobalStyle } from './styles/global';
