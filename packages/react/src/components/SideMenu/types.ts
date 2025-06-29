@@ -33,6 +33,7 @@ export interface SideMenuProps extends ComponentProps<typeof MenuList> {
   as?: ElementType;
   data: MenuType;
   userIsAuthenticated: boolean;
+  token: string;
 }
 
 export interface RedirectToLoginProps {

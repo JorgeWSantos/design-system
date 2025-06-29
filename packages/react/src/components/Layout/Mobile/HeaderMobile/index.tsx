@@ -9,6 +9,7 @@ export interface HeaderMobileProps {
   title?: string;
   page?: string;
   data?: MenuType;
+  token: string;
   userDropdown?: UserDropDownProps;
 }
 
@@ -16,6 +17,7 @@ export const HeaderMobile = ({
   title = 'SEQM',
   page = 'Calendários',
   data = [],
+  token,
   userDropdown,
   ...rest
 }: HeaderMobileProps) => {
@@ -84,6 +86,7 @@ export const HeaderMobile = ({
       />
 
       <MenuMobile
+        token={token}
         userDropdown={userDropdown}
         handleOpenSubMenu={handleOpenSubMenu}
         menu={menu}

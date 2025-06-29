@@ -14,12 +14,13 @@ import { colors } from '@abqm-ds/tokens';
 import React from 'react';
 import { UserDropDown, UserDropDownProps } from '@components/UserDropdown';
 
-interface MenuProps {
+interface MenuMobileProps {
   menuIsOpen: boolean;
   menu: MenuType;
   handleOpenSubMenu: (index: number, item: MenuItem) => void;
   subMenuRef: React.RefObject<HTMLUListElement | null>;
   visibleSubmenu: number | null;
+  token: string;
   userDropdown?: UserDropDownProps;
 }
 
@@ -29,8 +30,9 @@ export const MenuMobile = ({
   handleOpenSubMenu,
   subMenuRef,
   visibleSubmenu,
+  token,
   userDropdown,
-}: MenuProps) => {
+}: MenuMobileProps) => {
   const userIsAuthenticated = !!userDropdown?.userName;
 
   const redirectToLogin = ({ link, e, path }: RedirectToLoginProps) => {
@@ -61,7 +63,7 @@ export const MenuMobile = ({
               $subMenuIsOpen={visibleSubmenu !== null}
             >
               <MenuLink
-                href={item.link}
+                href={token ? `${item.link}?tk=${token}` : item.link}
                 onClick={(e) => {
                   if (hasSubmenu) {
                     e.preventDefault();
@@ -94,7 +96,7 @@ export const MenuMobile = ({
                   {item.sub_menu.map((subitem) => (
                     <SubMenuItem key={subitem.name}>
                       <SubMenuLink
-                        href={subitem.link}
+                        href={token ? `${subitem.link}?tk=${token}` : subitem.link}
                         onClick={(e) => {
                           if (!userIsAuthenticated && subitem.need_login) {
                             redirectToLogin({

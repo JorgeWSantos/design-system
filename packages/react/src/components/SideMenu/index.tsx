@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   MenuList,
   MenuItem as StyledMenuItem,
@@ -12,7 +12,12 @@ import { Text } from '../Text';
 import { colors } from '@abqm-ds/tokens';
 import { SideMenuProps, MenuItem, SubMenuItem, RedirectToLoginProps } from './types';
 
-export const SideMenu = ({ data, userIsAuthenticated, ...rest }: SideMenuProps) => {
+export const SideMenu = ({
+  data,
+  userIsAuthenticated,
+  token,
+  ...rest
+}: SideMenuProps) => {
   const [menuItemSelectedIndex, setMenuItemSelectedIndex] = useState<number>(0);
 
   const redirectToLogin = ({ link, e, path }: RedirectToLoginProps) => {
@@ -38,7 +43,7 @@ export const SideMenu = ({ data, userIsAuthenticated, ...rest }: SideMenuProps) 
             $isSelected={isSelected}
           >
             <MenuLink
-              href={item.link}
+              href={token ? `${item.link}?tk=${token}` : item.link}
               onClick={(e) => {
                 if (hasSubmenu) {
                   e.preventDefault();
@@ -70,7 +75,7 @@ export const SideMenu = ({ data, userIsAuthenticated, ...rest }: SideMenuProps) 
                 {item.sub_menu.map((subitem: SubMenuItem) => (
                   <SubmenuItem key={subitem.name}>
                     <SubmenuLink
-                      href={subitem.link}
+                      href={token ? `${subitem.link}?tk=${token}` : subitem.link}
                       onClick={(e) => {
                         if (!userIsAuthenticated && subitem.need_login) {
                           redirectToLogin({

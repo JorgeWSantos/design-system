@@ -8,6 +8,7 @@ interface SideBarDesktopProps {
   menu: MenuType | []; // Replace 'any' with the correct type if available
   onLogin?: () => void;
   onLogout?: () => void;
+  token: string;
 }
 
 export const SideBarDesktop = ({
@@ -15,6 +16,7 @@ export const SideBarDesktop = ({
   menu,
   onLogin,
   onLogout,
+  token,
 }: SideBarDesktopProps) => {
   return (
     <StyledSideBarDesktop>
@@ -26,7 +28,11 @@ export const SideBarDesktop = ({
           onLogout: onLogout,
         }}
       />
-      <SideMenu data={menu} userIsAuthenticated={!!(user?.id_pessoa || false)} />
+      <SideMenu
+        data={menu}
+        userIsAuthenticated={!!(user?.id_pessoa || false)}
+        token={token}
+      />
     </StyledSideBarDesktop>
   );
 };
