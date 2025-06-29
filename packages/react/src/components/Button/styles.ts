@@ -1,13 +1,21 @@
-import { colors, fonts, fontSizes, fontWeights, radii, space } from '@abqm-ds/tokens';
+import {
+  colors,
+  fonts,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+  radii,
+  space,
+} from '@abqm-ds/tokens';
 import {} from '@styles/index';
 import styled, { css } from 'styled-components';
-import { Size, Variant } from './types';
+import { ButtonSize, ButtonVariants, ButtonTextSize } from './types';
 import { Text } from '@components/Text';
 import { SpinnerRingResizeIcon } from '@abqm-ds/icons';
 
 export interface ButtonStyleProps {
-  $variant?: Variant;
-  $size?: Size;
+  $variant?: ButtonVariants; //cor
+  $size?: ButtonSize; //espaçamentos e tamanho
 }
 
 export const StyledButton = styled.button<ButtonStyleProps>`
@@ -96,6 +104,20 @@ export const StyledButton = styled.button<ButtonStyleProps>`
       }
     `}
 
+  ${({ $variant }) =>
+    $variant === 'login' &&
+    css`
+      color: ${colors.white};
+      background: ${colors.green500};
+      transition: 0.3s;
+
+      &:not(:disabled):hover {
+        /* background: ${colors.green300}; */
+        filter: brightness(120%);
+        transition: 0.3s;
+      }
+    `}
+
   ${({ $size }) =>
     $size === 'sm' &&
     css`
@@ -126,20 +148,33 @@ export const StyledButton = styled.button<ButtonStyleProps>`
     `}
 `;
 
-// export const StyledButtonText = styled(Text).attrs({
-//   fontSize: 'smm',
-//   fontWeight: 'semiBold',
-//   lineHeight: 'tight',
-// })<ButtonStyleProps>`
-//   color: ${colors.white85};
+export const StyledButtonText = styled(Text).attrs({
+  fontWeight: 'semiBold',
+  lineHeight: 'tight',
+})<{ $sizeText: ButtonTextSize }>`
+  color: ${colors.white85};
 
-//   ${({ $size }) =>
-//     $size === 'sm' &&
-//     css`
-//       font-size: ${fontSizes.ssm};
-//       line-height: 1rem;
-//     `}
-// `;
+  ${({ $sizeText }) =>
+    $sizeText === 'sm' &&
+    css`
+      font-size: ${fontSizes.ssm};
+      line-height: 1rem;
+    `}
+
+  ${({ $sizeText }) =>
+    $sizeText === 'md' &&
+    css`
+      font-size: ${fontSizes.sm};
+      line-height: ${lineHeights.short};
+    `}
+
+  ${({ $sizeText }) =>
+    $sizeText === 'lg' &&
+    css`
+      font-size: ${fontSizes.smm};
+      line-height: ${lineHeights.short};
+    `}
+`;
 
 export const StyledSpinner = styled(SpinnerRingResizeIcon).attrs<ButtonStyleProps>(
   (props) => ({
@@ -150,4 +185,4 @@ export const StyledSpinner = styled(SpinnerRingResizeIcon).attrs<ButtonStyleProp
         ? colors.gray600
         : colors.white,
   })
-)<{ $variant?: Variant }>``;
+)<{ $variant?: ButtonVariants }>``;

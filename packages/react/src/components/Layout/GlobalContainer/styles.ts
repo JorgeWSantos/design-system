@@ -12,5 +12,6 @@ export const StyledGlobalContainer = styled.div`
 
   @media (max-width: ${breakpointsPx.lg}) {
     padding: 0;
+    gap: 0.5rem;
   }
 `;

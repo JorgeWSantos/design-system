@@ -1,24 +1,32 @@
 import { ComponentProps, ElementType, ReactNode } from 'react';
-import { StyledButton, StyledSpinner } from './styles';
-import { Size, Variant } from './types';
+import { StyledButton, StyledButtonText, StyledSpinner } from './styles';
+import { ButtonSize, ButtonVariants, ButtonTextSize } from './types';
+import { FontSizeTypes, FontWeightTypes } from 'types/tipography';
 
 export interface ButtonProps extends ComponentProps<'button'> {
   as?: ElementType;
-  variant?: Variant;
-  size?: Size;
+  variant?: ButtonVariants;
+  size?: ButtonSize;
+  // fontSize?: FontSizeTypes;
+  // fontWeight?: FontWeightTypes;
+  text: string;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
   isLoading?: boolean;
+  sizeText?: ButtonTextSize;
 }
 
 export const Button = ({
   variant,
   children,
   size = 'md',
+  text,
   iconLeft,
   iconRight,
   isLoading,
   disabled,
+  sizeText = 'md',
+  // fontSize,
   ...rest
 }: ButtonProps) => {
   return (
@@ -34,7 +42,7 @@ export const Button = ({
         <>
           {iconLeft && <>{iconLeft}</>}
 
-          {children}
+          <StyledButtonText $sizeText={sizeText}>{text}</StyledButtonText>
 
           {iconRight && <>{iconRight}</>}
         </>

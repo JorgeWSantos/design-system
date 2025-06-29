@@ -11,8 +11,6 @@ export const FooterWrapper = styled.footer`
   z-index: 1001;
   backdrop-filter: blur(0.625rem);
 
-  margin: ${space[2]} ${space[2]} 0 ${space[2]};
-
   max-width: 100%;
   height: 3.598rem;
 
@@ -23,6 +21,7 @@ export const FooterWrapper = styled.footer`
 
   @media (max-width: ${breakpointsPx.lg}) {
     height: 2.5rem;
+    margin: 0 ${space[2]};
   }
 
   @media (max-width: ${breakpointsPx.sm}) {
