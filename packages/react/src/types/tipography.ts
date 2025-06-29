@@ -14,6 +14,7 @@ export const fontSizeTypes = {
   lg: fontSizes.lg,
   lgg: fontSizes.lgg,
   xl: fontSizes.xl,
+  xll: fontSizes.xll,
   '2xl': fontSizes['2xl'],
   '4xl': fontSizes['4xl'],
   '5xl': fontSizes['5xl'],

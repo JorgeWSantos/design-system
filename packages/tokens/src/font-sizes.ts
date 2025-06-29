@@ -10,6 +10,7 @@ export const fontSizes = {
   lg: '1.125rem', // 18px
   lgg: '1.1875rem', // 19px
   xl: '1.25rem', // 20px
+  xll: '1.3125rem', // 21px
   '2xl': '1.5rem', // 24px
   '4xl': '2rem', // 32px
   '5xl': '2.25rem', // 36px
