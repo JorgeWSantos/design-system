@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.15
+
+### Patch Changes
+
+- feat: 🎸 Finalizará estilizações do login e calendários
+
 ## 1.0.14
 
 ### Patch Changes

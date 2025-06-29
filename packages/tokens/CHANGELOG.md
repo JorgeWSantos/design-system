@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 1.0.13
+
+### Patch Changes
+
+- feat: 🎸 Finalizará estilizações do login e calendários
+
 ## 1.0.12
 
 ### Patch Changes
