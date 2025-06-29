@@ -28,7 +28,7 @@ export const ContainerMenuComponent = styled.div<{
 
   backdrop-filter: blur(3.125rem);
   width: 100%;
-  height: 91.5vh;
+  height: calc(100% - 3.5rem); //3.5rem is the height of the header
   top: 3.5rem;
   box-sizing: border-box;
 
