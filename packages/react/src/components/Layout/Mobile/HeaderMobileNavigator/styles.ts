@@ -6,7 +6,7 @@ export const StyledNavigatorMobile = styled.div`
   flex: 1;
   flex-direction: row;
   align-items: center;
-  max-height: 1.8125rem;
+  max-height: 2.5rem;
   border-bottom: ${radii.px} solid ${colors.white25};
 
   padding: ${space[1]} ${space[1]} ${space[1]} ${space[1]};

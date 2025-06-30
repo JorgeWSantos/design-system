@@ -6,9 +6,9 @@ import styled from 'styled-components';
 // Container principal
 export const Container = styled.div`
   display: flex;
-  height: 2.5rem;
+  height: 3.5rem;
   align-self: stretch;
-  max-height: 2.5rem;
+  max-height: 3.5rem;
   gap: 0.25rem;
   background-color: ${colors.emeraldGreen25};
   padding: ${space[2]} ${space[4]};
