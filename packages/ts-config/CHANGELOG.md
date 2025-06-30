@@ -1,5 +1,11 @@
 # @abqm-ds/ts-config
 
+## 1.0.9
+
+### Patch Changes
+
+- feat: 🎸 Nova versão do package react/icons/tokens
+
 ## 1.0.8
 
 ### Patch Changes
