@@ -12,6 +12,7 @@ export interface HeadingProps extends ComponentProps<typeof StyledHeading> {
 }
 
 export const sizeVariants = {
+  ssm: fontSizes.lg,
   sm: fontSizes.xl,
   md: fontSizes['2xl'],
   lg: fontSizes['4xl'],
