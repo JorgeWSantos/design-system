@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.16
+
+### Patch Changes
+
+- feat: 🎸 Novas atualizações em react/icons/tokens
+
 ## 1.0.15
 
 ### Patch Changes
