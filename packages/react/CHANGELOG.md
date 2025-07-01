@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.18
+
+### Patch Changes
+
+- feat: 🎸 Padronização de tamanho do headermobile
+
 ## 1.0.17
 
 ### Patch Changes
