@@ -23,15 +23,15 @@ const HeaderMobileComponent = ({
 }: Props) => {
   return (
     <S.Container>
-      <LogoSeqmMobileIcon width={70} height={49.7} />
+      <LogoSeqmMobileIcon width={56} height={40} />
 
       <S.DivLabels>
         <S.Title>{title}</S.Title>
         <S.Label>{page.toUpperCase()}</S.Label>
       </S.DivLabels>
 
-      {hasMenu && (
-        <S.DivButtons>
+      <S.DivButtons>
+        {hasMenu && (
           <S.MenuHamburgueIconWrapper
             onClick={!visibleSubmenu ? toggleMenu : hideSubMenu}
           >
@@ -54,8 +54,8 @@ const HeaderMobileComponent = ({
               height={22}
             />
           </S.MenuHamburgueIconWrapper>
-        </S.DivButtons>
-      )}
+        )}
+      </S.DivButtons>
     </S.Container>
   );
 };
