@@ -13,38 +13,14 @@ export const ContainerMobile = styled.main<{ $headerNoGap?: boolean }>`
   gap: ${space[2]};
   padding: ${space[2]} ${space[2]} 0 ${space[2]} !important;
 
-  @media (max-height: 1400px) {
-    max-height: 91vh;
+  max-height: calc(100vh - (100px));
+
+  @media (max-width: ${breakpointsPx.md}) {
+    max-height: calc(100vh - (110px));
   }
 
-  @media (max-height: 1200px) {
-    max-height: 90vh;
-  }
-
-  @media (max-height: 1024px) {
-    max-height: 89vh;
-  }
-
-  @media (max-height: 950px) {
-    max-height: 88.5vh;
-  }
-
-  @media (max-height: 920px) {
-    max-height: 88vh;
-  }
-
-  @media (max-height: 850px) {
-    max-height: 87vh;
-  }
-  @media (max-height: 810px) {
-    max-height: 86vh;
-  }
-  @media (max-height: 810px) {
-    max-height: 86vh;
-  }
-
-  @media (max-height: 700px) {
-    max-height: 83vh;
+  @media (max-width: ${breakpointsPx.sm}) {
+    max-height: calc(100vh - (100px));
   }
 
   ${({ $headerNoGap }) =>
