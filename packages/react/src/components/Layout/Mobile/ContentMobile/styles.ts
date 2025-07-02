@@ -13,7 +13,7 @@ export const ContainerMobile = styled.main<{ $headerNoGap?: boolean }>`
   gap: ${space[2]};
   padding: ${space[2]} ${space[2]} 0 ${space[2]} !important;
 
-  max-height: calc(100vh - (100px));
+  max-height: calc(100vh - (100px)); // 100px é a altura do header + footer
 
   @media (max-width: ${breakpointsPx.md}) {
     max-height: calc(100vh - (110px));
