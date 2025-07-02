@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.19
+
+### Patch Changes
+
+- fix: 🐛 Corrigirá estilização do HeaderMobile
+
 ## 1.0.18
 
 ### Patch Changes
