@@ -1,4 +1,4 @@
-import { CaretDownFillIcon, ListIcon, XIcon } from '@abqm-ds/icons';
+import { CaretDownFillIcon, ListIcon, LogoSeqmMobileIcon, XIcon } from '@abqm-ds/icons';
 import { Text } from '@components/Text';
 import { colors, radii, space } from '@abqm-ds/tokens';
 import styled from 'styled-components';
@@ -12,6 +12,12 @@ export const Container = styled.div`
   gap: 0.25rem;
   background-color: ${colors.emeraldGreen25};
   padding: ${space[2]} ${space[4]};
+`;
+
+export const StyledLogo = styled(LogoSeqmMobileIcon)`
+  width: 3.5rem;
+  height: 2.5rem;
+  min-width: 3.5rem;
 `;
 
 // Labels de título e página

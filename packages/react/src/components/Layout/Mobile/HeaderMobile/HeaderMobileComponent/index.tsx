@@ -1,4 +1,3 @@
-import { LogoSeqmMobileIcon } from '@abqm-ds/icons';
 import * as S from './styles';
 import { colors } from '@abqm-ds/tokens';
 
@@ -23,7 +22,7 @@ const HeaderMobileComponent = ({
 }: Props) => {
   return (
     <S.Container>
-      <LogoSeqmMobileIcon width={56} height={40} />
+      <S.StyledLogo />
 
       <S.DivLabels>
         <S.Title>{title}</S.Title>
