@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.20
+
+### Patch Changes
+
+- fix: 🐛 Corrigirá espaçamento do Box
+
 ## 1.0.19
 
 ### Patch Changes
