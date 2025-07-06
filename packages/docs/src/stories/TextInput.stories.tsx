@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Box, Text, TextInput, TextInputProps, theme } from '@abqm-ds/react';
+import { Box, TextInput, TextInputProps, theme } from '@abqm-ds/react';
 import { SearchIcon } from '@abqm-ds/icons';
 import { colors } from '@abqm-ds/tokens';
 
@@ -67,7 +67,7 @@ import { SearchIcon } from '@abqm-ds/icons';
   },
 } as Meta<TextInputProps>;
 
-const renderPrimary = (args: TextInputProps) => (
+const render = (args: TextInputProps) => (
   <Box
     as="div"
     style={{
@@ -80,7 +80,6 @@ const renderPrimary = (args: TextInputProps) => (
     }}
   >
     <>
-      <Text fontSize="sm">Email Adress</Text>
       <TextInput {...args} />
     </>
   </Box>
@@ -90,58 +89,57 @@ export const Primary: StoryObj<TextInputProps> = {
   args: {
     placeholder: 'Digite seu texto',
   },
-  render: renderPrimary,
+  render,
 };
-
-const renderSecondary = (args: TextInputProps) => (
-  <Box
-    as="div"
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      gap: theme.space[2],
-      width: '300px',
-      padding: theme.space[8],
-      borderRadius: theme.radii.md,
-    }}
-  >
-    <>
-      <Text fontSize="sm">Email Adress</Text>
-      <TextInput {...args} />
-    </>
-  </Box>
-);
 
 export const Secondary: StoryObj<TextInputProps> = {
   args: {
     placeholder: 'Buscar',
     variant: 'secondary',
-    icon: <SearchIcon fill={colors.white50} />,
   },
-  render: renderSecondary,
+  render,
 };
 
-export const Tertiary: StoryObj<TextInputProps> = {
+export const WithIcon: StoryObj<TextInputProps> = {
   args: {
     placeholder: 'With Icon',
     size: 'sm',
     icon: <SearchIcon fill={colors.white50} />,
   },
-  render: renderPrimary,
-};
-
-export const WithPrefix: StoryObj<TextInputProps> = {
-  args: {
-    prefix: 'cal.com/',
-    placeholder: 'your-username',
-    size: 'sm',
-  },
-  render: renderPrimary,
+  render,
 };
 
 export const Disabled: StoryObj<TextInputProps> = {
   args: {
     disabled: true,
   },
-  render: renderPrimary,
+  render,
 };
+
+// const renderLabel = (args: TextInputProps) => (
+//   <Box
+//     as="div"
+//     style={{
+//       display: 'flex',
+//       flexDirection: 'column',
+//       gap: theme.space[2],
+//       width: '500px',
+//       padding: theme.space[8],
+//       borderRadius: theme.radii.md,
+//     }}
+//   >
+//     <>
+//       <Text fontSize="sm">Email Adress</Text>
+//       <TextInput {...args} />
+//     </>
+//   </Box>
+// );
+
+// export const WithLabel: StoryObj<TextInputProps> = {
+//   args: {
+//     placeholder: 'With Icon & Label',
+//     size: 'sm',
+//     icon: <SearchIcon fill={colors.white50} />,
+//   },
+//   render: renderLabel,
+// };

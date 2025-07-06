@@ -25,14 +25,31 @@ interface StyledTextInputContainerProps {
 export const TextInputContainer = styled.div<StyledTextInputContainerProps>`
   display: flex;
   align-items: center;
+  max-height: 2rem;
+  width: 100%;
 
   box-sizing: border-box;
   border-radius: ${radii.sm};
   border: ${radii.px} solid ${colors.white50};
-  background-color: ${colors.emeraldGreen25};
+  background-color: ${colors.emeraldGreen50};
+
+  transition: 0.3s;
+
+  /* icon */
+  svg {
+    path {
+      transition: 0.3s;
+    }
+  }
 
   &:has(input:focus) {
     border-color: ${colors.white75};
+
+    svg {
+      path {
+        fill: ${colors.white75};
+      }
+    }
   }
 
   &:has(input:disabled) {
@@ -81,10 +98,10 @@ interface StyledInputProps {
 
 export const Input = styled.input<StyledInputProps>`
   font-family: ${fonts.default};
-  font-size: ${fontSizes.sm};
+  font-size: ${fontSizes.ssm};
   color: ${colors.white};
 
-  line-height: ${lineHeights.tight};
+  line-height: 1rem;
 
   font-weight: ${fontWeights.regular};
   background: transparent;

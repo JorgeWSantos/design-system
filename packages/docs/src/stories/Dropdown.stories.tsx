@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Box, Dropdown, DropdownProps, DataDropdown } from '@abqm-ds/react';
+import { Box, Dropdown, DropdownProps } from '@abqm-ds/react';
 import { radii, space } from '@abqm-ds/tokens';
 import { optionsStates } from './mockedData/dropdownOption';
 

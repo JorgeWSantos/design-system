@@ -37,6 +37,7 @@ export * from './components/Layout/Desktop/SideBarDesktop';
 export * from './components/Layout/Desktop/ContainerDesktop';
 export * from './components/Layout/Desktop/Header';
 export * from './components/Layout/Desktop/SideMenu';
+export * from './components/Layout/Desktop/HeaderNavigatorDesktop';
 
 // Types
 export * from './types/user';
