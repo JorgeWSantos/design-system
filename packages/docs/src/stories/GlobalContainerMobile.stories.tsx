@@ -41,9 +41,10 @@ export default {
 
 export const Primary: StoryObj<typeof GlobalContainer> = {
   render: () => (
-    <GlobalContainer style={{ maxWidth: breakpoints.lg }}>
+    <GlobalContainer style={{ maxWidth: breakpoints.lg, maxHeight: '100vh' }}>
       <ContainerMobile>
         <HeaderMobile
+          token=""
           title="SEQM"
           page={'title'}
           data={menu}
@@ -62,8 +63,11 @@ export const Primary: StoryObj<typeof GlobalContainer> = {
               <Dropdown data={options1} setValue={() => {}} variant="secondary" />
             </HeaderMobileNavigator>
           }
+          style={{ padding: '16px', minHeight: '80vh' }}
         >
-          <Text>Conteúdo principal do ContainerMobile.</Text>
+          <div>
+            <Text>Conteúdo principal do ContainerMobile.</Text>
+          </div>
         </ContentMobile>
       </ContainerMobile>
     </GlobalContainer>

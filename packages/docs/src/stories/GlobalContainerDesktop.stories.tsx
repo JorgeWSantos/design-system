@@ -5,8 +5,9 @@ import {
   GlobalContainer,
   Header,
   SideBarDesktop,
+  HeaderNavigatorDesktop,
 } from '@abqm-ds/react';
-import { Box, Text } from '@abqm-ds/react';
+import { Text } from '@abqm-ds/react';
 import { user } from './mockedData/user';
 import { menu } from './mockedData/menu';
 
@@ -40,12 +41,33 @@ export const Primary: StoryObj<typeof GlobalContainer> = {
   render: () => (
     <GlobalContainer>
       <ContainerDesktop>
-        <SideBarDesktop user={user} menu={menu} />
+        <SideBarDesktop token="" user={user} menu={menu} />
 
         <ContentDektop header={<Header text={'title'} />}>
-          <Box style={{ padding: 24, background: '#f5f5f5' }}>
-            <Text>Conteúdo principal do ContainerDesktop.</Text>
-          </Box>
+          <Text>Conteúdo principal do ContainerDesktop.</Text>
+        </ContentDektop>
+      </ContainerDesktop>
+    </GlobalContainer>
+  ),
+};
+
+// Adiciona uma story secundária com HeaderNavigatorDesktop
+export const Secondary: StoryObj<typeof GlobalContainer> = {
+  render: () => (
+    <GlobalContainer>
+      <ContainerDesktop>
+        <SideBarDesktop token="" user={user} menu={menu} />
+
+        <ContentDektop
+          header={<Header text={'title'} />}
+          headerNavigator={
+            <HeaderNavigatorDesktop
+              hasBackButton
+              title="Título com Navegação"
+            ></HeaderNavigatorDesktop>
+          }
+        >
+          <Text>Conteúdo principal do ContainerDesktop com HeaderNavigatorDesktop.</Text>
         </ContentDektop>
       </ContainerDesktop>
     </GlobalContainer>

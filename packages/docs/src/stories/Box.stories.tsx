@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Box, BoxProps, Text } from '@abqm-ds/react';
 
 export default {
-  title: 'Surfaces/Box',
+  title: 'Components/Box',
   component: Box,
   args: {
     children: <Text fontSize="sm">testando elemento box</Text>,

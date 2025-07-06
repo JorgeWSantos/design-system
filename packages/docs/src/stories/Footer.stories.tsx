@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Footer, FooterProps } from '@abqm-ds/react';
 
 export default {
-  title: 'Surfaces/Footer',
+  title: 'Layout/Footer',
   component: Footer,
   parameters: {
     docs: {

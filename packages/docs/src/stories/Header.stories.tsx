@@ -6,7 +6,7 @@ import { colors } from '@abqm-ds/tokens';
 
 // Documentação principal do componente Header
 export default {
-  title: 'Surfaces/Header',
+  title: 'Layout/Header',
   component: Header,
   parameters: {
     docs: {
