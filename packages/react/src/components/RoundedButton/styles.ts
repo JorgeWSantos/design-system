@@ -17,11 +17,13 @@ export const StyledRoundedButton = styled.button<RoundedButtonStyleProps>`
   border: none;
   border-radius: ${theme.radii.half};
 
-  background-color: ${theme.colors.white};
+  background-color: ${theme.colors.white50};
+
+  cursor: pointer;
 
   ${({ disabled }) =>
     disabled &&
     css`
-      background-color: ${theme.colors.white50};
+      background-color: ${theme.colors.white25};
     `}
 `;

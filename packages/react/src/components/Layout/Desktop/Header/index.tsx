@@ -20,6 +20,7 @@ export const Header = ({ text, fontWeight, buttons, ...rest }: HeaderProps) => {
                 disabled={button.disabled}
                 onClick={button.onClick}
                 key={index}
+                isFiltered={button.isFiltered}
               >
                 {button.icon}
               </HeaderButton>

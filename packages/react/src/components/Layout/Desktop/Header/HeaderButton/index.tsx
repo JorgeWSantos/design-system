@@ -1,13 +1,18 @@
 import { ComponentProps, ElementType, ReactNode } from 'react';
 
-import { StyledHeaderButton, ContainerHeaderButton } from './styles';
-import { Text } from '@components/Text';
+import {
+  StyledHeaderButton,
+  ContainerHeaderButton,
+  StyledText,
+  FilteredIndicator,
+} from './styles';
 import { RoundedButton } from '@components/RoundedButton';
 
 export interface HeaderButtonProps extends ComponentProps<typeof StyledHeaderButton> {
   as?: ElementType;
   children: ReactNode; //icon
   disabled?: boolean;
+  isFiltered?: boolean;
   label: string;
 }
 
@@ -16,15 +21,17 @@ export const HeaderButton = ({
   label,
   onClick,
   disabled,
+  isFiltered = false,
 }: HeaderButtonProps) => {
   return (
-    <ContainerHeaderButton>
+    <ContainerHeaderButton $isFiltered={isFiltered}>
+      {isFiltered && <FilteredIndicator />}
       <RoundedButton disabled={disabled} onClick={onClick}>
         {children}
       </RoundedButton>
-      <Text fontSize="xxs" disabled={disabled}>
+      <StyledText $isFiltered={isFiltered} disabled={disabled}>
         {label}
-      </Text>
+      </StyledText>
     </ContainerHeaderButton>
   );
 };

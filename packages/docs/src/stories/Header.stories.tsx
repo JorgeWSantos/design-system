@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Header, HeaderProps } from '@abqm-ds/react';
-import { HorseIcon, PlusIcon, PrinterIcon } from '@abqm-ds/icons';
+import { FilterIcon, HorseIcon, PlusIcon, PrinterIcon } from '@abqm-ds/icons';
 import { action } from '@storybook/addon-actions';
 import { colors } from '@abqm-ds/tokens';
 
@@ -70,9 +70,10 @@ export const WithButtons: StoryObj<HeaderProps> = {
         onClick: action('imprimir'),
       },
       {
-        icon: <PlusIcon fill={colors.emeraldGreen50} />,
+        icon: <FilterIcon fill={colors.emeraldGreen50} />,
         label: 'filtro',
         onClick: action('filtro'),
+        isFiltered: true,
         // onClick: () => console.log('clicou em animais'), //exibe o console no devtools do chrome
       },
     ],
@@ -87,10 +88,12 @@ export const WithButtonsDisabled: StoryObj<HeaderProps> = {
         icon: <PrinterIcon fill={colors.emeraldGreen50} />,
         label: 'imprimir',
         disabled: true,
+        onClick: action('imprimir'),
       },
       {
         icon: <PlusIcon fill={colors.emeraldGreen50} />,
         label: 'filtro',
+        onClick: action('imprimir'),
       },
     ],
   },
