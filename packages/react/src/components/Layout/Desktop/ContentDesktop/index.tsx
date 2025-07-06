@@ -3,6 +3,7 @@ import { ContainerDesktop, ContentBox } from './styles';
 
 interface ContentDektopProps extends ComponentProps<typeof ContainerDesktop> {
   header?: React.ReactNode;
+  headerNavigator?: React.ReactNode;
   children: React.ReactNode;
   contentBoxStyles?: React.CSSProperties;
 }
@@ -11,6 +12,7 @@ export const ContentDektop = ({
   header,
   children,
   contentBoxStyles,
+  headerNavigator,
   ...rest
 }: ContentDektopProps) => {
   // This is a workaround to set the height of the content based on the screen height.
@@ -28,7 +30,10 @@ export const ContentDektop = ({
   return (
     <ContainerDesktop $maxHeight={`calc(100dvh * ${heightFactor})`} {...rest}>
       {header}
-      <ContentBox style={contentBoxStyles}>{children}</ContentBox>
+      <ContentBox style={contentBoxStyles}>
+        <>{headerNavigator}</>
+        <>{children}</>
+      </ContentBox>
     </ContainerDesktop>
   );
 };

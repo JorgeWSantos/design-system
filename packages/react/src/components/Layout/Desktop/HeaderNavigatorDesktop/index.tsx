@@ -5,13 +5,13 @@ import {
   ContentChildren,
   ContentRight,
   DivTitles,
+  StyledHeadingHeaderNavigator,
   StyledNavigatorDesktop,
 } from './styles';
 
 import { HeaderNavigatorDesktopProps } from './types';
 import { colors } from '@abqm-ds/tokens';
 import { Text } from '@components/Text';
-import { Heading } from '@components/Heading';
 
 export const HeaderNavigatorDesktop = ({
   onGoBack,
@@ -27,8 +27,8 @@ export const HeaderNavigatorDesktop = ({
         <ContainerButtonBack>
           <ButtonBack onClick={onGoBack} aria-label="Voltar" type="button">
             <CaretLeftFillIcon
-              width={10}
-              height={13}
+              width={18}
+              height={18}
               fill={colors.white75}
               style={{ marginRight: '2px' }}
             />
@@ -45,9 +45,9 @@ export const HeaderNavigatorDesktop = ({
           {subtitle ? (
             <></>
           ) : (
-            <Heading as="h1" fontSize="sm" color={colors.white75}>
+            <StyledHeadingHeaderNavigator fontSize="sm">
               {title}
-            </Heading>
+            </StyledHeadingHeaderNavigator>
           )}
         </DivTitles>
         <ContentChildren>{children}</ContentChildren>

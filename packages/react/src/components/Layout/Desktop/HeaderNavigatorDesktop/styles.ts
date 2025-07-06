@@ -1,16 +1,18 @@
-import { colors, radii, space } from '@abqm-ds/tokens';
+import { colors, lineHeights, radii, space } from '@abqm-ds/tokens';
+import { Heading } from '@components/Heading';
 import styled from 'styled-components';
 
 export const StyledNavigatorDesktop = styled.div`
   display: flex;
   flex: 1;
+  width: 100%;
   flex-direction: row;
   align-items: center;
-  height: 2.5rem;
+  max-height: 3rem;
   border-bottom: ${radii.px} solid ${colors.white25};
 
   padding: ${space[1]} 0 0 ${space[1]};
-  gap: ${space[4]};
+  /* gap: ${space[4]}; */
 `;
 
 export const ContainerButtonBack = styled.div`
@@ -51,6 +53,15 @@ export const DivTitles = styled.div`
   align-items: flex-start;
   width: 100%;
   height: 2rem;
+  padding-left: ${space[2]};
+`;
+
+export const StyledHeadingHeaderNavigator = styled(Heading).withConfig({
+  shouldForwardProp: (prop) => ['as', 'fontSize', 'color', 'children'].includes(prop),
+})`
+  letter-spacing: -0.0375rem;
+  line-height: ${lineHeights.tight};
+  color: ${colors.white85};
 `;
 
 export const ContentChildren = styled.div`
