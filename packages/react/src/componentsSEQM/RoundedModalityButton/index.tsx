@@ -2,7 +2,7 @@ import { ComponentProps, ReactElement } from 'react';
 import { IconWrapper, RoundedButton, type VariantsRoundedModalityButton } from './styles';
 
 export interface RoundedButtonModalitieProps extends ComponentProps<'button'> {
-  icon: string | ReactElement;
+  icon: ReactElement;
   text: string;
   variant?: VariantsRoundedModalityButton;
 }
@@ -22,4 +22,4 @@ const RoundedModalityButton = ({
 
 RoundedModalityButton.displayName = 'RoundedModalityButton';
 
-export { RoundedModalityButton };
+export { RoundedModalityButton, VariantsRoundedModalityButton };
