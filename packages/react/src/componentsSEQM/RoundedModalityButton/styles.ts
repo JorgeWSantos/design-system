@@ -55,17 +55,24 @@ export const RoundedButton = styled.button<RoundedButtonProps>`
   }
 `;
 
-interface ImageModalitieProps {
-  $variant: VariantsRoundedModalityButton;
-}
-
-export const ImageModalitie = styled.img<ImageModalitieProps>`
+export const IconWrapper = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-
   padding: 0.5rem;
-
   border-radius: 50%;
-  gap: 0.5rem;
   aspect-ratio: 1/1;
+
+  & > svg {
+    width: 100%;
+    height: 100%;
+
+    padding: 0.5rem;
+
+    border-radius: 50%;
+    gap: 0.5rem;
+    aspect-ratio: 1/1;
+  }
 `;

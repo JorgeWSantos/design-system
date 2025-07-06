@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { RoundedModalityButton } from '@abqm-ds/react';
+import { ApartacaoIconSEQM, BreakawayRopingIconSEQM } from '@abqm-ds/icons';
 
 export default {
   title: 'Form/RoundedModalityButton',
@@ -14,9 +15,10 @@ O componente **RoundedModalityButton** é um botão circular para seleção de m
 
 \`\`\`tsx
 import { RoundedModalityButton } from '@abqm-ds/react';
+import { ApartacaoIconSEQM } from '@abqm-ds/icons';
 
 <RoundedModalityButton
-  icon="https://placehold.co/48x48?text=Icon"
+  icon={<ApartacaoIconSEQM />}
   text="Modalidade"
   onClick={() => alert('Selecionado!')}
 />
@@ -32,7 +34,7 @@ import { RoundedModalityButton } from '@abqm-ds/react';
 
 export const Default: StoryObj = {
   args: {
-    icon: 'https://placehold.co/48x48?text=Icon',
+    icon: <ApartacaoIconSEQM />,
     text: 'Modalidade Default',
     variant: 'default',
     onClick: () => alert('Selecionado!'),
@@ -41,7 +43,7 @@ export const Default: StoryObj = {
 
 export const Secondary: StoryObj = {
   args: {
-    icon: 'https://placehold.co/48x48?text=Icon',
+    icon: <BreakawayRopingIconSEQM />,
     text: 'Modalidade Secundária',
     variant: 'secondary',
     onClick: () => alert('Selecionado!'),

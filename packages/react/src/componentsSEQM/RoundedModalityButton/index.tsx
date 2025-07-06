@@ -1,12 +1,8 @@
-import { ComponentProps } from 'react';
-import {
-  ImageModalitie,
-  RoundedButton,
-  type VariantsRoundedModalityButton,
-} from './styles';
+import { ComponentProps, ReactElement } from 'react';
+import { IconWrapper, RoundedButton, type VariantsRoundedModalityButton } from './styles';
 
 export interface RoundedButtonModalitieProps extends ComponentProps<'button'> {
-  icon: string;
+  icon: string | ReactElement;
   text: string;
   variant?: VariantsRoundedModalityButton;
 }
@@ -19,7 +15,7 @@ const RoundedModalityButton = ({
 }: RoundedButtonModalitieProps) => {
   return (
     <RoundedButton className="rounded-button" $variant={variant} {...rest}>
-      <ImageModalitie src={icon} alt={text || 'Botão Modalidade'} $variant={variant} />
+      <IconWrapper>{icon}</IconWrapper>
     </RoundedButton>
   );
 };

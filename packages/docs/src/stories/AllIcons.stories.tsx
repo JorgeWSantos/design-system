@@ -7,6 +7,9 @@ import styled from 'styled-components';
 const iconNames = Object.keys(Icons).filter(
   (name) => name.endsWith('Icon') && !name.toLowerCase().includes('logo')
 );
+const iconNamesSEQM = Object.keys(Icons).filter(
+  (name) => name.endsWith('IconSEQM') && !name.toLowerCase().includes('logo')
+);
 
 const IconsGrid = styled.div`
   display: flex;
@@ -74,6 +77,22 @@ export const AllIcons: StoryObj = {
         return (
           <IconBox key={iconName}>
             <StyledIcon as={Icon} width={40} height={40} />
+            <IconLabel>{iconName}</IconLabel>
+          </IconBox>
+        );
+      })}
+    </IconsGrid>
+  ),
+};
+
+export const AllIconsSEQM: StoryObj = {
+  render: () => (
+    <IconsGrid>
+      {iconNamesSEQM.map((iconName) => {
+        const Icon = (Icons as any)[iconName];
+        return (
+          <IconBox key={iconName}>
+            <StyledIcon as={Icon} width={60} height={60} />
             <IconLabel>{iconName}</IconLabel>
           </IconBox>
         );
