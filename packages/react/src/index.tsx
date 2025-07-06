@@ -48,3 +48,6 @@ export { useDeviceType } from './hooks/useDeviceType';
 
 //Styles
 export { GlobalStyle } from './styles/global';
+
+// SEQM
+export * from './componentsSEQM/RoundedModalityButton';

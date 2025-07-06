@@ -1,7 +1,6 @@
 import { ComponentProps, ElementType, ReactNode } from 'react';
 import { StyledButton, StyledButtonText, StyledSpinner } from './styles';
 import { ButtonSize, ButtonVariants, ButtonTextSize } from './types';
-import { FontSizeTypes, FontWeightTypes } from 'types/tipography';
 
 export interface ButtonProps extends ComponentProps<'button'> {
   as?: ElementType;
