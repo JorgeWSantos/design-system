@@ -30,7 +30,7 @@ export const ToastContainer = styled.div`
 export const ToastMessage = styled.div<{ $type?: string }>`
   display: flex;
   width: 22.5rem;
-  height: 2.5rem !important;
+  height: 3.75rem !important;
 
   padding: 0.625rem 1.5rem;
   justify-content: space-between;
