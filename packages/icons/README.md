@@ -20,7 +20,7 @@ npm install @abqm-ds/icons
 
 ## ⚙️ Como Funciona
 
-1. Adicione os arquivos **SVG** que deseja converter nas pastas `src/icons/` **ou** `src/logos/`:
+1. Adicione os arquivos **SVG** que deseja converter nas pastas `src/icons/`, `src/iconsSEQM/` **ou** `src/logos/`:
 
    > **Atenção:** A nomenclatura dos ícones deve ser capitalizada, ex:
    >
@@ -35,7 +35,7 @@ npm run generate:icons
 ```
 
 3. O processo de geração segue estas etapas:
-   - Os SVGs das pastas `icons` e `logos` são convertidos e salvos temporariamente em `_temp` e `_logos`.
+   - Os SVGs das pastas `icons`, `iconsSEQM` e `logos` são convertidos e salvos temporariamente em `_temp`, `_iconsSEQM` e `_logos`.
    - Em seguida, são organizados e movidos para a pasta `components`.
 
 > 💡 Esse processo evita que todos os ícones existentes sejam modificados a cada nova adição. O script verifica se um ícone já existe e somente cria ou atualiza os que são realmente novos ou alterados.

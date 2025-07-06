@@ -13,7 +13,10 @@
     "build": "tsup --dts",
     "dev": "tsup --dts --watch",
     "lint": "eslint src/**/*.ts* --fix",
-    "generate:icons": "npx @svgr/cli src/icons/*.svg --out-dir src/_temp --icon --typescript && npx @svgr/cli src/logos/*.svg --out-dir src/_logos --icon --typescript && npm run move:icons",
+    "folder:icons": "npx @svgr/cli src/icons/*.svg --out-dir src/_temp --icon --typescript",
+    "folder:logos": "npx @svgr/cli src/logos/*.svg --out-dir src/_logos --icon --typescript",
+    "folder:icons:seqm": "npx @svgr/cli src/iconsSEQM/*.svg --out-dir src/_iconsSEQM --icon --typescript",
+    "generate:icons": "npm run folder:icons && npm run folder:logos  && npm run folder:icons:seqm && npm run move:icons",
     "move:icons": "node scripts/move-icons.js",
     "clean": "rimraf dist"
   },

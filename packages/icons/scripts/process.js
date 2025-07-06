@@ -3,7 +3,7 @@ import path from 'path';
 import { toPascalCase } from './utils.js';
 
 // Função para processar arquivos de uma pasta e gerar componentes
-function processSourceDir(sourceDir, finalDir, prefixToRemove = /^svg/i) {
+function processSourceDir(sourceDir, finalDir, prefixToRemove = /^svg/i, postfix = '') {
   if (!fs.existsSync(sourceDir)) return [];
   const files = fs.readdirSync(sourceDir).filter((f) => f.endsWith('.tsx'));
   const exports = [];
@@ -12,7 +12,8 @@ function processSourceDir(sourceDir, finalDir, prefixToRemove = /^svg/i) {
     const baseName = path.basename(file, '.tsx');
     const cleanedName = baseName.replace(prefixToRemove, '');
     const pascalName = toPascalCase(cleanedName);
-    const componentName = `${pascalName}Icon`;
+    // Adiciona o sufixo SEQM se postfix for passado
+    const componentName = `${pascalName}Icon${postfix}`;
 
     const fromPath = path.join(sourceDir, file);
     const toPath = path.join(finalDir, `${componentName}.tsx`);

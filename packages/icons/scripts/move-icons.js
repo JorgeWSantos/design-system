@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { toPascalCase } from './utils.js';
 import { processSourceDir } from './process.js';
 import { updateIndexFile } from './updateIndex.js';
 
@@ -14,11 +13,12 @@ const tempDir = path.resolve(__dirname, '../src/_temp');
 const logosDir = path.resolve(__dirname, '../src/_logos');
 const finalDir = path.resolve(__dirname, '../src/components');
 const indexFile = path.resolve(__dirname, '../src/index.ts');
+const iconsSeqmDir = path.resolve(__dirname, '../src/_iconsSEQM');
 
 // Verifica se as pastas temporárias existem
-if (!fs.existsSync(tempDir) && !fs.existsSync(logosDir)) {
+if (!fs.existsSync(tempDir) && !fs.existsSync(logosDir) && !fs.existsSync(iconsSeqmDir)) {
   console.log(
-    '⚠️  Nenhuma pasta src/_temp ou src/_logos existe. Rode "npm run generate" antes.'
+    '⚠️  Nenhuma pasta src/_temp, src/_logos ou src/iconsSEQM existe. Rode "npm run generate" antes.'
   );
   process.exit(0);
 }
@@ -31,6 +31,7 @@ if (!fs.existsSync(finalDir)) {
 // Processa os diretórios de origem normalmente
 processSourceDir(tempDir, finalDir);
 processSourceDir(logosDir, finalDir, /^svg/i);
+processSourceDir(iconsSeqmDir, finalDir, /^svg/i, 'SEQM');
 
 // Atualiza index.ts para garantir que todos os componentes estejam exportados
 updateIndexFile(finalDir, indexFile);
