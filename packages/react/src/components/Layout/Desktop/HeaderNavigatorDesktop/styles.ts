@@ -11,7 +11,7 @@ export const StyledNavigatorDesktop = styled.div`
   max-height: 3rem;
   border-bottom: ${radii.px} solid ${colors.white25};
 
-  padding: ${space[1]} 0 0 ${space[1]};
+  padding: 0 0 0 ${space[1]};
   /* gap: ${space[4]}; */
 `;
 
@@ -66,7 +66,7 @@ export const StyledHeadingHeaderNavigator = styled(Heading).withConfig({
 
 export const ContentChildren = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   min-width: 200px;
   max-height: 2rem;
