@@ -76,22 +76,23 @@ export const ModalContent = styled.div<{
   display: flex;
   flex-direction: column;
   background: ${colors.white};
-  padding: ${space[6]} ${space[4]} ${space[6]} ${space[4]};
+  padding: ${space[6]} ${space[4]} ${space[12]} ${space[4]};
   border-radius: ${radii.md};
+
   position: relative;
-  max-width: 100%;
   z-index: 1060;
 
+  max-width: 100%;
   min-height: 80vh;
+  gap: 1rem;
 
   ${({ $maxHeight }) =>
     $maxHeight &&
     css`
-      height: ${$maxHeight};
+      height: unset;
+      min-height: unset;
       max-height: ${$maxHeight};
     `}
-
-  gap: 1rem;
 
   ${({ $size }) =>
     $size === 'full' &&
