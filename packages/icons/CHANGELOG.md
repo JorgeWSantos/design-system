@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 1.0.15
+
+### Patch Changes
+
+- feat: 🎸 Adicição de icones e componentes
+
 ## 1.0.14
 
 ### Patch Changes
