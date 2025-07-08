@@ -6,7 +6,7 @@ Esta biblioteca fornece ícones SVG como componentes React, permitindo uso simpl
 
 ---
 
-## 📦 Instalação.
+## 📦 Instalação
 
 No seu projeto React (com suporte a pacotes do monorepo):
 
@@ -28,14 +28,18 @@ npm install @abqm-ds/icons
    >
    > ✅ CaretRight.svg
 
+   - Para ícones normais, use `src/icons/`
+   - Para ícones SEQM, use `src/iconsSEQM/`
+   - Para logos, use `src/logos/`
+
 2. Em seguida, execute o comando abaixo no terminal:
 
 ```bash
-npm run generate:icons
+npm run generate
 ```
 
 3. O processo de geração segue estas etapas:
-   - Os SVGs das pastas `icons`, `iconsSEQM` e `logos` são convertidos e salvos temporariamente em `_temp`, `_iconsSEQM` e `_logos`.
+   - Os SVGs das pastas `icons`, `iconsSEQM` e `logos` são convertidos e salvos temporariamente em `_icons`, `_iconsSEQM` e `_logos`.
    - Em seguida, são organizados e movidos para a pasta `components`.
 
 > 💡 Esse processo evita que todos os ícones existentes sejam modificados a cada nova adição. O script verifica se um ícone já existe e somente cria ou atualiza os que são realmente novos ou alterados.
@@ -81,7 +85,7 @@ Todos os ícones exportados são componentes React SVG e aceitam todas as propri
 
 ### Gerar componentes a partir de SVGs
 
-1. Coloque seus arquivos SVG em `src/icons/` ou `src/logos/`.
+1. Coloque seus arquivos SVG em `src/icons/`, `src/iconsSEQM/` ou `src/logos/`.
 2. Rode o comando:
 
 ```bash
@@ -107,9 +111,11 @@ packages/icons/
 ├── scripts/             # Scripts de desenvolvimento
 ├── src/
 │   ├── icons/           # SVGs originais (ícones)
+│   ├── iconsSEQM/       # SVGs originais (ícones SEQM)
 │   ├── logos/           # SVGs originais (logos)
 │   ├── components/      # Componentes React (.tsx)
-│   ├── _temp/           # SVGs temporários (ícones)
+│   ├── _icons/          # SVGs temporários (ícones)
+│   ├── _iconsSEQM/      # SVGs temporários (ícones SEQM)
 │   ├── _logos/          # SVGs temporários (logos)
 │   └── index.ts         # Exportações centralizadas
 ├── tsconfig.json
@@ -123,9 +129,9 @@ packages/icons/
 
 Para adicionar novos ícones:
 
-1. Adicione o SVG em `src/icons/` ou `src/logos/`
+1. Adicione o SVG em `src/icons/`, `src/iconsSEQM/` ou `src/logos/`
 2. Rode `npm run generate`
-3. Adicione à exportação em `src/index.ts`
+3. Adicione à exportação em `src/index.ts` (caso necessário)
 4. Teste no seu projeto local
 
 ---

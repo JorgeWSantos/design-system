@@ -8,6 +8,11 @@ function processSourceDir(sourceDir, finalDir, prefixToRemove = /^svg/i, postfix
   const files = fs.readdirSync(sourceDir).filter((f) => f.endsWith('.tsx'));
   const exports = [];
 
+  // Garante que o diretório de destino existe
+  if (!fs.existsSync(finalDir)) {
+    fs.mkdirSync(finalDir, { recursive: true });
+  }
+
   for (const file of files) {
     const baseName = path.basename(file, '.tsx');
     const cleanedName = baseName.replace(prefixToRemove, '');

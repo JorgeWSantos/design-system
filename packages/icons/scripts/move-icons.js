@@ -33,9 +33,9 @@ if (!fs.existsSync(finalDir)) {
 }
 
 // Processa os diretórios de origem normalmente
-processSourceDir(iconsDir, finalDir);
-processSourceDir(logosDir, finalDir, /^svg/i);
-processSourceDir(iconsSeqmDir, finalDir, /^svg/i, 'SEQM');
+processSourceDir(iconsDir, finalDir + '/icons');
+processSourceDir(logosDir, finalDir + '/logos', /^svg/i);
+processSourceDir(iconsSeqmDir, finalDir + '/iconsSEQM', /^svg/i, 'SEQM');
 
 // Atualiza index.ts para garantir que todos os componentes estejam exportados
 updateIndexFile(finalDir, indexFile);
