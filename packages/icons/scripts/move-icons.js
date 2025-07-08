@@ -9,16 +9,20 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Caminhos
-const tempDir = path.resolve(__dirname, '../src/_temp');
+const iconsDir = path.resolve(__dirname, '../src/_icons');
 const logosDir = path.resolve(__dirname, '../src/_logos');
+const iconsSeqmDir = path.resolve(__dirname, '../src/_iconsSEQM');
 const finalDir = path.resolve(__dirname, '../src/components');
 const indexFile = path.resolve(__dirname, '../src/index.ts');
-const iconsSeqmDir = path.resolve(__dirname, '../src/_iconsSEQM');
 
 // Verifica se as pastas temporárias existem
-if (!fs.existsSync(tempDir) && !fs.existsSync(logosDir) && !fs.existsSync(iconsSeqmDir)) {
+if (
+  !fs.existsSync(iconsDir) &&
+  !fs.existsSync(logosDir) &&
+  !fs.existsSync(iconsSeqmDir)
+) {
   console.log(
-    '⚠️  Nenhuma pasta src/_temp, src/_logos ou src/iconsSEQM existe. Rode "npm run generate" antes.'
+    '⚠️  Nenhuma pasta src/_icons, src/_logos ou src/iconsSEQM existe. Rode "npm run generate" antes.'
   );
   process.exit(0);
 }
@@ -29,7 +33,7 @@ if (!fs.existsSync(finalDir)) {
 }
 
 // Processa os diretórios de origem normalmente
-processSourceDir(tempDir, finalDir);
+processSourceDir(iconsDir, finalDir);
 processSourceDir(logosDir, finalDir, /^svg/i);
 processSourceDir(iconsSeqmDir, finalDir, /^svg/i, 'SEQM');
 
