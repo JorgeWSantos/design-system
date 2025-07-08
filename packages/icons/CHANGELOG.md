@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 1.0.16
+
+### Patch Changes
+
+- feat: 🎸 Adicioniará novos ícones e melhorará componentes react
+
 ## 1.0.15
 
 ### Patch Changes

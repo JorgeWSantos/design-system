@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.22
+
+### Patch Changes
+
+- feat: 🎸 Adicioniará novos ícones e melhorará componentes react
+
 ## 1.0.21
 
 ### Patch Changes
