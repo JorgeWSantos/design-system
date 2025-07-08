@@ -1,4 +1,4 @@
-import { ComponentProps, ReactNode, useState } from 'react';
+import { ComponentProps, ReactNode } from 'react';
 import {
   Input,
   TextInputBorderedContainer,
@@ -27,10 +27,11 @@ export const TextInputBordered = ({
   error,
   ...rest
 }: TextInputBorderedProps) => {
+  const id = Date.now().toString(36) + Math.random().toString(36).substring(2, 6);
   return (
     <TextInputBorderedContainer>
       <TextInputBorderedContent $size={size} $variant={variant}>
-        <Input ref={ref} $variant={variant} {...rest} />
+        <Input id={id} ref={ref} $variant={variant} {...rest} />
         {icon && icon}
       </TextInputBorderedContent>
 

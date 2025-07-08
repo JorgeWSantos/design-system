@@ -12,6 +12,7 @@ export { default as FacebookIcon } from './FacebookIcon';
 export { default as FileEarmarkTextIcon } from './FileEarmarkTextIcon';
 export { default as FileTextIcon } from './FileTextIcon';
 export { default as FilterIcon } from './FilterIcon';
+export { default as GoogleColorIcon } from './GoogleColorIcon';
 export { default as GoogleIcon } from './GoogleIcon';
 export { default as InstagramIcon } from './InstagramIcon';
 export { default as ListIcon } from './ListIcon';

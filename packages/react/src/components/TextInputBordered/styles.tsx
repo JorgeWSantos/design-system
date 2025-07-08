@@ -96,6 +96,16 @@ export const Input = styled.input<StyledInputProps>`
     color: ${colors.emeraldGreen25};
   }
 
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: inherit !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    line-height: inherit !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+  }
+
   ${({ $variant }) =>
     $variant === 'secondary' &&
     css`
