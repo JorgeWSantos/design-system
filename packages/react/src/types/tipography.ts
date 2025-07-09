@@ -40,6 +40,7 @@ export const lineHeightTypes = {
   initial: lineHeights.initial,
   tight: lineHeights.tight,
   shorter: lineHeights.shorter,
+  midshort: lineHeights.midshort,
   short: lineHeights.short,
   base: lineHeights.base,
   tall: lineHeights.tall,
