@@ -6,14 +6,15 @@ import React, {
   useRef,
   useState,
 } from 'react';
+
 import {
   CloseButton,
   DivChildren,
-  DivCloseButton,
   ModalContent,
   ModalOverlay,
   StyledXIcon,
-  AnimatedArrowRight, // add import
+  AnimatedArrowRight,
+  DivTopModal, // add import
 } from './styles';
 
 import ReactDOM from 'react-dom';
@@ -22,9 +23,12 @@ import {
   PropModalSizes,
   PropModalVerticalPositions,
 } from './types';
+import { Heading } from '@components/Heading';
+import { colors } from '@abqm-ds/tokens';
 
 export interface ModalProps extends ComponentProps<'div'> {
   isOpen: boolean;
+  title?: string;
   onClose: () => void;
   children: ReactNode;
   positionHorizontal?: PropModalHorizontalPositions;
@@ -51,6 +55,7 @@ export interface ModalProps extends ComponentProps<'div'> {
  * @example
  * <Modal
  *   isOpen={open}
+ *   title={title}
  *   onClose={handleClose}
  *   positionHorizontal="center"
  *   positionVertical="center"
@@ -66,6 +71,7 @@ export interface ModalProps extends ComponentProps<'div'> {
  */
 export const Modal = ({
   isOpen,
+  title,
   onClose,
   children,
   positionHorizontal = 'center',
@@ -124,11 +130,14 @@ export const Modal = ({
         style={styleContent}
         $size={size}
       >
-        <DivCloseButton $size={size}>
+        <DivTopModal $size={size} $hasTitle={!!title}>
+          <Heading color={colors.emeraldGreen75}>{title}</Heading>
+
           <CloseButton onClick={onClose}>
-            <StyledXIcon width={18} height={18} $size={size} />
+            <StyledXIcon width={38} height={38} $size={size} />
           </CloseButton>
-        </DivCloseButton>
+        </DivTopModal>
+
         <DivChildren ref={contentRef}>
           {children}
           {showArrow && <AnimatedArrowRight />}

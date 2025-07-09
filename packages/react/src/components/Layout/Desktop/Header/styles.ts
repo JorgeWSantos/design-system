@@ -1,4 +1,5 @@
 import { breakpointsPx, colors, space } from '@abqm-ds/tokens';
+import { Heading } from '@components/Heading';
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
@@ -14,6 +15,10 @@ export const StyledHeader = styled.header`
   border-radius: ${space[2]} ${space[2]} 0 0;
 
   padding-top: ${space[1]};
+`;
+
+export const StyledHeading = styled(Heading)`
+  letter-spacing: -0.075rem;
 `;
 
 export const HeadingWrapper = styled.div`

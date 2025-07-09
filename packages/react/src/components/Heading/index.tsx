@@ -5,13 +5,21 @@ import { HeadingProps } from './types';
 export function Heading({
   children,
   fontSize = 'md',
-  as = 'h2',
+  lineHeight = 'shorter',
   fontWeight = 'semiBold',
+  as = 'h2',
   color,
   ...rest
 }: HeadingProps) {
   return (
-    <StyledHeading as={as} $size={fontSize} $weight={fontWeight} $color={color} {...rest}>
+    <StyledHeading
+      as={as}
+      $size={fontSize}
+      $weight={fontWeight}
+      $color={color}
+      $lineHeight={lineHeight}
+      {...rest}
+    >
       {children}
     </StyledHeading>
   );

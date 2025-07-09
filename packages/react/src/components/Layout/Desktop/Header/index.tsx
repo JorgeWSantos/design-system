@@ -1,5 +1,4 @@
-import { ButtonsWrapper, HeadingWrapper, StyledHeader } from './styles';
-import { Heading } from '@components/Heading';
+import { ButtonsWrapper, HeadingWrapper, StyledHeader, StyledHeading } from './styles';
 import { ColorBar } from '@components/ColorBar';
 import { HeaderButton } from './HeaderButton';
 import { HeaderProps } from './types';
@@ -8,9 +7,9 @@ export const Header = ({ text, fontWeight, buttons, ...rest }: HeaderProps) => {
   return (
     <StyledHeader {...rest}>
       <HeadingWrapper>
-        <Heading fontSize="md" fontWeight={fontWeight}>
+        <StyledHeading fontSize="md" fontWeight={fontWeight}>
           {text}
-        </Heading>
+        </StyledHeading>
 
         {buttons && (
           <ButtonsWrapper>

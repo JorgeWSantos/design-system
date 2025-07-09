@@ -76,7 +76,7 @@ export const ModalContent = styled.div<{
   display: flex;
   flex-direction: column;
   background: ${colors.white};
-  padding: ${space[6]} ${space[4]} ${space[12]} ${space[4]};
+  padding: ${space[6]} ${space[8]} ${space[12]} ${space[8]};
   border-radius: ${radii.md};
 
   position: relative;
@@ -136,8 +136,9 @@ export const DivChildren = styled.div`
   height: 100%;
 `;
 
-export const DivCloseButton = styled.div<{
+export const DivTopModal = styled.div<{
   $size?: PropModalSizes;
+  $hasTitle?: boolean;
 }>`
   display: flex;
   justify-content: flex-end;
@@ -146,6 +147,12 @@ export const DivCloseButton = styled.div<{
   min-height: 3rem;
 
   border-bottom: 1px solid ${colors.black25};
+
+  ${({ $hasTitle }) =>
+    $hasTitle &&
+    css`
+      justify-content: space-between;
+    `}
 
   ${({ $size }) =>
     $size === 'full' &&

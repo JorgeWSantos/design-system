@@ -1,6 +1,6 @@
 import { ComponentProps, ElementType, ReactNode } from 'react';
 import { StyledHeading } from './styles';
-import { FontWeightTypes } from 'types/tipography';
+import { FontWeightTypes, LineHeightTypes } from 'types/tipography';
 import { fontSizes } from '@abqm-ds/tokens';
 
 export interface HeadingProps extends ComponentProps<typeof StyledHeading> {
@@ -8,6 +8,7 @@ export interface HeadingProps extends ComponentProps<typeof StyledHeading> {
   children: ReactNode;
   fontSize?: SizeVariants;
   fontWeight?: FontWeightTypes;
+  lineHeight?: LineHeightTypes;
   color?: string;
 }
 

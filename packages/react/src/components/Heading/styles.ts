@@ -1,20 +1,26 @@
 import { colors, fonts, lineHeights } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
-import { fontWeightTypes, FontWeightTypes } from 'types/tipography';
+import {
+  fontWeightTypes,
+  FontWeightTypes,
+  LineHeightTypes,
+  lineHeightTypes,
+} from 'types/tipography';
 import { sizeVariants, SizeVariants } from '.';
 
 interface StyledHeadingProps {
   $size?: SizeVariants;
   $weight?: FontWeightTypes;
+  $lineHeight?: LineHeightTypes;
   $color?: string;
 }
 
 export const StyledHeading = styled.h2<StyledHeadingProps>`
   font-family: ${fonts.default};
-  line-height: ${lineHeights.shorter};
+  line-height: ${(props) => lineHeightTypes[props.$lineHeight || 'shorter']};
   margin: 0;
   color: ${colors.gray100};
-  letter-spacing: -0.075rem;
+  /* letter-spacing: -0.075rem; */
 
   // semi default
   ${({ $weight }) =>
