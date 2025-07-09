@@ -131,7 +131,9 @@ export const Modal = ({
         $size={size}
       >
         <DivTopModal $size={size} $hasTitle={!!title}>
-          <Heading color={colors.emeraldGreen75}>{title}</Heading>
+          <Heading color={colors.emeraldGreen75} lineHeight="midshort">
+            {title}
+          </Heading>
 
           <CloseButton onClick={onClose}>
             <StyledXIcon width={38} height={38} $size={size} />
