@@ -51,3 +51,4 @@ export { GlobalStyle } from './styles/global';
 
 // SEQM
 export * from './componentsSEQM/RoundedModalityButton';
+export * from './componentsSEQM/TableSEQM';
