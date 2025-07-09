@@ -18,6 +18,6 @@ declare module '@abqm-ds/icons' {
   export const ArrowDownShortIcon: FC<SVGProps<SVGSVGElement>>;
   export const SpinnerRingResizeIcon: FC<SVGProps<SVGSVGElement>>;
   export const CaretRightFillIcon: FC<SVGProps<SVGSVGElement>>;
-  export const AqhaColoredIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const AbqmOficialColoredIconSEQM: FC<SVGProps<SVGSVGElement>>;
   // Adicione outros ícones exportados aqui
 }

@@ -33,7 +33,7 @@ export const TableSEQM = ({
       </StyledHeadTableSEQM>
       <StyledBodyTableSEQM>
         {data.map((row, idx) => (
-          <tr key={idx} className={row.isAQHA ? 'aqha-column' : ''}>
+          <tr key={idx} className={row.isOficial ? 'aqha-column' : ''}>
             {columns.map((col) => (
               <td
                 key={col.key}
@@ -63,4 +63,4 @@ export const TableSEQM = ({
 TableSEQM.displayName = 'TableSEQM';
 
 export * from './types';
-export * from './ColumnAQHA';
+export * from './ColumnOficial';

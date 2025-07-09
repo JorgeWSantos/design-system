@@ -5,7 +5,7 @@ interface User {
   name: string;
   age: number;
   email: string;
-  isAQHA?: boolean; // Optional property for AQHA-specific columns
+  isOficial?: boolean; // Optional property for AQHA-specific columns
 }
 
 const columns: Array<TableColumnSEQM<User>> = [
@@ -22,7 +22,7 @@ const columns: Array<TableColumnSEQM<User>> = [
 ];
 
 const data: Array<User> = [
-  { name: 'João', age: 28, email: 'joao@email.com', isAQHA: true },
+  { name: 'João', age: 28, email: 'joao@email.com', isOficial: true },
   { name: 'Maria', age: 32, email: 'maria@email.com' },
   { name: 'Pedro', age: 24, email: 'pedro@email.com' },
 ];
@@ -48,7 +48,7 @@ const columns = [
 ];
 
 const data = [
-  { name: 'João', age: 28, email: 'joao@email.com', isAQHA: true },
+  { name: 'João', age: 28, email: 'joao@email.com', isOficial: true },
   { name: 'Maria', age: 32, email: 'maria@email.com' },
   { name: 'Pedro', age: 24, email: 'pedro@email.com' },
 ];
