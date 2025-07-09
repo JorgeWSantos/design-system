@@ -4,13 +4,13 @@ import { TableSEQMProps } from './types';
 export const TableSEQM = ({
   columns,
   data,
-  maxWidth,
-  maxHeight,
+  width,
+  height,
   align,
   ...rest
 }: TableSEQMProps) => {
   return (
-    <StyledTableSEQM $maxWidth={maxWidth} $maxHeight={maxHeight} {...rest}>
+    <StyledTableSEQM $width={width} $height={height} {...rest}>
       <thead>
         <tr>
           {columns.map((col) => (
@@ -31,7 +31,7 @@ export const TableSEQM = ({
                 key={col.key}
                 style={{ width: col.width, textAlign: col.align || 'left' }}
               >
-                {col.render ? col.render(row[col.key], row) : row[col.key]}
+                {col.render ? col.render(row) : row[col.key]}
               </td>
             ))}
           </tr>

@@ -1,17 +1,23 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { TableColumnSEQM, TableSEQM } from '@abqm-ds/react';
 
-const columns: Array<TableColumnSEQM<any>> = [
-  { key: 'name', label: 'Nome', width: 60 },
-  { key: 'age', label: 'Idade', width: '25%' },
-  { key: 'email', label: 'Email', width: '100%', align: 'right' },
-];
-
 interface User {
   name: string;
   age: number;
   email: string;
 }
+
+const columns: Array<TableColumnSEQM<User>> = [
+  { key: 'name', label: 'Nome', width: '20%' },
+  { key: 'age', label: 'Idade', width: '60%' },
+  {
+    key: 'email',
+    label: 'Email',
+    width: '20%',
+    align: 'left',
+    // render: (row: User) => <a href={`mailto:${row}`}>{row.name + 'ola'}</a>,
+  },
+];
 
 const data: Array<User> = [
   { name: 'João', age: 28, email: 'joao@email.com' },
@@ -56,7 +62,7 @@ export const Basic: StoryObj = {
   args: {
     columns,
     data,
-    maxWidth: '80%',
-    maxHeight: '400px',
+    width: '1000px',
+    // height: '200px',
   },
 };
