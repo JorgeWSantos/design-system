@@ -68,6 +68,7 @@ export const colors = {
   green700: '#476153',
   green900: '#002F14',
 
+  greenTransparent15: '#26674226',
   greenTransparent30: '#26674247',
 
   // Blue

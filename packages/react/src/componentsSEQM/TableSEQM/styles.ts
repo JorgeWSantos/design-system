@@ -9,18 +9,15 @@ export const StyledTableSEQM = styled.table<{
   max-width: ${({ $width }) => $width || '100%'};
   max-height: ${({ $height }) => $height || '100%'};
 
-  /* thead tr {
-    background-color: ${colors.greenTransparent30};
-  } */
-
   tbody tr:nth-child(even) {
-    background-color: ${colors.greenTransparent30};
+    background-color: ${colors.greenTransparent15};
   }
   tbody tr:nth-child(odd) {
-    background-color: ${colors.green900};
+    background-color: ${colors.greenTransparent30};
   }
 
   font-family: ${fonts.default};
+  color: ${colors.emeraldGreen75};
 `;
 
 export const StyledHeadTableSEQM = styled.thead`
@@ -40,7 +37,21 @@ export const StyledBodyTableSEQM = styled.tbody`
     box-sizing: border-box;
 
     td:first-child {
-      border-left: 4px solid ${colors.brown500};
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: ${colors.green500}; // Exemplo de cor, ajuste conforme necessário
+        pointer-events: none; // Para não bloquear interações
+        z-index: 1;
+      }
+
       box-sizing: border-box;
     }
   }
