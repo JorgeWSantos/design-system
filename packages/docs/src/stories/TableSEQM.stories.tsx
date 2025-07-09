@@ -5,14 +5,15 @@ interface User {
   name: string;
   age: number;
   email: string;
+  isAQHA?: boolean; // Optional property for AQHA-specific columns
 }
 
 const columns: Array<TableColumnSEQM<User>> = [
-  { key: 'name', label: 'Nome', width: '20%' },
-  { key: 'age', label: 'Idade', width: '60%' },
+  { key: 'name', label: 'NOME', width: '20%' },
+  { key: 'age', label: 'IDADE', width: '60%' },
   {
     key: 'email',
-    label: 'Email',
+    label: 'EMAIL',
     width: '20%',
     align: 'left',
     // render: (row: User) => <a href={`mailto:${row}`}>{row.name + 'ola'}</a>,
@@ -20,7 +21,7 @@ const columns: Array<TableColumnSEQM<User>> = [
 ];
 
 const data: Array<User> = [
-  { name: 'João', age: 28, email: 'joao@email.com' },
+  { name: 'João', age: 28, email: 'joao@email.com', isAQHA: true },
   { name: 'Maria', age: 32, email: 'maria@email.com' },
   { name: 'Pedro', age: 24, email: 'pedro@email.com' },
 ];
