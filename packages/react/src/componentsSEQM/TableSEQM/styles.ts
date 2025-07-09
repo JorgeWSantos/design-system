@@ -1,8 +1,9 @@
-import { styled } from 'styled-components';
+import { CSSProperties, styled } from 'styled-components';
 
-export const StyledTableSEQM = styled.table`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 0.125rem;
+export const StyledTableSEQM = styled.table<{
+  $maxWidth?: CSSProperties['maxWidth'];
+  $maxHeight?: CSSProperties['maxHeight'];
+}>`
+  max-width: ${({ $maxWidth }) => $maxWidth || '100%'};
+  max-height: ${({ $maxHeight }) => $maxHeight || '100%'};
 `;

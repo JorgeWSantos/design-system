@@ -1,13 +1,23 @@
 import { StyledTableSEQM } from './styles';
 import { TableSEQMProps } from './types';
 
-export const TableSEQM = ({ columns, data, ...rest }: TableSEQMProps) => {
+export const TableSEQM = ({
+  columns,
+  data,
+  maxWidth,
+  maxHeight,
+  align,
+  ...rest
+}: TableSEQMProps) => {
   return (
-    <StyledTableSEQM {...rest}>
+    <StyledTableSEQM $maxWidth={maxWidth} $maxHeight={maxHeight} {...rest}>
       <thead>
         <tr>
           {columns.map((col) => (
-            <th key={col.key} style={{ width: col.width }}>
+            <th
+              key={col.key}
+              style={{ width: col.width, textAlign: col.align || 'left' }}
+            >
               {col.label}
             </th>
           ))}
@@ -17,7 +27,10 @@ export const TableSEQM = ({ columns, data, ...rest }: TableSEQMProps) => {
         {data.map((row, idx) => (
           <tr key={idx}>
             {columns.map((col) => (
-              <td key={col.key} style={{ width: col.width }}>
+              <td
+                key={col.key}
+                style={{ width: col.width, textAlign: col.align || 'left' }}
+              >
                 {col.render ? col.render(row[col.key], row) : row[col.key]}
               </td>
             ))}
@@ -29,3 +42,5 @@ export const TableSEQM = ({ columns, data, ...rest }: TableSEQMProps) => {
 };
 
 TableSEQM.displayName = 'TableSEQM';
+
+export * from './types';

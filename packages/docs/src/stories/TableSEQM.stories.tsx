@@ -1,13 +1,19 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { TableSEQM } from '@abqm-ds/react';
+import { TableColumnSEQM, TableSEQM } from '@abqm-ds/react';
 
-const columns = [
+const columns: Array<TableColumnSEQM<any>> = [
   { key: 'name', label: 'Nome', width: 60 },
   { key: 'age', label: 'Idade', width: '25%' },
-  { key: 'email', label: 'Email', width: '100%' },
+  { key: 'email', label: 'Email', width: '100%', align: 'right' },
 ];
 
-const data = [
+interface User {
+  name: string;
+  age: number;
+  email: string;
+}
+
+const data: Array<User> = [
   { name: 'João', age: 28, email: 'joao@email.com' },
   { name: 'Maria', age: 32, email: 'maria@email.com' },
   { name: 'Pedro', age: 24, email: 'pedro@email.com' },
@@ -50,5 +56,7 @@ export const Basic: StoryObj = {
   args: {
     columns,
     data,
+    maxWidth: '80%',
+    maxHeight: '400px',
   },
 };
