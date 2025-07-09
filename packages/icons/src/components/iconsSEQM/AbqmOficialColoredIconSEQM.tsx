@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-const AqhaColoredIconSEQM = (props: SVGProps<SVGSVGElement>) => (
+const AbqmOficialColoredIconSEQM = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -18,4 +18,4 @@ const AqhaColoredIconSEQM = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default AqhaColoredIconSEQM;
+export default AbqmOficialColoredIconSEQM;

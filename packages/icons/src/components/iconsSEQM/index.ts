@@ -1,5 +1,5 @@
+export { default as AbqmOficialColoredIconSEQM } from './AbqmOficialColoredIconSEQM';
 export { default as ApartacaoIconSEQM } from './ApartacaoIconSEQM';
-export { default as AqhaColoredIconSEQM } from './AqhaColoredIconSEQM';
 export { default as BreakawayRopingIconSEQM } from './BreakawayRopingIconSEQM';
 export { default as BulldogIconSEQM } from './BulldogIconSEQM';
 export { default as CincoTamboresIconSEQM } from './CincoTamboresIconSEQM';
