@@ -17,7 +17,12 @@ export const TableSEQM = ({
           {columns.map((col) => (
             <th
               key={col.key}
-              style={{ width: col.width, textAlign: col.align || 'left' }}
+              style={{
+                width: col.width,
+                maxWidth: col.width,
+                minWidth: col.minWidth,
+                textAlign: col.align || 'left',
+              }}
             >
               <Text fontSize="xxs" fontWeight="semiBold" lineHeight="tight">
                 {col.label}
@@ -32,7 +37,12 @@ export const TableSEQM = ({
             {columns.map((col) => (
               <td
                 key={col.key}
-                style={{ width: col.width, textAlign: col.align || 'left' }}
+                style={{
+                  width: col.width,
+                  maxWidth: col.width,
+                  minWidth: col.minWidth,
+                  textAlign: col.align || 'left',
+                }}
               >
                 {col.render ? (
                   col.render(row)
@@ -53,3 +63,4 @@ export const TableSEQM = ({
 TableSEQM.displayName = 'TableSEQM';
 
 export * from './types';
+export * from './ColumnAQHA';

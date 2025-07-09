@@ -7,13 +7,14 @@ export const StyledTableSEQM = styled.table<{
 }>`
   border-collapse: collapse;
   width: ${({ $width }) => $width || '100%'};
-  height: ${({ $height }) => $height || '100%'};
+  height: ${({ $height }) => $height || 'unset'};
+
+  tbody tr:nth-child(odd) {
+    background-color: ${colors.white25};
+  }
 
   tbody tr:nth-child(even) {
     background-color: ${colors.greenTransparent15};
-  }
-  tbody tr:nth-child(odd) {
-    background-color: ${colors.greenTransparent30};
   }
 
   font-family: ${fonts.default};
@@ -29,12 +30,13 @@ export const StyledHeadTableSEQM = styled.thead`
 
 export const StyledBodyTableSEQM = styled.tbody`
   tr td {
-    padding: ${space[2]};
+    padding: 0.5625rem ${space[2]};
     font-size: ${fontSizes.xxs};
   }
 
   .aqha-column {
     box-sizing: border-box;
+    background-color: ${colors.greenTransparent30} !important;
 
     td:first-child {
       position: relative;

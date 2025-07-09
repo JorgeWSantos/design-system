@@ -16,6 +16,7 @@ const columns: Array<TableColumnSEQM<User>> = [
     label: 'EMAIL',
     width: '20%',
     align: 'left',
+    minWidth: '80px',
     // render: (row: User) => <a href={`mailto:${row}`}>{row.name + 'ola'}</a>,
   },
 ];
@@ -43,7 +44,7 @@ import { TableSEQM } from '@abqm-ds/react';
 const columns = [
   { key: 'name', label: 'NOME', width: '20%' },
   { key: 'age', label: 'IDADE', width: '60%' },
-  { key: 'email', label: 'EMAIL', width: '20%', align: 'left' },
+  { key: 'email', label: 'EMAIL', width: '20%', align: 'left', minWidth: '80px' },
 ];
 
 const data = [

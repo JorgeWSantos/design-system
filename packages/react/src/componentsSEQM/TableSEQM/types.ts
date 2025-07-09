@@ -15,4 +15,5 @@ export interface TableColumnSEQM<T> {
   width?: CSSProperties['width'];
   align?: 'left' | 'center' | 'right';
   render?: (row: T) => ReactNode;
+  minWidth?: CSSProperties['minWidth'];
 }
