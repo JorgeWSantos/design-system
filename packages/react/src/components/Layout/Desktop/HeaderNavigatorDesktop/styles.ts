@@ -9,6 +9,7 @@ export const StyledNavigatorDesktop = styled.div`
   flex-direction: row;
   align-items: center;
   height: 2.75rem;
+  max-height: 2.75rem;
   border-bottom: ${radii.px} solid ${colors.white25};
 
   padding: 0 0 0 ${space[1]};

@@ -41,18 +41,23 @@ O componente **TableSEQM** exibe dados tabulares com colunas customizáveis.
 import { TableSEQM } from '@abqm-ds/react';
 
 const columns = [
-  { key: 'name', label: 'Nome', width: 180 },
-  { key: 'age', label: 'Idade', width: 80 },
-  { key: 'email', label: 'Email', width: 220 },
+  { key: 'name', label: 'NOME', width: '20%' },
+  { key: 'age', label: 'IDADE', width: '60%' },
+  { key: 'email', label: 'EMAIL', width: '20%', align: 'left' },
 ];
 
 const data = [
-  { name: 'João', age: 28, email: 'joao@email.com' },
-  // ...
+  { name: 'João', age: 28, email: 'joao@email.com', isAQHA: true },
+  { name: 'Maria', age: 32, email: 'maria@email.com' },
+  { name: 'Pedro', age: 24, email: 'pedro@email.com' },
 ];
 
-<TableSEQM columns={columns} data={data} />
+<TableSEQM columns={columns} data={data} width="1000px" />
 \`\`\`
+
+- As colunas podem ser customizadas com propriedades como \`key\`, \`label\`, \`width\` e \`align\`.
+- O componente aceita dados em formato de array de objetos.
+- Propriedades adicionais como \`width\` e \`height\` podem ser utilizadas para ajustar o tamanho da tabela.
         `,
       },
     },

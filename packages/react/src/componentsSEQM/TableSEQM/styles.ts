@@ -6,8 +6,8 @@ export const StyledTableSEQM = styled.table<{
   $height?: CSSProperties['height'];
 }>`
   border-collapse: collapse;
-  max-width: ${({ $width }) => $width || '100%'};
-  max-height: ${({ $height }) => $height || '100%'};
+  width: ${({ $width }) => $width || '100%'};
+  height: ${({ $height }) => $height || '100%'};
 
   tbody tr:nth-child(even) {
     background-color: ${colors.greenTransparent15};
