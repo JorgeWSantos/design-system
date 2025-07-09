@@ -8,7 +8,7 @@ export const StyledNavigatorDesktop = styled.div`
   width: 100%;
   flex-direction: row;
   align-items: center;
-  max-height: 3rem;
+  height: 2.75rem;
   border-bottom: ${radii.px} solid ${colors.white25};
 
   padding: 0 0 0 ${space[1]};
@@ -43,14 +43,14 @@ export const ContentRight = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: ${space[2]} 0 0 ${space[1]};
+  padding: 0 0 0 ${space[1]};
   gap: ${space[1]};
 `;
 
 export const DivTitles = styled.div`
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   height: 2rem;
   padding-left: ${space[2]};
