@@ -26,8 +26,8 @@ export const StyledRadio = styled.input.attrs({ type: 'radio' })`
   &:checked::before {
     content: '';
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     border: 4px solid #808080;
     position: absolute;
