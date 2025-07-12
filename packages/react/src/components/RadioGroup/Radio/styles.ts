@@ -34,8 +34,8 @@ export const Label = styled.label`
   .radio-mark::after {
     content: '';
     display: block;
-    width: 16px;
-    height: 16px;
+    width: 8px;
+    height: 8px;
     transform: scale(1);
     border-radius: 50%;
     background: transparent; /* Cor do círculo preenchido */

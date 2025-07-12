@@ -37,3 +37,7 @@ const RadioGroup = ({
 );
 
 RadioGroup.displayName = 'RadioGroup';
+
+export { RadioGroup };
+
+export * from './types';
