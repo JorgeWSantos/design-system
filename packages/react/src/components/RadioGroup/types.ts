@@ -6,7 +6,6 @@ export interface RadioGroupProps extends ComponentProps<typeof ContainerRadioGro
   setSelectedOption: (option: RadioGroupOption) => void;
   options: Array<RadioGroupOption>;
   direction?: RadioGroupDirections;
-  labelRadioGroup?: string;
 }
 
 export type RadioGroupOption = {

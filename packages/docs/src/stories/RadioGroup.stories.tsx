@@ -33,7 +33,6 @@ const [selectedOption, setSelectedOption] = useState(options[0]);
   options={options}
   selectedOption={selectedOption}
   setSelectedOption={setSelectedOption}
-  labelRadioGroup="Escolha uma opção"
 />
 \`\`\`
 
@@ -43,7 +42,6 @@ const [selectedOption, setSelectedOption] = useState(options[0]);
 - \`selectedOption\`: opção atualmente selecionada
 - \`setSelectedOption\`: função para atualizar a opção selecionada
 - \`direction\`: 'horizontal' | 'vertical' (padrão: 'horizontal')
-- \`labelRadioGroup\`: rótulo opcional para o grupo
         `,
       },
     },
@@ -74,7 +72,6 @@ const Render = (args: any) => {
 export const Primary: StoryObj = {
   render: Render,
   args: {
-    labelRadioGroup: 'Escolha uma opção',
     direction: 'horizontal',
   },
 };
@@ -82,7 +79,6 @@ export const Primary: StoryObj = {
 export const Vertical: StoryObj = {
   render: Render,
   args: {
-    labelRadioGroup: 'Selecione verticalmente',
     direction: 'vertical',
   },
 };
