@@ -20,6 +20,7 @@ export * from './components/Tooltip';
 export * from './components/Modal';
 export * from './components/Toast';
 export * from './components/ActivityIndicator';
+export * from './components/RadioGroup';
 
 //Layout Components
 export * from './components/Layout/GlobalContainer';
