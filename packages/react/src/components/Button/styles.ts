@@ -118,6 +118,19 @@ export const StyledButton = styled.button<ButtonStyleProps>`
       }
     `}
 
+  ${({ $variant }) =>
+    $variant === 'dark' &&
+    css`
+      color: ${colors.white85};
+      background-color: ${colors.green500} !important;
+      transition: 0.3s;
+
+      &:not(:disabled):hover {
+        filter: brightness(120%);
+        transition: 0.3s;
+      }
+    `}
+
   ${({ $size }) =>
     $size === 'sm' &&
     css`

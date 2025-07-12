@@ -9,7 +9,7 @@ import {
   space,
 } from '@abqm-ds/tokens';
 
-export type variantsTextInputTypes = 'primary' | 'secondary';
+export type variantsTextInputTypes = 'primary' | 'secondary' | 'tertiary';
 
 const sizeVariants = {
   sm: `${space[2]} ${space[2]}`,
@@ -73,6 +73,17 @@ export const TextInputContainer = styled.div<StyledTextInputContainerProps>`
         border-color: ${colors.emeraldGreen50};
       }
     `}
+
+  ${({ $variant }) =>
+    $variant === 'tertiary' &&
+    css`
+      border: ${radii.px} solid ${colors.emeraldGreen25};
+      background-color: ${colors.white50};
+
+      &:has(input:focus) {
+        border-color: ${colors.emeraldGreen50};
+      }
+    `}
 `;
 
 interface PreffixProps {
@@ -128,6 +139,16 @@ export const Input = styled.input<StyledInputProps>`
 
       &::placeholder {
         color: ${colors.white50};
+      }
+    `}
+
+  ${({ $variant }) =>
+    $variant === 'tertiary' &&
+    css`
+      color: ${colors.emeraldGreen75};
+
+      &::placeholder {
+        color: ${colors.emeraldGreen75};
       }
     `}
 `;
