@@ -45,6 +45,7 @@ export * from './types/user';
 //Utils
 export { ErrorBoundary } from './components/ErrorBoundary';
 export { useDeviceType } from './hooks/useDeviceType';
+export * from './utils';
 
 //Styles
 export { GlobalStyle } from './styles/global';
