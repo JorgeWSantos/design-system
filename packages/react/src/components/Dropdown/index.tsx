@@ -15,17 +15,24 @@ import { CaretDownFillIcon } from '@abqm-ds/icons';
 export function Dropdown({
   data,
   setValue,
+  value = null,
   label = null,
   variant = 'primary',
   maxHeight = 'unset',
   ...rest
 }: DropdownProps) {
-  const [selectedOption, setSelectedOption] = useState(data.length > 0 ? data[0] : null);
+  const [selectedOption, setSelectedOption] = useState(
+    value ? value : data.length > 0 ? data[0] : null
+  );
   const [showOptions, setShowOptions] = useState(false);
 
   useEffect(() => {
-    setSelectedOption(data.length > 0 ? data[0] : null);
-  }, [data]);
+    if (value) {
+      setSelectedOption(value);
+    } else {
+      setSelectedOption(data.length > 0 ? data[0] : null);
+    }
+  }, [value, data]);
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -73,7 +80,7 @@ export function Dropdown({
       </StyledDropdown>
 
       {showOptions && (
-        <ContainerOptions $variant={variant} maxHeight={maxHeight}>
+        <ContainerOptions $variant={variant} $maxHeight={maxHeight}>
           {data.map((item) => (
             <Option $variant={variant} key={item.id} onClick={() => selectAnOption(item)}>
               {item.label}

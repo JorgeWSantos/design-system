@@ -88,7 +88,7 @@ export const StyledTextSelect = styled(Text).attrs({
 
 export const ContainerOptions = styled.div<{
   $variant?: VariantsTypesDropdown;
-  maxHeight?: string;
+  $maxHeight?: string;
 }>`
   display: flex;
   flex-direction: column;
@@ -108,7 +108,7 @@ export const ContainerOptions = styled.div<{
   min-height: 100%;
   /* max-height: 18.75rem; */
 
-  max-height: ${({ maxHeight }) => maxHeight || 'unset'};
+  max-height: ${({ $maxHeight }) => $maxHeight || 'unset'};
 
   min-width: 100%;
   max-width: 100%;
