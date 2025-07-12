@@ -19,6 +19,6 @@ export const ContentBox = styled(Box)<{ $hideOverflow?: boolean }>`
   ${(props) =>
     props.$hideOverflow &&
     css`
-      overflowy: hidden; !important
+      overflow-y: hidden; !important
     `}
 `;
