@@ -1,5 +1,5 @@
 import { Box } from '@components/Box';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const ContainerDesktop = styled.div<{ $maxHeight?: string }>`
   display: flex;
@@ -13,6 +13,12 @@ export const ContainerDesktop = styled.div<{ $maxHeight?: string }>`
   height: ${(props) => props.$maxHeight || '100%'};
 `;
 
-export const ContentBox = styled(Box)`
+export const ContentBox = styled(Box)<{ $hideOverflow?: boolean }>`
   height: 100%;
+
+  ${(props) =>
+    props.$hideOverflow &&
+    css`
+      overflowy: hidden; !important
+    `}
 `;

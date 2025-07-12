@@ -143,6 +143,22 @@ export const ContainerOptions = styled.div<{
       color: ${colors.emeraldGreen75};
 
       border: ${radii.px} solid ${colors.emeraldGreen25};
+
+      /* Custom scrollbar styles */
+      &::-webkit-scrollbar {
+        width: 8px;
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: ${colors.emeraldGreen25};
+        border-radius: 4px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      scrollbar-color: ${colors.emeraldGreen25} transparent;
+      scrollbar-width: thin;
     `}
 `;
 
