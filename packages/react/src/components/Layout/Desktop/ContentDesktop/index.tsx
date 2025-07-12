@@ -30,7 +30,7 @@ export const ContentDektop = ({
   return (
     <ContainerDesktop $maxHeight={`calc(100dvh * ${heightFactor})`} {...rest}>
       {header}
-      <ContentBox style={contentBoxStyles}>
+      <ContentBox style={contentBoxStyles} $hideOverflow={!!headerNavigator}>
         <>{headerNavigator}</>
         <>{children}</>
       </ContentBox>
