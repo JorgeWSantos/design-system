@@ -1,4 +1,4 @@
-import { ComponentProps, ElementType, ReactNode } from 'react';
+import { ElementType, ReactNode, MouseEvent } from 'react';
 
 import {
   StyledHeaderButton,
@@ -8,12 +8,13 @@ import {
 } from './styles';
 import { RoundedButton } from '@components/RoundedButton';
 
-export interface HeaderButtonProps extends ComponentProps<typeof StyledHeaderButton> {
+export interface HeaderButtonProps {
   as?: ElementType;
   children: ReactNode; //icon
   disabled?: boolean;
   isFiltered?: boolean;
   label: string;
+  onClick?: (event: MouseEvent<HTMLDivElement>) => void;
 }
 
 export const HeaderButton = ({
@@ -24,11 +25,13 @@ export const HeaderButton = ({
   isFiltered = false,
 }: HeaderButtonProps) => {
   return (
-    <ContainerHeaderButton $isFiltered={isFiltered}>
+    <ContainerHeaderButton
+      $isFiltered={isFiltered}
+      onClick={disabled ? undefined : onClick}
+      style={disabled ? { pointerEvents: 'none', opacity: 0.6 } : undefined}
+    >
       {isFiltered && <FilteredIndicator />}
-      <RoundedButton disabled={disabled} onClick={onClick}>
-        {children}
-      </RoundedButton>
+      <RoundedButton disabled={disabled}>{children}</RoundedButton>
       <StyledText $isFiltered={isFiltered} disabled={disabled}>
         {label}
       </StyledText>
