@@ -89,7 +89,7 @@ export const ModalContent = styled.div<{
   ${({ $maxHeight }) =>
     $maxHeight &&
     css`
-      height: unset;
+      height: ${$maxHeight};
       min-height: unset;
       max-height: ${$maxHeight};
     `}
@@ -128,6 +128,31 @@ export const ModalContent = styled.div<{
     css`
       margin-bottom: 24px;
     `}
+`;
+
+export const HeaderFilter = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: ${space[2]};
+  width: 100%;
+  height: 100%;
+  height: 2rem;
+`;
+
+export const DivButtonCleanFilter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0rem 0.5rem;
+  height: 100%;
+
+  border-left: 0.5px solid ${colors.emeraldGreen25};
+
+  p {
+    cursor: pointer;
+  }
 `;
 
 export const DivChildren = styled.div`

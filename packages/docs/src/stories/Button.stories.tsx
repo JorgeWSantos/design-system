@@ -42,8 +42,22 @@ import { Button } from '@abqm-ds/react';
 </Button>
 \`\`\`
 
-- Suporta variantes: \`primary\`, \`secondary\`, \`tertiary\`
-- Suporta tamanhos: \`sm\`, \`md\`
+#### Variantes disponíveis
+
+- \`primary\`
+- \`secondary\`
+- \`tertiary\`
+- \`login\`
+- \`login-mobile\`
+- \`dark\`
+
+#### Tamanhos disponíveis
+
+- \`sm\`
+- \`md\`
+- \`lg\`
+- \`xlg\`
+
 - Aceita qualquer conteúdo como filho.
         `,
       },

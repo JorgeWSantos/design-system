@@ -36,8 +36,8 @@ import { TextInput } from '@abqm-ds/react';
 
 #### Props principais
 
-- \`size\`: 'sm' | 'md' — Tamanho do campo (padrão: 'md').
-- \`variant\`: 'primary' | 'secondary' — Variação de cor/estilo.
+- \`size\`: 'sm' | 'md' | 'lg' — Tamanho do campo (padrão: 'md').
+- \`variant\`: 'primary' | 'secondary' | 'tertiary' — Variação de cor/estilo.
 - \`icon\`: ReactNode — Ícone exibido à esquerda do campo.
 - \`prefix\`: string — Texto exibido antes do valor digitado.
 - \`disabled\`: boolean — Desabilita o campo.

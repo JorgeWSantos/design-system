@@ -52,6 +52,13 @@ export const StyledDropdown = styled.div<{ $variant?: VariantsTypesDropdown }>`
       color: ${colors.white75};
     `}
 
+  ${({ $variant }) =>
+    $variant === 'tertiary' &&
+    css`
+      background-color: ${colors.white50};
+      border: ${radii.px} solid ${colors.emeraldGreen25};
+    `}
+
   @media (max-width: ${breakpointsPx.lg}) {
     border-radius: ${radii.xs};
     border: ${radii.px} solid transparent;
@@ -62,15 +69,27 @@ export const StyledTextSelect = styled(Text).attrs({
   lineHeight: 'initial',
   fontWeight: 'regular',
   fontSize: 'ssm',
-})`
+})<{ $variant?: VariantsTypesDropdown }>`
   color: ${colors.white75};
 
   @media (max-width: ${breakpointsPx.lg}) {
     font-weight: ${fontWeights.semiBold};
   }
+
+  ${({ $variant }) =>
+    $variant === 'tertiary' &&
+    css`
+      color: ${colors.emeraldGreen75};
+      &::placeholder {
+        color: ${colors.emeraldGreen75};
+      }
+    `}
 `;
 
-export const ContainerOptions = styled.div<{ $variant?: VariantsTypesDropdown }>`
+export const ContainerOptions = styled.div<{
+  $variant?: VariantsTypesDropdown;
+  maxHeight?: string;
+}>`
   display: flex;
   flex-direction: column;
 
@@ -87,7 +106,9 @@ export const ContainerOptions = styled.div<{ $variant?: VariantsTypesDropdown }>
   mask-image: radial-gradient(white 0 0);
 
   min-height: 100%;
-  max-height: 18.75rem;
+  /* max-height: 18.75rem; */
+
+  max-height: ${({ maxHeight }) => maxHeight || 'unset'};
 
   min-width: 100%;
   max-width: 100%;
@@ -114,6 +135,15 @@ export const ContainerOptions = styled.div<{ $variant?: VariantsTypesDropdown }>
 
       border: ${radii.px} solid ${colors.white50};
     `}
+
+  ${({ $variant }) =>
+    $variant === 'tertiary' &&
+    css`
+      background-color: ${colors.white};
+      color: ${colors.emeraldGreen75};
+
+      border: ${radii.px} solid ${colors.emeraldGreen25};
+    `}
 `;
 
 export const Option = styled.div<{ $variant?: VariantsTypesDropdown }>`
@@ -126,5 +156,14 @@ export const Option = styled.div<{ $variant?: VariantsTypesDropdown }>`
     css`
       border-bottom: ${radii.px} solid ${colors.white50};
       font-weight: ${fontWeights.medium};
+    `}
+
+  ${({ $variant }) =>
+    $variant === 'tertiary' &&
+    css`
+      /* background-color: ${colors.white}; */
+      /* color: ${colors.emeraldGreen75}; */
+
+      border-bottom: ${radii.px} solid ${colors.emeraldGreen25};
     `}
 `;

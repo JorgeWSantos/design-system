@@ -17,6 +17,7 @@ export function Dropdown({
   setValue,
   label = null,
   variant = 'primary',
+  maxHeight = 'unset',
   ...rest
 }: DropdownProps) {
   const [selectedOption, setSelectedOption] = useState(data.length > 0 ? data[0] : null);
@@ -65,12 +66,14 @@ export function Dropdown({
         }}
         $variant={variant}
       >
-        <StyledTextSelect>{selectedOption?.label || null}</StyledTextSelect>
+        <StyledTextSelect $variant={variant}>
+          {selectedOption?.label || null}
+        </StyledTextSelect>
         <CaretDownFillIcon width={12} height={12} fill={colors.white50} />
       </StyledDropdown>
 
       {showOptions && (
-        <ContainerOptions $variant={variant}>
+        <ContainerOptions $variant={variant} maxHeight={maxHeight}>
           {data.map((item) => (
             <Option $variant={variant} key={item.id} onClick={() => selectAnOption(item)}>
               {item.label}

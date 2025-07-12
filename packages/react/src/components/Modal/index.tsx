@@ -1,11 +1,4 @@
-import React, {
-  ComponentProps,
-  MouseEvent,
-  ReactNode,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { MouseEvent, useEffect, useRef, useState } from 'react';
 
 import {
   CloseButton,
@@ -14,29 +7,16 @@ import {
   ModalOverlay,
   StyledXIcon,
   AnimatedArrowRight,
-  DivTopModal, // add import
+  DivTopModal,
+  HeaderFilter,
+  DivButtonCleanFilter, // add import
 } from './styles';
 
 import ReactDOM from 'react-dom';
-import {
-  PropModalHorizontalPositions,
-  PropModalSizes,
-  PropModalVerticalPositions,
-} from './types';
 import { Heading } from '@components/Heading';
 import { colors } from '@abqm-ds/tokens';
-
-export interface ModalProps extends ComponentProps<'div'> {
-  isOpen: boolean;
-  title?: string;
-  onClose: () => void;
-  children: ReactNode;
-  positionHorizontal?: PropModalHorizontalPositions;
-  positionVertical?: PropModalVerticalPositions;
-  styleContent?: React.CSSProperties;
-  size?: PropModalSizes;
-  maxHeight?: string;
-}
+import { Text } from '@components/Text';
+import { ModalProps } from './types';
 
 /**
  * Modal
@@ -44,6 +24,8 @@ export interface ModalProps extends ComponentProps<'div'> {
  * Exibe uma janela modal sobreposta à interface, centralizada ou alinhada à esquerda/direita/topo/baixo.
  *
  * @param isOpen Controla a visibilidade do modal.
+ * @param isFiltered Diz se o modal é usado para filtro e está filtrado.
+ * @param onClickCleanFilter Função que limpa o filtro.
  * @param onClose Função chamada ao fechar o modal (ex: clique fora ou no botão de fechar).
  * @param children Conteúdo a ser exibido dentro do modal.
  * @param positionHorizontal Posição horizontal do modal na tela: 'left', 'right' ou 'center'. Padrão: 'center'.
@@ -51,26 +33,11 @@ export interface ModalProps extends ComponentProps<'div'> {
  * @param styleContent Estilos adicionais para o conteúdo do modal.
  * @param size 'full' preenche toda a tela, deve ser usado para imagens ou documentos. 'normal' é o modal padrão das aplicações.
  * @param maxHeight Define o tamanho máximo do conteúdo do modal (ex: '90vh'). Por padrão, o modal se ajusta ao conteúdo até esse limite.
- *
- * @example
- * <Modal
- *   isOpen={open}
- *   title={title}
- *   onClose={handleClose}
- *   positionHorizontal="center"
- *   positionVertical="center"
- *   maxHeight="90vh"
- * >
- *   <div>Conteúdo do modal</div>
- * </Modal>
- *
- * Comportamento:
- * - O modal ajusta sua altura automaticamente ao conteúdo, até o limite de maxHeight.
- * - Se o conteúdo for maior que maxHeight, será exibido um scroll interno.
- * - O modal pode ser fechado clicando fora dele ou no botão de fechar.
  */
 export const Modal = ({
   isOpen,
+  isFiltered,
+  onClickCleanFilter,
   title,
   onClose,
   children,
@@ -131,9 +98,22 @@ export const Modal = ({
         $size={size}
       >
         <DivTopModal $size={size} $hasTitle={!!title}>
-          <Heading color={colors.emeraldGreen75} lineHeight="midshort">
-            {title}
-          </Heading>
+          {!isFiltered ? (
+            <Heading color={colors.emeraldGreen75} lineHeight="midshort">
+              {title}
+            </Heading>
+          ) : (
+            <HeaderFilter>
+              <Heading color={colors.emeraldGreen75} lineHeight="midshort">
+                {title}
+              </Heading>
+              <DivButtonCleanFilter>
+                <Text fontSize="ssm" color={colors.green300} onClick={onClickCleanFilter}>
+                  LIMPAR
+                </Text>
+              </DivButtonCleanFilter>
+            </HeaderFilter>
+          )}
 
           <CloseButton onClick={onClose}>
             <StyledXIcon width={38} height={38} $size={size} />

@@ -26,6 +26,16 @@ import { TextInputBordered } from '@abqm-ds/react';
 <TextInputBordered placeholder="Digite seu texto" />
 \`\`\`
 
+#### Variantes disponíveis
+
+- \`primary\`
+- \`secondary\`
+
+#### Tamanhos disponíveis
+
+- \`sm\`
+- \`md\`
+
 #### Props principais
 
 - \`size\`: 'sm' | 'md' — Tamanho do campo (padrão: 'md').

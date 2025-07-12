@@ -1,7 +1,7 @@
 import { ComponentProps, ElementType } from 'react';
 import { StyledDropdown } from './styles';
 
-export type VariantsTypesDropdown = 'primary' | 'secondary';
+export type VariantsTypesDropdown = 'primary' | 'secondary' | 'tertiary';
 
 export interface DataDropdown {
   value: string;
@@ -15,4 +15,5 @@ export interface DropdownProps extends ComponentProps<typeof StyledDropdown> {
   data: DataDropdown[];
   label?: string | null;
   variant?: VariantsTypesDropdown;
+  maxHeight?: string;
 }
