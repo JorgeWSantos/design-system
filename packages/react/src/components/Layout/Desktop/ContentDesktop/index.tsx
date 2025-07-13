@@ -36,12 +36,12 @@ export const ContentDektop = ({
       <ContentBox
         style={contentBoxStyles}
         $hideOverflow={!!headerNavigator}
-        $removeRoundedBottom={!!count && count > 0}
+        $removeRoundedBottom={typeof count === 'number'}
       >
         <>{headerNavigator}</>
         <>{children}</>
       </ContentBox>
-      {count && <InforBar count={count} />}
+      {typeof count === 'number' && <InforBar count={count} />}
     </ContainerDesktop>
   );
 };
