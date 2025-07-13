@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Header, HeaderProps } from '@abqm-ds/react';
-import { FilterIcon, HorseIcon, PlusIcon, PrinterIcon } from '@abqm-ds/icons';
+import { FilterIcon, PlusIcon, PrinterIcon } from '@abqm-ds/icons';
 import { action } from '@storybook/addon-actions';
 import { colors } from '@abqm-ds/tokens';
 
@@ -60,7 +60,7 @@ export const WithButtons: StoryObj<HeaderProps> = {
     text: 'Calendários',
     buttons: [
       {
-        icon: <HorseIcon fill={colors.emeraldGreen50} />,
+        icon: <PlusIcon fill={colors.emeraldGreen50} />,
         label: 'animais',
         onClick: action('animais'),
       },

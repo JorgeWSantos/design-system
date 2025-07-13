@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Button, ButtonProps } from '@abqm-ds/react';
-import { ArrowRight } from 'phosphor-react';
+import { CaretRightFillIcon } from '@abqm-ds/icons';
 
 export default {
   title: 'Form/Button',
@@ -106,7 +106,7 @@ export const WithIconLeft: StoryObj<ButtonProps> = {
   args: {
     size: 'sm',
     text: 'With Icon',
-    iconLeft: <ArrowRight size={16} />,
+    iconLeft: <CaretRightFillIcon width={16} />,
   },
 };
 
@@ -114,7 +114,7 @@ export const WithIconRight: StoryObj<ButtonProps> = {
   args: {
     size: 'sm',
     text: 'With Icon',
-    iconRight: <ArrowRight size={16} />,
+    iconRight: <CaretRightFillIcon width={16} />,
   },
 };
 
