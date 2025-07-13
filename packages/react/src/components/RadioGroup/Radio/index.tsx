@@ -1,4 +1,4 @@
-import { Text } from '@abqm-ds/react';
+import { Text } from '@components/Text';
 import { Label, StyledRadio } from './styles';
 import { colors } from '@abqm-ds/tokens';
 import type { RadioProps } from '../types';
