@@ -2,6 +2,7 @@ import { breakpointsPx, colors, fontSizes, fontWeights, radii } from '@abqm-ds/t
 import { css, styled } from 'styled-components';
 import { VariantsTypesDropdown } from './types';
 import { Text } from '@components/Text';
+import { CaretDownFillIcon } from '@abqm-ds/icons';
 
 interface ContainerProps {
   $hasLabel: boolean;
@@ -84,6 +85,23 @@ export const StyledTextSelect = styled(Text).attrs({
         color: ${colors.emeraldGreen75};
       }
     `}
+`;
+
+export const StyledCaretDownFillIcon = styled(CaretDownFillIcon)<{
+  $variant?: VariantsTypesDropdown;
+}>`
+  width: 12px;
+  height: 12px;
+
+  path {
+    fill: ${colors.white50};
+
+    ${({ $variant }) =>
+      $variant === 'tertiary' &&
+      css`
+        fill: ${colors.emeraldGreen50};
+      `}
+  }
 `;
 
 export const ContainerOptions = styled.div<{

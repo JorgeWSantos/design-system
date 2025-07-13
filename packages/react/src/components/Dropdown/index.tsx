@@ -5,6 +5,7 @@ import {
   ContainerOptions,
   Option,
   StyledTextSelect,
+  StyledCaretDownFillIcon,
 } from './styles';
 import { Text } from '@components/Text';
 import { colors } from '@abqm-ds/tokens';
@@ -76,7 +77,13 @@ export function Dropdown({
         <StyledTextSelect $variant={variant}>
           {selectedOption?.label || null}
         </StyledTextSelect>
-        <CaretDownFillIcon width={12} height={12} fill={colors.white50} />
+
+        <StyledCaretDownFillIcon
+          // width={12}
+          // height={12}
+          // fill={colors.white50}
+          $variant={variant}
+        />
       </StyledDropdown>
 
       {showOptions && (
