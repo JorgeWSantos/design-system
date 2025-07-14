@@ -77,11 +77,13 @@ export const StyledBodyTableSEQM = styled.tbody`
   }
 
   @media (max-width: ${breakpointsPx.lg}) {
-    padding: ${space[1]};
+    tr td {
+      padding: ${space[2]};
+    }
   }
 `;
 
-export const StyledTableSEQMTd = styled(Text).attrs({
+export const StyledTableSEQMTextTd = styled(Text).attrs({
   fontSize: 'xxs',
   fontWeight: 'regular',
   lineHeight: 'tight',

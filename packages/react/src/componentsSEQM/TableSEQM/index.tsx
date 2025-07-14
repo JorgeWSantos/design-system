@@ -3,7 +3,7 @@ import {
   StyledBodyTableSEQM,
   StyledHeadTableSEQM,
   StyledTableSEQM,
-  StyledTableSEQMTd,
+  StyledTableSEQMTextTd,
   StyledTableSEQMTextTh,
 } from './styles';
 import { TableSEQMProps } from './types';
@@ -58,9 +58,9 @@ export const TableSEQM = ({
                 {col.render ? (
                   col.render(row)
                 ) : (
-                  <StyledTableSEQMTd {...(col.textBold && { $bold: true })}>
+                  <StyledTableSEQMTextTd {...(col.textBold && { $bold: true })}>
                     {row[col.key]}
-                  </StyledTableSEQMTd>
+                  </StyledTableSEQMTextTd>
                 )}
               </td>
             ))}
@@ -75,4 +75,4 @@ TableSEQM.displayName = 'TableSEQM';
 
 export * from './types';
 export * from './ColumnOficial';
-export { StyledTableSEQMTd, StyledTableSEQMTextTh } from './styles';
+export { StyledTableSEQMTextTd, StyledTableSEQMTextTh } from './styles';
