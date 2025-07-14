@@ -21,6 +21,12 @@ export const StyledHeading = styled(Heading)`
   letter-spacing: -0.075rem;
 `;
 
+export const StyledHeadingSubTitle = styled(Heading)`
+  letter-spacing: -0.075rem;
+  margin-left: ${space[1]};
+  color: ${colors.white50};
+`;
+
 export const HeadingWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -32,6 +38,12 @@ export const HeadingWrapper = styled.div`
   @media (max-width: ${breakpointsPx.sm}) {
     padding: 0rem ${space[3]};
   }
+`;
+
+export const DivTextWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 `;
 
 export const ButtonsWrapper = styled.div`

@@ -13,6 +13,7 @@ export interface HeaderButtonProps {
 export interface HeaderProps extends ComponentProps<typeof StyledHeader> {
   as?: ElementType;
   text: string;
+  subTitle?: string;
   isFiltered?: boolean;
   fontWeight?: FontWeightTypes;
   buttons?: HeaderButtonProps[];

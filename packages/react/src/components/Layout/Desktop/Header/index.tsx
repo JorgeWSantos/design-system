@@ -1,15 +1,27 @@
-import { ButtonsWrapper, HeadingWrapper, StyledHeader, StyledHeading } from './styles';
+import {
+  ButtonsWrapper,
+  DivTextWrapper,
+  HeadingWrapper,
+  StyledHeader,
+  StyledHeading,
+  StyledHeadingSubTitle,
+} from './styles';
 import { ColorBar } from '@components/ColorBar';
 import { HeaderButton } from './HeaderButton';
 import { HeaderProps } from './types';
 
-export const Header = ({ text, fontWeight, buttons, ...rest }: HeaderProps) => {
+export const Header = ({ text, subTitle, fontWeight, buttons, ...rest }: HeaderProps) => {
   return (
     <StyledHeader {...rest}>
       <HeadingWrapper>
-        <StyledHeading fontSize="md" fontWeight={fontWeight}>
-          {text}
-        </StyledHeading>
+        <DivTextWrapper>
+          <StyledHeading fontSize="md" fontWeight={fontWeight}>
+            {text}
+          </StyledHeading>
+          <StyledHeadingSubTitle fontSize="md" fontWeight={fontWeight}>
+            {subTitle}
+          </StyledHeadingSubTitle>
+        </DivTextWrapper>
 
         {buttons && (
           <ButtonsWrapper>
