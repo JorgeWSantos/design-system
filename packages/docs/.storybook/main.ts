@@ -10,6 +10,7 @@ function getAbsolutePath(value: string): string {
 }
 const config: StorybookConfig = {
   stories: ['../src/pages/**/*.mdx', '../src/stories/**/*.stories.tsx'],
+
   // "addons": [
   //   '@storybook/addon-essentials',
   //   '@storybook/addon-onboarding',
@@ -17,12 +18,14 @@ const config: StorybookConfig = {
   //   "@storybook/experimental-addon-test"
   // ],
   addons: [
-    getAbsolutePath('@storybook/addon-essentials'),
+    getAbsolutePath('@storybook/addon-docs'),
+    getAbsolutePath('@storybook/addon-actions'),
     getAbsolutePath('@storybook/addon-onboarding'),
     getAbsolutePath('@chromatic-com/storybook'),
-    getAbsolutePath('@storybook/experimental-addon-test'),
+    // getAbsolutePath('@storybook/experimental-addon-test'),
     getAbsolutePath('@storybook/addon-a11y'),
   ],
+
   // "framework": {
   //   "name": '@storybook/react-vite',
   //   "options": {}
@@ -31,9 +34,7 @@ const config: StorybookConfig = {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
-  docs: {
-    autodocs: true, // Or true, enables autodocs for non-MDX stories
-  },
+
   viteFinal: (config, { configType }) => {
     if (configType === 'PRODUCTION') {
       config.base = '/design-system/';

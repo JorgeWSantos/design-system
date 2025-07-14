@@ -1,2 +1,2 @@
-export default 'light';
-// export default 'dark';
+// export default 'light';
+export default 'dark';

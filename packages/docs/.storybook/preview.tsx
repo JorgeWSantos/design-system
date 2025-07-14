@@ -1,17 +1,16 @@
-import type { Preview } from '@storybook/react';
-import { themes } from '@storybook/theming';
+import type { Preview } from '@storybook/react-vite';
+import { themes } from 'storybook/theming';
 import theme from './theme';
-import { GlobalStyle } from '@abqm-ds/react';
 
 const preview: Preview = {
   decorators: [
     (Story) => (
       <>
-        <GlobalStyle />
         <Story />
       </>
     ),
   ],
+
   // decorators: [withResponsiveBackground],
   parameters: {
     backgrounds: {
@@ -37,6 +36,8 @@ const preview: Preview = {
       theme: themes[theme],
     },
   },
+
+  tags: ['autodocs']
 };
 
 export default preview;

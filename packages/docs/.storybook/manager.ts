@@ -1,6 +1,6 @@
 // .storybook/manager.ts
-import { addons } from '@storybook/manager-api'
-import { create } from '@storybook/theming/create'
+import { addons } from 'storybook/manager-api'
+import { create } from 'storybook/theming/create'
 import theme from './theme'
 
 const customTheme = create({
