@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 1.0.16
+
+### Patch Changes
+
+- feat: 🎸 Adicionará novos icones e novos componentes
+
 ## 1.0.15
 
 ### Patch Changes

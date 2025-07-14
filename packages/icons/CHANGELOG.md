@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 1.0.17
+
+### Patch Changes
+
+- feat: 🎸 Adicionará novos icones e novos componentes
+
 ## 1.0.16
 
 ### Patch Changes
