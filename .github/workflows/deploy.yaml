@@ -18,16 +18,16 @@ jobs:
     runs-on: ubuntu-latest
     # Job steps
     steps:
-      - name: Clean install to fix native Rollup bug
-        run: |
-          rm -rf node_modules package-lock.json
-          npm install
-
       # Manual Checkout
       - name: 'Manual Checkout'
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Clean install to fix native Rollup bug
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
 
       # Set up Node
       - name: 'Setup Node'
