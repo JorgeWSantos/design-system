@@ -1,11 +1,6 @@
 import { ElementType, ReactNode, MouseEvent } from 'react';
 
-import {
-  StyledHeaderButton,
-  ContainerHeaderButton,
-  StyledText,
-  FilteredIndicator,
-} from './styles';
+import { ContainerHeaderButton, StyledText, FilteredIndicator } from './styles';
 import { RoundedButton } from '@components/RoundedButton';
 
 export interface HeaderButtonProps {

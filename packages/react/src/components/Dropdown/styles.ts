@@ -61,8 +61,12 @@ export const StyledDropdown = styled.div<{ $variant?: VariantsTypesDropdown }>`
     `}
 
   @media (max-width: ${breakpointsPx.lg}) {
-    border-radius: ${radii.xs};
-    border: ${radii.px} solid transparent;
+    ${({ $variant }) =>
+      $variant === 'primary' &&
+      css`
+        border-radius: ${radii.xs};
+        border: ${radii.px} solid transparent;
+      `}
   }
 `;
 

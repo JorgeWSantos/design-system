@@ -1,13 +1,5 @@
 import styled, { css } from 'styled-components';
-import {
-  colors,
-  fonts,
-  fontSizes,
-  fontWeights,
-  lineHeights,
-  radii,
-  space,
-} from '@abqm-ds/tokens';
+import { colors, fonts, fontSizes, fontWeights, radii, space } from '@abqm-ds/tokens';
 
 export type variantsTextInputTypes = 'primary' | 'secondary' | 'tertiary';
 
