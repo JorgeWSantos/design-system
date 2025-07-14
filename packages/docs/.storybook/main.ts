@@ -18,12 +18,12 @@ const config: StorybookConfig = {
   //   "@storybook/experimental-addon-test"
   // ],
   addons: [
-    getAbsolutePath('@storybook/addon-docs'),
-    getAbsolutePath('@storybook/addon-actions'),
-    getAbsolutePath('@storybook/addon-onboarding'),
-    getAbsolutePath('@chromatic-com/storybook'),
-    // getAbsolutePath('@storybook/experimental-addon-test'),
-    getAbsolutePath('@storybook/addon-a11y'),
+    '@storybook/addon-docs',
+    '@storybook/addon-actions',
+    '@storybook/addon-onboarding',
+    '@chromatic-com/storybook',
+    // '@storybook/experimental-addon-test',
+    '@storybook/addon-a11y',
   ],
 
   // "framework": {
@@ -31,7 +31,7 @@ const config: StorybookConfig = {
   //   "options": {}
   // },
   framework: {
-    name: getAbsolutePath('@storybook/react-vite'),
+    name: '@storybook/react-vite',
     options: {},
   },
 
