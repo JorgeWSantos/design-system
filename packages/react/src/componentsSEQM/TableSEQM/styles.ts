@@ -1,4 +1,12 @@
-import { colors, fonts, fontSizes, space } from '@abqm-ds/tokens';
+import {
+  breakpointsPx,
+  colors,
+  fonts,
+  fontSizes,
+  fontWeights,
+  space,
+} from '@abqm-ds/tokens';
+import { Text } from '@components/Text';
 import { CSSProperties, styled } from 'styled-components';
 
 export const StyledTableSEQM = styled.table<{
@@ -28,6 +36,12 @@ export const StyledHeadTableSEQM = styled.thead`
   }
 `;
 
+export const StyledTableSEQMTextTh = styled(Text).attrs({
+  fontSize: 'xxs',
+  fontWeight: 'semiBold',
+  lineHeight: 'tight',
+})``;
+
 export const StyledBodyTableSEQM = styled.tbody`
   tr td {
     padding: 0.5625rem ${space[2]};
@@ -56,5 +70,17 @@ export const StyledBodyTableSEQM = styled.tbody`
 
       box-sizing: border-box;
     }
+  }
+`;
+
+export const StyledTableSEQMTd = styled(Text).attrs({
+  fontSize: 'xxs',
+  fontWeight: 'regular',
+  lineHeight: 'tight',
+})<{ $bold?: Boolean }>`
+  font-weight: ${({ $bold }) => ($bold ? fontWeights.semiBold : fontWeights.regular)};
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    font-size: ${fontSizes.ssm};
   }
 `;

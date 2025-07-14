@@ -1,5 +1,11 @@
-import { Text } from '@components/Text';
-import { StyledBodyTableSEQM, StyledHeadTableSEQM, StyledTableSEQM } from './styles';
+import { useEffect } from 'react';
+import {
+  StyledBodyTableSEQM,
+  StyledHeadTableSEQM,
+  StyledTableSEQM,
+  StyledTableSEQMTd,
+  StyledTableSEQMTextTh,
+} from './styles';
 import { TableSEQMProps } from './types';
 
 export const TableSEQM = ({
@@ -10,6 +16,13 @@ export const TableSEQM = ({
   align,
   ...rest
 }: TableSEQMProps) => {
+  console.log('data', data);
+  console.log('columns', columns);
+
+  useEffect(() => {
+    console.log('columns', columns);
+  }, [columns]);
+
   return (
     <StyledTableSEQM $width={width} $height={height} {...rest}>
       <StyledHeadTableSEQM>
@@ -24,9 +37,7 @@ export const TableSEQM = ({
                 textAlign: col.align || 'left',
               }}
             >
-              <Text fontSize="xxs" fontWeight="semiBold" lineHeight="tight">
-                {col.label}
-              </Text>
+              <StyledTableSEQMTextTh>{col.label}</StyledTableSEQMTextTh>
             </th>
           ))}
         </tr>
@@ -47,9 +58,9 @@ export const TableSEQM = ({
                 {col.render ? (
                   col.render(row)
                 ) : (
-                  <Text fontSize="xxs" fontWeight="regular" lineHeight="tight">
+                  <StyledTableSEQMTd {...(col.textBold && { $bold: true })}>
                     {row[col.key]}
-                  </Text>
+                  </StyledTableSEQMTd>
                 )}
               </td>
             ))}
@@ -64,3 +75,4 @@ TableSEQM.displayName = 'TableSEQM';
 
 export * from './types';
 export * from './ColumnOficial';
+export { StyledTableSEQMTd, StyledTableSEQMTextTh } from './styles';

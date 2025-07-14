@@ -16,4 +16,5 @@ export interface TableColumnSEQM<T> {
   align?: 'left' | 'center' | 'right';
   render?: (row: T) => ReactNode;
   minWidth?: CSSProperties['minWidth'];
+  textBold?: boolean;
 }
