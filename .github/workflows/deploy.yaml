@@ -18,6 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     # Job steps
     steps:
+      - name: Clean install to fix native Rollup bug
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
+
       # Manual Checkout
       - name: 'Manual Checkout'
         uses: actions/checkout@v4
@@ -31,11 +36,6 @@ jobs:
           node-version: '22'
           cache: 'npm'
           cache-dependency-path: 'package-lock.json'
-
-      - name: Clean install to fix native Rollup bug
-        run: |
-          rm -rf node_modules package-lock.json
-          npm install
 
       #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
       - name: 'Storybook Deploy to GitHub Pages'
