@@ -21,6 +21,7 @@ export * from './components/Modal';
 export * from './components/Toast';
 export * from './components/ActivityIndicator';
 export * from './components/RadioGroup';
+export * from './components/InfoCard';
 
 //Layout Components
 export * from './components/Layout/GlobalContainer';
