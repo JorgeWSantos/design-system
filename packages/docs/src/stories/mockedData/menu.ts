@@ -1,12 +1,5 @@
 export const menu = [
-  {
-    id: 1,
-    name: 'Calendários',
-    link: 'http://localhost:5173',
-    parent_id: null,
-    open_submenu: false,
-    sub_menu: [],
-  },
+  { name: 'Calendários', link: '#' },
   {
     id: 2,
     name: 'Resultados',
