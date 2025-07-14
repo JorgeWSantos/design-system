@@ -70,7 +70,7 @@ export const TextInputContainer = styled.div<StyledTextInputContainerProps>`
       background-color: ${colors.white25};
 
       &:has(input:focus) {
-        border-color: ${colors.emeraldGreen50};
+        border-color: ${colors.emeraldGreen10};
       }
     `}
 
@@ -135,10 +135,10 @@ export const Input = styled.input<StyledInputProps>`
   ${({ $variant }) =>
     $variant === 'secondary' &&
     css`
-      color: ${colors.white50};
+      color: ${colors.white85};
 
       &::placeholder {
-        color: ${colors.white50};
+        color: ${colors.white85};
       }
     `}
 

@@ -9,8 +9,8 @@ export const StyledNavigatorMobile = styled.div`
   max-height: 2.5rem;
   border-bottom: ${radii.px} solid ${colors.white25};
 
-  padding: ${space[1]} ${space[1]} ${space[1]} ${space[1]};
-  gap: ${space[4]};
+  padding: ${space[1]} ${space[4]} ${space[1]} ${space[4]};
+  gap: ${space[2]};
 `;
 
 export const ContainerButtonBack = styled.div`
@@ -30,6 +30,29 @@ export const ButtonBack = styled.button`
   height: 23px;
   border-radius: 50%;
   border: ${radii.px} solid ${colors.white85};
+  color: white;
+  cursor: pointer;
+`;
+
+export const StyledWrapperSearch = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* background-color: red; */
+  width: 100%;
+`;
+
+export const ButtonSearch = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${colors.white25};
+
+  width: 2rem;
+  min-width: 2rem;
+  height: 2rem;
+  min-height: 2rem;
+  border-radius: 50%;
   color: white;
   cursor: pointer;
 `;

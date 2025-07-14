@@ -7,4 +7,7 @@ export interface HeaderMobileNavigatorProps
   onGoBack?: () => void;
   children?: ReactNode;
   hasBackButton?: boolean;
+  hasSearch?: boolean;
+  headingText?: string;
+  onChangeSearch?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }

@@ -19,5 +19,6 @@ declare module '@abqm-ds/icons' {
   export const SpinnerRingResizeIcon: FC<SVGProps<SVGSVGElement>>;
   export const CaretRightFillIcon: FC<SVGProps<SVGSVGElement>>;
   export const AbqmOficialColoredIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const SearchIcon: FC<SVGProps<SVGSVGElement>>;
   // Adicione outros ícones exportados aqui
 }
