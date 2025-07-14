@@ -4,6 +4,7 @@ import {
   fonts,
   fontSizes,
   fontWeights,
+  lineHeights,
   space,
 } from '@abqm-ds/tokens';
 import { Text } from '@components/Text';
@@ -43,9 +44,12 @@ export const StyledTableSEQMTextTh = styled(Text).attrs({
 })``;
 
 export const StyledBodyTableSEQM = styled.tbody`
+  tr {
+    max-height: 2rem;
+  }
+
   tr td {
     padding: 0.5625rem ${space[2]};
-    font-size: ${fontSizes.xxs};
   }
 
   .aqha-column {
@@ -71,6 +75,10 @@ export const StyledBodyTableSEQM = styled.tbody`
       box-sizing: border-box;
     }
   }
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    padding: ${space[1]};
+  }
 `;
 
 export const StyledTableSEQMTd = styled(Text).attrs({
@@ -82,5 +90,6 @@ export const StyledTableSEQMTd = styled(Text).attrs({
 
   @media (max-width: ${breakpointsPx.lg}) {
     font-size: ${fontSizes.ssm};
+    line-height: ${lineHeights.short};
   }
 `;
