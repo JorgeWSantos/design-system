@@ -1,5 +1,4 @@
 import { colors, radii } from '@abqm-ds/tokens';
-import { theme } from '@styles/index';
 import styled, { css } from 'styled-components';
 
 export interface RoundedButtonStyleProps {
@@ -19,16 +18,16 @@ export const StyledRoundedButton = styled.button<RoundedButtonStyleProps>`
   height: ${({ $height }) => $height};
 
   border: none;
-  border-radius: ${theme.radii.half};
+  border-radius: ${radii.half};
 
-  background-color: ${theme.colors.white50};
+  background-color: ${colors.white50};
 
   cursor: pointer;
 
   ${({ disabled }) =>
     disabled &&
     css`
-      background-color: ${theme.colors.white25};
+      background-color: ${colors.white25};
     `}
 `;
 

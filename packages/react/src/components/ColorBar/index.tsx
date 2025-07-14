@@ -1,6 +1,6 @@
 import { ComponentProps, CSSProperties, ElementType } from 'react';
 import { BarWrapper, ColorSegment } from './styles';
-import { theme } from '../../styles';
+import { colors } from '@abqm-ds/tokens';
 
 export interface ColorBarProps extends ComponentProps<typeof BarWrapper> {
   as?: ElementType;
@@ -9,13 +9,13 @@ export interface ColorBarProps extends ComponentProps<typeof BarWrapper> {
 
 export const ColorBar = ({ style, ...rest }: ColorBarProps) => {
   const fixedColors = [
-    theme.colors.brown700,
-    theme.colors.brown500,
-    theme.colors.yellow200,
-    theme.colors.yellow400,
-    theme.colors.green100,
-    theme.colors.green300,
-    theme.colors.green500,
+    colors.brown700,
+    colors.brown500,
+    colors.yellow200,
+    colors.yellow400,
+    colors.green100,
+    colors.green300,
+    colors.green500,
   ];
 
   return (

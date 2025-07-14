@@ -1,6 +1,5 @@
 import { colors, radii } from '@abqm-ds/tokens';
 import { Text } from '@components/Text';
-import { theme } from '@styles/index';
 import styled, { css } from 'styled-components';
 
 interface StyledHeaderButtonProps {

@@ -1,26 +1,25 @@
-import { styled } from 'styled-components'
-import { Text } from '../Text'
-import { theme } from '../../styles'
-const { colors, fontSizes, space, radii } = theme
+import { styled } from 'styled-components';
+import { Text } from '../Text';
+import { colors, fontSizes, radii, space } from '@abqm-ds/tokens';
 
-export const MultiStepContainer = styled.div``
+export const MultiStepContainer = styled.div``;
 
 export const Label = styled(Text)`
   color: ${colors.gray200};
   font-size: ${fontSizes.xs};
-`
+`;
 
 export const Steps = styled.div<{
-  size: number
+  size: number;
 }>`
   display: grid;
   gap: ${space[2]};
   margin-top: ${space[1]};
   grid-template-columns: ${({ size }) => `repeat(${size}, 1fr)`};
-`
+`;
 
 export const Step = styled.div<{
-  active?: boolean
+  active?: boolean;
 }>`
   height: ${space[1]};
   border-radius: ${radii.px};
@@ -31,4 +30,4 @@ export const Step = styled.div<{
     `
     background-color: ${colors.gray100};
   `}
-`
+`;

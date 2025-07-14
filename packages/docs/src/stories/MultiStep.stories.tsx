@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Box, MultiStep, MultiStepProps, theme } from '@abqm-ds/react';
+import { Box, MultiStep, MultiStepProps } from '@abqm-ds/react';
+import { space } from '@abqm-ds/tokens';
 
 export default {
   title: 'Form/Multi Step',
@@ -37,7 +38,6 @@ import { MultiStep } from '@abqm-ds/react';
   //         style={{
   //           display: 'flex',
   //           flexDirection: 'column',
-  //           gap: theme.space[2],
   //         }}
   //       >
   //         {Story()}
@@ -53,7 +53,7 @@ const render = (args: MultiStepProps) => (
     style={{
       display: 'flex',
       flexDirection: 'column',
-      gap: theme.space[2],
+      gap: space[2],
     }}
   >
     <MultiStep {...args} />

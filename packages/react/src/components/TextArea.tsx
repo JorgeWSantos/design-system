@@ -1,9 +1,6 @@
+import { colors, fonts, fontSizes, fontWeights, radii, space } from '@abqm-ds/tokens';
 import { ComponentProps, ElementType } from 'react';
 import { styled } from 'styled-components';
-
-import { theme } from '../styles';
-
-const { colors, fonts, fontSizes, radii, space, fontWeights } = theme;
 
 export const TextArea = styled.textarea`
   background-color: ${colors.gray900};

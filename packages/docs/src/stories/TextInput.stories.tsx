@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Box, TextInput, TextInputProps, theme } from '@abqm-ds/react';
+import { Box, TextInput, TextInputProps } from '@abqm-ds/react';
 import { SearchIcon } from '@abqm-ds/icons';
-import { colors } from '@abqm-ds/tokens';
+import { colors, radii, space } from '@abqm-ds/tokens';
 
 export default {
   title: 'Form/TextInput',
@@ -73,10 +73,10 @@ const render = (args: TextInputProps) => (
     style={{
       display: 'flex',
       flexDirection: 'column',
-      gap: theme.space[2],
+      gap: space[2],
       width: '500px',
-      padding: theme.space[8],
-      borderRadius: theme.radii.md,
+      padding: space[8],
+      borderRadius: radii.md,
     }}
   >
     <>
@@ -115,31 +115,3 @@ export const Disabled: StoryObj<TextInputProps> = {
   },
   render,
 };
-
-// const renderLabel = (args: TextInputProps) => (
-//   <Box
-//     as="div"
-//     style={{
-//       display: 'flex',
-//       flexDirection: 'column',
-//       gap: theme.space[2],
-//       width: '500px',
-//       padding: theme.space[8],
-//       borderRadius: theme.radii.md,
-//     }}
-//   >
-//     <>
-//       <Text fontSize="sm">Email Adress</Text>
-//       <TextInput {...args} />
-//     </>
-//   </Box>
-// );
-
-// export const WithLabel: StoryObj<TextInputProps> = {
-//   args: {
-//     placeholder: 'With Icon & Label',
-//     size: 'sm',
-//     icon: <SearchIcon fill={colors.white50} />,
-//   },
-//   render: renderLabel,
-// };

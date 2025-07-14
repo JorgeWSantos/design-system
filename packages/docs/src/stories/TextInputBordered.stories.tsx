@@ -1,13 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import {
-  Box,
-  Text,
-  TextInputBordered,
-  TextInputBorderedProps,
-  theme,
-} from '@abqm-ds/react';
+import { Box, Text, TextInputBordered, TextInputBorderedProps } from '@abqm-ds/react';
 import { SearchIcon } from '@abqm-ds/icons';
-import { colors } from '@abqm-ds/tokens';
+import { colors, radii, space } from '@abqm-ds/tokens';
 
 export default {
   title: 'Form/TextInputBordered',
@@ -74,11 +68,11 @@ const renderPrimary = (args: TextInputBorderedProps) => (
     style={{
       display: 'flex',
       flexDirection: 'column',
-      gap: theme.space[2],
+      gap: space[2],
       width: '500px',
-      padding: theme.space[8],
-      borderRadius: theme.radii.md,
-      backgroundColor: theme.colors.green700,
+      padding: space[8],
+      borderRadius: radii.md,
+      backgroundColor: colors.green700,
     }}
   >
     <>

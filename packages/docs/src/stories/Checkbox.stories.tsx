@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Box, Checkbox, CheckboxProps, Text, theme } from '@abqm-ds/react';
+import { Box, Checkbox, CheckboxProps, Text } from '@abqm-ds/react';
+import { space } from '@abqm-ds/tokens';
 
 export default {
   title: 'Form/Checkbox',
@@ -13,7 +14,7 @@ const render = (args: CheckboxProps) => (
     style={{
       display: 'flex',
       flexDirection: 'row',
-      gap: theme.space[2],
+      gap: space[2],
     }}
   >
     <>
