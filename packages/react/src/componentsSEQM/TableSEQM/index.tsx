@@ -16,13 +16,6 @@ export const TableSEQM = ({
   align,
   ...rest
 }: TableSEQMProps) => {
-  console.log('data', data);
-  console.log('columns', columns);
-
-  useEffect(() => {
-    console.log('columns', columns);
-  }, [columns]);
-
   return (
     <StyledTableSEQM $width={width} $height={height} {...rest}>
       <StyledHeadTableSEQM>
