@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { StyledContainerDesktop } from './styles';
 
-interface ContainerDesktopProps {
+interface ContainerDesktopProps extends ComponentProps<typeof StyledContainerDesktop> {
   children: React.ReactNode;
 }
 
-export const ContainerDesktop = ({ children }: ContainerDesktopProps) => {
-  return <StyledContainerDesktop>{children}</StyledContainerDesktop>;
+export const ContainerDesktop = ({ children, ...rest }: ContainerDesktopProps) => {
+  return <StyledContainerDesktop {...rest}>{children}</StyledContainerDesktop>;
 };

@@ -19,7 +19,7 @@ const config: StorybookConfig = {
   // ],
   addons: [
     '@storybook/addon-docs',
-    '@storybook/addon-actions',
+    // '@storybook/addon-actions',
     '@storybook/addon-onboarding',
     '@chromatic-com/storybook',
     // '@storybook/experimental-addon-test',

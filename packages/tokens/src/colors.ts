@@ -1,20 +1,22 @@
 export const colors = {
   // Base
   white: '#FFF',
-  black: '#000',
-  black100: '#1A1A1A', // adicionado black100
-
   // Opacity
   white10: '#ffffff1a',
   white25: '#ffffff40',
   white50: '#ffffff80',
   white75: '#FFFFFFBF',
   white85: '#ffffffd9',
+
+  black: '#000',
   black0: '#FFFFFF00',
+  black30: '#0000004D',
+  black40: '#00000066',
   black25: '#00000040',
   black50: '#00000080',
   black75: '#000000BF',
   black85: '#000000d9',
+  black100: '#1A1A1A',
 
   // Grays
   gray100: '#E1E1E6',
@@ -56,6 +58,8 @@ export const colors = {
   emeraldGreen10: '#0027101a',
   emeraldGreen15: '#00271026',
   emeraldGreen25: '#00271040',
+  emeraldGreen30: '#0027104d',
+  emeraldGreen40: '#00271066',
   emeraldGreen50: '#00100780',
   emeraldGreen75: '#001007BF',
   emeraldGreen92: '#001007EB',
