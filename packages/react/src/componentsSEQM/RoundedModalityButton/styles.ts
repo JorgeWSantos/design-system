@@ -55,12 +55,12 @@ export const RoundedButton = styled.button<RoundedButtonProps>`
   }
 `;
 
-export const IconWrapper = styled.span`
+export const IconWrapper = styled.span<{ $svgFullWidth?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   padding: 0.5rem;
   border-radius: 50%;
   aspect-ratio: 1/1;
@@ -70,6 +70,12 @@ export const IconWrapper = styled.span`
     height: 100%;
 
     padding: 0.5rem;
+
+    ${({ $svgFullWidth }) =>
+      $svgFullWidth &&
+      css`
+        padding: 0;
+      `}
 
     border-radius: 50%;
     gap: 0.5rem;
