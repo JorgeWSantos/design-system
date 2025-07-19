@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Box, Dropdown, DropdownProps } from '@abqm-ds/react';
-import { radii, space } from '@abqm-ds/tokens';
+import { colors, radii, space } from '@abqm-ds/tokens';
 import { optionsStates } from './mockedData/dropdownOption';
 
 export default {
@@ -40,8 +40,10 @@ const render = (args: DropdownProps) => (
       flexDirection: 'column',
       gap: space[2],
       width: '320px',
+      height: '300px',
       padding: space[6],
       borderRadius: radii.md,
+      backgroundColor: colors.green700,
     }}
   >
     <Dropdown {...args} />
@@ -52,6 +54,34 @@ export const Primary: StoryObj<DropdownProps> = {
   args: {
     label: 'Estados',
     data: optionsStates,
+    variant: 'primary',
+    maxHeight: '200px',
+  },
+  render,
+};
+
+export const Secondary: StoryObj<DropdownProps> = {
+  args: {
+    label: 'Estados',
+    data: optionsStates,
+    variant: 'secondary',
+  },
+  render,
+};
+
+export const Tertiary: StoryObj<DropdownProps> = {
+  args: {
+    label: 'Estados',
+    data: optionsStates,
+    variant: 'tertiary',
+  },
+  render,
+};
+
+export const TertiaryWithoutLabel: StoryObj<DropdownProps> = {
+  args: {
+    data: optionsStates,
+    variant: 'tertiary',
   },
   render,
 };

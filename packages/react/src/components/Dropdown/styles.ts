@@ -161,10 +161,10 @@ export const ContainerOptions = styled.div<{
   ${({ $variant }) =>
     $variant === 'tertiary' &&
     css`
-      background-color: ${colors.white};
       color: ${colors.emeraldGreen75};
 
       border: ${radii.px} solid ${colors.emeraldGreen25};
+      background-color: ${colors.white50};
 
       /* Custom scrollbar styles */
       &::-webkit-scrollbar {
