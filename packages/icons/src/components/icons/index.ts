@@ -8,6 +8,7 @@ export { default as BroadcastIcon } from './BroadcastIcon';
 export { default as CaretDownFillIcon } from './CaretDownFillIcon';
 export { default as CaretLeftFillIcon } from './CaretLeftFillIcon';
 export { default as CaretRightFillIcon } from './CaretRightFillIcon';
+export { default as CheckIcon } from './CheckIcon';
 export { default as CircleIcon } from './CircleIcon';
 export { default as FacebookIcon } from './FacebookIcon';
 export { default as FileEarmarkCheckIcon } from './FileEarmarkCheckIcon';
