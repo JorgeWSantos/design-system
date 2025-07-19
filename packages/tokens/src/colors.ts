@@ -5,6 +5,7 @@ export const colors = {
   white10: '#ffffff1a',
   white25: '#ffffff40',
   white50: '#ffffff80',
+  white60: '#ffffff99',
   white75: '#FFFFFFBF',
   white85: '#ffffffd9',
 
