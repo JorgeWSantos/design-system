@@ -8,14 +8,7 @@ import {
 } from './styles';
 import { TableSEQMProps } from './types';
 
-export const TableSEQM = ({
-  columns,
-  data,
-  width,
-  height,
-  align,
-  ...rest
-}: TableSEQMProps) => {
+export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMProps) => {
   return (
     <StyledTableSEQM $width={width} $height={height} {...rest}>
       <StyledHeadTableSEQM>
