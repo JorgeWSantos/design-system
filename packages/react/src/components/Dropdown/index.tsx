@@ -11,7 +11,6 @@ import { Text } from '@components/Text';
 import { colors } from '@abqm-ds/tokens';
 import { useClickOutside } from 'hooks/useClickOutside';
 import { DropdownProps, DataDropdown } from './types';
-import { CaretDownFillIcon } from '@abqm-ds/icons';
 
 export function Dropdown({
   data,
@@ -20,8 +19,10 @@ export function Dropdown({
   label = null,
   variant = 'primary',
   maxHeight = 'unset',
+  maxWidth = '100%',
   ...rest
 }: DropdownProps) {
+  // console.log('maxWidth', maxWidth);
   const [selectedOption, setSelectedOption] = useState(
     value ? value : data.length > 0 ? data[0] : null
   );
@@ -73,6 +74,7 @@ export function Dropdown({
           }
         }}
         $variant={variant}
+        $maxWidth={maxWidth}
       >
         <StyledTextSelect $variant={variant}>
           {selectedOption?.label || null}
@@ -87,7 +89,7 @@ export function Dropdown({
       </StyledDropdown>
 
       {showOptions && (
-        <ContainerOptions $variant={variant} $maxHeight={maxHeight}>
+        <ContainerOptions $variant={variant} $maxHeight={maxHeight} $maxWidth={maxWidth}>
           {data.map((item) => (
             <Option $variant={variant} key={item.id} onClick={() => selectAnOption(item)}>
               {item.label}

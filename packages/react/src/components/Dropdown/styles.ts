@@ -25,7 +25,10 @@ export const Container = styled.div<ContainerProps>`
     `}
 `;
 
-export const StyledDropdown = styled.div<{ $variant?: VariantsTypesDropdown }>`
+export const StyledDropdown = styled.div<{
+  $variant?: VariantsTypesDropdown;
+  $maxWidth?: string;
+}>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,6 +38,7 @@ export const StyledDropdown = styled.div<{ $variant?: VariantsTypesDropdown }>`
   background-color: ${colors.emeraldGreen25};
 
   padding: 0.5rem;
+  max-width: ${({ $maxWidth }) => $maxWidth || '100%'};
 
   color: ${colors.white75};
 
@@ -112,6 +116,7 @@ export const StyledCaretDownFillIcon = styled(CaretDownFillIcon)<{
 export const ContainerOptions = styled.div<{
   $variant?: VariantsTypesDropdown;
   $maxHeight?: string;
+  $maxWidth?: string;
 }>`
   display: flex;
   flex-direction: column;
@@ -132,9 +137,9 @@ export const ContainerOptions = styled.div<{
   /* max-height: 18.75rem; */
 
   max-height: ${({ $maxHeight }) => $maxHeight || 'unset'};
+  min-width: ${({ $maxWidth }) => $maxWidth};
+  max-width: ${({ $maxWidth }) => $maxWidth};
 
-  min-width: 100%;
-  max-width: 100%;
   box-sizing: border-box;
 
   padding: 0.5rem 0.5rem;

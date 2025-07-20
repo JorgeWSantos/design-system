@@ -17,4 +17,5 @@ export interface DropdownProps extends ComponentProps<typeof StyledDropdown> {
   label?: string | null;
   variant?: VariantsTypesDropdown;
   maxHeight?: string;
+  maxWidth?: string;
 }
