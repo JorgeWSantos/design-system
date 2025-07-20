@@ -17,6 +17,16 @@ export const ContainerHeaderButton = styled.div<{ $isActive?: boolean }>`
 
   cursor: pointer;
 
+  transition: filter 0.5s ease-in-out;
+
+  &:hover {
+    p,
+    button {
+      filter: brightness(1.1);
+      transition: filter 0.5s ease-in-out;
+    }
+  }
+
   ${({ $isActive }) =>
     $isActive &&
     css`

@@ -27,6 +27,6 @@ export const SwitchKnob = styled.span<{ $checked: boolean }>`
   position: absolute;
   top: -2px;
   left: ${({ $checked }) => ($checked ? '0.8rem' : '0')};
-  transition: left 0.2s;
+  transition: left 0.5s ease;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 `;
