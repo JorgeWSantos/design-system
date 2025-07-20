@@ -51,6 +51,7 @@ export const StyledDropdown = styled.div<{ $variant?: VariantsTypesDropdown }>`
     css`
       background-color: ${colors.white25};
       color: ${colors.white75};
+      border-color: transparent;
     `}
 
   ${({ $variant }) =>
