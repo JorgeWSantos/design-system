@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.24
+
+### Patch Changes
+
+- feat: 🎸 Novas versões dos pacotes
+
 ## 1.0.23
 
 ### Patch Changes
