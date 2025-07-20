@@ -20,5 +20,28 @@ declare module '@abqm-ds/icons' {
   export const CaretRightFillIcon: FC<SVGProps<SVGSVGElement>>;
   export const AbqmOficialColoredIconSEQM: FC<SVGProps<SVGSVGElement>>;
   export const SearchIcon: FC<SVGProps<SVGSVGElement>>;
+  export const SearchIcon: FC<SVGProps<SVGSVGElement>>;
+  export const TresTamboresIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const ApartacaoIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const VaquejadaIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const RedeasIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const WesternPleasureIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const WorkingCowHorseIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const LacoIndividualIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const LacoEmDuplaIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const LacoPeIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const LacoCabecaIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const CincoTamboresIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const SeisBalizasIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const ManeabilidadeEVelocidadeIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const BulldogIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const TeamPenningIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const LacoCompridoTecnicoIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const ConformacaoIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const LacoIndividualTecnicoIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const RanchSortingIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const PerformanceHalterIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const BreakawayRopingIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const LacoCompridoIconSEQM: FC<SVGProps<SVGSVGElement>>;
   // Adicione outros ícones exportados aqui
 }
