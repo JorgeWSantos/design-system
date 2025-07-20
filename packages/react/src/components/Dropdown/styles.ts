@@ -164,7 +164,7 @@ export const ContainerOptions = styled.div<{
       color: ${colors.emeraldGreen75};
 
       border: ${radii.px} solid ${colors.emeraldGreen25};
-      background-color: ${colors.white50};
+      background-color: ${colors.white85};
 
       /* Custom scrollbar styles */
       &::-webkit-scrollbar {
