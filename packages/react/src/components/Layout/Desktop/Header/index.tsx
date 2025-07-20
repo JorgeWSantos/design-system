@@ -31,7 +31,7 @@ export const Header = ({ text, subTitle, fontWeight, buttons, ...rest }: HeaderP
                 disabled={button.disabled}
                 onClick={button.onClick}
                 key={index}
-                isFiltered={button.isFiltered}
+                isActive={button.isActive}
               >
                 {button.icon}
               </HeaderButton>

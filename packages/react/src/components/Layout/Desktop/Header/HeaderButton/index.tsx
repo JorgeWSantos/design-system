@@ -1,13 +1,13 @@
 import { ElementType, ReactNode, MouseEvent } from 'react';
 
-import { ContainerHeaderButton, StyledText, FilteredIndicator } from './styles';
+import { ContainerHeaderButton, StyledText, ActiveIndicator } from './styles';
 import { RoundedButton } from '@components/RoundedButton';
 
 export interface HeaderButtonProps {
   as?: ElementType;
   children: ReactNode; //icon
   disabled?: boolean;
-  isFiltered?: boolean;
+  isActive?: boolean;
   label: string;
   onClick?: (event: MouseEvent<HTMLDivElement>) => void;
 }
@@ -17,17 +17,17 @@ export const HeaderButton = ({
   label,
   onClick,
   disabled,
-  isFiltered = false,
+  isActive = false,
 }: HeaderButtonProps) => {
   return (
     <ContainerHeaderButton
-      $isFiltered={isFiltered}
+      $isActive={isActive}
       onClick={disabled ? undefined : onClick}
       style={disabled ? { pointerEvents: 'none', opacity: 0.6 } : undefined}
     >
-      {isFiltered && <FilteredIndicator />}
+      {isActive && <ActiveIndicator />}
       <RoundedButton disabled={disabled}>{children}</RoundedButton>
-      <StyledText $isFiltered={isFiltered} disabled={disabled}>
+      <StyledText $isActive={isActive} disabled={disabled}>
         {label}
       </StyledText>
     </ContainerHeaderButton>

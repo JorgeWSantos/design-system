@@ -6,7 +6,7 @@ interface StyledHeaderButtonProps {
   disabled?: boolean;
 }
 
-export const ContainerHeaderButton = styled.div<{ $isFiltered?: boolean }>`
+export const ContainerHeaderButton = styled.div<{ $isActive?: boolean }>`
   display: flex;
   width: 4.25rem;
   height: 2.25rem;
@@ -17,8 +17,8 @@ export const ContainerHeaderButton = styled.div<{ $isFiltered?: boolean }>`
 
   cursor: pointer;
 
-  ${({ $isFiltered }) =>
-    $isFiltered &&
+  ${({ $isActive }) =>
+    $isActive &&
     css`
       button {
         background-color: ${colors.white85};
@@ -26,7 +26,7 @@ export const ContainerHeaderButton = styled.div<{ $isFiltered?: boolean }>`
     `}
 `;
 
-export const FilteredIndicator = styled.span`
+export const ActiveIndicator = styled.span`
   position: absolute;
   top: 0rem;
   right: 1.25rem;
@@ -38,6 +38,7 @@ export const FilteredIndicator = styled.span`
   background-color: ${colors.green100};
 
   box-shadow: 0 0 0 1px ${colors.green100};
+  z-index: 1;
 `;
 
 export const StyledHeaderButton = styled.button<StyledHeaderButtonProps>`
@@ -67,9 +68,9 @@ export const StyledHeaderButton = styled.button<StyledHeaderButtonProps>`
 export const StyledText = styled(Text).attrs({
   fontSize: 'xxs',
   color: colors.white50,
-})<{ $isFiltered?: boolean }>`
-  ${({ $isFiltered }) =>
-    $isFiltered &&
+})<{ $isActive?: boolean }>`
+  ${({ $isActive }) =>
+    $isActive &&
     css`
       color: ${colors.white85};
     `}

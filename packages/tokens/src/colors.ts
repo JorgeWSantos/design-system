@@ -19,6 +19,10 @@ export const colors = {
   black85: '#000000d9',
   black100: '#1A1A1A',
 
+  grayFigma2: '#424242',
+  grayFigma5: '#DDDDDD',
+  grayFigma6: '#F3F3F3',
+
   // Grays
   gray100: '#E1E1E6',
   gray200: '#A9A9B2',

@@ -7,14 +7,14 @@ export interface HeaderButtonProps {
   label: string;
   disabled?: boolean;
   onClick?: () => void;
-  isFiltered?: boolean;
+  isActive?: boolean;
 }
 
 export interface HeaderProps extends ComponentProps<typeof StyledHeader> {
   as?: ElementType;
   text: string;
   subTitle?: string;
-  isFiltered?: boolean;
+  isActive?: boolean;
   fontWeight?: FontWeightTypes;
   buttons?: HeaderButtonProps[];
 }

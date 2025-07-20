@@ -14,7 +14,7 @@ export function ColorsGrid() {
             color: getContrast(color, '#FFF') < 3.5 ? '#000' : '#FFF',
           }}
         >
-          <strong>${key}</strong>
+          <strong>{key}</strong>
           <span>{color}</span>
         </div>
       </div>
