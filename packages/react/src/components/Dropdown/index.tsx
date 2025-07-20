@@ -22,7 +22,6 @@ export function Dropdown({
   maxWidth = '100%',
   ...rest
 }: DropdownProps) {
-  // console.log('maxWidth', maxWidth);
   const [selectedOption, setSelectedOption] = useState(
     value ? value : data.length > 0 ? data[0] : null
   );

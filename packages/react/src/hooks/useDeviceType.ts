@@ -9,6 +9,7 @@ interface DeviceInfo {
   isTabletOrMobile: boolean;
   isMiniDesktop: boolean;
   isDesktop: boolean;
+  isMobile: boolean;
   isWide: boolean;
 }
 
@@ -36,6 +37,7 @@ export function useDeviceType(): DeviceInfo {
 
   return {
     deviceType,
+    isMobile: deviceType === 'mobile',
     isTablet: deviceType === 'tablet',
     isTabletOrMobile: ['tablet', 'mobile'].includes(deviceType),
     isMiniDesktop: deviceType === 'mini_desktop',
