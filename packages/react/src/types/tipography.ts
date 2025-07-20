@@ -1,4 +1,4 @@
-import { fontSizes, fontWeights, lineHeights } from '@abqm-ds/tokens';
+import { fonts, fontSizes, fontWeights, lineHeights } from '@abqm-ds/tokens';
 
 export type WeightTypes = 'regular' | 'medium' | 'semi' | 'bold';
 
@@ -47,3 +47,11 @@ export const lineHeightTypes = {
 };
 
 export type LineHeightTypes = keyof typeof lineHeightTypes;
+
+export const fontFamilyTypes = {
+  default: fonts.default,
+  code: fonts.code,
+  secondary: fonts.secondary,
+};
+
+export type FontFamilyTypes = keyof typeof fontFamilyTypes;

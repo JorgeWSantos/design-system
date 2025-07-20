@@ -1,6 +1,7 @@
 import { colors, fonts, lineHeights } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 import {
+  FontFamilyTypes,
   fontWeightTypes,
   FontWeightTypes,
   LineHeightTypes,
@@ -12,11 +13,12 @@ interface StyledHeadingProps {
   $size?: SizeVariants;
   $weight?: FontWeightTypes;
   $lineHeight?: LineHeightTypes;
+  $fontFamily?: FontFamilyTypes;
   $color?: string;
 }
 
 export const StyledHeading = styled.h2<StyledHeadingProps>`
-  font-family: ${fonts.default};
+  font-family: ${({ $fontFamily }) => fonts[$fontFamily || 'default']};
   line-height: ${(props) => lineHeightTypes[props.$lineHeight || 'shorter']};
   margin: 0;
   color: ${colors.gray100};

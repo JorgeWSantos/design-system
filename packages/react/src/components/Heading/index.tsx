@@ -1,4 +1,3 @@
-// Heading.tsx
 import { StyledHeading } from './styles';
 import { HeadingProps } from './types';
 
@@ -7,6 +6,7 @@ export function Heading({
   fontSize = 'md',
   lineHeight = 'shorter',
   fontWeight = 'semiBold',
+  fontFamily = 'default',
   as = 'h2',
   color,
   ...rest
@@ -18,6 +18,7 @@ export function Heading({
       $weight={fontWeight}
       $color={color}
       $lineHeight={lineHeight}
+      $fontFamily={fontFamily}
       {...rest}
     >
       {children}
