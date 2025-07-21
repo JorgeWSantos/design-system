@@ -2,7 +2,10 @@ import { breakpointsPx, space } from '@abqm-ds/tokens';
 import { Box } from '@components/Box';
 import styled, { css } from 'styled-components';
 
-export const ContainerMobile = styled.main<{ $headerNoGap?: boolean }>`
+export const ContainerMobile = styled.main<{
+  $headerNoGap?: boolean;
+  $hasFooterButtons?: boolean;
+}>`
   display: flex;
   flex-direction: column;
   max-height: 89vh;
@@ -13,15 +16,28 @@ export const ContainerMobile = styled.main<{ $headerNoGap?: boolean }>`
   gap: ${space[2]};
   padding: ${space[2]} ${space[2]} 0 ${space[2]} !important;
 
-  max-height: calc(100vh - (100px)); // 100px é a altura do header + footer
+  max-height: 100dvh; // 100px é a altura do header + footer
 
   @media (max-width: ${breakpointsPx.md}) {
-    max-height: calc(100vh - (110px));
+    max-height: calc(100dvh - (110px));
   }
 
   @media (max-width: ${breakpointsPx.sm}) {
-    max-height: calc(100vh - (100px));
+    max-height: calc(100dvh - (100px));
   }
+
+  //usado quando existem botões no footer e é substituído pelo footer padrão
+  ${({ $hasFooterButtons }) =>
+    $hasFooterButtons &&
+    css`
+      @media (max-width: ${breakpointsPx.md}) {
+        max-height: calc(100dvh - (140px));
+      }
+
+      @media (max-width: ${breakpointsPx.sm}) {
+        max-height: calc(100dvh - (140px));
+      }
+    `}
 
   ${({ $headerNoGap }) =>
     $headerNoGap &&

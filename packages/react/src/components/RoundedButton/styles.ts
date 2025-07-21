@@ -1,10 +1,12 @@
 import { colors, radii } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
+import { RoundedButtonVariants } from './types';
 
 export interface RoundedButtonStyleProps {
   disabled?: boolean;
   $width?: string;
   $height?: string;
+  $variant?: RoundedButtonVariants;
 }
 
 export const StyledRoundedButton = styled.button<RoundedButtonStyleProps>`
@@ -28,6 +30,13 @@ export const StyledRoundedButton = styled.button<RoundedButtonStyleProps>`
     disabled &&
     css`
       background-color: ${colors.white25};
+    `}
+
+  ${({ $variant }) =>
+    $variant === 'outline-white-25' &&
+    css`
+      background-color: transparent;
+      border: 1px solid ${colors.white25};
     `}
 `;
 
