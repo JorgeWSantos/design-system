@@ -10,7 +10,7 @@ export interface FooterButtonProps {
   isActive?: boolean;
   label: string;
   onClick?: (event: MouseEvent<HTMLDivElement>) => void;
-  variant?: RoundedButtonVariants;
+  variant?: RoundedButtonVariants | string;
 }
 
 export const FooterButton = ({
