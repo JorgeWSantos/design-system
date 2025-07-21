@@ -1,12 +1,14 @@
 import React, { ComponentProps } from 'react';
 import { StyledGlobalContainer } from './styles.js';
 import { Footer } from '@components/Layout/GlobalContainer/Footer/index.js';
-import { FooterButtonProps } from './FooterWithButtons/FooterButton/index.js';
-import { FooterWithButtons } from './FooterWithButtons/index.js';
+import {
+  FooterWithButtons,
+  FooterWithButtonsPropsType,
+} from './FooterWithButtons/index.js';
 
 interface GlobalContainerProps extends ComponentProps<typeof StyledGlobalContainer> {
   children: React.ReactNode;
-  footerButtonsMobile?: Array<FooterButtonProps & { icon: React.ReactNode }>;
+  footerButtonsMobile?: FooterWithButtonsPropsType;
 }
 
 export const GlobalContainer = ({
@@ -29,3 +31,5 @@ export const GlobalContainer = ({
     </StyledGlobalContainer>
   );
 };
+
+export type { FooterWithButtonsPropsType };

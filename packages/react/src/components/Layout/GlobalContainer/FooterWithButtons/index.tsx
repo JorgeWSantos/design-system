@@ -2,10 +2,13 @@ import React, { ComponentProps, ElementType } from 'react';
 import { FooterWithButtonsWrapper } from './styles';
 import { FooterButton, FooterButtonProps } from './FooterButton';
 
+type FooterWithButtonsPropsType = Array<
+  Omit<FooterButtonProps, 'children'> & { icon: React.ReactNode }
+>;
+
 export interface FooterWithButtonsProps
   extends ComponentProps<typeof FooterWithButtonsWrapper> {
-  as?: ElementType;
-  footerButtonsMobile: Array<FooterButtonProps & { icon: React.ReactNode }>;
+  footerButtonsMobile: FooterWithButtonsPropsType;
 }
 
 export const FooterWithButtons = ({
@@ -31,3 +34,5 @@ export const FooterWithButtons = ({
 };
 
 FooterWithButtons.displayName = 'FooterWithButtons';
+
+export type { FooterWithButtonsPropsType };
