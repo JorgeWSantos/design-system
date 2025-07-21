@@ -1,7 +1,10 @@
 import { breakpointsPx, radii, space } from '@abqm-ds/tokens';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { ShareOptionsVariantArrowTypes } from '.';
 
-export const ShareOptionsContainer = styled.div`
+export const ShareOptionsContainer = styled.div<{
+  $variantArrow: ShareOptionsVariantArrowTypes;
+}>`
   position: absolute;
   right: 0.5rem;
   top: 3.5rem;
@@ -18,10 +21,21 @@ export const ShareOptionsContainer = styled.div`
     content: '';
     position: absolute;
     top: -0.5rem;
-    right: 2.5rem;
+    left: 50%;
+    right: unset;
+    transform: translateX(-50%);
     border-width: 0 ${radii.md} ${radii.md} ${radii.md};
     border-style: solid;
     border-color: transparent transparent white transparent;
+
+    ${({ $variantArrow }) =>
+      $variantArrow === 'bottom' &&
+      css`
+        border-width: ${radii.md} ${radii.md} 0 ${radii.md};
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+        top: 4rem;
+      `}
     display: block;
   }
 
@@ -35,13 +49,22 @@ export const ShareOptionsContainer = styled.div`
     &::after {
       content: '';
       position: absolute;
-      top: 4.4rem;
+      top: -0.5rem;
       left: 50%;
       right: unset;
       transform: translateX(-50%);
-      border-width: ${radii.md} ${radii.md} 0 ${radii.md};
+      border-width: 0 ${radii.md} ${radii.md} ${radii.md};
       border-style: solid;
-      border-color: white transparent transparent transparent;
+      border-color: transparent transparent white transparent;
+
+      ${({ $variantArrow }) =>
+        $variantArrow === 'bottom' &&
+        css`
+          border-width: ${radii.md} ${radii.md} 0 ${radii.md};
+          border-style: solid;
+          border-color: white transparent transparent transparent;
+          top: 4.4rem;
+        `}
       display: block;
     }
   }
