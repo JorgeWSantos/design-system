@@ -23,6 +23,7 @@ export * from './components/ActivityIndicator';
 export * from './components/RadioGroup';
 export * from './components/InfoCard';
 export * from './components/Switch';
+export * from './components/ShareOptions';
 
 //Layout Components
 export * from './components/Layout/GlobalContainer';

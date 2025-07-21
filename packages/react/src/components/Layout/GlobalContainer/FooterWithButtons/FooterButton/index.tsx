@@ -3,6 +3,7 @@ import { ElementType, ReactNode, MouseEvent } from 'react';
 import { ContainerFooterButton, StyledText } from './styles';
 import { RoundedButton } from '@components/RoundedButton';
 import { RoundedButtonVariants } from '@components/RoundedButton/types';
+import { ShareOptions } from '@components/ShareOptions';
 
 export interface FooterButtonProps {
   children: ReactNode; //icon
@@ -11,6 +12,10 @@ export interface FooterButtonProps {
   label: string;
   onClick?: (event: MouseEvent<HTMLDivElement>) => void;
   variant?: RoundedButtonVariants;
+  showOptionsToShare?: {
+    children: ReactNode;
+    show?: boolean;
+  };
 }
 
 export const FooterButton = ({
@@ -20,6 +25,7 @@ export const FooterButton = ({
   disabled,
   variant,
   isActive = false,
+  showOptionsToShare, //used on mobile to show share options like Facebook, Twitter, etc.
 }: FooterButtonProps) => {
   return (
     <ContainerFooterButton
@@ -32,6 +38,8 @@ export const FooterButton = ({
         {children}
       </RoundedButton>
       <StyledText disabled={disabled}>{label}</StyledText>
+
+      {showOptionsToShare?.show && showOptionsToShare.children}
     </ContainerFooterButton>
   );
 };

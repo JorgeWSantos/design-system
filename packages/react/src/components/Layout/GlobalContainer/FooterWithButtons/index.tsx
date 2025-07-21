@@ -25,6 +25,7 @@ export const FooterWithButtons = ({
           key={index}
           isActive={button.isActive}
           variant={button.variant}
+          showOptionsToShare={button.showOptionsToShare}
         >
           {button.icon}
         </FooterButton>
