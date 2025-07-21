@@ -10,5 +10,5 @@ export interface RoundedButtonProps extends ComponentProps<typeof StyledRoundedB
   width?: string;
   height?: string;
   isActive?: boolean;
-  variant?: RoundedButtonVariants | string;
+  variant?: RoundedButtonVariants;
 }
