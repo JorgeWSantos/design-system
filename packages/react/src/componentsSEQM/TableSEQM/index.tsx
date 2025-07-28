@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import {
   StyledBodyTableSEQM,
   StyledHeadTableSEQM,
@@ -13,7 +12,7 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
     <StyledTableSEQM $width={width} $height={height} {...rest}>
       <StyledHeadTableSEQM>
         <tr>
-          {columns.map((col) => (
+          {columns?.map((col) => (
             <th
               key={col.key}
               style={{
@@ -29,9 +28,9 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
         </tr>
       </StyledHeadTableSEQM>
       <StyledBodyTableSEQM>
-        {data.map((row, idx) => (
-          <tr key={idx} className={row.isOficial ? 'aqha-column' : ''}>
-            {columns.map((col) => (
+        {data?.map((row, idx) => (
+          <tr key={idx} className={row?.isoficial?.value ? 'aqha-column' : ''}>
+            {columns?.map((col) => (
               <td
                 key={col.key}
                 style={{
@@ -41,11 +40,11 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
                   textAlign: col.align || 'left',
                 }}
               >
-                {col.render ? (
-                  col.render(row)
+                {row[col.key]?.render && typeof row[col.key].render === 'function' ? (
+                  row[col.key]?.render?.()
                 ) : (
                   <StyledTableSEQMTextTd {...(col.textBold && { $bold: true })}>
-                    {row[col.key]}
+                    {row[col.key]?.value}
                   </StyledTableSEQMTextTd>
                 )}
               </td>
