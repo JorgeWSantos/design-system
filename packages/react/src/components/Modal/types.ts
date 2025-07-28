@@ -7,10 +7,10 @@ export type PropModalSizes = 'normal' | 'full';
 
 export interface ModalProps extends ComponentProps<'div'> {
   isOpen: boolean;
-  isFiltered: boolean;
+  isFiltered?: boolean;
   title?: string;
   onClose: () => void;
-  onClickCleanFilter: () => void;
+  onClickCleanFilter?: () => void;
   children: ReactNode;
   positionHorizontal?: PropModalHorizontalPositions;
   positionVertical?: PropModalVerticalPositions;
