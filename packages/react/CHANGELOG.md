@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.27
+
+### Patch Changes
+
+- fix: 🐛 Corrigirá parâmetros do Modal
+
 ## 1.0.26
 
 ### Patch Changes
