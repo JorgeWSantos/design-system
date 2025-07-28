@@ -18,7 +18,7 @@ export const Header = ({ text, subTitle, fontWeight, buttons, ...rest }: HeaderP
           <StyledHeading fontSize="md" fontWeight={fontWeight}>
             {text}
           </StyledHeading>
-          <StyledHeadingSubTitle fontSize="md" fontWeight={fontWeight}>
+          <StyledHeadingSubTitle fontSize="md" fontWeight="regular">
             {subTitle}
           </StyledHeadingSubTitle>
         </DivTextWrapper>
