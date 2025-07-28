@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 1.0.20
+
+### Patch Changes
+
+- release: 🦋 Novas versões
+
 ## 1.0.19
 
 ### Patch Changes

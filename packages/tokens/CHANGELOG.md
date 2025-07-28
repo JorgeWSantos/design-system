@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 1.0.19
+
+### Patch Changes
+
+- release: 🦋 Novas versões
+
 ## 1.0.18
 
 ### Patch Changes
