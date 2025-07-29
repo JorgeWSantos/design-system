@@ -39,6 +39,7 @@ export const colors = {
   yellow400: '#FFCD00',
 
   // Brown
+  brown400: '#E2A56E',
   brown500: '#A65E2E',
   brown700: '#5A2412',
 
