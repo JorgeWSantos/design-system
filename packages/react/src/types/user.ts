@@ -11,4 +11,5 @@ export interface LoggedUser {
   status_cadastro: string;
   acao: string;
   dt_expiracao: string;
+  foto?: string;
 }
