@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 1.0.28
+
+### Patch Changes
+
+- feat: 🎸 Adicionará melhorias ao pacote react e tokens
+
 ## 1.0.27
 
 ### Patch Changes

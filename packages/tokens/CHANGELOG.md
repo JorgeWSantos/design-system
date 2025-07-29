@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 1.0.20
+
+### Patch Changes
+
+- feat: 🎸 Adicionará melhorias ao pacote react e tokens
+
 ## 1.0.19
 
 ### Patch Changes
