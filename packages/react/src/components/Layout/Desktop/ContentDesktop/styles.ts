@@ -17,13 +17,14 @@ export const ContentBox = styled(Box)<{
   $hideOverflow?: boolean;
   $removeRoundedBottom?: boolean;
 }>`
-  height: 100%;
+  height: clamp(60dvh, 80dvh, 90dvh);
 
-  ${(props) =>
+  /* ${(props) =>
     props.$hideOverflow &&
     css`
       overflow-y: hidden; !important
-    `}
+    `} */
+  overflow: visible !important; //usado no tooltip para não cortar o conteúdo
 
   ${(props) =>
     props.$removeRoundedBottom &&
@@ -32,4 +33,8 @@ export const ContentBox = styled(Box)<{
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     `}
+
+  @media (max-height: 600px) {
+    height: clamp(60dvh, 60dvh, 60dvh);
+  }
 `;

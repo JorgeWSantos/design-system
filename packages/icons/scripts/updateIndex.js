@@ -14,7 +14,7 @@ function writeIndexForDir(dir) {
 
 // Atualiza index.ts principal para reexportar os sub-indexes
 function updateIndexFile(finalDir, indexFile) {
-  const subdirs = ['icons', 'logos', 'iconsSEQM'];
+  const subdirs = ['icons', 'logos', 'iconsSEQM', 'images'];
   subdirs.forEach((sub) => {
     writeIndexForDir(path.join(finalDir, sub));
   });
