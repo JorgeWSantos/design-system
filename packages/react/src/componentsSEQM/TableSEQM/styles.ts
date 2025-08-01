@@ -14,6 +14,8 @@ export const StyledTableSEQM = styled.table<{
   $width?: CSSProperties['width'];
   $height?: CSSProperties['height'];
 }>`
+  display: flex;
+  flex-direction: column;
   border-collapse: collapse;
   width: ${({ $width }) => $width || '100%'};
   height: ${({ $height }) => $height || 'unset'};
@@ -31,6 +33,15 @@ export const StyledTableSEQM = styled.table<{
 `;
 
 export const StyledHeadTableSEQM = styled.thead`
+  display: flex;
+  flex-direction: column;
+
+  tr {
+    display: flex;
+    width: 100%;
+    /* max-height: 2rem; */
+  }
+
   tr th {
     padding: ${space[1]} ${space[2]};
     font-size: ${fontSizes.xxs};
@@ -44,12 +55,21 @@ export const StyledTableSEQMTextTh = styled(Text).attrs({
 })``;
 
 export const StyledBodyTableSEQM = styled.tbody`
+  display: flex;
+  flex-direction: column;
+
   tr {
-    max-height: 2rem;
+    display: flex;
+    height: auto;
+    width: 100%;
   }
 
   tr td {
-    padding: 0.5625rem ${space[2]};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem ${space[2]};
+    gap: 0.25rem;
   }
 
   .aqha-column {
