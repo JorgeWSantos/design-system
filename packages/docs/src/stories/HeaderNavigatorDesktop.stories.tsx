@@ -12,14 +12,14 @@ export default {
     docs: {
       description: {
         component: `
-O componente **HeaderNavigatorDesktop** exibe um cabeçalho de navegação para ambientes desktop, com suporte opcional a botão de voltar e conteúdo customizável via \`children\`.
+O componente **HeaderNavigatorDesktop** exibe um cabeçalho de navegação para ambientes desktop, com suporte opcional a botão de voltar, subtítulo (\`subtitle\`) e conteúdo customizável via \`children\`.
 
 ### Como implementar
 
 \`\`\`tsx
 import { HeaderNavigatorDesktop } from '@abqm-ds/react';
 
-<HeaderNavigatorDesktop hasBackButton onGoBack={() => alert('Voltar!')}>
+<HeaderNavigatorDesktop hasBackButton onGoBack={() => alert('Voltar!')} title="Título" subtitle="Subtítulo opcional">
   <span>Conteúdo do cabeçalho</span>
 </HeaderNavigatorDesktop>
 \`\`\`
@@ -27,11 +27,35 @@ import { HeaderNavigatorDesktop } from '@abqm-ds/react';
 - O botão de voltar é exibido se \`hasBackButton\` for \`true\`.
 - O conteúdo passado em \`children\` é exibido ao lado do botão de voltar.
 - Use a prop \`onGoBack\` para tratar o clique no botão de voltar.
+- Use a prop \`subtitle\` para exibir um subtítulo abaixo do título principal.
         `,
       },
     },
   },
 } as Meta<typeof HeaderNavigatorDesktop>;
+
+export const WithSubtitle: StoryObj = {
+  render: () => (
+    <HeaderNavigatorDesktop
+      hasBackButton
+      onGoBack={() => alert('Voltar!')}
+      title="Ranch Sorting"
+      subtitle="Subtítulo do Header"
+    >
+      <TextInput
+        placeholder="Buscar"
+        icon={<SearchIcon fill={colors.white50} width={12} height={12} />}
+      />
+    </HeaderNavigatorDesktop>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Exemplo do HeaderNavigatorDesktop com subtítulo e um input.',
+      },
+    },
+  },
+};
 
 export const Primary: StoryObj = {
   render: () => (
