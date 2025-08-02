@@ -70,7 +70,7 @@ export const StyledHeadingHeaderNavigator = styled(Heading).withConfig({
 export const StyledSubTitleHeadingHeaderNavigator = styled(Text).withConfig({
   shouldForwardProp: (prop) => ['as', 'fontSize', 'color', 'children'].includes(prop),
 })`
-  font-family: ${fonts.secondary};
+  font-family: ${fonts.secondary} !important;
   letter-spacing: -0.0375rem;
   line-height: ${lineHeights.tight};
   color: ${colors.white85};
