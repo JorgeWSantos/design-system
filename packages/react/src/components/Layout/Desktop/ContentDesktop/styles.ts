@@ -19,13 +19,6 @@ export const ContentBox = styled(Box)<{
 }>`
   height: clamp(60dvh, 80dvh, 90dvh);
 
-  /* ${(props) =>
-    props.$hideOverflow &&
-    css`
-      overflow-y: hidden; !important
-    `} */
-  overflow: visible !important; //usado no tooltip para não cortar o conteúdo
-
   ${(props) =>
     props.$removeRoundedBottom &&
     css`
