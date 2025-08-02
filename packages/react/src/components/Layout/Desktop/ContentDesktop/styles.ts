@@ -14,7 +14,6 @@ export const ContainerDesktop = styled.div<{ $maxHeight?: string }>`
 `;
 
 export const ContentBox = styled(Box)<{
-  $hideOverflow?: boolean;
   $removeRoundedBottom?: boolean;
 }>`
   height: clamp(60dvh, 80dvh, 90dvh);

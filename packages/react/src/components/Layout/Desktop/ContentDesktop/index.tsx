@@ -35,7 +35,6 @@ export const ContentDektop = ({
       {header}
       <ContentBox
         style={contentBoxStyles}
-        $hideOverflow={!!headerNavigator}
         $removeRoundedBottom={typeof count === 'number'}
       >
         <>{headerNavigator}</>
