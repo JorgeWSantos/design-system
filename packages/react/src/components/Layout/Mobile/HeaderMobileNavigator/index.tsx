@@ -23,7 +23,7 @@ export const HeaderMobileNavigator = ({
   onChangeSearch,
   ...rest
 }: HeaderMobileNavigatorProps) => {
-  const [seachIsOpen, setSearchIsOpen] = useState(false);
+  const [searchIsOpen, setSearchIsOpen] = useState(false);
 
   return (
     <StyledNavigatorMobile {...rest}>
@@ -39,14 +39,14 @@ export const HeaderMobileNavigator = ({
           </ButtonBack>
         </ContainerButtonBack>
       )}
-      {headingText && headingText !== '' && !seachIsOpen && (
+      {headingText && headingText !== '' && !searchIsOpen && (
         <Heading color={colors.white85} style={{ whiteSpace: 'nowrap' }}>
           {headingText}
         </Heading>
       )}
       {hasSearch && (
         <StyledWrapperSearch>
-          {seachIsOpen && (
+          {searchIsOpen && (
             <TextInput
               variant="secondary"
               icon={
@@ -63,7 +63,7 @@ export const HeaderMobileNavigator = ({
             />
           )}
 
-          {!seachIsOpen && (
+          {!searchIsOpen && (
             <ButtonSearch
               onClick={() => setSearchIsOpen(true)}
               aria-label="Pesquisar"
