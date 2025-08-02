@@ -1,12 +1,11 @@
 {
   "extends": "@abqm-ds/ts-config/react.json",
-  "include": ["src"],
+  "include": ["src", "vite.config.ts", "src/@types"],
   "exclude": [
     "**/*.stories.*",
     "**/*.test.*",
     "**/__tests__/**",
     "**/__mocks__/**",
-    "src/@types/**",
     "src/setupTests.*"
   ],
   "compilerOptions": {

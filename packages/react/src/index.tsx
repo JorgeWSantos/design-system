@@ -25,6 +25,10 @@ export * from './components/InfoCard';
 export * from './components/Switch';
 export * from './components/ShareOptions';
 
+//Table Components
+export * from './components/Table/AnimalTableData';
+export * from './components/Table/OwnerTableData';
+
 //Layout Components
 export * from './components/Layout/GlobalContainer';
 export * from './components/Layout/GlobalContainer/Footer';
