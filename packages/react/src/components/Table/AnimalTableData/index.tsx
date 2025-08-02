@@ -14,7 +14,9 @@ import {
 import { colors } from '@abqm-ds/tokens';
 import { DefaultHorseRoundedIconIMG, DefaultHorseSquadIconIMG } from '@abqm-ds/icons';
 import TooltipContentComponent from './TooltipContentComponent';
-import MedalSVG from '@assets/icons/medal.svg';
+// import MedalSVG from '@assets/icons/medal.svg';
+
+import { StarIcon } from '@abqm-ds/icons';
 
 interface AnimalTableDataProps {
   idAnimal: number;
@@ -103,7 +105,7 @@ const AnimalTableData = ({
         <DivTexts>
           <StyledTextHallOfFameNameAnimal $isHallOfFameAnimal={!!isHallOfFameAnimal}>
             {nameAnimal}
-            {isHallOfFameAnimal && <MedalImg src={MedalSVG} />}
+            {isHallOfFameAnimal && <StarIcon />}
           </StyledTextHallOfFameNameAnimal>
 
           {isHallOfFameAnimal ? (

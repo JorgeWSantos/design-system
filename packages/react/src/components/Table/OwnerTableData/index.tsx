@@ -4,8 +4,7 @@ import {
   StyledSubTextHallOfFame,
   StyledTextHallOfFameOwner,
 } from './styles';
-
-import medalSvg from './medal.svg';
+import { StarIcon } from '@abqm-ds/icons';
 
 const OwnerTableData = ({
   value,
@@ -16,19 +15,8 @@ const OwnerTableData = ({
 }) => (
   <OwnerTableDataContainer>
     <StyledTextHallOfFameOwner $isHallOfFameOwner={!!isHallOfFameOwner}>
-      {value}
-      {isHallOfFameOwner && (
-        <img
-          src={medalSvg}
-          alt="Medalha"
-          style={{
-            width: '1rem',
-            height: '1rem',
-            aspectRatio: '1/1',
-            marginTop: '-0.15rem',
-          }}
-        />
-      )}
+      <span>{value}</span>
+      {isHallOfFameOwner && <StarIcon />}
     </StyledTextHallOfFameOwner>
 
     {isHallOfFameOwner && (

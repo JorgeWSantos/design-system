@@ -18,12 +18,21 @@ export const StyledTextHallOfFameOwner = styled(Text).attrs({
   fontWeight: 'semiBold',
 })<{ $isHallOfFameOwner: boolean | undefined }>`
   display: flex;
+  gap: 0.25rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* white-space: nowrap; */
 
   /* white-space: nowrap; */
   color: ${({ $isHallOfFameOwner }) =>
     $isHallOfFameOwner ? colors.brown700 : 'inherit'};
 
   margin-bottom: -0.115rem;
+
+  svg {
+    min-width: 0.8rem;
+    min-height: 0.8rem;
+  }
 
   @media (max-width: ${breakpointsPx.lg}) {
     font-size: ${fontSizes.ssm};

@@ -92,6 +92,7 @@ export const StyledTextHallOfFameNameAnimal = styled(Text).attrs({
   fontWeight: 'semiBold',
 })<{ $isHallOfFameAnimal: boolean | undefined }>`
   display: flex;
+  gap: 0.25rem;
   white-space: nowrap;
   color: ${({ $isHallOfFameAnimal }) =>
     $isHallOfFameAnimal ? colors.brown700 : 'inherit'};
