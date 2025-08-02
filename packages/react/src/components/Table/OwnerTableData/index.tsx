@@ -15,8 +15,10 @@ const OwnerTableData = ({
 }) => (
   <OwnerTableDataContainer>
     <StyledTextHallOfFameOwner $isHallOfFameOwner={!!isHallOfFameOwner}>
-      <span>{value}</span>
-      {isHallOfFameOwner && <StarIcon />}
+      <span>
+        {value}
+        {isHallOfFameOwner && <StarIcon />}
+      </span>
     </StyledTextHallOfFameOwner>
 
     {isHallOfFameOwner && (

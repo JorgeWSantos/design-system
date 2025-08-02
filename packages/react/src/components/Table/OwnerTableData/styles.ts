@@ -17,17 +17,18 @@ export const StyledTextHallOfFameOwner = styled(Text).attrs({
   fontSize: 'xxs',
   fontWeight: 'semiBold',
 })<{ $isHallOfFameOwner: boolean | undefined }>`
-  display: flex;
-  gap: 0.25rem;
-  justify-content: flex-start;
-  align-items: flex-start;
-  /* white-space: nowrap; */
-
-  /* white-space: nowrap; */
+  /* Remove flex from root, use inline-flex on span for better icon alignment */
   color: ${({ $isHallOfFameOwner }) =>
     $isHallOfFameOwner ? colors.brown700 : 'inherit'};
+  margin-bottom: -0.1rem;
 
-  margin-bottom: -0.115rem;
+  span {
+    white-space: nowrap;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.25rem;
+  }
 
   svg {
     min-width: 0.8rem;
@@ -44,7 +45,7 @@ export const StyledSubTextHallOfFame = styled(Text)`
   font-weight: ${fontWeights.semiBold};
   color: ${colors.brown700};
   text-transform: uppercase;
-  margin-top: -0.05rem;
+  margin-bottom: -0.2rem;
 
   @media (max-width: ${breakpointsPx.lg}) {
     font-size: ${fontSizes.x};
