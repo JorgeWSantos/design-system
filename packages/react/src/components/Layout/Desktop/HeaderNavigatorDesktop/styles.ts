@@ -1,5 +1,6 @@
-import { colors, lineHeights, radii, space } from '@abqm-ds/tokens';
+import { colors, fonts, lineHeights, radii, space } from '@abqm-ds/tokens';
 import { Heading } from '@components/Heading';
+import { Text } from '@components/Text';
 import styled from 'styled-components';
 
 export const StyledNavigatorDesktop = styled.div`
@@ -50,8 +51,9 @@ export const ContentRight = styled.div`
 
 export const DivTitles = styled.div`
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   width: 100%;
   height: 2rem;
   padding-left: ${space[2]};
@@ -60,6 +62,15 @@ export const DivTitles = styled.div`
 export const StyledHeadingHeaderNavigator = styled(Heading).withConfig({
   shouldForwardProp: (prop) => ['as', 'fontSize', 'color', 'children'].includes(prop),
 })`
+  letter-spacing: -0.0375rem;
+  line-height: ${lineHeights.tight};
+  color: ${colors.white85};
+`;
+
+export const StyledSubTitleHeadingHeaderNavigator = styled(Text).withConfig({
+  shouldForwardProp: (prop) => ['as', 'fontSize', 'color', 'children'].includes(prop),
+})`
+  font-family: ${fonts.secondary};
   letter-spacing: -0.0375rem;
   line-height: ${lineHeights.tight};
   color: ${colors.white85};

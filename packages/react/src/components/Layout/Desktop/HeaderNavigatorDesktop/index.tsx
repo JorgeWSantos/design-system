@@ -7,6 +7,7 @@ import {
   DivTitles,
   StyledHeadingHeaderNavigator,
   StyledNavigatorDesktop,
+  StyledSubTitleHeadingHeaderNavigator,
 } from './styles';
 
 import { HeaderNavigatorDesktopProps } from './types';
@@ -41,9 +42,15 @@ export const HeaderNavigatorDesktop = ({
 
       <ContentRight>
         <DivTitles>
-          {/* implementar posteriormente o subtítulo */}
           {subtitle ? (
-            <></>
+            <>
+              <StyledHeadingHeaderNavigator fontSize="ssm">
+                {title}
+              </StyledHeadingHeaderNavigator>
+              <StyledSubTitleHeadingHeaderNavigator fontSize="sm">
+                {subtitle}
+              </StyledSubTitleHeadingHeaderNavigator>
+            </>
           ) : (
             <StyledHeadingHeaderNavigator fontSize="sm">
               {title}
