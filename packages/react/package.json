@@ -23,6 +23,7 @@
     "@abqm-ds/ts-config": "*",
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
+    "esbuild-plugin-svgr": "3.1.1",
     "tsup": "8.5.0",
     "typescript": "5.8.3"
   },
@@ -33,7 +34,6 @@
     "react-dom": "19.1.0",
     "react-share": "5.2.2",
     "react-tooltip": "5.29.1",
-    "styled-components": "6.1.17",
-    "vite-plugin-svgr": "^4.3.0"
+    "styled-components": "6.1.17"
   }
 }
