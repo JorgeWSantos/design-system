@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.0
+
+### Major Changes
+
+- feat: 🎸 Nova versão react/icons/tokens
+
 ## 1.0.28
 
 ### Patch Changes
