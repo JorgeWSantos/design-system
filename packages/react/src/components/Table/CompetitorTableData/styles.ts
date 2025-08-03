@@ -1,4 +1,4 @@
-import { Text } from '@abqm-ds/react';
+import { Text } from '@components/Text';
 import { breakpointsPx, fontSizes } from '@abqm-ds/tokens';
 import styled from 'styled-components';
 
