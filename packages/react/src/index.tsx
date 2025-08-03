@@ -28,6 +28,7 @@ export * from './components/ShareOptions';
 //Table Components
 export * from './components/Table/AnimalTableData';
 export * from './components/Table/OwnerTableData';
+export * from './components/Table/CompetitorTableData';
 
 //Layout Components
 export * from './components/Layout/GlobalContainer';

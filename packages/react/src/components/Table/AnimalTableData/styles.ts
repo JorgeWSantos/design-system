@@ -116,10 +116,10 @@ export const StyledTextHallOfFame = styled(Text)`
 `;
 
 export const StyledTextRegister = styled(Text)`
-  font-size: 5.5pt;
+  font-size: 7.2pt;
   font-weight: ${fontWeights.semiBold};
-  /* color: ${colors.brown700}; */
   text-transform: uppercase;
+  margin-top: -0.08rem;
   margin-bottom: -0.08rem;
 
   @media (max-width: ${breakpointsPx.lg}) {
