@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.2
+
+### Patch Changes
+
+- fix: 🐛 Corrigirá erro de build da lib react
+
 ## 2.0.1
 
 ### Patch Changes
