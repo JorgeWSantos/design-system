@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.1
+
+### Patch Changes
+
+- feat: 🎸 Novas melhorias para o pacote react
+
 ## 2.0.0
 
 ### Major Changes
