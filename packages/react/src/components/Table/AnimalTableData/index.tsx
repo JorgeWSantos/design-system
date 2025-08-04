@@ -75,7 +75,7 @@ const AnimalTableData = ({
   );
 
   return (
-    <ContainerImage>
+    <ContainerImage className="animal-table-data-container">
       <DivImage
         key={idAnimal}
         id={idAnimal.toString()}
