@@ -1,5 +1,5 @@
 import { space } from '@abqm-ds/tokens';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const ContainerRadio = styled.div`
   display: flex;
@@ -10,6 +10,7 @@ export const ContainerRadio = styled.div`
 
 export const StyledRadio = styled.input.attrs({ type: 'radio' })`
   appearance: none;
+  display: none;
   width: 16px;
   height: 16px;
   border: 2px solid #808080;
@@ -34,6 +35,34 @@ export const StyledRadio = styled.input.attrs({ type: 'radio' })`
     top: -2px;
     left: -2px;
   }
+`;
+
+export const CustomRadio = styled.span<{ checked: boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #808080;
+  border-radius: 50%;
+  background: #fff;
+  position: relative;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+
+  ${({ checked }) =>
+    checked &&
+    css`
+      border-color: #808080;
+      &::after {
+        content: '';
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #808080;
+      }
+    `}
 `;
 
 export const Label = styled.label`

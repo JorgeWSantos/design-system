@@ -8,6 +8,8 @@ const RadioGroup = ({
   setSelectedOption,
   direction = 'horizontal',
 }: RadioGroupProps) => {
+  // Garante um nome único para o grupo
+  const groupName = `radio-group-${options.map((o) => o.id).join('-')}`;
   return (
     <ContainerRadioGroup>
       <ContentRadioGroup direction={direction}>
@@ -16,6 +18,8 @@ const RadioGroup = ({
             key={option.id}
             option={option}
             checked={option.value === selectedOption.value}
+            name={groupName}
+            value={option.value}
             onChange={() => setSelectedOption(option)}
           />
         ))}

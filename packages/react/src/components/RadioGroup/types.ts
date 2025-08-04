@@ -20,4 +20,6 @@ export type RadioProps = {
   option: RadioGroupOption;
   checked: boolean;
   onChange: () => void;
+  name?: string;
+  value?: string;
 };
