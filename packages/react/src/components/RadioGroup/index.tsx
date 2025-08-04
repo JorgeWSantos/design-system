@@ -7,20 +7,22 @@ const RadioGroup = ({
   selectedOption,
   setSelectedOption,
   direction = 'horizontal',
-}: RadioGroupProps) => (
-  <ContainerRadioGroup>
-    <ContentRadioGroup direction={direction}>
-      {options.map((option) => (
-        <Radio
-          key={option.id}
-          option={option}
-          checked={option.value === selectedOption.value}
-          onChange={() => setSelectedOption(option)}
-        />
-      ))}
-    </ContentRadioGroup>
-  </ContainerRadioGroup>
-);
+}: RadioGroupProps) => {
+  return (
+    <ContainerRadioGroup>
+      <ContentRadioGroup direction={direction}>
+        {options.map((option) => (
+          <Radio
+            key={option.id}
+            option={option}
+            checked={option.value === selectedOption.value}
+            onChange={() => setSelectedOption(option)}
+          />
+        ))}
+      </ContentRadioGroup>
+    </ContainerRadioGroup>
+  );
+};
 
 RadioGroup.displayName = 'RadioGroup';
 
