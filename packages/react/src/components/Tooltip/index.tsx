@@ -15,13 +15,29 @@ export const Tooltip = ({
   const [isVisible, setIsVisible] = useState(false);
   const [tooltipStyle, setTooltipStyle] = useState<React.CSSProperties>({});
   const containerRef = useRef<HTMLDivElement>(null);
+  const tooltipDivRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!isVisible) return;
-    const handleScroll = () => setIsVisible(false);
+    const handleScroll = (e: Event) => {
+      // Se o scroll for dentro do Tooltip, não fecha
+      if (
+        tooltipDivRef.current &&
+        e.target &&
+        tooltipDivRef.current.contains(e.target as Node)
+      ) {
+        return;
+      }
+      setIsVisible(false);
+    };
 
     const handleClick = (e: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+      const target = e.target as Node;
+      const clickedOutsideContainer =
+        containerRef.current && !containerRef.current.contains(target);
+      const clickedOutsideTooltip =
+        tooltipDivRef.current && !tooltipDivRef.current.contains(target);
+      if (clickedOutsideContainer && clickedOutsideTooltip) {
         setIsVisible(false);
       }
     };
@@ -88,6 +104,7 @@ export const Tooltip = ({
       typeof document !== 'undefined'
         ? createPortal(
             <TooltipDiv
+              ref={tooltipDivRef}
               style={{ ...styleToolTip, ...tooltipStyle }}
               $visible={isVisible}
               $arrowType={arrowType}
