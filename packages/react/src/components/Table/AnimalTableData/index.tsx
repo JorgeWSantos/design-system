@@ -14,7 +14,7 @@ import {
 import { colors } from '@abqm-ds/tokens';
 import { DefaultHorseRoundedIconIMG, DefaultHorseSquadIconIMG } from '@abqm-ds/icons';
 import TooltipContentComponent from './TooltipContentComponent';
-import registro_merito_prata from './registro_de_merito_prata.png';
+// import registro_merito_prata from '/registro_de_merito_prata.png';
 // import MedalSVG from '@assets/icons/medal.svg';
 
 import { StarIcon } from '@abqm-ds/icons';
@@ -24,9 +24,9 @@ interface AnimalTableDataProps {
   idAnimal: number;
   nameAnimal: string;
   imgAnimal: string | null;
-  isHallOfFameAnimal: string | null;
-  registerAnimal?: string;
   medal?: string;
+  registerAnimal?: string;
+  isHallOfFameAnimal: string | null;
   registerOfMerity?: string;
   modalityAwards?: string | null;
   allAroundAmateur?: string | null;
@@ -99,7 +99,18 @@ const AnimalTableData = ({
             : `tooltip-divimage-${nameAnimal}`
         }
         contentInside={
-          hasSomething && <TooltipContentComponent ImgAnimal={imageSrcTooltip} />
+          hasSomething && (
+            <TooltipContentComponent
+              ImgAnimal={imageSrcTooltip}
+              isHallOfFameAnimal={isHallOfFameAnimal}
+              registerOfMerity={registerOfMerity}
+              modalityAwards={modalityAwards}
+              allAroundAmateur={allAroundAmateur}
+              allAroundYoung={allAroundYoung}
+              superHorseAward={superHorseAward}
+              rankingGeneralAward={rankingGeneralAward}
+            />
+          )
         }
         arrowType="bottomLeft"
         positions={{
