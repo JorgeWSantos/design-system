@@ -19,9 +19,18 @@ export const Tooltip = ({
   useEffect(() => {
     if (!isVisible) return;
     const handleScroll = () => setIsVisible(false);
+
+    const handleClick = (e: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setIsVisible(false);
+      }
+    };
     window.addEventListener('scroll', handleScroll, true);
+    document.addEventListener('mousedown', handleClick);
+
     return () => {
       window.removeEventListener('scroll', handleScroll, true);
+      document.removeEventListener('mousedown', handleClick);
     };
   }, [isVisible]);
 
@@ -68,7 +77,7 @@ export const Tooltip = ({
   return (
     <TooltipContainer
       ref={containerRef}
-      onMouseEnter={handleMouseEnter}
+      onMouseMove={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...rest}
     >

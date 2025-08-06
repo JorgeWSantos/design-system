@@ -60,7 +60,7 @@ export const TooltipDiv = styled.div<{
     props.$arrowType === 'bottomLeft' &&
     css`
       &::after {
-        bottom: -5px;
+        bottom: -4px;
         left: 5%;
         border-top: 5px solid ${colors.white};
       }
