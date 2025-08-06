@@ -1,6 +1,6 @@
 import { colors } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
-import type { ArrowType } from './types';
+import type { ArrowType, TooltipPositions } from './types';
 
 // Container that holds the Tooltip and content
 export const TooltipContainer = styled.div`
@@ -11,7 +11,10 @@ export const TooltipContainer = styled.div`
 `;
 
 // Tooltip text that will show on hover
-export const TooltipDiv = styled.div<{ $visible: boolean; $arrowType: ArrowType }>`
+export const TooltipDiv = styled.div<{
+  $visible: boolean;
+  $arrowType: ArrowType;
+}>`
   opacity: ${({ $visible }) => ($visible ? '1' : '0')};
   visibility: ${({ $visible }) => ($visible ? 'visible' : 'hidden')};
   background-color: ${colors.white};
@@ -19,8 +22,7 @@ export const TooltipDiv = styled.div<{ $visible: boolean; $arrowType: ArrowType 
   text-align: center;
   border-radius: 4px;
   padding: 5px;
-  position: absolute;
-  right: 8px;
+  position: fixed;
   z-index: 10;
 
   /* Animating opacity and transform for smoother transitions */
@@ -51,6 +53,15 @@ export const TooltipDiv = styled.div<{ $visible: boolean; $arrowType: ArrowType 
       &::after {
         bottom: -5px;
         left: 90%;
+        border-top: 5px solid ${colors.white};
+      }
+    `}
+  ${(props) =>
+    props.$arrowType === 'bottomLeft' &&
+    css`
+      &::after {
+        bottom: -5px;
+        left: 5%;
         border-top: 5px solid ${colors.white};
       }
     `}
