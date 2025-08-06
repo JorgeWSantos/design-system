@@ -6,10 +6,11 @@ import React from 'react';
 
 const TooltipContentComponent = ({
   ImgAnimal,
+  ...rest
 }: {
   ImgAnimal?: string | React.FC<SVGProps<SVGSVGElement>> | ((props: any) => JSX.Element);
 }) => (
-  <TooltipContent>
+  <TooltipContent {...rest}>
     {typeof ImgAnimal === 'string' ? (
       <img className="tooltip-image" src={ImgAnimal} />
     ) : typeof ImgAnimal === 'function' ? (

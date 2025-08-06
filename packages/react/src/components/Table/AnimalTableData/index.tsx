@@ -14,6 +14,7 @@ import {
 import { colors } from '@abqm-ds/tokens';
 import { DefaultHorseRoundedIconIMG, DefaultHorseSquadIconIMG } from '@abqm-ds/icons';
 import TooltipContentComponent from './TooltipContentComponent';
+import registro_merito_prata from './registro_de_merito_prata.png';
 // import MedalSVG from '@assets/icons/medal.svg';
 
 import { StarIcon } from '@abqm-ds/icons';
@@ -26,12 +27,12 @@ interface AnimalTableDataProps {
   isHallOfFameAnimal: string | null;
   registerAnimal?: string;
   medal?: string;
-  recordOfMerity?: string;
-  modalityAwards?: string;
-  allAroundAmateur?: string;
-  allAroundYoung?: string;
-  superHorseAward?: string;
-  rankingGeralAward?: string;
+  registerOfMerity?: string;
+  modalityAwards?: string | null;
+  allAroundAmateur?: string | null;
+  allAroundYoung?: string | null;
+  superHorseAward?: string | null;
+  rankingGeneralAward?: string | null;
 }
 
 const AnimalTableData = ({
@@ -41,12 +42,12 @@ const AnimalTableData = ({
   registerAnimal,
   isHallOfFameAnimal,
   medal = '',
-  recordOfMerity,
+  registerOfMerity,
   modalityAwards,
   allAroundAmateur,
   allAroundYoung,
   superHorseAward,
-  rankingGeralAward,
+  rankingGeneralAward,
 }: AnimalTableDataProps) => {
   const medalha: Record<string, string> = {
     '': 'transparent',
@@ -67,16 +68,29 @@ const AnimalTableData = ({
   const hasSomething = !!(
     medal ||
     isHallOfFameAnimal ||
-    recordOfMerity ||
+    registerOfMerity ||
     modalityAwards ||
     allAroundAmateur ||
     allAroundYoung ||
     superHorseAward ||
-    rankingGeralAward
+    rankingGeneralAward
   );
 
+  const infoString = [
+    medal && `medal=${medal}`,
+    isHallOfFameAnimal && 'isHallOfFame',
+    registerOfMerity && `registerOfMerity=${registerOfMerity}`,
+    modalityAwards && `modalityAwards=${modalityAwards}`,
+    allAroundAmateur && `allAroundAmateur=${allAroundAmateur}`,
+    allAroundYoung && `allAroundYoung=${allAroundYoung}`,
+    superHorseAward && `superHorseAward=${superHorseAward}`,
+    rankingGeneralAward && `rankingGeneralAward=${rankingGeneralAward}`,
+  ]
+    .filter(Boolean)
+    .join(', ');
+
   return (
-    <ContainerImage className="animal-table-data-container">
+    <ContainerImage className="animal-table-data-container" id={infoString}>
       <Tooltip
         style={{ width: 'fit-content' }}
         id={
@@ -119,22 +133,18 @@ const AnimalTableData = ({
         />
       )}
 
-      <DivInfo style={{}}>
-        <DivTexts>
-          <StyledTextHallOfFameNameAnimal $isHallOfFameAnimal={!!isHallOfFameAnimal}>
-            {nameAnimal}
-            {isHallOfFameAnimal && <StarIcon />}
-          </StyledTextHallOfFameNameAnimal>
+      <DivTexts>
+        <StyledTextHallOfFameNameAnimal $isHallOfFameAnimal={!!isHallOfFameAnimal}>
+          {nameAnimal}
+          {isHallOfFameAnimal && <StarIcon />}
+        </StyledTextHallOfFameNameAnimal>
 
-          {isHallOfFameAnimal ? (
-            <StyledTextHallOfFame>HALL DA FAMA 2017</StyledTextHallOfFame>
-          ) : (
-            <StyledTextRegister>{registerAnimal}</StyledTextRegister>
-          )}
-        </DivTexts>
-
-        {/* Tooltip para DivImage */}
-      </DivInfo>
+        {isHallOfFameAnimal ? (
+          <StyledTextHallOfFame>HALL DA FAMA 2017</StyledTextHallOfFame>
+        ) : (
+          <StyledTextRegister>{registerAnimal}</StyledTextRegister>
+        )}
+      </DivTexts>
     </ContainerImage>
   );
 };
