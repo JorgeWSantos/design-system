@@ -26,6 +26,10 @@ const TooltipContentComponent = ({
   rankingGeneralAward,
   ...rest
 }: TooltipContentComponentProps) => {
+  // Função utilitária para validar conquistas
+  const isValidAchievement = (value: any) =>
+    value !== null && value !== '' && value !== undefined;
+
   const cdn = 'https://i.imgur.com/';
   const superhorse = `${cdn}/pCJKPmX.png`;
   const modalidade_awards = `${cdn}/YuhCYyc.png`;
@@ -33,16 +37,37 @@ const TooltipContentComponent = ({
   const all_around_jovem = `${cdn}/KL3oYCg.png`;
   const ranking_geral = `${cdn}/7SnbguO.png`;
   const hall_da_fama = `${cdn}/iKdpXz2.png`;
-  const registro_merito_bronze = `${cdn}/sLLCvQD.png`;
-  const registro_merito_prata = `${cdn}/zTcjEms.png`;
-  const registro_merito_ouro = `${cdn}/EQOfayn.png`;
-  const registro_merito_platinum = `${cdn}/5I4HtPZ.png`;
-  const registro_merito_superior = `${cdn}/8ypvEJW.png`;
-  const registro_merito_superior_bronze = `${cdn}/7HFmc3f.png`;
-  const registro_merito_superior_prata = `${cdn}/rk2dku3.png`;
-  const registro_merito_superior_ouro = `${cdn}/HnNze7J.png`;
-  const registro_merito_superior_platinum = `${cdn}/splqHz5.png`;
-  const registro_merito_superior_diamante = `${cdn}/BvVsRmr.png`;
+
+  // https://i.imgur.com/oS8CGsJ.png
+
+  const registerOfMerityObjectLiteral = {
+    '': '',
+    registro_de_merito: `${cdn}/wWtqfvL.png`,
+    registro_de_merito_bronze: `${cdn}/sLLCvQD.png`,
+    registro_de_merito_prata: `${cdn}/zTcjEms.png`,
+    registro_de_merito_ouro: `${cdn}/EQOfayn.png`,
+    registro_de_merito_platinum: `${cdn}/5I4HtPZ.png`,
+    registro_de_merito_superior: `${cdn}/8ypvEJW.png`,
+    registro_de_merito_superior_bronze: `${cdn}/7HFmc3f.png`,
+    registro_de_merito_superior_prata: `${cdn}/rk2dku3.png`,
+    registro_de_merito_superior_ouro: `${cdn}/HnNze7J.png`,
+    registro_de_merito_superior_platinum: `${cdn}/splqHz5.png`,
+    registro_de_merito_superior_diamante: `${cdn}/BvVsRmr.png`,
+  };
+
+  console.log(
+    'registerOfMerityObjectLiteral',
+    registerOfMerityObjectLiteral[
+      (registerOfMerity || '') as keyof typeof registerOfMerityObjectLiteral
+    ]
+  );
+
+  console.log('registerOfMerity', registerOfMerity);
+  console.log('superhorse', superHorseAward);
+  console.log('modalityAwards', modalityAwards);
+  console.log('allAroundAmateur', allAroundAmateur);
+  console.log('allAroundYoung', allAroundYoung);
+  console.log('rankingGeneralAward', rankingGeneralAward);
 
   return (
     <TooltipContent {...rest}>
@@ -54,10 +79,22 @@ const TooltipContentComponent = ({
 
       <TooltipContentRight>
         <ImagesAchivements>
-          <img className="tooltip-image" src={superhorse} />
-          <img className="tooltip-image" src={registro_merito_superior_diamante} />
-          <img className="tooltip-image" src={registro_merito_superior_ouro} />
-          <img className="tooltip-image" src={registro_merito_superior_platinum} />
+          {/* Exibe imagens conforme conquistas do animal */}
+          {isValidAchievement(isHallOfFameAnimal) && <img src={hall_da_fama} />}
+          {isValidAchievement(superHorseAward) && <img src={superhorse} />}
+          {isValidAchievement(modalityAwards) && <img src={modalidade_awards} />}
+          {isValidAchievement(allAroundAmateur) && <img src={all_around_amador} />}
+          {isValidAchievement(allAroundYoung) && <img src={all_around_jovem} />}
+          {isValidAchievement(rankingGeneralAward) && <img src={ranking_geral} />}
+          {isValidAchievement(registerOfMerity) && (
+            <img
+              src={
+                registerOfMerityObjectLiteral[
+                  (registerOfMerity || '') as keyof typeof registerOfMerityObjectLiteral
+                ]
+              }
+            />
+          )}
         </ImagesAchivements>
 
         <Text fontSize="xxs" color={colors.emeraldGreen75}>

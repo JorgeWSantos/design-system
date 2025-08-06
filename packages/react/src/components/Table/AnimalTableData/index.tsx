@@ -14,8 +14,6 @@ import {
 import { colors } from '@abqm-ds/tokens';
 import { DefaultHorseRoundedIconIMG, DefaultHorseSquadIconIMG } from '@abqm-ds/icons';
 import TooltipContentComponent from './TooltipContentComponent';
-// import registro_merito_prata from '/registro_de_merito_prata.png';
-// import MedalSVG from '@assets/icons/medal.svg';
 
 import { StarIcon } from '@abqm-ds/icons';
 import { Tooltip } from '@components/Tooltip';
@@ -114,7 +112,7 @@ const AnimalTableData = ({
         }
         arrowType="bottomLeft"
         positions={{
-          top: '-106',
+          top: '-110',
           left: '-5',
           // right: '10',
         }}

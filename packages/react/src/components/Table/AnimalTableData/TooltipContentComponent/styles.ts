@@ -23,20 +23,21 @@ export const TooltipContentRight = styled.div`
   width: 10rem;
   overflow: hidden;
 
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0rem;
 `;
 
 export const ImagesAchivements = styled.div`
   display: flex;
   flex-direction: row;
-  width: 10rem;
-  padding-left: 0.25rem;
+  width: 9.75rem;
+  height: 5rem;
+  /* padding-left: 0.5rem; */
   align-items: center;
   gap: 1rem;
   overflow-x: scroll;
 
   img {
-    max-width: 4.5rem;
-    max-height: 4.5rem;
+    max-width: 4rem;
+    max-height: 4rem;
   }
 `;
