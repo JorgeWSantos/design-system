@@ -76,23 +76,24 @@ const AnimalTableData = ({
   );
 
   return (
-    <Tooltip
-      id={
-        isHallOfFameAnimal
-          ? `tooltip-laurelimage-${nameAnimal}`
-          : `tooltip-divimage-${nameAnimal}`
-      }
-      contentInside={
-        hasSomething && <TooltipContentComponent ImgAnimal={imageSrcTooltip} />
-      }
-      arrowType="bottomLeft"
-      positions={{
-        top: '-106',
-        left: '-5',
-        // right: '10',
-      }}
-    >
-      <ContainerImage className="animal-table-data-container">
+    <ContainerImage className="animal-table-data-container">
+      <Tooltip
+        style={{ width: 'fit-content' }}
+        id={
+          isHallOfFameAnimal
+            ? `tooltip-laurelimage-${nameAnimal}`
+            : `tooltip-divimage-${nameAnimal}`
+        }
+        contentInside={
+          hasSomething && <TooltipContentComponent ImgAnimal={imageSrcTooltip} />
+        }
+        arrowType="bottomLeft"
+        positions={{
+          top: '-106',
+          left: '-5',
+          // right: '10',
+        }}
+      >
         <DivImage
           key={idAnimal}
           id={idAnimal.toString()}
@@ -110,32 +111,31 @@ const AnimalTableData = ({
             <></>
           )}
         </DivImage>
+      </Tooltip>
+      {isHallOfFameAnimal && (
+        <LaurelImage
+          className="tooltip-anchor-laurelimage"
+          data-tooltip-id={`tooltip-laurelimage-${nameAnimal}`}
+        />
+      )}
 
-        {isHallOfFameAnimal && (
-          <LaurelImage
-            className="tooltip-anchor-laurelimage"
-            data-tooltip-id={`tooltip-laurelimage-${nameAnimal}`}
-          />
-        )}
+      <DivInfo style={{}}>
+        <DivTexts>
+          <StyledTextHallOfFameNameAnimal $isHallOfFameAnimal={!!isHallOfFameAnimal}>
+            {nameAnimal}
+            {isHallOfFameAnimal && <StarIcon />}
+          </StyledTextHallOfFameNameAnimal>
 
-        <DivInfo style={{}}>
-          <DivTexts>
-            <StyledTextHallOfFameNameAnimal $isHallOfFameAnimal={!!isHallOfFameAnimal}>
-              {nameAnimal}
-              {isHallOfFameAnimal && <StarIcon />}
-            </StyledTextHallOfFameNameAnimal>
+          {isHallOfFameAnimal ? (
+            <StyledTextHallOfFame>HALL DA FAMA 2017</StyledTextHallOfFame>
+          ) : (
+            <StyledTextRegister>{registerAnimal}</StyledTextRegister>
+          )}
+        </DivTexts>
 
-            {isHallOfFameAnimal ? (
-              <StyledTextHallOfFame>HALL DA FAMA 2017</StyledTextHallOfFame>
-            ) : (
-              <StyledTextRegister>{registerAnimal}</StyledTextRegister>
-            )}
-          </DivTexts>
-
-          {/* Tooltip para DivImage */}
-        </DivInfo>
-      </ContainerImage>
-    </Tooltip>
+        {/* Tooltip para DivImage */}
+      </DivInfo>
+    </ContainerImage>
   );
 };
 
