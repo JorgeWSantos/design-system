@@ -1,7 +1,6 @@
 import { LaurelIcon } from '@abqm-ds/icons';
 import { Text } from '@components/Text';
 import { breakpointsPx, colors, fontSizes, fontWeights } from '@abqm-ds/tokens';
-import { Tooltip } from 'react-tooltip';
 import styled from 'styled-components';
 
 const scaleImages = 1;
@@ -135,20 +134,20 @@ export const MedalImg = styled.img`
 `;
 
 /// tooltip
-export const StyledTooltip = styled(Tooltip)<{ hasSomething?: boolean }>`
-  background-color: white !important;
-  z-index: 999999;
-  padding: 0.25rem 1rem 0.25rem 0.25rem !important;
-  border-radius: 0.5rem !important;
-  display: ${({ hasSomething }) => (hasSomething ? 'flex' : 'none')} !important;
-  display: flex;
+// export const StyledTooltip = styled(Tooltip)<{ hasSomething?: boolean }>`
+//   background-color: white !important;
+//   z-index: 999999;
+//   padding: 0.25rem 1rem 0.25rem 0.25rem !important;
+//   border-radius: 0.5rem !important;
+//   display: ${({ hasSomething }) => (hasSomething ? 'flex' : 'none')} !important;
+//   display: flex;
 
-  /* Aplica apenas se a tooltip estiver com a classe de topo */
-  &.react-tooltip__place-top,
-  &.react-tooltip__place-bottom {
-    transform: translateX(45%) !important;
-    .react-tooltip-arrow {
-      left: 10px !important;
-    }
-  }
-`;
+//   /* Aplica apenas se a tooltip estiver com a classe de topo */
+//   &.react-tooltip__place-top,
+//   &.react-tooltip__place-bottom {
+//     transform: translateX(45%) !important;
+//     .react-tooltip-arrow {
+//       left: 10px !important;
+//     }
+//   }
+// `;

@@ -33,7 +33,6 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-share": "5.2.2",
-    "react-tooltip": "5.29.1",
     "styled-components": "6.1.17"
   }
 }

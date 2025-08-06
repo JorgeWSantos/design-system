@@ -9,7 +9,7 @@ import {
   StyledTextHallOfFame,
   StyledTextHallOfFameNameAnimal,
   StyledTextRegister,
-  StyledTooltip,
+  // StyledTooltip,
 } from './styles';
 import { colors } from '@abqm-ds/tokens';
 import { DefaultHorseRoundedIconIMG, DefaultHorseSquadIconIMG } from '@abqm-ds/icons';
@@ -17,6 +17,7 @@ import TooltipContentComponent from './TooltipContentComponent';
 // import MedalSVG from '@assets/icons/medal.svg';
 
 import { StarIcon } from '@abqm-ds/icons';
+import { Tooltip } from '@components/Tooltip';
 
 interface AnimalTableDataProps {
   idAnimal: number;
@@ -75,70 +76,66 @@ const AnimalTableData = ({
   );
 
   return (
-    <ContainerImage className="animal-table-data-container">
-      <DivImage
-        key={idAnimal}
-        id={idAnimal.toString()}
-        className="tooltip-anchor-divimage"
-        data-tooltip-id={`tooltip-divimage-${nameAnimal}`}
-      >
-        <DivBorder
-          $medalColor={isHallOfFameAnimal ? colors.yellow200 : medalha[medal ?? '']}
-        />
-        {typeof ImageSrc === 'string' ? (
-          <img src={ImageSrc} />
-        ) : ImageSrc ? (
-          <ImageSrc className="image-animal-default" />
-        ) : (
-          <></>
-        )}
-      </DivImage>
-
-      {isHallOfFameAnimal && (
-        <LaurelImage
-          className="tooltip-anchor-laurelimage"
-          data-tooltip-id={`tooltip-laurelimage-${nameAnimal}`}
-        />
-      )}
-
-      <DivInfo style={{ overflow: 'visible' }}>
-        <DivTexts>
-          <StyledTextHallOfFameNameAnimal $isHallOfFameAnimal={!!isHallOfFameAnimal}>
-            {nameAnimal}
-            {isHallOfFameAnimal && <StarIcon />}
-          </StyledTextHallOfFameNameAnimal>
-
-          {isHallOfFameAnimal ? (
-            <StyledTextHallOfFame>HALL DA FAMA 2017</StyledTextHallOfFame>
-          ) : (
-            <StyledTextRegister>{registerAnimal}</StyledTextRegister>
-          )}
-        </DivTexts>
-
-        {/* Tooltip para DivImage */}
-        <StyledTooltip
-          id={
-            isHallOfFameAnimal
-              ? `tooltip-laurelimage-${nameAnimal}`
-              : `tooltip-divimage-${nameAnimal}`
-          }
-          anchorSelect={
-            isHallOfFameAnimal
-              ? `.tooltip-anchor-laurelimage[data-tooltip-id='tooltip-laurelimage-${nameAnimal}']`
-              : `.tooltip-anchor-divimage[data-tooltip-id='tooltip-divimage-${nameAnimal}']`
-          }
-          // openOnClick
-          clickable
-          place="top"
-          positionStrategy="fixed"
-          hasSomething={hasSomething}
-          opacity={1}
-          className="custom-tooltip" // Classe para estilizar
+    <Tooltip
+      id={
+        isHallOfFameAnimal
+          ? `tooltip-laurelimage-${nameAnimal}`
+          : `tooltip-divimage-${nameAnimal}`
+      }
+      contentInside={
+        hasSomething && <TooltipContentComponent ImgAnimal={imageSrcTooltip} />
+      }
+      arrowType="bottomLeft"
+      positions={{
+        top: '-106',
+        left: '-5',
+        // right: '10',
+      }}
+    >
+      <ContainerImage className="animal-table-data-container">
+        <DivImage
+          key={idAnimal}
+          id={idAnimal.toString()}
+          className="tooltip-anchor-divimage"
+          data-tooltip-id={`tooltip-divimage-${nameAnimal}`}
         >
-          <TooltipContentComponent ImgAnimal={imageSrcTooltip} />
-        </StyledTooltip>
-      </DivInfo>
-    </ContainerImage>
+          <DivBorder
+            $medalColor={isHallOfFameAnimal ? colors.yellow200 : medalha[medal ?? '']}
+          />
+          {typeof ImageSrc === 'string' ? (
+            <img src={ImageSrc} />
+          ) : ImageSrc ? (
+            <ImageSrc className="image-animal-default" />
+          ) : (
+            <></>
+          )}
+        </DivImage>
+
+        {isHallOfFameAnimal && (
+          <LaurelImage
+            className="tooltip-anchor-laurelimage"
+            data-tooltip-id={`tooltip-laurelimage-${nameAnimal}`}
+          />
+        )}
+
+        <DivInfo style={{}}>
+          <DivTexts>
+            <StyledTextHallOfFameNameAnimal $isHallOfFameAnimal={!!isHallOfFameAnimal}>
+              {nameAnimal}
+              {isHallOfFameAnimal && <StarIcon />}
+            </StyledTextHallOfFameNameAnimal>
+
+            {isHallOfFameAnimal ? (
+              <StyledTextHallOfFame>HALL DA FAMA 2017</StyledTextHallOfFame>
+            ) : (
+              <StyledTextRegister>{registerAnimal}</StyledTextRegister>
+            )}
+          </DivTexts>
+
+          {/* Tooltip para DivImage */}
+        </DivInfo>
+      </ContainerImage>
+    </Tooltip>
   );
 };
 
