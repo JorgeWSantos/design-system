@@ -55,20 +55,6 @@ const TooltipContentComponent = ({
     registro_de_merito_superior_diamante: `${cdn}/BvVsRmr.png`,
   };
 
-  console.log(
-    'registerOfMerityObjectLiteral',
-    registerOfMerityObjectLiteral[
-      (registerOfMerity || '') as keyof typeof registerOfMerityObjectLiteral
-    ]
-  );
-
-  console.log('registerOfMerity', registerOfMerity);
-  console.log('superhorse', superHorseAward);
-  console.log('modalityAwards', modalityAwards);
-  console.log('allAroundAmateur', allAroundAmateur);
-  console.log('allAroundYoung', allAroundYoung);
-  console.log('rankingGeneralAward', rankingGeneralAward);
-
   return (
     <TooltipContent {...rest}>
       {typeof ImgAnimal === 'string' ? (
