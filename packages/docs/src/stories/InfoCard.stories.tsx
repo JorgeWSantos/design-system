@@ -21,6 +21,7 @@ import { InfoCard } from '@abqm-ds/react';
 - \`title\`: string — Título do cartão (opcional)
 - \`subTitle\`: string — Subtítulo do cartão (opcional)
 - \`style\`: CSSProperties — Estilização inline opcional
+- \`reverse\`: boolean — Inverte a ordem do título e subtítulo
 - Aceita outras props do ContainerInfoCard
         `,
       },
@@ -49,30 +50,18 @@ export const Primary: StoryObj<InfoCardProps> = {
   },
 };
 
+export const Reverse: StoryObj<InfoCardProps> = {
+  args: {
+    title: '4',
+    subTitle: 'Oficiais',
+    reverse: true,
+  },
+};
+
 export const With2: StoryObj<InfoCardProps> = {
   args: {
     title: '4',
     subTitle: 'Oficiais',
   },
   render: render,
-};
-
-export const OnlyTitle: StoryObj<InfoCardProps> = {
-  args: {
-    title: 'Somente Subtítulo',
-  },
-};
-
-export const OnlySubTitle: StoryObj<InfoCardProps> = {
-  args: {
-    subTitle: 'Somente Subtítulo',
-  },
-};
-
-export const CustomStyle: StoryObj<InfoCardProps> = {
-  args: {
-    title: 'Customizado',
-    subTitle: 'Com estilo customizado',
-    style: { backgroundColor: '#e0ffe0', border: '1px solid #00cc66' },
-  },
 };

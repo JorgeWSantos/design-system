@@ -1,14 +1,16 @@
 import { colors, radii } from '@abqm-ds/tokens';
-import { styled } from 'styled-components';
 
-export const InfoCardDiv = styled.div`
+import styled from 'styled-components';
+
+export const Container = styled.div<{ $reverse?: boolean }>`
   display: flex;
+  min-width: 80px;
+  padding: 2px 12px;
   flex-direction: column;
-  width: fit-content;
-  height: 2rem;
   align-items: center;
   justify-content: center;
-  background-color: ${colors.emeraldGreen25};
-  padding: 0.1875rem 0.5rem;
+
+  height: 32px;
+  background: ${colors.emeraldGreen25};
   border-radius: ${radii.xs};
 `;
