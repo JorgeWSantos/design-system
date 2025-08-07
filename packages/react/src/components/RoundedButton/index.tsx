@@ -25,3 +25,5 @@ export const RoundedButton = ({
 };
 
 RoundedButton.displayName = 'RoundedButton';
+
+export * from './types';
