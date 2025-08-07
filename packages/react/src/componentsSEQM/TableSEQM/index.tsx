@@ -1,13 +1,16 @@
+import { CaretDownFillIcon } from '@abqm-ds/icons';
 import {
   StyledBodyTableSEQM,
   StyledHeadTableSEQM,
   StyledTableSEQM,
   StyledTableSEQMTextTd,
   StyledTableSEQMTextTh,
+  StyledTableSEQMThSortable,
 } from './styles';
 
 import { TableSEQMProps } from './types';
 import { useState } from 'react';
+import { CaretUpFillIcon } from '@abqm-ds/icons';
 
 export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMProps) => {
   const [sortKey, setSortKey] = useState<string | null>(null);
@@ -82,9 +85,28 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
               <StyledTableSEQMTextTh>
                 {col.label}
                 {col.sortable && (
-                  <span style={{ marginLeft: 4, fontSize: 12 }}>
-                    {sortKey === col.key ? (sortOrder === 'asc' ? '▲' : '▼') : '↕'}
-                  </span>
+                  <>
+                    {sortKey === col.key ? (
+                      sortOrder === 'asc' ? (
+                        <CaretDownFillIcon
+                          style={{ minWidth: '0.5rem' }}
+                          width={7}
+                          height={7}
+                        />
+                      ) : (
+                        <CaretUpFillIcon
+                          style={{ minWidth: '0.5rem' }}
+                          width={7}
+                          height={7}
+                        />
+                      )
+                    ) : (
+                      <StyledTableSEQMThSortable>
+                        <CaretUpFillIcon width={6} height={6} />
+                        <CaretDownFillIcon width={6} height={6} />
+                      </StyledTableSEQMThSortable>
+                    )}
+                  </>
                 )}
               </StyledTableSEQMTextTh>
             </th>

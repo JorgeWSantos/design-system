@@ -48,4 +48,5 @@ declare module '@abqm-ds/icons' {
   export const DefaultHorseSquadIconIMG: FC<SVGProps<SVGSVGElement>>;
   export const LaurelIcon: FC<SVGProps<SVGSVGElement>>;
   export const StarIcon: FC<SVGProps<SVGSVGElement>>;
+  export const CaretUpFillIcon: FC<SVGProps<SVGSVGElement>>;
 }

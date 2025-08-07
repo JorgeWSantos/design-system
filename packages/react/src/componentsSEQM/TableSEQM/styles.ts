@@ -52,7 +52,24 @@ export const StyledTableSEQMTextTh = styled(Text).attrs({
   fontSize: 'xxs',
   fontWeight: 'semiBold',
   lineHeight: 'tight',
-})``;
+})`
+  display: flex;
+  flex-direction: row;
+  gap: 0.1rem;
+  overflow: visible;
+`;
+
+export const StyledTableSEQMThSortable = styled.div`
+  min-width: 0.5rem;
+
+  :first-child {
+    margin-top: 0.05rem;
+  }
+
+  :nth-child(2) {
+    margin-top: -0.05rem;
+  }
+`;
 
 export const StyledBodyTableSEQM = styled.tbody`
   display: flex;
