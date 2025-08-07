@@ -45,6 +45,18 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
           : bValue.getTime() - aValue.getTime();
       }
 
+      // Strings numéricas ordinais (ex: '1°', '10°')
+      const ordinalRegex = /^\s*(\d+)[°º]?\s*$/;
+      const aMatch = typeof aValue === 'string' && aValue.match(ordinalRegex);
+      const bMatch = typeof bValue === 'string' && bValue.match(ordinalRegex);
+
+      // Strings numéricas ordinais (ex: '1°', '10°')
+      if (aMatch && bMatch) {
+        const aNum = parseInt(aMatch[1], 10);
+        const bNum = parseInt(bMatch[1], 10);
+        return sortOrder === 'asc' ? aNum - bNum : bNum - aNum;
+      }
+
       // Strings (case insensitive)
       const aStr = String(aValue).toLocaleLowerCase();
       const bStr = String(bValue).toLocaleLowerCase();
@@ -52,6 +64,7 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
       if (aStr > bStr) return sortOrder === 'asc' ? 1 : -1;
       return 0;
     });
+
     return sorted;
   };
 
