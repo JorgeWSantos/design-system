@@ -20,7 +20,7 @@ export const ActivityIndicator = ({
 }: ActivityIndicatorProps) => {
   return (
     <Wrapper style={style} {...rest}>
-      <SpinnerRingResizeIcon width={width} height={height} fill={color} />
+      <SpinnerRingResizeIcon width={width} height={height} stroke={color} />
     </Wrapper>
   );
 };
