@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.5
+
+### Patch Changes
+
+- feat: 🎸 Fará melhorias nos pacotes
+
 ## 2.0.4
 
 ### Patch Changes
