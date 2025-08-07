@@ -59,7 +59,7 @@ export const StyledTableSEQMTextTh = styled(Text).attrs({
   overflow: visible;
 `;
 
-export const StyledTableSEQMThSortable = styled.div`
+export const StyledTableSEQMThSortable = styled.span`
   min-width: 0.5rem;
 
   :first-child {

@@ -90,8 +90,15 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
                 width: col.width,
                 maxWidth: col.width,
                 minWidth: col.minWidth,
-                textAlign: col.align || 'left',
+                // textAlign: col.align || 'left',
                 cursor: col.sortable ? 'pointer' : undefined,
+                display: 'flex',
+                justifyContent:
+                  col.align === 'center'
+                    ? 'center'
+                    : col.align === 'right'
+                    ? 'flex-end'
+                    : 'flex-start',
               }}
               onClick={col.sortable ? () => handleSort(col.key) : undefined}
             >
