@@ -24,4 +24,6 @@ export interface TableColumnSEQM {
   // render?: (row: T) => ReactNode;
   minWidth?: CSSProperties['minWidth'];
   textBold?: boolean;
+  /** Se true, permite ordenação nesta coluna */
+  sortable?: boolean;
 }
