@@ -11,12 +11,6 @@ export const StyledGlobalContainer = styled.div<{ $hasFooterButtons?: boolean }>
   max-width: 100rem;
   margin: 0 auto;
 
-  ${({ $hasFooterButtons }) =>
-    $hasFooterButtons &&
-    css`
-      grid-template-rows: 1fr 4.25rem;
-    `}
-
   @media (max-width: ${breakpointsPx.lg}) {
     padding: 0;
     gap: 0.5rem;
