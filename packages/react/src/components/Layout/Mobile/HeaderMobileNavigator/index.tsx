@@ -60,6 +60,7 @@ export const HeaderMobileNavigator = ({
               }
               placeholder="digite para buscar..."
               onChange={onChangeSearch}
+              debounceDelay={1000}
             />
           )}
 

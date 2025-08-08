@@ -23,9 +23,9 @@ interface AnimalTableDataProps {
   nameAnimal: string;
   imgAnimal: string | null;
   medal?: string;
-  registerAnimal?: string;
+  registerAnimal: string | null;
   isHallOfFameAnimal: string | null;
-  registerOfMerity?: string;
+  registerOfMerity?: string | null;
   modalityAwards?: string | null;
   allAroundAmateur?: string | null;
   allAroundYoung?: string | null;

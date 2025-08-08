@@ -7,7 +7,7 @@ import React from 'react';
 interface TooltipContentComponentProps {
   ImgAnimal?: string | React.FC<SVGProps<SVGSVGElement>> | ((props: any) => JSX.Element);
   isHallOfFameAnimal: string | null;
-  registerOfMerity?: string;
+  registerOfMerity?: string | null;
   modalityAwards?: string | null;
   allAroundAmateur?: string | null;
   allAroundYoung?: string | null;
