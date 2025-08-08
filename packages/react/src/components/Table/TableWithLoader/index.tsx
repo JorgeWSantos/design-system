@@ -2,7 +2,7 @@ import React from 'react';
 import { Text } from '@components/Text';
 import { ActivityIndicator } from '@components/ActivityIndicator';
 import { TableSEQM } from '@componentsSEQM/TableSEQM';
-import type { TableColumnSEQM, TableRowSEQM } from '@abqm-ds/react';
+import type { TableColumnSEQM, TableRowSEQM } from '@componentsSEQM/TableSEQM';
 import { colors } from '@abqm-ds/tokens';
 import { DivContainerTableRight, LoadingContainer, NotFoundContainer } from './styles';
 
