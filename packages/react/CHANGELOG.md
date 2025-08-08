@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.9
+
+### Patch Changes
+
+- fix: 🐛 Corrigirá importação incorreta
+
 ## 2.0.8
 
 ### Patch Changes
