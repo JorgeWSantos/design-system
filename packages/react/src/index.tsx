@@ -29,6 +29,7 @@ export * from './components/ShareOptions';
 export * from './components/Table/AnimalTableData';
 export * from './components/Table/OwnerTableData';
 export * from './components/Table/CompetitorTableData';
+export * from './components/Table/TableWithLoader';
 
 //Layout Components
 export * from './components/Layout/GlobalContainer';

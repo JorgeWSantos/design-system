@@ -1,5 +1,5 @@
 import { ContainerFooterButton, StyledText } from './styles';
-import { RoundedButton } from '@abqm-ds/react';
+import { RoundedButton } from '@components/RoundedButton';
 import type { FooterButtonProps } from './types';
 
 export const FooterButton = ({

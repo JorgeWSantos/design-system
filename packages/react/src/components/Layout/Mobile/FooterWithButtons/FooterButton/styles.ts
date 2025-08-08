@@ -1,5 +1,5 @@
 import { colors, radii } from '@abqm-ds/tokens';
-import { Text } from '@abqm-ds/react';
+import { Text } from '@components/Text';
 import styled, { css } from 'styled-components';
 
 interface StyledFooterButtonProps {
