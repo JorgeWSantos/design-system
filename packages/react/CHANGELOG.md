@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.10
+
+### Patch Changes
+
+- fix:🐛 Corrigirá tipagem do FooterButton
+
 ## 2.0.9
 
 ### Patch Changes
