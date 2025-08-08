@@ -39,6 +39,7 @@ export * from './components/Layout/Mobile/ContentMobile';
 export * from './components/Layout/Mobile/ContainerMobile';
 export * from './components/Layout/Mobile/HeaderMobile';
 export * from './components/Layout/Mobile/HeaderMobileNavigator';
+export * from './components/Layout/Mobile/FooterWithButtons';
 
 // Desktop Layout Components
 export * from './components/Layout/Desktop/ContentDesktop';
