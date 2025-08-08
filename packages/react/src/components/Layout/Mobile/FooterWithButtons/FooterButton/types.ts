@@ -1,5 +1,5 @@
-import type { RoundedButtonVariants } from "@abqm-ds/react";
-import type { MouseEvent, ReactNode } from "react";
+import type { RoundedButtonVariants } from '@components/RoundedButton/types';
+import type { MouseEvent, ReactNode } from 'react';
 
 export interface FooterButtonProps {
   children: ReactNode; //icon
