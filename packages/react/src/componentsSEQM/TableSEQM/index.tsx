@@ -11,6 +11,7 @@ import {
 import { TableSEQMProps } from './types';
 import { useState } from 'react';
 import { CaretUpFillIcon } from '@abqm-ds/icons';
+import { colors } from '@abqm-ds/tokens';
 
 export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMProps) => {
   const [sortKey, setSortKey] = useState<string | null>(null);
@@ -108,22 +109,22 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
                   <>
                     {sortKey === col.key ? (
                       sortOrder === 'asc' ? (
-                        <CaretDownFillIcon
-                          style={{ minWidth: '0.5rem' }}
-                          width={7}
-                          height={7}
-                        />
+                        <CaretDownFillIcon width={6} height={6} />
                       ) : (
-                        <CaretUpFillIcon
-                          style={{ minWidth: '0.5rem' }}
-                          width={7}
-                          height={7}
-                        />
+                        <CaretUpFillIcon width={6} height={6} />
                       )
                     ) : (
                       <StyledTableSEQMThSortable>
-                        <CaretUpFillIcon width={6} height={6} />
-                        <CaretDownFillIcon width={6} height={6} />
+                        <CaretUpFillIcon
+                          width={6}
+                          height={6}
+                          fill={colors.emeraldGreen50}
+                        />
+                        <CaretDownFillIcon
+                          width={6}
+                          height={6}
+                          fill={colors.emeraldGreen50}
+                        />
                       </StyledTableSEQMThSortable>
                     )}
                   </>

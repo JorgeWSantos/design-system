@@ -26,16 +26,17 @@ export const ContainerMobile = styled.main<{
     max-height: calc(100dvh - (100px));
   }
 
-  //usado quando existem botões no footer e é substituído pelo footer padrão
+  //usado junto ao FooterWithButtons
+  //para sobrepor o footer padrão
   ${({ $hasFooterButtons }) =>
     $hasFooterButtons &&
     css`
       @media (max-width: ${breakpointsPx.md}) {
-        max-height: calc(100dvh - (140px));
+        max-height: calc(100dvh - (130px));
       }
 
       @media (max-width: ${breakpointsPx.sm}) {
-        max-height: calc(100dvh - (140px));
+        max-height: calc(100dvh - (130px));
       }
     `}
 
