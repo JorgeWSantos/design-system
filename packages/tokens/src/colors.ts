@@ -2,8 +2,10 @@ export const colors = {
   // Base
   white: '#FFF',
   // Opacity
+  white05: '#ffffff0d', // 5% opacity
   white10: '#ffffff1a',
   white25: '#ffffff40',
+  white30: '#ffffff4d', // 30% opacity
   white50: '#ffffff80',
   white60: '#ffffff99',
   white75: '#FFFFFFBF',

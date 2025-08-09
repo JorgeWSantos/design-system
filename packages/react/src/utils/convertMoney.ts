@@ -16,3 +16,21 @@ export function formatToBRL({
     minimumFractionDigits: 2,
   });
 }
+
+// Função utilitária para converter número em formato de dinheiro BRL
+// exemplo: 123456.789 -> 123.456,79
+export function formatToBRLWithoutSymbol({
+  value,
+  fallback,
+}: {
+  value?: number | string | null;
+  fallback?: string;
+}): string {
+  if (value === undefined || value === null || value === '' || isNaN(Number(value))) {
+    return fallback || '-';
+  }
+  return Number(value).toLocaleString('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}
