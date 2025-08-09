@@ -12,6 +12,20 @@ import { colors } from '@abqm-ds/tokens';
 import { useClickOutside } from 'hooks/useClickOutside';
 import { DropdownProps, DataDropdown } from './types';
 
+/**
+ * Propriedades do componente Dropdown.
+ *
+ * @property {(item: DataDropdown) => void} [setValue] - Função chamada ao selecionar uma opção.
+ * @property {DataDropdown | null} [value] - Valor selecionado atualmente.
+ * @property {DataDropdown[]} data - Lista de opções disponíveis para seleção.
+ * @property {string | null} [label] - Rótulo exibido acima do Dropdown.
+ * @property {VariantsTypesDropdown} [variant] - Variante visual do Dropdown ('primary', 'secondary', 'tertiary').
+ * @property {string} [maxHeight] - Altura máxima do menu de opções.
+ * @property {string} [maxWidth] - Largura máxima do Dropdown.
+ * @property {boolean} [openToTop] - Se verdadeiro, o menu de opções abre para cima.
+ * @property {ElementType} [as] - Permite trocar o elemento HTML raiz do Dropdown.
+ */
+
 export function Dropdown({
   data,
   setValue,
@@ -20,6 +34,7 @@ export function Dropdown({
   variant = 'primary',
   maxHeight = 'unset',
   maxWidth = '100%',
+  openToTop = false,
   ...rest
 }: DropdownProps) {
   const [selectedOption, setSelectedOption] = useState(
@@ -79,16 +94,16 @@ export function Dropdown({
           {selectedOption?.label || null}
         </StyledTextSelect>
 
-        <StyledCaretDownFillIcon
-          // width={12}
-          // height={12}
-          // fill={colors.white50}
-          $variant={variant}
-        />
+        <StyledCaretDownFillIcon $variant={variant} />
       </StyledDropdown>
 
       {showOptions && (
-        <ContainerOptions $variant={variant} $maxHeight={maxHeight} $maxWidth={maxWidth}>
+        <ContainerOptions
+          $variant={variant}
+          $maxHeight={maxHeight}
+          $maxWidth={maxWidth}
+          $openToTop={openToTop}
+        >
           {data.map((item) => (
             <Option $variant={variant} key={item.id} onClick={() => selectAnOption(item)}>
               {item.label}

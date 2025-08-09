@@ -18,4 +18,5 @@ export interface DropdownProps extends ComponentProps<typeof StyledDropdown> {
   variant?: VariantsTypesDropdown;
   maxHeight?: string;
   maxWidth?: string;
+  openToTop?: boolean;
 }

@@ -117,14 +117,26 @@ export const ContainerOptions = styled.div<{
   $variant?: VariantsTypesDropdown;
   $maxHeight?: string;
   $maxWidth?: string;
+  $openToTop?: boolean;
 }>`
   display: flex;
   flex-direction: column;
 
   position: absolute;
-  top: 100%;
   left: 0;
   z-index: 1;
+  ${({ $openToTop }) =>
+    $openToTop
+      ? css`
+          bottom: 100%;
+          top: auto;
+          margin-bottom: 0.25rem;
+        `
+      : css`
+          top: 100%;
+          bottom: auto;
+          margin-top: 0.5rem;
+        `}
 
   overflow-y: auto; // scroll no componente pai
   overflow-x: hidden; // previne scroll lateral

@@ -85,3 +85,14 @@ export const TertiaryWithoutLabel: StoryObj<DropdownProps> = {
   },
   render,
 };
+
+export const OpenToTop: StoryObj<DropdownProps> = {
+  args: {
+    label: 'Estados (abre para cima)',
+    data: optionsStates,
+    variant: 'primary',
+    openToTop: true,
+    maxHeight: '200px',
+  },
+  render,
+};
