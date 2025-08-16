@@ -24,6 +24,7 @@ export * from './components/RadioGroup';
 export * from './components/InfoCard';
 export * from './components/Switch';
 export * from './components/ShareOptions';
+export * from './components/DateTimePicker';
 
 //Table Components
 export * from './components/Table/AnimalTableData';
