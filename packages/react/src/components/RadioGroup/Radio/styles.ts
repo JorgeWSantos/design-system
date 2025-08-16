@@ -43,6 +43,8 @@ export const CustomRadio = styled.span<{ checked: boolean }>`
   justify-content: center;
   width: 16px;
   height: 16px;
+  max-width: 16px;
+  max-height: 16px;
   border: 2px solid #808080;
   border-radius: 50%;
   background: #fff;

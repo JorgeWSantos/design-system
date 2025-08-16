@@ -12,13 +12,14 @@ export const ContainerRadioGroup = styled.div`
 
 export const ContentRadioGroup = styled.div<{ direction: RadioGroupDirections }>`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  gap: 8;
+  gap: ${space[2]};
 
   ${({ direction }) =>
     direction === 'horizontal' &&
     css`
       flex-direction: row;
-      gap: 16px;
+      gap: ${space[2]} ${space[4]};
     `}
 `;
