@@ -8,6 +8,17 @@ const sizeVariants = {
   md: `${space[3]} ${space[3]}`,
 };
 
+export const TextInputWithLabelContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+
+  p {
+    padding: 0 ${space[2]};
+  }
+`;
+
 export type SizeVariants = keyof typeof sizeVariants;
 interface StyledTextInputContainerProps {
   $size: SizeVariants;
