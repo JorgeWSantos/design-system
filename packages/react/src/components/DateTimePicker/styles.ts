@@ -24,7 +24,6 @@ export const DateTimeInput = styled.input`
   }
 
   &:disabled {
-    background: #f5f5f5;
-    color: #aaa;
+    color: ${colors.emeraldGreen40};
   }
 `;
