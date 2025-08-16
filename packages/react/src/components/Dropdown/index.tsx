@@ -73,7 +73,7 @@ export function Dropdown({
           lineHeight="tight"
           fontWeight="regular"
           fontSize="ssm"
-          color={colors.emeraldGreen75}
+          color={colors.emeraldGreen50}
           style={{ marginLeft: '0.5rem' }}
         >
           {label}
