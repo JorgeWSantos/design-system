@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { DateTimePickerContainer, DateTimeInput } from './styles';
+import { convertToBrazilDate } from 'utils/formatDate';
 
 export interface DateTimePickerProps {
   value?: string;
@@ -13,14 +14,15 @@ export const DateTimePicker: React.FC<DateTimePickerProps> = ({
   value,
   onChange,
   label,
-  placeholder = 'Select date and time',
+  placeholder = '',
   disabled = false,
 }) => {
   const [inputValue, setInputValue] = useState(value || '');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-    onChange?.(e.target.value);
+    const value = e.target.value;
+    setInputValue(value);
+    onChange?.(value);
   };
 
   return (

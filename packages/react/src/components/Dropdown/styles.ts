@@ -130,12 +130,12 @@ export const ContainerOptions = styled.div<{
       ? css`
           bottom: 100%;
           top: auto;
-          margin-bottom: 0.25rem;
+          margin-bottom: 0.1rem;
         `
       : css`
           top: 100%;
           bottom: auto;
-          margin-top: 0.5rem;
+          margin-top: 0.1rem;
         `}
 
   overflow-y: auto; // scroll no componente pai

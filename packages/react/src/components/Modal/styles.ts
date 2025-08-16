@@ -76,7 +76,7 @@ export const ModalContent = styled.div<{
   display: flex;
   flex-direction: column;
   background: ${colors.white};
-  padding: ${space[6]} ${space[8]} ${space[12]} ${space[8]};
+  padding: ${space[6]} ${space[8]} ${space[16]} ${space[8]};
   border-radius: ${radii.md};
 
   position: relative;
@@ -232,4 +232,16 @@ export const AnimatedArrowRight = styled(ArrowDownShortIcon)`
   path {
     fill: ${colors.emeraldGreen92};
   }
+`;
+
+export const DivButton = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  position: absolute;
+  bottom: 20px;
+  left: 0;
 `;

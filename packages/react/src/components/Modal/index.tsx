@@ -9,7 +9,8 @@ import {
   AnimatedArrowRight,
   DivTopModal,
   HeaderFilter,
-  DivButtonCleanFilter, // add import
+  DivButtonCleanFilter,
+  DivButton, // add import
 } from './styles';
 
 import ReactDOM from 'react-dom';
@@ -17,6 +18,7 @@ import { Heading } from '@components/Heading';
 import { colors } from '@abqm-ds/tokens';
 import { Text } from '@components/Text';
 import { ModalProps } from './types';
+import { Button } from '@components/Button';
 
 /**
  * Modal
@@ -40,6 +42,7 @@ export const Modal = ({
   onClickCleanFilter,
   title,
   onClose,
+  onApply,
   children,
   positionHorizontal = 'center',
   positionVertical = 'center',
@@ -124,6 +127,12 @@ export const Modal = ({
           {children}
           {showArrow && <AnimatedArrowRight />}
         </DivChildren>
+
+        {onApply && (
+          <DivButton>
+            <Button size="md" text="Aplicar" variant="dark" onClick={onApply} />
+          </DivButton>
+        )}
       </ModalContent>
     </ModalOverlay>,
     document.body
