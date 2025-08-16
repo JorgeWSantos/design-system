@@ -73,7 +73,7 @@ export const MenuList = styled.ul<{ $menuIsOpen: boolean; $subMenuIsOpen: boolea
   } */
 `;
 
-export const StyledMenuItem = styled.li<{ index: number; $subMenuIsOpen: boolean }>`
+export const StyledMenuItem = styled.li<{ $subMenuIsOpen: boolean }>`
   max-height: 2.813rem;
   height: 2.813rem;
 

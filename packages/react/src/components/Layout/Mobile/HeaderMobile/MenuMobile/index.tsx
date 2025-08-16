@@ -61,11 +61,7 @@ export const MenuMobile = ({
           const hasSubmenu = item.sub_menu && item.sub_menu.length > 0;
 
           return (
-            <StyledMenuItem
-              key={item.name}
-              index={i}
-              $subMenuIsOpen={visibleSubmenu !== null}
-            >
+            <StyledMenuItem key={item.name} $subMenuIsOpen={visibleSubmenu !== null}>
               <MenuLink
                 href={token ? `${item.link}?tk=${token}` : item.link}
                 onClick={(e) => {
