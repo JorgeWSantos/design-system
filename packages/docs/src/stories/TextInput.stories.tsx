@@ -41,6 +41,8 @@ import { TextInput } from '@abqm-ds/react';
 - \`icon\`: ReactNode — Ícone exibido à esquerda do campo.
 - \`prefix\`: string — Texto exibido antes do valor digitado.
 - \`disabled\`: boolean — Desabilita o campo.
+- \`placeholder\`: string — Texto exibido quando o campo está vazio.
+- \`label\`: string — Texto exibido acima do campo.
 - \`...props\`: Aceita todas as props nativas de \`<input>\`.
 
 #### Exemplo com ícone e prefixo
@@ -105,6 +107,15 @@ export const WithIcon: StoryObj<TextInputProps> = {
     placeholder: 'With Icon',
     size: 'sm',
     icon: <SearchIcon fill={colors.white50} />,
+  },
+  render,
+};
+
+export const WithLabel: StoryObj<TextInputProps> = {
+  args: {
+    placeholder: 'With Label',
+    size: 'sm',
+    label: 'Label',
   },
   render,
 };
