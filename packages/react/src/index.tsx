@@ -31,6 +31,7 @@ export * from './components/Table/AnimalTableData';
 export * from './components/Table/OwnerTableData';
 export * from './components/Table/CompetitorTableData';
 export * from './components/Table/TableWithLoader';
+export * from './components/Table/CreatorTableData';
 
 //Layout Components
 export * from './components/Layout/GlobalContainer';

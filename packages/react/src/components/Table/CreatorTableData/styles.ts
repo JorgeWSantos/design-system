@@ -2,7 +2,7 @@ import { Text } from '@components/Text';
 import { breakpointsPx, colors, fontSizes, fontWeights } from '@abqm-ds/tokens';
 import styled from 'styled-components';
 
-export const OwnerTableDataContainer = styled.div`
+export const CreatorTableDataContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,13 +13,13 @@ export const OwnerTableDataContainer = styled.div`
   }
 `;
 
-export const StyledTextHallOfFameOwner = styled(Text).attrs({
+export const StyledTextHallOfFameCreator = styled(Text).attrs({
   fontSize: 'xxs',
   fontWeight: 'semiBold',
-})<{ $isHallOfFameOwner: boolean | undefined }>`
+})<{ $isHallOfFameCreator: boolean | undefined }>`
   /* Remove flex from root, use inline-flex on span for better icon alignment */
-  color: ${({ $isHallOfFameOwner }) =>
-    $isHallOfFameOwner ? colors.brown700 : 'inherit'};
+  color: ${({ $isHallOfFameCreator }) =>
+    $isHallOfFameCreator ? colors.brown700 : 'inherit'};
   margin-bottom: -0.1rem;
 
   span {
