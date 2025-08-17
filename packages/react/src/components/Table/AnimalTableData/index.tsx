@@ -58,6 +58,9 @@ const AnimalTableData = ({
     'yellow-medal': colors.yellow200,
   };
 
+  const cdn = 'https://i.imgur.com';
+  const urlMedal = `${cdn}/6ymvs72.png`;
+
   const ImageSrc =
     imgAnimal !== '' && imgAnimal !== null ? imgAnimal : DefaultHorseRoundedIconIMG;
   const imageSrcTooltip =
@@ -144,8 +147,17 @@ const AnimalTableData = ({
 
       <DivTexts>
         <StyledTextHallOfFameNameAnimal $isHallOfFameAnimal={!!isHallOfFameAnimal}>
-          {nameAnimal}
-          {isHallOfFameAnimal && <StarIcon />}
+          <span className="animal-name">
+            {nameAnimal}
+            {isHallOfFameAnimal && (
+              <img
+                src={urlMedal}
+                width="12"
+                height="12"
+                className="hall-fama-creator-icon"
+              />
+            )}
+          </span>
         </StyledTextHallOfFameNameAnimal>
 
         {isHallOfFameAnimal ? (

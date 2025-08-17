@@ -98,6 +98,14 @@ export const StyledTextHallOfFameNameAnimal = styled(Text).attrs({
   height: 14px;
   margin-bottom: -0.1rem;
 
+  span {
+    white-space: nowrap;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.25rem;
+  }
+
   @media (max-width: ${breakpointsPx.lg}) {
     font-size: ${fontSizes.ssm};
   }
