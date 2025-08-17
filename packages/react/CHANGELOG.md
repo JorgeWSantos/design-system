@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.12
+
+### Patch Changes
+
+- feat: 🎸 Melhorias na lib react, adicionando datetimepicker e fazendo melhorias no modal/textinput/dropdown e etc..
+
 ## 2.0.11
 
 ### Patch Changes
