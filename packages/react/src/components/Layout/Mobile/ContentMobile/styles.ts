@@ -18,7 +18,7 @@ export const ContainerMobile = styled.main<{
 
   max-height: 100dvh; // 100px é a altura do header + footer
 
-  @media (max-width: ${breakpointsPx.md}) {
+  @media (max-width: ${breakpointsPx.lg}) {
     max-height: calc(100dvh - (110px));
   }
 
