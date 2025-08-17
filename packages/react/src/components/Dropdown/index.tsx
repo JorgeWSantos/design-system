@@ -103,6 +103,7 @@ export function Dropdown({
           $maxHeight={maxHeight}
           $maxWidth={maxWidth}
           $openToTop={openToTop}
+          $hasLabel={!!label}
         >
           {data.map((item) => (
             <Option $variant={variant} key={item.id} onClick={() => selectAnOption(item)}>

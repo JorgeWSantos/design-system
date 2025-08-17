@@ -118,6 +118,7 @@ export const ContainerOptions = styled.div<{
   $maxHeight?: string;
   $maxWidth?: string;
   $openToTop?: boolean;
+  $hasLabel?: boolean;
 }>`
   display: flex;
   flex-direction: column;
@@ -125,12 +126,12 @@ export const ContainerOptions = styled.div<{
   position: absolute;
   left: 0;
   z-index: 1;
-  ${({ $openToTop }) =>
+  ${({ $openToTop, $hasLabel }) =>
     $openToTop
       ? css`
           bottom: 100%;
           top: auto;
-          margin-bottom: 0.1rem;
+          margin-bottom: ${$hasLabel ? -1.2 : 0.1}rem;
         `
       : css`
           top: 100%;
