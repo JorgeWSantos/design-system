@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Switch } from '@abqm-ds/react';
+import { Switch, SwitchVariants } from '@abqm-ds/react';
 import React from 'react';
 import { colors } from '@abqm-ds/tokens';
 
@@ -27,10 +27,13 @@ import { Switch } from '@abqm-ds/react';
   },
 } as Meta<typeof Switch>;
 
-const renderSwitch = (args: {
+interface SBRenderSwitch {
   checked: boolean;
   onChange?: (checked: boolean) => void;
-}) => {
+  variant?: SwitchVariants;
+}
+
+const renderSwitch = (args: SBRenderSwitch) => {
   const [checked, setChecked] = React.useState(args.checked);
 
   const handleChange = () => {
@@ -41,21 +44,31 @@ const renderSwitch = (args: {
   return (
     <div
       style={{
-        backgroundColor: colors.green300,
+        backgroundColor: args.variant === 'primary' ? colors.green300 : colors.white,
         width: '300px',
         padding: '20px',
         borderRadius: '8px',
       }}
     >
-      <Switch checked={checked} onChange={handleChange} />
+      <Switch checked={checked} onChange={handleChange} variant={args.variant} />
     </div>
   );
 };
 
-export const Primary: StoryObj<{ checked: boolean; onChange?: () => void }> = {
+export const Primary: StoryObj<SBRenderSwitch> = {
   args: {
     checked: true,
     onChange: () => {},
+    variant: 'primary',
+  },
+  render: renderSwitch,
+};
+
+export const Filter: StoryObj<SBRenderSwitch> = {
+  args: {
+    checked: true,
+    onChange: () => {},
+    variant: 'filter',
   },
   render: renderSwitch,
 };
