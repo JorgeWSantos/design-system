@@ -16,6 +16,7 @@ export { default as FacebookIcon } from './FacebookIcon';
 export { default as FileEarmarkCheckIcon } from './FileEarmarkCheckIcon';
 export { default as FileEarmarkTextIcon } from './FileEarmarkTextIcon';
 export { default as FileTextIcon } from './FileTextIcon';
+export { default as FilterCircleIcon } from './FilterCircleIcon';
 export { default as FilterIcon } from './FilterIcon';
 export { default as GoogleColorIcon } from './GoogleColorIcon';
 export { default as GoogleIcon } from './GoogleIcon';

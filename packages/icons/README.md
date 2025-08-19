@@ -22,11 +22,11 @@ npm install @abqm-ds/icons
 
 1. Adicione os arquivos **SVG** que deseja converter nas pastas `src/icons/`, `src/iconsSEQM/` **ou** `src/logos/`:
 
-   > **Atenção:** A nomenclatura dos ícones deve ser capitalizada, ex:
+   > **Atenção:** A nomenclatura dos ícones deve ser em minúsculo separado por hífen, ex:
    >
    > ❌ caretright.svg
    >
-   > ✅ CaretRight.svg
+   > ✅ caret-right.svg
 
    - Para ícones normais, use `src/icons/`
    - Para ícones SEQM, use `src/iconsSEQM/`
