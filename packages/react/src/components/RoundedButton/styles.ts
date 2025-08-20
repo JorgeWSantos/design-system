@@ -32,12 +32,36 @@ export const StyledRoundedButton = styled.button<RoundedButtonStyleProps>`
       background-color: ${colors.white25};
     `}
 
-  ${({ $variant }) =>
-    $variant === 'outline-white-25' &&
-    css`
-      background-color: transparent;
-      border: 1px solid ${colors.white25};
-    `}
+  ${({ $variant }) => {
+    switch ($variant) {
+      case 'primary':
+        return css`
+          background-color: ${colors.white85};
+          color: ${colors.emeraldGreen75};
+          border: none;
+        `;
+      case 'outline':
+        return css`
+          background-color: transparent;
+          border: 1px solid ${colors.white50};
+          color: ${colors.white50};
+        `;
+      case 'secondary':
+        return css`
+          background-color: ${colors.green300};
+          color: ${colors.white};
+          border: none;
+        `;
+      case 'tertiary':
+        return css`
+          background-color: ${colors.white25};
+          color: ${colors.white50};
+          border: none;
+        `;
+      default:
+        return css``;
+    }
+  }}
 `;
 
 export const ActiveIndicator = styled.span`
