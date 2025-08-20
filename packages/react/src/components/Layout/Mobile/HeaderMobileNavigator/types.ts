@@ -1,6 +1,12 @@
+import React from 'react';
 import { ComponentProps, ElementType, ReactNode } from 'react';
 import { StyledNavigatorMobile } from './styles';
 
+export interface HeaderMobileNavigatorButtonProps {
+  icon: ReactNode;
+  disabled?: boolean;
+  onClick?: () => void;
+}
 export interface HeaderMobileNavigatorProps
   extends ComponentProps<typeof StyledNavigatorMobile> {
   as?: ElementType;
@@ -10,4 +16,5 @@ export interface HeaderMobileNavigatorProps
   hasSearch?: boolean;
   headingText?: string;
   onChangeSearch?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  buttons?: HeaderMobileNavigatorButtonProps[];
 }

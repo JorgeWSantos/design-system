@@ -56,3 +56,9 @@ export const ButtonSearch = styled.button`
   color: white;
   cursor: pointer;
 `;
+
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  gap: ${space[2]};
+  margin-left: auto;
+`;

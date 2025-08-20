@@ -5,6 +5,7 @@ import {
   ContainerButtonBack,
   StyledNavigatorMobile,
   StyledWrapperSearch,
+  ButtonsWrapper,
 } from './styles';
 
 import { HeaderMobileNavigatorProps } from './types';
@@ -13,6 +14,7 @@ import { Heading } from '@components/Heading';
 import { SearchIcon } from '@abqm-ds/icons';
 import { useState } from 'react';
 import { TextInput } from '@components/TextInput';
+import { HeaderMobileButton } from './HeaderMobileButton';
 
 export const HeaderMobileNavigator = ({
   onGoBack,
@@ -21,6 +23,7 @@ export const HeaderMobileNavigator = ({
   headingText,
   hasSearch = false,
   onChangeSearch,
+  buttons,
   ...rest
 }: HeaderMobileNavigatorProps) => {
   const [searchIsOpen, setSearchIsOpen] = useState(false);
@@ -79,6 +82,20 @@ export const HeaderMobileNavigator = ({
             </ButtonSearch>
           )}
         </StyledWrapperSearch>
+      )}
+
+      {buttons && (
+        <ButtonsWrapper>
+          {buttons.map((button, index) => (
+            <HeaderMobileButton
+              disabled={button.disabled}
+              onClick={button.onClick}
+              key={index}
+            >
+              {button.icon}
+            </HeaderMobileButton>
+          ))}
+        </ButtonsWrapper>
       )}
       {children}
       {}
