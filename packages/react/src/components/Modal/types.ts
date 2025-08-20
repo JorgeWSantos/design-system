@@ -10,7 +10,7 @@ export interface ModalProps extends ComponentProps<'div'> {
   isFiltered?: boolean;
   title?: string;
   onClose: () => void;
-  onApply: () => void;
+  onApply?: () => void;
   onClickCleanFilter?: () => void;
   children: ReactNode;
   positionHorizontal?: PropModalHorizontalPositions;
