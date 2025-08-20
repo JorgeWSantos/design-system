@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.15
+
+### Patch Changes
+
+- feat: 🎸 Corrigirá tipagem do modal e exportará o hook
+
 ## 2.0.14
 
 ### Patch Changes
