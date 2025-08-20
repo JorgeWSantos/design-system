@@ -48,6 +48,9 @@ export const UserDropDown = ({
       {signed ? (
         <Tooltip
           arrowType="topRight"
+          positions={{
+            left: '80',
+          }}
           contentInside={
             signed && (
               <DivTooltip>
