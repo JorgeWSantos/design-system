@@ -49,4 +49,5 @@ declare module '@abqm-ds/icons' {
   export const LaurelIcon: FC<SVGProps<SVGSVGElement>>;
   export const StarIcon: FC<SVGProps<SVGSVGElement>>;
   export const CaretUpFillIcon: FC<SVGProps<SVGSVGElement>>;
+  export const FilterCircleIcon: FC<SVGProps<SVGSVGElement>>;
 }
