@@ -6,7 +6,7 @@ export const ShareOptionsContainer = styled.div<{
   $variantArrow: ShareOptionsVariantArrowTypes;
 }>`
   position: absolute;
-  right: 0.5rem;
+  right: 0.2rem;
   top: 3.5rem;
   z-index: 9999;
   background: white;
