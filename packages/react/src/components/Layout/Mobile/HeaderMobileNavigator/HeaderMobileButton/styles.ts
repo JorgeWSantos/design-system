@@ -27,11 +27,11 @@ export const ContainerHeaderButton = styled.div<{ $isActive?: boolean }>`
     $isActive &&
     css`
       button {
-        background-color: ${colors.white75};
+        background-color: ${colors.white50};
       }
 
       svg {
-        color: ${colors.emeraldGreen50};
+        color: ${colors.white};
       }
     `}
 `;
