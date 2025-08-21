@@ -91,6 +91,7 @@ export const HeaderMobileNavigator = ({
               disabled={button.disabled}
               onClick={button.onClick}
               key={index}
+              isActive={button.isActive}
             >
               {button.icon}
             </HeaderMobileButton>

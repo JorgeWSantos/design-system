@@ -6,6 +6,7 @@ export interface HeaderMobileNavigatorButtonProps {
   icon: ReactNode;
   disabled?: boolean;
   onClick?: () => void;
+  isActive?: boolean;
 }
 export interface HeaderMobileNavigatorProps
   extends ComponentProps<typeof StyledNavigatorMobile> {
@@ -17,4 +18,5 @@ export interface HeaderMobileNavigatorProps
   headingText?: string;
   onChangeSearch?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   buttons?: HeaderMobileNavigatorButtonProps[];
+  isActive?: boolean;
 }
