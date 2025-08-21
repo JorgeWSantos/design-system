@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.17
+
+### Patch Changes
+
+- feat: 🎸 Melhoria de estilização no ShareOptions
+
 ## 2.0.16
 
 ### Patch Changes
