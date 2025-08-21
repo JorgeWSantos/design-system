@@ -61,10 +61,9 @@ export const DivBorder = styled.div<{ $medalColor: string }>`
 
 export const LaurelImage = styled(LaurelIcon)`
   position: absolute;
-  margin-top: 0.05rem;
-  left: -0.05rem;
-  width: 1.3rem;
-  height: 1.3rem;
+  margin-top: -1rem;
+  width: 100%;
+  height: 100%;
   z-index: 2;
   transform: scale(${scaleImages});
 

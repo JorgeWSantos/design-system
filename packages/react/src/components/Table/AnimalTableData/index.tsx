@@ -116,7 +116,7 @@ const AnimalTableData = ({
         arrowType="bottomLeft"
         positions={{
           top: '-110',
-          left: '-5',
+          left: '-8',
           // right: '10',
         }}
       >
@@ -137,13 +137,13 @@ const AnimalTableData = ({
             <></>
           )}
         </DivImage>
+        {isHallOfFameAnimal && (
+          <LaurelImage
+            className="tooltip-anchor-laurelimage"
+            data-tooltip-id={`tooltip-laurelimage-${nameAnimal}`}
+          />
+        )}
       </Tooltip>
-      {isHallOfFameAnimal && (
-        <LaurelImage
-          className="tooltip-anchor-laurelimage"
-          data-tooltip-id={`tooltip-laurelimage-${nameAnimal}`}
-        />
-      )}
 
       <DivTexts>
         <StyledTextHallOfFameNameAnimal $isHallOfFameAnimal={!!isHallOfFameAnimal}>
