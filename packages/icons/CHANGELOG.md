@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 2.0.6
+
+### Patch Changes
+
+- release: 🦋 Nova versão do react e icons
+
 ## 2.0.5
 
 ### Patch Changes

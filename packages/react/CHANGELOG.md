@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.16
+
+### Patch Changes
+
+- release: 🦋 Nova versão do react e icons
+
 ## 2.0.15
 
 ### Patch Changes
