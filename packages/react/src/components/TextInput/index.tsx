@@ -5,7 +5,7 @@ import React, {
   useState,
   useCallback,
 } from 'react';
-import { useDebouncedCallback } from '../../hooks/useDebounce.hook';
+import { useDebouncedCallback } from '../../hooks/useDebounce';
 import {
   Input,
   Prefix,

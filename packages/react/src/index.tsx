@@ -60,6 +60,9 @@ export { ErrorBoundary } from './components/ErrorBoundary';
 export { useDeviceType } from './hooks/useDeviceType';
 export * from './utils';
 
+//Hooks
+export { useDebouncedCallback } from './hooks/useDebounce';
+
 //Styles
 export { GlobalStyle } from './styles/global';
 

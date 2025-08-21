@@ -21,7 +21,7 @@ export const ShareOptionsContainer = styled.div<{
     content: '';
     position: absolute;
     top: -0.5rem;
-    left: 34%;
+    left: 50%;
     right: unset;
     transform: translateX(-50%);
     border-width: 0 ${radii.md} ${radii.md} ${radii.md};

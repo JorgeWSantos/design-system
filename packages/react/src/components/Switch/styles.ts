@@ -1,12 +1,16 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors } from '@abqm-ds/tokens';
+import { SwitchVariants } from '.';
 
 export const SwitchContainer = styled.div`
   display: flex;
   align-items: center;
 `;
 
-export const SwitchButton = styled.button<{ $checked: boolean }>`
+export const SwitchButton = styled.button<{
+  $checked: boolean;
+  $variant: SwitchVariants;
+}>`
   width: 2rem;
   height: 1rem;
   border-radius: 1rem;
@@ -16,9 +20,15 @@ export const SwitchButton = styled.button<{ $checked: boolean }>`
   cursor: pointer;
   transition: background 0.2s;
   padding: 0;
+
+  ${({ $variant, $checked }) =>
+    $variant === 'filter' &&
+    css`
+      background: ${$checked ? colors.green500 : colors.greenTransparent15};
+    `}
 `;
 
-export const SwitchKnob = styled.span<{ $checked: boolean }>`
+export const SwitchKnob = styled.span<{ $checked: boolean; $variant: SwitchVariants }>`
   display: block;
   width: 1.25rem;
   height: 1.25rem;
@@ -29,4 +39,10 @@ export const SwitchKnob = styled.span<{ $checked: boolean }>`
   left: ${({ $checked }) => ($checked ? '0.8rem' : '0')};
   transition: left 0.5s ease;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
+  ${({ $variant }) =>
+    $variant === 'filter' &&
+    css`
+      border: 1px solid ${colors.gray100};
+    `}
 `;

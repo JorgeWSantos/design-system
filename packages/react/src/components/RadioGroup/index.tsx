@@ -17,7 +17,7 @@ const RadioGroup = ({
           <Radio
             key={option.id}
             option={option}
-            checked={option.value === selectedOption.value}
+            checked={option.value === selectedOption?.value}
             name={groupName}
             value={option.value}
             onChange={() => setSelectedOption(option)}

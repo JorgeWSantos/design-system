@@ -11,6 +11,8 @@ interface DeviceInfo {
   isDesktop: boolean;
   isMobile: boolean;
   isWide: boolean;
+  windowWidth: number;
+  windowHeight: number;
 }
 
 export function useDeviceType(): DeviceInfo {
@@ -43,5 +45,7 @@ export function useDeviceType(): DeviceInfo {
     isMiniDesktop: deviceType === 'mini_desktop',
     isDesktop: deviceType === 'desktop',
     isWide: deviceType === 'wide',
+    windowWidth: window.innerWidth,
+    windowHeight: window.innerHeight,
   };
 }
