@@ -46,6 +46,12 @@ export const StyledRoundedButton = styled.button<RoundedButtonStyleProps>`
           border: 1px solid ${colors.white50};
           color: ${colors.white50};
         `;
+      case 'outline-white-25':
+        return css`
+          background-color: transparent;
+          border: 1px solid ${colors.white25};
+          color: ${colors.white25};
+        `;
       case 'secondary':
         return css`
           background-color: ${colors.green300};
