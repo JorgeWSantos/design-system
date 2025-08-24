@@ -1,4 +1,5 @@
 import {
+  ContainerAnimalTableDataType,
   ContainerImage,
   DivBorder,
   DivImage,
@@ -15,10 +16,11 @@ import { colors } from '@abqm-ds/tokens';
 import { DefaultHorseRoundedIconIMG, DefaultHorseSquadIconIMG } from '@abqm-ds/icons';
 import TooltipContentComponent from './TooltipContentComponent';
 
-import { StarIcon } from '@abqm-ds/icons';
 import { Tooltip } from '@components/Tooltip';
+import { ComponentProps } from 'react';
 
-interface AnimalTableDataProps {
+export interface AnimalTableDataProps
+  extends ComponentProps<typeof ContainerAnimalTableDataType> {
   idAnimal: number;
   nameAnimal: string;
   imgAnimal: string | null;
@@ -46,6 +48,8 @@ const AnimalTableData = ({
   allAroundYoung,
   superHorseAward,
   rankingGeneralAward,
+  onClick,
+  ...rest
 }: AnimalTableDataProps) => {
   const medalha: Record<string, string> = {
     '': 'transparent',
@@ -91,7 +95,7 @@ const AnimalTableData = ({
     .join(', ');
 
   return (
-    <ContainerImage className="animal-table-data-container" id={infoString}>
+    <ContainerImage className="animal-table-data-container" id={infoString} {...rest}>
       <Tooltip
         style={{ width: 'fit-content' }}
         id={
@@ -145,7 +149,7 @@ const AnimalTableData = ({
         )}
       </Tooltip>
 
-      <DivTexts>
+      <DivTexts $hasClick={!!onClick} onClick={onClick}>
         <StyledTextHallOfFameNameAnimal $isHallOfFameAnimal={!!isHallOfFameAnimal}>
           <span className="animal-name">
             {nameAnimal}

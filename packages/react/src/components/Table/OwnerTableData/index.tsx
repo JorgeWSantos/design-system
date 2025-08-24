@@ -1,23 +1,34 @@
+import { ComponentProps } from 'react';
 import {
   MedalImg,
   OwnerTableDataContainer,
+  OwnerTableDataContainerType,
   StyledSubTextHallOfFame,
   StyledTextHallOfFameOwner,
 } from './styles';
-import { StarIcon } from '@abqm-ds/icons';
+
+export interface OwnerTableDataContainerTypeProps
+  extends ComponentProps<typeof OwnerTableDataContainerType> {
+  value: string;
+  isHallOfFameOwner: string | null;
+}
 
 const OwnerTableData = ({
   value,
   isHallOfFameOwner,
-}: {
-  value: string;
-  isHallOfFameOwner: string | null;
-}) => {
+  onClick,
+  ...rest
+}: OwnerTableDataContainerTypeProps) => {
   const cdn = 'https://i.imgur.com';
   const urlMedal = `${cdn}/6ymvs72.png`;
 
   return (
-    <OwnerTableDataContainer className="owner-table-data-container">
+    <OwnerTableDataContainer
+      className="owner-table-data-container"
+      onClick={onClick}
+      $hasClick={!!onClick}
+      {...rest}
+    >
       <StyledTextHallOfFameOwner $isHallOfFameOwner={!!isHallOfFameOwner}>
         <span className="owner-name">
           {value}

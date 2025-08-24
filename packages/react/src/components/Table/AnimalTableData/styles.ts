@@ -1,12 +1,14 @@
 import { LaurelIcon } from '@abqm-ds/icons';
 import { Text } from '@components/Text';
 import { breakpointsPx, colors, fontSizes, fontWeights } from '@abqm-ds/tokens';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const scaleImages = 1;
 const scaleImagesMobile = 1.05;
 
-export const ContainerImage = styled.div`
+export const ContainerAnimalTableDataType = styled.div``;
+
+export const ContainerImage = styled(ContainerAnimalTableDataType)`
   position: relative;
   display: flex;
   align-items: center;
@@ -79,10 +81,24 @@ export const DivInfo = styled.div`
   height: 100%;
 `;
 
-export const DivTexts = styled.div`
+export const DivTexts = styled.div<{
+  $hasClick: boolean;
+}>`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  transition: filter 0.3s;
+
+  ${({ $hasClick }) =>
+    $hasClick &&
+    css`
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(1.2) contrast(1.2);
+      }
+    `}
 `;
 
 export const StyledTextHallOfFameNameAnimal = styled(Text).attrs({
@@ -139,22 +155,3 @@ export const MedalImg = styled.img`
   aspect-ratio: 1/1;
   margin-top: -0.06rem;
 `;
-
-/// tooltip
-// export const StyledTooltip = styled(Tooltip)<{ hasSomething?: boolean }>`
-//   background-color: white !important;
-//   z-index: 999999;
-//   padding: 0.25rem 1rem 0.25rem 0.25rem !important;
-//   border-radius: 0.5rem !important;
-//   display: ${({ hasSomething }) => (hasSomething ? 'flex' : 'none')} !important;
-//   display: flex;
-
-//   /* Aplica apenas se a tooltip estiver com a classe de topo */
-//   &.react-tooltip__place-top,
-//   &.react-tooltip__place-bottom {
-//     transform: translateX(45%) !important;
-//     .react-tooltip-arrow {
-//       left: 10px !important;
-//     }
-//   }
-// `;
