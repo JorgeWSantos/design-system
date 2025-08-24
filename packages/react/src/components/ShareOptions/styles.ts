@@ -6,8 +6,8 @@ export const ShareOptionsContainer = styled.div<{
   $variantArrow: ShareOptionsVariantArrowTypes;
 }>`
   position: absolute;
-  right: 0.2rem;
-  top: 3.5rem;
+  right: 1.5rem;
+  top: 3rem;
   z-index: 9999;
   background: white;
   border: ${radii.px} solid #eee;
@@ -68,6 +68,10 @@ export const ShareOptionsContainer = styled.div<{
       display: block;
     }
   }
+`;
+
+export const WrapperWhatsapp = styled.a`
+  text-decoration: none;
 `;
 
 export const IconButton = styled.div`

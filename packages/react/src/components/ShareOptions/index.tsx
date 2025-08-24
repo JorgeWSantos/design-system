@@ -1,11 +1,6 @@
 import React from 'react';
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  FacebookIcon,
-  XIcon,
-} from 'react-share';
-import { ShareOptionsContainer, IconButton } from './styles';
+import { InstapaperShareButton, InstapaperIcon, WhatsappIcon } from 'react-share';
+import { ShareOptionsContainer, IconButton, WrapperWhatsapp } from './styles';
 
 export type ShareOptionsVariantArrowTypes = 'top' | 'bottom';
 
@@ -16,16 +11,15 @@ interface ShareOptionsProps {
 
 const ShareOptions: React.FC<ShareOptionsProps> = ({ url, variantArrow = 'top' }) => (
   <ShareOptionsContainer $variantArrow={variantArrow}>
-    <FacebookShareButton url={url}>
+    <WrapperWhatsapp
+      href={`https://wa.me/?text=${encodeURIComponent(url)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <IconButton>
-        <FacebookIcon style={{ borderRadius: '50%', width: 32, height: 32 }} />
+        <WhatsappIcon style={{ borderRadius: '50%' }} />
       </IconButton>
-    </FacebookShareButton>
-    <TwitterShareButton url={url}>
-      <IconButton>
-        <XIcon style={{ borderRadius: '50%', width: 32, height: 32 }} />
-      </IconButton>
-    </TwitterShareButton>
+    </WrapperWhatsapp>
   </ShareOptionsContainer>
 );
 
