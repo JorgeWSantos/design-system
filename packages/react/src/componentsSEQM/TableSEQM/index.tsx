@@ -26,8 +26,8 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
     if (!col) return data;
 
     const sorted = [...(data || [])].sort((a, b) => {
-      const aValue = a[sortKey]?.value;
-      const bValue = b[sortKey]?.value;
+      const aValue = a[sortKey]?.valueToSort || a[sortKey]?.value;
+      const bValue = b[sortKey]?.valueToSort || b[sortKey]?.value;
 
       // Tratar nulos/undefined sempre no final
       if (aValue == null && bValue == null) return 0;

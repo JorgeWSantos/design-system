@@ -13,6 +13,7 @@ export type TableRowSEQM = {
   [key: string]: {
     value?: any;
     render?: () => ReactNode;
+    valueToSort?: any;
   };
 };
 
