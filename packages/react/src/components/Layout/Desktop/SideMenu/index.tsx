@@ -60,10 +60,10 @@ export const SideMenu = ({
               }}
             >
               <Text
-                fontSize="smm"
+                fontSize="ssm"
                 fontWeight="regular"
                 lineHeight="tight"
-                color={colors.white85}
+                color={colors.white75}
               >
                 {item.name}
               </Text>

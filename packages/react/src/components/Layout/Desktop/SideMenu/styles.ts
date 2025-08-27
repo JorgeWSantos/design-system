@@ -15,8 +15,10 @@ export const MenuItem = styled.li<{
   $isSelected?: boolean;
 }>`
   min-width: 12.5rem;
-  max-height: 2.125rem;
+  /* max-height: 2.125rem; */
   margin-bottom: 0.063rem;
+
+  padding: ${space[3]};
 
   display: flex;
   justify-content: space-between;
@@ -71,7 +73,7 @@ export const MenuLink = styled.a`
   color: white;
   width: 100%;
   text-decoration: none;
-  padding: ${space[2]} ${space[3]};
+  /* padding: ${space[2]} ${space[3]}; */
 `;
 
 export const CaretIcon = styled(CaretRightFillIcon)<{ $isSelected?: boolean }>`

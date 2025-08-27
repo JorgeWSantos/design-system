@@ -25,7 +25,7 @@ export const StyledTableSEQM = styled.table<{
   }
 
   tbody tr:nth-child(even) {
-    background-color: ${colors.greenTransparent15};
+    /* background-color: ${colors.greenTransparent15}; */
   }
 
   font-family: ${fonts.default};
