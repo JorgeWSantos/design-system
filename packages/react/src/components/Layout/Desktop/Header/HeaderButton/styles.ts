@@ -8,7 +8,7 @@ interface StyledHeaderButtonProps {
 
 export const ContainerHeaderButton = styled.div<{ $isActive?: boolean }>`
   display: flex;
-  width: 4.25rem;
+  min-width: 4.25rem;
   height: 2.25rem;
   flex-direction: column;
   justify-content: center;
