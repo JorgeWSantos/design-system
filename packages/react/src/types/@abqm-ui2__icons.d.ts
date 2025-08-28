@@ -50,4 +50,8 @@ declare module '@abqm-ds/icons' {
   export const StarIcon: FC<SVGProps<SVGSVGElement>>;
   export const CaretUpFillIcon: FC<SVGProps<SVGSVGElement>>;
   export const FilterCircleIcon: FC<SVGProps<SVGSVGElement>>;
+  export const ChevronDownIcon: FC<SVGProps<SVGSVGElement>>;
+  export const ChevronUpIcon: FC<SVGProps<SVGSVGElement>>;
+  export const ChevronLeftIcon: FC<SVGProps<SVGSVGElement>>;
+  export const ChevronRightIcon: FC<SVGProps<SVGSVGElement>>;
 }
