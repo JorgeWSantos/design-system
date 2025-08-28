@@ -1,4 +1,4 @@
-import { colors, radii } from '@abqm-ds/tokens';
+import { colors, radii, space } from '@abqm-ds/tokens';
 import { Text } from '@components/Text';
 import styled, { css } from 'styled-components';
 
@@ -10,20 +10,29 @@ export const ContainerHeaderButton = styled.div<{ $isActive?: boolean }>`
   display: flex;
   min-width: 4.25rem;
   height: 2.25rem;
-  flex-direction: column;
+  padding: 0 ${space[2]};
+  gap: ${space[1]};
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   position: relative;
 
   cursor: pointer;
 
-  transition: filter 0.5s ease-in-out;
+  button {
+    background-color: ${colors.white85};
+  }
+
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
   &:hover {
-    p,
     button {
-      filter: brightness(1.1);
-      transition: filter 0.5s ease-in-out;
+      background-color: ${colors.white};
+      transition: background-color 0.3s ease-in-out;
+    }
+    p {
+      transition: color 0.3s ease-in-out;
+      color: ${colors.white} !important;
     }
   }
 
@@ -38,8 +47,8 @@ export const ContainerHeaderButton = styled.div<{ $isActive?: boolean }>`
 
 export const ActiveIndicator = styled.span`
   position: absolute;
-  top: 0rem;
-  right: 1.25rem;
+  top: 0.35rem;
+  left: 1.5rem;
 
   width: 0.5rem;
   height: 0.5rem;
@@ -51,34 +60,12 @@ export const ActiveIndicator = styled.span`
   z-index: 1;
 `;
 
-export const StyledHeaderButton = styled.button<StyledHeaderButtonProps>`
-  display: flex;
-  padding: 0.25rem;
-  justify-content: center;
-  align-items: center;
-
-  border: none;
-
-  width: 1.375rem;
-  height: 1.375rem;
-
-  border-radius: ${radii.half};
-
-  p {
-    line-height: 0.875rem;
-  }
-
-  ${({ disabled }) =>
-    disabled &&
-    css`
-      background-color: red;
-    `}
-`;
-
 export const StyledText = styled(Text).attrs({
   fontSize: 'xxs',
-  color: colors.white50,
+  color: colors.white75,
 })<{ $isActive?: boolean }>`
+  transition: color 0.3s ease-in-out;
+
   ${({ $isActive }) =>
     $isActive &&
     css`

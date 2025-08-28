@@ -1,4 +1,4 @@
-import { CaretRightFillIcon } from '@abqm-ds/icons';
+import { ChevronRightIcon } from '@abqm-ds/icons';
 import { colors, radii, space } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 
@@ -76,7 +76,7 @@ export const MenuLink = styled.a`
   /* padding: ${space[2]} ${space[3]}; */
 `;
 
-export const CaretIcon = styled(CaretRightFillIcon)<{ $isSelected?: boolean }>`
+export const CaretIcon = styled(ChevronRightIcon)<{ $isSelected?: boolean }>`
   width: 0.75rem;
   height: 0.75rem;
 
