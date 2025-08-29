@@ -2,10 +2,6 @@ import { colors, radii, space } from '@abqm-ds/tokens';
 import { Text } from '@components/Text';
 import styled, { css } from 'styled-components';
 
-interface StyledHeaderButtonProps {
-  disabled?: boolean;
-}
-
 export const ContainerHeaderButton = styled.div<{ $isActive?: boolean }>`
   display: flex;
   min-width: 4.25rem;

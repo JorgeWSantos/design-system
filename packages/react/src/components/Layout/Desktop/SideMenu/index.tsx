@@ -18,7 +18,7 @@ export const SideMenu = ({
   token,
   ...rest
 }: SideMenuProps) => {
-  const [menuItemSelectedIndex, setMenuItemSelectedIndex] = useState<number>(0);
+  const [menuItemSelectedIndex, setMenuItemSelectedIndex] = useState<number>(-1);
 
   const redirectToLogin = ({ link, e, path }: RedirectToLoginProps) => {
     e.preventDefault();
@@ -36,7 +36,6 @@ export const SideMenu = ({
           <StyledMenuItem
             key={item.name}
             $index={i}
-            data-submenu-trigger
             $lastIndex={data.length - 1}
             onMouseEnter={() => setMenuItemSelectedIndex(i)}
             onMouseLeave={() => setMenuItemSelectedIndex(-1)}

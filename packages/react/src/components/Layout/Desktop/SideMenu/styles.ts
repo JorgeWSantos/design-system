@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from '@abqm-ds/icons';
-import { colors, radii, space } from '@abqm-ds/tokens';
+import { colors, fontSizes, radii, space } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 
 export const MenuList = styled.ul`
@@ -73,7 +73,6 @@ export const MenuLink = styled.a`
   color: white;
   width: 100%;
   text-decoration: none;
-  /* padding: ${space[2]} ${space[3]}; */
 `;
 
 export const CaretIcon = styled(ChevronRightIcon)<{ $isSelected?: boolean }>`
@@ -92,18 +91,20 @@ export const CaretIcon = styled(ChevronRightIcon)<{ $isSelected?: boolean }>`
 `;
 
 export const SubmenuList = styled.ul`
-  width: 16.5rem;
+  width: 12.5rem;
   position: absolute;
 
   left: 100%;
-  top: 0;
+  top: -2px;
   padding: ${space[4]};
 
   z-index: 1;
 
   border: ${radii.pxx} solid ${colors.white25};
   border-radius: ${space[1]};
-  background-color: ${colors.emeraldGreen92};
+  background-color: ${colors.emeraldGreen75};
+
+  backdrop-filter: blur(50px);
 
   overflow: hidden;
   opacity: 0;
@@ -120,6 +121,8 @@ export const SubmenuItem = styled.li`
 
 export const SubmenuLink = styled.a`
   display: block;
-  padding: ${space[2]} ${space[3]};
+  line-height: 1rem;
+  font-size: ${fontSizes.ssm};
+  padding: ${space[2]};
   color: ${colors.white75};
 `;
