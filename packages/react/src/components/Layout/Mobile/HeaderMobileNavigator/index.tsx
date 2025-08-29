@@ -54,8 +54,8 @@ export const HeaderMobileNavigator = ({
               variant="secondary"
               icon={
                 <XIcon
-                  width={12}
-                  height={12}
+                  width={16}
+                  height={16}
                   fill={colors.white75}
                   style={{ cursor: 'pointer' }}
                   onClick={() => setSearchIsOpen(false)}
