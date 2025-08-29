@@ -1,5 +1,4 @@
 import {
-  MedalImg,
   CreatorTableDataContainer,
   StyledSubTextHallOfFame,
   StyledTextHallOfFameCreator,
@@ -8,16 +7,21 @@ import {
 const CreatorTableData = ({
   value,
   isHallOfFameCreator,
+  bolder = false,
 }: {
   value: string;
   isHallOfFameCreator: string | null;
+  bolder?: boolean;
 }) => {
   const cdn = 'https://i.imgur.com';
   const urlMedal = `${cdn}/6ymvs72.png`;
 
   return (
     <CreatorTableDataContainer className="creator-table-data-container">
-      <StyledTextHallOfFameCreator $isHallOfFameCreator={!!isHallOfFameCreator}>
+      <StyledTextHallOfFameCreator
+        $bolder={bolder}
+        $isHallOfFameCreator={!!isHallOfFameCreator}
+      >
         <span className="creator-name">
           {value}
           {isHallOfFameCreator && (
@@ -32,7 +36,7 @@ const CreatorTableData = ({
       </StyledTextHallOfFameCreator>
 
       {isHallOfFameCreator && (
-        <StyledSubTextHallOfFame className="hall-fama-creator-subtext">
+        <StyledSubTextHallOfFame $bolder={bolder} className="hall-fama-creator-subtext">
           HALL DA FAMA {isHallOfFameCreator}
         </StyledSubTextHallOfFame>
       )}

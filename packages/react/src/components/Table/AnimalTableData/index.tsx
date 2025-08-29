@@ -33,6 +33,7 @@ export interface AnimalTableDataProps
   allAroundYoung?: string | null;
   superHorseAward?: string | null;
   rankingGeneralAward?: string | null;
+  bolder?: boolean;
 }
 
 const AnimalTableData = ({
@@ -49,6 +50,7 @@ const AnimalTableData = ({
   superHorseAward,
   rankingGeneralAward,
   onClick,
+  bolder = false,
   ...rest
 }: AnimalTableDataProps) => {
   const medalha: Record<string, string> = {
@@ -150,7 +152,10 @@ const AnimalTableData = ({
       </Tooltip>
 
       <DivTexts $hasClick={!!onClick} onClick={onClick}>
-        <StyledTextHallOfFameNameAnimal $isHallOfFameAnimal={!!isHallOfFameAnimal}>
+        <StyledTextHallOfFameNameAnimal
+          $bolder={bolder}
+          $isHallOfFameAnimal={!!isHallOfFameAnimal}
+        >
           <span className="animal-name">
             {nameAnimal}
             {isHallOfFameAnimal && (
@@ -167,7 +172,7 @@ const AnimalTableData = ({
         {isHallOfFameAnimal ? (
           <StyledTextHallOfFame>HALL DA FAMA 2017</StyledTextHallOfFame>
         ) : (
-          <StyledTextRegister>{registerAnimal}</StyledTextRegister>
+          <StyledTextRegister $bolder={bolder}>{registerAnimal}</StyledTextRegister>
         )}
       </DivTexts>
     </ContainerImage>

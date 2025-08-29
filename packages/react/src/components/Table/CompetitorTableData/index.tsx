@@ -8,15 +8,17 @@ import {
 export interface CompetitorTableDataContainerTypeProps
   extends ComponentProps<typeof CompetitorTableDataContainerType> {
   value: string;
+  bolder?: boolean;
 }
 
 const CompetitorTableData = ({
   value,
   onClick,
+  bolder = false,
   ...rest
 }: CompetitorTableDataContainerTypeProps) => (
   <CompetitorTableDataContainer onClick={onClick} $hasClick={!!onClick} {...rest}>
-    <StyledTextCompetitor>{value}</StyledTextCompetitor>
+    <StyledTextCompetitor $bolder={bolder}>{value}</StyledTextCompetitor>
   </CompetitorTableDataContainer>
 );
 

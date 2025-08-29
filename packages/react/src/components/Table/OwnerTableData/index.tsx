@@ -11,11 +11,13 @@ export interface OwnerTableDataContainerTypeProps
   extends ComponentProps<typeof OwnerTableDataContainerType> {
   value: string;
   isHallOfFameOwner: string | null;
+  bolder?: boolean;
 }
 
 const OwnerTableData = ({
   value,
   isHallOfFameOwner,
+  bolder = false,
   onClick,
   ...rest
 }: OwnerTableDataContainerTypeProps) => {
@@ -29,7 +31,10 @@ const OwnerTableData = ({
       $hasClick={!!onClick}
       {...rest}
     >
-      <StyledTextHallOfFameOwner $isHallOfFameOwner={!!isHallOfFameOwner}>
+      <StyledTextHallOfFameOwner
+        $bolder={bolder}
+        $isHallOfFameOwner={!!isHallOfFameOwner}
+      >
         <span className="owner-name">
           {value}
           {isHallOfFameOwner && (
@@ -39,7 +44,7 @@ const OwnerTableData = ({
       </StyledTextHallOfFameOwner>
 
       {isHallOfFameOwner && (
-        <StyledSubTextHallOfFame className="hall-fama-owner-subtext">
+        <StyledSubTextHallOfFame $bolder={bolder} className="hall-fama-owner-subtext">
           HALL DA FAMA {isHallOfFameOwner}
         </StyledSubTextHallOfFame>
       )}

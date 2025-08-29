@@ -1,5 +1,5 @@
 import { Text } from '@components/Text';
-import { breakpointsPx, fontSizes } from '@abqm-ds/tokens';
+import { breakpointsPx, fontSizes, fontWeights } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 
 export const CompetitorTableDataContainerType = styled.div``;
@@ -31,7 +31,9 @@ export const CompetitorTableDataContainer = styled(CompetitorTableDataContainerT
 export const StyledTextCompetitor = styled(Text).attrs({
   fontSize: 'xxs',
   fontWeight: 'semiBold',
-})`
+})<{ $bolder: boolean }>`
+  font-weight: ${({ $bolder }) => ($bolder ? fontWeights.semiBold : fontWeights.regular)};
+
   display: flex;
 
   /* white-space: nowrap; */

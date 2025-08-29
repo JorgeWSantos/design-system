@@ -104,7 +104,7 @@ export const DivTexts = styled.div<{
 export const StyledTextHallOfFameNameAnimal = styled(Text).attrs({
   fontSize: 'xxs',
   fontWeight: 'semiBold',
-})<{ $isHallOfFameAnimal: boolean | undefined }>`
+})<{ $isHallOfFameAnimal: boolean; $bolder: boolean }>`
   display: flex;
   gap: 0.25rem;
   white-space: nowrap;
@@ -112,6 +112,8 @@ export const StyledTextHallOfFameNameAnimal = styled(Text).attrs({
     $isHallOfFameAnimal ? colors.brown700 : 'inherit'};
   height: 14px;
   margin-bottom: -0.1rem;
+
+  font-weight: ${({ $bolder }) => ($bolder ? fontWeights.semiBold : fontWeights.regular)};
 
   span {
     white-space: nowrap;
@@ -137,9 +139,11 @@ export const StyledTextHallOfFame = styled(Text)`
   }
 `;
 
-export const StyledTextRegister = styled(Text)`
+export const StyledTextRegister = styled(Text)<{
+  $bolder: boolean;
+}>`
   font-size: 7.2pt;
-  font-weight: ${fontWeights.semiBold};
+  font-weight: ${({ $bolder }) => ($bolder ? fontWeights.semiBold : fontWeights.regular)};
   text-transform: uppercase;
   margin-top: -0.08rem;
   margin-bottom: -0.08rem;

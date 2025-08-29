@@ -16,11 +16,13 @@ export const CreatorTableDataContainer = styled.div`
 export const StyledTextHallOfFameCreator = styled(Text).attrs({
   fontSize: 'xxs',
   fontWeight: 'semiBold',
-})<{ $isHallOfFameCreator: boolean | undefined }>`
+})<{ $isHallOfFameCreator: boolean | undefined; $bolder: boolean }>`
   /* Remove flex from root, use inline-flex on span for better icon alignment */
   color: ${({ $isHallOfFameCreator }) =>
     $isHallOfFameCreator ? colors.brown700 : 'inherit'};
   margin-bottom: -0.1rem;
+
+  font-weight: ${({ $bolder }) => ($bolder ? fontWeights.semiBold : fontWeights.regular)};
 
   span {
     display: flex;
@@ -39,9 +41,11 @@ export const StyledTextHallOfFameCreator = styled(Text).attrs({
   }
 `;
 
-export const StyledSubTextHallOfFame = styled(Text)`
+export const StyledSubTextHallOfFame = styled(Text)<{
+  $bolder: boolean;
+}>`
   font-size: 5.5pt;
-  font-weight: ${fontWeights.semiBold};
+  font-weight: ${({ $bolder }) => ($bolder ? fontWeights.semiBold : fontWeights.regular)};
   color: ${colors.brown700};
   text-transform: uppercase;
   margin-bottom: -0.2rem;

@@ -32,11 +32,13 @@ export const OwnerTableDataContainer = styled(OwnerTableDataContainerType)<{
 export const StyledTextHallOfFameOwner = styled(Text).attrs({
   fontSize: 'xxs',
   fontWeight: 'semiBold',
-})<{ $isHallOfFameOwner: boolean | undefined }>`
+})<{ $isHallOfFameOwner: boolean | undefined; $bolder: boolean }>`
   /* Remove flex from root, use inline-flex on span for better icon alignment */
   color: ${({ $isHallOfFameOwner }) =>
     $isHallOfFameOwner ? colors.brown700 : 'inherit'};
   margin-bottom: -0.1rem;
+
+  font-weight: ${({ $bolder }) => ($bolder ? fontWeights.semiBold : fontWeights.regular)};
 
   span {
     display: flex;
@@ -55,9 +57,10 @@ export const StyledTextHallOfFameOwner = styled(Text).attrs({
   }
 `;
 
-export const StyledSubTextHallOfFame = styled(Text)`
+export const StyledSubTextHallOfFame = styled(Text)<{ $bolder: boolean }>`
   font-size: 5.5pt;
-  font-weight: ${fontWeights.semiBold};
+  font-weight: ${({ $bolder }) => ($bolder ? fontWeights.semiBold : fontWeights.regular)};
+
   color: ${colors.brown700};
   text-transform: uppercase;
   margin-bottom: -0.2rem;
