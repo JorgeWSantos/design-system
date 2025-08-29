@@ -43,7 +43,7 @@ export const StyledHeadTableSEQM = styled.thead`
   }
 
   tr th {
-    padding: ${space[1]} ${space[2]};
+    padding: ${space[1]} ${space[3]} ${space[1]} ${space[2]};
     font-size: ${fontSizes.xxs};
   }
 `;
@@ -85,13 +85,17 @@ export const StyledBodyTableSEQM = styled.tbody`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0.5rem ${space[2]};
+    padding: ${space[2]} ${space[3]} ${space[2]} ${space[2]};
     gap: 0.25rem;
   }
 
   .aqha-column {
     box-sizing: border-box;
     background-color: ${colors.greenTransparent30} !important;
+
+    + .aqha-column {
+      border-top: 1px solid ${colors.green500};
+    }
 
     td:first-child {
       position: relative;
