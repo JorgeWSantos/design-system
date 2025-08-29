@@ -160,10 +160,10 @@ export const ContainerOptions = styled.div<{
 
   backdrop-filter: blur(3.125rem);
 
-  background-color: ${colors.emeraldGreen75};
+  background-color: ${colors.green850};
   color: ${colors.white75};
 
-  border: ${radii.px} solid ${colors.emeraldGreen92};
+  border: ${radii.px} solid ${colors.white50};
   border-radius: ${radii.sm};
 
   cursor: pointer;
