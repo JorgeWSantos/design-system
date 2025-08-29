@@ -107,7 +107,7 @@ export function Dropdown({
         >
           {data.map((item) => (
             <Option $variant={variant} key={item.id} onClick={() => selectAnOption(item)}>
-              {item.label}
+              <p>{item.label}</p>
             </Option>
           ))}
         </ContainerOptions>

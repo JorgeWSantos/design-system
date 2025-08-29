@@ -132,7 +132,7 @@ export const Input = styled.input<StyledInputProps>`
   }
 
   &::placeholder {
-    color: ${colors.white75};
+    color: ${colors.white75} !important;
   }
 
   ${({ $variant }) =>
@@ -141,7 +141,7 @@ export const Input = styled.input<StyledInputProps>`
       color: ${colors.white85};
 
       &::placeholder {
-        color: ${colors.white85};
+        color: ${colors.white50} !important;
       }
     `}
 
@@ -151,7 +151,7 @@ export const Input = styled.input<StyledInputProps>`
       color: ${colors.emeraldGreen75};
 
       &::placeholder {
-        color: ${colors.emeraldGreen75};
+        color: ${colors.emeraldGreen50} !important;
       }
     `}
 `;

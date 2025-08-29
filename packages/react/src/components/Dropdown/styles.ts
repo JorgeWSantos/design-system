@@ -155,8 +155,8 @@ export const ContainerOptions = styled.div<{
 
   box-sizing: border-box;
 
-  padding: 0.5rem 0.5rem;
-  gap: 0.25rem;
+  padding: 1rem 0.5rem 1.5rem 0.5rem;
+  gap: 0.5rem;
 
   backdrop-filter: blur(3.125rem);
 
@@ -171,8 +171,8 @@ export const ContainerOptions = styled.div<{
   ${({ $variant }) =>
     $variant === 'secondary' &&
     css`
-      background-color: ${colors.white10};
-      color: ${colors.white85};
+      background-color: ${colors.solidWhite};
+      color: ${colors.emeraldGreen75};
 
       border: ${radii.px} solid ${colors.white50};
     `}
@@ -180,10 +180,10 @@ export const ContainerOptions = styled.div<{
   ${({ $variant }) =>
     $variant === 'tertiary' &&
     css`
+      background-color: ${colors.solidWhite};
       color: ${colors.emeraldGreen75};
 
-      border: ${radii.px} solid ${colors.emeraldGreen25};
-      background-color: ${colors.white85};
+      border: ${radii.px} solid ${colors.white50};
 
       /* Custom scrollbar styles */
       &::-webkit-scrollbar {
@@ -205,22 +205,22 @@ export const ContainerOptions = styled.div<{
 
 export const Option = styled.div<{ $variant?: VariantsTypesDropdown }>`
   border-bottom: ${radii.px} solid ${colors.emeraldGreen50};
-  padding-bottom: 0.3rem;
-  font-size: ${fontSizes.ssm};
+  padding: 0 0.5rem;
+  padding-bottom: 0.38rem;
+  font-size: ${fontSizes.xxs};
+  line-height: 0.875rem;
 
   ${({ $variant }) =>
     $variant === 'secondary' &&
     css`
-      border-bottom: ${radii.px} solid ${colors.white50};
+      border-bottom: ${radii.px} solid ${colors.emeraldGreen25};
       font-weight: ${fontWeights.medium};
     `}
 
   ${({ $variant }) =>
     $variant === 'tertiary' &&
     css`
-      /* background-color: ${colors.white}; */
-      /* color: ${colors.emeraldGreen75}; */
-
       border-bottom: ${radii.px} solid ${colors.emeraldGreen25};
+      font-weight: ${fontWeights.medium};
     `}
 `;
