@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.20
+
+### Patch Changes
+
+- release: 🦋 Nova versão react
+
 ## 2.0.19
 
 ### Patch Changes
