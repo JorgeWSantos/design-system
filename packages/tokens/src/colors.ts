@@ -2,7 +2,7 @@ export const colors = {
   // Base
   white: '#FFF',
   white2: '#f6f6f6ff',
-  solidWhite: '#EAF4EF',
+  solidWhiteGreen: '#EAF4EF',
   // Opacity
   white05: '#ffffff0d', // 5% opacity
   white10: '#ffffff1a',

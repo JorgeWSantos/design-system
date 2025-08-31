@@ -171,7 +171,7 @@ export const ContainerOptions = styled.div<{
   ${({ $variant }) =>
     $variant === 'secondary' &&
     css`
-      background-color: ${colors.solidWhite};
+      background-color: ${colors.solidWhiteGreen};
       color: ${colors.emeraldGreen75};
 
       border: ${radii.px} solid ${colors.white50};
