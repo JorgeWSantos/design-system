@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 2.0.9
+
+### Patch Changes
+
+- feat: 🎸 Melhorias de estilização
+
 ## 2.0.8
 
 ### Patch Changes

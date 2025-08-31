@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.21
+
+### Patch Changes
+
+- feat: 🎸 Melhorias de estilização
+
 ## 2.0.20
 
 ### Patch Changes
