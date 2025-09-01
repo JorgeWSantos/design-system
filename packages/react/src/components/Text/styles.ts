@@ -1,6 +1,7 @@
 import { colors, fonts } from '@abqm-ds/tokens';
 import { css, styled } from 'styled-components';
 import {
+  FontFamilyTypes,
   fontSizeTypes,
   FontSizeTypes,
   fontWeightTypes,
@@ -15,10 +16,11 @@ interface StyledHeadingProps {
   $fontWeight?: FontWeightTypes;
   $lineHeight?: LineHeightTypes;
   $color?: string;
+  $fontFamily?: FontFamilyTypes;
 }
 
 export const StyledText = styled.p<StyledHeadingProps>`
-  font-family: ${fonts.default};
+  font-family: ${(props) => fonts[props.$fontFamily || 'default']};
   line-height: ${(props) => lineHeightTypes[props.$lineHeight || 'initial']};
   font-weight: ${(props) => fontWeightTypes[props.$fontWeight || 'regular']};
   margin: 0;
