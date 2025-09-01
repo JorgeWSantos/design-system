@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 2.0.10
+
+### Patch Changes
+
+- release: 🦋 Nova versão react/icons/tokens
+
 ## 2.0.9
 
 ### Patch Changes
