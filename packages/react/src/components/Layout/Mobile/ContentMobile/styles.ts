@@ -10,6 +10,7 @@ export const ContainerMobile = styled.main<{
   flex-direction: column;
   max-height: 89vh;
   height: 100%;
+  position: relative;
 
   max-width: ${breakpointsPx.lg};
 
@@ -52,6 +53,7 @@ export const MobileScroll = styled(Box)<{ $headerNoGap?: boolean }>`
   display: flex;
   flex: 1;
   flex-direction: column;
+  position: relative;
 
   padding: ${space[6]} ${space[2]};
 

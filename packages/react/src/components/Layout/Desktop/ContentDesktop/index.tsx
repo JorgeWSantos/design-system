@@ -1,6 +1,7 @@
 import React, { ComponentProps } from 'react';
 import { ContainerDesktop, ContentBox } from './styles';
 import { InforBar } from './InfoBar';
+import { LoadingOverlay } from '@components/LoadingOverlay';
 
 interface ContentDektopProps extends ComponentProps<typeof ContainerDesktop> {
   header?: React.ReactNode;
@@ -8,6 +9,7 @@ interface ContentDektopProps extends ComponentProps<typeof ContainerDesktop> {
   children: React.ReactNode;
   count?: number;
   contentBoxStyles?: React.CSSProperties;
+  isLoading?: boolean;
 }
 
 export const ContentDektop = ({
@@ -16,6 +18,7 @@ export const ContentDektop = ({
   contentBoxStyles,
   headerNavigator,
   count,
+  isLoading = false,
   ...rest
 }: ContentDektopProps) => {
   // This is a workaround to set the height of the content based on the screen height.
@@ -37,6 +40,7 @@ export const ContentDektop = ({
         style={contentBoxStyles}
         $removeRoundedBottom={typeof count === 'number'}
       >
+        {isLoading && <LoadingOverlay />}
         <>{headerNavigator}</>
         <>{children}</>
       </ContentBox>
