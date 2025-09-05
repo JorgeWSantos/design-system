@@ -65,12 +65,29 @@ export const StyledDropdown = styled.div<{
       border: ${radii.px} solid ${colors.emeraldGreen25};
     `}
 
+  ${({ $variant }) =>
+    $variant === 'quaternary' &&
+    css`
+      background-color: ${colors.black50};
+      color: ${colors.white75};
+      border-radius: 0.25rem;
+      border: 1px solid ${colors.white25};
+    `}
+
   @media (max-width: ${breakpointsPx.lg}) {
     ${({ $variant }) =>
       $variant === 'primary' &&
       css`
         border-radius: ${radii.xs};
         border: ${radii.px} solid transparent;
+      `}
+
+    ${({ $variant }) =>
+      $variant === 'quaternary' &&
+      css`
+        border-radius: ${radii.xs};
+        border: ${radii.px} solid transparent;
+        background-color: ${colors.white25};
       `}
   }
 `;
@@ -126,6 +143,7 @@ export const ContainerOptions = styled.div<{
   position: absolute;
   left: 0;
   z-index: 1;
+
   ${({ $openToTop, $hasLabel }) =>
     $openToTop
       ? css`
@@ -201,6 +219,31 @@ export const ContainerOptions = styled.div<{
       scrollbar-color: ${colors.emeraldGreen25} transparent;
       scrollbar-width: thin;
     `}
+
+  ${({ $variant }) =>
+    $variant === 'quaternary' &&
+    css`
+      background-color: ${colors.white2};
+      color: ${colors.emeraldGreen75};
+
+      border: ${radii.px} solid ${colors.emeraldGreen25};
+
+      /* Custom scrollbar styles */
+      &::-webkit-scrollbar {
+        width: 8px;
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: ${colors.emeraldGreen25};
+        border-radius: 4px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      scrollbar-color: ${colors.emeraldGreen25} transparent;
+      scrollbar-width: thin;
+    `}
 `;
 
 export const Option = styled.div<{ $variant?: VariantsTypesDropdown }>`
@@ -219,6 +262,13 @@ export const Option = styled.div<{ $variant?: VariantsTypesDropdown }>`
 
   ${({ $variant }) =>
     $variant === 'tertiary' &&
+    css`
+      border-bottom: ${radii.px} solid ${colors.emeraldGreen25};
+      font-weight: ${fontWeights.medium};
+    `}
+
+  ${({ $variant }) =>
+    $variant === 'quaternary' &&
     css`
       border-bottom: ${radii.px} solid ${colors.emeraldGreen25};
       font-weight: ${fontWeights.medium};
