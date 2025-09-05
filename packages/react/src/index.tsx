@@ -25,6 +25,7 @@ export * from './components/InfoCard';
 export * from './components/Switch';
 export * from './components/ShareOptions';
 export * from './components/DateTimePicker';
+export * from './components/LoadingOverlay';
 
 //Table Components
 export * from './components/Table/AnimalTableData';

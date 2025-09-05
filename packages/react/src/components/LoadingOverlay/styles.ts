@@ -1,7 +1,9 @@
 import { breakpointsPx } from '@abqm-ds/tokens';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const StyledOverlayLoading = styled.div`
+export const StyledOverlayLoading = styled.div<{
+  $withoutBackground?: boolean;
+}>`
   position: absolute;
   top: 0;
   left: 0;
@@ -12,4 +14,10 @@ export const StyledOverlayLoading = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${(props) =>
+    props.$withoutBackground &&
+    css`
+      background: transparent;
+    `}
 `;
