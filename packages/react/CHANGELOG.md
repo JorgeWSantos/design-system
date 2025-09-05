@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.23
+
+### Patch Changes
+
+- feat: 🎸 Melhorias em icons/react/tokens
+
 ## 2.0.22
 
 ### Patch Changes
