@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 2.0.12
+
+### Patch Changes
+
+- feat: 🎸 Melhorias em tokens/icons/react
+
 ## 2.0.11
 
 ### Patch Changes
