@@ -12,7 +12,7 @@ export interface InfoCardProps extends ComponentProps<typeof Container> {
 
 export const InfoCard = ({ title, subTitle, reverse, ...rest }: InfoCardProps) => {
   return (
-    <Container $reverse={reverse}>
+    <Container $reverse={reverse} {...rest}>
       {reverse ? (
         <>
           <Text
