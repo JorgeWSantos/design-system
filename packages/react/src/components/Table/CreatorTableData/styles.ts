@@ -20,7 +20,7 @@ export const StyledTextHallOfFameCreator = styled(Text).attrs({
   /* Remove flex from root, use inline-flex on span for better icon alignment */
   color: ${({ $isHallOfFameCreator }) =>
     $isHallOfFameCreator ? colors.brown700 : 'inherit'};
-  margin-bottom: -0.1rem;
+  /* margin-bottom: -0.1rem; */
 
   font-weight: ${({ $bolder }) => ($bolder ? fontWeights.semiBold : fontWeights.regular)};
 
