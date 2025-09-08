@@ -8,6 +8,7 @@ const CreatorTableData = ({
   value,
   isHallOfFameCreator,
   bolder = false,
+  ...rest
 }: {
   value: string;
   isHallOfFameCreator: string | null;
@@ -17,7 +18,7 @@ const CreatorTableData = ({
   const urlMedal = `${cdn}/6ymvs72.png`;
 
   return (
-    <CreatorTableDataContainer className="creator-table-data-container">
+    <CreatorTableDataContainer className="creator-table-data-container" {...rest}>
       <StyledTextHallOfFameCreator
         $bolder={bolder}
         $isHallOfFameCreator={!!isHallOfFameCreator}
