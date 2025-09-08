@@ -96,7 +96,9 @@ export const DivTexts = styled.div<{
       cursor: pointer;
 
       &:hover {
-        filter: brightness(1.2) contrast(1.2);
+        span {
+          filter: brightness(1.2) contrast(1.2);
+        }
       }
     `}
 `;
