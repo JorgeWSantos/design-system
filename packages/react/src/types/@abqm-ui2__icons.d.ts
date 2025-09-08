@@ -54,4 +54,5 @@ declare module '@abqm-ds/icons' {
   export const ChevronUpIcon: FC<SVGProps<SVGSVGElement>>;
   export const ChevronLeftIcon: FC<SVGProps<SVGSVGElement>>;
   export const ChevronRightIcon: FC<SVGProps<SVGSVGElement>>;
+  export const CrossFullfiledIcon: FC<SVGProps<SVGSVGElement>>;
 }

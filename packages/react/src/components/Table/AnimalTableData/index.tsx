@@ -13,7 +13,12 @@ import {
   // StyledTooltip,
 } from './styles';
 import { colors } from '@abqm-ds/tokens';
-import { DefaultHorseRoundedIconIMG, DefaultHorseSquadIconIMG } from '@abqm-ds/icons';
+import {
+  ChevronDownIcon,
+  CrossFullfiledIcon,
+  DefaultHorseRoundedIconIMG,
+  DefaultHorseSquadIconIMG,
+} from '@abqm-ds/icons';
 import TooltipContentComponent from './TooltipContentComponent';
 
 import { Tooltip } from '@components/Tooltip';
@@ -34,6 +39,7 @@ export interface AnimalTableDataProps
   superHorseAward?: string | null;
   rankingGeneralAward?: string | null;
   bolder?: boolean;
+  isDead?: boolean;
 }
 
 const AnimalTableData = ({
@@ -51,6 +57,7 @@ const AnimalTableData = ({
   rankingGeneralAward,
   onClick,
   bolder = false,
+  isDead = false,
   ...rest
 }: AnimalTableDataProps) => {
   const medalha: Record<string, string> = {
@@ -158,7 +165,8 @@ const AnimalTableData = ({
         >
           <span className="animal-name">
             {nameAnimal}
-            {isHallOfFameAnimal && (
+
+            {isHallOfFameAnimal && !isDead && (
               <img
                 src={urlMedal}
                 width="12"
@@ -166,10 +174,21 @@ const AnimalTableData = ({
                 className="hall-fama-creator-icon"
               />
             )}
+
+            {isDead && (
+              <CrossFullfiledIcon
+                fill={colors.yellow500}
+                stroke={colors.emeraldGreen40}
+                width={8}
+                style={{
+                  marginLeft: '0.1rem',
+                }}
+              />
+            )}
           </span>
         </StyledTextHallOfFameNameAnimal>
 
-        {isHallOfFameAnimal ? (
+        {isHallOfFameAnimal && !isDead ? (
           <StyledTextHallOfFame>HALL DA FAMA 2017</StyledTextHallOfFame>
         ) : (
           <StyledTextRegister $bolder={bolder}>{registerAnimal}</StyledTextRegister>
