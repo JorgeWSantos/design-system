@@ -174,18 +174,18 @@ const AnimalTableData = ({
                 className="hall-fama-creator-icon"
               />
             )}
-
-            {isDead && (
-              <CrossFullfiledIcon
-                fill={colors.yellow500}
-                stroke={colors.emeraldGreen40}
-                width={8}
-                style={{
-                  marginLeft: '0.1rem',
-                }}
-              />
-            )}
           </span>
+
+          {isDead && (
+            <CrossFullfiledIcon
+              fill={colors.yellow500}
+              stroke={colors.emeraldGreen40}
+              width={8}
+              style={{
+                marginLeft: '0.1rem',
+              }}
+            />
+          )}
         </StyledTextHallOfFameNameAnimal>
 
         {isHallOfFameAnimal && !isDead ? (
