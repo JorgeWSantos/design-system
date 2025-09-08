@@ -47,7 +47,7 @@ export const Primary: StoryObj<typeof GlobalContainer> = {
           token=""
           title="SEQM"
           page={'title'}
-          data={menu}
+          data={menu || []}
           userDropdown={{
             userName: user?.nome_pessoa || '',
             srcImage: user?.foto || '',
@@ -64,6 +64,42 @@ export const Primary: StoryObj<typeof GlobalContainer> = {
             </HeaderMobileNavigator>
           }
           style={{ padding: '16px', minHeight: '80vh' }}
+        >
+          <div>
+            <Text>Conteúdo principal do ContainerMobile.</Text>
+          </div>
+        </ContentMobile>
+      </ContainerMobile>
+    </GlobalContainer>
+  ),
+};
+
+export const PrimaryWithLoader: StoryObj<typeof GlobalContainer> = {
+  render: () => (
+    <GlobalContainer style={{ maxWidth: breakpoints.lg, maxHeight: '100vh' }}>
+      <ContainerMobile>
+        <HeaderMobile
+          token=""
+          title="SEQM"
+          page={'title'}
+          data={menu || []}
+          userDropdown={{
+            userName: user?.nome_pessoa || '',
+            srcImage: user?.foto || '',
+            onLogin: () => {},
+            onLogout: () => {},
+          }}
+        />
+
+        <ContentMobile
+          headerMobileNavigator={
+            <HeaderMobileNavigator>
+              <Dropdown data={options1} setValue={() => {}} variant="secondary" />
+              <Dropdown data={options1} setValue={() => {}} variant="secondary" />
+            </HeaderMobileNavigator>
+          }
+          style={{ padding: '16px', minHeight: '80vh' }}
+          isLoading={true}
         >
           <div>
             <Text>Conteúdo principal do ContainerMobile.</Text>

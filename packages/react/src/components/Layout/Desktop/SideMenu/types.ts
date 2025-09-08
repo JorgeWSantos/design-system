@@ -9,9 +9,9 @@ export type SubMenuItem = {
   parent_id: number | null;
   open_submenu: boolean;
   sub_menu: SubMenuItem[] | null;
-  need_login?: boolean;
-  link_login?: string;
-  path?: string;
+  need_login?: boolean | null;
+  link_login?: string | null;
+  path?: string | null;
 };
 
 // Tipagem para um item do menu principal
@@ -22,9 +22,9 @@ export type MenuItem = {
   parent_id: number | null;
   open_submenu: boolean;
   sub_menu: SubMenuItem[];
-  need_login?: boolean;
-  link_login?: string;
-  path?: string;
+  need_login?: boolean | null;
+  link_login?: string | null;
+  path?: string | null;
 };
 
 export type MenuType = MenuItem[];

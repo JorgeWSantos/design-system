@@ -9,6 +9,7 @@ export function Text({
   color,
   as = 'p',
   disabled,
+  fontFamily,
   ...rest
 }: TextProps) {
   return (
@@ -19,6 +20,7 @@ export function Text({
       $lineHeight={lineHeight}
       $disabled={disabled}
       $color={color}
+      $fontFamily={fontFamily}
       {...rest}
     >
       {children}

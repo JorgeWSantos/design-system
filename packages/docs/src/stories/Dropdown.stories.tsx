@@ -78,6 +78,15 @@ export const Tertiary: StoryObj<DropdownProps> = {
   render,
 };
 
+export const Quaternary: StoryObj<DropdownProps> = {
+  args: {
+    label: 'Estados',
+    data: optionsStates,
+    variant: 'quaternary',
+  },
+  render,
+};
+
 export const TertiaryWithoutLabel: StoryObj<DropdownProps> = {
   args: {
     data: optionsStates,

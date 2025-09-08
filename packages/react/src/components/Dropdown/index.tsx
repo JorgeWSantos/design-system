@@ -24,6 +24,7 @@ import { DropdownProps, DataDropdown } from './types';
  * @property {string} [maxWidth] - Largura máxima do Dropdown.
  * @property {boolean} [openToTop] - Se verdadeiro, o menu de opções abre para cima.
  * @property {ElementType} [as] - Permite trocar o elemento HTML raiz do Dropdown.
+ * @property {React.CSSProperties} [stylesContainerOptions] - Estilos CSS adicionais aplicados ao container das opções do Dropdown.
  */
 
 export function Dropdown({
@@ -35,6 +36,7 @@ export function Dropdown({
   maxHeight = 'unset',
   maxWidth = '100%',
   openToTop = false,
+  stylesContainerOptions,
   ...rest
 }: DropdownProps) {
   const [selectedOption, setSelectedOption] = useState(
@@ -104,6 +106,7 @@ export function Dropdown({
           $maxWidth={maxWidth}
           $openToTop={openToTop}
           $hasLabel={!!label}
+          style={stylesContainerOptions}
         >
           {data.map((item) => (
             <Option $variant={variant} key={item.id} onClick={() => selectAnOption(item)}>
