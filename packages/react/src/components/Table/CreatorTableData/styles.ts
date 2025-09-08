@@ -1,12 +1,28 @@
 import { Text } from '@components/Text';
 import { breakpointsPx, colors, fontSizes, fontWeights } from '@abqm-ds/tokens';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const CreatorTableDataContainer = styled.div`
+export const CreatorTableDataContainerType = styled.div``;
+
+export const CreatorTableDataContainer = styled(CreatorTableDataContainerType)<{
+  $hasClick: boolean;
+}>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 1.25rem;
+
+  transition: filter 0.3s;
+
+  ${({ $hasClick }) =>
+    $hasClick &&
+    css`
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(1.2) contrast(1.2);
+      }
+    `}
 
   @media (max-width: ${breakpointsPx.lg}) {
     height: 2rem;

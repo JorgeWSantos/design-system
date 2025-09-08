@@ -1,24 +1,35 @@
+import { ComponentProps } from 'react';
 import {
   CreatorTableDataContainer,
   StyledSubTextHallOfFame,
   StyledTextHallOfFameCreator,
+  CreatorTableDataContainerType,
 } from './styles';
+
+export interface CreatorTableDataContainerTypeProps
+  extends ComponentProps<typeof CreatorTableDataContainerType> {
+  value: string;
+  isHallOfFameCreator: string | null;
+  bolder?: boolean;
+}
 
 const CreatorTableData = ({
   value,
   isHallOfFameCreator,
   bolder = false,
+  onClick,
   ...rest
-}: {
-  value: string;
-  isHallOfFameCreator: string | null;
-  bolder?: boolean;
-}) => {
+}: CreatorTableDataContainerTypeProps) => {
   const cdn = 'https://i.imgur.com';
   const urlMedal = `${cdn}/6ymvs72.png`;
 
   return (
-    <CreatorTableDataContainer className="creator-table-data-container" {...rest}>
+    <CreatorTableDataContainer
+      className="creator-table-data-container"
+      onClick={onClick}
+      $hasClick={!!onClick}
+      {...rest}
+    >
       <StyledTextHallOfFameCreator
         $bolder={bolder}
         $isHallOfFameCreator={!!isHallOfFameCreator}
