@@ -96,7 +96,7 @@ export function Dropdown({
           {selectedOption?.label || null}
         </StyledTextSelect>
 
-        <StyledCaretDownFillIcon $variant={variant} />
+        <StyledCaretDownFillIcon $variant={variant} $rotated={showOptions} />
       </StyledDropdown>
 
       {showOptions && (

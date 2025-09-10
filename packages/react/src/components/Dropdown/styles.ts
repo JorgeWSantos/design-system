@@ -115,9 +115,17 @@ export const StyledTextSelect = styled(Text).attrs({
 
 export const StyledCaretDownFillIcon = styled(CaretDownFillIcon)<{
   $variant?: VariantsTypesDropdown;
+  $rotated?: boolean;
 }>`
   width: 12px;
   height: 12px;
+
+  transition: transform 0.3s;
+  ${({ $rotated }) =>
+    $rotated &&
+    css`
+      transform: rotate(180deg);
+    `}
 
   path {
     fill: ${colors.white50};
