@@ -189,7 +189,9 @@ const AnimalTableData = ({
         </StyledTextHallOfFameNameAnimal>
 
         {isHallOfFameAnimal && !isDead ? (
-          <StyledTextHallOfFame>HALL DA FAMA 2017</StyledTextHallOfFame>
+          <StyledTextHallOfFame className="hall-of-fame-animal-subtext">
+            HALL DA FAMA 2017
+          </StyledTextHallOfFame>
         ) : (
           <StyledTextRegister $bolder={bolder}>{registerAnimal}</StyledTextRegister>
         )}
