@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.25
+
+### Patch Changes
+
+- feat: 🎸 Melhorias nas telas
+
 ## 2.0.24
 
 ### Patch Changes

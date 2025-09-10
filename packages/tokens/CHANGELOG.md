@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 2.0.12
+
+### Patch Changes
+
+- feat: 🎸 Melhorias nas telas
+
 ## 2.0.11
 
 ### Patch Changes
