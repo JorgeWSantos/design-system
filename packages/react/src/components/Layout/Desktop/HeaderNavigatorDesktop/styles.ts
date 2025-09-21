@@ -42,7 +42,7 @@ export const ButtonBack = styled.button`
 
 export const ContentRight = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 0 0 0 ${space[1]};
@@ -54,7 +54,7 @@ export const DivTitles = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 100%;
+  width: auto;
   height: 2rem;
   padding-left: ${space[2]};
 `;

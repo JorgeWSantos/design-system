@@ -71,7 +71,7 @@ export const StyledDropdown = styled.div<{
       background-color: ${colors.black50};
       color: ${colors.white75};
       border-radius: 0.25rem;
-      border: 1px solid ${colors.white25};
+      border: 1px solid ${colors.white60};
     `}
 
   @media (max-width: ${breakpointsPx.lg}) {
