@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { Text } from '@components/Text';
-import { ActivityIndicator } from '@components/ActivityIndicator';
 import { TableSEQM } from '@componentsSEQM/TableSEQM';
 import type { TableColumnSEQM, TableRowSEQM } from '@componentsSEQM/TableSEQM';
 import { colors } from '@abqm-ds/tokens';
 import { DivContainerTableRight, LoadingContainer, NotFoundContainer } from './styles';
+import { LoadingOverlay } from '@components/LoadingOverlay';
 
-interface TableWithLoaderProps {
+interface TableWithLoaderProps extends ComponentProps<typeof DivContainerTableRight> {
   data: TableRowSEQM[];
   columns: TableColumnSEQM[];
   isLoading: boolean;
@@ -20,15 +20,13 @@ const TableWithLoader: React.FC<TableWithLoaderProps> = ({
   minWidthTable,
 }) => {
   return (
-    <DivContainerTableRight>
-      {data?.length > 0 ? (
+    <DivContainerTableRight style={{ minWidth: minWidthTable }}>
+      {data?.length > 0 && !isLoading ? (
         <TableSEQM data={data} columns={columns} style={{ minWidth: minWidthTable }} />
       ) : (
         <>
           {isLoading ? (
-            <LoadingContainer>
-              <ActivityIndicator width={20} height={20} />
-            </LoadingContainer>
+            <LoadingOverlay withoutBackground sizes={{ desktop: 25, mobile: 25 }} />
           ) : (
             <NotFoundContainer>
               <Text fontSize="smm" fontWeight="semiBold" color={colors.emeraldGreen75}>
@@ -41,4 +39,7 @@ const TableWithLoader: React.FC<TableWithLoaderProps> = ({
     </DivContainerTableRight>
   );
 };
+
+TableWithLoader.displayName = 'TableWithLoader';
+
 export { TableWithLoader, type TableWithLoaderProps };

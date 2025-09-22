@@ -27,6 +27,8 @@ export * from './components/ShareOptions';
 export * from './components/DateTimePicker';
 export * from './components/LoadingOverlay';
 export * from './components/Pagination';
+export * from './components/CardFilter';
+export * from './components/TabsCardsBar';
 
 //Table Components
 export * from './components/Table/AnimalTableData';
