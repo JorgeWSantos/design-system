@@ -26,6 +26,7 @@ export * from './components/Switch';
 export * from './components/ShareOptions';
 export * from './components/DateTimePicker';
 export * from './components/LoadingOverlay';
+export * from './components/Pagination';
 
 //Table Components
 export * from './components/Table/AnimalTableData';
