@@ -29,6 +29,7 @@ export * from './components/LoadingOverlay';
 export * from './components/Pagination';
 export * from './components/CardFilter';
 export * from './components/TabsCardsBar';
+export * from './components/Autocomplete';
 
 //Table Components
 export * from './components/Table/AnimalTableData';
