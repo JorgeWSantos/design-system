@@ -32,6 +32,7 @@ const Pagination: React.FC<PaginationProps> = ({
   isLoading,
   setIsLoading,
   onPageSizeChange,
+  ...rest
 }) => {
   const optionsSizePage = useMemo(
     () => [
@@ -140,7 +141,7 @@ const Pagination: React.FC<PaginationProps> = ({
   };
 
   return (
-    <PaginationContainer>
+    <PaginationContainer {...rest}>
       {totalPages > 1 && (
         <ContainerPageNavigation>
           {page > 1 && (

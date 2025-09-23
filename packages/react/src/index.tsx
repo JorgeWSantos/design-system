@@ -67,6 +67,7 @@ export * from './utils';
 
 //Hooks
 export { useDebouncedCallback } from './hooks/useDebounce';
+export { useSearchParamsMock } from './hooks/useSearchParamsMock';
 
 //Styles
 export { GlobalStyle } from './styles/global';

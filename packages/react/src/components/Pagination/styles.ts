@@ -55,6 +55,7 @@ export const PageButton = styled.button<{ $selected?: boolean }>`
     `}; */
 
   background: transparent;
+  border: none;
   cursor: pointer;
 
   transition: background-color 0.3s, border 0.3s;
@@ -80,6 +81,7 @@ export const ArrowButton = styled.button`
 
   border: 1px solid ${colors.white50};
   border-radius: ${radii.full};
+  background-color: transparent;
   cursor: pointer;
 
   svg {
