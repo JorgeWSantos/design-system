@@ -1,5 +1,5 @@
-import { Text } from '@abqm-ds/react';
 import { colors, space, breakpointsPx, radii } from '@abqm-ds/tokens';
+import { Text } from '@components/Text';
 import styled, { css } from 'styled-components';
 
 export const PaginationContainer = styled.div`

@@ -1,6 +1,6 @@
 import React, { ComponentProps } from 'react';
 import { Container, TabsWrapper, Tab, TabsBarLine, TabFirst, TabOther } from './styles';
-import { Text } from '@abqm-ds/react';
+import { Text } from '@components/Text';
 
 interface TabsPropType {
   label: string;

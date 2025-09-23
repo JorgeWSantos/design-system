@@ -10,9 +10,9 @@ import {
 } from './styles';
 import { colors } from '@abqm-ds/tokens';
 import { CaretLeftFillIcon, CaretRightFillIcon } from '@abqm-ds/icons';
-import { Dropdown } from '@abqm-ds/react';
 
 import { v4 as uuidv4 } from 'uuid';
+import { Dropdown } from '@components/Dropdown';
 
 interface PaginationProps extends ComponentProps<typeof PaginationContainer> {
   page: number;

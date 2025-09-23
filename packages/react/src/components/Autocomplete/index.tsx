@@ -19,7 +19,8 @@ import {
 import type { variantsTextInputTypes } from './styles';
 import { SpinnerRingResizeIcon } from '@abqm-ds/icons';
 import { colors } from '@abqm-ds/tokens';
-import { Text, useDebouncedCallback } from '@abqm-ds/react';
+import { useDebouncedCallback } from 'hooks/useDebounce';
+import { Text } from '@components/Text';
 
 export interface AutocompleteProps extends Omit<ComponentProps<typeof Input>, 'size'> {
   prefix?: string;
