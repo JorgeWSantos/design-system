@@ -1,5 +1,13 @@
 import React, { ComponentProps } from 'react';
-import { Container, TabsWrapper, Tab, TabsBarLine, TabFirst, TabOther } from './styles';
+import {
+  Container,
+  TabsWrapper,
+  Tab,
+  TabsBarLine,
+  TabFirst,
+  TabOther,
+  ChildrenWrapper,
+} from './styles';
 import { Text } from '@components/Text';
 
 interface TabsPropType {
@@ -10,7 +18,7 @@ interface TabsPropType {
 interface TabsCardsBarProps extends ComponentProps<typeof Container> {
   activeTab: string;
   onTabChange: (tab: string) => void;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   tabs: Array<TabsPropType>;
 }
 
@@ -60,7 +68,7 @@ const TabsCardsBar: React.FC<TabsCardsBarProps> = ({
 
         <TabsBarLine />
 
-        {children && <>{children}</>}
+        {children && <ChildrenWrapper>{children}</ChildrenWrapper>}
       </TabsWrapper>
     </Container>
   );

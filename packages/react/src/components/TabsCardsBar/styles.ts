@@ -71,7 +71,7 @@ export const TabFirst = styled.div<TabStateFirstProps>`
     $active ? 'none' : `${radii.px} solid ${colors.white25}`};
 
   color: ${({ $active }) => ($active ? `${colors.white85}` : `${colors.white50}`)};
-  padding: ${({ $active }) => ($active ? `0` : `0 ${space[1]} 0 0`)};
+  padding: ${({ $active }) => ($active ? '0' : `0 ${space[1]} 0 0`)};
 
   ${({ $secondIsNotSelected, $active }) =>
     $secondIsNotSelected &&
@@ -86,7 +86,7 @@ export const TabOther = styled.div<TabStateOthersProps>`
     $active ? 'none' : `${radii.px} solid ${colors.white25}`};
 
   color: ${({ $active }) => ($active ? `${colors.white85}` : `${colors.white50}`)};
-  padding: ${({ $active }) => ($active ? `0` : `0 ${space[1]} 0 ${space[1]}`)};
+  padding: ${({ $active }) => ($active ? '0' : `0 ${space[1]} 0 ${space[1]}`)};
 
   ${({ $isFirstSelected }) =>
     $isFirstSelected &&
@@ -106,4 +106,18 @@ export const TabOther = styled.div<TabStateOthersProps>`
     css`
       padding-right: ${space[1]};
     `};
+`;
+
+export const ChildrenWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: 0.5rem;
+  /* width: 100%; */
+  height: 36px;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 `;
