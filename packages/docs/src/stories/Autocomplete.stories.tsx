@@ -60,7 +60,6 @@ const meta: Meta<typeof Autocomplete> = {
     onChange={handleAnimalAutoComplete}
     debounceDelay={400}
   />
-      },
   \`\`\`
 
   #### Acessibilidade
