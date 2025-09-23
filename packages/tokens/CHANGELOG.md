@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 2.0.13
+
+### Patch Changes
+
+- feat: 🎸 Adicionará novos componentes
+
 ## 2.0.12
 
 ### Patch Changes
