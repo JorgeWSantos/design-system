@@ -69,23 +69,6 @@ export const TextInputContainer = styled.div<StyledTextInputContainerProps>`
     `}
 `;
 
-interface PreffixProps {
-  $variant: variantsTextInputTypes;
-}
-
-export const Prefix = styled.span<PreffixProps>`
-  font-family: ${fonts.default};
-  font-size: ${fontSizes.sm};
-  color: ${colors.emeraldGreen50};
-  font-weight: ${fontWeights.regular};
-
-  ${({ $variant }) =>
-    $variant === 'secondary' &&
-    css`
-      color: ${colors.white75};
-    `}
-`;
-
 interface StyledInputProps {
   $variant?: variantsTextInputTypes;
 }

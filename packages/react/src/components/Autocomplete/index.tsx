@@ -9,7 +9,6 @@ import React, {
 } from 'react';
 import {
   Input,
-  Prefix,
   type AutocompleteSizeVariants,
   TextInputContainer,
   TextInputWithLabelContainer,
@@ -23,7 +22,6 @@ import { useDebouncedCallback } from 'hooks/useDebounce';
 import { Text } from '@components/Text';
 
 export interface AutocompleteProps extends Omit<ComponentProps<typeof Input>, 'size'> {
-  prefix?: string;
   size?: AutocompleteSizeVariants;
   variant?: variantsTextInputTypes;
   icon?: ReactNode;
@@ -37,7 +35,6 @@ export interface AutocompleteProps extends Omit<ComponentProps<typeof Input>, 's
 export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
   (
     {
-      prefix,
       size = 'sm',
       variant = 'primary',
       icon,
@@ -136,7 +133,6 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
           $variant={variant}
           style={{ position: 'relative' }}
         >
-          {!!prefix && <Prefix $variant={variant}>{prefix}</Prefix>}
           <Input
             ref={(node) => {
               if (ref) {
