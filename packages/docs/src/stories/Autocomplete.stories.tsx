@@ -6,7 +6,7 @@ import { colors } from '@abqm-ds/tokens';
 const optionsAutoComplete = ['Option1', 'Option2', 'Test1', 'Test2', 'Data1', 'Data2'];
 
 const meta: Meta<typeof Autocomplete> = {
-  title: 'Components/Autocomplete',
+  title: 'Form/Autocomplete',
   component: Autocomplete,
   parameters: {
     docs: {
