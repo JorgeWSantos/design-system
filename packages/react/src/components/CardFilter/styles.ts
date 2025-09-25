@@ -1,5 +1,5 @@
 import { XIcon } from '@abqm-ds/icons';
-import { colors, fontSizes, fontWeights, space } from '@abqm-ds/tokens';
+import { breakpointsPx, colors, fontSizes, fontWeights, space } from '@abqm-ds/tokens';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -26,6 +26,10 @@ export const Title = styled.div`
   line-height: 0.75rem;
   text-align: center;
   color: ${colors.white75};
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    color: ${colors.emeraldGreen75};
+  }
 `;
 
 export const CardFilterContent = styled.div`
