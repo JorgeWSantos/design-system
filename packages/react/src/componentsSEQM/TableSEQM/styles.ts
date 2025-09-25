@@ -10,22 +10,24 @@ import {
 import { Text } from '@components/Text';
 import { CSSProperties, styled } from 'styled-components';
 
+export const TableScroll = styled.div`
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  min-width: 100%;
+`;
+
 export const StyledTableSEQM = styled.table<{
   $width?: CSSProperties['width'];
   $height?: CSSProperties['height'];
 }>`
-  display: flex;
-  flex-direction: column;
+  display: table;
   border-collapse: collapse;
-  width: ${({ $width }) => $width || '100%'};
+  width: ${({ $width }) => $width || 'auto'};
   height: ${({ $height }) => $height || 'unset'};
+  table-layout: auto;
 
   tbody tr:nth-child(odd) {
     background-color: ${colors.white25};
-  }
-
-  tbody tr:nth-child(even) {
-    /* background-color: ${colors.greenTransparent15}; */
   }
 
   font-family: ${fonts.default};
@@ -33,18 +35,20 @@ export const StyledTableSEQM = styled.table<{
 `;
 
 export const StyledHeadTableSEQM = styled.thead`
-  display: flex;
-  flex-direction: column;
+  display: table-header-group;
 
   tr {
-    display: flex;
-    width: 100%;
-    /* max-height: 2rem; */
+    display: table-row;
   }
 
   tr th {
+    display: table-cell;
     padding: ${space[1]} ${space[3]} ${space[1]} ${space[2]};
     font-size: ${fontSizes.xxs};
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
   }
 `;
 
@@ -72,21 +76,21 @@ export const StyledTableSEQMThSortable = styled.span`
 `;
 
 export const StyledBodyTableSEQM = styled.tbody`
-  display: flex;
-  flex-direction: column;
+  display: table-row-group;
 
   tr {
-    display: flex;
+    display: table-row;
     height: auto;
-    width: 100%;
   }
 
   tr td {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: table-cell;
+    vertical-align: middle;
     padding: ${space[2]} ${space[3]} ${space[2]} ${space[2]};
     gap: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .aqha-column {
@@ -108,8 +112,8 @@ export const StyledBodyTableSEQM = styled.tbody`
         left: 0;
         width: 4px;
         height: 100%;
-        background: ${colors.green500}; // Exemplo de cor, ajuste conforme necessário
-        pointer-events: none; // Para não bloquear interações
+        background: ${colors.green500};
+        pointer-events: none;
         z-index: 1;
       }
 

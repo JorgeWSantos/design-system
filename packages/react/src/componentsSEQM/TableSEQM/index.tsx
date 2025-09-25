@@ -6,6 +6,7 @@ import {
   StyledTableSEQMTextTd,
   StyledTableSEQMTextTh,
   StyledTableSEQMThSortable,
+  TableScroll,
 } from './styles';
 
 import { TableSEQMProps } from './types';
@@ -81,85 +82,80 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
   const sortedData = getSortedData();
 
   return (
-    <StyledTableSEQM $width={width} $height={height} {...rest}>
-      <StyledHeadTableSEQM>
-        <tr>
-          {columns?.map((col) => (
-            <th
-              key={col.key}
-              style={{
-                width: col.width,
-                maxWidth: col.width,
-                minWidth: col.minWidth,
-                // textAlign: col.align || 'left',
-                cursor: col.sortable ? 'pointer' : undefined,
-                display: 'flex',
-                justifyContent:
-                  col.align === 'center'
-                    ? 'center'
-                    : col.align === 'right'
-                    ? 'flex-end'
-                    : 'flex-start',
-              }}
-              onClick={col.sortable ? () => handleSort(col.key) : undefined}
-            >
-              <StyledTableSEQMTextTh>
-                {col.label}
-                {col.sortable && (
-                  <>
-                    {sortKey === col.key ? (
-                      sortOrder === 'asc' ? (
-                        <CaretDownFillIcon width={6} height={6} />
-                      ) : (
-                        <CaretUpFillIcon width={6} height={6} />
-                      )
-                    ) : (
-                      <StyledTableSEQMThSortable>
-                        <CaretUpFillIcon
-                          width={6}
-                          height={6}
-                          fill={colors.emeraldGreen50}
-                        />
-                        <CaretDownFillIcon
-                          width={6}
-                          height={6}
-                          fill={colors.emeraldGreen50}
-                        />
-                      </StyledTableSEQMThSortable>
-                    )}
-                  </>
-                )}
-              </StyledTableSEQMTextTh>
-            </th>
-          ))}
-        </tr>
-      </StyledHeadTableSEQM>
-      <StyledBodyTableSEQM>
-        {sortedData?.map((row, idx) => (
-          <tr key={idx} className={row?.isoficial?.value ? 'aqha-column' : ''}>
+    <TableScroll>
+      <StyledTableSEQM $width={width} $height={height} {...rest}>
+        <StyledHeadTableSEQM>
+          <tr>
             {columns?.map((col) => (
-              <td
+              <th
                 key={col.key}
                 style={{
                   width: col.width,
                   maxWidth: col.width,
                   minWidth: col.minWidth,
                   textAlign: col.align || 'left',
+                  cursor: col.sortable ? 'pointer' : undefined,
                 }}
+                onClick={col.sortable ? () => handleSort(col.key) : undefined}
               >
-                {row[col.key]?.render && typeof row[col.key].render === 'function' ? (
-                  row[col.key]?.render?.()
-                ) : (
-                  <StyledTableSEQMTextTd {...(col.textBold && { $bold: true })}>
-                    {row[col.key]?.value}
-                  </StyledTableSEQMTextTd>
-                )}
-              </td>
+                <StyledTableSEQMTextTh>
+                  {col.label}
+                  {col.sortable && (
+                    <>
+                      {sortKey === col.key ? (
+                        sortOrder === 'asc' ? (
+                          <CaretDownFillIcon width={6} height={6} />
+                        ) : (
+                          <CaretUpFillIcon width={6} height={6} />
+                        )
+                      ) : (
+                        <StyledTableSEQMThSortable>
+                          <CaretUpFillIcon
+                            width={6}
+                            height={6}
+                            fill={colors.emeraldGreen50}
+                          />
+                          <CaretDownFillIcon
+                            width={6}
+                            height={6}
+                            fill={colors.emeraldGreen50}
+                          />
+                        </StyledTableSEQMThSortable>
+                      )}
+                    </>
+                  )}
+                </StyledTableSEQMTextTh>
+              </th>
             ))}
           </tr>
-        ))}
-      </StyledBodyTableSEQM>
-    </StyledTableSEQM>
+        </StyledHeadTableSEQM>
+        <StyledBodyTableSEQM>
+          {sortedData?.map((row, idx) => (
+            <tr key={idx} className={row?.isoficial?.value ? 'aqha-column' : ''}>
+              {columns?.map((col) => (
+                <td
+                  key={col.key}
+                  style={{
+                    width: col.width,
+                    maxWidth: col.width,
+                    minWidth: col.minWidth,
+                    textAlign: col.align || 'left',
+                  }}
+                >
+                  {row[col.key]?.render && typeof row[col.key].render === 'function' ? (
+                    row[col.key]?.render?.()
+                  ) : (
+                    <StyledTableSEQMTextTd {...(col.textBold && { $bold: true })}>
+                      {row[col.key]?.value}
+                    </StyledTableSEQMTextTd>
+                  )}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </StyledBodyTableSEQM>
+      </StyledTableSEQM>
+    </TableScroll>
   );
 };
 

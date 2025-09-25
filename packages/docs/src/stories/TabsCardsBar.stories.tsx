@@ -4,13 +4,42 @@ import React from 'react';
 import { colors } from '@abqm-ds/tokens';
 
 const meta: Meta<typeof TabsCardsBar> = {
-  title: 'Components/TabsCardsBar',
+  title: 'Data Display/TabsCardsBar',
   component: TabsCardsBar,
   args: {},
   parameters: {
     docs: {
       description: {
-        component: 'Barra de abas em formato de cartões.',
+        component: `
+  O componente **TabsCardsBar** exibe uma barra de abas no formato de cartões, permitindo alternar entre diferentes conteúdos.
+
+  ### Como implementar
+
+  \`\`\`tsx
+  import { TabsCardsBar } from '@abqm-ds/react';
+
+  const tabs = [
+    { label: 'Todas as Provas', value: 'all_proves' },
+    { label: 'Provas Pontuadas', value: 'pointeds' },
+  ];
+
+  <TabsCardsBar
+    tabs={tabs}
+    activeTab={activeTab}
+    onTabChange={setActiveTab}
+  >
+    <CardFilter ... />
+  </TabsCardsBar>
+  \`\`\`
+
+  #### Props principais
+
+  - \`tabs\`: { label: string; value: string }[] — Lista de abas a serem exibidas.
+  - \`activeTab\`: string — Valor da aba atualmente ativa.
+  - \`onTabChange\`: (tab: string) => void — Função chamada ao trocar de aba.
+  - \`children\`: ReactNode — Conteúdo opcional exibido abaixo das abas.
+  - \`...props\`: Aceita todas as props do container externo.
+`,
       },
     },
   },

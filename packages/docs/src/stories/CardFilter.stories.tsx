@@ -3,7 +3,7 @@ import { CardFilter } from '@abqm-ds/react';
 import { colors } from '@abqm-ds/tokens';
 
 const meta: Meta<typeof CardFilter> = {
-  title: 'Components/CardFilter',
+  title: 'Data Display/CardFilter',
   component: CardFilter,
   args: {
     title: 'Sexo',
