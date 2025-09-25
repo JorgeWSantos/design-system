@@ -21,12 +21,10 @@ import {
   PerformanceHalterIconSEQM,
   BreakawayRopingIconSEQM,
   LacoCompridoIconSEQM,
-  // CorridaIconSEQM, // descomente se existir
+  CorridaIconSEQM,
 } from '@abqm-ds/icons';
 
 export function getModalityIcon(nid_prova: number) {
-  // TODO: falta o ícone CorridaIconSEQM, descomente se existir
-
   switch (nid_prova) {
     case 11:
       return TresTamboresIconSEQM;
@@ -73,7 +71,7 @@ export function getModalityIcon(nid_prova: number) {
     case 30:
       return LacoCompridoIconSEQM;
     case 48:
-      return ''; // CorridaIconSEQM se existir
+      return CorridaIconSEQM;
     default:
       return '';
   }
