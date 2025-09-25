@@ -37,6 +37,7 @@ export const StyledTextHallOfFameCreator = styled(Text).attrs({
   color: ${({ $isHallOfFameCreator }) =>
     $isHallOfFameCreator ? colors.brown700 : 'inherit'};
   /* margin-bottom: -0.1rem; */
+  white-space: nowrap;
 
   font-weight: ${({ $bolder }) => ($bolder ? fontWeights.semiBold : fontWeights.regular)};
 
