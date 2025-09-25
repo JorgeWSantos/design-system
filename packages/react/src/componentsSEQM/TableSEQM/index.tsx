@@ -129,6 +129,7 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
             ))}
           </tr>
         </StyledHeadTableSEQM>
+
         <StyledBodyTableSEQM>
           {sortedData?.map((row, idx) => (
             <tr key={idx} className={row?.isoficial?.value ? 'aqha-column' : ''}>
