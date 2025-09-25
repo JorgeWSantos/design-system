@@ -14,6 +14,24 @@ export const TableScroll = styled.div`
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   min-width: 100%;
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    display: flex;
+    flex-direction: row;
+
+    &::before {
+      content: '\\00a0';
+      display: block;
+      min-width: 0.5rem;
+      height: 16px;
+    }
+    &::after {
+      content: '\\00a0';
+      display: block;
+      min-width: 0.5rem;
+      height: 16px;
+    }
+  }
 `;
 
 export const StyledTableSEQM = styled.table<{
@@ -45,10 +63,15 @@ export const StyledHeadTableSEQM = styled.thead`
     display: table-cell;
     padding: ${space[1]} ${space[3]} ${space[1]} ${space[2]};
     font-size: ${fontSizes.xxs};
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     vertical-align: middle;
+  }
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    tr th {
+      white-space: nowrap;
+    }
   }
 `;
 
@@ -88,7 +111,6 @@ export const StyledBodyTableSEQM = styled.tbody`
     vertical-align: middle;
     padding: ${space[2]} ${space[3]} ${space[2]} ${space[2]};
     gap: 0.25rem;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -124,6 +146,7 @@ export const StyledBodyTableSEQM = styled.tbody`
   @media (max-width: ${breakpointsPx.lg}) {
     tr td {
       padding: ${space[2]};
+      white-space: nowrap;
     }
   }
 `;
