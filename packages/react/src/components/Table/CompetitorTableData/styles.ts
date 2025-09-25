@@ -36,7 +36,7 @@ export const StyledTextCompetitor = styled(Text).attrs({
 
   display: flex;
 
-  /* white-space: nowrap; */
+  white-space: nowrap;
 
   @media (max-width: ${breakpointsPx.lg}) {
     font-size: ${fontSizes.ssm};
