@@ -43,6 +43,7 @@ declare module '@abqm-ds/icons' {
   export const PerformanceHalterIconSEQM: FC<SVGProps<SVGSVGElement>>;
   export const BreakawayRopingIconSEQM: FC<SVGProps<SVGSVGElement>>;
   export const LacoCompridoIconSEQM: FC<SVGProps<SVGSVGElement>>;
+  export const CorridaIconSEQM: FC<SVGProps<SVGSVGElement>>;
   // Adicione outros ícones exportados aqui
   export const DefaultHorseRoundedIconIMG: FC<SVGProps<SVGSVGElement>>;
   export const DefaultHorseSquadIconIMG: FC<SVGProps<SVGSVGElement>>;

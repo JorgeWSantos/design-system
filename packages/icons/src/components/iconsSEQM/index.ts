@@ -4,6 +4,7 @@ export { default as BreakawayRopingIconSEQM } from './BreakawayRopingIconSEQM';
 export { default as BulldogIconSEQM } from './BulldogIconSEQM';
 export { default as CincoTamboresIconSEQM } from './CincoTamboresIconSEQM';
 export { default as ConformacaoIconSEQM } from './ConformacaoIconSEQM';
+export { default as CorridaIconSEQM } from './CorridaIconSEQM';
 export { default as LacoCabecaIconSEQM } from './LacoCabecaIconSEQM';
 export { default as LacoCompridoIconSEQM } from './LacoCompridoIconSEQM';
 export { default as LacoCompridoTecnicoIconSEQM } from './LacoCompridoTecnicoIconSEQM';
