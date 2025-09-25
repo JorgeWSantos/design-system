@@ -17,12 +17,12 @@ const TableWithLoader: React.FC<TableWithLoaderProps> = ({
   data,
   columns,
   isLoading,
-  minWidthTable,
+  // minWidthTable,
 }) => {
   return (
-    <DivContainerTableRight style={{ minWidth: minWidthTable }}>
+    <DivContainerTableRight>
       {data?.length > 0 && !isLoading ? (
-        <TableSEQM data={data} columns={columns} style={{ minWidth: minWidthTable }} />
+        <TableSEQM data={data} columns={columns} />
       ) : (
         <>
           {isLoading ? (
