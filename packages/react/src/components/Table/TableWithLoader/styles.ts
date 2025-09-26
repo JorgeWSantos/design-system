@@ -5,10 +5,12 @@ export const DivContainerTableRight = styled.div`
   display: flex;
   align-items: center;
   margin-top: 0.25rem;
+  width: 100%;
 
-  @media (max-width: ${breakpointsPx.md}) {
+  @media (max-width: ${breakpointsPx.lg}) {
     overflow-x: scroll;
     margin-top: 0;
+    height: 100%;
 
     table {
       min-width: 32rem;
