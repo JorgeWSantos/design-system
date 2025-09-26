@@ -11,7 +11,7 @@ import {} from '@styles/index';
 import styled, { css } from 'styled-components';
 import { ButtonSize, ButtonVariants, ButtonTextSize } from './types';
 import { Text } from '@components/Text';
-import { SpinnerRingResizeIcon } from '@abqm-ds/icons';
+import { ActivityIndicator } from '@components/ActivityIndicator';
 
 export interface ButtonStyleProps {
   $variant?: ButtonVariants; //cor
@@ -189,13 +189,13 @@ export const StyledButtonText = styled(Text).attrs({
     `}
 `;
 
-export const StyledSpinner = styled(SpinnerRingResizeIcon).attrs<ButtonStyleProps>(
+export const StyledSpinner = styled(ActivityIndicator).attrs<ButtonStyleProps>(
   (props) => ({
-    fill:
+    color:
       props.$variant === 'secondary'
         ? colors.green500
         : props.$variant === 'tertiary'
         ? colors.gray600
-        : colors.white,
+        : colors.white85,
   })
 )<{ $variant?: ButtonVariants }>``;
