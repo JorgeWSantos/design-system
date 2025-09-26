@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.27
+
+### Patch Changes
+
+- 7db535e: feat: 🎸 Adição de novos componentes
+
 ## 2.0.26
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 2.0.14
+
+### Patch Changes
+
+- 7db535e: feat: 🎸 Adição de novos componentes
+
 ## 2.0.13
 
 ### Patch Changes

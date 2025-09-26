@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 2.0.15
+
+### Patch Changes
+
+- 7db535e: feat: 🎸 Adição de novos componentes
+
 ## 2.0.14
 
 ### Patch Changes
