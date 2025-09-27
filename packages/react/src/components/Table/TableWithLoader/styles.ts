@@ -14,6 +14,7 @@ export const DivContainerTableRight = styled.div`
 
     table {
       min-width: 32rem;
+      width: 100%;
     }
   }
 `;
