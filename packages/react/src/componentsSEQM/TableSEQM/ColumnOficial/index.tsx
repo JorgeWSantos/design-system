@@ -7,7 +7,7 @@ import { StyledTableSEQMTextTd } from '../styles';
 export const OficialColumn = styled.span`
   display: flex;
   align-items: center;
-  height: 0.875rem;
+  min-height: 0.875rem;
   gap: ${space[1]};
 `;
 
