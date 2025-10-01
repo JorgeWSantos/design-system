@@ -123,20 +123,39 @@ export const SuggestionsList = styled.ul`
   right: 0;
   z-index: 10;
   background: ${colors.white};
-  border: 1px solid ${colors.emeraldGreen25};
-  border-radius: 0 0 8px 8px;
+  border: ${radii.px} solid ${colors.emeraldGreen25};
   box-shadow: 0 2px 8px ${colors.white25};
   margin: 0;
-  padding: 0;
   list-style: none;
   max-height: 180px;
   overflow-y: auto;
+
+  background: ${colors.solidWhiteGreen};
+  border-radius: ${radii.xs};
+  padding: ${space[2]} 0 ${space[6]} ${space[2]};
+  gap: ${space[2]};
+
+  /* Custom scrollbar styles */
+  &::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${colors.emeraldGreen25};
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  scrollbar-color: ${colors.emeraldGreen25} transparent;
+  scrollbar-width: thin;
 `;
 
 export const SuggestionItem = styled.li`
   padding: 0.5rem 1rem;
   cursor: pointer;
-  color: ${colors.emeraldGreen75};
+  color: ${colors.green900};
   font-size: ${fontSizes.x};
   font-family: ${fonts.default};
   font-weight: 400;
