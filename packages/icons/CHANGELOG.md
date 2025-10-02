@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 2.0.16
+
+### Patch Changes
+
+- feat: 🎸 Melhorias nas libs
+
 ## 2.0.15
 
 ### Patch Changes

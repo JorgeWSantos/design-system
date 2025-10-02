@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 2.0.15
+
+### Patch Changes
+
+- feat: 🎸 Melhorias nas libs
+
 ## 2.0.14
 
 ### Patch Changes
