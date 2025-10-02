@@ -1,4 +1,11 @@
-import { breakpointsPx, colors, fontSizes, fontWeights, radii } from '@abqm-ds/tokens';
+import {
+  breakpointsPx,
+  colors,
+  fontSizes,
+  fontWeights,
+  radii,
+  space,
+} from '@abqm-ds/tokens';
 import { css, styled } from 'styled-components';
 import { VariantsTypesDropdown } from './types';
 import { Text } from '@components/Text';
@@ -181,16 +188,15 @@ export const ContainerOptions = styled.div<{
 
   box-sizing: border-box;
 
-  padding: 1rem 0.5rem 1.5rem 0.5rem;
-  gap: 0.5rem;
-
   backdrop-filter: blur(3.125rem);
 
-  background-color: ${colors.green850};
-  color: ${colors.white75};
+  padding: ${space[2]} ${space[2]} ${space[6]} ${space[2]};
 
-  border: ${radii.px} solid ${colors.white50};
-  border-radius: ${radii.sm};
+  background-color: ${colors.solidWhiteGreen};
+  color: ${colors.green900};
+
+  border: ${radii.px} solid ${colors.emeraldGreen25};
+  border-radius: ${radii.xs};
 
   cursor: pointer;
 
@@ -198,16 +204,32 @@ export const ContainerOptions = styled.div<{
     $variant === 'secondary' &&
     css`
       background-color: ${colors.solidWhiteGreen};
-      color: ${colors.emeraldGreen75};
+      color: ${colors.green900};
 
-      border: ${radii.px} solid ${colors.white50};
+      border: ${radii.px} solid ${colors.emeraldGreen25};
+
+      /* Custom scrollbar styles */
+      &::-webkit-scrollbar {
+        width: 8px;
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: ${colors.emeraldGreen25};
+        border-radius: 4px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      scrollbar-color: ${colors.emeraldGreen25} transparent;
+      scrollbar-width: thin;
     `}
 
   ${({ $variant }) =>
     $variant === 'tertiary' &&
     css`
-      background-color: ${colors.white2};
-      color: ${colors.emeraldGreen75};
+      background-color: ${colors.solidWhiteGreen};
+      color: ${colors.green900};
 
       border: ${radii.px} solid ${colors.emeraldGreen25};
 
@@ -231,8 +253,8 @@ export const ContainerOptions = styled.div<{
   ${({ $variant }) =>
     $variant === 'quaternary' &&
     css`
-      background-color: ${colors.white2};
-      color: ${colors.emeraldGreen75};
+      background-color: ${colors.solidWhiteGreen};
+      color: ${colors.green900};
 
       border: ${radii.px} solid ${colors.emeraldGreen25};
 
@@ -256,10 +278,13 @@ export const ContainerOptions = styled.div<{
 
 export const Option = styled.div<{ $variant?: VariantsTypesDropdown }>`
   border-bottom: ${radii.px} solid ${colors.emeraldGreen50};
-  padding: 0 0.5rem;
-  padding-bottom: 0.38rem;
   font-size: ${fontSizes.xxs};
   line-height: 0.875rem;
+  padding: ${space[2]};
+
+  &:hover {
+    background-color: ${colors.emeraldGreen10};
+  }
 
   ${({ $variant }) =>
     $variant === 'secondary' &&
