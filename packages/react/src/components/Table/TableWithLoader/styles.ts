@@ -6,6 +6,7 @@ export const DivContainerTableRight = styled.div`
   align-items: center;
   margin-top: 0.25rem;
   width: 100%;
+  position: relative;
 
   table {
     width: 100%;

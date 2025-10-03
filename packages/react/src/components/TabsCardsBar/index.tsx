@@ -37,7 +37,7 @@ const TabsCardsBar: React.FC<TabsCardsBarProps> = ({
               <TabFirst
                 key={i}
                 $active={activeTab === tab.value}
-                $secondIsNotSelected={activeTab !== tabs[1].value}
+                $secondIsNotSelected={activeTab !== tabs[1]?.value}
               >
                 <Tab
                   active={activeTab === tab.value}
