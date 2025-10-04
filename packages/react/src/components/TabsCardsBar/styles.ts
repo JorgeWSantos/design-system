@@ -7,6 +7,7 @@ export const Container = styled.div`
   align-items: flex-end;
   padding: 14px 0 ${space[3]};
   height: 3.875rem;
+  width: 100%;
   position: relative;
 `;
 
@@ -15,6 +16,7 @@ export const TabsWrapper = styled.div`
   flex-direction: row;
   align-items: flex-end;
   padding-top: ${space[3]};
+  width: 100%;
   height: 2.25rem;
   flex-grow: 1;
   position: relative;
