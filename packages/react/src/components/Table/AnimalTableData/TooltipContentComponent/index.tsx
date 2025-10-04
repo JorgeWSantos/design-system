@@ -91,17 +91,10 @@ const TooltipContentComponent = ({
           onClick={() => {
             const urlConsultaAnimal = import.meta.env.VITE_URL_CONSULTA_ANIMAL;
 
-            console.log('urlConsultaAnimal', urlConsultaAnimal);
-
-            // window.open(
-            //   'https://dev.abqm.com.br/novo-design-consulta-animal/perfil-do-animal/registro-de-merito/' +
-            //     idAnimal,
-            //   '_blank'
-            // );
-            // console.log(
-            //   'https://dev.abqm.com.br/novo-design-consulta-animal/perfil-do-animal/registro-de-merito' +
-            //     idAnimal
-            // );
+            window.open(
+              urlConsultaAnimal + '/perfil-do-animal/registro-de-merito/' + idAnimal,
+              '_blank'
+            );
           }}
           style={{ cursor: 'pointer' }}
         >

@@ -1,6 +1,6 @@
 {
   "extends": "@abqm-ds/ts-config/react.json",
-  "include": ["src", "vite.config.ts", "src/@types"],
+  "include": ["src", "vite.config.ts", "src/@types", "tsup.config.ts"],
   "exclude": [
     "**/*.stories.*",
     "**/*.test.*",
@@ -10,6 +10,7 @@
   ],
   "compilerOptions": {
     "baseUrl": "src",
+    "target": "ESNext",
     "paths": {
       "@components/*": ["components/*"],
       "@componentsSEQM/*": ["componentsSEQM/*"],
