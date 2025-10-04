@@ -115,6 +115,7 @@ const AnimalTableData = ({
         contentInside={
           hasSomething && (
             <TooltipContentComponent
+              idAnimal={idAnimal}
               ImgAnimal={imageSrcTooltip}
               isHallOfFameAnimal={isHallOfFameAnimal}
               registerOfMerity={registerOfMerity}
@@ -150,6 +151,7 @@ const AnimalTableData = ({
             <></>
           )}
         </DivImage>
+
         {isHallOfFameAnimal && (
           <LaurelImage
             className="tooltip-anchor-laurelimage"

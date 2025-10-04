@@ -5,6 +5,7 @@ import type { SVGProps, JSX } from 'react';
 import React from 'react';
 
 interface TooltipContentComponentProps {
+  idAnimal: number;
   ImgAnimal?: string | React.FC<SVGProps<SVGSVGElement>> | ((props: any) => JSX.Element);
   isHallOfFameAnimal: string | null;
   registerOfMerity?: string | null;
@@ -16,6 +17,7 @@ interface TooltipContentComponentProps {
 }
 
 const TooltipContentComponent = ({
+  idAnimal,
   ImgAnimal,
   isHallOfFameAnimal,
   registerOfMerity,
@@ -83,7 +85,26 @@ const TooltipContentComponent = ({
           )}
         </ImagesAchivements>
 
-        <Text fontSize="xxs" color={colors.emeraldGreen75}>
+        <Text
+          fontSize="xxs"
+          color={colors.emeraldGreen75}
+          onClick={() => {
+            const urlConsultaAnimal = import.meta.env.VITE_URL_CONSULTA_ANIMAL;
+
+            console.log('urlConsultaAnimal', urlConsultaAnimal);
+
+            // window.open(
+            //   'https://dev.abqm.com.br/novo-design-consulta-animal/perfil-do-animal/registro-de-merito/' +
+            //     idAnimal,
+            //   '_blank'
+            // );
+            // console.log(
+            //   'https://dev.abqm.com.br/novo-design-consulta-animal/perfil-do-animal/registro-de-merito' +
+            //     idAnimal
+            // );
+          }}
+          style={{ cursor: 'pointer' }}
+        >
           Conquistas do animal
         </Text>
       </TooltipContentRight>
