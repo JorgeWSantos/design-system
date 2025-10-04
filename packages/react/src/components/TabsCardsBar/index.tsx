@@ -20,7 +20,7 @@ interface TabsCardsBarProps extends ComponentProps<typeof Container> {
   onTabChange: (tab: string) => void;
   children?: React.ReactNode;
   tabs: Array<TabsPropType>;
-  hideAutoWidthElement: boolean;
+  hideAutoWidthElement?: boolean;
 }
 
 const TabsCardsBar: React.FC<TabsCardsBarProps> = ({

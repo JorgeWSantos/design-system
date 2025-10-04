@@ -18,6 +18,7 @@ export const TableScroll = styled.div`
   @media (max-width: ${breakpointsPx.lg}) {
     display: flex;
     flex-direction: row;
+    height: 100%;
 
     &::before {
       content: '\\00a0';
