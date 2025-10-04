@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 2.0.16
+
+### Patch Changes
+
+- feat: 🎸 Melhorias nos componentes react
+
 ## 2.0.15
 
 ### Patch Changes

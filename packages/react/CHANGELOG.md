@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.29
+
+### Patch Changes
+
+- feat: 🎸 Melhorias nos componentes react
+
 ## 2.0.28
 
 ### Patch Changes
