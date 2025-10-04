@@ -1,14 +1,21 @@
 import { ComponentProps } from 'react';
-import { SwitchContainer, SwitchButton, SwitchKnob } from './styles';
+import { SwitchContainer, SwitchButton, SwitchKnob, Label } from './styles';
 
 export type SwitchVariants = 'primary' | 'filter';
 export interface SwitchProps extends ComponentProps<typeof SwitchContainer> {
   checked: boolean;
   onChange: () => void;
   variant?: SwitchVariants;
+  label?: string;
 }
 
-const Switch = ({ checked, onChange, variant = 'primary', ...rest }: SwitchProps) => (
+const Switch = ({
+  checked,
+  onChange,
+  variant = 'primary',
+  label,
+  ...rest
+}: SwitchProps) => (
   <SwitchContainer {...rest}>
     <SwitchButton
       onClick={onChange}
@@ -19,6 +26,7 @@ const Switch = ({ checked, onChange, variant = 'primary', ...rest }: SwitchProps
     >
       <SwitchKnob $checked={checked} $variant={variant} />
     </SwitchButton>
+    {label && <Label>{label}</Label>}
   </SwitchContainer>
 );
 

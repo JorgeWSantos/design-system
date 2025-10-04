@@ -12,15 +12,23 @@ export default {
         component: `
 O componente **Switch** é utilizado para alternar entre dois estados, geralmente ligado/desligado.
 
-### Como implementar
+### Como usar
 
 \`\`\`tsx
 import { Switch } from '@abqm-ds/react';
 
-<Switch checked={true} onChange={() => {}} />
+<Switch checked={true} onChange={() => {}} label="Ativo" variant="primary" />
 \`\`\`
 
-- Aceita as props \`checked\`, \`onChange\`, \`disabled\` e outras nativas de input.
+#### Props
+
+- **checked**: \`boolean\` _(obrigatório)_ — Estado atual do switch (ligado/desligado).
+- **onChange**: \`() => void\` _(obrigatório)_ — Função chamada ao alternar o switch.
+- **variant**: \`'primary' | 'filter'\` _(opcional)_ — Define o estilo visual do switch.
+- **label**: \`string\` _(opcional)_ — Texto exibido ao lado do switch.
+- Aceita também outras props nativas de \`div\`.
+
+> **Atenção:** O Switch não possui prop \`disabled\` atualmente. Caso precise, solicite a implementação.
         `,
       },
     },

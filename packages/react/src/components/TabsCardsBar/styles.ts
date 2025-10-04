@@ -108,7 +108,9 @@ export const TabOther = styled.div<TabStateOthersProps>`
     `};
 `;
 
-export const ChildrenWrapper = styled.div`
+export const ChildrenWrapper = styled.div<{
+  $extendThisDiv: boolean;
+}>`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -120,4 +122,10 @@ export const ChildrenWrapper = styled.div`
   position: relative;
   z-index: 1;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+  ${({ $extendThisDiv }) =>
+    $extendThisDiv &&
+    css`
+      width: 100%;
+    `}
 `;

@@ -1,10 +1,12 @@
 import styled, { css } from 'styled-components';
-import { colors } from '@abqm-ds/tokens';
+import { colors, fontSizes, space } from '@abqm-ds/tokens';
 import { SwitchVariants } from '.';
+import { Text } from '@components/Text';
 
 export const SwitchContainer = styled.div`
   display: flex;
   align-items: center;
+  gap: ${space[1]};
 `;
 
 export const SwitchButton = styled.button<{
@@ -45,4 +47,10 @@ export const SwitchKnob = styled.span<{ $checked: boolean; $variant: SwitchVaria
     css`
       border: 1px solid ${colors.gray100};
     `}
+`;
+
+export const Label = styled(Text)`
+  font-size: ${fontSizes.ssm};
+  line-height: 1.125rem; /* 120% */
+  color: ${colors.white85};
 `;
