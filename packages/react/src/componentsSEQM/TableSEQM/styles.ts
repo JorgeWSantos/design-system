@@ -81,15 +81,15 @@ export const StyledTableSEQMTextTh = styled(Text).attrs({
   fontWeight: 'semiBold',
   lineHeight: 'tight',
 })<{
-  align?: 'left' | 'center' | 'right';
+  $align?: 'left' | 'center' | 'right';
 }>`
   display: flex;
   flex-direction: row;
   gap: 0.1rem;
   overflow: visible;
-  justify-content: ${({ align }) =>
-    align === 'center' ? 'center' : align === 'right' ? 'flex-end' : 'flex-start'};
-  text-align: ${({ align }) => align || 'left'};
+  justify-content: ${({ $align }) =>
+    $align === 'center' ? 'center' : $align === 'right' ? 'flex-end' : 'flex-start'};
+  text-align: ${({ $align }) => $align || 'left'};
 `;
 
 export const StyledTableSEQMThSortable = styled.span`

@@ -98,7 +98,7 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
                 }}
                 onClick={col.sortable ? () => handleSort(col.key) : undefined}
               >
-                <StyledTableSEQMTextTh align={col.align || 'left'}>
+                <StyledTableSEQMTextTh $align={col.align || 'left'}>
                   {col.label}
                   {col.sortable && (
                     <>
