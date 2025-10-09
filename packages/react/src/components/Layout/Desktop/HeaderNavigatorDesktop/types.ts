@@ -1,5 +1,6 @@
 import { ComponentProps, ElementType, ReactNode } from 'react';
 import { StyledNavigatorDesktop } from './styles';
+import { FontFamilyTypes } from 'types/tipography';
 
 export interface HeaderNavigatorDesktopProps
   extends ComponentProps<typeof StyledNavigatorDesktop> {
@@ -9,4 +10,5 @@ export interface HeaderNavigatorDesktopProps
   hasBackButton?: boolean;
   title: string;
   subtitle?: string;
+  fontFamily?: FontFamilyTypes;
 }

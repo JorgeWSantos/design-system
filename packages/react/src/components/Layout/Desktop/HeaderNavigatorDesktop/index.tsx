@@ -20,6 +20,7 @@ export const HeaderNavigatorDesktop = ({
   title,
   subtitle,
   children,
+  fontFamily = 'default',
   ...rest
 }: HeaderNavigatorDesktopProps) => {
   return (
@@ -44,15 +45,15 @@ export const HeaderNavigatorDesktop = ({
         <DivTitles>
           {subtitle ? (
             <>
-              <StyledHeadingHeaderNavigator fontSize="ssm">
+              <StyledHeadingHeaderNavigator fontSize="ssm" fontFamily={fontFamily}>
                 {title}
               </StyledHeadingHeaderNavigator>
-              <StyledSubTitleHeadingHeaderNavigator fontSize="sm">
+              <StyledSubTitleHeadingHeaderNavigator fontSize="sm" fontFamily={fontFamily}>
                 {subtitle}
               </StyledSubTitleHeadingHeaderNavigator>
             </>
           ) : (
-            <StyledHeadingHeaderNavigator fontSize="sm">
+            <StyledHeadingHeaderNavigator fontSize="sm" fontFamily={fontFamily}>
               {title}
             </StyledHeadingHeaderNavigator>
           )}

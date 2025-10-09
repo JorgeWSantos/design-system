@@ -60,7 +60,8 @@ export const DivTitles = styled.div`
 `;
 
 export const StyledHeadingHeaderNavigator = styled(Heading).withConfig({
-  shouldForwardProp: (prop) => ['as', 'fontSize', 'color', 'children'].includes(prop),
+  shouldForwardProp: (prop) =>
+    ['as', 'fontSize', 'color', 'children', 'fontFamily'].includes(prop),
 })`
   letter-spacing: -0.0375rem;
   line-height: ${lineHeights.tight};
@@ -68,7 +69,8 @@ export const StyledHeadingHeaderNavigator = styled(Heading).withConfig({
 `;
 
 export const StyledSubTitleHeadingHeaderNavigator = styled(Text).withConfig({
-  shouldForwardProp: (prop) => ['as', 'fontSize', 'color', 'children'].includes(prop),
+  shouldForwardProp: (prop) =>
+    ['as', 'fontSize', 'color', 'children', 'fontFamily'].includes(prop),
 })`
   font-family: ${fonts.secondary} !important;
   letter-spacing: -0.0375rem;
