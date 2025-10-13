@@ -1,4 +1,4 @@
-import { ComponentProps, useState } from 'react';
+import { ComponentProps, useEffect, useRef, useState } from 'react';
 import { EventSummaryDefaultIcon } from '@abqm-ds/icons';
 import { ImageContainer, InfoEvent, InfoEventDetailed, Information } from './styles';
 import { fontWeights } from '@abqm-ds/tokens';
@@ -10,6 +10,46 @@ export interface InfoDetailsProps extends ComponentProps<typeof InfoEvent> {
 
 const InfoEventDetails = ({ data }: { data: InfoDetailsDataType | null }) => {
   const [imgError, setImgError] = useState(false);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [wrapped, setWrapped] = useState(false);
+  const [widthOfWrap, setWidthOfWrap] = useState(0);
+
+  useEffect(() => {
+    const checkWrap = () => {
+      const container = containerRef.current;
+      if (!container) return;
+
+      const children = Array.from(container.children);
+      if (children.length < 2) return;
+
+      // compara o top do primeiro e do último elemento
+      const firstTop = (children[0] as HTMLElement).offsetTop;
+      const lastTop = (children[children.length - 1] as HTMLElement).offsetTop;
+
+      // se o último estiver mais abaixo, houve wrap
+      if (lastTop > firstTop) {
+        setWrapped(true);
+        setWidthOfWrap((prev) => {
+          if (prev !== 0) return prev;
+
+          return window.innerWidth;
+        });
+      }
+
+      if (widthOfWrap !== 0 && window.innerWidth > widthOfWrap) {
+        setWrapped(false);
+        setWidthOfWrap(0);
+      }
+    };
+
+    checkWrap();
+    window.addEventListener('resize', checkWrap);
+    return () => window.removeEventListener('resize', checkWrap);
+  }, [widthOfWrap]);
+
+  // console.log('wrapped', wrapped);
+  // console.log('widthOfWrap', widthOfWrap);
 
   return (
     <InfoEvent>
@@ -26,8 +66,8 @@ const InfoEventDetails = ({ data }: { data: InfoDetailsDataType | null }) => {
         )}
       </ImageContainer>
 
-      <InfoEventDetailed>
-        <Information>
+      <InfoEventDetailed $wrapped={wrapped}>
+        <Information $wrapped={wrapped} ref={containerRef}>
           <p className="title">organizador</p>
           <p
             className="subtitle organizer"
@@ -37,12 +77,12 @@ const InfoEventDetails = ({ data }: { data: InfoDetailsDataType | null }) => {
           </p>
         </Information>
 
-        <Information>
+        <Information $wrapped={wrapped}>
           <p className="title">local</p>
           <p className="subtitle">{data?.local || '--'}</p>
         </Information>
 
-        <Information>
+        <Information $wrapped={wrapped}>
           <p className="title">data</p>
           <p className="subtitle">
             {data?.data_inicio || '--'} - {data?.data_fim || '--'}

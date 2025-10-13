@@ -6,7 +6,7 @@ import {
   lineHeights,
   radii,
 } from '@abqm-ds/tokens';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const InfoEvent = styled.div`
   width: 100%;
@@ -47,22 +47,35 @@ export const ImageContainer = styled.div`
   }
 `;
 
-export const InfoEventDetailed = styled.div`
+export const InfoEventDetailed = styled.div<{ $wrapped: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
+
+  ${({ $wrapped }) =>
+    $wrapped &&
+    css`
+      gap: 0.25rem;
+    `}
 
   @media (max-width: ${breakpointsPx.lg}) {
     gap: 0.1rem;
   }
 `;
 
-export const Information = styled.div`
+export const Information = styled.div<{ $wrapped: boolean }>`
   display: flex;
   flex-direction: row;
   gap: 0.125rem;
   flex-wrap: wrap;
+
+  ${({ $wrapped }) =>
+    $wrapped &&
+    css`
+      flex-direction: column;
+      gap: 0;
+    `}
 
   .title {
     min-width: 4.4rem;
