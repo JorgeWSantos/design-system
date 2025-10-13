@@ -64,11 +64,8 @@ export const Information = styled.div`
   gap: 0.125rem;
   flex-wrap: wrap;
 
-  p {
-    margin: 0;
-  }
-
   .title {
+    min-width: 4.4rem;
     color: ${colors.emeraldGreen75};
     font-size: ${fontSizes.xxs};
     font-weight: ${fontWeights.regular};
@@ -87,10 +84,6 @@ export const Information = styled.div`
   } */
 
   @media (max-width: ${breakpointsPx.lg}) {
-    p {
-      margin: 0 !important;
-    }
-
     .title {
       display: none;
     }

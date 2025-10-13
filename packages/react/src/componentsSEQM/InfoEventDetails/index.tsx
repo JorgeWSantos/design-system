@@ -39,14 +39,12 @@ const InfoEventDetails = ({ data }: { data: InfoDetailsDataType | null }) => {
 
         <Information>
           <p className="title">local</p>
-          <p className="subtitle" style={{ marginLeft: '2.5rem' }}>
-            {data?.local || '--'}
-          </p>
+          <p className="subtitle">{data?.local || '--'}</p>
         </Information>
 
         <Information>
           <p className="title">data</p>
-          <p className="subtitle" style={{ marginLeft: '2.5rem' }}>
+          <p className="subtitle">
             {data?.data_inicio || '--'} - {data?.data_fim || '--'}
           </p>
         </Information>
