@@ -58,7 +58,8 @@ export const HeaderNavigatorDesktop = ({
             </StyledHeadingHeaderNavigator>
           )}
         </DivTitles>
-        <ContentChildren>{children}</ContentChildren>
+
+        {children && <ContentChildren>{children}</ContentChildren>}
       </ContentRight>
     </StyledNavigatorDesktop>
   );
