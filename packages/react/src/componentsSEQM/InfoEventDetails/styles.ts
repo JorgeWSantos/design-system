@@ -11,7 +11,6 @@ import styled, { css } from 'styled-components';
 export const InfoEvent = styled.div`
   width: 100%;
   display: flex;
-  align-items: center;
   gap: 1.125rem;
   min-height: 3.75rem;
 
@@ -23,7 +22,7 @@ export const InfoEvent = styled.div`
 export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   min-width: 70px;
   max-width: 70px;
   min-height: 60px;
