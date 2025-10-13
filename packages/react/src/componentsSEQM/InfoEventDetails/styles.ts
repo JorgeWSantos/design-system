@@ -10,15 +10,12 @@ import styled from 'styled-components';
 
 export const InfoEvent = styled.div`
   width: 100%;
-  /* min-height: 3.75rem; */
   display: flex;
+  align-items: center;
   gap: 1.125rem;
+  min-height: 3.75rem;
 
-  @media (max-width: 1400px) {
-    padding: 0.25rem;
-  }
-
-  @media (max-width: 768px) {
+  @media (max-width: ${breakpointsPx.md}) {
     gap: 0.5rem;
   }
 `;
@@ -31,6 +28,14 @@ export const ImageContainer = styled.div`
   max-width: 70px;
   min-height: 60px;
   max-height: 60px;
+
+  img,
+  svg {
+    min-width: 70px !important;
+    max-width: 70px;
+    min-height: 60px !important;
+    max-height: 60px;
+  }
 
   border-radius: ${radii.sm};
   border: ${radii.px} solid ${colors.white25};
@@ -46,6 +51,7 @@ export const InfoEventDetailed = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100%;
 
   @media (max-width: ${breakpointsPx.lg}) {
     gap: 0.1rem;
@@ -57,6 +63,10 @@ export const Information = styled.div`
   flex-direction: row;
   gap: 0.125rem;
   flex-wrap: wrap;
+
+  p {
+    margin: 0;
+  }
 
   .title {
     color: ${colors.emeraldGreen75};
@@ -72,14 +82,15 @@ export const Information = styled.div`
     line-height: ${lineHeights.shorter};
   }
 
-  @media (max-width: 1400px) {
+  /* @media (max-width: 1400px) {
     flex-direction: column;
-    .subtitle {
-      margin: 0 !important;
-    }
-  }
+  } */
 
   @media (max-width: ${breakpointsPx.lg}) {
+    p {
+      margin: 0 !important;
+    }
+
     .title {
       display: none;
     }

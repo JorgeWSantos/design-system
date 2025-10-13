@@ -18,7 +18,7 @@ const InfoEventDetails = ({ data }: { data: InfoDetailsDataType | null }) => {
           <img
             src={data.logotipo}
             alt="Logotipo do evento"
-            style={{ minHeight: '100%', minWidth: '100%' }}
+            // style={{ minHeight: '100%', minWidth: '100%' }}
             onError={() => setImgError(true)}
           />
         ) : (
