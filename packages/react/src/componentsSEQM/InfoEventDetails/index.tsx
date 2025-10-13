@@ -15,6 +15,7 @@ const InfoEventDetails = ({ data }: { data: InfoDetailsDataType | null }) => {
   const [wrapped, setWrapped] = useState(false);
   const [widthOfWrap, setWidthOfWrap] = useState(0);
 
+  // valida se o flex wrap aconteceu em algum elemento
   useEffect(() => {
     const checkWrap = () => {
       const container = containerRef.current;
@@ -43,7 +44,10 @@ const InfoEventDetails = ({ data }: { data: InfoDetailsDataType | null }) => {
       }
     };
 
-    checkWrap();
+    setTimeout(() => {
+      checkWrap();
+    }, 1000);
+
     window.addEventListener('resize', checkWrap);
     return () => window.removeEventListener('resize', checkWrap);
   }, [widthOfWrap]);
