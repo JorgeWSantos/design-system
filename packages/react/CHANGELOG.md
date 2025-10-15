@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.30
+
+### Patch Changes
+
+- feat: 🎸 Atualizará pacotes
+
 ## 2.0.29
 
 ### Patch Changes

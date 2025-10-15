@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 2.0.17
+
+### Patch Changes
+
+- feat: 🎸 Atualizará pacotes
+
 ## 2.0.16
 
 ### Patch Changes
