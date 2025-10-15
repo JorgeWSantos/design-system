@@ -36,10 +36,6 @@ export const ImageContainer = styled.div`
     max-height: 60px;
   }
 
-  border-radius: ${radii.sm};
-  border: ${radii.px} solid ${colors.white25};
-  background-color: ${colors.white85};
-
   @media (max-width: ${breakpointsPx.lg}) {
     border: ${radii.px} solid ${colors.emeraldGreen25};
     background-color: transparent;
@@ -63,7 +59,7 @@ export const InfoEventDetailed = styled.div<{ $wrapped: boolean }>`
   }
 `;
 
-export const Information = styled.div<{ $wrapped: boolean }>`
+export const Information = styled.div<{ $wrapped: boolean; $light?: boolean }>`
   display: flex;
   flex-direction: row;
   gap: 0.125rem;
@@ -78,17 +74,22 @@ export const Information = styled.div<{ $wrapped: boolean }>`
 
   .title {
     min-width: 4.4rem;
-    color: ${colors.emeraldGreen75};
+    color: ${({ $light }) => ($light ? colors.white50 : colors.emeraldGreen75)};
     font-size: ${fontSizes.xxs};
     font-weight: ${fontWeights.regular};
     line-height: ${lineHeights.shorter};
   }
 
   .subtitle {
-    color: ${colors.emeraldGreen75};
+    color: ${({ $light }) => ($light ? colors.white50 : colors.emeraldGreen75)};
     font-size: ${fontSizes.xxs};
     font-weight: ${fontWeights.regular};
     line-height: ${lineHeights.shorter};
+
+    &.organizer {
+      color: ${({ $light }) => ($light ? colors.white75 : colors.emeraldGreen75)};
+      font-weight: ${fontWeights.semiBold};
+    }
   }
 
   /* @media (max-width: 1400px) {

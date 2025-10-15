@@ -1,14 +1,19 @@
 import { ComponentProps, useEffect, useRef, useState } from 'react';
-import { EventSummaryDefaultIcon } from '@abqm-ds/icons';
+import {
+  EventSummaryDefaultIcon,
+  LogoAbqmBorderedEmeraldIcon,
+  LogoAbqmBorderedWhiteIcon,
+} from '@abqm-ds/icons';
 import { ImageContainer, InfoEvent, InfoEventDetailed, Information } from './styles';
 import { fontWeights } from '@abqm-ds/tokens';
 import { InfoDetailsDataType } from './types';
 
 export interface InfoDetailsProps extends ComponentProps<typeof InfoEvent> {
   data: InfoDetailsDataType | null;
+  light?: boolean; // default false
 }
 
-const InfoEventDetails = ({ data }: { data: InfoDetailsDataType | null }) => {
+const InfoEventDetails = ({ data, light }: InfoDetailsProps) => {
   const [imgError, setImgError] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -66,12 +71,22 @@ const InfoEventDetails = ({ data }: { data: InfoDetailsDataType | null }) => {
             onError={() => setImgError(true)}
           />
         ) : (
-          <EventSummaryDefaultIcon style={{ minHeight: '100%', minWidth: '100%' }} />
+          <>
+            {light ? (
+              <LogoAbqmBorderedWhiteIcon
+                style={{ minHeight: '100%', minWidth: '100%' }}
+              />
+            ) : (
+              <LogoAbqmBorderedEmeraldIcon
+                style={{ minHeight: '100%', minWidth: '100%' }}
+              />
+            )}
+          </>
         )}
       </ImageContainer>
 
       <InfoEventDetailed $wrapped={wrapped}>
-        <Information $wrapped={wrapped} ref={containerRef}>
+        <Information $wrapped={wrapped} ref={containerRef} $light={light}>
           <p className="title">organizador</p>
           <p
             className="subtitle organizer"
@@ -81,12 +96,12 @@ const InfoEventDetails = ({ data }: { data: InfoDetailsDataType | null }) => {
           </p>
         </Information>
 
-        <Information $wrapped={wrapped}>
+        <Information $wrapped={wrapped} $light={light}>
           <p className="title">local</p>
           <p className="subtitle">{data?.local || '--'}</p>
         </Information>
 
-        <Information $wrapped={wrapped}>
+        <Information $wrapped={wrapped} $light={light}>
           <p className="title">data</p>
           <p className="subtitle">
             {data?.data_inicio || '--'} - {data?.data_fim || '--'}
