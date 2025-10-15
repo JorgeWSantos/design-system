@@ -41,7 +41,7 @@ export const Button = ({
         <>
           {iconLeft && <>{iconLeft}</>}
 
-          <StyledButtonText $sizeText={sizeText}>{text}</StyledButtonText>
+          {text && <StyledButtonText $sizeText={sizeText}>{text}</StyledButtonText>}
 
           {iconRight && <>{iconRight}</>}
         </>

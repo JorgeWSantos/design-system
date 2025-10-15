@@ -14,6 +14,7 @@ export const SwitchButton = styled.button<{
   $variant: SwitchVariants;
 }>`
   width: 2rem;
+  min-width: 2rem;
   height: 1rem;
   border-radius: 1rem;
   background: ${({ $checked }) => ($checked ? colors.white50 : colors.white25)};

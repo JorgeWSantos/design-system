@@ -7,6 +7,7 @@ export interface SwitchProps extends ComponentProps<typeof SwitchContainer> {
   onChange: () => void;
   variant?: SwitchVariants;
   label?: string;
+  labelOnLeft?: boolean;
 }
 
 const Switch = ({
@@ -14,9 +15,11 @@ const Switch = ({
   onChange,
   variant = 'primary',
   label,
+  labelOnLeft,
   ...rest
 }: SwitchProps) => (
   <SwitchContainer {...rest}>
+    {label && labelOnLeft && <Label>{label}</Label>}
     <SwitchButton
       onClick={onChange}
       aria-checked={checked}
@@ -26,7 +29,7 @@ const Switch = ({
     >
       <SwitchKnob $checked={checked} $variant={variant} />
     </SwitchButton>
-    {label && <Label>{label}</Label>}
+    {label && !labelOnLeft && <Label>{label}</Label>}
   </SwitchContainer>
 );
 
