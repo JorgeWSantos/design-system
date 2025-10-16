@@ -12,8 +12,11 @@ import {
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from '@abqm-ds/icons';
 import { breakpoints, colors } from '@abqm-ds/tokens';
 import { useWindowSize } from 'utils/useWindowSize';
+import { FooterTypes } from '..';
 
-export interface FooterContentProps extends ComponentProps<typeof ContainerContent> {}
+export interface FooterContentProps extends ComponentProps<typeof ContainerContent> {
+  footerType?: FooterTypes;
+}
 
 const socialIcons = (width: number) => {
   if (width > breakpoints.lg) {
@@ -69,11 +72,11 @@ const socialIcons = (width: number) => {
   return <></>;
 };
 
-export const FooterContent = () => {
+export const FooterContent = ({ footerType, ...rest }: FooterContentProps) => {
   const { width } = useWindowSize();
 
   return (
-    <ContainerContent>
+    <ContainerContent $footerType={footerType} {...rest}>
       <Social>
         {socialIcons(width)}
 

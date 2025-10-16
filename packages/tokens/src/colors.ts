@@ -15,9 +15,13 @@ export const colors = {
 
   black: '#000',
   black0: '#FFFFFF00',
+  black5: '#0000000d', // 5% opacity
+  black10: '#0000001a', // 10% opacity
+  black15: '#00000026', // 15% opacity
+  black20: '#00000033', // 20% opacity
+  black25: '#00000040',
   black30: '#0000004D',
   black40: '#00000066',
-  black25: '#00000040',
   black50: '#00000080',
   black75: '#000000BF',
   black85: '#000000d9',

@@ -1,13 +1,23 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { breakpointsPx, colors, fonts, fontWeights, space } from '@abqm-ds/tokens';
+import { FooterTypes } from '..';
 
-export const ContainerContent = styled.div`
+export const ContainerContent = styled.div<{
+  $footerType?: FooterTypes;
+}>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-radius: ${space[2]} ${space[2]} 0 0;
 
   padding: ${space[4]} ${space[10]};
+
+  ${({ $footerType }) =>
+    $footerType === 'medium' &&
+    css`
+      height: 100%;
+      padding: 0.125rem ${space[10]};
+    `}
 
   @media (max-width: ${breakpointsPx.lg}) {
     height: 100%;
