@@ -26,7 +26,7 @@ export const FooterWrapper = styled.footer<{
     $footerType === 'medium' &&
     css`
       height: 2.5rem;
-      margin: 0 ${space[2]};
+      margin: 0 0 0 ${space[2]};
     `}
 
   @media (max-width: ${breakpointsPx.lg}) {
