@@ -6,6 +6,7 @@ export interface RoundedButtonModalitieProps extends ComponentProps<'button'> {
   text: string;
   variant?: VariantsRoundedModalityButton;
   svgFullWidth?: boolean;
+  bordered?: boolean;
 }
 
 const RoundedModalityButton = ({
@@ -13,10 +14,16 @@ const RoundedModalityButton = ({
   text,
   variant = 'default',
   svgFullWidth,
+  bordered,
   ...rest
 }: RoundedButtonModalitieProps) => {
   return (
-    <RoundedButton className="rounded-button" $variant={variant} {...rest}>
+    <RoundedButton
+      className="rounded-button"
+      $variant={variant}
+      $bordered={bordered}
+      {...rest}
+    >
       <IconWrapper $svgFullWidth={svgFullWidth}>{icon}</IconWrapper>
     </RoundedButton>
   );
