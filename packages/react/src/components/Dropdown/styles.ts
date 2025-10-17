@@ -93,8 +93,8 @@ export const StyledDropdown = styled.div<{
       $variant === 'quaternary' &&
       css`
         border-radius: ${radii.xs};
-        border: ${radii.px} solid transparent;
-        background-color: ${colors.white25};
+        border: ${radii.px} solid ${colors.white50};
+        background-color: ${colors.emeraldGreen25};
       `}
   }
 `;

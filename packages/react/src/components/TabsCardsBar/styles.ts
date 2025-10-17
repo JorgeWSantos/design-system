@@ -1,4 +1,4 @@
-import { colors, space, radii } from '@abqm-ds/tokens';
+import { colors, space, radii, breakpointsPx } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
@@ -9,6 +9,10 @@ export const Container = styled.div`
   height: 3.875rem;
   width: 100%;
   position: relative;
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    padding-left: ${space[2]};
+  }
 `;
 
 export const TabsWrapper = styled.div`
