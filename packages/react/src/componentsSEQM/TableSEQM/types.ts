@@ -7,6 +7,7 @@ export interface TableSEQMProps extends ComponentProps<typeof StyledTableSEQM> {
   data: Array<TableRowSEQM>;
   height?: CSSProperties['height'];
   width?: CSSProperties['width'];
+  variant?: TableSEQMVariants;
 }
 
 export type TableRowSEQM = {
@@ -28,3 +29,5 @@ export interface TableColumnSEQM {
   /** Se true, permite ordenação nesta coluna */
   sortable?: boolean;
 }
+
+export type TableSEQMVariants = 'dark' | 'light';

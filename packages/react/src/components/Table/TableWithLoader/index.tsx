@@ -1,7 +1,11 @@
 import React, { ComponentProps } from 'react';
 import { Text } from '@components/Text';
 import { TableSEQM } from '@componentsSEQM/TableSEQM';
-import type { TableColumnSEQM, TableRowSEQM } from '@componentsSEQM/TableSEQM';
+import type {
+  TableColumnSEQM,
+  TableRowSEQM,
+  TableSEQMVariants,
+} from '@componentsSEQM/TableSEQM';
 import { colors } from '@abqm-ds/tokens';
 import { DivContainerTableRight, LoadingContainer, NotFoundContainer } from './styles';
 import { LoadingOverlay } from '@components/LoadingOverlay';
@@ -11,19 +15,21 @@ interface TableWithLoaderProps extends ComponentProps<typeof DivContainerTableRi
   columns: TableColumnSEQM[];
   isLoading: boolean;
   minWidthTable?: string;
+  variant?: TableSEQMVariants;
 }
 
 const TableWithLoader: React.FC<TableWithLoaderProps> = ({
   data,
   columns,
   isLoading,
+  variant = 'light',
   ...rest
   // minWidthTable,
 }) => {
   return (
     <DivContainerTableRight {...rest}>
       {data?.length > 0 && !isLoading ? (
-        <TableSEQM data={data} columns={columns} />
+        <TableSEQM data={data} columns={columns} variant={variant} />
       ) : (
         <>
           {isLoading ? (
