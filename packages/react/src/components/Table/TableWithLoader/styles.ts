@@ -12,6 +12,7 @@ export const DivContainerTableRight = styled.div<{ $isLoading?: boolean }>`
     $isLoading &&
     css`
       height: 100%;
+      min-height: 16rem;
     `}
 
   table {
