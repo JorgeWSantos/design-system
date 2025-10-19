@@ -1,12 +1,18 @@
 import { breakpointsPx } from '@abqm-ds/tokens';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const DivContainerTableRight = styled.div`
+export const DivContainerTableRight = styled.div<{ $isLoading?: boolean }>`
   display: flex;
   align-items: center;
   margin-top: 0.25rem;
   width: 100%;
   position: relative;
+
+  ${({ $isLoading }) =>
+    $isLoading &&
+    css`
+      height: 100%;
+    `}
 
   table {
     width: 100%;
