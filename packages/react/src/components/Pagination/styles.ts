@@ -1,4 +1,4 @@
-import { colors, space, breakpointsPx, radii } from '@abqm-ds/tokens';
+import { colors, space, breakpointsPx, radii, fontSizes } from '@abqm-ds/tokens';
 import { Text } from '@components/Text';
 import styled, { css } from 'styled-components';
 
@@ -12,11 +12,20 @@ export const PaginationContainer = styled.div`
 
   @media (max-width: ${breakpointsPx.lg}) {
     width: 100%;
+    height: 3.375rem;
+    min-height: 3.375rem;
+    max-height: 3.375rem;
     gap: ${space[2]};
     justify-content: flex-end;
     align-items: center;
-    padding: 0.5rem 0.5rem;
     flex-wrap: wrap;
+    display: flex;
+    padding: ${space[2]};
+    align-self: stretch;
+
+    border-top: ${radii.px} solid ${colors.white25};
+    background: ${colors.emeraldGreen15};
+    box-shadow: 0 0 8px 0 rgba(0, 26, 0, 0.16);
   }
 `;
 
@@ -65,8 +74,7 @@ export const PageButton = styled.button<{ $selected?: boolean }>`
   }
 
   @media (max-width: ${breakpointsPx.lg}) {
-    padding: 8px;
-    margin: 0 0.15rem;
+    padding: 4px;
   }
 `;
 
@@ -110,7 +118,7 @@ export const ContainerPageOptions = styled.div`
   min-width: 5rem;
   padding: ${space[1]} ${space[4]};
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.4375rem;
 
   border-radius: 0.25rem;
@@ -123,4 +131,8 @@ export const StyledText = styled(Text).attrs({
   min-width: 0.875rem;
   line-height: 0.875rem;
   color: ${({ $selected }) => ($selected ? colors.white : colors.white50)};
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    font-size: ${fontSizes.ssm};
+  }
 `;
