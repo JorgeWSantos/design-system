@@ -139,7 +139,22 @@ export const TableSEQM = ({
 
         <StyledBodyTableSEQM>
           {sortedData?.map((row, idx) => (
-            <tr key={idx} className={row?.isoficial?.value ? 'aqha-styles' : ''}>
+            <tr
+              key={idx}
+              className={(() => {
+                let addClasses = '';
+
+                if (row?.isoficial?.value) {
+                  addClasses += 'aqha-styles';
+                }
+
+                if (row?.isclassified?.value) {
+                  addClasses += 'classified-styles';
+                }
+
+                return addClasses;
+              })()}
+            >
               {columns?.map((col) => (
                 <td
                   key={col.key}

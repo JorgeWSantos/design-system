@@ -11,6 +11,7 @@ import { Text } from '@components/Text';
 import { css, CSSProperties, styled } from 'styled-components';
 import { TableSEQMVariants } from './types';
 import { aqhaRowStyles } from './aqhaRowStyles';
+import { classifiedRowStyles } from './classifiedRowStyles';
 
 export const TableScroll = styled.div`
   overflow-x: auto;
@@ -53,14 +54,16 @@ export const StyledTableSEQM = styled.table<{
 
   tbody tr:nth-child(odd) {
     background-color: ${colors.white25};
-
-    ${({ $variant }) =>
-      $variant === 'dark' &&
-      css`
-        background-color: ${colors.white10};
-        color: ${colors.white75};
-      `}
   }
+
+  ${({ $variant }) =>
+    $variant === 'dark' &&
+    css`
+      tbody tr:nth-child(odd) {
+        background-color: ${colors.white10};
+      }
+      color: ${colors.white75};
+    `};
 `;
 
 export const StyledHeadTableSEQM = styled.thead`
@@ -142,8 +145,8 @@ export const StyledBodyTableSEQM = styled.tbody`
     ${aqhaRowStyles}
   }
 
-  .classified-row {
-    ${aqhaRowStyles}
+  .classified-styles {
+    ${classifiedRowStyles}
   }
 
   @media (max-width: ${breakpointsPx.lg}) {

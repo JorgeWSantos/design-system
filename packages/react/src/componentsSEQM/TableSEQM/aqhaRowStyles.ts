@@ -5,7 +5,7 @@ export const aqhaRowStyles = css`
   box-sizing: border-box;
   background-color: ${colors.greenTransparent30} !important;
 
-  + .aqha-column {
+  + .aqha-styles {
     border-top: 1px solid ${colors.green500};
   }
 
