@@ -24,7 +24,7 @@ export const TabsWrapper = styled.div`
   z-index: 1;
 `;
 
-export const Tab = styled.button<{ active: boolean }>`
+export const Tab = styled.button<{ $active: boolean }>`
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -43,8 +43,8 @@ export const Tab = styled.button<{ active: boolean }>`
     min-width: max-content;
   }
 
-  ${({ active }) =>
-    active &&
+  ${({ $active }) =>
+    $active &&
     css`
       border-color: ${colors.white50};
     `}
@@ -52,13 +52,13 @@ export const Tab = styled.button<{ active: boolean }>`
 
 export const StyledTextTab = styled(Text).attrs({
   fontSize: 'xxs',
-})<{ active?: boolean }>`
+})<{ $active?: boolean }>`
   line-height: 0.875rem;
 
   color: ${colors.white50};
 
-  ${({ active }) =>
-    active &&
+  ${({ $active }) =>
+    $active &&
     css`
       color: ${colors.white85};
     `}

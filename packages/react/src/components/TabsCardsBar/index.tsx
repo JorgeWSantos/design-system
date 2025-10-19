@@ -10,6 +10,8 @@ import {
   StyledTextTab,
 } from './styles';
 
+import { v4 as uuidv4 } from 'uuid';
+
 interface TabsPropType {
   label: string;
   value: string;
@@ -40,12 +42,12 @@ const TabsCardsBar: React.FC<TabsCardsBarProps> = ({
           if (i === 0) {
             return (
               <TabFirst
-                key={i}
+                key={uuidv4()}
                 $active={isActive}
                 $secondIsNotSelected={activeTab !== tabs[1]?.value}
               >
-                <Tab active={isActive} onClick={() => onTabChange(tab.value)}>
-                  <StyledTextTab active={isActive}>{tab.label}</StyledTextTab>
+                <Tab $active={isActive} onClick={() => onTabChange(tab.value)}>
+                  <StyledTextTab $active={isActive}>{tab.label}</StyledTextTab>
                 </Tab>
               </TabFirst>
             );
@@ -53,13 +55,14 @@ const TabsCardsBar: React.FC<TabsCardsBarProps> = ({
 
           return (
             <TabOther
+              key={uuidv4()}
               $active={isActive}
               $isOtherSelected={activeTab !== tabs[0].value}
               $nextIsSelected={activeTab === tabs[i + 1]?.value}
               $isFirstSelected={activeTab === tabs[0].value}
             >
-              <Tab active={isActive} onClick={() => onTabChange(tab.value)}>
-                <StyledTextTab active={isActive}>{tab.label}</StyledTextTab>
+              <Tab $active={isActive} onClick={() => onTabChange(tab.value)}>
+                <StyledTextTab $active={isActive}>{tab.label}</StyledTextTab>
               </Tab>
             </TabOther>
           );

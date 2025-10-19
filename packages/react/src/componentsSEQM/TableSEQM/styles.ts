@@ -10,8 +10,10 @@ import {
 import { Text } from '@components/Text';
 import { css, CSSProperties, styled } from 'styled-components';
 import { TableSEQMVariants } from './types';
-import { aqhaRowStyles } from './aqhaRowStyles';
-import { classifiedRowStyles } from './classifiedRowStyles';
+import { aqhaRowStyles } from './aqha-row-styles';
+import { classifiedRowStyles } from './classified-row-styles';
+import { currentPlayerRowStyles } from './current-player-row-styles';
+import { passedPlayerRowStyles } from './passed-player-row-styles';
 
 export const TableScroll = styled.div`
   overflow-x: auto;
@@ -147,6 +149,15 @@ export const StyledBodyTableSEQM = styled.tbody`
 
   .classified-styles {
     ${classifiedRowStyles}
+  }
+
+  .currentplayer-styles {
+    ${currentPlayerRowStyles}
+    background-color: red !important;
+  }
+
+  .passedplayer-styles {
+    ${passedPlayerRowStyles}
   }
 
   @media (max-width: ${breakpointsPx.lg}) {

@@ -149,8 +149,18 @@ export const TableSEQM = ({
                 }
 
                 if (row?.isclassified?.value) {
-                  addClasses += 'classified-styles';
+                  addClasses += ' classified-styles';
                 }
+
+                if (row?.iscurrentplayer?.value) {
+                  addClasses += ' currentplayer-styles';
+                }
+
+                if (row?.ispassedplayer?.value) {
+                  addClasses += ' passedplayer-styles';
+                }
+
+                // console.log(row, addClasses);
 
                 return addClasses;
               })()}
