@@ -16,7 +16,7 @@ export const currentPlayerRowStyles = css`
         left: 0;
         width: 2px;
         height: calc(100% - 4px);
-        background: ${colors.yellow400};
+        background: ${colors.brown400};
         pointer-events: none;
         z-index: 1;
       }
@@ -37,7 +37,7 @@ export const currentPlayerRowStyles = css`
         left: 0;
         width: 2px;
         height: 100%;
-        background: ${colors.yellow400};
+        background: ${colors.brown400};
         pointer-events: none;
         z-index: 1;
       }

@@ -153,7 +153,6 @@ export const StyledBodyTableSEQM = styled.tbody`
 
   .currentplayer-styles {
     ${currentPlayerRowStyles}
-    background-color: red !important;
   }
 
   .passedplayer-styles {
