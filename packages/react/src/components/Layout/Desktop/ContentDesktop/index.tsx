@@ -32,7 +32,7 @@ export const ContentDektop = ({
       case 'large':
         return 0;
       case 'medium':
-        return 0.03;
+        return 0.025;
       case 'small':
         return 0;
       default:
@@ -49,6 +49,9 @@ export const ContentDektop = ({
       [700, 0.88 + sumByFooterType()],
       [600, 0.87 + sumByFooterType()],
     ].find(([limit]) => window.innerHeight >= limit)?.[1] ?? 0.84;
+
+  // console.log('heightFactor', heightFactor);
+  // console.log('window.innerHeight', window.innerHeight);
 
   return (
     <ContainerDesktop $maxHeight={`calc(100dvh * ${heightFactor})`} {...rest}>
