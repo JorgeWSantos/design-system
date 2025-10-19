@@ -1,11 +1,12 @@
 import { colors, space, radii, breakpointsPx } from '@abqm-ds/tokens';
+import { Text } from '@components/Text';
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  padding: 14px 0 ${space[3]};
+  padding: 0.875rem 0 ${space[3]};
   height: 3.875rem;
   width: 100%;
   position: relative;
@@ -27,7 +28,7 @@ export const TabsWrapper = styled.div`
   z-index: 1;
 `;
 
-export const Tab = styled.button<{ active: boolean }>`
+export const Tab = styled.button<{ $active: boolean }>`
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -46,10 +47,24 @@ export const Tab = styled.button<{ active: boolean }>`
     min-width: max-content;
   }
 
-  ${({ active }) =>
-    active &&
+  ${({ $active }) =>
+    $active &&
     css`
-      border-color: ${colors.white85};
+      border-color: ${colors.white50};
+    `}
+`;
+
+export const StyledTextTab = styled(Text).attrs({
+  fontSize: 'xxs',
+})<{ $active?: boolean }>`
+  line-height: 0.875rem;
+
+  color: ${colors.white50};
+
+  ${({ $active }) =>
+    $active &&
+    css`
+      color: ${colors.white85};
     `}
 `;
 

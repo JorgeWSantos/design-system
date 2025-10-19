@@ -13,7 +13,7 @@ export interface InfoDetailsProps extends ComponentProps<typeof InfoEvent> {
   light?: boolean; // default false
 }
 
-const InfoEventDetails = ({ data, light }: InfoDetailsProps) => {
+const InfoEventDetails = ({ data, light, ...rest }: InfoDetailsProps) => {
   const [imgError, setImgError] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -61,7 +61,7 @@ const InfoEventDetails = ({ data, light }: InfoDetailsProps) => {
   // console.log('widthOfWrap', widthOfWrap);
 
   return (
-    <InfoEvent>
+    <InfoEvent {...rest}>
       <ImageContainer>
         {data?.logotipo && !imgError ? (
           <img
@@ -115,3 +115,5 @@ const InfoEventDetails = ({ data, light }: InfoDetailsProps) => {
 InfoEventDetails.displayName = 'InfoEventDetails';
 
 export { InfoEventDetails };
+
+export type { InfoDetailsDataType };

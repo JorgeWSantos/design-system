@@ -28,7 +28,22 @@ export const Container = styled.div<ContainerProps>`
   ${({ $hasLabel }) =>
     $hasLabel &&
     css`
-      height: 3.25.rem;
+      height: 3.25rem;
+    `}
+`;
+
+export const StyledLabel = styled(Text).attrs({
+  lineHeight: 'tight',
+  fontWeight: 'regular',
+  fontSize: 'ssm',
+})<{ $variant?: VariantsTypesDropdown }>`
+  margin-left: 0.5rem;
+  color: ${colors.emeraldGreen50};
+
+  ${({ $variant }) =>
+    $variant === 'quaternary' &&
+    css`
+      color: ${colors.white50};
     `}
 `;
 
@@ -78,7 +93,7 @@ export const StyledDropdown = styled.div<{
       background-color: ${colors.black50};
       color: ${colors.white75};
       border-radius: 0.25rem;
-      border: 1px solid ${colors.white60};
+      border: 1px solid ${colors.white25};
     `}
 
   @media (max-width: ${breakpointsPx.lg}) {

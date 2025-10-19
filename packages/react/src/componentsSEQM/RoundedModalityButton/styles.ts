@@ -5,6 +5,7 @@ export type VariantsRoundedModalityButton = 'default' | 'secondary';
 
 interface RoundedButtonProps {
   $variant: VariantsRoundedModalityButton;
+  $bordered?: boolean;
 }
 
 export const RoundedButton = styled.button<RoundedButtonProps>`
@@ -29,6 +30,12 @@ export const RoundedButton = styled.button<RoundedButtonProps>`
     $variant === 'secondary' &&
     css`
       box-shadow: 0 0 0 0 ${colors.white25};
+    `}
+
+  ${({ $bordered }) =>
+    $bordered &&
+    css`
+      box-shadow: 0 0 0 2px ${colors.white25};
     `}
 
   border-radius: 50%;

@@ -8,7 +8,12 @@ import {
   space,
 } from '@abqm-ds/tokens';
 import { Text } from '@components/Text';
-import { CSSProperties, styled } from 'styled-components';
+import { css, CSSProperties, styled } from 'styled-components';
+import { TableSEQMVariants } from './types';
+import { aqhaRowStyles } from './aqha-row-styles';
+import { classifiedRowStyles } from './classified-row-styles';
+import { currentPlayerRowStyles } from './current-player-row-styles';
+import { passedPlayerRowStyles } from './passed-player-row-styles';
 
 export const TableScroll = styled.div`
   overflow-x: auto;
@@ -38,6 +43,7 @@ export const TableScroll = styled.div`
 export const StyledTableSEQM = styled.table<{
   $width?: CSSProperties['width'];
   $height?: CSSProperties['height'];
+  $variant?: TableSEQMVariants;
 }>`
   display: table;
   border-collapse: collapse;
@@ -45,12 +51,21 @@ export const StyledTableSEQM = styled.table<{
   height: ${({ $height }) => $height || 'unset'};
   table-layout: auto;
 
+  font-family: ${fonts.default};
+  color: ${colors.emeraldGreen75};
+
   tbody tr:nth-child(odd) {
     background-color: ${colors.white25};
   }
 
-  font-family: ${fonts.default};
-  color: ${colors.emeraldGreen75};
+  ${({ $variant }) =>
+    $variant === 'dark' &&
+    css`
+      tbody tr:nth-child(odd) {
+        background-color: ${colors.white10};
+      }
+      color: ${colors.white75};
+    `};
 `;
 
 export const StyledHeadTableSEQM = styled.thead`
@@ -82,6 +97,7 @@ export const StyledTableSEQMTextTh = styled(Text).attrs({
   lineHeight: 'tight',
 })<{
   $align?: 'left' | 'center' | 'right';
+  $variant?: TableSEQMVariants;
 }>`
   display: flex;
   flex-direction: row;
@@ -90,6 +106,12 @@ export const StyledTableSEQMTextTh = styled(Text).attrs({
   justify-content: ${({ $align }) =>
     $align === 'center' ? 'center' : $align === 'right' ? 'flex-end' : 'flex-start'};
   text-align: ${({ $align }) => $align || 'left'};
+
+  ${({ $variant }) =>
+    $variant === 'dark' &&
+    css`
+      color: ${colors.white75};
+    `}
 `;
 
 export const StyledTableSEQMThSortable = styled.span`
@@ -121,32 +143,20 @@ export const StyledBodyTableSEQM = styled.tbody`
     text-overflow: ellipsis;
   }
 
-  .aqha-column {
-    box-sizing: border-box;
-    background-color: ${colors.greenTransparent30} !important;
+  .aqha-styles {
+    ${aqhaRowStyles}
+  }
 
-    + .aqha-column {
-      border-top: 1px solid ${colors.green500};
-    }
+  .classified-styles {
+    ${classifiedRowStyles}
+  }
 
-    td:first-child {
-      position: relative;
+  .currentplayer-styles {
+    ${currentPlayerRowStyles}
+  }
 
-      &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 4px;
-        height: 100%;
-        background: ${colors.green500};
-        pointer-events: none;
-        z-index: 1;
-      }
-
-      box-sizing: border-box;
-    }
+  .passedplayer-styles {
+    ${passedPlayerRowStyles}
   }
 
   @media (max-width: ${breakpointsPx.lg}) {

@@ -14,7 +14,14 @@ import { useState } from 'react';
 import { CaretUpFillIcon } from '@abqm-ds/icons';
 import { colors } from '@abqm-ds/tokens';
 
-export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMProps) => {
+export const TableSEQM = ({
+  columns,
+  data,
+  width,
+  height,
+  variant,
+  ...rest
+}: TableSEQMProps) => {
   const [sortKey, setSortKey] = useState<string | null>(null);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
@@ -83,7 +90,7 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
 
   return (
     <TableScroll>
-      <StyledTableSEQM $width={width} $height={height} {...rest}>
+      <StyledTableSEQM $width={width} $height={height} $variant={variant} {...rest}>
         <StyledHeadTableSEQM>
           <tr>
             {columns?.map((col) => (
@@ -98,7 +105,7 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
                 }}
                 onClick={col.sortable ? () => handleSort(col.key) : undefined}
               >
-                <StyledTableSEQMTextTh $align={col.align || 'left'}>
+                <StyledTableSEQMTextTh $align={col.align || 'left'} $variant={variant}>
                   {col.label}
                   {col.sortable && (
                     <>
@@ -132,7 +139,32 @@ export const TableSEQM = ({ columns, data, width, height, ...rest }: TableSEQMPr
 
         <StyledBodyTableSEQM>
           {sortedData?.map((row, idx) => (
-            <tr key={idx} className={row?.isoficial?.value ? 'aqha-column' : ''}>
+            <tr
+              key={idx}
+              className={(() => {
+                let addClasses = '';
+
+                if (row?.isoficial?.value) {
+                  addClasses += 'aqha-styles';
+                }
+
+                if (row?.isclassified?.value) {
+                  addClasses += ' classified-styles';
+                }
+
+                if (row?.iscurrentplayer?.value) {
+                  addClasses += ' currentplayer-styles';
+                }
+
+                if (row?.ispassedplayer?.value) {
+                  addClasses += ' passedplayer-styles';
+                }
+
+                // console.log(row, addClasses);
+
+                return addClasses;
+              })()}
+            >
               {columns?.map((col) => (
                 <td
                   key={col.key}

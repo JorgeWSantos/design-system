@@ -6,6 +6,7 @@ import {
   Option,
   StyledTextSelect,
   StyledCaretDownFillIcon,
+  StyledLabel,
 } from './styles';
 import { Text } from '@components/Text';
 import { colors } from '@abqm-ds/tokens';
@@ -71,15 +72,9 @@ export function Dropdown({
   return (
     <Container $hasLabel={!!label} ref={dropdownRef}>
       {label && (
-        <Text
-          lineHeight="tight"
-          fontWeight="regular"
-          fontSize="ssm"
-          color={colors.emeraldGreen50}
-          style={{ marginLeft: '0.5rem' }}
-        >
+        <StyledLabel color={colors.emeraldGreen50} $variant={variant}>
           {label}
-        </Text>
+        </StyledLabel>
       )}
 
       <StyledDropdown
