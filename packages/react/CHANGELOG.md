@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 2.0.31
+
+### Patch Changes
+
+- feat: 🎸 Novas versões
+
 ## 2.0.30
 
 ### Patch Changes

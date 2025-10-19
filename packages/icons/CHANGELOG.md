@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 2.0.19
+
+### Patch Changes
+
+- feat: 🎸 Novas versões
+
 ## 2.0.18
 
 ### Patch Changes
