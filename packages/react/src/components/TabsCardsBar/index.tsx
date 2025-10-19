@@ -7,8 +7,8 @@ import {
   TabFirst,
   TabOther,
   ChildrenWrapper,
+  StyledTextTab,
 } from './styles';
-import { Text } from '@components/Text';
 
 interface TabsPropType {
   label: string;
@@ -29,23 +29,23 @@ const TabsCardsBar: React.FC<TabsCardsBarProps> = ({
   children,
   tabs,
   hideAutoWidthElement = false,
+  ...rest
 }) => {
   return (
-    <Container>
+    <Container {...rest}>
       <TabsWrapper>
         {tabs.map((tab, i) => {
+          const isActive = activeTab === tab.value;
+
           if (i === 0) {
             return (
               <TabFirst
                 key={i}
-                $active={activeTab === tab.value}
+                $active={isActive}
                 $secondIsNotSelected={activeTab !== tabs[1]?.value}
               >
-                <Tab
-                  active={activeTab === tab.value}
-                  onClick={() => onTabChange(tab.value)}
-                >
-                  <Text fontSize="xxs">{tab.label}</Text>
+                <Tab active={isActive} onClick={() => onTabChange(tab.value)}>
+                  <StyledTextTab active={isActive}>{tab.label}</StyledTextTab>
                 </Tab>
               </TabFirst>
             );
@@ -53,16 +53,13 @@ const TabsCardsBar: React.FC<TabsCardsBarProps> = ({
 
           return (
             <TabOther
-              $active={activeTab === tab.value}
+              $active={isActive}
               $isOtherSelected={activeTab !== tabs[0].value}
               $nextIsSelected={activeTab === tabs[i + 1]?.value}
               $isFirstSelected={activeTab === tabs[0].value}
             >
-              <Tab
-                active={activeTab === tab.value}
-                onClick={() => onTabChange(tab.value)}
-              >
-                <Text fontSize="xxs">{tab.label}</Text>
+              <Tab active={isActive} onClick={() => onTabChange(tab.value)}>
+                <StyledTextTab active={isActive}>{tab.label}</StyledTextTab>
               </Tab>
             </TabOther>
           );
