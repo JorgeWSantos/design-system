@@ -77,4 +77,5 @@ export { GlobalStyle } from './styles/global';
 export * from './componentsSEQM/RoundedModalityButton';
 export * from './componentsSEQM/TableSEQM';
 export * from './componentsSEQM/TableSEQMHeaderLabel';
+export * from './componentsSEQM/TableSEQMWithCards';
 export * from './componentsSEQM/InfoEventDetails';
