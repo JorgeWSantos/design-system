@@ -4,7 +4,9 @@ import { InforBar } from './InfoBar';
 import { LoadingOverlay } from '@components/LoadingOverlay';
 import { FooterTypes } from '@components/Layout/GlobalContainer/Footer';
 
-interface ContentDektopProps extends ComponentProps<typeof ContainerDesktop> {
+export type ContentDesktopBackgroundVariant = 'light' | 'dark';
+
+export interface ContentDektopProps extends ComponentProps<typeof ContainerDesktop> {
   header?: React.ReactNode;
   headerNavigator?: React.ReactNode;
   children: React.ReactNode;
@@ -12,6 +14,7 @@ interface ContentDektopProps extends ComponentProps<typeof ContainerDesktop> {
   contentBoxStyles?: React.CSSProperties;
   isLoading?: boolean;
   footerType?: FooterTypes;
+  backgroundVariant?: ContentDesktopBackgroundVariant;
 }
 
 export const ContentDektop = ({
@@ -22,6 +25,7 @@ export const ContentDektop = ({
   count,
   isLoading = false,
   footerType,
+  backgroundVariant = 'light',
   ...rest
 }: ContentDektopProps) => {
   // This is a workaround to set the height of the content based on the screen height.
@@ -59,6 +63,7 @@ export const ContentDektop = ({
       <ContentBox
         style={contentBoxStyles}
         $removeRoundedBottom={typeof count === 'number'}
+        $backgroundVariant={backgroundVariant}
       >
         {isLoading && <LoadingOverlay />}
         <>{headerNavigator}</>
