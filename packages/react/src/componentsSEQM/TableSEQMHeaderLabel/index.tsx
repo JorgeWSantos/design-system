@@ -1,5 +1,6 @@
 import { CaretDownFillIcon } from '@abqm-ds/icons';
 import {
+  DivTitle,
   StyledBodyTableSEQM,
   StyledHeadTableSEQM,
   StyledTableSEQM,
@@ -7,26 +8,31 @@ import {
   StyledTableSEQMTextTh,
   StyledTableSEQMThSortable,
   TableScroll,
+  TextTitle,
 } from './styles';
 
-import { TableSEQMProps } from './types';
-import { useState } from 'react';
+import { TableSEQMHeaderLabelProps } from './types';
 import { CaretUpFillIcon } from '@abqm-ds/icons';
 import { colors } from '@abqm-ds/tokens';
-import { useTableSort } from './useTableSort';
+import { useTableSort } from '@componentsSEQM/TableSEQM/useTableSort';
 
-export const TableSEQM = ({
+export const TableSEQMHeaderLabel = ({
   columns,
   data,
   width,
   height,
   variant,
+  headerLabel = '',
   ...rest
-}: TableSEQMProps) => {
+}: TableSEQMHeaderLabelProps) => {
   const { sortedData, sortKey, sortOrder, handleSort } = useTableSort({ columns, data });
 
   return (
     <TableScroll>
+      <DivTitle>
+        <TextTitle>{headerLabel}</TextTitle>
+      </DivTitle>
+
       <StyledTableSEQM $width={width} $height={height} $variant={variant} {...rest}>
         <StyledHeadTableSEQM>
           <tr>
@@ -78,29 +84,14 @@ export const TableSEQM = ({
           {sortedData?.map((row, idx) => (
             <tr
               key={idx}
-              className={(() => {
-                let addClasses = '';
+              // className={(() => {
+              //   let addClasses = '';
 
-                if (row?.isoficial?.value) {
-                  addClasses += 'aqha-styles';
-                }
-
-                if (row?.isclassified?.value) {
-                  addClasses += ' classified-styles';
-                }
-
-                if (row?.iscurrentplayer?.value) {
-                  addClasses += ' currentplayer-styles';
-                }
-
-                if (row?.ispassedplayer?.value) {
-                  addClasses += ' passedplayer-styles';
-                }
-
-                // console.log(row, addClasses);
-
-                return addClasses;
-              })()}
+              //   if (row?.isoficial?.value) {
+              //     addClasses += 'aqha-styles';
+              //   }
+              //   return addClasses;
+              // })()}
             >
               {columns?.map((col) => (
                 <td
@@ -129,8 +120,6 @@ export const TableSEQM = ({
   );
 };
 
-TableSEQM.displayName = 'TableSEQM';
+TableSEQMHeaderLabel.displayName = 'TableSEQMHeaderLabel';
 
 export * from './types';
-export * from './ColumnOficial';
-export { StyledTableSEQMTextTd, StyledTableSEQMTextTh } from './styles';

@@ -9,14 +9,11 @@ import {
 } from '@abqm-ds/tokens';
 import { Text } from '@components/Text';
 import { css, CSSProperties, styled } from 'styled-components';
-import { TableSEQMVariants } from './types';
-import { aqhaRowStyles } from './aqha-row-styles';
-import { classifiedRowStyles } from './classified-row-styles';
-import { currentPlayerRowStyles } from './current-player-row-styles';
-import { passedPlayerRowStyles } from './passed-player-row-styles';
+import { TableSEQMVariants } from '@componentsSEQM/TableSEQM/types';
 
 export const TableScroll = styled.div`
   overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   min-width: 100%;
 
@@ -40,13 +37,41 @@ export const TableScroll = styled.div`
   }
 `;
 
+export const DivTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: fit-content;
+
+  padding: 0.625rem 1rem 0.125rem 1rem;
+  align-items: flex-end;
+
+  border-radius: 0.375rem 0.375rem 0 0;
+  /* border-top: 1px solid ${colors.white30}; */
+
+  border-right: 1px solid ${colors.white50};
+
+  background: ${colors.white50};
+`;
+
+export const TextTitle = styled(Text).attrs({
+  fontSize: 'ssm',
+  fontWeight: 'regular',
+  color: colors.black75,
+})`
+  text-align: center;
+  font-style: normal;
+  line-height: 0.875rem;
+`;
+
 export const StyledTableSEQM = styled.table<{
   $width?: CSSProperties['width'];
   $height?: CSSProperties['height'];
   $variant?: TableSEQMVariants;
 }>`
   display: table;
-  border-collapse: collapse;
+  border-collapse: separate;
   width: ${({ $width }) => $width || 'auto'};
   height: ${({ $height }) => $height || 'unset'};
   table-layout: auto;
@@ -54,8 +79,18 @@ export const StyledTableSEQM = styled.table<{
   font-family: ${fonts.default};
   color: ${colors.emeraldGreen75};
 
+  border: 1px solid ${colors.white50};
+  border-bottom-left-radius: 0.375rem !important;
+  border-bottom-right-radius: 0.375rem !important;
+  border-top-right-radius: 0.375rem !important;
+
   tbody tr:nth-child(odd) {
     background-color: ${colors.white25};
+  }
+
+  thead tr:first-child th:last-child {
+    /* border: 1px solid ${colors.white25}; */
+    border-top-right-radius: 0.3rem !important;
   }
 
   ${({ $variant }) =>
@@ -70,6 +105,7 @@ export const StyledTableSEQM = styled.table<{
 
 export const StyledHeadTableSEQM = styled.thead`
   display: table-header-group;
+  background-color: ${colors.white50};
 
   tr {
     display: table-row;
@@ -77,7 +113,7 @@ export const StyledHeadTableSEQM = styled.thead`
 
   tr th {
     display: table-cell;
-    padding: ${space[1]} ${space[3]} ${space[1]} ${space[2]};
+    padding: ${space[1]} ${space[2]};
     font-size: ${fontSizes.xxs};
     overflow: hidden;
     text-overflow: ellipsis;
@@ -94,7 +130,6 @@ export const StyledHeadTableSEQM = styled.thead`
 export const StyledTableSEQMTextTh = styled(Text).attrs({
   fontSize: 'xxs',
   fontWeight: 'semiBold',
-  lineHeight: 'tight',
 })<{
   $align?: 'left' | 'center' | 'right';
   $variant?: TableSEQMVariants;
@@ -106,6 +141,7 @@ export const StyledTableSEQMTextTh = styled(Text).attrs({
   justify-content: ${({ $align }) =>
     $align === 'center' ? 'center' : $align === 'right' ? 'flex-end' : 'flex-start'};
   text-align: ${({ $align }) => $align || 'left'};
+  line-height: 0.875rem;
 
   ${({ $variant }) =>
     $variant === 'dark' &&
@@ -141,22 +177,6 @@ export const StyledBodyTableSEQM = styled.tbody`
     gap: 0.25rem;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  .aqha-styles {
-    ${aqhaRowStyles}
-  }
-
-  .classified-styles {
-    ${classifiedRowStyles}
-  }
-
-  .currentplayer-styles {
-    ${currentPlayerRowStyles}
-  }
-
-  .passedplayer-styles {
-    ${passedPlayerRowStyles}
   }
 
   @media (max-width: ${breakpointsPx.lg}) {
