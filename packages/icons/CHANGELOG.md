@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 3.0.0
+
+### Major Changes
+
+- feat: 🎸 Novos componentes e icons
+
 ## 2.0.19
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 3.0.0
+
+### Major Changes
+
+- feat: 🎸 Novos componentes e icons
+
 ## 2.0.18
 
 ### Patch Changes
