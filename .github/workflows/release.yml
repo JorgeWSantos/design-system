@@ -48,6 +48,6 @@ jobs:
           publish: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_CUSTOM }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           TURBO_TOKEN: ${{ secrets.VERCEL_CACHE_TOKEN }}
           TURBO_TEAM: jorgewsantos-projects
