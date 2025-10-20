@@ -72,6 +72,7 @@ export const StyledTableSEQM = styled.table<{
 }>`
   display: table;
   border-collapse: separate;
+  border-spacing: 0;
   width: ${({ $width }) => $width || 'auto'};
   height: ${({ $height }) => $height || 'unset'};
   table-layout: auto;
