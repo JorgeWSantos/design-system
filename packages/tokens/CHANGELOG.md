@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 4.0.0
+
+### Major Changes
+
+- feat: 🎸 Novos componentes de table
+
 ## 3.0.0
 
 ### Major Changes
