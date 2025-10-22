@@ -22,7 +22,7 @@ import {
 import TooltipContentComponent from './TooltipContentComponent';
 
 import { Tooltip } from '@components/Tooltip';
-import { ComponentProps } from 'react';
+import React, { ComponentProps } from 'react';
 
 export interface AnimalTableDataProps
   extends ComponentProps<typeof ContainerAnimalTableDataType> {
@@ -40,6 +40,7 @@ export interface AnimalTableDataProps
   rankingGeneralAward?: string | null;
   bolder?: boolean;
   isDead?: boolean;
+  textStyles?: React.CSSProperties;
 }
 
 const AnimalTableData = ({
@@ -58,6 +59,7 @@ const AnimalTableData = ({
   onClick,
   bolder = false,
   isDead = false,
+  textStyles,
   ...rest
 }: AnimalTableDataProps) => {
   const medalha: Record<string, string> = {
@@ -164,6 +166,7 @@ const AnimalTableData = ({
         <StyledTextHallOfFameNameAnimal
           $bolder={bolder}
           $isHallOfFameAnimal={!!isHallOfFameAnimal}
+          style={textStyles}
         >
           <span className="animal-name">
             {nameAnimal}

@@ -1,4 +1,4 @@
-import { ComponentProps } from 'react';
+import React, { ComponentProps } from 'react';
 import {
   CompetitorTableDataContainer,
   CompetitorTableDataContainerType,
@@ -9,16 +9,20 @@ export interface CompetitorTableDataContainerTypeProps
   extends ComponentProps<typeof CompetitorTableDataContainerType> {
   value: string;
   bolder?: boolean;
+  textStyles?: React.CSSProperties;
 }
 
 const CompetitorTableData = ({
   value,
   onClick,
   bolder = false,
+  textStyles,
   ...rest
 }: CompetitorTableDataContainerTypeProps) => (
   <CompetitorTableDataContainer onClick={onClick} $hasClick={!!onClick} {...rest}>
-    <StyledTextCompetitor $bolder={bolder}>{value}</StyledTextCompetitor>
+    <StyledTextCompetitor $bolder={bolder} style={textStyles}>
+      {value}
+    </StyledTextCompetitor>
   </CompetitorTableDataContainer>
 );
 
