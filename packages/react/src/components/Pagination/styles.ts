@@ -123,6 +123,11 @@ export const ContainerPageOptions = styled.div`
 
   border-radius: 0.25rem;
   background-color: ${colors.emeraldGreen25};
+
+  @media (max-width: ${breakpointsPx.md}) {
+    padding: ${space[1]} ${space[2]};
+    gap: 0.13rem;
+  }
 `;
 
 export const StyledText = styled(Text).attrs({

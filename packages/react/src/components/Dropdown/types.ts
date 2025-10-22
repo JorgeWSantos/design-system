@@ -1,7 +1,12 @@
 import React, { ComponentProps, ElementType } from 'react';
 import { StyledDropdown } from './styles';
 
-export type VariantsTypesDropdown = 'primary' | 'secondary' | 'tertiary' | 'quaternary';
+export type VariantsTypesDropdown =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'quaternary'
+  | 'quinary';
 
 export interface DataDropdown {
   value: string;

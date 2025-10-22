@@ -96,6 +96,14 @@ export const StyledDropdown = styled.div<{
       border: 1px solid ${colors.white25};
     `}
 
+    ${({ $variant }) =>
+    $variant === 'quinary' &&
+    css`
+      border-radius: ${radii.xs};
+      border: ${radii.px} solid ${colors.white50};
+      background-color: ${colors.emeraldGreen25};
+    `}
+
   @media (max-width: ${breakpointsPx.lg}) {
     ${({ $variant }) =>
       $variant === 'primary' &&
