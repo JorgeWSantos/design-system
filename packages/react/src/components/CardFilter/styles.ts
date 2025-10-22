@@ -10,7 +10,7 @@ export const Container = styled.div`
   padding: 0;
   height: 1.875rem;
 
-  gap: 0.125;
+  gap: 0.125rem;
 `;
 
 export const Title = styled.div`

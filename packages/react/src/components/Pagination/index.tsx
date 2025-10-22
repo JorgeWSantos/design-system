@@ -1,4 +1,5 @@
-import React, { Component, ComponentProps, useMemo } from 'react';
+import React, { ComponentProps, useMemo } from 'react';
+import { useDeviceType } from 'hooks/useDeviceType';
 import {
   PaginationContainer,
   PageButton,
@@ -46,6 +47,8 @@ const Pagination: React.FC<PaginationProps> = ({
   );
 
   if (!Number(pageSize)) return null;
+
+  const { isTabletOrMobile } = useDeviceType();
 
   const handlePrev = () => {
     setIsLoading(true);
@@ -173,7 +176,8 @@ const Pagination: React.FC<PaginationProps> = ({
             maxHeight: '6.5rem',
             zIndex: 2,
           }}
-          variant="quaternary"
+          variant="quinary"
+          openToTop={isTabletOrMobile}
           data={optionsSizePage}
           value={optionsSizePage.find((option) => option.value === String(pageSize))}
           setValue={(option) => {
