@@ -180,7 +180,7 @@ export const ContainerOptions = styled.div<{
 
   position: absolute;
   left: 0;
-  z-index: 1;
+  z-index: 10;
 
   ${({ $openToTop, $hasLabel }) =>
     $openToTop
@@ -304,6 +304,7 @@ export const Option = styled.div<{ $variant?: VariantsTypesDropdown }>`
   font-size: ${fontSizes.xxs};
   line-height: 0.875rem;
   padding: ${space[2]};
+  width: 100%;
 
   &:hover {
     background-color: ${colors.emeraldGreen10};

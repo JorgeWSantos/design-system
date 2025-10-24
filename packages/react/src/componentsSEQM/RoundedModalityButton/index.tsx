@@ -3,7 +3,7 @@ import { IconWrapper, RoundedButton, type VariantsRoundedModalityButton } from '
 
 export interface RoundedButtonModalitieProps extends ComponentProps<'button'> {
   icon: ReactElement;
-  text: string;
+  text?: string;
   variant?: VariantsRoundedModalityButton;
   svgFullWidth?: boolean;
   bordered?: boolean;
@@ -11,7 +11,6 @@ export interface RoundedButtonModalitieProps extends ComponentProps<'button'> {
 
 const RoundedModalityButton = ({
   icon,
-  text,
   variant = 'default',
   svgFullWidth,
   bordered,

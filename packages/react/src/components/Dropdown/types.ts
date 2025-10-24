@@ -12,6 +12,7 @@ export interface DataDropdown {
   value: string;
   label: string;
   id: string;
+  data?: any;
 }
 
 export interface DropdownProps extends ComponentProps<typeof StyledDropdown> {
