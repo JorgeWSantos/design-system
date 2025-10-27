@@ -40,8 +40,8 @@ export const TooltipDiv = styled.div<{
     props.$arrowType === 'topRight' &&
     css`
       &::after {
-        top: -5px;
-        right: 10%;
+        top: -4px;
+        right: 18%;
         transform: translateX(50%);
         border-bottom: 5px solid ${colors.white};
       }
