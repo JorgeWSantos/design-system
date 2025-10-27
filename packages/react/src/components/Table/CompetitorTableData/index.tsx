@@ -18,13 +18,15 @@ const CompetitorTableData = ({
   bolder = false,
   textStyles,
   ...rest
-}: CompetitorTableDataContainerTypeProps) => (
-  <CompetitorTableDataContainer onClick={onClick} $hasClick={!!onClick} {...rest}>
-    <StyledTextCompetitor $bolder={bolder} style={textStyles}>
-      {value}
-    </StyledTextCompetitor>
-  </CompetitorTableDataContainer>
-);
+}: CompetitorTableDataContainerTypeProps) => {
+  return (
+    <CompetitorTableDataContainer onClick={onClick} $hasClick={!!onClick} {...rest}>
+      <StyledTextCompetitor $bolder={bolder} style={textStyles}>
+        {value}
+      </StyledTextCompetitor>
+    </CompetitorTableDataContainer>
+  );
+};
 
 CompetitorTableData.displayName = 'CompetitorTableData';
 
