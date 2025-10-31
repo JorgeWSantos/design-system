@@ -141,6 +141,7 @@ export const StyledBodyTableSEQM = styled.tbody`
     gap: 0.25rem;
     overflow: hidden;
     text-overflow: ellipsis;
+    height: 24px;
   }
 
   .aqha-styles {
