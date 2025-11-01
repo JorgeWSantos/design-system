@@ -50,8 +50,14 @@ export const SwitchKnob = styled.span<{ $checked: boolean; $variant: SwitchVaria
     `}
 `;
 
-export const Label = styled(Text)`
+export const Label = styled(Text)<{ $variant?: SwitchVariants }>`
   font-size: ${fontSizes.ssm};
   line-height: 1.125rem; /* 120% */
   color: ${colors.white85};
+
+  ${({ $variant }) =>
+    $variant === 'filter' &&
+    css`
+      color: ${colors.emeraldGreen75};
+    `}
 `;

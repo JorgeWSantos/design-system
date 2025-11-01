@@ -19,7 +19,7 @@ const Switch = ({
   ...rest
 }: SwitchProps) => (
   <SwitchContainer {...rest}>
-    {label && labelOnLeft && <Label>{label}</Label>}
+    {label && labelOnLeft && <Label $variant={variant}>{label}</Label>}
     <SwitchButton
       onClick={onChange}
       aria-checked={checked}
@@ -29,7 +29,7 @@ const Switch = ({
     >
       <SwitchKnob $checked={checked} $variant={variant} />
     </SwitchButton>
-    {label && !labelOnLeft && <Label>{label}</Label>}
+    {label && !labelOnLeft && <Label $variant={variant}>{label}</Label>}
   </SwitchContainer>
 );
 
