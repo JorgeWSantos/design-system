@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.2
+
+### Patch Changes
+
+- feat: 🎸 Melhorias na table
+
 ## 4.0.1
 
 ### Patch Changes
