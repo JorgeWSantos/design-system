@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 4.0.3
+
+### Patch Changes
+
+- feat: 🎸 Implementação do AutoScroll na table
+
 ## 4.0.2
 
 ### Patch Changes
