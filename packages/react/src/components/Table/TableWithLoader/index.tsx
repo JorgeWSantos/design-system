@@ -16,6 +16,7 @@ interface TableWithLoaderProps extends ComponentProps<typeof DivContainerTableRi
   isLoading: boolean;
   minWidthTable?: string;
   variant?: TableSEQMVariants;
+  autoScroll?: boolean;
 }
 
 const TableWithLoader: React.FC<TableWithLoaderProps> = ({
@@ -23,13 +24,19 @@ const TableWithLoader: React.FC<TableWithLoaderProps> = ({
   columns,
   isLoading,
   variant = 'light',
+  autoScroll = false,
   ...rest
   // minWidthTable,
 }) => {
   return (
     <DivContainerTableRight {...rest} $isLoading={isLoading}>
       {data?.length > 0 && !isLoading ? (
-        <TableSEQM data={data} columns={columns} variant={variant} />
+        <TableSEQM
+          data={data}
+          columns={columns}
+          variant={variant}
+          autoScroll={autoScroll}
+        />
       ) : (
         <>
           {isLoading ? (

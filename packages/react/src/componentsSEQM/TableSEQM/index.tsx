@@ -22,13 +22,14 @@ export const TableSEQM = ({
   width,
   height,
   variant,
+  autoScroll = false,
   ...rest
 }: TableSEQMProps) => {
   const { sortedData, sortKey, sortOrder, handleSort } = useTableSort({ columns, data });
 
   const tableRef = useRef<HTMLTableElement | null>(null);
 
-  useAutoScroll({ tableRef });
+  useAutoScroll({ tableRef, autoScroll });
 
   return (
     <TableScroll ref={tableRef}>

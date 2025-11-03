@@ -2,11 +2,12 @@ import React, { useEffect } from 'react';
 
 interface UseAutoScrollProps {
   tableRef: React.RefObject<HTMLTableElement | null>;
+  autoScroll: boolean;
 }
 
-const useAutoScroll = ({ tableRef }: UseAutoScrollProps) => {
+const useAutoScroll = ({ tableRef, autoScroll }: UseAutoScrollProps) => {
   useEffect(() => {
-    if (!tableRef.current) {
+    if (!tableRef.current || !autoScroll) {
       return;
     }
 
@@ -19,7 +20,7 @@ const useAutoScroll = ({ tableRef }: UseAutoScrollProps) => {
         block: 'center',
       });
     }
-  }, [tableRef.current]);
+  }, [tableRef.current, autoScroll]);
 };
 
 export { useAutoScroll };
