@@ -10,10 +10,11 @@ import {
 } from './styles';
 
 import { TableSEQMProps } from './types';
-import { useState } from 'react';
+import { useRef } from 'react';
 import { CaretUpFillIcon } from '@abqm-ds/icons';
 import { colors } from '@abqm-ds/tokens';
 import { useTableSort } from './useTableSort';
+import { useAutoScroll } from './useAutoScroll';
 
 export const TableSEQM = ({
   columns,
@@ -25,8 +26,12 @@ export const TableSEQM = ({
 }: TableSEQMProps) => {
   const { sortedData, sortKey, sortOrder, handleSort } = useTableSort({ columns, data });
 
+  const tableRef = useRef<HTMLTableElement | null>(null);
+
+  useAutoScroll({ tableRef });
+
   return (
-    <TableScroll>
+    <TableScroll ref={tableRef}>
       <StyledTableSEQM $width={width} $height={height} $variant={variant} {...rest}>
         <StyledHeadTableSEQM>
           <tr>
