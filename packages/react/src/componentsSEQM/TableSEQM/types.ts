@@ -9,6 +9,7 @@ export interface TableSEQMProps extends ComponentProps<typeof StyledTableSEQM> {
   width?: CSSProperties['width'];
   variant?: TableSEQMVariants;
   autoScroll?: boolean;
+  setAutoScroll?: (value: boolean) => void;
 }
 
 export type TableRowSEQM = {
