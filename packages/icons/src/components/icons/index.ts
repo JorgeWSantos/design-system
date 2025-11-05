@@ -43,6 +43,7 @@ export { default as SearchIcon } from './SearchIcon';
 export { default as ShareIcon } from './ShareIcon';
 export { default as SpinnerRingResizeIcon } from './SpinnerRingResizeIcon';
 export { default as StarIcon } from './StarIcon';
+export { default as TrophyFillIcon } from './TrophyFillIcon';
 export { default as TrophyIcon } from './TrophyIcon';
 export { default as XIcon } from './XIcon';
 export { default as YoutubeIcon } from './YoutubeIcon';
