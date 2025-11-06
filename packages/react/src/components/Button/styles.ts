@@ -131,6 +131,20 @@ export const StyledButton = styled.button<ButtonStyleProps>`
       }
     `}
 
+    ${({ $variant }) =>
+    $variant === 'emerald25' &&
+    css`
+      color: ${colors.emeraldGreen50};
+      background: ${colors.emeraldGreen25};
+      transition: 0.3s;
+
+      &:not(:disabled):hover {
+        /* background: ${colors.green300}; */
+        filter: brightness(120%);
+        transition: 0.3s;
+      }
+    `}
+
   ${({ $size }) =>
     $size === 'sm' &&
     css`

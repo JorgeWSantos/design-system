@@ -27,7 +27,7 @@ export const SwitchButton = styled.button<{
   ${({ $variant, $checked }) =>
     $variant === 'filter' &&
     css`
-      background: ${$checked ? colors.green500 : colors.greenTransparent15};
+      background: ${$checked ? colors.green500 : colors.emeraldGreen25};
     `}
 `;
 

@@ -1,4 +1,4 @@
-import { breakpointsPx, space } from '@abqm-ds/tokens';
+import { breakpointsPx, space, colors } from '@abqm-ds/tokens';
 import { Box } from '@components/Box';
 import styled, { css } from 'styled-components';
 
@@ -49,7 +49,10 @@ export const ContainerMobile = styled.main<{
     `}
 `;
 
-export const MobileScroll = styled(Box)<{ $headerNoGap?: boolean }>`
+export const MobileScroll = styled(Box)<{
+  $headerNoGap?: boolean;
+  $backgroundVariant?: 'light' | 'dark';
+}>`
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -74,5 +77,11 @@ export const MobileScroll = styled(Box)<{ $headerNoGap?: boolean }>`
     css`
       border-top-right-radius: 0;
       border-top-left-radius: 0;
+    `}
+
+  ${({ $backgroundVariant }) =>
+    $backgroundVariant === 'dark' &&
+    css`
+      background-color: ${colors.emeraldGreen50};
     `}
 `;

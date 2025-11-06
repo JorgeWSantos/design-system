@@ -5,7 +5,8 @@ export type ButtonVariants =
   | 'tertiary'
   | 'login'
   | 'login-mobile'
-  | 'dark';
+  | 'dark'
+  | 'emerald25';
 
 export type ButtonSize = 'sm' | 'md' | 'lg' | 'xlg';
 

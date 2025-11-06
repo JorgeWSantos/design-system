@@ -67,4 +67,6 @@ export const StyledFooterButton = styled.button<StyledFooterButtonProps>`
 export const StyledText = styled(Text).attrs({
   fontSize: 'xxs',
   color: colors.white50,
-})``;
+})`
+  white-space: nowrap;
+`;

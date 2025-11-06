@@ -9,6 +9,7 @@ interface ContentMobileProps extends ComponentProps<typeof ContainerMobile> {
   contentMobileBoxStyles?: React.CSSProperties;
   hasFooterButtons?: boolean;
   isLoading?: boolean;
+  backgroundVariant?: 'light' | 'dark';
 }
 
 export const ContentMobile = ({
@@ -19,6 +20,7 @@ export const ContentMobile = ({
   //usado quando existem botões no footer e é substituído pelo footer padrão
   hasFooterButtons,
   isLoading,
+  backgroundVariant = 'light',
   ...rest
 }: ContentMobileProps) => {
   return (
@@ -28,7 +30,11 @@ export const ContentMobile = ({
       {...rest}
     >
       {headerMobileNavigator}
-      <MobileScroll $headerNoGap={!!headerNoGap} style={contentMobileBoxStyles}>
+      <MobileScroll
+        $headerNoGap={!!headerNoGap}
+        $backgroundVariant={backgroundVariant}
+        style={contentMobileBoxStyles}
+      >
         {isLoading && <LoadingOverlay />}
         {children}
       </MobileScroll>

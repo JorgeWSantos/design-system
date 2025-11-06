@@ -104,6 +104,14 @@ export const StyledDropdown = styled.div<{
       background-color: ${colors.emeraldGreen25};
     `}
 
+    ${({ $variant }) =>
+    $variant === 'outline' &&
+    css`
+      border-radius: ${radii.xs};
+      border: ${radii.px} solid ${colors.emeraldGreen50};
+      background-color: ${colors.white50};
+    `}
+
   @media (max-width: ${breakpointsPx.lg}) {
     ${({ $variant }) =>
       $variant === 'primary' &&
@@ -115,6 +123,7 @@ export const StyledDropdown = styled.div<{
     ${({ $variant }) =>
       $variant === 'quaternary' &&
       css`
+        color: ${colors.emeraldGreen75};
         border-radius: ${radii.xs};
         border: ${radii.px} solid ${colors.white50};
         background-color: ${colors.emeraldGreen25};
@@ -128,6 +137,12 @@ export const StyledTextSelect = styled(Text).attrs({
   fontSize: 'ssm',
 })<{ $variant?: VariantsTypesDropdown }>`
   color: ${colors.white75};
+
+  ${({ $variant }) =>
+    $variant === 'outline' &&
+    css`
+      color: ${colors.emeraldGreen75};
+    `}
 
   @media (max-width: ${breakpointsPx.lg}) {
     font-weight: ${fontWeights.semiBold};
@@ -162,6 +177,12 @@ export const StyledCaretDownFillIcon = styled(CaretDownFillIcon)<{
 
     ${({ $variant }) =>
       $variant === 'tertiary' &&
+      css`
+        fill: ${colors.emeraldGreen50};
+      `}
+
+    ${({ $variant }) =>
+      $variant === 'outline' &&
       css`
         fill: ${colors.emeraldGreen50};
       `}
