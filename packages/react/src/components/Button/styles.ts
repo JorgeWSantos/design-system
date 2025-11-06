@@ -18,37 +18,31 @@ export interface ButtonStyleProps {
   $size?: ButtonSize; //espaçamentos e tamanho
 }
 
-export const StyledButton = styled.button<ButtonStyleProps>`
-  all: unset;
-  border-radius: ${radii.sm};
-  font-size: ${fontSizes.sm};
-  font-weight: ${fontWeights.medium};
-  font-family: ${fonts.default};
-  text-align: center;
-  /* min-width: 8.438rem; */
-  height: 2.75rem;
-  box-sizing: border-box;
-  padding: ${space[2]} ${space[8]};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: ${space[2]};
+// Objeto com os valores de size do botão
+const buttonSizes = {
+  ssm: {
+    padding: `${space[1]} ${space[4]}`,
+    height: '1.5rem',
+  },
+  sm: {
+    padding: `${space[2]} ${space[6]}`,
+    height: '2rem',
+  },
+  md: {
+    padding: `${space[2]} ${space[8]}`,
+    height: '2.125rem',
+  },
+  lg: {
+    padding: `${space[3]} ${space[6]}`,
+    height: '2.625rem',
+  },
+  xlg: {
+    padding: `${space[3]} ${space[10]}`,
+    height: '2.625rem',
+  },
+};
 
-  cursor: pointer;
-
-  svg {
-    width: ${space[4]};
-    height: ${space[4]};
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    filter: brightness(90%);
-  }
-
-  &:focus {
-  }
-
+const styledButtonVariants = css<{ $variant?: ButtonVariants }>`
   ${({ $variant }) =>
     ($variant === 'primary' || !$variant) &&
     css`
@@ -66,20 +60,17 @@ export const StyledButton = styled.button<ButtonStyleProps>`
   ${({ $variant }) =>
     $variant === 'secondary' &&
     css`
-      border: ${radii.pxx} solid ${colors.green500};
-      transition: 0.3s;
+      border: ${radii.pxx} solid ${colors.gray400};
+      background: ${colors.gray400};
+      transition: filter 0.3s;
 
       &:not(:disabled):hover {
-        background: ${colors.green500};
+        filter: brightness(120%);
         transition: 0.3s;
       }
 
-      &:not(:disabled):hover p {
-        color: ${colors.white};
-      }
-
       p {
-        color: ${colors.green500};
+        color: ${colors.white};
         transition: color 0.3s;
       }
 
@@ -101,6 +92,50 @@ export const StyledButton = styled.button<ButtonStyleProps>`
         &:disabled {
           color: ${colors.gray600};
         }
+      }
+    `}
+
+  ${({ $variant }) =>
+    $variant === 'quaternary' &&
+    css`
+      border: ${radii.pxx} solid ${colors.blue700};
+      background: ${colors.blue700};
+      transition: filter 0.3s;
+
+      &:not(:disabled):hover {
+        filter: brightness(120%);
+        transition: 0.3s;
+      }
+
+      p {
+        color: ${colors.white85};
+        transition: color 0.3s;
+      }
+
+      p:disabled {
+        color: ${colors.gray200};
+      }
+    `}
+
+  ${({ $variant }) =>
+    $variant === 'quinary' &&
+    css`
+      border: ${radii.pxx} solid ${colors.brown500};
+      background: ${colors.brown500};
+      transition: filter 0.3s;
+
+      &:not(:disabled):hover {
+        filter: brightness(120%);
+        transition: 0.3s;
+      }
+
+      p {
+        color: ${colors.white85};
+        transition: color 0.3s;
+      }
+
+      p:disabled {
+        color: ${colors.gray200};
       }
     `}
 
@@ -144,34 +179,46 @@ export const StyledButton = styled.button<ButtonStyleProps>`
         transition: 0.3s;
       }
     `}
+`;
+
+export const StyledButton = styled.button<ButtonStyleProps>`
+  all: unset;
+  border-radius: ${radii.sm};
+  font-size: ${fontSizes.sm};
+  font-weight: ${fontWeights.medium};
+  font-family: ${fonts.default};
+  text-align: center;
+  /* min-width: 8.438rem; */
+  height: 2.75rem;
+  box-sizing: border-box;
+  padding: ${space[2]} ${space[8]};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: ${space[2]};
+
+  cursor: pointer;
+
+  ${styledButtonVariants};
+
+  svg {
+    width: ${space[4]};
+    height: ${space[4]};
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    filter: brightness(90%);
+  }
+
+  &:focus {
+  }
 
   ${({ $size }) =>
-    $size === 'sm' &&
+    $size &&
     css`
-      padding: ${space[2]} ${space[6]};
-
-      height: 2rem;
-    `}
-
-  ${({ $size }) =>
-    $size === 'md' &&
-    css`
-      padding: ${space[2]} ${space[8]};
-      height: 2.125rem;
-    `}
-
-  ${({ $size }) =>
-    $size === 'lg' &&
-    css`
-      padding: ${space[3]} ${space[6]};
-      height: 2.625rem;
-    `}
-
-  ${({ $size }) =>
-    $size === 'xlg' &&
-    css`
-      padding: ${space[3]} ${space[10]};
-      height: 2.625rem;
+      padding: ${buttonSizes[$size].padding};
+      height: ${buttonSizes[$size].height};
     `}
 `;
 
@@ -181,6 +228,19 @@ export const StyledButtonText = styled(Text).attrs({
 })<{ $sizeText: ButtonTextSize }>`
   color: ${colors.white85};
 
+  ${({ $sizeText }) =>
+    $sizeText === 'ssm' &&
+    css`
+      font-size: ${fontSizes.xs};
+    `}
+
+  ${({ $sizeText }) =>
+    $sizeText === 'sm' &&
+    css`
+      font-size: ${fontSizes.ssm};
+      line-height: 1rem;
+    `}
+    
   ${({ $sizeText }) =>
     $sizeText === 'sm' &&
     css`

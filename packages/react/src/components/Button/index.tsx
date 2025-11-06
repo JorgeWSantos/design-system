@@ -25,7 +25,6 @@ export const Button = ({
   isLoading,
   disabled,
   sizeText = 'md',
-  // fontSize,
   ...rest
 }: ButtonProps) => {
   return (
