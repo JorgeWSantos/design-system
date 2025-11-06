@@ -10,7 +10,7 @@ import {
 } from './styles';
 
 import { TableSEQMAnimatedProps } from './types';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { CaretUpFillIcon } from '@abqm-ds/icons';
 import { AnimatePresence, motion } from 'framer-motion';
 import { colors } from '@abqm-ds/tokens';
@@ -94,7 +94,7 @@ export const TableSEQMAnimated = ({
           <AnimatePresence>
             {sortedData?.map((row, idx) => (
               <motion.tr
-                key={(row.cds_classificacao ?? '') + '-' + (row.nid_equipe ?? idx)}
+                key={row?.key.value || idx}
                 className={(() => {
                   let addClasses = '';
                   if (row?.isoficial?.value) addClasses += 'aqha-styles';
@@ -141,6 +141,4 @@ export const TableSEQMAnimated = ({
 
 TableSEQMAnimated.displayName = 'TableSEQMAnimated';
 
-export * from './types';
-export * from './ColumnOficial';
 export { StyledTableSEQMAnimatedTextTd, StyledTableSEQMAnimatedTextTh } from './styles';

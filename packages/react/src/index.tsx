@@ -38,6 +38,7 @@ export * from './components/Table/AnimalTableDataWithouTooltip';
 export * from './components/Table/OwnerTableData';
 export * from './components/Table/CompetitorTableData';
 export * from './components/Table/TableWithLoader';
+export * from './components/Table/TableWithLoaderAnimated';
 export * from './components/Table/CreatorTableData';
 
 //Layout Components
@@ -77,6 +78,7 @@ export { GlobalStyle } from './styles/global';
 // SEQM
 export * from './componentsSEQM/RoundedModalityButton';
 export * from './componentsSEQM/TableSEQM';
+export * from './componentsSEQM/TableSEQMAnimated';
 export * from './componentsSEQM/TableSEQMHeaderLabel';
 export * from './componentsSEQM/TableSEQMWithCards';
 export * from './componentsSEQM/InfoEventDetails';
