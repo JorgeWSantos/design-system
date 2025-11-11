@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 4.0.7
+
+### Patch Changes
+
+- feat: 🎸 Melhorias na table
+
 ## 4.0.6
 
 ### Patch Changes
