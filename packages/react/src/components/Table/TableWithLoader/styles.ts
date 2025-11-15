@@ -22,8 +22,7 @@ export const DivContainerTableRight = styled.div<{ $isLoading?: boolean }>`
   @media (max-width: ${breakpointsPx.lg}) {
     overflow-x: scroll;
     margin-top: 0;
-    height: 100%;
-
+    /* height: 100%; removido para o funcionamento correto do table scroll no mobile do ao vivo*/
     table {
       min-width: 32rem;
       width: 100%;
