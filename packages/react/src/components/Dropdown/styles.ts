@@ -112,6 +112,17 @@ export const StyledDropdown = styled.div<{
       background-color: ${colors.white50};
     `}
 
+    ${({ $variant }) =>
+    $variant === 'dark' &&
+    css`
+      color: ${colors.white75};
+      border-radius: ${radii.xs};
+      border: ${radii.px} solid ${colors.white25};
+      background-color: ${colors.emeraldGreen50};
+    `}
+
+
+
   @media (max-width: ${breakpointsPx.lg}) {
     ${({ $variant }) =>
       $variant === 'primary' &&
