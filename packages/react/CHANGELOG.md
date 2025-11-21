@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.9
+
+### Patch Changes
+
+- fix: 🐛 Correção de build
+
 ## 4.0.8
 
 ### Patch Changes
