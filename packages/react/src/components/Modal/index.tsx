@@ -10,7 +10,8 @@ import {
   DivTopModal,
   HeaderFilter,
   DivButtonCleanFilter,
-  DivButton, // add import
+  DivButton,
+  WrapperHeading, // add import
 } from './styles';
 
 import ReactDOM from 'react-dom';
@@ -35,12 +36,14 @@ import { Button } from '@components/Button';
  * @param styleContent Estilos adicionais para o conteúdo do modal.
  * @param size 'full' preenche toda a tela, deve ser usado para imagens ou documentos. 'normal' é o modal padrão das aplicações.
  * @param maxHeight Define o tamanho máximo do conteúdo do modal (ex: '90vh'). Por padrão, o modal se ajusta ao conteúdo até esse limite.
+ * @param iconLeftTitle Ícone exibido à esquerda do título do modal.
  */
 export const Modal = ({
   isOpen,
   isFiltered,
   onClickCleanFilter,
   title,
+  iconLeftTitle,
   onClose,
   onApply,
   children,
@@ -102,14 +105,20 @@ export const Modal = ({
       >
         <DivTopModal $size={size} $hasTitle={!!title}>
           {!isFiltered ? (
-            <Heading color={colors.emeraldGreen75} lineHeight="midshort">
-              {title}
-            </Heading>
-          ) : (
-            <HeaderFilter>
+            <WrapperHeading>
+              {iconLeftTitle}
               <Heading color={colors.emeraldGreen75} lineHeight="midshort">
                 {title}
               </Heading>
+            </WrapperHeading>
+          ) : (
+            <HeaderFilter>
+              <WrapperHeading>
+                {iconLeftTitle}
+                <Heading color={colors.emeraldGreen75} lineHeight="midshort">
+                  {title}
+                </Heading>
+              </WrapperHeading>
               <DivButtonCleanFilter>
                 <Text fontSize="ssm" color={colors.green300} onClick={onClickCleanFilter}>
                   LIMPAR
