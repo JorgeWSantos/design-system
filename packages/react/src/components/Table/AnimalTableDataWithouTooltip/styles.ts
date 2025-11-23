@@ -10,7 +10,8 @@ export const AnimalTableDataWithoutTooltipContainer = styled(
   $hasClick: boolean;
 }>`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   height: 1.25rem;
 
   transition: filter 0.3s;
@@ -35,6 +36,20 @@ export const StyledTextCompetitor = styled(Text).attrs({
   fontWeight: 'semiBold',
 })<{ $bolder: boolean }>`
   font-weight: ${({ $bolder }) => ($bolder ? fontWeights.semiBold : fontWeights.regular)};
+
+  display: flex;
+
+  white-space: nowrap;
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    font-size: ${fontSizes.ssm};
+  }
+`;
+
+export const StyledTextCompetitor2 = styled(Text).attrs({
+  fontSize: 'x',
+})`
+  font-weight: ${fontWeights.regular};
 
   display: flex;
 
