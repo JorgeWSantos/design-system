@@ -42,13 +42,17 @@ export const HeaderMobileNavigator = ({
           </ButtonBack>
         </ContainerButtonBack>
       )}
+
       {headingText && headingText !== '' && !searchIsOpen && (
         <Heading color={colors.white85} style={{ whiteSpace: 'nowrap' }}>
           {headingText}
         </Heading>
       )}
+
+      {!searchIsOpen && children}
+
       {hasSearch && (
-        <StyledWrapperSearch>
+        <StyledWrapperSearch $searchIsOpen={searchIsOpen}>
           {searchIsOpen && (
             <TextInput
               variant="secondary"
@@ -98,7 +102,6 @@ export const HeaderMobileNavigator = ({
           ))}
         </ButtonsWrapper>
       )}
-      {children}
       {}
     </StyledNavigatorMobile>
   );

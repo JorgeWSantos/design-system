@@ -1,5 +1,5 @@
 import { colors, radii, space } from '@abqm-ds/tokens';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledNavigatorMobile = styled.div`
   display: flex;
@@ -34,12 +34,21 @@ export const ButtonBack = styled.button`
   cursor: pointer;
 `;
 
-export const StyledWrapperSearch = styled.div`
+export const StyledWrapperSearch = styled.div<{ $searchIsOpen?: boolean }>`
   display: flex;
   justify-content: flex-end;
   align-items: center;
   /* background-color: red; */
-  width: 100%;
+  /* width: 100%; */
+
+  ${({ $searchIsOpen }) =>
+    $searchIsOpen
+      ? css`
+          width: 100%;
+        `
+      : css`
+          width: unset;
+        `}
 `;
 
 export const ButtonSearch = styled.button`
