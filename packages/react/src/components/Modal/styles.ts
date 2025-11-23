@@ -188,6 +188,13 @@ export const DivTopModal = styled.div<{
     `}
 `;
 
+export const WrapperHeading = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: ${space[2]};
+`;
+
 export const CloseButton = styled.button`
   background: transparent;
   border: none;

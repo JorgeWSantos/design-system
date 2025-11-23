@@ -1,3 +1,4 @@
+import React from 'react';
 import { CaretDownFillIcon } from '@abqm-ds/icons';
 import {
   Container,
@@ -42,7 +43,7 @@ export const TableSEQMWithCards = ({
           $width={width}
           $height={height}
           $variant={variant}
-          style={tableStyles}
+          style={tableStyles as React.CSSProperties}
         >
           <StyledHeadTableSEQM>
             <tr>

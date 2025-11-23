@@ -18,4 +18,5 @@ export interface ModalProps extends ComponentProps<'div'> {
   styleContent?: React.CSSProperties;
   size?: PropModalSizes;
   maxHeight?: string;
+  iconLeftTitle?: React.ReactNode;
 }
