@@ -10,6 +10,7 @@ export { default as CaretDownFillIcon } from './CaretDownFillIcon';
 export { default as CaretLeftFillIcon } from './CaretLeftFillIcon';
 export { default as CaretRightFillIcon } from './CaretRightFillIcon';
 export { default as CaretUpFillIcon } from './CaretUpFillIcon';
+export { default as CheckAllIcon } from './CheckAllIcon';
 export { default as CheckIcon } from './CheckIcon';
 export { default as ChevronDownIcon } from './ChevronDownIcon';
 export { default as ChevronLeftIcon } from './ChevronLeftIcon';
