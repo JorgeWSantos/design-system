@@ -80,3 +80,4 @@ export * from './componentsSEQM/TableSEQM';
 export * from './componentsSEQM/TableSEQMHeaderLabel';
 export * from './componentsSEQM/TableSEQMWithCards';
 export * from './componentsSEQM/InfoEventDetails';
+export * from './componentsSEQM/ElementList';

@@ -59,4 +59,6 @@ declare module '@abqm-ds/icons' {
   export const EventSummaryDefaultIcon: FC<SVGProps<SVGSVGElement>>;
   export const LogoAbqmBorderedEmeraldIcon: FC<SVGProps<SVGSVGElement>>;
   export const LogoAbqmBorderedWhiteIcon: FC<SVGProps<SVGSVGElement>>;
+  export const CheckAllIcon: FC<SVGProps<SVGSVGElement>>;
+  export const TrophyFillIcon: FC<SVGProps<SVGSVGElement>>;
 }
