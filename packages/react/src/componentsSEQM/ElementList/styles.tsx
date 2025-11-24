@@ -9,6 +9,7 @@ export const ContainerElement = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  width: 100%;
 `;
 
 export const DivTopTexts = styled.div`

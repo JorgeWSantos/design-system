@@ -14,7 +14,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { ListaAoVivo, ProvasEvento } from './types';
 
 interface ElementListProps {
-  lista_prova_ao_vivo: ListaAoVivo[];
+  lista_prova_ao_vivo?: ListaAoVivo[];
   provas_lista_evento: ProvasEvento[];
   name_event: string;
   local_event: string;
@@ -25,7 +25,7 @@ interface ElementListProps {
   is_official: boolean;
   type?: 'order_entry' | 'results' | '';
   token: string;
-  URL_AO_VIVO: string;
+  URL_AO_VIVO?: string;
   URL_RESULTADOS: string;
   URL_ORDEM_DE_ENTRADA: string;
 }
@@ -124,7 +124,7 @@ const ElementList = ({
         </ModalTopTextsContainer>
       </DivTopTexts>
 
-      {lista_prova_ao_vivo.map((event, idx) => (
+      {lista_prova_ao_vivo?.map((event, idx) => (
         <LivesList
           key={idx}
           event={event}
@@ -132,7 +132,7 @@ const ElementList = ({
           nid_agrupa_evento={nid_agrupa_evento}
           is_official={is_official}
           token={token}
-          URL_AO_VIVO={URL_AO_VIVO}
+          URL_AO_VIVO={URL_AO_VIVO || ''}
         />
       ))}
 

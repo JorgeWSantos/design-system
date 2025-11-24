@@ -29,7 +29,7 @@ const LivesList = ({
   return (
     <DivModality
       onClick={() => {
-        const initialUrl = URL_AO_VIVO + 'evento/';
+        const initialUrl = URL_AO_VIVO + '/evento/';
         let url = `${initialUrl}${nid_agrupa_evento}/prova/${
           event.nid_prova_evento
         }/classificatoria/${event.nid_prova_evento_classificatoria}/oficial/${
@@ -37,7 +37,7 @@ const LivesList = ({
         }`;
 
         if (token !== '') {
-          url += `?token=${token}`;
+          url += `?tk=${token}`;
         }
 
         window.open(url, '_self');

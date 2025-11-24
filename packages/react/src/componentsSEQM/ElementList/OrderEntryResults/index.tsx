@@ -41,7 +41,7 @@ const OrderEntryResults = ({
   const addTokenIfExists = useCallback(
     ({ url }: { url: string }) => {
       if (token !== '') {
-        url += `?token=${token}`;
+        url += `?tk=${token}`;
       }
       return url;
     },
@@ -49,21 +49,21 @@ const OrderEntryResults = ({
   );
 
   const redirectOrderEntry = ({ modality }: { modality: Modalidades }) => {
-    const initialUrl = URL_ORDEM_DE_ENTRADA + 'ordem-entrada/';
+    const initialUrl = URL_ORDEM_DE_ENTRADA + '/ordem-entrada/';
     const url = `${initialUrl}${modality.nid_prova_evento_classificatoria}/prova/${modality.nid_prova_evento}`;
     const urlWithToken = addTokenIfExists({ url });
     window.open(urlWithToken, '_self');
   };
 
   const redirectResults = ({ modality }: { modality: Modalidades }) => {
-    const initialUrl = URL_RESULTADOS + 'modalidade/' + prove.nid_prova;
+    const initialUrl = URL_RESULTADOS + '/modalidade/' + prove.nid_prova;
     const url = `${initialUrl}/evento/${nidEvent}/prova-evento/${modality.nid_prova_evento}/classificatoria/${modality.nid_prova_evento_classificatoria}`;
     const urlWithToken = addTokenIfExists({ url });
     window.open(urlWithToken, '_self');
   };
 
   const redirectResultsTop10 = ({ modality }: { modality: Modalidades }) => {
-    const initialUrl = URL_RESULTADOS + 'modalidade/' + prove.nid_prova;
+    const initialUrl = URL_RESULTADOS + '/modalidade/' + prove.nid_prova;
     const url = `${initialUrl}/evento/${nidEvent}/prova-evento/${modality.nid_prova_evento}/top10`;
     const urlWithToken = addTokenIfExists({ url });
     window.open(urlWithToken, '_self');
