@@ -58,3 +58,13 @@ export const StateText = styled(Text).attrs({
   line-height: 1.125rem;
   text-align: center;
 `;
+
+export const MessageNoProves = styled(Text).attrs({
+  fontSize: 'smm',
+  fontWeight: 'semiBold',
+  color: colors.black75,
+})`
+  margin-top: 2rem;
+  line-height: 1.125rem;
+  text-align: center;
+`;

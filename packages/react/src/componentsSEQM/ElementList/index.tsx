@@ -4,6 +4,7 @@ import {
   HeadingContainer,
   HeadingModal,
   LocalText,
+  MessageNoProves,
   ModalTopTextsContainer,
   StateText,
 } from './styles';
@@ -23,7 +24,7 @@ interface ElementListProps {
   nid_agrupa_evento: number;
   nid_evento: number;
   is_official: boolean;
-  type?: 'order_entry' | 'results' | '';
+  type?: 'order_entry' | 'results' | 'lives' | '';
   token: string;
   URL_AO_VIVO?: string;
   URL_RESULTADOS: string;
@@ -32,14 +33,14 @@ interface ElementListProps {
 
 const ElementList = ({
   city_event,
-  lista_prova_ao_vivo,
   local_event,
   name_event,
+  state_event,
+  lista_prova_ao_vivo,
+  provas_lista_evento,
   nid_agrupa_evento,
   nid_evento,
-  state_event,
   is_official,
-  provas_lista_evento,
   type = '',
   token,
   URL_AO_VIVO,
@@ -124,6 +125,22 @@ const ElementList = ({
         </ModalTopTextsContainer>
       </DivTopTexts>
 
+      {lista_prova_ao_vivo?.length === 0 && listEventToShow.length === 0 && (
+        <>
+          {type === 'lives' && (
+            <MessageNoProves>
+              No momento, nenhuma prova está em andamento.
+            </MessageNoProves>
+          )}
+          {type === 'order_entry' && (
+            <MessageNoProves>No momento, não há ordens de entrada.</MessageNoProves>
+          )}
+          {type === 'results' && (
+            <MessageNoProves>No momento, não há resultados.</MessageNoProves>
+          )}
+        </>
+      )}
+
       {lista_prova_ao_vivo?.map((event, idx) => (
         <LivesList
           key={idx}
@@ -144,7 +161,7 @@ const ElementList = ({
           setNidProveOpened={setNidProveOpened}
           nidProveOpened={nidProveOpened}
           nidEvent={nid_evento}
-          type={type}
+          type={type === 'lives' ? '' : type}
           token={token}
           URL_RESULTADOS={URL_RESULTADOS}
           URL_ORDEM_DE_ENTRADA={URL_ORDEM_DE_ENTRADA}
