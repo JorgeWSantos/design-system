@@ -34,6 +34,7 @@ export * from './components/RoundedButtonWithLabel';
 
 //Table Components
 export * from './components/Table/AnimalTableData';
+export * from './components/Table/ElementTableData';
 export * from './components/Table/AnimalTableDataWithouTooltip';
 export * from './components/Table/OwnerTableData';
 export * from './components/Table/CompetitorTableData';
