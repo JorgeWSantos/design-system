@@ -23,7 +23,7 @@ interface ElementListProps {
   city_event: string;
   nid_agrupa_evento: number;
   nid_evento: number;
-  is_official: boolean;
+  is_official?: boolean;
   type?: 'order_entry' | 'results' | 'lives' | '';
   token: string;
   URL_AO_VIVO?: string;
@@ -40,7 +40,7 @@ const ElementList = ({
   provas_lista_evento,
   nid_agrupa_evento,
   nid_evento,
-  is_official,
+  is_official = false,
   type = '',
   token,
   URL_AO_VIVO,
