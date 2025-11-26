@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.11
+
+### Patch Changes
+
+- feat: 🎸 Melhorias no pack react
+
 ## 4.0.10
 
 ### Patch Changes
