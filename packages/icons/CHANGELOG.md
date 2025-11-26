@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 4.0.9
+
+### Patch Changes
+
+- feat: 🎸 Melhorias nos pacotes
+
 ## 4.0.8
 
 ### Patch Changes
