@@ -13,6 +13,7 @@ import { CaretDownFillIcon } from '@abqm-ds/icons';
 
 interface ContainerProps {
   $hasLabel: boolean;
+  $maxWidth?: string;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -30,6 +31,8 @@ export const Container = styled.div<ContainerProps>`
     css`
       height: 3.25rem;
     `}
+
+  max-width: ${({ $maxWidth }) => $maxWidth || '100%'};
 `;
 
 export const StyledLabel = styled(Text).attrs({
