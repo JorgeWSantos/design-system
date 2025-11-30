@@ -70,7 +70,7 @@ export function Dropdown({
   );
 
   return (
-    <Container $hasLabel={!!label} ref={dropdownRef}>
+    <Container $hasLabel={!!label} ref={dropdownRef} $maxWidth={maxWidth}>
       {label && (
         <StyledLabel color={colors.emeraldGreen50} $variant={variant}>
           {label}
