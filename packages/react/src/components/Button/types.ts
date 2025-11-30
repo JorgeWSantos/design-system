@@ -8,7 +8,8 @@ export type ButtonVariants =
   | 'login'
   | 'login-mobile'
   | 'dark'
-  | 'emerald25';
+  | 'emerald25'
+  | 'variant-green';
 
 export type ButtonSize = 'ssm' | 'sm' | 'md' | 'lg' | 'xlg';
 

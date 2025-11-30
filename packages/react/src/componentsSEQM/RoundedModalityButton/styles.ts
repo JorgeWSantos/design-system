@@ -1,7 +1,12 @@
 import { breakpointsPx, colors } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 
-export type VariantsRoundedModalityButton = 'default' | 'secondary' | 'tertiary';
+export type VariantsRoundedModalityButton =
+  | 'default'
+  | 'secondary'
+  | 'tertiary'
+  | 'quaternary'
+  | 'quinary';
 
 interface RoundedButtonProps {
   $variant: VariantsRoundedModalityButton;
@@ -25,6 +30,18 @@ const styledVariantsRoundedButton = css<RoundedButtonProps>`
     $variant === 'tertiary' &&
     css`
       background-color: ${colors.green100};
+    `}
+
+    ${({ $variant }) =>
+    $variant === 'quaternary' &&
+    css`
+      background-color: ${colors.emeraldGreen50};
+    `}
+
+    ${({ $variant }) =>
+    $variant === 'quinary' &&
+    css`
+      background-color: ${colors.emeraldGreen15};
     `}
 `;
 

@@ -179,6 +179,28 @@ const styledButtonVariants = css<{ $variant?: ButtonVariants }>`
         transition: 0.3s;
       }
     `}
+
+    ${({ $variant }) =>
+    $variant === 'variant-green' &&
+    css`
+      background: ${colors.green300};
+      transition: filter 0.3s;
+
+      &:not(:disabled):hover {
+        filter: brightness(120%);
+        transition: 0.3s;
+      }
+
+      p {
+        color: ${colors.white75};
+        font-weight: ${fontWeights.regular};
+        transition: color 0.3s;
+      }
+
+      p:disabled {
+        color: ${colors.gray200};
+      }
+    `}
 `;
 
 export const StyledButton = styled.button<ButtonStyleProps>`

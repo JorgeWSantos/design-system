@@ -84,7 +84,7 @@ export const StyledDropdown = styled.div<{
     $variant === 'tertiary' &&
     css`
       background-color: ${colors.white50};
-      border: ${radii.px} solid ${colors.emeraldGreen25};
+      border: ${radii.px} solid ${colors.emeraldGreen30};
     `}
 
   ${({ $variant }) =>
