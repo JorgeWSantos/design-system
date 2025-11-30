@@ -6,7 +6,7 @@ export const ShareOptionsContainer = styled.div<{
   $variantArrow: ShareOptionsVariantArrowTypes;
 }>`
   position: absolute;
-  right: 1.5rem;
+  right: 5rem;
   top: 3rem;
   z-index: 9999;
   background: white;
@@ -63,7 +63,7 @@ export const ShareOptionsContainer = styled.div<{
           border-width: ${radii.md} ${radii.md} 0 ${radii.md};
           border-style: solid;
           border-color: white transparent transparent transparent;
-          top: 4.4rem;
+          top: 4rem;
         `}
       display: block;
     }
