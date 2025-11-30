@@ -9,7 +9,7 @@ interface ContentMobileProps extends ComponentProps<typeof ContainerMobile> {
   contentMobileBoxStyles?: React.CSSProperties;
   hasFooterButtons?: boolean;
   isLoading?: boolean;
-  backgroundVariant?: 'light' | 'dark';
+  backgroundVariant?: 'light' | 'dark' | 'medium';
 }
 
 export const ContentMobile = ({

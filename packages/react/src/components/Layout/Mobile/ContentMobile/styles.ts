@@ -51,7 +51,7 @@ export const ContainerMobile = styled.main<{
 
 export const MobileScroll = styled(Box)<{
   $headerNoGap?: boolean;
-  $backgroundVariant?: 'light' | 'dark';
+  $backgroundVariant?: 'light' | 'dark' | 'medium';
 }>`
   display: flex;
   flex: 1;
@@ -83,5 +83,11 @@ export const MobileScroll = styled(Box)<{
     $backgroundVariant === 'dark' &&
     css`
       background-color: ${colors.emeraldGreen50};
+    `}
+
+     ${({ $backgroundVariant }) =>
+    $backgroundVariant === 'medium' &&
+    css`
+      background-color: ${colors.white25};
     `}
 `;

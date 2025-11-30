@@ -29,6 +29,18 @@ export const SwitchButton = styled.button<{
     css`
       background: ${$checked ? colors.green500 : colors.emeraldGreen25};
     `}
+
+  ${({ $variant, $checked }) =>
+    $variant === 'secondary' &&
+    css`
+      /* display: flex;
+      width: 34px;
+      min-width: 34px;
+      height: 20px;
+      padding: 2px 16px 2px 2px;
+      align-items: center; */
+      background: ${$checked ? colors.emeraldGreen50 : colors.emeraldGreen25};
+    `}
 `;
 
 export const SwitchKnob = styled.span<{ $checked: boolean; $variant: SwitchVariants }>`
@@ -47,6 +59,16 @@ export const SwitchKnob = styled.span<{ $checked: boolean; $variant: SwitchVaria
     $variant === 'filter' &&
     css`
       border: 1px solid ${colors.gray100};
+    `}
+
+  ${({ $variant, $checked }) =>
+    $variant === 'secondary' &&
+    css`
+      background: ${colors.white85};
+      /* width: 1rem;
+      height: 1rem;
+      top: 2px;
+      left: ${$checked ? '1rem' : '2px'}; */
     `}
 `;
 

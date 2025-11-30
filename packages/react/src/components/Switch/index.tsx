@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react';
 import { SwitchContainer, SwitchButton, SwitchKnob, Label } from './styles';
 
-export type SwitchVariants = 'primary' | 'filter';
+export type SwitchVariants = 'primary' | 'filter' | 'secondary';
 export interface SwitchProps extends ComponentProps<typeof SwitchContainer> {
   checked: boolean;
   onChange: () => void;
