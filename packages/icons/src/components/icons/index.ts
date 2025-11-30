@@ -19,6 +19,7 @@ export { default as ChevronUpIcon } from './ChevronUpIcon';
 export { default as CircleIcon } from './CircleIcon';
 export { default as CrossFullfiledIcon } from './CrossFullfiledIcon';
 export { default as CrossIcon } from './CrossIcon';
+export { default as CurrencyDollarIcon } from './CurrencyDollarIcon';
 export { default as DashIcon } from './DashIcon';
 export { default as FacebookIcon } from './FacebookIcon';
 export { default as FileEarmarkCheckIcon } from './FileEarmarkCheckIcon';
