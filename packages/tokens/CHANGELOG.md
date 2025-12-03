@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 4.0.11
+
+### Patch Changes
+
+- release: 🦋 Novas versões
+
 ## 4.0.10
 
 ### Patch Changes
