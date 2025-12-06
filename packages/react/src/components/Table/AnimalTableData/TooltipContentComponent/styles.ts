@@ -1,3 +1,4 @@
+import { StyledCustomScrollbar } from '@styles/scrollbarStyles';
 import styled from 'styled-components';
 
 /// tooltip
@@ -34,10 +35,12 @@ export const ImagesAchivements = styled.div`
   /* padding-left: 0.5rem; */
   align-items: center;
   gap: 1rem;
-  overflow-x: scroll;
+  overflow-x: auto;
 
   img {
     max-width: 4rem;
     max-height: 4rem;
   }
+
+  ${StyledCustomScrollbar}
 `;

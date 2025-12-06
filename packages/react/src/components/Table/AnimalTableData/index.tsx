@@ -41,6 +41,8 @@ export interface AnimalTableDataProps
   bolder?: boolean;
   isDead?: boolean;
   textStyles?: React.CSSProperties;
+  onClick?: () => void;
+  token: string | null;
 }
 
 const AnimalTableData = ({
@@ -60,6 +62,7 @@ const AnimalTableData = ({
   bolder = false,
   isDead = false,
   textStyles,
+  token,
   ...rest
 }: AnimalTableDataProps) => {
   const medalha: Record<string, string> = {
@@ -126,6 +129,7 @@ const AnimalTableData = ({
               allAroundYoung={allAroundYoung}
               superHorseAward={superHorseAward}
               rankingGeneralAward={rankingGeneralAward}
+              token={token}
             />
           )
         }

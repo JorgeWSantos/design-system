@@ -14,6 +14,7 @@ interface TooltipContentComponentProps {
   allAroundYoung?: string | null;
   superHorseAward?: string | null;
   rankingGeneralAward?: string | null;
+  token: string | null;
 }
 
 const TooltipContentComponent = ({
@@ -26,35 +27,34 @@ const TooltipContentComponent = ({
   allAroundYoung,
   superHorseAward,
   rankingGeneralAward,
+  token,
   ...rest
 }: TooltipContentComponentProps) => {
   // Função utilitária para validar conquistas
   const isValidAchievement = (value: any) =>
     value !== null && value !== '' && value !== undefined;
 
-  const cdn = 'https://i.imgur.com/';
-  const superhorse = `${cdn}/pCJKPmX.png`;
-  const modalidade_awards = `${cdn}/YuhCYyc.png`;
-  const all_around_amador = `${cdn}/oS8CGsJ.png`;
-  const all_around_jovem = `${cdn}/KL3oYCg.png`;
-  const ranking_geral = `${cdn}/7SnbguO.png`;
-  const hall_da_fama = `${cdn}/iKdpXz2.png`;
-
-  // https://i.imgur.com/oS8CGsJ.png
+  const cdn = 'http://img.seqm.com.br/portal';
+  const superhorse = `${cdn}/super-horse.png`;
+  const modalidade_awards = `${cdn}/awards-modalidade.png`;
+  const all_around_amador = `${cdn}/all-around.png`;
+  const all_around_jovem = `${cdn}/all-around.png`;
+  const ranking_geral = `${cdn}/awards-ranking-geral.png`;
+  const hall_da_fama = `${cdn}/hall-da-fama.png`;
 
   const registerOfMerityObjectLiteral = {
     '': '',
-    registro_de_merito: `${cdn}/wWtqfvL.png`,
-    registro_de_merito_bronze: `${cdn}/sLLCvQD.png`,
-    registro_de_merito_prata: `${cdn}/zTcjEms.png`,
-    registro_de_merito_ouro: `${cdn}/EQOfayn.png`,
-    registro_de_merito_platinum: `${cdn}/5I4HtPZ.png`,
-    registro_de_merito_superior: `${cdn}/8ypvEJW.png`,
-    registro_de_merito_superior_bronze: `${cdn}/7HFmc3f.png`,
-    registro_de_merito_superior_prata: `${cdn}/rk2dku3.png`,
-    registro_de_merito_superior_ouro: `${cdn}/HnNze7J.png`,
-    registro_de_merito_superior_platinum: `${cdn}/splqHz5.png`,
-    registro_de_merito_superior_diamante: `${cdn}/BvVsRmr.png`,
+    registro_de_merito: `${cdn}/registro-merito.png`,
+    registro_de_merito_bronze: `${cdn}/registro-merito-bronze.png`,
+    registro_de_merito_prata: `${cdn}/registro-merito-prata.png`,
+    registro_de_merito_ouro: `${cdn}/registro-merito-ouro.png`,
+    registro_de_merito_platinum: `${cdn}/registro-merito-platinum.png`,
+    registro_de_merito_superior: `${cdn}/registro-merito-superior.png`,
+    registro_de_merito_superior_bronze: `${cdn}/registro-merito-superior-bronze.png`,
+    registro_de_merito_superior_prata: `${cdn}/registro-merito-superior-prata.png`,
+    registro_de_merito_superior_ouro: `${cdn}/registro-merito-superior-ouro.png`,
+    registro_de_merito_superior_platinum: `${cdn}/registro-merito-superior-platinum.png`,
+    registro_de_merito_superior_diamante: `${cdn}/registro-merito-diamante.png`,
   };
 
   return (
@@ -90,11 +90,10 @@ const TooltipContentComponent = ({
           color={colors.emeraldGreen75}
           onClick={() => {
             const urlConsultaAnimal = import.meta.env.VITE_URL_CONSULTA_ANIMAL;
+            const urlToRedirect =
+              urlConsultaAnimal + '/perfil-do-animal/registro-de-merito/' + idAnimal;
 
-            window.open(
-              urlConsultaAnimal + '/perfil-do-animal/registro-de-merito/' + idAnimal,
-              '_blank'
-            );
+            window.open(token ? urlToRedirect + '?tk=' + token : urlToRedirect, '_blank');
           }}
           style={{ cursor: 'pointer' }}
         >
