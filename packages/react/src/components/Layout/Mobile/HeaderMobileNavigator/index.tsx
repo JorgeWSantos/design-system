@@ -6,6 +6,7 @@ import {
   StyledNavigatorMobile,
   StyledWrapperSearch,
   ButtonsWrapper,
+  ContentWrapper,
 } from './styles';
 
 import { HeaderMobileNavigatorProps } from './types';
@@ -43,13 +44,15 @@ export const HeaderMobileNavigator = ({
         </ContainerButtonBack>
       )}
 
-      {headingText && headingText !== '' && !searchIsOpen && (
-        <Heading color={colors.white85} style={{ whiteSpace: 'nowrap' }}>
-          {headingText}
-        </Heading>
-      )}
+      <ContentWrapper>
+        {headingText && headingText !== '' && !searchIsOpen && (
+          <Heading color={colors.white85} style={{ whiteSpace: 'nowrap' }}>
+            {headingText}
+          </Heading>
+        )}
 
-      {!searchIsOpen && children}
+        {!searchIsOpen && children}
+      </ContentWrapper>
 
       {hasSearch && (
         <StyledWrapperSearch $searchIsOpen={searchIsOpen}>
@@ -88,7 +91,7 @@ export const HeaderMobileNavigator = ({
         </StyledWrapperSearch>
       )}
 
-      {buttons && (
+      {buttons && !searchIsOpen && (
         <ButtonsWrapper>
           {buttons.map((button, index) => (
             <HeaderMobileButton
@@ -102,6 +105,7 @@ export const HeaderMobileNavigator = ({
           ))}
         </ButtonsWrapper>
       )}
+
       {}
     </StyledNavigatorMobile>
   );
