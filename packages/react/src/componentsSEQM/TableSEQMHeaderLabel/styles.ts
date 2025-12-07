@@ -16,6 +16,7 @@ export const TableScroll = styled.div`
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   min-width: 100%;
+  min-height: fit-content;
 
   @media (max-width: ${breakpointsPx.lg}) {
     display: flex;
