@@ -27,6 +27,8 @@ export interface TableColumnSEQM {
   align?: 'left' | 'center' | 'right';
   // render?: (row: T) => ReactNode;
   minWidth?: CSSProperties['minWidth'];
+  // usado para definir a largura máxima na impressão
+  maxWidthToPrint?: CSSProperties['maxWidth'];
   textBold?: boolean;
   /** Se true, permite ordenação nesta coluna */
   sortable?: boolean;
