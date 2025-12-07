@@ -1,4 +1,4 @@
-import { ComponentProps } from 'react';
+import React, { ComponentProps } from 'react';
 import {
   MedalImg,
   OwnerTableDataContainer,
@@ -12,6 +12,7 @@ export interface OwnerTableDataContainerTypeProps
   value: string;
   isHallOfFameOwner: string | null;
   bolder?: boolean;
+  textStyles?: React.CSSProperties;
 }
 
 const OwnerTableData = ({
@@ -19,6 +20,7 @@ const OwnerTableData = ({
   isHallOfFameOwner,
   bolder = false,
   onClick,
+  textStyles,
   ...rest
 }: OwnerTableDataContainerTypeProps) => {
   const cdn = 'https://i.imgur.com';
@@ -34,6 +36,7 @@ const OwnerTableData = ({
       <StyledTextHallOfFameOwner
         $bolder={bolder}
         $isHallOfFameOwner={!!isHallOfFameOwner}
+        style={textStyles}
       >
         <span className="owner-name">
           {value}
