@@ -110,6 +110,8 @@ const ElementList = ({
     }
   }, [type, filterToShowResults, filterToShowOrderEntry]);
 
+  console.log('nid_evento', nid_evento);
+
   return (
     <ContainerElement>
       <DivTopTexts>
