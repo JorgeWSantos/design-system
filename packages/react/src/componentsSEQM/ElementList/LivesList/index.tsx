@@ -33,7 +33,7 @@ const LivesList = ({
         let url = `${initialUrl}${nid_agrupa_evento}/prova/${
           event.nid_prova_evento
         }/classificatoria/${event.nid_prova_evento_classificatoria}/oficial/${
-          !is_official ? '1' : '0'
+          is_official ? '1' : '0'
         }`;
 
         if (token !== '') {
