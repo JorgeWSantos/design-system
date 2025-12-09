@@ -48,6 +48,15 @@ export const StyledLabel = styled(Text).attrs({
     css`
       color: ${colors.white50};
     `}
+
+  ${({ $variant }) =>
+    $variant === 'dark-with-label-white' &&
+    css`
+      color: ${colors.white50};
+      &::placeholder {
+        color: ${colors.white75};
+      }
+    `}
 `;
 
 export const StyledDropdown = styled.div<{
@@ -124,7 +133,14 @@ export const StyledDropdown = styled.div<{
       background-color: ${colors.emeraldGreen50};
     `}
 
-
+    ${({ $variant }) =>
+    $variant === 'dark-with-label-white' &&
+    css`
+      color: ${colors.white75};
+      border-radius: ${radii.xs};
+      border: ${radii.px} solid ${colors.white25};
+      background-color: ${colors.emeraldGreen50};
+    `}
 
   @media (max-width: ${breakpointsPx.lg}) {
     ${({ $variant }) =>

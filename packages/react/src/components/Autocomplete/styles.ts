@@ -1,14 +1,20 @@
 import styled, { css } from 'styled-components';
 import { colors, fonts, fontSizes, fontWeights, radii, space } from '@abqm-ds/tokens';
 
-export type variantsTextInputTypes = 'primary' | 'secondary' | 'tertiary';
+export type variantsTextInputTypes =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'dark-with-label-white';
 
 const autocompleteSizeVariants = {
   sm: `${space[2]} ${space[2]}`,
   md: `${space[3]} ${space[3]}`,
 };
 
-export const TextInputWithLabelContainer = styled.div`
+export const TextInputWithLabelContainer = styled.div<{
+  $variant?: variantsTextInputTypes;
+}>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -18,6 +24,13 @@ export const TextInputWithLabelContainer = styled.div`
 
   p {
     padding: 0 ${space[2]};
+    color: ${colors.emeraldGreen50};
+
+    ${({ $variant }) =>
+      $variant === 'dark-with-label-white' &&
+      css`
+        color: ${colors.white50};
+      `}
   }
 `;
 
@@ -67,6 +80,25 @@ export const TextInputContainer = styled.div<StyledTextInputContainerProps>`
     css`
       padding: ${autocompleteSizeVariants[$size]};
     `}
+
+  ${({ $variant }) =>
+    $variant === 'dark-with-label-white' &&
+    css`
+      color: ${colors.white75};
+      border-radius: ${radii.xs};
+      border: ${radii.px} solid ${colors.white25};
+      background-color: ${colors.emeraldGreen50};
+
+      &:has(input:focus) {
+        border-color: ${colors.white50};
+
+        svg {
+          path {
+            fill: ${colors.white50};
+          }
+        }
+      }
+    `}
 `;
 
 interface StyledInputProps {
@@ -112,6 +144,16 @@ export const Input = styled.input<StyledInputProps>`
 
       &::placeholder {
         color: ${colors.emeraldGreen75};
+      }
+    `}
+
+  ${({ $variant }) =>
+    $variant === 'dark-with-label-white' &&
+    css`
+      color: ${colors.white75};
+
+      &::placeholder {
+        color: ${colors.white75};
       }
     `}
 `;

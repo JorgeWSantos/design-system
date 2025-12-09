@@ -8,7 +8,8 @@ export type VariantsTypesDropdown =
   | 'quaternary'
   | 'quinary'
   | 'outline'
-  | 'dark';
+  | 'dark'
+  | 'dark-with-label-white';
 
 export interface DataDropdown {
   value: string;

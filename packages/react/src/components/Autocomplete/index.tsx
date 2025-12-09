@@ -117,14 +117,9 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
     // );
 
     return (
-      <TextInputWithLabelContainer>
+      <TextInputWithLabelContainer $variant={variant}>
         {label && (
-          <Text
-            color={colors.emeraldGreen50}
-            fontWeight="regular"
-            fontSize="ssm"
-            lineHeight="tight"
-          >
+          <Text fontWeight="regular" fontSize="ssm" lineHeight="tight">
             {label}
           </Text>
         )}
