@@ -1,6 +1,6 @@
 {
   "name": "@abqm-ds/react",
-  "version": "4.0.19",
+  "version": "4.0.20",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

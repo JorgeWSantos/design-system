@@ -5,7 +5,7 @@
 - **Node.js**: `v22.14.0`
 - **NPM**: `v10.9.2`
 
-### ▶️ Instalação
+### ▶️ Instalação.
 
 Na raiz do projeto, execute:
 
