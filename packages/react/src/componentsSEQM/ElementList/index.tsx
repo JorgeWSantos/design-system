@@ -1,5 +1,6 @@
 import {
   ContainerElement,
+  ContainerOrderResult,
   DivTopTexts,
   HeadingContainer,
   HeadingModal,
@@ -12,17 +13,18 @@ import {
 import { LivesList } from './LivesList';
 import { OrderEntryResults } from './OrderEntryResults';
 import { useCallback, useEffect, useState } from 'react';
-import { ListaAoVivo, ProvasEvento } from './types';
+import { ListaAoVivo, ListaEvento } from './types';
+import { Text } from '@components/Text';
+import { colors } from '@abqm-ds/tokens';
 
 interface ElementListProps {
   lista_prova_ao_vivo?: ListaAoVivo[];
-  provas_lista_evento: ProvasEvento[];
+  provas_lista_evento: ListaEvento[];
   name_event: string;
   local_event: string;
   state_event: string;
   city_event: string;
   nid_agrupa_evento: number;
-  nid_evento: number;
   is_official?: boolean;
   type?: 'order_entry' | 'results' | 'lives' | '';
   token: string;
@@ -39,7 +41,6 @@ const ElementList = ({
   lista_prova_ao_vivo,
   provas_lista_evento,
   nid_agrupa_evento,
-  nid_evento,
   is_official = false,
   type = '',
   token,
@@ -47,8 +48,7 @@ const ElementList = ({
   URL_RESULTADOS,
   URL_ORDEM_DE_ENTRADA,
 }: ElementListProps) => {
-  const [nidProveOpened, setNidProveOpened] = useState<number | null>(null);
-  const [listEventToShow, setListEventToShow] = useState<ProvasEvento[]>([]);
+  const [listEventToShow, setListEventToShow] = useState<ListaEvento[]>([]);
 
   const filterToShowResults = useCallback(() => {
     const finished = [
@@ -60,22 +60,29 @@ const ElementList = ({
     ];
 
     // remove modalities that are not finished
-    const provesToShow = provas_lista_evento.filter((prove) => {
-      prove.modalidades = prove.modalidades.filter((modality) =>
-        finished.includes(modality.cds_status_prova_evento)
-      );
-      return prove;
+    const eventsToShow = provas_lista_evento.map((event) => {
+      return {
+        ...event,
+        provas: event.provas.map((prove) => {
+          return {
+            ...prove,
+            modalidades: prove.modalidades.filter((modality) =>
+              finished.includes(modality.cds_status_prova_evento)
+            ),
+          };
+        }),
+      };
     });
 
-    const provesToShowFiltered = provesToShow.filter(
-      (prove) => prove.modalidades.length > 0
+    const eventsToShowFiltered = eventsToShow.filter((event) =>
+      event.provas.some((prove) => prove.modalidades.length > 0)
     );
 
-    setListEventToShow(provesToShowFiltered);
+    setListEventToShow(eventsToShowFiltered);
   }, [provas_lista_evento]);
 
   const filterToShowOrderEntry = useCallback(() => {
-    const finished = [
+    const finishedOrderEntry = [
       'Finalizada',
       'Iniciada',
       'Pista Liberada',
@@ -87,18 +94,21 @@ const ElementList = ({
     ];
 
     // remove modalities that are not finished
-    const provesToShow = provas_lista_evento.filter((prove) => {
-      prove.modalidades = prove.modalidades.filter(
-        (modality) => !finished.includes(modality.cds_status_prova_evento)
-      );
-      return prove;
+    const eventsToShow = provas_lista_evento.map((event) => {
+      return {
+        ...event,
+        provas: event.provas.map((prove) => {
+          return {
+            ...prove,
+            modalidades: prove.modalidades.filter(
+              (modality) => !finishedOrderEntry.includes(modality.cds_status_prova_evento)
+            ),
+          };
+        }),
+      };
     });
 
-    const provesToShowFiltered = provesToShow.filter(
-      (prove) => prove.modalidades.length > 0
-    );
-
-    setListEventToShow(provesToShowFiltered);
+    setListEventToShow(eventsToShow);
   }, [provas_lista_evento]);
 
   useEffect(() => {
@@ -109,8 +119,6 @@ const ElementList = ({
       filterToShowOrderEntry();
     }
   }, [type, filterToShowResults, filterToShowOrderEntry]);
-
-  console.log('nid_evento', nid_evento);
 
   return (
     <ContainerElement>
@@ -155,19 +163,31 @@ const ElementList = ({
         />
       ))}
 
-      {listEventToShow.map((prove, idx) => (
-        <OrderEntryResults
-          key={idx}
-          prove={prove}
-          idx={idx}
-          setNidProveOpened={setNidProveOpened}
-          nidProveOpened={nidProveOpened}
-          nidEvent={nid_evento}
-          type={type === 'lives' ? '' : type}
-          token={token}
-          URL_RESULTADOS={URL_RESULTADOS}
-          URL_ORDEM_DE_ENTRADA={URL_ORDEM_DE_ENTRADA}
-        />
+      {listEventToShow.map((event, idx) => (
+        <ContainerOrderResult key={idx}>
+          {listEventToShow.length > 1 && (
+            <Text
+              fontWeight="semiBold"
+              color={colors.emeraldGreen75}
+              fontFamily="secondary"
+            >
+              {event.cds_evento}
+            </Text>
+          )}
+
+          {event.provas.map((prove) => (
+            <OrderEntryResults
+              key={idx}
+              prove={prove}
+              idx={idx}
+              nidEvent={event.nid_evento}
+              type={type === 'lives' ? '' : type}
+              token={token}
+              URL_RESULTADOS={URL_RESULTADOS}
+              URL_ORDEM_DE_ENTRADA={URL_ORDEM_DE_ENTRADA}
+            />
+          ))}
+        </ContainerOrderResult>
       ))}
     </ContainerElement>
   );

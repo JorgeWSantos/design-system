@@ -15,8 +15,6 @@ export const DivModality = styled.div`
 
   border-bottom: 0.5px solid var(--Preto-15, rgba(0, 39, 16, 0.15));
 
-  cursor: pointer;
-
   button {
     width: 3rem;
     height: 3rem;
@@ -51,6 +49,9 @@ export const ContainerTopProves = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 `;
 
 export const DivModalityTexts = styled.div`
@@ -67,6 +68,8 @@ export const ContainerProves = styled.div`
   align-items: flex-start;
   gap: 0.5rem;
   align-self: stretch;
+
+  cursor: pointer;
 `;
 
 export const DivProve = styled.div`

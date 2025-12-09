@@ -27,8 +27,7 @@ export interface ProvasEvento {
 }
 
 export interface ListaEvento {
-  nid_evento: number;
   cds_evento: string;
-  modalidades: [];
+  nid_evento: number;
   provas: ProvasEvento[];
 }

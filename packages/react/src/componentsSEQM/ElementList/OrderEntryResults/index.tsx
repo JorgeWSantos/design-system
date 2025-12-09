@@ -18,8 +18,6 @@ import { RoundedModalityButton } from '@componentsSEQM/RoundedModalityButton';
 const OrderEntryResults = ({
   prove,
   idx,
-  setNidProveOpened,
-  nidProveOpened,
   nidEvent,
   type,
   token,
@@ -28,8 +26,6 @@ const OrderEntryResults = ({
 }: {
   prove: ProvasEvento;
   idx: number;
-  setNidProveOpened: React.Dispatch<React.SetStateAction<number | null>>;
-  nidProveOpened: number | null;
   nidEvent: number;
   type: 'order_entry' | 'results' | '';
   token: string;
@@ -37,6 +33,8 @@ const OrderEntryResults = ({
   URL_ORDEM_DE_ENTRADA: string;
 }) => {
   const Icon = getModalityIcon(prove.nid_prova);
+
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const addTokenIfExists = useCallback(
     ({ url }: { url: string }) => {
@@ -74,7 +72,7 @@ const OrderEntryResults = ({
       <ContainerTopProves
         className="top-proves"
         onClick={() => {
-          setNidProveOpened(prove.nid_prova === nidProveOpened ? null : prove.nid_prova);
+          setIsOpen(!isOpen);
         }}
       >
         <RoundedModalityButton
@@ -87,7 +85,7 @@ const OrderEntryResults = ({
         </DivModalityTexts>
       </ContainerTopProves>
 
-      {nidProveOpened === prove.nid_prova && prove.modalidades.length > 0 && (
+      {isOpen && (
         <ContainerProves>
           {type === 'results' && (
             <DivProve
@@ -104,11 +102,11 @@ const OrderEntryResults = ({
           {prove.modalidades.map((modality, mIdx) => (
             <DivProve
               key={mIdx}
-              onClick={
-                type === 'results'
-                  ? () => redirectResults({ modality })
-                  : () => redirectOrderEntry({ modality })
-              }
+              onClick={() => {
+                if (modality.nnr_competidores === 0) return;
+                if (type === 'results') redirectResults({ modality });
+                redirectOrderEntry({ modality });
+              }}
             >
               <WrapperTextIcon>
                 <CheckAllIcon width={12} />

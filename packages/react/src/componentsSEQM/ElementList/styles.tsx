@@ -68,3 +68,12 @@ export const MessageNoProves = styled(Text).attrs({
   line-height: 1.125rem;
   text-align: center;
 `;
+
+export const ContainerOrderResult = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+`;

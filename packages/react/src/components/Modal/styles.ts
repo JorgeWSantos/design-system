@@ -76,7 +76,7 @@ export const ModalContent = styled.div<{
   display: flex;
   flex-direction: column;
   background: ${colors.white};
-  padding: ${space[6]} ${space[8]} ${space[16]} ${space[8]};
+  padding: ${space[6]} ${space[8]} 0 ${space[8]};
   border-radius: ${radii.md};
 
   position: relative;
@@ -108,7 +108,7 @@ export const ModalContent = styled.div<{
   ${({ $positionHorizontal }) =>
     $positionHorizontal === 'left' &&
     css`
-      padding: ${space[6]} ${space[8]} ${space[4]} ${space[4]};
+      padding: ${space[6]} ${space[8]} 0 ${space[4]};
 
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
@@ -117,7 +117,7 @@ export const ModalContent = styled.div<{
   ${({ $positionHorizontal }) =>
     $positionHorizontal === 'right' &&
     css`
-      padding: ${space[6]} ${space[4]} ${space[4]} ${space[8]};
+      padding: ${space[6]} ${space[4]} 0 ${space[8]};
 
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
