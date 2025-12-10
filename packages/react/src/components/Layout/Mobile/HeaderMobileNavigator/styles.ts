@@ -38,6 +38,7 @@ export const StyledWrapperSearch = styled.div<{ $searchIsOpen?: boolean }>`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-left: auto;
 
   ${({ $searchIsOpen }) =>
     $searchIsOpen
@@ -67,7 +68,6 @@ export const ButtonSearch = styled.button`
 export const ButtonsWrapper = styled.div`
   display: flex;
   gap: ${space[2]};
-  margin-left: auto;
 `;
 
 export const ContentWrapper = styled.div`
