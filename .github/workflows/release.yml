@@ -11,6 +11,7 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+
     steps:
       # Manual Checkout
       - name: 'Manual Checkout'
@@ -23,9 +24,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
+      # Autenticação obrigatória do NPM (agora necessária após remoção dos classic tokens)
+      - name: Configure npm authentication
+        run: npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # (Opcional) Limpa + instala para evitar bugs no Rollup
       - name: Clean install to fix native Rollup bug
         run: |
           rm -rf node_modules package-lock.json
