@@ -47,8 +47,8 @@ const OrderEntryResults = ({
   );
 
   const redirectOrderEntry = ({ modality }: { modality: Modalidades }) => {
-    const initialUrl = URL_ORDEM_DE_ENTRADA + '/ordem-entrada/';
-    const url = `${initialUrl}${modality.nid_prova_evento_classificatoria}/prova/${modality.nid_prova_evento}`;
+    const initialUrl = URL_ORDEM_DE_ENTRADA + '/ordem-entrada';
+    const url = `${initialUrl}/evento/${nidEvent}/prova-evento/${modality.nid_prova_evento}`;
     const urlWithToken = addTokenIfExists({ url });
     window.open(urlWithToken, '_self');
   };
