@@ -2,7 +2,7 @@ import { breakpointsPx, space } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
 
 export const StyledGlobalContainer = styled.div<{ $hasFooterButtons?: boolean }>`
-  height: 100%;
+  min-height: 100dvh;
   /* width: 100%; */
   display: grid;
   grid-template-rows: 1fr auto;
