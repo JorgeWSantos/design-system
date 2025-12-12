@@ -50,6 +50,7 @@ export const ContentDektop = ({
       [1000, 0.92 + sumByFooterType()],
       [900, 0.9 + sumByFooterType()],
       [800, 0.89 + sumByFooterType()],
+      [750, 0.89 + sumByFooterType()],
       [700, 0.88 + sumByFooterType()],
       [600, 0.87 + sumByFooterType()],
     ].find(([limit]) => window.innerHeight >= limit)?.[1] ?? 0.84;
