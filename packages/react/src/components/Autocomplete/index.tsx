@@ -101,6 +101,8 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
       switch (variant) {
         case 'primary':
           return colors.emeraldGreen75;
+        case 'dark-with-label-white':
+          return colors.white85;
         // case 'secondary':
         //   return colors.neutralWhite;
         // case 'tertiary':
