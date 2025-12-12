@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.23
+
+### Patch Changes
+
+- feat: 🎸 Corrigirá problema de scroll no footer mobile
+
 ## 4.0.22
 
 ### Patch Changes

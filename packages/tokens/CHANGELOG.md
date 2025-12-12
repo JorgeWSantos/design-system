@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 4.0.20
+
+### Patch Changes
+
+- feat: 🎸 Corrigirá problema de scroll no footer mobile
+
 ## 4.0.19
 
 ### Patch Changes
