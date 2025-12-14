@@ -104,7 +104,10 @@ const OrderEntryResults = ({
               key={mIdx}
               onClick={() => {
                 if (modality.nnr_competidores === 0) return;
-                if (type === 'results') redirectResults({ modality });
+                if (type === 'results') {
+                  redirectResults({ modality });
+                  return;
+                }
                 redirectOrderEntry({ modality });
               }}
             >
