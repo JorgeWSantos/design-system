@@ -54,7 +54,7 @@ const OrderEntryResults = ({
   };
 
   const redirectResults = ({ modality }: { modality: Modalidades }) => {
-    const initialUrl = URL_RESULTADOS + '/modalidade/' + prove.nid_prova;
+    const initialUrl = URL_RESULTADOS;
     const url = `${initialUrl}/evento/${nidEvent}/prova-evento/${modality.nid_prova_evento}/classificatoria/${modality.nid_prova_evento_classificatoria}`;
     const urlWithToken = addTokenIfExists({ url });
     window.open(urlWithToken, '_self');
