@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.26
+
+### Patch Changes
+
+- fix: 🐛 Corrigirá redirect do ElementList
+
 ## 4.0.25
 
 ### Patch Changes
