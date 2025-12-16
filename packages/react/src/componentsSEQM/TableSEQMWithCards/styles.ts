@@ -48,6 +48,10 @@ export const Container = styled.div`
 
   border-radius: 0.375rem;
   background: ${colors.emeraldGreen25};
+
+  @media (max-width: ${breakpointsPx.lg}) {
+    padding: 1.5rem;
+  }
 `;
 
 export const ContainerCards = styled.div`

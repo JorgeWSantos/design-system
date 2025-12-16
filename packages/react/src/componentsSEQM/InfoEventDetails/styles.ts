@@ -19,7 +19,7 @@ export const InfoEvent = styled.div`
   }
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.div<{ $light?: boolean }>`
   display: flex;
   justify-content: center;
   /* align-items: center; */
@@ -39,6 +39,13 @@ export const ImageContainer = styled.div`
   @media (max-width: ${breakpointsPx.lg}) {
     border: ${radii.px} solid ${colors.emeraldGreen25};
     background-color: transparent;
+
+    ${({ $light }) =>
+      $light &&
+      css`
+        border: none;
+        background-color: transparent;
+      `}
   }
 `;
 

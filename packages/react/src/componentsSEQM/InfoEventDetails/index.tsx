@@ -62,7 +62,7 @@ const InfoEventDetails = ({ data, light, ...rest }: InfoDetailsProps) => {
 
   return (
     <InfoEvent {...rest}>
-      <ImageContainer>
+      <ImageContainer $light={light}>
         {data?.logotipo && !imgError ? (
           <img
             src={data.logotipo}
