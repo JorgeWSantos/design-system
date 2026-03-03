@@ -12,7 +12,6 @@ export const InfoEvent = styled.div`
   width: 100%;
   display: flex;
   gap: 1.125rem;
-  min-height: 3.75rem;
 
   @media (max-width: ${breakpointsPx.md}) {
     gap: 0.5rem;
@@ -49,7 +48,7 @@ export const ImageContainer = styled.div<{ $light?: boolean }>`
   }
 `;
 
-export const InfoEventDetailed = styled.div<{ $wrapped: boolean }>`
+export const InfoEventDetailed = styled.div<{ $wrapped?: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,7 +65,7 @@ export const InfoEventDetailed = styled.div<{ $wrapped: boolean }>`
   }
 `;
 
-export const Information = styled.div<{ $wrapped: boolean; $light?: boolean }>`
+export const Information = styled.div<{ $wrapped?: boolean; $light?: boolean }>`
   display: flex;
   flex-direction: row;
   gap: 0.125rem;
