@@ -61,4 +61,6 @@ declare module '@abqm-ds/icons' {
   export const LogoAbqmBorderedWhiteIcon: FC<SVGProps<SVGSVGElement>>;
   export const CheckAllIcon: FC<SVGProps<SVGSVGElement>>;
   export const TrophyFillIcon: FC<SVGProps<SVGSVGElement>>;
+  export const ArrowRightSquareIcon: FC<SVGProps<SVGSVGElement>>;
+  export const ArrowLeftSquareIcon: FC<SVGProps<SVGSVGElement>>;
 }

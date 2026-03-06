@@ -1,5 +1,7 @@
 export { default as AppleIcon } from './AppleIcon';
 export { default as ArrowDownShortIcon } from './ArrowDownShortIcon';
+export { default as ArrowLeftSquareIcon } from './ArrowLeftSquareIcon';
+export { default as ArrowRightSquareIcon } from './ArrowRightSquareIcon';
 export { default as AwardFillIcon } from './AwardFillIcon';
 export { default as BarChartIcon } from './BarChartIcon';
 export { default as BarChartLineIcon } from './BarChartLineIcon';

@@ -55,6 +55,7 @@ export * from './components/Layout/Mobile/FooterWithButtons';
 // Desktop Layout Components
 export * from './components/Layout/Desktop/ContentDesktop';
 export * from './components/Layout/Desktop/SideBarDesktop';
+export * from './components/Layout/Desktop/SideBarDesktopCompact';
 export * from './components/Layout/Desktop/ContainerDesktop';
 export * from './components/Layout/Desktop/Header';
 export * from './components/Layout/Desktop/SideMenu';

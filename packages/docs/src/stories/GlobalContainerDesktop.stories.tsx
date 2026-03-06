@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import {
   ContainerDesktop,
@@ -72,4 +73,28 @@ export const Secondary: StoryObj<typeof GlobalContainer> = {
       </ContainerDesktop>
     </GlobalContainer>
   ),
+};
+
+export const CollapsedSidebar: StoryObj<typeof GlobalContainer> = {
+  render: () => {
+    const [isCollapsed, setIsCollapsed] = useState(true);
+
+    return (
+      <GlobalContainer>
+        <ContainerDesktop isSidebarCollapsed={isCollapsed}>
+          <SideBarDesktop
+            token=""
+            user={user}
+            menu={menu}
+            isCollapsed={isCollapsed}
+            toggleMenu={() => setIsCollapsed((previous) => !previous)}
+          />
+
+          <ContentDektop header={<Header text={'title'} />}>
+            <Text>Conteúdo principal do ContainerDesktop com menu recolhido.</Text>
+          </ContentDektop>
+        </ContainerDesktop>
+      </GlobalContainer>
+    );
+  },
 };
