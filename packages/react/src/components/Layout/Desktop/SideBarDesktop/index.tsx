@@ -35,22 +35,34 @@ export const SideBarDesktop = ({
   collapseButtonLabel = 'recolher menu',
   expandButtonLabel = 'menu',
 }: SideBarDesktopProps) => {
+  const isAuthenticated = Boolean(user?.id_pessoa);
+
   const firstName = user?.nome_pessoa?.trim().split(/\s+/)[0];
-  const compactUserName = firstName
-    ? `${firstName.charAt(0).toUpperCase()}${firstName.slice(1).toLowerCase()}`
-    : 'Nome do usuário';
+  const compactUserName = isAuthenticated
+    ? firstName
+      ? `${firstName.charAt(0).toUpperCase()}${firstName.slice(1).toLowerCase()}`
+      : user?.nome_pessoa || ''
+    : 'Entrar';
 
   const [nameToShow, setNameToShow] = useState(compactUserName);
 
   useEffect(() => {
+    let timeoutId: ReturnType<typeof globalThis.setTimeout> | undefined;
+
     if (isCollapsed) {
       setNameToShow(compactUserName);
     } else {
-      setTimeout(() => {
-        setNameToShow(user?.nome_pessoa || 'Nome do usuário');
+      timeoutId = globalThis.setTimeout(() => {
+        setNameToShow(isAuthenticated ? user?.nome_pessoa || '' : '');
       }, 300);
     }
-  }, [isCollapsed, compactUserName, user]);
+
+    return () => {
+      if (timeoutId) {
+        globalThis.clearTimeout(timeoutId);
+      }
+    };
+  }, [isCollapsed, compactUserName, isAuthenticated, user]);
 
   if (isCollapsed) {
     return (
@@ -60,6 +72,7 @@ export const SideBarDesktop = ({
           compactName={nameToShow}
           toggleMenu={toggleMenu}
           expandLabel={expandButtonLabel}
+          onLogin={isAuthenticated ? undefined : onLogin}
         />
       </StyledSideBarDesktop>
     );
@@ -70,16 +83,12 @@ export const SideBarDesktop = ({
       <TopSideMenu
         userDropdown={{
           userName: nameToShow,
-          srcImage: user?.foto || '',
+          srcImage: isAuthenticated ? user?.foto || '' : '',
           onLogin: onLogin,
           onLogout: onLogout,
         }}
       />
-      <SideMenu
-        data={menu}
-        userIsAuthenticated={!!(user?.id_pessoa || false)}
-        token={token}
-      />
+      <SideMenu data={menu} userIsAuthenticated={isAuthenticated} token={token} />
       <CollapseMenuButton type="button" onClick={toggleMenu}>
         <CollapseMenuButtonIcon />
         <CollapseMenuButtonText>{collapseButtonLabel}</CollapseMenuButtonText>

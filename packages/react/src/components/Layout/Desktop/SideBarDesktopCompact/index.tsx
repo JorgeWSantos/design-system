@@ -19,6 +19,7 @@ export interface SideBarDesktopCompactProps
   toggleMenu?: () => void;
   expandLabel?: string;
   compactName?: string;
+  onLogin?: () => void;
 }
 
 export const SideBarDesktopCompact = ({
@@ -26,6 +27,7 @@ export const SideBarDesktopCompact = ({
   toggleMenu,
   expandLabel = 'menu',
   compactName,
+  onLogin,
   ...rest
 }: SideBarDesktopCompactProps) => {
   return (
@@ -34,9 +36,9 @@ export const SideBarDesktopCompact = ({
 
       <Divisor />
 
-      <CompactUserWrapper>
+      <CompactUserWrapper onClick={onLogin}>
         <Avatar src={user?.foto || ''} />
-        <CompactUserName>{compactName || 'Nome do usuário'}</CompactUserName>
+        <CompactUserName>{compactName || 'Entrar'}</CompactUserName>
       </CompactUserWrapper>
 
       <Divisor />
