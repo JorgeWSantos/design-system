@@ -8,7 +8,7 @@ export const StyledSideBarDesktop = styled.div<{ $isCollapsed?: boolean }>`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: ${({ $isCollapsed }) => ($isCollapsed ? '4.5rem' : '12.5rem')};
+  width: ${({ $isCollapsed }) => ($isCollapsed ? '3.125rem' : '12.5rem')};
   transition: width 0.2s ease-in-out;
 `;
 
@@ -26,9 +26,9 @@ export const CollapseMenuButton = styled.button`
 `;
 
 export const CollapseMenuButtonIcon = styled(ArrowLeftSquareIcon)`
-  width: 1.25rem;
-  height: 1.25rem;
-  min-width: 1.25rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  min-width: 1.125rem;
 
   padding: 0.063rem;
 

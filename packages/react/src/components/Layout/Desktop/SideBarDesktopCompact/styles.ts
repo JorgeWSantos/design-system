@@ -4,17 +4,26 @@ import { Text } from '@components/Text';
 import styled from 'styled-components';
 
 export const StyledSideBarDesktopCompact = styled.div`
-  width: 4.5rem;
   display: flex;
+  width: 3.125rem;
+  max-width: 3.125rem;
+  padding-top: 0.5rem;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
+`;
+
+export const Divisor = styled.div`
+  width: 3.125rem;
+  height: 0.0625rem;
+  flex-shrink: 0;
+  border-top: 0.5px solid ${colors.white25};
 `;
 
 export const CompactHeader = styled(LogoSeqmMobileIcon)`
   width: 100%;
   height: 2.01306rem;
-  align-self: stretch;
-  margin-bottom: ${space[4]};
+  align-self: flex-start;
 `;
 
 export const CompactUserWrapper = styled.div`
@@ -22,12 +31,6 @@ export const CompactUserWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: ${space[3]};
-  padding-bottom: ${space[4]};
-  border-top: ${radii.px} solid ${colors.white25};
-  border-bottom: ${radii.px} solid ${colors.white25};
-  padding-top: ${space[4]};
-  margin-bottom: ${space[4]};
 `;
 
 export const CompactUserName = styled(Text).attrs({
@@ -38,7 +41,7 @@ export const CompactUserName = styled(Text).attrs({
   color: ${colors.white75};
   width: 100%;
   text-align: center;
-  max-width: 3.25rem;
+  max-width: 3.125rem;
   word-break: break-word;
 `;
 
@@ -55,16 +58,16 @@ export const ExpandMenuButton = styled.button`
 `;
 
 export const ExpandMenuButtonIconBox = styled.span`
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.125rem;
+  height: 1.125rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 `;
 
 export const ExpandMenuButtonIcon = styled(ArrowRightSquareIcon)`
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.125rem;
+  height: 1.125rem;
 
   path {
     fill: ${colors.white75};

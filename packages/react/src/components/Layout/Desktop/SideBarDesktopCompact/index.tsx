@@ -5,6 +5,7 @@ import {
   CompactHeader,
   CompactUserName,
   CompactUserWrapper,
+  Divisor,
   ExpandMenuButton,
   ExpandMenuButtonIcon,
   ExpandMenuButtonIconBox,
@@ -17,29 +18,28 @@ export interface SideBarDesktopCompactProps
   user: LoggedUser | null;
   toggleMenu?: () => void;
   expandLabel?: string;
-  userPlaceholder?: string;
+  compactName?: string;
 }
 
 export const SideBarDesktopCompact = ({
   user,
   toggleMenu,
   expandLabel = 'menu',
-  userPlaceholder = 'Nome do usuário',
+  compactName,
   ...rest
 }: SideBarDesktopCompactProps) => {
-  const firstName = user?.nome_pessoa?.trim().split(/\s+/)[0];
-  const compactUserName = firstName
-    ? `${firstName.charAt(0).toUpperCase()}${firstName.slice(1).toLowerCase()}`
-    : userPlaceholder;
-
   return (
     <StyledSideBarDesktopCompact {...rest}>
       <CompactHeader />
 
+      <Divisor />
+
       <CompactUserWrapper>
         <Avatar src={user?.foto || ''} />
-        <CompactUserName>{compactUserName}</CompactUserName>
+        <CompactUserName>{compactName || 'Nome do usuário'}</CompactUserName>
       </CompactUserWrapper>
+
+      <Divisor />
 
       <ExpandMenuButton
         type="button"

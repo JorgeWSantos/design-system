@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   CollapseMenuButton,
   CollapseMenuButtonIcon,
@@ -21,6 +21,7 @@ interface SideBarDesktopProps {
   toggleMenu?: () => void;
   collapseButtonLabel?: string;
   expandButtonLabel?: string;
+  compactName?: string;
 }
 
 export const SideBarDesktop = ({
@@ -29,30 +30,34 @@ export const SideBarDesktop = ({
   onLogin,
   onLogout,
   token,
-  defaultCollapsed = false,
   isCollapsed,
   toggleMenu,
   collapseButtonLabel = 'recolher menu',
   expandButtonLabel = 'menu',
 }: SideBarDesktopProps) => {
-  // const [internalCollapsed, setInternalCollapsed] = useState(defaultCollapsed);
-  // const collapsed = typeof isCollapsed === 'boolean' ? isCollapsed : internalCollapsed;
+  const firstName = user?.nome_pessoa?.trim().split(/\s+/)[0];
+  const compactUserName = firstName
+    ? `${firstName.charAt(0).toUpperCase()}${firstName.slice(1).toLowerCase()}`
+    : 'Nome do usuário';
 
-  // const handleToggleCollapse = () => {
-  //   const nextValue = !collapsed;
+  const [nameToShow, setNameToShow] = useState(compactUserName);
 
-  //   if (typeof isCollapsed !== 'boolean') {
-  //     setInternalCollapsed(nextValue);
-  //   }
-
-  //   onToggleCollapse?.(nextValue);
-  // };
+  useEffect(() => {
+    if (isCollapsed) {
+      setNameToShow(compactUserName);
+    } else {
+      setTimeout(() => {
+        setNameToShow(user?.nome_pessoa || 'Nome do usuário');
+      }, 300);
+    }
+  }, [isCollapsed, compactUserName, user]);
 
   if (isCollapsed) {
     return (
       <StyledSideBarDesktop $isCollapsed>
         <SideBarDesktopCompact
           user={user}
+          compactName={nameToShow}
           toggleMenu={toggleMenu}
           expandLabel={expandButtonLabel}
         />
@@ -64,7 +69,7 @@ export const SideBarDesktop = ({
     <StyledSideBarDesktop>
       <TopSideMenu
         userDropdown={{
-          userName: user?.nome_pessoa || '',
+          userName: nameToShow,
           srcImage: user?.foto || '',
           onLogin: onLogin,
           onLogout: onLogout,
