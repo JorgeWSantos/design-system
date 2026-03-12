@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.32
+
+### Patch Changes
+
+- release: 🦋 Nova versão
+
 ## 4.0.31
 
 ### Patch Changes
