@@ -32,6 +32,7 @@ export const CompactUserWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: ${space[1]};
+  cursor: pointer;
 `;
 
 export const CompactUserName = styled(Text).attrs({
