@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 4.0.23
+
+### Patch Changes
+
+- release: 🦋 Nova versão
+
 ## 4.0.22
 
 ### Patch Changes
