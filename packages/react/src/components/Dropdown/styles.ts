@@ -168,6 +168,11 @@ export const StyledTextSelect = styled(Text).attrs({
 })<{ $variant?: VariantsTypesDropdown }>`
   color: ${colors.white75};
 
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
   ${({ $variant }) =>
     $variant === 'outline' &&
     css`
