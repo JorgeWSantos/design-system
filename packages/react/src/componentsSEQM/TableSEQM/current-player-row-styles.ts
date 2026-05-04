@@ -1,8 +1,16 @@
-import { colors } from '@abqm-ds/tokens';
+import { colors, fontWeights } from '@abqm-ds/tokens';
 import { css } from 'styled-components';
 
 export const currentPlayerRowStyles = css`
   box-sizing: border-box;
+  background-color: ${colors.yellow100}33 !important;
+  color: ${colors.brown400};
+
+  p,
+  span {
+    color: ${colors.brown400} !important;
+    font-weight: ${fontWeights.semiBold} !important;
+  }
 
   td:first-child {
     position: relative;
@@ -11,10 +19,10 @@ export const currentPlayerRowStyles = css`
       content: '';
       display: block;
       position: absolute;
-      top: 1.75px;
+      top: 0;
       left: 0;
-      width: 1.5px;
-      height: calc(100% - 4px);
+      width: 4px;
+      height: 100%;
       background: ${colors.brown400};
       pointer-events: none;
       z-index: 1;
@@ -29,10 +37,10 @@ export const currentPlayerRowStyles = css`
       content: '';
       display: block;
       position: absolute;
-      top: 1.75px;
+      top: 0;
       right: 0;
-      width: 2px;
-      height: calc(100% - 4px);
+      width: 4px;
+      height: 100%;
       background: ${colors.brown400};
       pointer-events: none;
       z-index: 1;
