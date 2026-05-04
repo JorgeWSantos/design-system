@@ -38,7 +38,7 @@ export * from './components/Table/ElementTableData';
 export * from './components/Table/AnimalTableDataWithouTooltip';
 export * from './components/Table/OwnerTableData';
 export * from './components/Table/CompetitorTableData';
-export * from './components/Table/TableWithLoader';
+export * from './components/TableWithLoader';
 export * from './components/Table/CreatorTableData';
 
 //Layout Components
@@ -83,3 +83,4 @@ export * from './componentsSEQM/TableSEQMHeaderLabel';
 export * from './componentsSEQM/TableSEQMWithCards';
 export * from './componentsSEQM/InfoEventDetails';
 export * from './componentsSEQM/ElementList';
+export * from './componentsSEQM/LogoSEQMWithFallback';

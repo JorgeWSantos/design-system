@@ -18,6 +18,7 @@ interface TableWithLoaderProps extends ComponentProps<typeof DivContainerTableRi
   variant?: TableSEQMVariants;
   autoScroll?: boolean;
   setAutoScroll?: (value: boolean) => void;
+  stylesTable?: React.CSSProperties;
 }
 
 const TableWithLoader: React.FC<TableWithLoaderProps> = ({
@@ -27,6 +28,7 @@ const TableWithLoader: React.FC<TableWithLoaderProps> = ({
   variant = 'light',
   autoScroll = false,
   setAutoScroll = () => {},
+  stylesTable,
   ...rest
   // minWidthTable,
 }) => {
@@ -39,6 +41,7 @@ const TableWithLoader: React.FC<TableWithLoaderProps> = ({
           variant={variant}
           autoScroll={autoScroll}
           setAutoScroll={setAutoScroll}
+          style={stylesTable}
         />
       ) : (
         <>
