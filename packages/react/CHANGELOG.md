@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.34
+
+### Patch Changes
+
+- feat: 🎸 Melhoria no tsconfig e exportações
+
 ## 4.0.33
 
 ### Patch Changes
