@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.35
+
+### Patch Changes
+
+- feat: 🎸 Melhorias de estilização
+
 ## 4.0.34
 
 ### Patch Changes

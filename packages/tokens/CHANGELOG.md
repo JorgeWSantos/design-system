@@ -1,5 +1,11 @@
 # @abqm-ds/tokens
 
+## 4.0.25
+
+### Patch Changes
+
+- feat: 🎸 Melhorias de estilização
+
 ## 4.0.24
 
 ### Patch Changes
