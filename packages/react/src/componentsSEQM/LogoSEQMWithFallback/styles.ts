@@ -19,8 +19,8 @@ export const ImageContainer = styled.div<{ $light?: boolean }>`
   }
 
   @media (max-width: ${breakpointsPx.lg}) {
-    border: ${radii.px} solid ${colors.emeraldGreen25};
-    background-color: transparent;
+    /* border: ${radii.px} solid ${colors.emeraldGreen25};
+    background-color: transparent; */
 
     ${({ $light }) =>
       $light &&
