@@ -21,6 +21,8 @@ export const HeaderNavigatorDesktop = ({
   subtitle,
   children,
   fontFamily = 'default',
+  fontSizeTitle,
+  fontSizeSubtitle,
   ...rest
 }: HeaderNavigatorDesktopProps) => {
   return (
@@ -45,15 +47,25 @@ export const HeaderNavigatorDesktop = ({
         <DivTitles>
           {subtitle ? (
             <>
-              <StyledHeadingHeaderNavigator fontSize="ssm" fontFamily={fontFamily}>
+              <StyledHeadingHeaderNavigator
+                fontSize={fontSizeTitle || 'ssm'}
+                fontFamily={fontFamily}
+              >
                 {title}
               </StyledHeadingHeaderNavigator>
-              <StyledSubTitleHeadingHeaderNavigator fontSize="sm" fontFamily={fontFamily}>
+
+              <StyledSubTitleHeadingHeaderNavigator
+                fontSize={fontSizeSubtitle || 'sm'}
+                fontFamily={fontFamily}
+              >
                 {subtitle}
               </StyledSubTitleHeadingHeaderNavigator>
             </>
           ) : (
-            <StyledHeadingHeaderNavigator fontSize="sm" fontFamily={fontFamily}>
+            <StyledHeadingHeaderNavigator
+              fontSize={fontSizeTitle || 'sm'}
+              fontFamily={fontFamily}
+            >
               {title}
             </StyledHeadingHeaderNavigator>
           )}

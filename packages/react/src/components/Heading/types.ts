@@ -6,7 +6,7 @@ import { fontSizes } from '@abqm-ds/tokens';
 export interface HeadingProps extends ComponentProps<typeof StyledHeading> {
   as?: ElementType;
   children: ReactNode;
-  fontSize?: SizeVariants;
+  fontSize?: FontSizeVariants;
   fontWeight?: FontWeightTypes;
   lineHeight?: LineHeightTypes;
   fontFamily?: FontFamilyTypes;
@@ -26,3 +26,4 @@ export const sizeVariants = {
 };
 
 export type SizeVariants = keyof typeof sizeVariants;
+export type FontSizeVariants = keyof typeof sizeVariants;

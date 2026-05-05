@@ -55,9 +55,16 @@ export const colors = {
   yellow900: '#FF6F00',
 
   // Brown
+  brown50: '#FCF7F2',
+  brown100: '#F7E8DA',
+  brown200: '#EFCFB4',
+  brown300: '#E8B98E',
   brown400: '#E2A56E',
   brown500: '#A65E2E',
+  brown600: '#7B3E1D',
   brown700: '#5A2412',
+  brown800: '#3D180C',
+  brown900: '#260F07',
 
   // Rose
   rose700: '#B81956',
@@ -83,7 +90,9 @@ export const colors = {
   emeraldGreen30: '#0027104d',
   emeraldGreen40: '#00271066',
   emeraldGreen50: '#00100780',
+  emeraldGreen60: '#00100799',
   emeraldGreen75: '#001007BF',
+  emeraldGreen80: '#001007CC',
   emeraldGreen92: '#001007EB',
 
   // Green
@@ -99,13 +108,26 @@ export const colors = {
   greenTransparent30: '#26674247',
 
   // Blue
+  blue50: '#EFF8FF',
+  blue100: '#DBEEFF',
+  blue200: '#BFE2FF',
   blue300: '#58B4FF',
+  blue400: '#3A9DFF',
   blue500: '#2B7FFF',
+  blue600: '#0F6FE5',
   blue700: '#0066B9',
+  blue800: '#00508F',
   blue900: '#003770',
 
   // Orange
+  orange50: '#FFF7ED',
+  orange100: '#FFEDD5',
+  orange200: '#FED7AA',
   orange300: '#FFB347',
+  orange400: '#FFA726',
   orange500: '#FF9800',
+  orange600: '#FB8C00',
   orange700: '#F57C00',
+  orange800: '#E65100',
+  orange900: '#BF360C',
 };

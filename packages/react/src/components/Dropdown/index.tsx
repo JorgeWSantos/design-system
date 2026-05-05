@@ -26,6 +26,7 @@ import { DropdownProps, DataDropdown } from './types';
  * @property {boolean} [openToTop] - Se verdadeiro, o menu de opções abre para cima.
  * @property {ElementType} [as] - Permite trocar o elemento HTML raiz do Dropdown.
  * @property {React.CSSProperties} [stylesContainerOptions] - Estilos CSS adicionais aplicados ao container das opções do Dropdown.
+ * @property {React.CSSProperties} [labelStyle] - Estilos CSS adicionais aplicados à label do Dropdown.
  */
 
 export function Dropdown({
@@ -37,6 +38,7 @@ export function Dropdown({
   maxHeight = 'unset',
   maxWidth = '100%',
   openToTop = false,
+  labelStyle,
   stylesContainerOptions,
   ...rest
 }: DropdownProps) {
@@ -72,7 +74,7 @@ export function Dropdown({
   return (
     <Container $hasLabel={!!label} ref={dropdownRef} $maxWidth={maxWidth}>
       {label && (
-        <StyledLabel color={colors.emeraldGreen50} $variant={variant}>
+        <StyledLabel $variant={variant} style={labelStyle}>
           {label}
         </StyledLabel>
       )}

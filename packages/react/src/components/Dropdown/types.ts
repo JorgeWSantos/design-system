@@ -29,4 +29,5 @@ export interface DropdownProps extends ComponentProps<typeof StyledDropdown> {
   maxWidth?: string;
   openToTop?: boolean;
   stylesContainerOptions?: React.CSSProperties;
+  labelStyle?: React.CSSProperties;
 }
