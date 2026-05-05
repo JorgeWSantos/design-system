@@ -104,8 +104,6 @@ export const TableSEQM = ({
                   addClasses += ' passedplayer-styles';
                 }
 
-                // console.log(row, addClasses);
-
                 return addClasses;
               })()}
             >
@@ -137,6 +135,11 @@ export const TableSEQM = ({
 };
 
 TableSEQM.displayName = 'TableSEQM';
+
+export * from './classified-row-styles';
+export * from './current-player-row-styles';
+export * from './passed-player-row-styles';
+export * from './aqha-row-styles';
 
 export * from './types';
 export * from './ColumnOficial';

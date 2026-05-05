@@ -9,13 +9,17 @@
     "src/setupTests.*"
   ],
   "compilerOptions": {
-    "baseUrl": "src",
     "target": "ESNext",
+    "moduleResolution": "bundler",
     "paths": {
-      "@components/*": ["components/*"],
-      "@componentsSEQM/*": ["componentsSEQM/*"],
-      "@styles/*": ["styles/*"],
-      "@assets/*": ["assets/*"]
+      "@components/*": ["./src/components/*"],
+      "@componentsSEQM/*": ["./src/componentsSEQM/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@assets/*": ["./src/assets/*"],
+      "hooks/*": ["./src/hooks/*"],
+      "types/*": ["./src/types/*"],
+      "utils": ["./src/utils/index"],
+      "utils/*": ["./src/utils/*"]
     },
     "typeRoots": ["./node_modules/@types", "./src/@types"],
     "skipLibCheck": true

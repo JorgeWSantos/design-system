@@ -12,6 +12,11 @@ export const currentPlayerRowStyles = css`
     font-weight: ${fontWeights.semiBold} !important;
   }
 
+  td {
+    border-top: 1px solid ${colors.brown400};
+    border-bottom: 1px solid ${colors.brown400};
+  }
+
   td:first-child {
     position: relative;
 
