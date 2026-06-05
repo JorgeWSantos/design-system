@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.36
+
+### Patch Changes
+
+- feat: 🎸 Melhoria no component elementList
+
 ## 4.0.35
 
 ### Patch Changes
