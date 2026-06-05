@@ -74,9 +74,12 @@ const ElementList = ({
       };
     });
 
-    const eventsToShowFiltered = eventsToShow.filter((event) =>
-      event.provas.some((prove) => prove.modalidades.length > 0)
-    );
+    const eventsToShowFiltered = eventsToShow
+      .map((event) => ({
+        ...event,
+        provas: event.provas.filter((prove) => prove.modalidades.length > 0),
+      }))
+      .filter((event) => event.provas.length > 0);
 
     setListEventToShow(eventsToShowFiltered);
   }, [provas_lista_evento]);
