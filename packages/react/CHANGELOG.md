@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.37
+
+### Patch Changes
+
+- feat: 🎸 Melhorará a estilização do modal para dispositivos pequenos
+
 ## 4.0.36
 
 ### Patch Changes
