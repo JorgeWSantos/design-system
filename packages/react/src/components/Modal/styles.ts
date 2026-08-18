@@ -18,6 +18,7 @@ export const ModalOverlay = styled.div<{
   z-index: 4000;
   width: 100%;
   height: 100%;
+  height: 100dvh;
 
   ${({ $positionVertical }) =>
     $positionVertical === 'top' &&
@@ -76,7 +77,7 @@ export const ModalContent = styled.div<{
   display: flex;
   flex-direction: column;
   background: ${colors.white};
-  padding: ${space[6]} ${space[8]} 0 ${space[8]};
+  padding: ${space[6]} ${space[8]} ${space[4]} ${space[8]};
   border-radius: ${radii.md};
 
   position: relative;
@@ -84,7 +85,12 @@ export const ModalContent = styled.div<{
 
   max-width: 100%;
   min-height: 80vh;
+  min-height: 80dvh;
   gap: 1rem;
+
+  /* O scroll acontece no DivChildren; aqui só garantimos que nada escape das
+     bordas arredondadas. */
+  overflow: hidden;
 
   ${({ $maxHeight }) =>
     $maxHeight &&
@@ -103,12 +109,14 @@ export const ModalContent = styled.div<{
       padding: 0;
       height: 100vh;
       max-height: 100vh;
+      height: 100dvh;
+      max-height: 100dvh;
     `}
 
   ${({ $positionHorizontal }) =>
     $positionHorizontal === 'left' &&
     css`
-      padding: ${space[6]} ${space[8]} 0 ${space[4]};
+      padding: ${space[6]} ${space[8]} ${space[4]} ${space[4]};
 
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
@@ -117,7 +125,7 @@ export const ModalContent = styled.div<{
   ${({ $positionHorizontal }) =>
     $positionHorizontal === 'right' &&
     css`
-      padding: ${space[6]} ${space[4]} 0 ${space[8]};
+      padding: ${space[6]} ${space[4]} ${space[4]} ${space[8]};
 
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
@@ -157,8 +165,39 @@ export const DivButtonCleanFilter = styled.div`
 
 export const DivChildren = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 0.25rem;
+
+  flex: 1 1 auto;
+  min-height: 0;
+
   overflow-y: auto;
-  height: 100%;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-color: auto;
+  scrollbar-width: auto;
+  scrollbar-gutter: stable;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${colors.black10};
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${colors.greenTransparent30};
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: ${colors.greenTransparent30};
+  }
 `;
 
 export const DivTopModal = styled.div<{
@@ -224,10 +263,8 @@ const arrowDownAnim = keyframes`
 
 export const AnimatedArrowRight = styled(ArrowDownShortIcon)`
   position: absolute;
-  top: 90%;
-  right: 0;
+  bottom: 4.5rem;
   left: 45%;
-  transform: translateY(-50%);
   width: 2rem;
   height: 2rem;
   color: ${colors.emeraldGreen75};
@@ -247,8 +284,4 @@ export const DivButton = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-
-  position: absolute;
-  bottom: 20px;
-  left: 0;
 `;
