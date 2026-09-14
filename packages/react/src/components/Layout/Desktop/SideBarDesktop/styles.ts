@@ -14,7 +14,7 @@ export const StyledSideBarDesktop = styled.div<{ $isCollapsed?: boolean }>`
 
 export const CollapseMenuButton = styled.button`
   width: 100%;
-  margin-top: ${space[5]};
+  margin-top: ${space[3]};
   display: flex;
   align-items: center;
   gap: ${space[2]};

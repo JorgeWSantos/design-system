@@ -18,7 +18,7 @@ export const MenuItem = styled.li<{
   /* max-height: 2.125rem; */
   margin-bottom: 0.063rem;
 
-  padding: ${space[3]};
+  padding: ${space[2.5]};
 
   display: flex;
   justify-content: space-between;

@@ -89,6 +89,7 @@ export const SideBarDesktop = ({
         }}
       />
       <SideMenu data={menu} userIsAuthenticated={isAuthenticated} token={token} />
+
       <CollapseMenuButton type="button" onClick={toggleMenu}>
         <CollapseMenuButtonIcon />
         <CollapseMenuButtonText>{collapseButtonLabel}</CollapseMenuButtonText>
