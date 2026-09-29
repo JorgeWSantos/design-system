@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 4.0.24
+
+### Patch Changes
+
+- feat: 🎸 Novos ícones
+
 ## 4.0.23
 
 ### Patch Changes
