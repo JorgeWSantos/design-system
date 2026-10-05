@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.41
+
+### Patch Changes
+
+- 09dc679: feat: 🎸 Corrigirá a abertura do ícone do whatsapp na visualização mobile landascape
+
 ## 4.0.40
 
 ### Patch Changes
