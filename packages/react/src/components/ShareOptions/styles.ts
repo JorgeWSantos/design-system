@@ -1,9 +1,36 @@
 import { breakpointsPx, radii, space } from '@abqm-ds/tokens';
 import styled, { css } from 'styled-components';
-import { ShareOptionsVariantArrowTypes } from '.';
+import { ShareOptionsAnchorTypes, ShareOptionsVariantArrowTypes } from '.';
+
+/**
+ * Ancora o popover logo abaixo do botão que o abriu, em vez de fixá-lo acima do
+ * rodapé. Usado quando o botão de compartilhar vive no HeaderMobileNavigator.
+ */
+const anchoredToButton = css`
+  /* O "&&" dobra a especificidade: o stylis emite as declarações soltas do
+     componente antes dos blocos @media, então sem isso o bloco mobile venceria. */
+  && {
+    top: calc(100% + 0.5rem);
+    right: 0;
+    bottom: unset;
+    left: unset;
+    transform: none;
+  }
+
+  &&::after {
+    top: -0.5rem;
+    right: 1rem;
+    left: unset;
+    transform: translateX(50%);
+    border-width: 0 ${radii.md} ${radii.md} ${radii.md};
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+  }
+`;
 
 export const ShareOptionsContainer = styled.div<{
   $variantArrow: ShareOptionsVariantArrowTypes;
+  $anchor: ShareOptionsAnchorTypes;
 }>`
   position: absolute;
   right: 5rem;
@@ -68,6 +95,9 @@ export const ShareOptionsContainer = styled.div<{
       display: block;
     }
   }
+
+  /* Declarado por último para vencer o bloco mobile acima na cascata. */
+  ${({ $anchor }) => $anchor === 'button' && anchoredToButton}
 `;
 
 export const WrapperWhatsapp = styled.a`

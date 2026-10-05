@@ -1,5 +1,15 @@
 # @abqm-ds/react
 
+## 4.0.40
+
+### Patch Changes
+
+- Adiciona o hook `useOrientation` e permite ancorar o popover de compartilhar no botão do header mobile.
+
+  - `useOrientation` acompanha a rotação da tela e retorna `{ isLandscape, isPortrait }`. Diferente de `useDeviceType` — que só reavalia quando o device type muda de faixa de breakpoint — escuta `change` da media query `(orientation: landscape)`, `resize` e `orientationchange`, porque nenhum dos três é confiável sozinho em todos os browsers.
+  - `HeaderMobileButton` passa a aceitar `showOptionsToShare` e renderizá-lo, como o `FooterButton` já fazia; a prop também foi exposta em `HeaderMobileNavigatorButtonProps`.
+  - `ShareOptions` ganha a prop `anchor`. O padrão `'screen'` preserva o posicionamento atual (canto superior direito no desktop, acima do rodapé no mobile); `'button'` ancora o popover logo abaixo do botão que o abriu, para quando o botão de compartilhar fica no header mobile.
+
 ## 4.0.39
 
 ### Patch Changes

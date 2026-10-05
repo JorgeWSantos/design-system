@@ -71,6 +71,7 @@ export * from './utils';
 
 //Hooks
 export { useDebouncedCallback } from './hooks/useDebounce';
+export { useOrientation } from './hooks/useOrientation';
 export { useSearchParamsMock } from './hooks/useSearchParamsMock';
 
 //Styles

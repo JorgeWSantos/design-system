@@ -99,6 +99,7 @@ export const HeaderMobileNavigator = ({
               onClick={button.onClick}
               key={index}
               isActive={button.isActive}
+              showOptionsToShare={button.showOptionsToShare}
             >
               {button.icon}
             </HeaderMobileButton>

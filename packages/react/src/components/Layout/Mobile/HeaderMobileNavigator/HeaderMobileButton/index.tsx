@@ -8,6 +8,10 @@ export interface HeaderButtonProps extends ComponentProps<typeof StyledHeaderBut
   children: ReactNode; //icon
   disabled?: boolean;
   isActive?: boolean;
+  showOptionsToShare?: {
+    children: ReactNode;
+    show?: boolean;
+  };
 }
 
 export const HeaderMobileButton = ({
@@ -15,6 +19,7 @@ export const HeaderMobileButton = ({
   onClick,
   disabled,
   isActive = false,
+  showOptionsToShare, //ancora o popover de compartilhar no próprio botão
 }: HeaderButtonProps) => {
   return (
     <ContainerHeaderButton $isActive={isActive} style={{ position: 'relative' }}>
@@ -28,6 +33,8 @@ export const HeaderMobileButton = ({
       >
         {children}
       </RoundedButton>
+
+      {showOptionsToShare?.show && showOptionsToShare.children}
     </ContainerHeaderButton>
   );
 };

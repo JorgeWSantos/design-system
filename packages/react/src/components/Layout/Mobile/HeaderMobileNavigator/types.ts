@@ -7,6 +7,10 @@ export interface HeaderMobileNavigatorButtonProps {
   disabled?: boolean;
   onClick?: () => void;
   isActive?: boolean;
+  showOptionsToShare?: {
+    children: ReactNode;
+    show?: boolean;
+  };
 }
 export interface HeaderMobileNavigatorProps
   extends ComponentProps<typeof StyledNavigatorMobile> {
