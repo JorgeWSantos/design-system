@@ -2,8 +2,10 @@ import { CaretLeftFillIcon } from '@abqm-ds/icons';
 import {
   ButtonBack,
   ContainerButtonBack,
+  ContainerImage,
   ContentChildren,
   ContentRight,
+  DivTitleGroup,
   DivTitles,
   StyledHeadingHeaderNavigator,
   StyledNavigatorDesktop,
@@ -19,6 +21,7 @@ export const HeaderNavigatorDesktop = ({
   hasBackButton = false,
   title,
   subtitle,
+  image,
   children,
   fontFamily = 'default',
   fontSizeTitle,
@@ -44,32 +47,36 @@ export const HeaderNavigatorDesktop = ({
       )}
 
       <ContentRight>
-        <DivTitles>
-          {subtitle ? (
-            <>
+        <DivTitleGroup>
+          {image && <ContainerImage>{image}</ContainerImage>}
+
+          <DivTitles>
+            {subtitle ? (
+              <>
+                <StyledHeadingHeaderNavigator
+                  fontSize={fontSizeTitle || 'ssm'}
+                  fontFamily={fontFamily}
+                >
+                  {title}
+                </StyledHeadingHeaderNavigator>
+
+                <StyledSubTitleHeadingHeaderNavigator
+                  fontSize={fontSizeSubtitle || 'sm'}
+                  fontFamily={fontFamily}
+                >
+                  {subtitle}
+                </StyledSubTitleHeadingHeaderNavigator>
+              </>
+            ) : (
               <StyledHeadingHeaderNavigator
-                fontSize={fontSizeTitle || 'ssm'}
+                fontSize={fontSizeTitle || 'sm'}
                 fontFamily={fontFamily}
               >
                 {title}
               </StyledHeadingHeaderNavigator>
-
-              <StyledSubTitleHeadingHeaderNavigator
-                fontSize={fontSizeSubtitle || 'sm'}
-                fontFamily={fontFamily}
-              >
-                {subtitle}
-              </StyledSubTitleHeadingHeaderNavigator>
-            </>
-          ) : (
-            <StyledHeadingHeaderNavigator
-              fontSize={fontSizeTitle || 'sm'}
-              fontFamily={fontFamily}
-            >
-              {title}
-            </StyledHeadingHeaderNavigator>
-          )}
-        </DivTitles>
+            )}
+          </DivTitles>
+        </DivTitleGroup>
 
         {children && <ContentChildren>{children}</ContentChildren>}
       </ContentRight>

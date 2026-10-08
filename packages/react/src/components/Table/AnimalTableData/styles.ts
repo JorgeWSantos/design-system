@@ -20,20 +20,23 @@ export const ContainerImage = styled(ContainerAnimalTableDataType)`
   }
 `;
 
-export const DivImage = styled.div`
+// Tamanho padrão da imagem na tabela; o anel e o louro acompanham quando $size é informado
+const defaultImageSize = '1.188rem';
+
+export const DivImage = styled.div<{ $size?: string }>`
   position: relative;
   display: flex;
   align-items: center;
-  min-width: 1.188rem;
+  min-width: ${({ $size = defaultImageSize }) => $size};
 
   img,
   .image-animal-default {
     transform: scale(${scaleImages});
     position: relative;
     border-radius: 50%;
-    min-width: 1.188rem;
-    max-width: 1.188rem;
-    height: 1.188rem;
+    min-width: ${({ $size = defaultImageSize }) => $size};
+    max-width: ${({ $size = defaultImageSize }) => $size};
+    height: ${({ $size = defaultImageSize }) => $size};
     object-fit: cover;
     border: 1px solid transparent;
     z-index: 1;
@@ -44,12 +47,12 @@ export const DivImage = styled.div`
   }
 `;
 
-export const DivBorder = styled.div<{ $medalColor: string }>`
+export const DivBorder = styled.div<{ $medalColor: string; $size?: string }>`
   position: absolute;
   left: -0.05rem;
   top: -0.05rem;
-  width: 1.3rem;
-  height: 1.3rem;
+  width: ${({ $size }) => ($size ? `calc(${$size} + 0.112rem)` : '1.3rem')};
+  height: ${({ $size }) => ($size ? `calc(${$size} + 0.112rem)` : '1.3rem')};
   border-radius: 50%;
   background-color: transparent;
   border: 2px solid ${({ $medalColor }) => $medalColor};
@@ -61,9 +64,9 @@ export const DivBorder = styled.div<{ $medalColor: string }>`
   }
 `;
 
-export const LaurelImage = styled(LaurelIcon)`
+export const LaurelImage = styled(LaurelIcon)<{ $size?: string }>`
   position: absolute;
-  margin-top: -1rem;
+  margin-top: ${({ $size }) => ($size ? `calc(${$size} * -0.842)` : '-1rem')};
   width: 100%;
   height: 100%;
   z-index: 2;

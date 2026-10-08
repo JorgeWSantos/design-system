@@ -11,6 +11,7 @@ export interface HeaderNavigatorDesktopProps
   hasBackButton?: boolean;
   title: string;
   subtitle?: string;
+  image?: ReactNode;
   fontFamily?: FontFamilyTypes;
   fontSizeTitle?: FontSizeVariants;
   fontSizeSubtitle?: FontSizeTypes;

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { HeaderNavigatorDesktop, TextInput } from '@abqm-ds/react';
+import { Avatar, HeaderNavigatorDesktop, TextInput } from '@abqm-ds/react';
 import { Dropdown } from '@abqm-ds/react';
 import { optionsStates } from './mockedData/dropdownOption';
 import { SearchIcon } from '@abqm-ds/icons';
@@ -28,6 +28,7 @@ import { HeaderNavigatorDesktop } from '@abqm-ds/react';
 - O conteúdo passado em \`children\` é exibido ao lado do botão de voltar.
 - Use a prop \`onGoBack\` para tratar o clique no botão de voltar.
 - Use a prop \`subtitle\` para exibir um subtítulo abaixo do título principal.
+- Use a prop \`image\` para exibir uma imagem à esquerda do título, por exemplo o \`Avatar\` de uma pessoa ou o \`AnimalImageWithTooltip\` de um animal. Aceita qualquer \`ReactNode\`; o tamanho é definido pelo componente passado.
         `,
       },
     },
@@ -52,6 +53,30 @@ export const WithSubtitle: StoryObj = {
     docs: {
       description: {
         story: 'Exemplo do HeaderNavigatorDesktop com subtítulo e um input.',
+      },
+    },
+  },
+};
+
+export const WithImage: StoryObj = {
+  render: () => (
+    <HeaderNavigatorDesktop
+      hasBackButton
+      onGoBack={() => alert('Voltar!')}
+      title="Jorge W Santos"
+      subtitle="Subtítulo do Header"
+      image={<Avatar src="https://github.com/jorgewsantos.png" alt="Jorge W Santos" />}
+    >
+      <TextInput
+        placeholder="Buscar"
+        icon={<SearchIcon fill={colors.white50} width={12} height={12} />}
+      />
+    </HeaderNavigatorDesktop>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Exemplo do HeaderNavigatorDesktop com imagem à esquerda do título.',
       },
     },
   },

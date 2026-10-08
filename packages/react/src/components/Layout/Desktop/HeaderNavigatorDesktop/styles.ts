@@ -49,6 +49,20 @@ export const ContentRight = styled.div`
   gap: ${space[1]};
 `;
 
+export const DivTitleGroup = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${space[2]};
+  padding-left: ${space[2]};
+`;
+
+export const ContainerImage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+`;
+
 export const DivTitles = styled.div`
   display: flex;
   flex-direction: column;
@@ -56,7 +70,6 @@ export const DivTitles = styled.div`
   align-items: flex-start;
   width: auto;
   height: 2rem;
-  padding-left: ${space[2]};
 `;
 
 export const StyledHeadingHeaderNavigator = styled(Heading).withConfig({

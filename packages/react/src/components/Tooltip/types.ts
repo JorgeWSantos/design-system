@@ -1,7 +1,12 @@
 import React, { ComponentProps, ReactNode } from 'react';
 import { TooltipContainer } from './styles';
 
-export type ArrowType = 'topRight' | 'bottomRight' | 'bottomCentralized' | 'bottomLeft';
+export type ArrowType =
+  | 'topRight'
+  | 'topLeft'
+  | 'bottomRight'
+  | 'bottomCentralized'
+  | 'bottomLeft';
 
 export type TooltipPositions = {
   top?: string;

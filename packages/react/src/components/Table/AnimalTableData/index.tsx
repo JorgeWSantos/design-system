@@ -1,11 +1,8 @@
 import {
   ContainerAnimalTableDataType,
   ContainerImage,
-  DivBorder,
-  DivImage,
   DivInfo,
   DivTexts,
-  LaurelImage,
   MedalImg,
   StyledTextHallOfFame,
   StyledTextHallOfFameNameAnimal,
@@ -13,15 +10,9 @@ import {
   // StyledTooltip,
 } from './styles';
 import { colors } from '@abqm-ds/tokens';
-import {
-  ChevronDownIcon,
-  CrossFullfiledIcon,
-  DefaultHorseRoundedIconIMG,
-  DefaultHorseSquadIconIMG,
-} from '@abqm-ds/icons';
-import TooltipContentComponent from './TooltipContentComponent';
+import { ChevronDownIcon, CrossFullfiledIcon } from '@abqm-ds/icons';
+import { AnimalImageWithTooltip } from './AnimalImageWithTooltip';
 
-import { Tooltip } from '@components/Tooltip';
 import React, { ComponentProps } from 'react';
 
 export interface AnimalTableDataProps
@@ -65,35 +56,8 @@ const AnimalTableData = ({
   token,
   ...rest
 }: AnimalTableDataProps) => {
-  const medalha: Record<string, string> = {
-    '': 'transparent',
-    'blue-medal': colors.blue500,
-    'black-medal': colors.black,
-    'brown-medal': colors.brown700,
-    'gray-medal': colors.gray400,
-    'green-medal': colors.green300,
-    'red-medal': colors.red500,
-    'yellow-medal': colors.yellow200,
-  };
-
   const cdn = 'https://i.imgur.com';
   const urlMedal = `${cdn}/6ymvs72.png`;
-
-  const ImageSrc =
-    imgAnimal !== '' && imgAnimal !== null ? imgAnimal : DefaultHorseRoundedIconIMG;
-  const imageSrcTooltip =
-    imgAnimal !== '' && imgAnimal !== null ? imgAnimal : DefaultHorseSquadIconIMG;
-
-  const hasSomething = !!(
-    medal ||
-    isHallOfFameAnimal ||
-    registerOfMerity ||
-    modalityAwards ||
-    allAroundAmateur ||
-    allAroundYoung ||
-    superHorseAward ||
-    rankingGeneralAward
-  );
 
   const infoString = [
     medal && `medal=${medal}`,
@@ -110,61 +74,20 @@ const AnimalTableData = ({
 
   return (
     <ContainerImage className="animal-table-data-container" id={infoString} {...rest}>
-      <Tooltip
-        style={{ width: 'fit-content' }}
-        id={
-          isHallOfFameAnimal
-            ? `tooltip-laurelimage-${nameAnimal}`
-            : `tooltip-divimage-${nameAnimal}`
-        }
-        contentInside={
-          hasSomething && (
-            <TooltipContentComponent
-              idAnimal={idAnimal}
-              ImgAnimal={imageSrcTooltip}
-              isHallOfFameAnimal={isHallOfFameAnimal}
-              registerOfMerity={registerOfMerity}
-              modalityAwards={modalityAwards}
-              allAroundAmateur={allAroundAmateur}
-              allAroundYoung={allAroundYoung}
-              superHorseAward={superHorseAward}
-              rankingGeneralAward={rankingGeneralAward}
-              token={token}
-            />
-          )
-        }
-        arrowType="bottomLeft"
-        positions={{
-          top: '-110',
-          left: '-8',
-          // right: '10',
-        }}
-      >
-        <DivImage
-          key={idAnimal}
-          id={idAnimal.toString()}
-          className="tooltip-anchor-divimage"
-          data-tooltip-id={`tooltip-divimage-${nameAnimal}`}
-        >
-          <DivBorder
-            $medalColor={isHallOfFameAnimal ? colors.yellow200 : medalha[medal ?? '']}
-          />
-          {typeof ImageSrc === 'string' ? (
-            <img src={ImageSrc} />
-          ) : ImageSrc ? (
-            <ImageSrc className="image-animal-default" />
-          ) : (
-            <></>
-          )}
-        </DivImage>
-
-        {isHallOfFameAnimal && (
-          <LaurelImage
-            className="tooltip-anchor-laurelimage"
-            data-tooltip-id={`tooltip-laurelimage-${nameAnimal}`}
-          />
-        )}
-      </Tooltip>
+      <AnimalImageWithTooltip
+        idAnimal={idAnimal}
+        nameAnimal={nameAnimal}
+        imgAnimal={imgAnimal}
+        medal={medal}
+        isHallOfFameAnimal={isHallOfFameAnimal}
+        registerOfMerity={registerOfMerity}
+        modalityAwards={modalityAwards}
+        allAroundAmateur={allAroundAmateur}
+        allAroundYoung={allAroundYoung}
+        superHorseAward={superHorseAward}
+        rankingGeneralAward={rankingGeneralAward}
+        token={token}
+      />
 
       <DivTexts $hasClick={!!onClick} onClick={onClick}>
         <StyledTextHallOfFameNameAnimal
@@ -212,3 +135,4 @@ const AnimalTableData = ({
 AnimalTableData.displayName = 'AnimalTableData';
 
 export { AnimalTableData };
+export * from './AnimalImageWithTooltip';

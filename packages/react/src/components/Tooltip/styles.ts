@@ -48,6 +48,16 @@ export const TooltipDiv = styled.div<{
     `}
 
   ${(props) =>
+    props.$arrowType === 'topLeft' &&
+    css`
+      &::after {
+        top: -4px;
+        left: 5%;
+        border-bottom: 5px solid ${colors.white};
+      }
+    `}
+
+  ${(props) =>
     props.$arrowType === 'bottomRight' &&
     css`
       &::after {

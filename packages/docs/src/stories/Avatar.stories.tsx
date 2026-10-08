@@ -29,6 +29,8 @@ import { Avatar } from '@abqm-ds/react';
 
 - Exibe imagem se \`src\` for fornecido.
 - Exibe fallback (letra) se não houver imagem.
+- \`size\` define o tamanho (padrão \`2.5rem\`).
+- \`variant="outline"\` remove fundo e borda e exibe o ícone contornado em \`white85\`; use \`fallbackColor\` para trocar a cor do ícone em fundos claros.
         `,
       },
     },
@@ -40,5 +42,15 @@ export const Primary: StoryObj<AvatarProps> = {};
 export const WithFallback: StoryObj<AvatarProps> = {
   args: {
     src: '',
+  },
+};
+
+export const OutlineFallback: StoryObj<AvatarProps> = {
+  args: {
+    src: '',
+    variant: 'outline',
+  },
+  parameters: {
+    backgrounds: { default: 'dark' },
   },
 };
