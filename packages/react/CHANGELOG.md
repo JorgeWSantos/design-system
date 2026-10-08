@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.42
+
+### Patch Changes
+
+- feat: Adicionará novo componente de imagem de usuário, permitirá exibir imagem do usuário ou animal no headerNavigator
+
 ## 4.0.41
 
 ### Patch Changes
