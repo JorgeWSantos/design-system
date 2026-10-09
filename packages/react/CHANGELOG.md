@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.43
+
+### Patch Changes
+
+- feat: 🎸 Adicionará o modalvideo
+
 ## 4.0.42
 
 ### Patch Changes
