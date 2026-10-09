@@ -1,5 +1,16 @@
 import { colors, radii } from '@abqm-ds/tokens';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+// Com o fundo translúcido, o navegador refaz o backdrop-filter da página de trás (ex: o
+// blur(80px) do layout) a cada quadro do vídeo e o fps cai pela metade. Enquanto o vídeo
+// está aberto, o desfoque fica desligado fora do modal; atrás do fundo escuro não se nota.
+export const DisableBackdropFilterBehind = createGlobalStyle`
+  body > :not([data-modal-video]),
+  body > :not([data-modal-video]) * {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+`;
 
 export const VideoWrapper = styled.div`
   position: relative;

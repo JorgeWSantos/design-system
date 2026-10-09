@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.44
+
+### Patch Changes
+
+- fix: 🐛 Corrigirá problemas de FPS no vídeo
+
 ## 4.0.43
 
 ### Patch Changes

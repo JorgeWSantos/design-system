@@ -47,6 +47,7 @@ function App() {
 
 - O vídeo fica centralizado em 16:9, limitado pela largura (retrato) ou pela altura (paisagem) da tela.
 - Ao fechar, o player é desmontado e o vídeo para.
+- Enquanto aberto, o \`backdrop-filter\` da página de trás fica desligado: com o fundo translúcido, o navegador refaria esse desfoque a cada quadro do vídeo e o fps cairia pela metade.
 - O navegador pode bloquear o autoplay com som; nesse caso o vídeo abre pausado.
 
         `,

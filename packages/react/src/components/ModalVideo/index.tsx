@@ -1,7 +1,7 @@
 import { colors } from '@abqm-ds/tokens';
 
 import { Modal } from '@components/Modal';
-import { VideoWrapper } from './styles';
+import { DisableBackdropFilterBehind, VideoWrapper } from './styles';
 import { ModalVideoProps } from './types';
 
 export type { ModalVideoProps };
@@ -71,28 +71,33 @@ export const ModalVideo = ({
   title = 'Vídeo',
   autoPlay = true,
 }: ModalVideoProps) => (
-  <Modal
-    isOpen={isOpen}
-    onClose={onClose}
-    size="full"
-    role="dialog"
-    aria-modal="true"
-    aria-label={title}
-    style={{ background: colors.black85 }}
-  >
-    <VideoWrapper>
-      {isVideoFile(videoUrl) ? (
-        <video src={videoUrl} title={title} controls autoPlay={autoPlay} playsInline />
-      ) : (
-        <iframe
-          src={toEmbedUrl(videoUrl, autoPlay)}
-          title={title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
-      )}
-    </VideoWrapper>
-  </Modal>
+  <>
+    {isOpen && <DisableBackdropFilterBehind />}
+
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      size="full"
+      role="dialog"
+      aria-modal="true"
+      aria-label={title}
+      data-modal-video
+      style={{ background: colors.black85 }}
+    >
+      <VideoWrapper>
+        {isVideoFile(videoUrl) ? (
+          <video src={videoUrl} title={title} controls autoPlay={autoPlay} playsInline />
+        ) : (
+          <iframe
+            src={toEmbedUrl(videoUrl, autoPlay)}
+            title={title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        )}
+      </VideoWrapper>
+    </Modal>
+  </>
 );
 
 ModalVideo.displayName = 'ModalVideo';
