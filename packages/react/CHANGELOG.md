@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.45
+
+### Patch Changes
+
+- feat: 🎸 Adicionará tooltip com a foto ampliada no Avatar
+
 ## 4.0.44
 
 ### Patch Changes
