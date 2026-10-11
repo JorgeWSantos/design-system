@@ -10,6 +10,7 @@ export const Tooltip = ({
   arrowType,
   styleToolTip,
   positions,
+  onClick,
   ...rest
 }: TooltipProps) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -90,11 +91,19 @@ export const Tooltip = ({
 
   const handleMouseLeave = () => setIsVisible(false);
 
+  // No touch nem sempre há mousemove: o toque também abre (fecha ao tocar fora ou rolar)
+  const handleTap = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Clique dentro do tooltip (portal) também sobe pela árvore do React
+    if (!tooltipDivRef.current?.contains(e.target as Node)) handleMouseEnter();
+    onClick?.(e);
+  };
+
   return (
     <TooltipContainer
       ref={containerRef}
       onMouseMove={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={handleTap}
       {...rest}
     >
       {children}

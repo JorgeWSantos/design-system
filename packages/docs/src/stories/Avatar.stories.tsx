@@ -31,6 +31,7 @@ import { Avatar } from '@abqm-ds/react';
 - Exibe fallback (letra) se não houver imagem.
 - \`size\` define o tamanho (padrão \`2.5rem\`).
 - \`variant="outline"\` remove fundo e borda e exibe o ícone contornado em \`white85\`; use \`fallbackColor\` para trocar a cor do ícone em fundos claros.
+- \`withTooltip\` mostra a foto ampliada ao passar o mouse ou tocar, no mobile (só quando há \`src\`); \`tooltipPlacement\` define se o tooltip abre em cima (\`'top'\`, padrão) ou embaixo (\`'bottom'\`).
         `,
       },
     },
@@ -42,6 +43,14 @@ export const Primary: StoryObj<AvatarProps> = {};
 export const WithFallback: StoryObj<AvatarProps> = {
   args: {
     src: '',
+  },
+};
+
+export const WithTooltip: StoryObj<AvatarProps> = {
+  args: {
+    size: '1.188rem',
+    withTooltip: true,
+    tooltipPlacement: 'bottom',
   },
 };
 

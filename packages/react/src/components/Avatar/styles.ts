@@ -49,6 +49,15 @@ export const StyledImageContainer = styled.div<{
     `}
 `;
 
+// Mesmo tamanho da foto no tooltip do animal
+export const TooltipImage = styled.img`
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 0.25rem;
+`;
+
 export const FallbackIcon = styled(PersonCircleIcon)<{
   $variant?: AvatarVariant;
   $color?: string;
