@@ -5,6 +5,8 @@ export * from './components/Text';
 export * from './components/Link';
 export * from './components/Heading';
 export * from './components/Avatar';
+export * from './components/LegacyBadge';
+export * from './components/HallOfFameBadge';
 export * from './components/TextInput';
 export * from './components/TextInputBordered';
 export * from './components/TextArea';

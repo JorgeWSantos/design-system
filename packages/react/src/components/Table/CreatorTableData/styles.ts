@@ -19,7 +19,8 @@ export const CreatorTableDataContainer = styled(CreatorTableDataContainerType)<{
     css`
       cursor: pointer;
 
-      &:hover {
+      /* Sobre um ícone de premiação, só o ícone brilha (AwardIcon), não a célula toda */
+      &:hover:not(:has(.award-icon:hover)) {
         filter: brightness(1.2) contrast(1.2);
       }
     `}
