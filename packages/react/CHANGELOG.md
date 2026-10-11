@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.46
+
+### Patch Changes
+
+- dcf7038: feat: 🎸 Adicionará skeleton de carregamento no Avatar
+
 ## 4.0.45
 
 ### Patch Changes
