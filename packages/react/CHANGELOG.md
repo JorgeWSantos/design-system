@@ -1,5 +1,13 @@
 # @abqm-ds/react
 
+## 4.0.47
+
+### Patch Changes
+
+- bebfde0: feat: 🎸 Adicionará o selo Legacy do criador
+- bebfde0: feat: 🎸 Adicionará o selo Hall da Fama (HallOfFameBadge)
+- 7a82c37: feat: 🎸 Permitirá várias imagens antes e depois do título no HeaderNavigatorDesktop
+
 ## 4.0.46
 
 ### Patch Changes
