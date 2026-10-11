@@ -1,3 +1,4 @@
+import { Children, ReactNode } from 'react';
 import { CaretLeftFillIcon } from '@abqm-ds/icons';
 import {
   ButtonBack,
@@ -16,12 +17,21 @@ import { HeaderNavigatorDesktopProps } from './types';
 import { colors } from '@abqm-ds/tokens';
 import { Text } from '@components/Text';
 
+// Antes e depois do título cabe um ou vários elementos (lista ou fragment), lado a lado.
+// Children.toArray descarta vazios (`cond && <Badge />`) e dá key aos itens de uma lista.
+const renderTitleAdornment = (content?: ReactNode) => {
+  const items = Children.toArray(content);
+
+  return items.length > 0 ? <ContainerImage>{items}</ContainerImage> : null;
+};
+
 export const HeaderNavigatorDesktop = ({
   onGoBack,
   hasBackButton = false,
   title,
   subtitle,
   image,
+  titleSuffix,
   children,
   fontFamily = 'default',
   fontSizeTitle,
@@ -48,7 +58,7 @@ export const HeaderNavigatorDesktop = ({
 
       <ContentRight>
         <DivTitleGroup>
-          {image && <ContainerImage>{image}</ContainerImage>}
+          {renderTitleAdornment(image)}
 
           <DivTitles>
             {subtitle ? (
@@ -76,6 +86,8 @@ export const HeaderNavigatorDesktop = ({
               </StyledHeadingHeaderNavigator>
             )}
           </DivTitles>
+
+          {renderTitleAdornment(titleSuffix)}
         </DivTitleGroup>
 
         {children && <ContentChildren>{children}</ContentChildren>}

@@ -60,6 +60,7 @@ export const ContainerImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: ${space[2]};
   flex-shrink: 0;
 `;
 
