@@ -1,6 +1,6 @@
 import { PersonCircleIcon } from '@abqm-ds/icons';
 import { colors, radii } from '@abqm-ds/tokens';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export type AvatarVariant = 'default' | 'outline';
 
@@ -56,6 +56,38 @@ export const TooltipImage = styled.img`
   height: 6rem;
   object-fit: cover;
   border-radius: 0.25rem;
+`;
+
+// Faixa de brilho atravessando da esquerda para a direita (efeito "shimmer").
+// Com background-size 200%, a posição 150% deixa a faixa fora à esquerda e -50% fora à direita
+const shimmer = keyframes`
+  from { background-position: 150% 0; }
+  to { background-position: -50% 0; }
+`;
+
+// Ocupa o lugar do avatar (mesmo tamanho) enquanto a foto ainda não é conhecida,
+// para não exibir o fallback de "sem foto" antes de o dado carregar
+export const AvatarSkeleton = styled.div<{ $size?: string }>`
+  width: ${({ $size = '2.5rem' }) => $size};
+  height: ${({ $size = '2.5rem' }) => $size};
+  min-width: ${({ $size = '2.5rem' }) => $size};
+  min-height: ${({ $size = '2.5rem' }) => $size};
+  border-radius: 50%;
+  background-color: ${colors.white10};
+  background-image: linear-gradient(
+    90deg,
+    transparent 30%,
+    ${colors.white30} 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: ${shimmer} 1.4s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    background-image: none;
+  }
 `;
 
 export const FallbackIcon = styled(PersonCircleIcon)<{

@@ -32,6 +32,7 @@ import { Avatar } from '@abqm-ds/react';
 - \`size\` define o tamanho (padrão \`2.5rem\`).
 - \`variant="outline"\` remove fundo e borda e exibe o ícone contornado em \`white85\`; use \`fallbackColor\` para trocar a cor do ícone em fundos claros.
 - \`withTooltip\` mostra a foto ampliada ao passar o mouse ou tocar, no mobile (só quando há \`src\`); \`tooltipPlacement\` define se o tooltip abre em cima (\`'top'\`, padrão) ou embaixo (\`'bottom'\`).
+- \`isLoading\` mostra um skeleton do mesmo tamanho, com um brilho atravessando da esquerda para a direita (shimmer), enquanto a foto ainda não é conhecida (ex.: dado da API carregando), em vez de exibir o fallback como se não houvesse foto.
         `,
       },
     },
@@ -51,6 +52,15 @@ export const WithTooltip: StoryObj<AvatarProps> = {
     size: '1.188rem',
     withTooltip: true,
     tooltipPlacement: 'bottom',
+  },
+};
+
+export const Loading: StoryObj<AvatarProps> = {
+  args: {
+    isLoading: true,
+  },
+  parameters: {
+    backgrounds: { default: 'dark' },
   },
 };
 

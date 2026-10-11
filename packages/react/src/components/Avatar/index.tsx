@@ -1,6 +1,12 @@
 import { ComponentProps } from 'react';
 import { Tooltip } from '@components/Tooltip';
-import { AvatarVariant, FallbackIcon, StyledImageContainer, TooltipImage } from './styles';
+import {
+  AvatarSkeleton,
+  AvatarVariant,
+  FallbackIcon,
+  StyledImageContainer,
+  TooltipImage,
+} from './styles';
 
 export type { AvatarVariant };
 
@@ -12,6 +18,7 @@ export interface AvatarProps extends ComponentProps<typeof StyledImageContainer>
   fallbackColor?: string;
   withTooltip?: boolean;
   tooltipPlacement?: 'top' | 'bottom';
+  isLoading?: boolean;
 }
 
 /**
@@ -19,6 +26,7 @@ export interface AvatarProps extends ComponentProps<typeof StyledImageContainer>
  *
  * @param withTooltip Ao passar o mouse (ou tocar, no mobile), mostra a foto ampliada num tooltip. Só aparece quando há `src`.
  * @param tooltipPlacement Posição do tooltip: 'top' (padrão) ou 'bottom'.
+ * @param isLoading Mostra um skeleton do mesmo tamanho no lugar da foto, enquanto ela ainda não é conhecida — evita exibir o fallback antes de o dado carregar. Padrão `false`.
  */
 export const Avatar = ({
   src,
@@ -28,7 +36,12 @@ export const Avatar = ({
   fallbackColor,
   withTooltip = false,
   tooltipPlacement = 'top',
+  isLoading = false,
 }: AvatarProps) => {
+  if (isLoading) {
+    return <AvatarSkeleton $size={size} role="img" aria-busy="true" aria-label={alt} />;
+  }
+
   const avatar = (
     <StyledImageContainer $size={size} $variant={variant}>
       <div>
