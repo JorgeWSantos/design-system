@@ -58,35 +58,47 @@ export const TooltipImage = styled.img`
   border-radius: 0.25rem;
 `;
 
-// Faixa de brilho atravessando da esquerda para a direita (efeito "shimmer").
-// Com background-size 200%, a posição 150% deixa a faixa fora à esquerda e -50% fora à direita
+// Faixa de brilho atravessando da esquerda para a direita (efeito "shimmer"). Desliza por
+// `transform` (compositor da GPU) e em passos, ~12 atualizações por segundo: animar
+// `background-position` repintava o skeleton a cada quadro e uma animação contínua faz o
+// navegador apresentar um quadro por vsync (~145/s a 144 Hz) sob os backdrop-filter do
+// layout, o que derrubava o fps de vídeos em outras janelas
 const shimmer = keyframes`
-  from { background-position: 150% 0; }
-  to { background-position: -50% 0; }
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
 `;
 
 // Ocupa o lugar do avatar (mesmo tamanho) enquanto a foto ainda não é conhecida,
 // para não exibir o fallback de "sem foto" antes de o dado carregar
 export const AvatarSkeleton = styled.div<{ $size?: string }>`
+  position: relative;
+  overflow: hidden;
   width: ${({ $size = '2.5rem' }) => $size};
   height: ${({ $size = '2.5rem' }) => $size};
   min-width: ${({ $size = '2.5rem' }) => $size};
   min-height: ${({ $size = '2.5rem' }) => $size};
   border-radius: 50%;
   background-color: ${colors.white10};
-  background-image: linear-gradient(
-    90deg,
-    transparent 30%,
-    ${colors.white30} 50%,
-    transparent 70%
-  );
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  animation: ${shimmer} 1.4s ease-in-out infinite;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+      90deg,
+      transparent 30%,
+      ${colors.white30} 50%,
+      transparent 70%
+    );
+    will-change: transform;
+    animation: ${shimmer} 1.4s steps(17, end) infinite;
+  }
 
   @media (prefers-reduced-motion: reduce) {
-    animation: none;
-    background-image: none;
+    &::after {
+      animation: none;
+      background-image: none;
+    }
   }
 `;
 

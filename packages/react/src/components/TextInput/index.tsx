@@ -14,7 +14,7 @@ import {
   TextInputWithLabelContainer,
   variantsTextInputTypes,
 } from './styles';
-import { SpinnerRingResizeIcon } from '@abqm-ds/icons';
+import { Spinner } from '@components/Spinner';
 import { colors } from '@abqm-ds/tokens';
 import { Text } from '@components/Text';
 
@@ -82,7 +82,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           {!!prefix && <Prefix $variant={variant}>{prefix}</Prefix>}
           <Input ref={ref} $variant={variant} onChange={handleChange} {...rest} />
           {isDebouncing ? (
-            <SpinnerRingResizeIcon width={16} height={16} stroke={colors.white75} />
+            <Spinner width={16} height={16} stroke={colors.white75} />
           ) : (
             icon && icon
           )}

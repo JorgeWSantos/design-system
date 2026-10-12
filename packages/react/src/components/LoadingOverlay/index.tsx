@@ -1,5 +1,5 @@
 import React, { ComponentProps, JSX } from 'react';
-import { StyledOverlayLoading } from './styles';
+import { StaticBlurBackgroundWhileLoading, StyledOverlayLoading } from './styles';
 import { ActivityIndicator } from '@components/ActivityIndicator';
 import { colors } from '@abqm-ds/tokens';
 import { useDeviceType } from 'hooks/useDeviceType';
@@ -26,6 +26,7 @@ export function LoadingOverlay({
 
   return (
     <StyledOverlayLoading $withoutBackground={withoutBackground}>
+      <StaticBlurBackgroundWhileLoading />
       <ActivityIndicator width={size} height={size} color={colors.white75} />
     </StyledOverlayLoading>
   );

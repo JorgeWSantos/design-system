@@ -16,7 +16,7 @@ import {
   SuggestionItem,
 } from './styles';
 import type { variantsTextInputTypes } from './styles';
-import { SpinnerRingResizeIcon } from '@abqm-ds/icons';
+import { Spinner } from '@components/Spinner';
 import { colors } from '@abqm-ds/tokens';
 import { useDebouncedCallback } from 'hooks/useDebounce';
 import { Text } from '@components/Text';
@@ -148,7 +148,7 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
             {...rest}
           />
           {isDebouncing ? (
-            <SpinnerRingResizeIcon width={16} height={16} stroke={loaderIconColor()} />
+            <Spinner width={16} height={16} stroke={loaderIconColor()} />
           ) : (
             icon && icon
           )}

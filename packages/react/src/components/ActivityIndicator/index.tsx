@@ -1,6 +1,6 @@
 import { ComponentProps, CSSProperties, ElementType } from 'react';
 import { Wrapper } from './styles';
-import { SpinnerRingResizeIcon } from '@abqm-ds/icons';
+import { Spinner } from '@components/Spinner';
 import { colors } from '@abqm-ds/tokens';
 
 export interface ActivityIndicatorProps extends ComponentProps<typeof Wrapper> {
@@ -20,7 +20,7 @@ export const ActivityIndicator = ({
 }: ActivityIndicatorProps) => {
   return (
     <Wrapper style={style} {...rest}>
-      <SpinnerRingResizeIcon width={width} height={height} stroke={color} />
+      <Spinner width={width} height={height} stroke={color} />
     </Wrapper>
   );
 };
