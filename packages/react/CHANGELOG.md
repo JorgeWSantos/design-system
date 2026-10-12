@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.48
+
+### Patch Changes
+
+- d093475: fix: 🐛 Evitará queda de fps em outras janelas durante o loading
+
 ## 4.0.47
 
 ### Patch Changes
