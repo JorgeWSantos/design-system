@@ -95,6 +95,12 @@ com `npm run generate:icons` (svgr → `scripts/move-icons.js`, que grava em
 `src/components/<pasta>/` e reescreve os `index.ts`). 🚫 Editar à mão os `.tsx` gerados —
 o próximo `generate:icons` sobrescreve.
 
+🚫 **Nunca criar SVG de ícone** (desenhar, inventar ou copiar paths de Bootstrap Icons e
+similares). Todo SVG que entra em `packages/icons/src/` vem do **design system no Figma**.
+Precisa de um ícone que não existe no pacote? Pare e peça ao dev para pegá-lo no Figma e
+fornecer o SVG — só então rode `generate:icons`. Não improvise substituto, nem inline no
+componente.
+
 ## Uso local num app (npm link)
 
 1. Aqui: `npm run link:monorepo`. No app: `npm run link:monorepo`.
