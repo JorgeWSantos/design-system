@@ -35,10 +35,29 @@ if (!fs.existsSync(finalDir)) {
 }
 
 // Processa os diretórios de origem normalmente
-processSourceDir(iconsDir, finalDir + '/icons');
-processSourceDir(logosDir, finalDir + '/logos', /^svg/i);
-processSourceDir(iconsSeqmDir, finalDir + '/iconsSEQM', /^svg/i, 'SEQM');
-processSourceDir(imagesDir, finalDir + '/images', /^svg/i, 'IMG');
+const results = [
+  processSourceDir(iconsDir, finalDir + '/icons'),
+  processSourceDir(logosDir, finalDir + '/logos', /^svg/i),
+  processSourceDir(iconsSeqmDir, finalDir + '/iconsSEQM', /^svg/i, 'SEQM'),
+  processSourceDir(imagesDir, finalDir + '/images', /^svg/i, 'IMG'),
+];
+
+// Log separado: primeiro os ignorados (já existem), depois os gerados
+const ignored = results.flatMap((result) => result.ignored);
+const generated = results.flatMap((result) => result.generated);
+
+if (ignored.length > 0) {
+  console.log('\nIgnorado:');
+  ignored.forEach((name) => console.log(`⏩ Ignorado (já existe): ${name}`));
+}
+
+console.log('\nGerado:');
+if (generated.length > 0) {
+  generated.forEach((name) => console.log(`✅ Movido e renomeado: ${name}`));
+} else {
+  console.log('(nenhum ícone novo)');
+}
+console.log('');
 
 // Atualiza index.ts para garantir que todos os componentes estejam exportados
 updateIndexFile(finalDir, indexFile);

@@ -4,9 +4,11 @@ import { toPascalCase } from './utils.js';
 
 // Função para processar arquivos de uma pasta e gerar componentes
 function processSourceDir(sourceDir, finalDir, prefixToRemove = /^svg/i, postfix = '') {
-  if (!fs.existsSync(sourceDir)) return [];
-  const files = fs.readdirSync(sourceDir).filter((f) => f.endsWith('.tsx'));
   const exports = [];
+  const generated = [];
+  const ignored = [];
+  if (!fs.existsSync(sourceDir)) return { exports, generated, ignored };
+  const files = fs.readdirSync(sourceDir).filter((f) => f.endsWith('.tsx'));
 
   // Garante que o diretório de destino existe
   if (!fs.existsSync(finalDir)) {
@@ -24,7 +26,7 @@ function processSourceDir(sourceDir, finalDir, prefixToRemove = /^svg/i, postfix
     const toPath = path.join(finalDir, `${componentName}.tsx`);
 
     if (fs.existsSync(toPath)) {
-      console.log(`⏩ Ignorado (já existe): ${componentName}`);
+      ignored.push(componentName);
       continue;
     }
 
@@ -49,12 +51,12 @@ function processSourceDir(sourceDir, finalDir, prefixToRemove = /^svg/i, postfix
     fs.writeFileSync(toPath, fileContent);
     fs.unlinkSync(fromPath);
 
-    console.log(`✅ Movido e renomeado: ${componentName}`);
+    generated.push(componentName);
     exports.push(
       `export { default as ${componentName} } from './components/${componentName}';`
     );
   }
-  return exports;
+  return { exports, generated, ignored };
 }
 
 export { processSourceDir };
