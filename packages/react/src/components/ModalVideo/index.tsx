@@ -1,20 +1,11 @@
 import { colors } from '@abqm-ds/tokens';
 
 import { Modal } from '@components/Modal';
-import { DisableBackdropFilterBehind, VideoWrapper } from './styles';
+import { VideoActions, isVideoFile } from '@components/VideoActions';
+import { DisableBackdropFilterBehind, VideoColumn, VideoWrapper } from './styles';
 import { ModalVideoProps } from './types';
 
 export type { ModalVideoProps };
-
-const VIDEO_FILE_EXTENSIONS = /\.(mp4|webm|ogg|mov|m4v)$/i;
-
-const isVideoFile = (url: string) => {
-  try {
-    return VIDEO_FILE_EXTENSIONS.test(new URL(url).pathname);
-  } catch {
-    return VIDEO_FILE_EXTENSIONS.test(url);
-  }
-};
 
 /**
  * Converte links do YouTube (watch, youtu.be, live, shorts) para o formato embed,
@@ -63,6 +54,8 @@ const toEmbedUrl = (url: string, autoPlay: boolean) => {
  * @param videoUrl URL do vídeo. Links do YouTube (watch, youtu.be, live, shorts) são convertidos para embed.
  * @param title Texto acessível do vídeo. Padrão: 'Vídeo'.
  * @param autoPlay Começa a tocar ao abrir. Padrão: true. O navegador pode bloquear o autoplay com som.
+ * @param showDownload Mostra o botão Baixar abaixo do vídeo. Padrão: false.
+ * @param showShare Mostra o botão Compartilhar abaixo do vídeo. Padrão: false.
  */
 export const ModalVideo = ({
   isOpen,
@@ -70,6 +63,8 @@ export const ModalVideo = ({
   videoUrl,
   title = 'Vídeo',
   autoPlay = true,
+  showDownload = false,
+  showShare = false,
 }: ModalVideoProps) => (
   <>
     {isOpen && <DisableBackdropFilterBehind />}
@@ -84,18 +79,26 @@ export const ModalVideo = ({
       data-modal-video
       style={{ background: colors.black85 }}
     >
-      <VideoWrapper>
-        {isVideoFile(videoUrl) ? (
-          <video src={videoUrl} title={title} controls autoPlay={autoPlay} playsInline />
-        ) : (
-          <iframe
-            src={toEmbedUrl(videoUrl, autoPlay)}
-            title={title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        )}
-      </VideoWrapper>
+      <VideoColumn $withActions={showDownload || showShare}>
+        <VideoWrapper>
+          {isVideoFile(videoUrl) ? (
+            <video src={videoUrl} title={title} controls autoPlay={autoPlay} playsInline />
+          ) : (
+            <iframe
+              src={toEmbedUrl(videoUrl, autoPlay)}
+              title={title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          )}
+        </VideoWrapper>
+
+        <VideoActions
+          videoUrl={videoUrl}
+          showDownload={showDownload}
+          showShare={showShare}
+        />
+      </VideoColumn>
     </Modal>
   </>
 );

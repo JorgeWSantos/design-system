@@ -42,6 +42,15 @@ function App() {
   - Qualquer outra URL é exibida em um iframe.
 - \`title\`: string - Texto acessível do vídeo. Padrão: \`'Vídeo'\`.
 - \`autoPlay\`: boolean - Começa a tocar ao abrir. Padrão: \`true\`.
+- \`showDownload\`: boolean - Mostra o botão **Baixar** abaixo do vídeo. Padrão: \`false\`.
+- \`showShare\`: boolean - Mostra o botão **Compartilhar** abaixo do vídeo. Padrão: \`false\`.
+
+#### Baixar e compartilhar
+
+Os botões vêm do componente **VideoActions**, que também é exportado para uso fora do modal (ex.: abaixo de um player inline).
+
+- **Compartilhar** abre o popover do **ShareOptions** (WhatsApp): acima do botão no desktop e abaixo no mobile.
+- **Baixar** baixa arquivos de vídeo (o servidor precisa liberar CORS). URLs que não são arquivo (YouTube, players) não podem ser baixadas pelo navegador e abrem em uma nova aba.
 
 #### Comportamento
 
@@ -87,6 +96,34 @@ export const ArquivoMp4: StoryObj = {
     docs: {
       description: {
         story: 'Arquivo de vídeo direto, tocado no player nativo do navegador.',
+      },
+    },
+  },
+};
+
+export const ComBaixarECompartilhar: StoryObj = {
+  render: () => {
+    const Example = () => {
+      const [open, setOpen] = useState(false);
+      return (
+        <>
+          <Button onClick={() => setOpen(true)} text="Assistir" />
+          <ModalVideo
+            isOpen={open}
+            onClose={() => setOpen(false)}
+            videoUrl="https://abqm-stream.b-cdn.net/Passadas/38-301177-1-54.mp4"
+            showDownload
+            showShare
+          />
+        </>
+      );
+    };
+    return <Example />;
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Botões de baixar e compartilhar abaixo do vídeo.',
       },
     },
   },

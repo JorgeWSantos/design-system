@@ -28,6 +28,28 @@ const anchoredToButton = css`
   }
 `;
 
+/** Igual ao anchoredToButton, mas acima do botão e com a seta apontando para baixo. */
+const anchoredAboveButton = css`
+  && {
+    top: unset;
+    bottom: calc(100% + 0.5rem);
+    right: 0;
+    left: unset;
+    transform: none;
+  }
+
+  &&::after {
+    top: unset;
+    bottom: -0.5rem;
+    right: 1rem;
+    left: unset;
+    transform: translateX(50%);
+    border-width: ${radii.md} ${radii.md} 0 ${radii.md};
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+  }
+`;
+
 export const ShareOptionsContainer = styled.div<{
   $variantArrow: ShareOptionsVariantArrowTypes;
   $anchor: ShareOptionsAnchorTypes;
@@ -98,6 +120,7 @@ export const ShareOptionsContainer = styled.div<{
 
   /* Declarado por último para vencer o bloco mobile acima na cascata. */
   ${({ $anchor }) => $anchor === 'button' && anchoredToButton}
+  ${({ $anchor }) => $anchor === 'button-top' && anchoredAboveButton}
 `;
 
 export const WrapperWhatsapp = styled.a`

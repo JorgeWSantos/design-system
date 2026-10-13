@@ -1,4 +1,4 @@
-import { colors, radii } from '@abqm-ds/tokens';
+import { colors, radii, space } from '@abqm-ds/tokens';
 import styled, { createGlobalStyle } from 'styled-components';
 
 // Com o fundo translúcido, o navegador refaz o backdrop-filter da página de trás (ex: o
@@ -12,13 +12,24 @@ export const DisableBackdropFilterBehind = createGlobalStyle`
   }
 `;
 
-export const VideoWrapper = styled.div`
-  position: relative;
+// Com os botões, a altura reservada cresce 3rem para o vídeo não empurrá-los para fora da tela
+export const VideoColumn = styled.div<{ $withActions: boolean }>`
+  display: flex;
+  flex-direction: column;
+  gap: ${space[2]};
   /* margin auto centraliza o vídeo nos dois eixos dentro do conteúdo do Modal */
   margin: auto;
   /* 16:9 limitado pela largura (retrato) ou pela altura (paisagem) da tela */
   width: 92vw;
-  width: min(92vw, calc((100dvh - 6rem) * 16 / 9));
+  width: min(
+    92vw,
+    calc((100dvh - ${({ $withActions }) => ($withActions ? '9rem' : '6rem')}) * 16 / 9)
+  );
+`;
+
+export const VideoWrapper = styled.div`
+  position: relative;
+  width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: ${radii.md};
   background: ${colors.black};

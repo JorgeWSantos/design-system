@@ -63,4 +63,6 @@ declare module '@abqm-ds/icons' {
   export const TrophyFillIcon: FC<SVGProps<SVGSVGElement>>;
   export const ArrowRightSquareIcon: FC<SVGProps<SVGSVGElement>>;
   export const ArrowLeftSquareIcon: FC<SVGProps<SVGSVGElement>>;
+  export const DownloadIcon: FC<SVGProps<SVGSVGElement>>;
+  export const ShareIcon: FC<SVGProps<SVGSVGElement>>;
 }

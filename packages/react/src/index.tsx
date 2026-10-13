@@ -21,6 +21,7 @@ export * from './components/Dropdown';
 export * from './components/Tooltip';
 export * from './components/Modal';
 export * from './components/ModalVideo';
+export * from './components/VideoActions';
 export * from './components/Toast';
 export * from './components/ActivityIndicator';
 export * from './components/RadioGroup';

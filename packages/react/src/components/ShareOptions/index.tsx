@@ -8,8 +8,10 @@ export type ShareOptionsVariantArrowTypes = 'top' | 'bottom';
  * 'screen' (padrão) mantém o posicionamento histórico: canto superior direito no
  * desktop e acima do rodapé no mobile. 'button' ancora o popover logo abaixo do
  * botão que o abriu — use quando o botão de compartilhar está no header mobile.
+ * 'button-top' ancora logo acima do botão, com a seta apontando para baixo — use quando
+ * o botão está no pé da tela ou de um modal.
  */
-export type ShareOptionsAnchorTypes = 'screen' | 'button';
+export type ShareOptionsAnchorTypes = 'screen' | 'button' | 'button-top';
 
 interface ShareOptionsProps {
   url: string;
