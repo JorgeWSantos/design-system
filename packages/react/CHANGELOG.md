@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.49
+
+### Patch Changes
+
+- 4952639: feat: 🎸 Adicionará os botões de baixar e compartilhar no vídeo
+
 ## 4.0.48
 
 ### Patch Changes

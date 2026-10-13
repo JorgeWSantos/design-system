@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 4.0.25
+
+### Patch Changes
+
+- 4952639: feat: 🎸 Adicionará os botões de baixar e compartilhar no vídeo
+
 ## 4.0.24
 
 ### Patch Changes
