@@ -1,5 +1,12 @@
 # @abqm-ds/react
 
+## 4.0.50
+
+### Patch Changes
+
+- afcfe9d: feat: 🎸 Adicionará a prop small ao LogoSEQMWithFallback
+- b40e184: fix: 🐛 Baixará o vídeo no iOS, no Android e no app ABQM, mostrando o progresso
+
 ## 4.0.49
 
 ### Patch Changes
