@@ -314,14 +314,14 @@ export const VideoActions = ({
 
       saveWithLink(blob, fileName);
 
-      Toast.show({
-        // no iPhone o download não aparece na galeria, e sim no app Arquivos
-        message: isIOS()
-          ? 'Vídeo baixado! Ele fica no app Arquivos, em Downloads.'
-          : 'Vídeo baixado! Ele fica na pasta Downloads.',
-        type: 'success',
-        timeout: 4000,
-      });
+      // Toast.show({
+      //   // no iPhone o download não aparece na galeria, e sim no app Arquivos
+      //   message: isIOS()
+      //     ? 'Vídeo baixado! Ele fica no app Arquivos, em Downloads.'
+      //     : 'Vídeo baixado! Ele fica na pasta Downloads.',
+      //   type: 'success',
+      //   timeout: 4000,
+      // });
     } catch {
       // download cancelado ao fechar o modal
       if (controller.signal.aborted) return;
