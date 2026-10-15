@@ -113,14 +113,22 @@ Depois de publicado, o app atualiza com `npm run update:ui` (dentro do range `^4
 
 ## Versionamento e release
 
-- ✅ Alteração publicável leva **changeset** (`npm run changeset` ou um `.md` em
-  `.changeset/`) com o bump de cada pacote alterado. O resumo vira a linha do
-  `CHANGELOG.md`: use o subject do commit (`feat: 🎸 Adicionará …`).
+**Processo para subir versão** (na branch `feat/*`/`fix/*`, nunca na `master`):
+
+1. Lint + `tsc` limpos (ver comandos acima).
+2. **Changeset**: `npm run changeset` ou um `.md` em `.changeset/` com o bump de cada
+   pacote alterado (`'@abqm-ds/react': patch`) e, de resumo, o subject do commit
+   (`fix(Comp): 🐛 Corrigirá …`) — ele vira a linha do `CHANGELOG.md`. O changeset vai
+   **no mesmo commit** da alteração.
+3. `npm run version-packages`: consome os changesets, sobe a versão no `package.json` e
+   escreve o `CHANGELOG.md`. O resultado (com a remoção do changeset) vai num commit
+   próprio: `release(<pacote>): 🦋 Nova versão X.Y.Z` (scope obrigatório — monorepo).
+4. Merge fast-forward na `master` (`git switch master && git merge --ff-only <branch>`) e
+   push da `master` e da branch. ⛔ É esse push que publica no npm (ver abaixo).
+5. Confira no GitHub Actions o `release.yml`: pacote publicado e tag criada.
+
 - Bump: o histórico usa `patch` até para feature compatível (nunca houve `minor`);
   `major` só para quebra (⛔) — a última foi a 4.0.0.
-- `npm run version-packages` consome os changesets, sobe a versão no `package.json` e
-  escreve o `CHANGELOG.md`. Esse resultado vai num commit próprio:
-  `release(<pacote>): 🦋 Nova versão X.Y.Z` (scope obrigatório — monorepo).
 - **Quem publica é o CI.** Push na `master` dispara `.github/workflows/release.yml`
   (`changesets/action`): sem changeset pendente roda `npm run release` (build +
   `changeset publish`), publica no npm e cria a tag `@abqm-ds/<pacote>@X.Y.Z`; com
