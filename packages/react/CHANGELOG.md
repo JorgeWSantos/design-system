@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.52
+
+### Patch Changes
+
+- fix(VideoActions): 🐛 Deixará de mostrar o toast de vídeo baixado no navegador
+
 ## 4.0.51
 
 ### Patch Changes
