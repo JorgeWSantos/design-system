@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.51
+
+### Patch Changes
+
+- feat(VideoActions): 🎸 Deixará o app ABQM baixar o vídeo pela URL
+
 ## 4.0.50
 
 ### Patch Changes
