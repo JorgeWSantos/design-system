@@ -24,11 +24,15 @@ import { LogoSEQMWithFallback } from '@abqm-ds/react';
 
 // Variante clara (fallback branco)
 <LogoSEQMWithFallback data={null} light />
+
+// Logotipo menor (ex.: mobile)
+<LogoSEQMWithFallback data={null} small />
 \`\`\`
 
 - Exibe a imagem se \`data.logotipo\` for fornecido e carregado com sucesso.
 - Exibe o ícone \`LogoAbqmBorderedEmeraldIcon\` como fallback quando \`data\` é \`null\` ou a imagem falha ao carregar.
 - Prop \`light\` troca o fallback para \`LogoAbqmBorderedWhiteIcon\`, ideal para fundos escuros.
+- Prop \`small\` reduz o logotipo de 60x50 para 48x40 (opcional, default \`false\`).
         `,
       },
     },
@@ -115,6 +119,25 @@ export const ImagemInvalida: StoryObj<LogoSEQMWithFallbackProps> = {
       description: {
         story:
           'Quando a URL da imagem falha ao carregar, o componente exibe automaticamente o ícone fallback.',
+      },
+    },
+  },
+};
+
+export const Pequeno: StoryObj<LogoSEQMWithFallbackProps> = {
+  args: {
+    data: { logotipo: 'https://github.com/jorgewsantos.png' },
+    small: true,
+  },
+  render: (args) => (
+    <div style={wrapperStyle(colors.greenTransparent30)}>
+      <LogoSEQMWithFallback {...args} />
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Prop `small` — logotipo reduzido (48x40), indicado para o mobile.',
       },
     },
   },
