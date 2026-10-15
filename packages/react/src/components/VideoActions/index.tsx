@@ -30,10 +30,110 @@ const getFileName = (url: string) => {
   }
 };
 
+type AppWebView = { postMessage: (message: string) => void };
+
 /** Ponte do WebView do app ABQM (react-native-webview); só existe quando o site abre dentro do app. */
 const getAppWebView = () =>
-  (window as Window & { ReactNativeWebView?: { postMessage: (message: string) => void } })
-    .ReactNativeWebView;
+  (window as Window & { ReactNativeWebView?: AppWebView }).ReactNativeWebView;
+
+/**
+ * O app ABQM anuncia em `window.ABQM_APP_CAPS` o que sabe fazer. Com `downloadUrl`, ele mesmo
+ * baixa a URL direto para o disco; sem o flag (app 8.25.0), o vídeo vai inteiro em base64.
+ */
+const appCanDownloadUrl = () =>
+  Boolean(
+    (window as Window & { ABQM_APP_CAPS?: { downloadUrl?: boolean } }).ABQM_APP_CAPS
+      ?.downloadUrl
+  );
+
+const VIDEO_MIME_TYPES: Record<string, string> = {
+  mp4: 'video/mp4',
+  webm: 'video/webm',
+  ogg: 'video/ogg',
+  mov: 'video/quicktime',
+  m4v: 'video/x-m4v',
+};
+
+const getMimeType = (fileName: string) =>
+  VIDEO_MIME_TYPES[fileName.split('.').pop()?.toLowerCase() ?? ''] ?? 'video/mp4';
+
+/** Evento com que o app ABQM devolve o andamento de um DOWNLOAD_URL. */
+const APP_DOWNLOAD_EVENT = 'abqm-app-download';
+
+/** Sem notícia do app por esse tempo, o botão é liberado em vez de ficar em "Baixando...". */
+const APP_DOWNLOAD_TIMEOUT = 30000;
+
+type AppDownloadEventDetail = {
+  id: string;
+  status: 'progress' | 'done' | 'error';
+  percent?: number | null;
+};
+
+/**
+ * Pede ao app ABQM para baixar a URL (DOWNLOAD_URL). O app grava direto no disco, sem o
+ * vídeo passar pela memória do WebView, abre o salvar/compartilhar nativo e devolve o
+ * progresso pelo evento `abqm-app-download`. Abortar o `signal` cancela o download no app.
+ */
+const downloadWithApp = (
+  appWebView: AppWebView,
+  url: string,
+  fileName: string,
+  signal: AbortSignal,
+  onProgress: (percent: number) => void
+) =>
+  new Promise<void>((resolve, reject) => {
+    const id = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    let timeoutId: number | undefined;
+
+    const cleanup = () => {
+      window.clearTimeout(timeoutId);
+      window.removeEventListener(APP_DOWNLOAD_EVENT, handleEvent);
+      signal.removeEventListener('abort', handleAbort);
+    };
+
+    const restartTimeout = () => {
+      window.clearTimeout(timeoutId);
+      timeoutId = window.setTimeout(() => {
+        cleanup();
+        reject(new Error('O app não respondeu ao download'));
+      }, APP_DOWNLOAD_TIMEOUT);
+    };
+
+    function handleEvent(event: Event) {
+      const detail = (event as CustomEvent<AppDownloadEventDetail>).detail;
+      if (detail?.id !== id) return;
+
+      if (detail.status === 'progress') {
+        restartTimeout();
+        if (typeof detail.percent === 'number') onProgress(detail.percent);
+        return;
+      }
+
+      cleanup();
+      if (detail.status === 'done') resolve();
+      else reject(new Error('O app não conseguiu baixar o vídeo'));
+    }
+
+    function handleAbort() {
+      cleanup();
+      appWebView.postMessage(JSON.stringify({ type: 'DOWNLOAD_URL_CANCEL', id }));
+      reject(new Error('Download cancelado'));
+    }
+
+    window.addEventListener(APP_DOWNLOAD_EVENT, handleEvent);
+    signal.addEventListener('abort', handleAbort);
+    restartTimeout();
+
+    appWebView.postMessage(
+      JSON.stringify({
+        type: 'DOWNLOAD_URL',
+        id,
+        url,
+        filename: fileName,
+        mimeType: getMimeType(fileName),
+      })
+    );
+  });
 
 /** iPhone e iPad (o iPadOS se identifica como Mac, mas tem tela touch). */
 const isIOS = () =>
@@ -110,7 +210,8 @@ const saveWithLink = (blob: Blob, fileName: string) => {
  * Botões de Baixar e Compartilhar para um vídeo.
  * - Compartilhar: abre o popover do ShareOptions (WhatsApp), acima do botão no desktop e abaixo no mobile.
  * - Baixar: arquivos de vídeo são baixados (o servidor precisa liberar CORS), mostrando o progresso.
- *   - App ABQM (iOS e Android): o arquivo é entregue ao app, que abre o salvar/compartilhar nativo.
+ *   - App ABQM (iOS e Android): o app baixa a URL e abre o salvar/compartilhar nativo; o
+ *     progresso volta para o botão. No app 8.25.0, o arquivo é baixado aqui e vai em base64.
  *   - Navegadores (iOS, Android e desktop): download do navegador, salvo na pasta de downloads.
  *   - WebView de outros apps (Instagram, Facebook...): avisa para abrir a página no navegador.
  *   Outras URLs (player, YouTube) não podem ser baixadas pelo navegador e abrem em uma nova aba.
@@ -181,11 +282,22 @@ export const VideoActions = ({
     setDownloadProgress(null);
 
     try {
+      if (appWebView && appCanDownloadUrl()) {
+        await downloadWithApp(
+          appWebView,
+          videoUrl,
+          fileName,
+          controller.signal,
+          setDownloadProgress
+        );
+        return;
+      }
+
       const blob = await fetchBlob(videoUrl, controller.signal, setDownloadProgress);
 
       if (appWebView) {
-        // o WebView do app (iOS e Android) ignora o download de URL blob:, então o arquivo
-        // vai em base64 para o app ABQM (8.25.0+), que salva e abre o compartilhamento nativo
+        // app ABQM 8.25.0, que não baixa pela URL: o WebView (iOS e Android) ignora o download
+        // de URL blob:, então o arquivo vai em base64 e o app salva e abre o compartilhamento
         const base64 = await blobToBase64(blob);
         if (controller.signal.aborted) return;
 
