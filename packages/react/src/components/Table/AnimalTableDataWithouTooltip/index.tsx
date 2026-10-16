@@ -40,3 +40,6 @@ const AnimalTableDataWithoutTooltip = ({
 AnimalTableDataWithoutTooltip.displayName = 'AnimalTableDataWithoutTooltip';
 
 export { AnimalTableDataWithoutTooltip };
+// seletor do container (styled-components) para o app ajustar a célula na própria tabela,
+// ex.: a altura de 2rem do mobile
+export { AnimalTableDataWithoutTooltipContainerType };

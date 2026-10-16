@@ -31,3 +31,6 @@ const CompetitorTableData = ({
 CompetitorTableData.displayName = 'CompetitorTableData';
 
 export { CompetitorTableData };
+// seletor do container (styled-components) para o app ajustar a célula na própria tabela,
+// ex.: a altura de 2rem do mobile
+export { CompetitorTableDataContainerType };
