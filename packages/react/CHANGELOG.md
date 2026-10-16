@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.55
+
+### Patch Changes
+
+- 1d2f799: build(react): 🏠 Usará o styled-components e o React do app
+
 ## 4.0.54
 
 ### Patch Changes
