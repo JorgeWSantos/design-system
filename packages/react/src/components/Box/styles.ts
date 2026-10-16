@@ -14,7 +14,10 @@ export const BoxContainer = styled.div`
   backdrop-filter: blur(5rem);
   gap: ${space[16]};
 
-  background: ${colors.white50};
+  /* cor numa variável: as variantes (ContentMobile, ContentDesktop) trocam a variável e o
+     LoadingOverlay a reaplica sobre o fundo estático enquanto carrega */
+  --abqm-box-background: ${colors.white50};
+  background: var(--abqm-box-background);
 
   overflow-y: auto;
 

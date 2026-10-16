@@ -11,17 +11,23 @@ import { blurredBackgroundDesktop, blurredBackgroundMobile } from './blurredBack
 // resolve; desligar os blurs menores dos painéis e do rodapé também não).
 //
 // Entre o Box e o fundo da página não há nenhuma camada, então o que o desfoque mostra é a
-// imagem de fundo borrada com o branco 50% do Box por cima. Enquanto o loading existe, o Box
+// imagem de fundo borrada com a cor do Box por cima. Enquanto o loading existe, o Box
 // troca o backdrop-filter por esse mesmo resultado, estático: a miniatura já desfocada da
-// imagem (mesma geometria do fundo da página: cover, centralizada e fixa) com o branco 50% por
+// imagem (mesma geometria do fundo da página: cover, centralizada e fixa) com a cor do Box por
 // cima. Fica visualmente igual (ver blurredBackground.ts) e ao terminar o loading o blur volta.
 // Pressupõe o fundo padrão do SEQM (assets/images) atrás do Box, como em todos os apps.
+//
+// A cor vem de --abqm-box-background (branco 50% no Box, trocada pelas variantes do
+// ContentMobile/ContentDesktop): com o branco 50% fixo, a variante "medium" (branco 25%)
+// clareava durante o loading e a "dark" (verde) ficava branca.
+const boxBackground = `var(--abqm-box-background, ${colors.white50})`;
+
 export const StaticBlurBackgroundWhileLoading = createGlobalStyle`
   ${BoxContainer} {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     background-image:
-      linear-gradient(${colors.white50}, ${colors.white50}),
+      linear-gradient(${boxBackground}, ${boxBackground}),
       url('${blurredBackgroundDesktop}') !important;
     background-size: 100% 100%, cover !important;
     background-position: 0 0, center !important;
@@ -30,7 +36,7 @@ export const StaticBlurBackgroundWhileLoading = createGlobalStyle`
 
     @media (max-width: ${breakpointsPx.lg}) {
       background-image:
-        linear-gradient(${colors.white50}, ${colors.white50}),
+        linear-gradient(${boxBackground}, ${boxBackground}),
         url('${blurredBackgroundMobile}') !important;
     }
   }

@@ -82,12 +82,12 @@ export const MobileScroll = styled(Box)<{
   ${({ $backgroundVariant }) =>
     $backgroundVariant === 'dark' &&
     css`
-      background-color: ${colors.emeraldGreen50};
+      --abqm-box-background: ${colors.emeraldGreen50};
     `}
 
      ${({ $backgroundVariant }) =>
     $backgroundVariant === 'medium' &&
     css`
-      background-color: ${colors.white25};
+      --abqm-box-background: ${colors.white25};
     `}
 `;
