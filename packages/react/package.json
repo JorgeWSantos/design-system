@@ -28,17 +28,22 @@
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
     "esbuild-plugin-svgr": "3.1.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "styled-components": "6.1.17",
     "tsup": "8.5.0",
     "typescript": "5.8.3"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "styled-components": "^6.1.17"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.2.3",
     "framer-motion": "^12.23.24",
     "phosphor-react": "^1.4.1",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
     "react-share": "5.2.2",
-    "styled-components": "6.1.17",
     "uuid": "13.0.0"
   }
 }
