@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.53
+
+### Patch Changes
+
+- 2359268: fix(LoadingOverlay): 🐛 Respeitará a cor da variante do Box no loading
+
 ## 4.0.52
 
 ### Patch Changes

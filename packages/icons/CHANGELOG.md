@@ -1,5 +1,11 @@
 # @abqm-ds/icons
 
+## 4.0.26
+
+### Patch Changes
+
+- aa9d09b: feat(icons): 🎸 Adicionará 55 ícones do Figma (file-word a globe2)
+
 ## 4.0.25
 
 ### Patch Changes
