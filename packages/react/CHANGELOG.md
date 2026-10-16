@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.54
+
+### Patch Changes
+
+- 53bcfe1: feat(Table): 🎸 Exportará seletores das células de competidor e animal
+
 ## 4.0.53
 
 ### Patch Changes
