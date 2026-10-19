@@ -36,6 +36,12 @@ const OrderEntryResults = ({
 
   const [isOpen, setIsOpen] = React.useState(false);
 
+  // nos resultados, categoria sem competidor não tem o que mostrar — só o TOP 10 fica
+  const modalidadesToShow =
+    type === 'results'
+      ? prove.modalidades.filter((modality) => modality.nnr_competidores > 0)
+      : prove.modalidades;
+
   const addTokenIfExists = useCallback(
     ({ url }: { url: string }) => {
       if (token !== '') {
@@ -99,7 +105,7 @@ const OrderEntryResults = ({
             </DivProve>
           )}
 
-          {prove.modalidades.map((modality, mIdx) => (
+          {modalidadesToShow.map((modality, mIdx) => (
             <DivProve
               key={mIdx}
               onClick={() => {
