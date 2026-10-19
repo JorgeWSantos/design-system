@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.56
+
+### Patch Changes
+
+- 0b396f2: fix(ElementList): 🐛 Ocultará categorias sem competidores nos resultados
+
 ## 4.0.55
 
 ### Patch Changes
