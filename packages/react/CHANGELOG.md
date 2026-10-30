@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.57
+
+### Patch Changes
+
+- e216ddb: Corrige a sobreposição do submenu do SideMenu pelo conteúdo da página aumentando o z-index
+
 ## 4.0.56
 
 ### Patch Changes
