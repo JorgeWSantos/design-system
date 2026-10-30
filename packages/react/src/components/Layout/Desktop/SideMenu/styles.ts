@@ -98,7 +98,7 @@ export const SubmenuList = styled.ul`
   top: -2px;
   padding: ${space[4]};
 
-  z-index: 1;
+  z-index: 100;
 
   border: ${radii.pxx} solid ${colors.white25};
   border-radius: ${space[1]};
