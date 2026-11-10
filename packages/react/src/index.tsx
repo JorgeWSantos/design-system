@@ -75,6 +75,11 @@ export * from './utils';
 
 //Hooks
 export { useDebouncedCallback } from './hooks/useDebounce';
+export { useNavigationTracking, resolveScreenName } from './hooks/useNavigationTracking';
+export type {
+  NavigationScreenRoute,
+  UseNavigationTrackingOptions,
+} from './hooks/useNavigationTracking';
 export { useOrientation } from './hooks/useOrientation';
 export { useSearchParamsMock } from './hooks/useSearchParamsMock';
 
