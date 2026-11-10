@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.58
+
+### Patch Changes
+
+- feat(useNavigationTracking): 🎸 Registrará a navegação do usuário nos fronts do SEQM
+
 ## 4.0.57
 
 ### Patch Changes
