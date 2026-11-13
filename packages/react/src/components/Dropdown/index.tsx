@@ -1,10 +1,22 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import {
+  type ChangeEvent,
+  type KeyboardEvent,
+  type MouseEvent,
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import {
   Container,
   StyledDropdown,
   ContainerOptions,
   Option,
+  NoResults,
   StyledTextSelect,
+  StyledSearchInput,
   StyledCaretDownFillIcon,
   StyledLabel,
 } from './styles';
@@ -27,7 +39,18 @@ import { DropdownProps, DataDropdown } from './types';
  * @property {ElementType} [as] - Permite trocar o elemento HTML raiz do Dropdown.
  * @property {React.CSSProperties} [stylesContainerOptions] - Estilos CSS adicionais aplicados ao container das opções do Dropdown.
  * @property {React.CSSProperties} [labelStyle] - Estilos CSS adicionais aplicados à label do Dropdown.
+ * @property {boolean} [searchable] - Quando verdadeiro, ao abrir o campo vira um input e a lista é filtrada
+ * enquanto o usuário digita (sem diferenciar maiúsculas e acentos). Setas navegam, Enter escolhe, Esc fecha.
+ * @property {string} [searchPlaceholder] - Placeholder do input de busca quando não há opção selecionada.
+ * @property {string} [emptyMessage] - Texto exibido quando nenhuma opção corresponde ao que foi digitado.
  */
+
+/** Remove acentos e caixa para comparar o que foi digitado com o rótulo das opções. */
+const normalizeText = (text: string) =>
+  text
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase();
 
 /**
  * Sobe a árvore até o primeiro ancestral que recorta o conteúdo (overflow-y
@@ -59,6 +82,9 @@ export function Dropdown({
   openToTop,
   labelStyle,
   stylesContainerOptions,
+  searchable = false,
+  searchPlaceholder = 'Digite para filtrar',
+  emptyMessage = 'Nenhum resultado',
   ...rest
 }: DropdownProps) {
   const [selectedOption, setSelectedOption] = useState(
@@ -74,9 +100,21 @@ export function Dropdown({
     }
   }, [value, data]);
 
+  const [query, setQuery] = useState('');
+  const [activeIndex, setActiveIndex] = useState(-1);
+
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const optionsRef = useRef<HTMLDivElement | null>(null);
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
   const [autoToTop, setAutoToTop] = useState(false);
+
+  const filteredData = useMemo(() => {
+    const term = normalizeText(query.trim());
+
+    if (!searchable || !term) return data;
+
+    return data.filter((item) => normalizeText(item.label).includes(term));
+  }, [data, query, searchable]);
 
   // 'openToTop' explícito segue valendo como override manual; sem ele, decide sozinho.
   const shouldOpenToTop = openToTop ?? autoToTop;
@@ -125,6 +163,28 @@ export function Dropdown({
     };
   }, [showOptions, resolveDirection]);
 
+  // Ao fechar, limpa a busca; ao abrir no modo searchable, já deixa o cursor no campo.
+  useEffect(() => {
+    if (!showOptions) {
+      setQuery('');
+      setActiveIndex(-1);
+      return;
+    }
+
+    if (searchable) {
+      searchInputRef.current?.focus();
+    }
+  }, [showOptions, searchable]);
+
+  // Mantém a opção destacada pelo teclado visível dentro do menu rolável.
+  useEffect(() => {
+    if (activeIndex < 0) return;
+
+    const activeOption = optionsRef.current?.children[activeIndex];
+
+    activeOption?.scrollIntoView({ block: 'nearest' });
+  }, [activeIndex]);
+
   const selectAnOption = useCallback(
     (item: DataDropdown) => {
       setSelectedOption(item);
@@ -137,6 +197,39 @@ export function Dropdown({
     [setValue]
   );
 
+  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { value: typed } = event.target;
+
+    setQuery(typed);
+    setActiveIndex(typed.trim() ? 0 : -1);
+  };
+
+  const handleSearchKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    switch (event.key) {
+      case 'ArrowDown':
+        event.preventDefault();
+        setActiveIndex((prev) => Math.min(prev + 1, filteredData.length - 1));
+        break;
+      case 'ArrowUp':
+        event.preventDefault();
+        setActiveIndex((prev) => Math.max(prev - 1, 0));
+        break;
+      case 'Enter': {
+        event.preventDefault();
+
+        const item = filteredData[activeIndex >= 0 ? activeIndex : 0];
+
+        if (item) selectAnOption(item);
+        break;
+      }
+      case 'Escape':
+        setShowOptions(false);
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <Container $hasLabel={!!label} ref={dropdownRef} $maxWidth={maxWidth}>
       {label && (
@@ -147,7 +240,12 @@ export function Dropdown({
 
       <StyledDropdown
         {...rest}
-        onClick={() => {
+        onClick={(event: MouseEvent<HTMLDivElement>) => {
+          // com o input aberto, clicar nele (para posicionar o cursor) não deve fechar a lista
+          if (searchable && showOptions && event.target === searchInputRef.current) {
+            return;
+          }
+
           if (selectedOption !== null) {
             setShowOptions((prev) => !prev);
           }
@@ -155,9 +253,26 @@ export function Dropdown({
         $variant={variant}
         $maxWidth={maxWidth}
       >
-        <StyledTextSelect $variant={variant}>
-          {selectedOption?.label || null}
-        </StyledTextSelect>
+        {searchable && showOptions ? (
+          <StyledSearchInput
+            ref={searchInputRef}
+            $variant={variant}
+            type="text"
+            value={query}
+            placeholder={selectedOption?.label || searchPlaceholder}
+            onChange={handleSearchChange}
+            onKeyDown={handleSearchKeyDown}
+            autoComplete="off"
+            role="combobox"
+            aria-expanded={showOptions}
+            aria-autocomplete="list"
+            aria-label={label ?? searchPlaceholder}
+          />
+        ) : (
+          <StyledTextSelect $variant={variant}>
+            {selectedOption?.label || null}
+          </StyledTextSelect>
+        )}
 
         <StyledCaretDownFillIcon $variant={variant} $rotated={showOptions} />
       </StyledDropdown>
@@ -171,12 +286,24 @@ export function Dropdown({
           $openToTop={shouldOpenToTop}
           $hasLabel={!!label}
           style={stylesContainerOptions}
+          role={searchable ? 'listbox' : undefined}
         >
-          {data.map((item) => (
-            <Option $variant={variant} key={item.id} onClick={() => selectAnOption(item)}>
+          {filteredData.map((item, index) => (
+            <Option
+              $variant={variant}
+              $active={searchable && index === activeIndex}
+              key={item.id}
+              role={searchable ? 'option' : undefined}
+              aria-selected={searchable ? item.id === selectedOption?.id : undefined}
+              onClick={() => selectAnOption(item)}
+            >
               <p>{item.label}</p>
             </Option>
           ))}
+
+          {searchable && filteredData.length === 0 && (
+            <NoResults>{emptyMessage}</NoResults>
+          )}
         </ContainerOptions>
       )}
     </Container>

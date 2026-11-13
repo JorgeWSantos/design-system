@@ -26,6 +26,16 @@ const data = [
 \`\`\`
 
 - Recebe um array de objetos com \`value\`, \`label\` e \`id\`.
+
+### Com busca (\`searchable\`)
+
+Para listas grandes, \`searchable\` transforma o campo em um input ao abrir: a lista é filtrada
+enquanto o usuário digita (sem diferenciar maiúsculas e acentos). As setas navegam, \`Enter\`
+escolhe e \`Esc\` fecha. \`searchPlaceholder\` e \`emptyMessage\` personalizam os textos.
+
+\`\`\`tsx
+<Dropdown data={data} label="Evento" searchable />
+\`\`\`
         `,
       },
     },
@@ -102,6 +112,19 @@ export const OpenToTop: StoryObj<DropdownProps> = {
     variant: 'primary',
     openToTop: true,
     maxHeight: '200px',
+  },
+  render,
+};
+
+export const Searchable: StoryObj<DropdownProps> = {
+  args: {
+    label: 'Estados (com busca)',
+    data: optionsStates,
+    variant: 'primary',
+    maxHeight: '200px',
+    searchable: true,
+    searchPlaceholder: 'Digite o nome do estado',
+    emptyMessage: 'Nenhum estado encontrado',
   },
   render,
 };

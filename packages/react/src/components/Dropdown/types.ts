@@ -30,4 +30,10 @@ export interface DropdownProps extends ComponentProps<typeof StyledDropdown> {
   openToTop?: boolean;
   stylesContainerOptions?: React.CSSProperties;
   labelStyle?: React.CSSProperties;
+  /** Ao abrir, o campo vira um input e a lista é filtrada conforme o texto digitado. */
+  searchable?: boolean;
+  /** Placeholder do input de busca quando não há opção selecionada. */
+  searchPlaceholder?: string;
+  /** Texto exibido quando nenhuma opção corresponde ao que foi digitado. */
+  emptyMessage?: string;
 }

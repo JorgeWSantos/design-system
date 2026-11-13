@@ -193,6 +193,43 @@ export const StyledTextSelect = styled(Text).attrs({
     `}
 `;
 
+export const StyledSearchInput = styled.input<{ $variant?: VariantsTypesDropdown }>`
+  flex: 1;
+  min-width: 0;
+
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: ${fontSizes.ssm};
+  font-weight: ${fontWeights.regular};
+  line-height: normal;
+  color: ${colors.white75};
+
+  cursor: text;
+
+  &::placeholder {
+    color: ${colors.white50};
+  }
+
+  ${({ $variant }) =>
+    ($variant === 'outline' || $variant === 'tertiary') &&
+    css`
+      color: ${colors.emeraldGreen75};
+
+      &::placeholder {
+        color: ${colors.emeraldGreen50};
+      }
+    `}
+
+  /* iOS Safari dá zoom na página ao focar input com fonte menor que 16px */
+  @media (max-width: ${breakpointsPx.lg}) {
+    font-size: ${fontSizes.md};
+  }
+`;
+
 export const StyledCaretDownFillIcon = styled(CaretDownFillIcon)<{
   $variant?: VariantsTypesDropdown;
   $rotated?: boolean;
@@ -355,7 +392,10 @@ export const ContainerOptions = styled.div<{
     `}
 `;
 
-export const Option = styled.div<{ $variant?: VariantsTypesDropdown }>`
+export const Option = styled.div<{
+  $variant?: VariantsTypesDropdown;
+  $active?: boolean;
+}>`
   border-bottom: ${radii.px} solid ${colors.emeraldGreen50};
   font-size: ${fontSizes.xxs};
   line-height: 0.875rem;
@@ -365,6 +405,12 @@ export const Option = styled.div<{ $variant?: VariantsTypesDropdown }>`
   &:hover {
     background-color: ${colors.emeraldGreen10};
   }
+
+  ${({ $active }) =>
+    $active &&
+    css`
+      background-color: ${colors.emeraldGreen10};
+    `}
 
   ${({ $variant }) =>
     $variant === 'secondary' &&
@@ -386,4 +432,14 @@ export const Option = styled.div<{ $variant?: VariantsTypesDropdown }>`
       border-bottom: ${radii.px} solid ${colors.emeraldGreen25};
       font-weight: ${fontWeights.medium};
     `}
+`;
+
+export const NoResults = styled.div`
+  font-size: ${fontSizes.xxs};
+  line-height: 0.875rem;
+  padding: ${space[2]};
+  width: 100%;
+
+  color: ${colors.green900};
+  cursor: default;
 `;
