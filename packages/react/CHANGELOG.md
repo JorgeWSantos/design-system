@@ -1,5 +1,11 @@
 # @abqm-ds/react
 
+## 4.0.59
+
+### Patch Changes
+
+- 8c9209b: feat(Dropdown): 🎸 Adicionará a opção searchable para filtrar as opções enquanto o usuário digita
+
 ## 4.0.58
 
 ### Patch Changes
